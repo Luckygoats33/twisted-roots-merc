@@ -101,7 +101,16 @@
     p.setAttribute("d", d);
     p.setAttribute("class", cls);
     S.svg.appendChild(p);
-    S.paths.push({ el: p, y0: y0, y1: y1, len: 0 });
+
+    /* A twin drawn over the top, carrying the pulse. Same
+       geometry, so the pulse can only ever travel along a root. */
+    var q = document.createElementNS(NS, "path");
+    q.setAttribute("d", d);
+    q.setAttribute("class", "rt-pulse rt-pulse--" + cls.replace("rt-", ""));
+    S.svg.appendChild(q);
+
+    var rec = { el: p, pulse: q, y0: y0, y1: y1, len: 0 };
+    S.paths.push(rec);
     return p;
   }
 
@@ -191,12 +200,24 @@
     }
 
     /* measure once; from here on we only touch stroke-dashoffset */
-    S.paths.forEach(function (o) {
+    S.paths.forEach(function (o, i) {
       var L = 2000;
       try { L = o.el.getTotalLength() || 2000; } catch (e) {}
       o.len = L;
       o.el.style.strokeDasharray = L;
       o.el.style.strokeDashoffset = reduce ? 0 : L;
+
+      /* One short bright dash, then a gap the length of the whole
+         root — so exactly one pulse travels it per cycle. Speed is
+         held constant by scaling duration with length, and every
+         root is offset so they never pulse in unison. */
+      if (o.pulse) {
+        var head = Math.max(16, Math.min(46, L * 0.05));
+        o.pulse.style.strokeDasharray = head + " " + L;
+        o.pulse.style.setProperty("--L", (L + head).toFixed(1));
+        o.pulse.style.animationDuration = (L / 150 + 3.2).toFixed(2) + "s";
+        o.pulse.style.animationDelay = (-(i * 2.7 + (i % 5) * 1.9)).toFixed(2) + "s";
+      }
     });
 
     S.built = H;
@@ -212,7 +233,14 @@
     for (var i = 0; i < S.paths.length; i++) {
       var o = S.paths[i];
       var p = (eye - o.y0) / Math.max(1, o.y1 - o.y0);
-      o.el.style.strokeDashoffset = o.len * (1 - (p < 0 ? 0 : p > 1 ? 1 : p));
+      p = p < 0 ? 0 : p > 1 ? 1 : p;
+      o.el.style.strokeDashoffset = o.len * (1 - p);
+
+      /* nothing flows through a root that has not grown yet */
+      if (o.pulse && !o.flowing && p > 0.55) {
+        o.flowing = 1;
+        o.pulse.classList.add("on");
+      }
     }
     for (var j = 0; j < S.tips.length; j++) {
       var t = S.tips[j];

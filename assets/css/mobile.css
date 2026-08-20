@@ -527,3 +527,68 @@ body{ background:var(--paper) }
   .st,.stormbar b,.ribbon,.good .num,.receipt,.brand-txt span{ font-size:.72rem !important }
   .req .ct{ font-size:.8rem }
 }
+
+/* ==========================================================
+   MOBILE MENU
+   The burger has to win every tap. It sits next to a hanging
+   sign that swings, over a root overlay and a flock of crows,
+   so it gets its own layer and nothing decorative is allowed
+   to take a touch.
+   ========================================================== */
+
+/* Decoration can never intercept a tap, anywhere. */
+.rootsys,.rootsys *,
+.crows,.crows *,
+.wavedivider,.treeline,.fogdrift,.rainlayer,.birds,
+.hangsign__beam,.hangsign__chain{ pointer-events:none !important }
+
+/* The sign is decoration too — the brand link stays clickable,
+   but the swinging plate must not overhang the burger. */
+.hangsign{ pointer-events:none }
+.brand{ pointer-events:auto }
+
+@media (max-width:1010px){
+  .site-head{ position:sticky; top:0; z-index:200 }
+
+  .burger{
+    position:relative; z-index:210;
+    min-width:64px; min-height:46px;
+    background:var(--amber);
+    border-color:var(--ink);
+    color:var(--ink);
+    font-weight:800;
+    box-shadow:0 1px 0 rgba(32,24,15,.25);
+    touch-action:manipulation;
+  }
+  .burger:active{ background:var(--amber-hi) }
+
+  /* Widen the hit area past the visible button without moving it. */
+  .burger::after{
+    content:""; position:absolute; inset:-10px -12px; z-index:-1;
+  }
+
+  /* The open panel: warm amber-tinted board, not bare cream, so
+     it reads as a panel sitting over the page. */
+  .nav{
+    z-index:205;
+    background:linear-gradient(180deg,#F6E7C8 0%, var(--cream) 42%);
+    border-top:1px solid rgba(32,24,15,.14);
+    border-bottom:4px solid var(--amber);
+    box-shadow:0 18px 40px rgba(32,24,15,.28);
+    padding-bottom:calc(24px + env(safe-area-inset-bottom,0px));
+  }
+  .nav a{
+    position:relative; z-index:1;
+    border-bottom:1px solid rgba(32,24,15,.12);
+    padding-left:14px; padding-right:14px;
+  }
+  .nav a:active{ background:rgba(217,154,52,.28) }
+  .nav a[aria-current="page"]{
+    background:rgba(217,154,52,.2);
+    box-shadow:inset 3px 0 0 var(--rust);
+  }
+}
+
+[data-storm="on"] .burger{ background:var(--amber-hi); border-color:#0F2B34; color:#0F2B34 }
+[data-storm="on"] .nav{ background:linear-gradient(180deg,#17414E 0%, #12313B 45%) }
+[data-storm="on"] .nav a{ border-bottom-color:rgba(255,255,255,.14) }
