@@ -530,3 +530,64 @@ video.hero-img{position:absolute; inset:0; width:100%; height:100%; object-fit:c
   .cinema--right .eyebrow{ justify-content:flex-start }
   .wrap,.wrap--mid,.wrap--narrow{ width:min(100% - 32px, var(--wrap)) }
 }
+
+/* ==========================================================
+   CROWS
+   A loose group working across the hero. Silhouettes only —
+   they read as birds at a distance, never as a graphic.
+   ========================================================== */
+.crows{
+  position:absolute; inset:0; z-index:2; pointer-events:none; overflow:hidden;
+}
+.crow{
+  position:absolute; left:0; display:block; width:78px;
+  transform:translate3d(-20vw,0,0) scale(var(--cr-scale,1));
+  animation:crow-cross var(--cr-cross,60s) linear infinite;
+  animation-delay:var(--cr-delay,0s);
+  will-change:transform;
+}
+.crow__svg{
+  display:block; width:100%; height:auto;
+  animation:crow-bob calc(var(--cr-flap,.7s) * 6) ease-in-out infinite;
+}
+.crow__body{ fill:#171310 }
+.crow__wing{
+  fill:#171310;
+  transform-box:fill-box;
+  transform-origin:92% 88%;
+  animation:crow-flap var(--cr-flap,.7s) cubic-bezier(.45,0,.35,1) infinite;
+}
+.crow__wing--r{ transform-origin:6% 92% }
+
+/* Wings sweep down hard and recover slowly, then hold a glide.
+   The hold is what stops it looking like a flapping cartoon. */
+@keyframes crow-flap{
+  0%   { transform:rotate(-26deg) scaleY(.78) }
+  16%  { transform:rotate(20deg)  scaleY(1.05) }
+  32%  { transform:rotate(-6deg)  scaleY(.95) }
+  48%  { transform:rotate(0deg)   scaleY(1) }
+  100% { transform:rotate(0deg)   scaleY(1) }   /* glide */
+}
+.crow__wing--r{ animation-name:crow-flap-r }
+@keyframes crow-flap-r{
+  0%   { transform:rotate(18deg)  scaleY(.84) }
+  16%  { transform:rotate(-13deg) scaleY(1.04) }
+  32%  { transform:rotate(4deg)   scaleY(.97) }
+  48%  { transform:rotate(0deg)   scaleY(1) }
+  100% { transform:rotate(0deg)   scaleY(1) }
+}
+@keyframes crow-bob{
+  0%,100% { transform:translateY(0) }
+  50%     { transform:translateY(calc(var(--cr-bob,6px) * -1)) }
+}
+@keyframes crow-cross{
+  from { transform:translate3d(-22vw,0,0) scale(var(--cr-scale,1)) }
+  to   { transform:translate3d(122vw,0,0) scale(var(--cr-scale,1)) }
+}
+
+@media (max-width:640px){ .crow{ width:52px } }
+@media (prefers-reduced-motion:reduce){
+  .crow,.crow__svg,.crow__wing{ animation:none }
+  .crow{ transform:translate3d(62vw,0,0) scale(var(--cr-scale,1)) }
+}
+@media print{ .crows{ display:none !important } }
