@@ -326,7 +326,7 @@
 
   /* Footer + inline links were 18px tall hit boxes. */
   .foot-top li{ margin-bottom:0 }
-  .foot-top a{ display:inline-flex; align-items:center; min-height:44px; padding:11px 0; line-height:1.2 }
+  .foot-top a{ display:inline-flex; align-items:center; min-height:44px; min-width:44px; padding:11px 0; line-height:1.2 }
   .foot-legal{ gap:14px 20px }
   .foot-legal a{ display:inline-flex; align-items:center; min-height:44px }
   a[href^="tel:"],
@@ -438,4 +438,18 @@
   .goods{ grid-template-columns:repeat(2,minmax(0,1fr)) }
   .cards{ grid-template-columns:repeat(2,minmax(0,1fr)) }
   .foot-top{ grid-template-columns:1fr 1fr; gap:34px }
+}
+
+
+/* ---------- PHONE: the primary CTA, which has no room in the header ---------- */
+.nav-cta{ display:none }
+@media (max-width:1010px){
+  .nav .nav-cta{
+    display:block; margin-top:14px; text-align:center;
+    background:var(--amber); color:var(--ink) !important; opacity:1;
+    font-family:var(--f-display); font-weight:800; letter-spacing:.14em;
+    text-transform:uppercase; font-size:.82rem; padding:16px 18px !important;
+    border:2px solid var(--ink); border-radius:2px; min-height:52px;
+  }
+  .nav .nav-cta::after{ display:none }
 }
