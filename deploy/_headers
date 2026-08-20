@@ -1,0 +1,210 @@
+# Twisted Roots Merc — HTTP response headers
+#
+# ┌──────────────────────────────────────────────────────────────────────────┐
+# │ MOVE THIS FILE TO THE REPO ROOT.  It must live at ./_headers (next to    │
+# │ index.html), with no file extension. It does nothing inside deploy/.     │
+# │   Cloudflare Pages: reads ./_headers. Netlify: reads ./_headers too.     │
+# │   GitHub Pages: IGNORES THIS FILE ENTIRELY — GH Pages cannot set custom  │
+# │   headers at all. That is one of the reasons it is not recommended.      │
+# └──────────────────────────────────────────────────────────────────────────┘
+#
+# Syntax: a path pattern on its own line, then indented "Name: value" lines.
+# `*` is a wildcard. Verify a change took effect with:
+#   curl -sSI https://twistedrootsmerc.com/ | sort
+#   curl -sSI https://twistedrootsmerc.com/assets/css/site.css | sort
+#
+# Deliberately NO Cache-Control in the /* block — Cache-Control is set per
+# path below so two matching rules can never fight over the same header name.
+
+
+# ══════════════════════════════════════════════════════════════════════════
+# SECURITY — every response
+# ══════════════════════════════════════════════════════════════════════════
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: DENY
+  Cross-Origin-Opener-Policy: same-origin
+  Permissions-Policy: accelerometer=(), autoplay=(self), camera=(), display-capture=(), encrypted-media=(), fullscreen=(self), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=(), payment=(), usb=(), xr-spatial-tracking=()
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; connect-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests
+
+# ── Why each CSP directive is what it is (read before you "tighten" it) ────
+#
+# script-src 'self' 'unsafe-inline'
+#     REQUIRED, and it is the weakest part of this policy. Two things need it:
+#       1. index.html has <script type="application/ld+json"> (the
+#          LocalBusiness schema Google reads). Yes — CSP treats ld+json as an
+#          inline script and blocks it without 'unsafe-inline'. Blocked, you
+#          silently lose your rich result in Google.
+#       2. hq.html has a ~110-line inline <script> block (line 188) that
+#          builds the reorder table.
+#     'unsafe-inline' means CSP is NOT protecting you from script injection.
+#     Mitigating fact, verified in this codebase: every value interpolated
+#     into .innerHTML in assets/js/site.js goes through the esc() helper
+#     (site.js:34), including the search query read from ?q=. So there is no
+#     known injection point today — but CSP is no longer your safety net, so
+#     keep it that way.
+#
+#     TO GO NONCE-BASED (real hardening, needs page edits — another agent
+#     owns the HTML, so this is a request, not something done here):
+#       a. Move hq.html's inline <script> into assets/js/hq.js.
+#       b. Move index.html's ld+json into a static /schema.jsonld file
+#          referenced by <script type="application/ld+json" src="...">  —
+#          NOTE: Google does NOT reliably read src'd ld+json. The realistic
+#          alternative is to keep the ld+json inline and give it a nonce.
+#       c. Nonces must be regenerated per request, which a static file cannot
+#          do. On Cloudflare Pages that means a Pages Function that rewrites
+#          the HTML on the fly. For a nine-page store site that is a lot of
+#          moving parts for a small win. Recommendation: do (a), which at
+#          least removes the hq.html block, and keep 'unsafe-inline' for the
+#          one ld+json island. Revisit only if the site ever accepts and
+#          re-displays untrusted input.
+#
+# style-src 'self' 'unsafe-inline' https://fonts.googleapis.com
+#     'unsafe-inline' is REQUIRED: the pages carry ~150 inline style=""
+#     attributes (12–21 per page), and CSP blocks those without it. There are
+#     no <style> blocks. fonts.googleapis.com serves the Bitter / Public Sans
+#     / Rye stylesheet linked in every <head>.
+#     Removing 'unsafe-inline' here means moving every style="" attribute into
+#     site.css. Doable, ~150 edits, low value — style injection is a far
+#     smaller risk than script injection.
+#
+# font-src 'self' https://fonts.gstatic.com
+#     The Google Fonts stylesheet pulls the actual .woff2 files from gstatic.
+#     Miss this and the fonts silently fall back to system serif/sans.
+#
+# img-src 'self' data:
+#     data: is not used today (checked) but costs nothing and keeps future
+#     inline SVG/placeholder work from breaking.
+#
+# media-src 'self'
+#     assets/video/*.mp4 — the hero, storm, rain and woodgrain background
+#     clips. Note Permissions-Policy above allows autoplay=(self) for these.
+#
+# connect-src 'self'
+#     The site makes ZERO network calls today (no fetch/XHR anywhere in
+#     assets/js/). WHEN THE SQUARE SYNC LANDS: put the endpoint on the SAME
+#     origin (a Pages Function at /api/catalog) and this line keeps working
+#     untouched. If instead you call a separate *.workers.dev host, you must
+#     add it here or the browser blocks the request with a console error that
+#     looks nothing like a CSP problem.
+#
+# frame-ancestors 'none' + X-Frame-Options: DENY
+#     Same intent, two generations of browser. Nobody can iframe the store.
+
+
+# ══════════════════════════════════════════════════════════════════════════
+# CACHING — long and immutable for media, short for versionless CSS/JS
+# ══════════════════════════════════════════════════════════════════════════
+#
+# THE TRADEOFF, stated plainly. Nothing in assets/ has a content hash in its
+# filename (site.css, not site.a1b2c3.css) because there is no build step. So:
+#
+#   • Images and video CAN be cached for a year, because the convention here
+#     is that a photo is replaced by ADDING a new filename, not by overwriting
+#     one. If you ever overwrite assets/img/hero-store.jpg in place, visitors
+#     who have been to the site keep the old photo for up to a year and there
+#     is nothing you can do about it. RULE: never overwrite an image; add
+#     hero-store-2.jpg and point the page at it.
+#
+#   • CSS and JS CANNOT safely be cached for a year, because site.css and
+#     site.js DO get edited in place — that is the whole workflow. They get
+#     max-age=300 + must-revalidate: after 5 minutes the browser asks "changed?"
+#     and gets a 4-byte 304 if not. Cost: one tiny conditional request per
+#     file per 5 minutes per visitor. Benefit: a CSS fix is live for everyone
+#     within 5 minutes, every time, with no cache-busting discipline required.
+#     For a nine-page site with fewer visitors than a coffee shop has
+#     customers, this is the right trade. Do not "optimise" it.
+#
+#   • IF you later want year-long CSS/JS caching, the cache-busting approach
+#     that works without a build step is a query string in the HTML:
+#         <link rel="stylesheet" href="assets/css/site.css?v=7">
+#         <script src="assets/js/site.js?v=7"></script>
+#     bump v on every edit, then change the /assets/css/* and /assets/js/*
+#     rules below to `max-age=31536000, immutable`. THE TRADEOFF: it only
+#     works if someone remembers to bump the number. Forget once and you ship
+#     a change that you can see (your browser revalidated) and customers
+#     cannot, for a year, with no error anywhere. That failure mode is nasty
+#     enough that it is not worth it here. Only adopt it if a real build step
+#     arrives and does the bumping automatically.
+
+/assets/img/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/video/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/css/*
+  Cache-Control: public, max-age=300, must-revalidate
+
+/assets/js/*
+  Cache-Control: public, max-age=300, must-revalidate
+
+
+# ══════════════════════════════════════════════════════════════════════════
+# HTML — always revalidate, so a copy fix is live immediately
+# ══════════════════════════════════════════════════════════════════════════
+#
+# Both spellings of every page are listed. Cloudflare Pages 308-redirects
+# /merc.html to /merc, so /merc is the path that actually gets served — but
+# the .html form is listed too so the rules still hold if you ever move hosts
+# or the redirect behaviour changes. See DEPLOY.md → "The one big gotcha".
+
+/
+  Cache-Control: public, max-age=0, must-revalidate
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+/merc
+  Cache-Control: public, max-age=0, must-revalidate
+/merc.html
+  Cache-Control: public, max-age=0, must-revalidate
+/bakery
+  Cache-Control: public, max-age=0, must-revalidate
+/bakery.html
+  Cache-Control: public, max-age=0, must-revalidate
+/yard
+  Cache-Control: public, max-age=0, must-revalidate
+/yard.html
+  Cache-Control: public, max-age=0, must-revalidate
+/storm
+  Cache-Control: public, max-age=0, must-revalidate
+/storm.html
+  Cache-Control: public, max-age=0, must-revalidate
+/local
+  Cache-Control: public, max-age=0, must-revalidate
+/local.html
+  Cache-Control: public, max-age=0, must-revalidate
+/roots
+  Cache-Control: public, max-age=0, must-revalidate
+/roots.html
+  Cache-Control: public, max-age=0, must-revalidate
+/visit
+  Cache-Control: public, max-age=0, must-revalidate
+/visit.html
+  Cache-Control: public, max-age=0, must-revalidate
+/404
+  Cache-Control: public, max-age=0, must-revalidate
+/404.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# robots.txt and sitemap.xml: short cache so a fix propagates to crawlers.
+/robots.txt
+  Cache-Control: public, max-age=3600
+/sitemap.xml
+  Cache-Control: public, max-age=3600
+
+
+# ══════════════════════════════════════════════════════════════════════════
+# THE PRIVATE OWNER DASHBOARD
+# ══════════════════════════════════════════════════════════════════════════
+#
+# These headers are hygiene, NOT protection. They keep the page out of search
+# results and out of caches. They do not stop a single person from opening it.
+# Real protection is Cloudflare Access — see DEPLOY.md section 4.
+
+/hq
+  Cache-Control: private, no-store, max-age=0
+  X-Robots-Tag: noindex, nofollow, noarchive, nosnippet
+/hq.html
+  Cache-Control: private, no-store, max-age=0
+  X-Robots-Tag: noindex, nofollow, noarchive, nosnippet

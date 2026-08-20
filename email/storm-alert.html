@@ -1,0 +1,161 @@
+<!--
+PLAIN TEXT VERSION
+==================================================
+Subject: Storm Mode is on. Open {{hours_today}}.
+
+STORM MODE IS ON — TWISTED ROOTS MERC, SILETZ
+
+OPEN TODAY: {{hours_today}}
+We stay open as long as we have power. If that changes we post it
+on the website first.
+
+STOCKED RIGHT NOW:
+{{stocked_list}}
+  (short lines, e.g. "AA and D batteries — plenty"
+                     "Tarps, 10x12 — plenty"
+                     "Bottled water — plenty"
+                     "Propane, 1 lb — getting thin"
+                     "Bar and chain oil — in stock")
+
+RUNNING LOW: {{low_list}}
+
+THE YARD is open. Pull around back and we'll load you.
+
+LIVE STOCK, UPDATED FROM THE REGISTER:
+https://twistedrootsmerc.com/storm.html
+
+CALL: (541) 555-0134   [PLACEHOLDER NUMBER]
+
+{{note}}
+  (one line from Carrie or Eric — road conditions, generator fuel,
+   what time the bread comes out. Optional.)
+
+Twisted Roots Merc, 101 & 151 N Gaither St, Siletz, Oregon 97380
+==================================================
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="x-apple-disable-message-reformatting" />
+<meta name="color-scheme" content="light dark" />
+<meta name="supported-color-schemes" content="light dark" />
+<title>Storm Mode is on</title>
+<!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->
+<style type="text/css">
+  body,table,td,a{ -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; }
+  table,td{ mso-table-lspace:0pt; mso-table-rspace:0pt; }
+  @media only screen and (max-width:620px){
+    .tr-pad{ padding-left:18px !important; padding-right:18px !important; }
+    .tr-hours{ font-size:34px !important; line-height:38px !important; }
+    .tr-h1{ font-size:24px !important; line-height:28px !important; }
+  }
+  @media (prefers-color-scheme: dark){
+    .tr-bg{ background-color:#0D1A1E !important; }
+    .tr-card{ background-color:#152128 !important; }
+    .tr-ink, .tr-ink td, .tr-ink p, .tr-ink strong, .tr-ink span{ color:#EAF4F6 !important; }
+    .tr-muted, .tr-muted td{ color:#9FB4BB !important; }
+    .tr-rule{ border-color:#3A5560 !important; }
+    a{ color:#F2B953 !important; }
+  }
+</style>
+</head>
+<!--
+  NO IMAGES IN THIS TEMPLATE, ON PURPOSE. This one gets read on a phone
+  with one bar in a windstorm. Everything that matters is text, and
+  everything that matters is above the fold.
+-->
+<body class="tr-bg" style="margin:0; padding:0; width:100%; background-color:#215C6B;">
+
+<div style="display:none; max-height:0; overflow:hidden; mso-hide:all; font-size:1px; line-height:1px; color:#215C6B; opacity:0;">
+Open {{hours_today}}. Batteries, water, tarps and propane stocked. The yard is open.&#8199;&#847;&#8199;&#847;&#8199;&#847;&#8199;&#847;&#8199;&#847;&#8199;&#847;&#8199;&#847;&#8199;&#847;
+</div>
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="tr-bg" bgcolor="#215C6B" style="background-color:#215C6B;">
+<tr><td align="center" style="padding:0 8px 28px 8px;">
+
+  <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="width:100%; max-width:600px; border-collapse:collapse;">
+
+    <!-- 1. THE FLAG. Nothing above this. -->
+    <tr>
+      <td class="tr-pad" bgcolor="#D99A34" style="background-color:#D99A34; padding:14px 26px;">
+        <p style="margin:0; font-family:Georgia,'Times New Roman',serif; font-size:17px; line-height:22px; font-weight:bold; letter-spacing:3px; text-transform:uppercase; color:#20180F;">Storm Mode is on</p>
+      </td>
+    </tr>
+
+    <!-- 2. HOURS. The one thing people open this for. -->
+    <tr>
+      <td class="tr-pad" bgcolor="#20180F" style="background-color:#20180F; padding:26px 26px 24px 26px;">
+        <p style="margin:0 0 6px 0; font-family:Helvetica,Arial,sans-serif; font-size:11px; line-height:14px; font-weight:bold; letter-spacing:2.5px; text-transform:uppercase; color:#D99A34;">Twisted Roots Merc &middot; Siletz &middot; Open today</p>
+        <p class="tr-hours" style="margin:0 0 10px 0; font-family:Georgia,'Times New Roman',serif; font-size:40px; line-height:44px; font-weight:bold; color:#F4EDE1;">{{hours_today}}</p>
+        <p style="margin:0; font-family:Helvetica,Arial,sans-serif; font-size:15px; line-height:21px; color:#E4CBA4;">We stay open as long as we have power. The yard out back is open — pull around and we'll load you.</p>
+      </td>
+    </tr>
+
+    <!-- 3. WHAT'S STOCKED -->
+    <tr>
+      <td class="tr-pad tr-card" bgcolor="#FBF7EF" style="background-color:#FBF7EF; padding:24px 26px 6px 26px;">
+        <p class="tr-ink" style="margin:0 0 12px 0; font-family:Helvetica,Arial,sans-serif; font-size:11px; line-height:14px; font-weight:bold; letter-spacing:2.5px; text-transform:uppercase; color:#8E4826;">Stocked right now</p>
+
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;">
+          <!-- REPEAT PER LINE: {{#each stocked}} — keep this list to 8 lines or fewer -->
+          <tr>
+            <td class="tr-ink tr-rule" style="padding:9px 0; border-bottom:1px solid #DCCFB8; font-family:Georgia,'Times New Roman',serif; font-size:17px; line-height:22px; font-weight:bold; color:#20180F;">{{stock_item}}</td>
+            <td class="tr-muted tr-rule" align="right" style="padding:9px 0; border-bottom:1px solid #DCCFB8; font-family:Helvetica,Arial,sans-serif; font-size:12px; line-height:22px; font-weight:bold; letter-spacing:1.5px; text-transform:uppercase; color:#2F5C43; white-space:nowrap;">{{stock_state}}</td>
+          </tr>
+          <!-- {{/each}} -->
+        </table>
+      </td>
+    </tr>
+
+    <!-- 4. RUNNING LOW -->
+    <tr>
+      <td class="tr-pad tr-card" bgcolor="#FBF7EF" style="background-color:#FBF7EF; padding:18px 26px 6px 26px;">
+        <p class="tr-ink" style="margin:0; font-family:Helvetica,Arial,sans-serif; font-size:15px; line-height:22px; color:#20180F;"><strong style="font-family:Georgia,'Times New Roman',serif;">Getting thin:</strong> {{low_list}}. If you need it, come today.</p>
+      </td>
+    </tr>
+
+    <!-- 5. THE LINK -->
+    <tr>
+      <td class="tr-pad tr-card" bgcolor="#FBF7EF" style="background-color:#FBF7EF; padding:20px 26px 8px 26px;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse;">
+          <tr>
+            <td bgcolor="#215C6B" align="center" style="background-color:#215C6B; padding:0;">
+              <a href="https://twistedrootsmerc.com/storm.html" style="display:block; padding:16px 20px; font-family:Georgia,'Times New Roman',serif; font-size:16px; line-height:20px; font-weight:bold; letter-spacing:1.5px; text-transform:uppercase; color:#FFFFFF; text-decoration:none;">See live stock &rarr;</a>
+            </td>
+          </tr>
+        </table>
+        <p class="tr-muted" style="margin:8px 0 0 0; font-family:Helvetica,Arial,sans-serif; font-size:12px; line-height:17px; color:#7A6A55;">That page reads straight off the register and re-scales to storm minimums. If the page won't load on your signal, call.</p>
+      </td>
+    </tr>
+
+    <!-- 6. PHONE -->
+    <tr>
+      <td class="tr-pad tr-card" bgcolor="#FBF7EF" style="background-color:#FBF7EF; padding:14px 26px 26px 26px;">
+        <!-- PLACEHOLDER PHONE: (541) 555-0134 is not a real number. Replace before this template goes live. -->
+        <p class="tr-ink" style="margin:0 0 10px 0; font-family:Georgia,'Times New Roman',serif; font-size:22px; line-height:26px; font-weight:bold; color:#20180F;"><a href="tel:+15415550134" style="color:#8E4826; text-decoration:none;">(541) 555-0134</a></p>
+        <p class="tr-muted" style="margin:0; font-family:Helvetica,Arial,sans-serif; font-size:14px; line-height:20px; color:#4A3D2C;">Somebody actually answers. {{note}}</p>
+      </td>
+    </tr>
+
+    <!-- FOOTER -->
+    <tr>
+      <td class="tr-pad" bgcolor="#20180F" style="background-color:#20180F; padding:22px 26px 24px 26px;">
+        <p style="margin:0 0 10px 0; font-family:Helvetica,Arial,sans-serif; font-size:12px; line-height:18px; color:#B9A585;">
+          Twisted Roots Merc &middot; 101 &amp; 151 N Gaither St, Siletz, Oregon 97380<br />
+          <a href="https://twistedrootsmerc.com/" style="color:#D99A34; text-decoration:underline;">twistedrootsmerc.com</a>
+        </p>
+        <p style="margin:0; font-family:Helvetica,Arial,sans-serif; font-size:11px; line-height:16px; color:#8A7A61;">
+          You signed up for storm notices. We only send these when Storm Mode is actually on.
+          <a href="{{unsubscribe_url}}" style="color:#8A7A61; text-decoration:underline;">Stop these</a>.
+        </p>
+      </td>
+    </tr>
+
+  </table>
+
+</td></tr>
+</table>
+</body>
+</html>

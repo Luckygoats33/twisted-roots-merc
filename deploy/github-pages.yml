@@ -1,0 +1,133 @@
+# Twisted Roots Merc — GitHub Pages deployment workflow
+# =====================================================
+# THIS IS THE SECOND RUNNER-UP. Recommendation is Cloudflare Pages
+# (DEPLOY.md section 1). Use this only if you consciously accept that
+# GitHub Pages CANNOT:
+#   • password-protect hq.html (no auth of any kind on public Pages sites)
+#   • set custom response headers (no CSP, no cache control, no X-Robots-Tag)
+#   • do redirects (no www -> apex, no /hours -> /visit)
+#   • run any serverless function, scheduled or otherwise
+# It CAN do free HTTPS on a custom domain, and it is very reliable.
+#
+# ┌──────────────────────────────────────────────────────────────────────────┐
+# │ MOVE THIS FILE TO  .github/workflows/github-pages.yml  in the repo root. │
+# │ The path and the .github/workflows/ directory name are both mandatory —  │
+# │ GitHub only runs workflows it finds there. It does nothing in deploy/.   │
+# └──────────────────────────────────────────────────────────────────────────┘
+#
+# Then in the repo: Settings → Pages → Build and deployment → Source →
+# "GitHub Actions". If you leave it on "Deploy from a branch" this workflow
+# will run and then be ignored.
+#
+# ALSO REQUIRED: a file named CNAME at the repo root containing exactly one
+# line with no protocol and no trailing slash:
+#     twistedrootsmerc.com
+# Without it, every deploy resets the custom domain back to
+# luckygoats33.github.io and the site goes down until someone notices.
+#
+# AND: create an empty file named .nojekyll at the repo root. Without it
+# GitHub runs the site through Jekyll, which SILENTLY REFUSES to publish any
+# directory whose name starts with an underscore. This repo has _parts/, and
+# assets/img/_manifest.json — Jekyll would drop them.
+
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  # Lets you re-deploy by hand from the Actions tab without pushing a commit.
+  workflow_dispatch:
+
+# Least privilege: the job needs to read the repo and write a Pages
+# deployment. Nothing else.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# If two pushes land close together, let the newer one win rather than
+# queueing a stale deploy behind it. Do NOT set cancel-in-progress on the
+# deploy job's own group in a way that kills a half-finished publish.
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Fail early if working files would be published
+        # GitHub Pages publishes whatever you hand it — there is no way to
+        # exclude a path at serve time and no way to protect one. If _parts/
+        # ever gets committed, _parts/hq.html becomes a public copy of the
+        # private owner dashboard markup. Stop the deploy instead.
+        run: |
+          set -e
+          fail=0
+          for p in _parts build.py fetch_stock.py TECH-PLAN.md QA-REPORT.md seo print; do
+            if [ -e "$p" ]; then
+              echo "::error::'$p' is committed and would be published publicly. Remove it (see .gitignore) before deploying."
+              fail=1
+            fi
+          done
+          if [ ! -f CNAME ]; then
+            echo "::error::CNAME file is missing. The custom domain will be reset on deploy."
+            fail=1
+          fi
+          if [ ! -f .nojekyll ]; then
+            echo "::error::.nojekyll is missing. Jekyll will silently drop underscore-prefixed paths."
+            fail=1
+          fi
+          exit $fail
+
+      - name: Warn about files this host cannot honour
+        # Not fatal, just honest: these two files are read by Cloudflare Pages
+        # and Netlify and completely ignored by GitHub Pages. If they are here,
+        # every security header and redirect you wrote is doing nothing.
+        run: |
+          for p in _headers _redirects; do
+            if [ -e "$p" ]; then
+              echo "::warning::'$p' exists but GitHub Pages ignores it. Your security headers and redirects are NOT being applied."
+            fi
+          done
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload the site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # There is no build step. The repository root IS the website, so the
+          # artifact path is a single dot.
+          path: '.'
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+# ─────────────────────────────────────────────────────────────────────────────
+# DNS for GitHub Pages, for completeness
+# ─────────────────────────────────────────────────────────────────────────────
+# GitHub solves the apex-CNAME problem the old-fashioned way: four published
+# anycast A records that you hardcode. Verify these against GitHub's current
+# docs before use — GitHub has changed them before and a stale IP means an
+# outage:
+#   https://docs.github.com/pages/configuring-a-custom-domain-for-your-github-pages-site
+#
+#   apex   A      185.199.108.153
+#   apex   A      185.199.109.153
+#   apex   A      185.199.110.153
+#   apex   A      185.199.111.153
+#   www    CNAME  <your-github-username>.github.io
+#
+# Then Settings -> Pages -> Custom domain -> twistedrootsmerc.com -> Save,
+# wait for the DNS check to go green, then tick "Enforce HTTPS". The tick box
+# stays greyed out until GitHub has provisioned the Let's Encrypt certificate,
+# which can take up to 24 hours. Do not announce the site before it is ticked.

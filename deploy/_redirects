@@ -1,0 +1,99 @@
+# Twisted Roots Merc — path redirects
+#
+# ┌──────────────────────────────────────────────────────────────────────────┐
+# │ MOVE THIS FILE TO THE REPO ROOT.  It must live at ./_redirects (next to  │
+# │ index.html), with no file extension.                                     │
+# │   Cloudflare Pages: reads ./_redirects. Netlify: reads it too.           │
+# │   GitHub Pages: IGNORES IT — GH Pages cannot do redirects at all.        │
+# └──────────────────────────────────────────────────────────────────────────┘
+#
+# Format:  <from>  <to>  <status>
+# `*` is a splat and `:placeholder` captures one segment.
+#
+# ══════════════════════════════════════════════════════════════════════════
+# WHAT THIS FILE CANNOT DO — read this before you go looking for a bug
+# ══════════════════════════════════════════════════════════════════════════
+#
+# 1. HTTP → HTTPS. Not possible here. On Cloudflare this is a ZONE setting:
+#       Cloudflare dashboard → twistedrootsmerc.com → SSL/TLS → Edge
+#       Certificates → "Always Use HTTPS" = ON
+#    Also turn ON "Automatic HTTPS Rewrites" while you are on that screen.
+#    (Optionally set HSTS there too — but read DEPLOY.md first, HSTS is very
+#    hard to undo.)
+#
+# 2. www → apex. Not possible here either: Cloudflare Pages `_redirects`
+#    matches on PATH only, not on hostname, so there is no way to say "only
+#    when the host is www". Do it with a Redirect Rule in the zone —
+#    exact click-path in DEPLOY.md section 3. On Netlify it IS possible, and
+#    deploy/netlify.toml already contains that rule.
+#
+# The canonical host is the APEX: https://twistedrootsmerc.com
+# That is not a preference — every <link rel="canonical"> in the nine pages
+# and every <loc> in sitemap.xml already points at the apex. Choosing www
+# would mean editing all of them. Don't.
+
+
+# ══════════════════════════════════════════════════════════════════════════
+# Keep working files off the public web
+# ══════════════════════════════════════════════════════════════════════════
+# .gitignore should already keep these out of the repo entirely. These lines
+# are the second lock: if someone force-adds the folder back, or ships from a
+# machine with a stale .gitignore, the files still are not browsable.
+#
+# _parts/hq.html matters most — it is a copy of the private dashboard markup
+# and would sit completely outside any /hq protection.
+
+/_parts/*        /    301
+/build.py        /    301
+/fetch_stock.py  /    301
+/TECH-PLAN.md    /    301
+/QA-REPORT.md    /    301
+/seo/*           /    301
+/print/*         /    301
+/README.md       /    301
+/slots.json      /    301
+/slots2.json     /    301
+/slots3.json     /    301
+/slots4.json     /    301
+
+
+# ══════════════════════════════════════════════════════════════════════════
+# Friendly short paths for print, signage and the phone
+# ══════════════════════════════════════════════════════════════════════════
+# Safe to hand out on a business card, a chalkboard or over the phone:
+#   twistedrootsmerc.com/hours  → the Visit page
+#   twistedrootsmerc.com/menu   → the Bakery + Kitchen page
+# These are 302 (temporary) on purpose — they are marketing aliases, not the
+# canonical address of the page, and a 302 will not be cached forever by a
+# browser if you decide to repoint them.
+
+/hours       /visit    302
+/directions  /visit    302
+/menu        /bakery   302
+/food        /bakery   302
+/order       /bakery   302
+/lumber      /yard     302
+/storm-ready /storm    302
+/about       /roots    302
+/contact     /visit    302
+
+
+# ══════════════════════════════════════════════════════════════════════════
+# NOT NEEDED — and here is why, so nobody adds them back
+# ══════════════════════════════════════════════════════════════════════════
+#
+# /*  /404.html  404
+#     Unnecessary on Cloudflare Pages: it serves /404.html automatically for
+#     any unmatched path. (Also, Pages `_redirects` does not accept 404 as a
+#     status code — Netlify does, Cloudflare does not.) Just create 404.html
+#     at the repo root; see DEPLOY.md section 5d.
+#
+# /merc.html  /merc  301
+#     Unnecessary AND counterproductive: Cloudflare Pages already does this
+#     redirect itself, unconditionally, and you cannot turn it off. Adding
+#     your own rule risks a redirect loop. See DEPLOY.md → "The one big
+#     gotcha".
+#
+# /hq  ...  anything
+#     Do NOT try to hide the dashboard with a redirect. A redirect is a
+#     suggestion to a browser, not a lock. Use Cloudflare Access.

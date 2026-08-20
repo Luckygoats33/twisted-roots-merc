@@ -1,0 +1,189 @@
+#  Twisted Roots Merc — Netlify configuration
+#  ==========================================
+#  THIS IS THE RUNNER-UP HOST'S CONFIG. The recommendation is Cloudflare Pages
+#  (DEPLOY.md section 1). Use this file only if you consciously choose Netlify
+#  instead — the trade you are making is: you get correct .html URLs out of the
+#  box, and you LOSE free password protection for hq.html (Netlify's password
+#  protection and _headers Basic-Auth are both Pro-plan features on new
+#  accounts, roughly $19/user/month at time of writing — verify current pricing).
+#
+#  TO USE:  move this file to the REPO ROOT as ./netlify.toml
+#           and also move deploy/_headers and deploy/_redirects to the root.
+#           This file has no effect while it sits in deploy/.
+#
+#  Netlify reads _headers and _redirects too, so those two files are shared
+#  between hosts. Rules in this file are applied IN ADDITION to those, and
+#  redirects here are evaluated BEFORE _redirects.
+
+[build]
+  # There is no build. None. No npm, no bundler, no framework, no dependencies.
+  # An empty command tells Netlify to skip the build phase entirely.
+  command = ""
+  # The published directory is the repository root, because the repository
+  # root IS the website. In the Netlify UI this field is called
+  # "Publish directory" and the value is a single dot.
+  publish = "."
+
+
+[build.environment]
+  # Netlify installs a Node toolchain by default and can waste a minute doing
+  # it. Nothing here needs Node, but pinning avoids surprise version changes.
+  NODE_VERSION = "20"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+#  THE SETTING THAT MATTERS MOST ON NETLIFY
+# ─────────────────────────────────────────────────────────────────────────────
+[build.processing]
+  skip_processing = false
+
+[build.processing.html]
+  # Netlify's "Pretty URLs" post-processing 301-redirects /merc.html to /merc.
+  # That is the same behaviour that makes Cloudflare Pages awkward for this
+  # repo — the difference is that Netlify lets you TURN IT OFF, and this is
+  # the switch. Leave it false.
+  #
+  # Every <link rel="canonical"> in the nine pages, every <loc> in
+  # sitemap.xml, the `Disallow: /hq.html` line in robots.txt, and every
+  # internal href in the site all use the .html form. With pretty_urls = false
+  # they all resolve directly, with no redirect hop and no canonical pointing
+  # at a URL that redirects.
+  #
+  # VERIFY IT after the first deploy — do not take this comment's word for it:
+  #   curl -sSI https://twistedrootsmerc.com/merc.html | head -1
+  #   expect: HTTP/2 200        NOT: HTTP/2 301
+  pretty_urls = false
+
+[build.processing.css]
+  # The CSS is hand-authored and readable on purpose; Carrie and Eric's
+  # developer will be editing it. Do not let the host rewrite it.
+  bundle = false
+  minify = false
+
+[build.processing.js]
+  bundle = false
+  minify = false
+
+[build.processing.images]
+  # Safe and free — Netlify recompresses images without changing filenames.
+  compress = true
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+#  CANONICAL HOST — www redirects to the apex
+# ─────────────────────────────────────────────────────────────────────────────
+#  Unlike Cloudflare Pages' _redirects, Netlify CAN match on hostname, so this
+#  belongs here rather than in a dashboard rule.
+#
+#  force = true means this wins even when a real file exists at that path.
+#  The :splat captures the rest of the path, and Netlify preserves the query
+#  string automatically.
+
+[[redirects]]
+  from = "https://www.twistedrootsmerc.com/*"
+  to = "https://twistedrootsmerc.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.twistedrootsmerc.com/*"
+  to = "https://twistedrootsmerc.com/:splat"
+  status = 301
+  force = true
+
+# Netlify serves 404.html automatically for unmatched paths once that file
+# exists at the repo root, so no catch-all rule is needed here.
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+#  HEADERS
+# ─────────────────────────────────────────────────────────────────────────────
+#  These duplicate deploy/_headers deliberately, so this file works even if
+#  someone forgets to move _headers to the root. If BOTH exist, netlify.toml
+#  wins for any header named in both. Keep the two in sync or delete one.
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "DENY"
+    Cross-Origin-Opener-Policy = "same-origin"
+    Permissions-Policy = "accelerometer=(), autoplay=(self), camera=(), display-capture=(), encrypted-media=(), fullscreen=(self), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=(), payment=(), usb=(), xr-spatial-tracking=()"
+    # See deploy/_headers for the full, honest explanation of why script-src
+    # and style-src both need 'unsafe-inline' on this site. Short version:
+    # index.html has an application/ld+json block, hq.html has an inline
+    # <script>, and the pages carry ~150 inline style="" attributes.
+    Content-Security-Policy = "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; connect-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests"
+
+[[headers]]
+  for = "/assets/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/assets/video/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  # Versionless and edited in place — must revalidate. See deploy/_headers for
+  # the cache-busting tradeoff discussion.
+  for = "/assets/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=300, must-revalidate"
+
+[[headers]]
+  for = "/assets/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=300, must-revalidate"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  # Hygiene only. On Netlify's free tier this page is NOT actually protected.
+  # X-Robots-Tag keeps it out of search; it does not keep anyone out.
+  for = "/hq.html"
+  [headers.values]
+    Cache-Control = "private, no-store, max-age=0"
+    X-Robots-Tag = "noindex, nofollow, noarchive, nosnippet"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+#  IF YOU ARE ON NETLIFY AND WANT hq.html PROTECTED
+# ─────────────────────────────────────────────────────────────────────────────
+#  Netlify's own options both cost money on a new account:
+#
+#    • Site-wide "Password protection" — Site configuration → Access &
+#      security → Visitor access. Pro plan and above. Also note: SITE-WIDE.
+#      It would password-protect the whole store, not just /hq.html, which is
+#      the opposite of what you want.
+#
+#    • Basic-Auth via a _headers entry (`/hq.html` + `Basic-Auth: user:pass`)
+#      — Pro and Enterprise. It reportedly still works on legacy free
+#      accounts; assume a new account cannot use it. Also note it puts a
+#      plaintext password in your git repo, which is bad practice regardless.
+#
+#  The free path on Netlify is a Netlify Edge Function that checks the
+#  Authorization header against an environment variable and returns 401
+#  otherwise. That works, but you are now maintaining code to do something
+#  Cloudflare Access gives you from a form. This is the single strongest
+#  argument for Cloudflare Pages. See DEPLOY.md section 4.
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+#  LATER: the Square inventory sync
+# ─────────────────────────────────────────────────────────────────────────────
+#  Netlify Scheduled Functions exist and are available on the free tier, at
+#  cron granularity. If you go this route, the function lives in
+#  netlify/functions/ and is declared like this (left commented — do not
+#  enable until the function file actually exists, or deploys will warn):
+#
+#  [functions."square-sync"]
+#    schedule = "0 */2 * * *"
+#
+#  Put the Square access token in Site configuration → Environment variables.
+#  NEVER commit it.

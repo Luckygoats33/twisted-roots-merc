@@ -1,0 +1,123 @@
+#  Twisted Roots Merc — Square inventory sync Worker
+#  =================================================
+#  THIS IS FOR LATER, NOT FOR LAUNCH. Nothing on the site needs it today —
+#  assets/js/catalog.js is hand-written demo data and the site works fine.
+#  Do not wire this up until the store is actually running on Square.
+#
+#  ┌─────────────────────────────────────────────────────────────────────────┐
+#  │ WHERE THIS GOES: NOT in this repo's root.                               │
+#  │ Create a SEPARATE folder/repo, e.g.  twisted-roots-square-sync/ , with: │
+#  │     wrangler.toml      <- this file, moved there                        │
+#  │     src/index.js       <- the worker code (sketched at the bottom)      │
+#  │ then:  npx wrangler deploy                                              │
+#  │                                                                         │
+#  │ Keeping it out of the website repo matters: this repo's root is served  │
+#  │ verbatim to the public, and you do not want Worker source and config    │
+#  │ sitting at https://twistedrootsmerc.com/wrangler.toml                   │
+#  └─────────────────────────────────────────────────────────────────────────┘
+
+name = "twisted-roots-square-sync"
+main = "src/index.js"
+
+# Pin the runtime date so a future Workers release cannot change behaviour
+# under you. Bump it deliberately, never accidentally.
+compatibility_date = "2026-08-19"
+
+# Cloudflare's free plan does not include Workers observability/logs retention
+# beyond a short window, but the toggle itself is free. Turn it on — when the
+# 4am sync fails you will want to know why.
+[observability]
+  enabled = true
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+#  THE SCHEDULE
+# ─────────────────────────────────────────────────────────────────────────────
+#  Standard 5-field cron, ALWAYS IN UTC. Siletz is Pacific time, so UTC is
+#  7 hours ahead in summer (PDT) and 8 hours ahead in winter (PST). Cron
+#  Triggers do not observe daylight saving, so any "run at 5am local" schedule
+#  drifts by an hour twice a year. The fix is to run often enough that you do
+#  not care, which is what the schedule below does.
+#
+#  Every 30 minutes, all day: 48 runs/day. Cloudflare's free plan allows
+#  100,000 Worker requests/day, so this is not close to a limit. Free-plan
+#  limits observed at time of writing — verify current numbers at
+#  https://developers.cloudflare.com/workers/platform/limits/ :
+#     • 100,000 requests/day
+#     • 10 ms CPU per invocation  <- the one that can actually bite you.
+#       Parsing a few hundred Square catalog items is fine; anything heavier
+#       needs the $5/month paid plan.
+#     • 5 Cron Triggers per account on free, 3 per Worker.
+[triggers]
+  crons = ["*/30 * * * *"]
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+#  WHERE THE SYNCED DATA LANDS
+# ─────────────────────────────────────────────────────────────────────────────
+#  Create the namespace first, which prints the id to paste below:
+#     npx wrangler kv namespace create CATALOG
+#
+#  The Worker writes the catalog JSON to KV on its schedule. The website then
+#  reads it. Wire the read side up as a Pages Function at /api/catalog in the
+#  WEBSITE repo (functions/api/catalog.js), NOT as a separate *.workers.dev
+#  hostname — because deploy/_headers sets `connect-src 'self'`, and a
+#  same-origin /api/catalog needs no CSP change at all. A separate hostname
+#  would be blocked by CSP with an error that does not look like a CSP error.
+[[kv_namespaces]]
+  binding = "CATALOG"
+  id = "PASTE_THE_ID_FROM_WRANGLER_KV_NAMESPACE_CREATE_HERE"
+
+
+[vars]
+  # Non-secret configuration only. Square's production API host.
+  SQUARE_API_BASE = "https://connect.squareup.com"
+  SQUARE_API_VERSION = "2026-01-22"
+  # Set to "sandbox" while testing against Square's sandbox.
+  SQUARE_ENV = "production"
+
+#  SECRETS DO NOT GO IN THIS FILE. Ever. This file goes in git.
+#  Set them once from the command line and they are stored encrypted:
+#     npx wrangler secret put SQUARE_ACCESS_TOKEN
+#     npx wrangler secret put SQUARE_LOCATION_ID
+#  If a token ever does land in git, rotate it in the Square dashboard —
+#  deleting the commit is not enough.
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+#  WHAT src/index.js HAS TO DO
+# ─────────────────────────────────────────────────────────────────────────────
+#  The shape it must produce is already fixed by the website and documented in
+#  README.md — one object per item:
+#
+#     { id, n, d, p, q, min, stormMin, a, t }
+#      id       stable item id
+#      n        display name
+#      d        department: everyday|fixit|yard|storm|outdoors|local
+#      p        price (dollars, number)
+#      q        quantity on hand
+#      min      reorder floor
+#      stormMin raised floor used when Storm Mode is on
+#      a        aisle shown to the customer, e.g. "Fix It 4"
+#      t        array of search tags — what a person would actually TYPE
+#
+#  export default {
+#    async scheduled(event, env, ctx) {
+#      // 1. POST /v2/catalog/search-catalog-items   -> names, prices, ids
+#      // 2. POST /v2/inventory/counts/batch-retrieve -> quantities
+#      // 3. Map Square categories to the six `d` keys above.
+#      // 4. Carry `min`, `stormMin`, `a` and `t` across from the PREVIOUS
+#      //    KV value — Square does not know about aisles, storm floors or
+#      //    the plain-English search tags, and those are the whole reason
+#      //    the search feels good. Losing them silently degrades the site
+#      //    into a worse version of itself. This is the step that will be
+#      //    got wrong; write a test for it.
+#      // 5. If the fetch fails or returns zero items, KEEP THE OLD VALUE.
+#      //    An empty shelf on the website is worse than a slightly stale one.
+#      await env.CATALOG.put("catalog", JSON.stringify(items));
+#    }
+#  };
+#
+#  Test the schedule without waiting for the clock:
+#     npx wrangler dev --test-scheduled
+#     curl "http://localhost:8787/__scheduled?cron=*/30+*+*+*+*"

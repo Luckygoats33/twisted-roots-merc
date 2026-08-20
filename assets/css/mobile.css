@@ -1,0 +1,432 @@
+/* ==========================================================
+   TWISTED ROOTS MERC — MOBILE & RESPONSIVE REFINEMENT
+   ----------------------------------------------------------
+   Additive only. Loads LAST, after site.css, motion.css and
+   roots.css, so equal-specificity selectors win here.
+
+   Owns nothing new visually — it only tightens what already
+   exists at phone and small-tablet widths:
+     360 / 390 / 414   phones
+     768 / 834         tablets
+     1024              small laptop
+
+   Rules of the road for this file:
+     · no !important unless a third-party-ish rule forces it
+     · reuse the site tokens (--ink --cream --paper --wood
+       --rust --teal --pine --amber --f-display --f-sign
+       --f-body --head-h --wrap)
+     · never touch the intentionally-clipped pieces
+       (.ticker track, .hangsign swing arc, .bird flight path)
+   See MOBILE-NOTES.md for the findings behind each block.
+   ========================================================== */
+
+
+/* ==========================================================
+   1. GLOBAL SAFETY — overflow, taps, notches
+   ========================================================== */
+
+/* Belt and braces: no decorative overlay may ever eat a tap.
+   (motion.css / roots.css already do this; this survives edits.) */
+.rootsys,
+.rain,
+.rainlayer,
+.birds,
+.bird,
+.fogdrift,
+.wavedivider,
+.treeline,
+.hero::after{ pointer-events:none }
+
+/* Decorative full-bleed layers must clip themselves, never the page. */
+.wavedivider,
+.treeline,
+.fogdrift,
+.rainlayer,
+.birds,
+.rootsys{ max-width:100%; overflow:hidden }
+
+/* Kill the grey tap flash on anything that is actually a control. */
+@media (hover:none){
+  a, button, .chip, .btn, .burger, .stormtoggle, summary{
+    -webkit-tap-highlight-color:rgba(217,154,52,.25);
+  }
+}
+
+/* Notched phones: give the edge-anchored furniture real inset.
+   .wrap already reserves 16px a side, so we only add what the
+   device asks for on top of it. */
+@media (max-width:900px){
+  .head-in{
+    padding-left:env(safe-area-inset-left);
+    padding-right:env(safe-area-inset-right);
+  }
+  .stormbar .wrap{
+    padding-left:env(safe-area-inset-left);
+    padding-right:env(safe-area-inset-right);
+  }
+  .site-foot{
+    padding-bottom:calc(36px + env(safe-area-inset-bottom));
+  }
+}
+/* Landscape is where the notch actually bites the body copy. */
+@media (max-width:900px) and (orientation:landscape){
+  .wrap,.wrap--mid,.wrap--narrow{
+    padding-left:env(safe-area-inset-left);
+    padding-right:env(safe-area-inset-right);
+  }
+}
+
+
+/* ==========================================================
+   2. TYPE SCALE ON SMALL SCREENS
+   ========================================================== */
+
+/* At 360 the hero headline (clamp min 2.6rem = 41.6px) overset
+   its own hard <br> breaks into six lines. Track the viewport
+   below 400px instead of sitting on the clamp floor. */
+@media (max-width:400px){
+  .h-mega{
+    font-size:max(2rem, 10.2vw);
+    letter-spacing:-.015em;
+  }
+  .hero-tag{ letter-spacing:.18em }
+  .hero-motto{ letter-spacing:.1em; margin:20px 0 26px }
+}
+
+/* Long product names, place names and compound words must never
+   punch out of a heading. break-word only breaks when it has to. */
+@media (max-width:900px){
+  .h-mega,.h1,.h2,.h3,.h4,
+  .prod .nm,.menu-item .nm,.good .lab h3,
+  .card .tot,.req .nm,.meter .nm,.result-head h3,
+  .board-cell .v,.stat .v,.drive-cell .t{
+    overflow-wrap:break-word;
+  }
+  /* even out ragged 2–3 line headings */
+  .h1,.h2,.h3,.hero-tag,.foot-motto,.result-head h3,
+  .good .lab h3,.eyebrow{ text-wrap:balance }
+  /* and stop single-word orphans in body copy */
+  .lede,.card-in p,.req .nt,.menu-item .ds,.intent-note{ text-wrap:pretty }
+}
+
+
+/* ==========================================================
+   3. STICKY HEADER + MOBILE NAV  (360–414 is the tight case)
+   ========================================================== */
+
+@media (max-width:900px){
+  /* The hanging sign, the wordmark and the burger have to share
+     ~360px. Cap the sign so it can never reach the burger, and
+     let the wordmark be the only flexible thing in the row. */
+  .head-in{ gap:12px }
+  .brand{ min-width:0; flex:0 1 auto }
+  .brand-txt{ min-width:0 }
+  .brand-txt b{ font-size:.96rem; overflow-wrap:break-word }
+
+  /* Burger: was 70×43 — one pixel under the 44px target. */
+  .burger{
+    min-height:44px; min-width:44px;
+    display:inline-flex; align-items:center; justify-content:center;
+    padding:11px 15px; flex:none;
+  }
+
+  /* Panel: pin to the dynamic viewport so an iOS URL bar cannot
+     push the last nav item under the fold, keep its own scroll,
+     and stop scroll chaining into the page behind it. */
+  .nav{
+    max-height:calc(100vh - var(--head-h));
+    max-height:calc(100dvh - var(--head-h));
+    overscroll-behavior:contain;
+    -webkit-overflow-scrolling:touch;
+    box-shadow:0 18px 34px rgba(20,14,8,.26);
+    padding-left:max(22px, env(safe-area-inset-left));
+    padding-right:max(22px, env(safe-area-inset-right));
+    padding-bottom:calc(24px + env(safe-area-inset-bottom));
+  }
+  .nav a{ min-height:48px; display:flex; align-items:center }
+  .nav a:last-child{ border-bottom:0 }
+  .nav a[aria-current="page"]{
+    color:var(--rust);
+    box-shadow:inset 3px 0 0 var(--rust);
+    padding-left:12px;
+  }
+  [data-storm="on"] .nav a[aria-current="page"]{
+    color:var(--amber-hi); box-shadow:inset 3px 0 0 var(--amber-hi);
+  }
+}
+
+/* Freeze the page behind the open menu. CSS-only; if :has() is
+   missing the menu still works exactly as it does today. */
+@media (max-width:900px){
+  body:has(.nav.open){ overflow:hidden }
+}
+
+/* Short landscape phones: the header must not eat the screen. */
+@media (max-height:460px) and (orientation:landscape){
+  :root{ --head-h:56px }
+  .brand img,.hangsign--sm{ --hs-h:34px; --hs-drop:8px; --hs-beam-h:5px }
+  .hero{ min-height:auto }
+  .hero-in{ padding-top:64px; padding-bottom:32px }
+}
+
+
+/* ==========================================================
+   4. PRODUCT ROWS — the most-used component on the site
+   ----------------------------------------------------------
+   site.css reflows .prod to a 2-column grid at 640px, which
+   auto-placed into THREE rows (name / chip+price / button) and
+   left a dead cell bottom-left. Rows ran 166–187px tall.
+
+   Re-plot it as a proper mobile list row:
+       ┌──────────────────────────────┐
+       │ Name of the thing            │
+       │ Dept · Aisle                 │
+       │ [IN STOCK]   $11.99  HOLD IT │
+       └──────────────────────────────┘
+   Name gets the full width (fewer wraps on long names), and
+   price sits right beside the button it belongs to.
+   ========================================================== */
+@media (max-width:640px){
+  .prod{
+    grid-template-columns:auto minmax(0,1fr) auto;
+    grid-template-areas:
+      "nm  nm  nm"
+      "stk pr  act";
+    align-items:center;
+    gap:10px 12px;
+    padding:14px 6px;
+    margin-inline:-6px;
+  }
+  .prod > :first-child{ grid-area:nm; min-width:0 }
+  .prod .nm{ font-size:1.04rem; line-height:1.28 }
+  .prod .mt{ margin-top:4px }
+  .prod .stk{ grid-area:stk; justify-self:start; align-self:center }
+  .prod .pr{ grid-area:pr; justify-self:end; text-align:right; font-size:1.14rem }
+  .prod .act{ grid-area:act; justify-self:end }
+  .prod .act .btn{ min-height:44px; padding-inline:16px }
+
+  /* touch feedback, since :hover never fires on a phone */
+  .prod:active{ background:rgba(217,154,52,.16) }
+  .band--dark .prod:active{ background:rgba(255,255,255,.08) }
+}
+
+/* Very narrow phones: the chip + price + button line can get
+   crowded once a price runs to five characters. Let the chip
+   shrink its padding before anything wraps. */
+@media (max-width:380px){
+  .prod{ gap:9px 8px }
+  .prod .stk{ padding:6px 8px; letter-spacing:.09em }
+  .prod .act .btn{ padding-inline:13px; font-size:.7rem }
+}
+
+
+/* ==========================================================
+   5. TABLES — contained, and obviously swipeable
+   ========================================================== */
+.tablewrap{
+  overflow-x:auto;
+  overscroll-behavior-x:contain;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:thin;
+}
+
+@media (max-width:760px){
+  /* A sticky hint that rides the left edge while you swipe.
+     Only shown on tables that genuinely overflow — the hours
+     table on visit.html opts out with inline min-width:0. */
+  .tablewrap:has(table.tr-table:not([style*="min-width:0"]))::after{
+    content:"⟷  Swipe the table";
+    display:block;
+    position:sticky;
+    left:0;
+    width:max-content;
+    margin-top:10px;
+    font-family:var(--f-display);
+    font-weight:800;
+    font-size:.62rem;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    opacity:.55;
+  }
+  table.tr-table{ font-size:.9rem }
+  table.tr-table th{ padding:11px 12px; white-space:nowrap }
+  table.tr-table td{ padding:11px 12px }
+  /* the HQ stock table is 7 columns — 560px crushes it */
+  #hqTable{ min-width:720px }
+}
+
+
+/* ==========================================================
+   6. GRIDS — every collapse checked at 360
+   ========================================================== */
+
+/* Two-up board/drive rows had no rule between row 1 and row 2. */
+@media (max-width:1080px){
+  .board-grid > .board-cell:nth-child(n+3){ border-top:1px solid rgba(255,255,255,.12) }
+  .drive-grid > .drive-cell:nth-child(n+3){ border-top:1px solid var(--line) }
+}
+
+@media (max-width:640px){
+  /* Stats read better two-up than as a tall single stack.
+     A lone odd one out spans the row so the 1px grid gap
+     never shows an empty cell. */
+  .stat-row{ grid-template-columns:repeat(2,minmax(0,1fr)) }
+  .stat{ padding:20px 14px }
+  .stat .k{ margin-top:8px; letter-spacing:.14em }
+  .stat:last-child:nth-child(odd){ grid-column:1 / -1 }
+
+  /* Footer: the three link columns are short enough to pair up.
+     The brand block keeps the full width. */
+  .foot-top{ grid-template-columns:1fr 1fr; gap:30px 24px }
+  .foot-top > :first-child{ grid-column:1 / -1 }
+  .foot-top img{ width:150px; margin-bottom:14px }
+  .foot-top h4{ margin-bottom:10px }
+
+  /* Board / drive cells: keep the numbers big, trim the padding. */
+  .board-head{ padding:14px 16px; gap:10px }
+  .board-head .when{ margin-left:0; flex-basis:100% }
+  .board-cell .v{ font-size:1.3rem }
+
+  /* Department tiles are 4:5 photos — a full-height stack of
+     eight is a lot of scrolling. Shorten them a touch. */
+  .goods{ gap:26px }
+  .good .ph{ aspect-ratio:4/3.4 }
+  .good .lab{ left:16px; right:16px; bottom:14px }
+
+  .cards{ gap:22px }
+  .card-in{ padding:20px 20px 22px }
+
+  .meters{ gap:18px }
+  .reqs{ gap:1px }
+  .req{ padding:18px 18px }
+
+  .menu-item{ padding:16px 0 }
+  .menu-item .nm{ font-size:1.08rem }
+  .menu-item .ds{ margin-top:6px }
+
+  .result-head{ gap:6px 12px }
+  .intent-note{ padding:14px 16px; gap:10px }
+}
+
+/* .split, .two-col, .goods, .cards, .meters and .reqs already
+   collapse to a single column above; nothing to add there. */
+
+
+/* ==========================================================
+   7. TOUCH TARGETS — 44×44 minimum
+   ========================================================== */
+@media (max-width:900px){
+  .btn--sm{ min-height:44px; padding-block:11px }
+  .btn{ min-height:48px }
+  .chip{ min-height:44px; display:inline-flex; align-items:center }
+  .stormtoggle{ min-height:44px }
+  .searchbox button{ min-height:52px }
+
+  /* Footer + inline links were 18px tall hit boxes. */
+  .foot-top li{ margin-bottom:0 }
+  .foot-top a{ display:inline-block; padding:13px 0; line-height:1.15 }
+  .foot-legal{ gap:14px 20px }
+  .foot-legal a{ display:inline-block; padding:11px 0 }
+  a[href^="tel:"],
+  a[href^="mailto:"]{ display:inline-block; padding:6px 0 }
+
+  /* The whole department tile should be tappable, not just the
+     photo — it already is, this just guarantees the footer row
+     of the tile is inside the same hit box. */
+  .good .foot{ padding-top:12px }
+}
+
+
+/* ==========================================================
+   8. MODAL (#trModal) on a short phone
+   ----------------------------------------------------------
+   Close button measured 21×24 and scrolled away with the body.
+   ========================================================== */
+@media (max-width:640px){
+  .modal{
+    padding:14px;
+    padding-top:max(14px, env(safe-area-inset-top));
+    padding-bottom:max(14px, env(safe-area-inset-bottom));
+    align-items:center;
+  }
+  .modal-card{
+    width:100%;
+    max-height:100%;
+    overscroll-behavior:contain;
+  }
+  /* header stays put so Close is always one tap away */
+  .modal-head{
+    position:sticky;
+    top:0;
+    z-index:3;
+    padding:14px 16px;
+  }
+  .modal-head h3{ font-size:1rem }
+  .modal-head button{
+    width:44px; height:44px; min-width:44px;
+    display:inline-flex; align-items:center; justify-content:center;
+    margin:-10px -8px -10px auto;
+    font-size:1.75rem;
+  }
+  .modal-body{ padding:20px 16px 24px }
+  .modal-body .btn{ width:100% }
+  .receipt{ padding:16px; font-size:.84rem; line-height:1.7 }
+}
+
+
+/* ==========================================================
+   9. FORMS — never let iOS zoom on focus
+   ========================================================== */
+@media (max-width:900px){
+  .field input,.field textarea,.field select,
+  .formbox input,.formbox textarea,.formbox select,
+  .modal input,.modal textarea,.modal select,
+  input,textarea,select{
+    font-size:16px;      /* below 16px Safari zooms the viewport */
+  }
+  .field input,.field select{ min-height:48px }
+  .field textarea{ min-height:132px }
+  .field label{ font-size:.72rem }
+  .searchbox input{
+    font-size:clamp(1rem, 4.4vw, 1.3rem);
+    padding:18px 18px;
+  }
+  .formbox{ padding:22px 20px }
+}
+
+
+/* ==========================================================
+   10. SPACING RHYTHM
+   ========================================================== */
+@media (max-width:480px){
+  .band{ padding:56px 0 }
+  .band--tight{ padding:34px 0 }
+  .site-foot{ padding-top:56px }
+  .foot-motto{ padding:36px 0 20px }
+  .lede{ margin-bottom:22px }
+  .eyebrow{ margin-bottom:14px; gap:10px }
+  .btnrow{ gap:11px }
+  .pillrow{ gap:8px; margin-top:16px }
+  .results{ margin-top:22px }
+}
+
+/* Hero: use the dynamic viewport so the first fold does not
+   jump when the mobile URL bar collapses. */
+@media (max-width:900px){
+  .hero{ min-height:min(78dvh, 760px) }
+  .hero-btns .btn{ width:100% }
+}
+
+
+/* ==========================================================
+   11. TABLET (768 / 834) — the awkward middle
+   ========================================================== */
+@media (min-width:641px) and (max-width:900px){
+  /* .prod keeps its 4-column desktop row here; just make sure
+     the button is a real target and the name can breathe. */
+  .prod{ gap:16px; padding:15px 4px }
+  .prod .act .btn{ min-height:44px }
+  .goods{ grid-template-columns:repeat(2,minmax(0,1fr)) }
+  .cards{ grid-template-columns:repeat(2,minmax(0,1fr)) }
+  .foot-top{ grid-template-columns:1fr 1fr; gap:34px }
+}

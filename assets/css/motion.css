@@ -1,0 +1,682 @@
+/* ==========================================================
+   TWISTED ROOTS MERC — MOTION LAYER
+   Additive only. Loads AFTER site.css. Owns no existing class.
+   Every selector here is new: .hangsign · .wood · .carved · .burned
+   .wavedivider · .treeline · .fogdrift · .rainlayer · .birds
+   plus [data-parallax], [data-rv-stagger] helpers and .mo-* utilities.
+
+   Wind on the coast, chains on the sign, fog in the firs.
+   ========================================================== */
+
+/* ----------------------------------------------------------
+   0. MOTION TOKENS  (all namespaced --mo-* / --hs-*)
+   Uses the site palette: --ink --cream --paper --wood --wood-dk
+   --rust --teal --pine --amber --amber-hi --f-display --f-sign --f-body
+   ---------------------------------------------------------- */
+:root{
+  --mo-ease-sway:cubic-bezier(.42,0,.58,1);      /* sinusoidal, pendulum-ish */
+  --mo-ease-out:cubic-bezier(.2,.8,.3,1);
+  --mo-teal-1:#215C6B;                            /* --teal  (carved wave)   */
+  --mo-teal-2:#3D95A8;                            /* --teal-lt               */
+  --mo-teal-3:#14424E;                            /* deep trough             */
+  --mo-fog:236,240,238;
+  --mo-rain:205,232,242;
+}
+
+/* Overflow guard you can drop on any wrapper that holds motion. */
+.mo-x-safe{overflow-x:clip; max-width:100%}
+.mo-relative{position:relative}
+.mo-clip{position:relative; overflow:hidden}
+
+
+/* ==========================================================
+   1. HANGING SWINGING SIGN
+   .hangsign > .hangsign__beam
+             > .hangsign__pivot   (slow idle sway, infinite)
+               > .hangsign__rig   (damped pendulum hit, triggered)
+                 > .hangsign__chain--l / --r
+                 > [.hangsign__board >] .hangsign__plate (the logo img)
+
+   Both pivot + rig rotate about 50% 0 (the beam line), so the idle
+   sway and the damped hit compose instead of fighting.
+   The container reserves the swing arc as inline padding, so the sign
+   can never push layout or spawn a horizontal scrollbar.
+   ========================================================== */
+.hangsign{
+  --hs-h:120px;            /* logo plate height          */
+  --hs-drop:26px;          /* chain / hook length        */
+  --hs-beam-h:12px;        /* beam thickness             */
+  --hs-beam-bleed:9%;      /* beam overhang past the arc */
+  --hs-sway:.8deg;         /* continuous idle sway       */
+  --hs-swing:4deg;         /* first throw of a hard swing*/
+  --hs-dur:4.6s;           /* damped swing duration      */
+  --hs-idle-dur:7.4s;      /* idle sway period           */
+  --hs-chain-x:17%;        /* chain inset from the edges */
+
+  position:relative;
+  display:inline-block;
+  vertical-align:middle;
+  line-height:0;
+  padding-top:var(--hs-beam-h);
+  /* arc reservation: bottom corners travel h·sin(θ); 11% covers 4–7deg */
+  padding-inline:calc((var(--hs-drop) + var(--hs-h)) * .11);
+  max-width:100%;
+  isolation:isolate;
+  -webkit-tap-highlight-color:transparent;
+}
+
+/* ---- the beam it hangs from ---- */
+.hangsign__beam{
+  position:absolute; top:0; left:0; right:0; z-index:0;
+  height:var(--hs-beam-h);
+  border-radius:calc(var(--hs-beam-h) * .18);
+  background-color:var(--wood-dk,#8A6238);
+  background-image:
+    /* two knots */
+    radial-gradient(ellipse 14% 140% at 21% 55%, rgba(52,32,14,.55), transparent 68%),
+    radial-gradient(ellipse 9% 120% at 77% 42%, rgba(52,32,14,.42), transparent 70%),
+    /* long grain lines running the beam */
+    repeating-linear-gradient(179deg,
+      rgba(255,255,255,.10) 0 1px,
+      transparent 1px 3px,
+      rgba(0,0,0,.16) 3px 4px,
+      transparent 4px 7px),
+    /* round-over shading */
+    linear-gradient(180deg,
+      rgba(255,255,255,.34) 0%,
+      rgba(255,255,255,.05) 26%,
+      rgba(0,0,0,.16) 62%,
+      rgba(0,0,0,.42) 100%),
+    linear-gradient(90deg, rgba(0,0,0,.32), transparent 12%, transparent 88%, rgba(0,0,0,.32));
+  box-shadow:0 2px 5px rgba(20,14,8,.35), inset 0 0 0 1px rgba(40,26,12,.35);
+}
+.hangsign--beamwide .hangsign__beam{left:calc(var(--hs-beam-bleed) * -1); right:calc(var(--hs-beam-bleed) * -1)}
+.hangsign--nobeam .hangsign__beam{display:none}
+
+/* ---- pivots ---- */
+.hangsign__pivot{
+  position:relative; z-index:1;
+  display:block;                 /* must be a block for transform to apply */
+  transform-origin:50% 0;
+  animation:hs-idle var(--hs-idle-dur) var(--mo-ease-sway) infinite;
+  backface-visibility:hidden;
+}
+.hangsign__rig{
+  position:relative;
+  display:block;
+  padding-top:var(--hs-drop);
+  transform-origin:50% 0;
+  will-change:transform;
+  backface-visibility:hidden;
+  /* swings hard on page load, with no JS required */
+  animation:hs-swing var(--hs-dur) 1 both;
+}
+
+/* ---- chains ---- */
+.hangsign__chain{
+  position:absolute; top:0; z-index:0;
+  width:max(3px, calc(var(--hs-beam-h) * .34));
+  height:calc(var(--hs-drop) + 2px);
+  background-image:
+    /* link beads */
+    repeating-linear-gradient(180deg,
+      rgba(255,255,255,.42) 0 1px,
+      rgba(146,138,124,.95) 1px 2px,
+      rgba(22,18,14,.92) 2px 4px,
+      rgba(178,170,154,.9) 4px 5px,
+      rgba(22,18,14,.55) 5px 6px,
+      rgba(0,0,0,0) 6px 7px),
+    /* barrel shading */
+    linear-gradient(90deg,
+      rgba(18,14,10,.95) 0%, rgba(96,88,76,.95) 26%,
+      rgba(206,198,182,.95) 48%, rgba(104,96,84,.95) 68%, rgba(16,12,9,.95) 100%);
+  background-blend-mode:multiply, normal;
+  filter:drop-shadow(0 1px 1px rgba(0,0,0,.4));
+}
+.hangsign__chain--l{left:var(--hs-chain-x)}
+.hangsign__chain--r{right:var(--hs-chain-x)}
+/* eye bolt into the beam */
+.hangsign__chain::before{
+  content:""; position:absolute; left:50%; top:calc(var(--hs-beam-h) * -.62);
+  width:calc(var(--hs-beam-h) * .82); height:calc(var(--hs-beam-h) * .82);
+  transform:translateX(-50%);
+  border:max(1px, calc(var(--hs-beam-h) * .16)) solid rgba(34,28,22,.92);
+  border-radius:50%;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.4), 0 1px 1px rgba(0,0,0,.35);
+}
+/* ring into the sign */
+.hangsign__chain::after{
+  content:""; position:absolute; left:50%; bottom:calc(var(--hs-beam-h) * -.34);
+  width:calc(var(--hs-beam-h) * .7); height:calc(var(--hs-beam-h) * .7);
+  transform:translateX(-50%);
+  border:max(1px, calc(var(--hs-beam-h) * .14)) solid rgba(34,28,22,.9);
+  border-radius:50%;
+}
+
+/* iron-hook variant: two forged rods instead of chain */
+.hangsign--hooks .hangsign__chain{
+  width:max(2px, calc(var(--hs-beam-h) * .24));
+  background-image:linear-gradient(90deg,
+    rgba(14,11,8,.96), rgba(112,104,92,.96) 38%,
+    rgba(198,190,176,.96) 52%, rgba(78,72,62,.96) 72%, rgba(12,10,7,.96));
+  background-blend-mode:normal;
+  border-radius:1px;
+}
+
+/* ---- the plate (the logo) ---- */
+.hangsign__plate{
+  display:block;
+  height:var(--hs-h);
+  width:auto;
+  max-width:100%;
+  margin-inline:auto;
+  filter:drop-shadow(0 6px 10px rgba(20,14,8,.34));
+  user-select:none; -webkit-user-drag:none;
+}
+[data-storm="on"] .hangsign__plate{filter:brightness(1.28) drop-shadow(0 3px 8px rgba(0,0,0,.6))}
+
+/* optional wooden plaque behind the transparent logo */
+.hangsign__board{
+  display:block; width:fit-content; margin-inline:auto;
+  padding:calc(var(--hs-h) * .09) calc(var(--hs-h) * .13);
+  border-radius:calc(var(--hs-h) * .03);
+  background-color:var(--wood,#C39A68);
+  background-image:
+    radial-gradient(ellipse 10% 60% at 18% 62%, rgba(58,36,16,.42), transparent 70%),
+    repeating-linear-gradient(178deg,
+      rgba(255,255,255,.10) 0 1px, transparent 1px 4px,
+      rgba(0,0,0,.14) 4px 5px, transparent 5px 9px),
+    linear-gradient(180deg, rgba(255,255,255,.20), rgba(0,0,0,.26));
+  box-shadow:
+    inset 0 0 0 2px rgba(48,32,16,.5),
+    inset 0 2px 6px rgba(255,255,255,.16),
+    0 8px 14px rgba(20,14,8,.32);
+}
+.hangsign__board .hangsign__plate{filter:drop-shadow(0 2px 2px rgba(20,14,8,.45))}
+
+/* ---- size variants ---- */
+.hangsign--sm{--hs-h:56px; --hs-drop:14px; --hs-beam-h:8px; --hs-idle-dur:6.2s; --hs-swing:3.4deg}
+.hangsign--md{--hs-h:120px; --hs-drop:26px; --hs-beam-h:12px}
+.hangsign--lg{--hs-h:170px; --hs-drop:34px; --hs-beam-h:14px}
+.hangsign--xl{--hs-h:240px; --hs-drop:44px; --hs-beam-h:16px; --hs-idle-dur:8.6s; --hs-dur:5.2s}
+.hangsign--block{display:block; width:fit-content; margin-inline:auto}
+
+@media (max-width:900px){
+  .hangsign--sm{--hs-h:42px; --hs-drop:10px; --hs-beam-h:6px}
+  .hangsign--xl{--hs-h:158px; --hs-drop:30px; --hs-beam-h:12px}
+}
+@media (max-width:640px){
+  .hangsign--lg{--hs-h:128px; --hs-drop:24px; --hs-beam-h:11px}
+  .hangsign--xl{--hs-h:124px; --hs-drop:24px; --hs-beam-h:11px}
+}
+
+/* ---- triggers ---- */
+/* JS-driven re-swing (hover, storm, API). Beats the load animation. */
+.hangsign.is-swinging .hangsign__rig{animation:hs-swing var(--hs-dur) 1 both}
+.hangsign.is-swinging--hard{--hs-swing:7.5deg; --hs-dur:5.4s}
+
+/* CSS-only hover fallback for when motion.js has not booted */
+@media (hover:hover){
+  html:not([data-motion="js"]) .hangsign:hover .hangsign__rig,
+  html:not([data-motion="js"]) .hangsign:focus-within .hangsign__rig{
+    animation:hs-swing var(--hs-dur) 1 both;
+  }
+}
+
+/* ---- storm: it never settles ---- */
+[data-storm="on"] .hangsign,
+.storm-on .hangsign,
+.hangsign.storm-on{--hs-sway:2.4deg; --hs-idle-dur:3.9s; --hs-swing:6.5deg}
+[data-storm="on"] .hangsign .hangsign__rig,
+.storm-on .hangsign .hangsign__rig,
+.hangsign.storm-on .hangsign__rig{animation:hs-gust 7.2s var(--mo-ease-sway) infinite}
+/* a JS-triggered swing still wins over the gust loop */
+.hangsign.is-swinging .hangsign__rig{animation:hs-swing var(--hs-dur) 1 both}
+
+/* ---- keyframes ---- */
+/* Damped pendulum: 4deg, -3deg, 2.2deg, -1.5deg, 1deg, -0.6deg → 0,
+   expressed as fractions of --hs-swing so every size decays alike. */
+@keyframes hs-swing{
+  0%  {transform:rotate(var(--hs-swing));                    animation-timing-function:var(--mo-ease-sway)}
+  12% {transform:rotate(calc(var(--hs-swing) * -.75));       animation-timing-function:var(--mo-ease-sway)}
+  25% {transform:rotate(calc(var(--hs-swing) * .55));        animation-timing-function:var(--mo-ease-sway)}
+  38% {transform:rotate(calc(var(--hs-swing) * -.375));      animation-timing-function:var(--mo-ease-sway)}
+  51% {transform:rotate(calc(var(--hs-swing) * .25));        animation-timing-function:var(--mo-ease-sway)}
+  64% {transform:rotate(calc(var(--hs-swing) * -.15));       animation-timing-function:var(--mo-ease-sway)}
+  77% {transform:rotate(calc(var(--hs-swing) * .085));       animation-timing-function:var(--mo-ease-sway)}
+  89% {transform:rotate(calc(var(--hs-swing) * -.035));      animation-timing-function:var(--mo-ease-sway)}
+  100%{transform:rotate(0deg)}
+}
+@keyframes hs-idle{
+  0%,100%{transform:rotate(calc(var(--hs-sway) * -1))}
+  50%    {transform:rotate(var(--hs-sway))}
+}
+/* storm gust: hard shove, partial decay, shove again */
+@keyframes hs-gust{
+  0%  {transform:rotate(0deg)}
+  5%  {transform:rotate(var(--hs-swing))}
+  15% {transform:rotate(calc(var(--hs-swing) * -.7))}
+  25% {transform:rotate(calc(var(--hs-swing) * .5))}
+  34% {transform:rotate(calc(var(--hs-swing) * -.3))}
+  44% {transform:rotate(calc(var(--hs-swing) * .8))}
+  55% {transform:rotate(calc(var(--hs-swing) * -.55))}
+  66% {transform:rotate(calc(var(--hs-swing) * .34))}
+  77% {transform:rotate(calc(var(--hs-swing) * -.2))}
+  88% {transform:rotate(calc(var(--hs-swing) * .1))}
+  100%{transform:rotate(0deg)}
+}
+
+
+/* ==========================================================
+   2. WOOD SURFACES
+   ========================================================== */
+.wood{
+  position:relative;
+  background-color:var(--wood,#C39A68);
+  background-image:
+    radial-gradient(ellipse 5% 42% at 19% 34%, rgba(56,34,14,.5), transparent 66%),
+    radial-gradient(ellipse 3.4% 30% at 71% 68%, rgba(56,34,14,.42), transparent 68%),
+    radial-gradient(ellipse 2.6% 22% at 88% 22%, rgba(56,34,14,.32), transparent 70%),
+    repeating-linear-gradient(178.4deg,
+      rgba(255,255,255,.09) 0 1px,
+      rgba(0,0,0,0)         1px 3px,
+      rgba(0,0,0,.10)       3px 4px,
+      rgba(0,0,0,0)         4px 8px),
+    repeating-linear-gradient(180.6deg,
+      rgba(0,0,0,.09)   0 6px,
+      rgba(255,255,255,.055) 6px 13px,
+      rgba(0,0,0,0)     13px 34px),
+    linear-gradient(178deg, rgba(255,255,255,.14), rgba(0,0,0,.20));
+  color:#2A1B0C;
+}
+.wood--dark{
+  background-color:var(--wood-dk,#8A6238);
+  background-image:
+    radial-gradient(ellipse 5% 44% at 26% 58%, rgba(24,13,4,.62), transparent 66%),
+    radial-gradient(ellipse 3.2% 28% at 78% 30%, rgba(24,13,4,.5), transparent 68%),
+    repeating-linear-gradient(178.4deg,
+      rgba(255,255,255,.07) 0 1px,
+      rgba(0,0,0,0)         1px 3px,
+      rgba(0,0,0,.20)       3px 4px,
+      rgba(0,0,0,0)         4px 9px),
+    repeating-linear-gradient(181deg,
+      rgba(0,0,0,.18)  0 7px,
+      rgba(255,255,255,.05) 7px 15px,
+      rgba(0,0,0,0)    15px 38px),
+    linear-gradient(178deg, rgba(255,255,255,.10), rgba(0,0,0,.42));
+  color:var(--cream,#F4EDE1);
+}
+/* horizontal planks with real seams and a round-over on each board */
+.wood--plank{
+  background-image:
+    /* seam shadow + light catch on the board above */
+    repeating-linear-gradient(180deg,
+      rgba(255,255,255,.18)  0 2px,
+      rgba(0,0,0,0)          2px 6px,
+      rgba(0,0,0,0)          calc(var(--mo-plank, 58px) - 8px) calc(var(--mo-plank, 58px) - 4px),
+      rgba(0,0,0,.34)        calc(var(--mo-plank, 58px) - 4px) calc(var(--mo-plank, 58px) - 1px),
+      rgba(0,0,0,.62)        calc(var(--mo-plank, 58px) - 1px) var(--mo-plank, 58px)),
+    radial-gradient(ellipse 4.6% 30% at 23% 26%, rgba(52,30,10,.48), transparent 66%),
+    radial-gradient(ellipse 3.2% 24% at 68% 74%, rgba(52,30,10,.4), transparent 68%),
+    repeating-linear-gradient(178.6deg,
+      rgba(255,255,255,.08) 0 1px,
+      rgba(0,0,0,0)         1px 3px,
+      rgba(0,0,0,.12)       3px 4px,
+      rgba(0,0,0,0)         4px 9px),
+    linear-gradient(178deg, rgba(255,255,255,.12), rgba(0,0,0,.26));
+  background-color:var(--wood,#C39A68);
+  box-shadow:inset 0 0 60px rgba(30,18,6,.28);
+}
+.wood--plank.wood--dark{background-color:var(--wood-dk,#8A6238)}
+
+/* photo-blended variants — layer wood-texture.jpg under the CSS grain */
+.wood--tex,
+.wood--tex.wood--dark,
+.wood--tex.wood--plank{
+  background-image:
+    linear-gradient(178deg, rgba(255,255,255,.10), rgba(0,0,0,.30)),
+    repeating-linear-gradient(178.4deg,
+      rgba(255,255,255,.08) 0 1px, rgba(0,0,0,0) 1px 3px,
+      rgba(0,0,0,.14) 3px 4px, rgba(0,0,0,0) 4px 9px),
+    url("../img/wood-texture.jpg");
+  background-size:auto, auto, cover;
+  background-position:center, center, center;
+  background-repeat:repeat, repeat, no-repeat;
+  background-blend-mode:overlay, multiply, normal;
+}
+.wood--tex.wood--dark{background-color:var(--bark,#2A1F14); background-blend-mode:overlay, multiply, luminosity}
+
+/* subtle living grain — the light creeping across the boards */
+.wood--breathe{animation:wood-breathe 22s var(--mo-ease-sway) infinite; background-attachment:local}
+@keyframes wood-breathe{
+  0%,100%{filter:brightness(1) saturate(1)}
+  50%    {filter:brightness(1.06) saturate(1.05)}
+}
+
+/* ---- CARVED: chiselled into the board ---- */
+.carved{
+  color:rgba(44,28,12,.9);
+  text-shadow:
+    0 -1px 0   rgba(0,0,0,.55),
+    0 -2px 2px rgba(0,0,0,.35),
+    0  1px 0   rgba(255,255,255,.34),
+    0  2px 3px rgba(255,255,255,.14);
+  -webkit-text-stroke:.35px rgba(30,18,6,.28);
+}
+.carved--light{
+  color:rgba(240,232,216,.94);
+  text-shadow:
+    0 -1px 0   rgba(0,0,0,.62),
+    0 -2px 3px rgba(0,0,0,.45),
+    0  1px 0   rgba(255,255,255,.30);
+  -webkit-text-stroke:0;
+}
+.carved--deep{
+  color:rgba(38,24,10,.96);
+  text-shadow:
+    0 -1px 0 rgba(0,0,0,.7), 0 -2px 1px rgba(0,0,0,.5), 0 -4px 6px rgba(0,0,0,.34),
+    0  1px 0 rgba(255,255,255,.42), 0  2px 1px rgba(255,255,255,.2), 0 4px 7px rgba(255,255,255,.12);
+}
+
+/* ---- BURNED: branding iron ---- */
+.burned{
+  color:#26150A;
+  text-shadow:
+    0 0 1px  rgba(18,8,0,.95),
+    0 0 4px  rgba(96,44,10,.55),
+    0 0 11px rgba(140,66,16,.34),
+    0 1px 0  rgba(255,218,158,.20);
+  -webkit-text-stroke:.4px rgba(20,9,0,.5);
+}
+.burned--hot{
+  color:#1C0E05;
+  text-shadow:
+    0 0 1px rgba(12,5,0,.98),
+    0 0 5px rgba(180,86,20,.62),
+    0 0 16px rgba(217,154,52,.42),
+    0 0 30px rgba(217,154,52,.2),
+    0 1px 0 rgba(255,226,170,.26);
+  animation:burn-glow 5.5s var(--mo-ease-sway) infinite;
+}
+@keyframes burn-glow{
+  0%,100%{text-shadow:0 0 1px rgba(12,5,0,.98), 0 0 5px rgba(180,86,20,.5),  0 0 16px rgba(217,154,52,.3),  0 1px 0 rgba(255,226,170,.22)}
+  50%    {text-shadow:0 0 1px rgba(12,5,0,.98), 0 0 7px rgba(200,96,24,.72), 0 0 26px rgba(242,185,83,.52), 0 1px 0 rgba(255,226,170,.3)}
+}
+
+
+/* ==========================================================
+   3. OREGON COAST MOTION DIVIDERS
+   ========================================================== */
+
+/* ---- 3a. WAVE DIVIDER — the carved wave from the logo, in motion ---- */
+.wavedivider{
+  --mo-wave-h:clamp(64px, 8.5vw, 128px);
+  position:relative; display:block; width:100%;
+  height:var(--mo-wave-h);
+  overflow:hidden; line-height:0; pointer-events:none;
+  background:transparent;
+  contain:paint;
+}
+.wavedivider__layer{
+  position:absolute; left:0; bottom:0;
+  width:200%; height:100%;
+  will-change:transform; backface-visibility:hidden;
+  animation:mo-wave-scroll linear infinite;
+}
+.wavedivider__layer svg{display:block; width:100%; height:100%}
+.wavedivider__layer--1{animation-duration:34s; opacity:.4}
+.wavedivider__layer--2{animation-duration:23s; opacity:.7; animation-direction:reverse}
+.wavedivider__layer--3{animation-duration:15s; opacity:1}
+@keyframes mo-wave-scroll{
+  from{transform:translate3d(0,0,0)}
+  to  {transform:translate3d(-50%,0,0)}
+}
+/* point the crest upward (use above a section instead of below) */
+.wavedivider--flip{transform:scaleY(-1)}
+/* pull the band up over the section above it */
+.wavedivider--overlap{margin-bottom:calc(var(--mo-wave-h) * -.02)}
+/* sits on top of a photo */
+.wavedivider--float{position:absolute; left:0; right:0; bottom:0; z-index:4; width:100%}
+[data-storm="on"] .wavedivider__layer--1{animation-duration:20s}
+[data-storm="on"] .wavedivider__layer--2{animation-duration:13s}
+[data-storm="on"] .wavedivider__layer--3{animation-duration:8.5s}
+
+/* ---- 3b. TREELINE — Douglas fir silhouette, very slow drift ---- */
+.treeline{
+  --mo-tree-h:clamp(84px, 10.5vw, 168px);
+  position:relative; display:block; width:100%;
+  height:var(--mo-tree-h);
+  overflow:hidden; line-height:0; pointer-events:none;
+  background:transparent;
+  contain:paint;
+}
+.treeline__layer{
+  position:absolute; left:0; bottom:0;
+  width:200%; height:100%;
+  will-change:transform; backface-visibility:hidden;
+  animation:mo-tree-drift linear infinite;
+}
+.treeline__layer svg{display:block; width:100%; height:100%}
+/* far ridge: hazier, higher, drifts the other way, almost imperceptibly */
+.treeline__layer--far{animation-duration:240s; opacity:.55; height:84%; animation-direction:reverse; filter:saturate(.72)}
+.treeline__layer--near{animation-duration:150s; opacity:1}
+@keyframes mo-tree-drift{
+  from{transform:translate3d(0,0,0)}
+  to  {transform:translate3d(-50%,0,0)}
+}
+.treeline--top{transform:scaleY(-1)}                        /* hangs from a top edge   */
+.treeline--float{position:absolute; left:0; right:0; bottom:0; z-index:3; width:100%}
+[data-storm="on"] .treeline__layer--near{animation-duration:96s}
+
+/* ---- 3c. FOGDRIFT — soft banks moving through the firs ---- */
+.fogdrift{
+  position:absolute; inset:0; z-index:2;
+  pointer-events:none; overflow:hidden;
+  opacity:.5;
+  mix-blend-mode:screen;
+  contain:paint;
+}
+.fogdrift::before,
+.fogdrift::after,
+.fogdrift > i{
+  content:""; position:absolute; inset:-40% -30%;
+  display:block;
+  background-repeat:no-repeat;
+  will-change:transform, opacity;
+  backface-visibility:hidden;
+}
+.fogdrift::before{
+  background-image:
+    radial-gradient(ellipse 42% 30% at 18% 62%, rgba(var(--mo-fog),.55), transparent 70%),
+    radial-gradient(ellipse 34% 22% at 58% 74%, rgba(var(--mo-fog),.42), transparent 72%),
+    radial-gradient(ellipse 50% 26% at 88% 58%, rgba(var(--mo-fog),.34), transparent 74%);
+  filter:blur(14px);
+  animation:mo-fog-a 64s var(--mo-ease-sway) infinite alternate;
+}
+.fogdrift::after{
+  background-image:
+    radial-gradient(ellipse 55% 24% at 74% 40%, rgba(var(--mo-fog),.4), transparent 72%),
+    radial-gradient(ellipse 30% 20% at 30% 34%, rgba(var(--mo-fog),.3), transparent 74%);
+  filter:blur(22px);
+  animation:mo-fog-b 92s var(--mo-ease-sway) infinite alternate;
+}
+.fogdrift > i{
+  background-image:
+    radial-gradient(ellipse 64% 18% at 46% 86%, rgba(var(--mo-fog),.5), transparent 70%);
+  filter:blur(10px);
+  animation:mo-fog-c 46s var(--mo-ease-sway) infinite alternate;
+}
+.fogdrift--light{opacity:.3}
+.fogdrift--heavy{opacity:.78}
+.fogdrift--low{inset:35% 0 0 0}       /* hugs the bottom of the photo */
+[data-storm="on"] .fogdrift{opacity:.82}
+@keyframes mo-fog-a{
+  0%  {transform:translate3d(-6%,2%,0)  scale(1.04); opacity:.75}
+  50% {transform:translate3d(4%,-1%,0)  scale(1.12); opacity:1}
+  100%{transform:translate3d(10%,3%,0)  scale(1.06); opacity:.7}
+}
+@keyframes mo-fog-b{
+  0%  {transform:translate3d(8%,-2%,0)  scale(1.1);  opacity:.6}
+  100%{transform:translate3d(-9%,3%,0)  scale(1.02); opacity:.95}
+}
+@keyframes mo-fog-c{
+  0%  {transform:translate3d(-10%,4%,0) scale(1);    opacity:.5}
+  100%{transform:translate3d(9%,0%,0)   scale(1.14); opacity:.9}
+}
+
+/* ---- 3d. RAINLAYER — the storm sheet (finer than site.css .rain) ---- */
+.rainlayer{
+  position:absolute; inset:0; z-index:3;
+  pointer-events:none; overflow:hidden;
+  opacity:0;
+  transition:opacity .9s ease;
+  contain:paint;
+  /* far sheet, on the element itself */
+  background-image:repeating-linear-gradient(80deg,
+    rgba(0,0,0,0) 0 9px,
+    rgba(var(--mo-rain),.16) 9px 9.6px,
+    rgba(0,0,0,0) 9.6px 24px);
+  background-size:auto 320px;
+  animation:mo-rain-far 2.1s linear infinite;
+}
+.rainlayer::before,
+.rainlayer::after{
+  content:""; position:absolute; inset:-8%;
+  pointer-events:none;
+}
+/* mid sheet */
+.rainlayer::before{
+  background-image:repeating-linear-gradient(77deg,
+    rgba(0,0,0,0) 0 7px,
+    rgba(var(--mo-rain),.3) 7px 7.8px,
+    rgba(0,0,0,0) 7.8px 18px);
+  background-size:auto 260px;
+  animation:mo-rain-mid 1.25s linear infinite;
+  opacity:.85;
+}
+/* near sheet: fatter, faster, blurred a hair so it reads as close */
+.rainlayer::after{
+  background-image:repeating-linear-gradient(73deg,
+    rgba(0,0,0,0) 0 17px,
+    rgba(var(--mo-rain),.46) 17px 18.2px,
+    rgba(0,0,0,0) 18.2px 44px);
+  background-size:auto 200px;
+  animation:mo-rain-near .72s linear infinite;
+  filter:blur(.4px);
+  opacity:.7;
+}
+@keyframes mo-rain-far {from{background-position:0 0}      to{background-position:-56px 320px}}
+@keyframes mo-rain-mid {from{background-position:0 0}      to{background-position:-62px 260px}}
+@keyframes mo-rain-near{from{background-position:0 0}      to{background-position:-64px 200px}}
+/* on switches */
+[data-storm="on"] .rainlayer,
+.storm-on .rainlayer,
+.rainlayer--on,
+.rainlayer.is-on{opacity:.42}
+[data-storm="on"] .rainlayer--heavy,
+.rainlayer--heavy.rainlayer--on,
+.rainlayer--heavy.is-on{opacity:.72}
+.rainlayer--always{opacity:.34}
+
+/* ---- 3e. BIRDS — the pair over the firs in the carved logo ---- */
+.birds{
+  position:absolute; inset:0; z-index:3;
+  pointer-events:none; overflow:hidden;
+  contain:paint;
+}
+.bird{
+  position:absolute; top:0; left:0;
+  width:var(--mo-bird-w, 26px); height:auto;
+  color:var(--ink,#20180F);
+  opacity:0;
+  will-change:transform, opacity;
+  backface-visibility:hidden;
+  animation:mo-bird-cross 38s linear infinite;
+}
+.bird svg{display:block; width:100%; height:auto; overflow:visible}
+.bird__w{transform-origin:50% 62%; animation:mo-bird-flap .58s var(--mo-ease-sway) infinite alternate}
+.bird--1{--mo-bird-w:26px; top:16%; animation-duration:38s; animation-delay:1.5s}
+.bird--2{--mo-bird-w:18px; top:23%; animation-duration:46s; animation-delay:4.2s; opacity:0}
+.bird--2 .bird__w{animation-duration:.7s}
+.bird--3{--mo-bird-w:13px; top:11%; animation-duration:57s; animation-delay:11s}
+.bird--3 .bird__w{animation-duration:.46s}
+.birds--light .bird{color:var(--cream,#F4EDE1)}
+.birds--pine  .bird{color:var(--pine,#254E3D)}
+@keyframes mo-bird-cross{
+  0%  {transform:translate3d(-16vw,0,0);        opacity:0}
+  3%  {                                          opacity:.9}
+  16% {transform:translate3d(14vw,-2.6vh,0)}
+  30% {transform:translate3d(40vw,1.6vh,0)}
+  44% {transform:translate3d(70vw,-2.2vh,0)}
+  54% {                                          opacity:.9}
+  58% {transform:translate3d(116vw,-4vh,0);      opacity:0}
+  100%{transform:translate3d(116vw,-4vh,0);      opacity:0}
+}
+@keyframes mo-bird-flap{
+  from{transform:scaleY(1)}
+  to  {transform:scaleY(.34)}
+}
+
+
+/* ==========================================================
+   4. SCROLL MOTION HELPERS (driven by motion.js)
+   ========================================================== */
+[data-parallax]{
+  will-change:transform;
+  backface-visibility:hidden;
+  transform:translate3d(0,0,0);
+}
+/* cover images get a touch of scale so the travel never shows an edge */
+img[data-parallax],
+[data-parallax-cover]{--mo-pscale:1.16}
+
+/* staggered reveal: motion.js writes transition-delay onto .rv children */
+[data-rv-stagger]{--mo-rv-step:90ms}
+
+/* count-up numbers keep a fixed advance so they never reflow */
+.mo-counting{font-variant-numeric:tabular-nums; font-feature-settings:"tnum" 1}
+
+/* generic fade-up for anything not already using .rv */
+.mo-rise{opacity:0; transform:translate3d(0,26px,0); transition:opacity .8s ease, transform .8s var(--mo-ease-out)}
+.mo-rise.in{opacity:1; transform:none}
+
+
+/* ==========================================================
+   5. REDUCED MOTION — stop absolutely all of it
+   ========================================================== */
+@media (prefers-reduced-motion:reduce){
+  .hangsign__pivot,
+  .hangsign__rig,
+  .hangsign.is-swinging .hangsign__rig,
+  [data-storm="on"] .hangsign .hangsign__rig,
+  .storm-on .hangsign .hangsign__rig,
+  .hangsign.storm-on .hangsign__rig,
+  html:not([data-motion="js"]) .hangsign:hover .hangsign__rig,
+  html:not([data-motion="js"]) .hangsign:focus-within .hangsign__rig,
+  .wavedivider__layer,
+  .treeline__layer,
+  .fogdrift::before,
+  .fogdrift::after,
+  .fogdrift > i,
+  .rainlayer,
+  .rainlayer::before,
+  .rainlayer::after,
+  .bird,
+  .bird__w,
+  .wood--breathe,
+  .burned--hot{
+    animation:none !important;
+    transition:none !important;
+  }
+  .hangsign__pivot,
+  .hangsign__rig{transform:none !important}
+  /* keep one bird visible, parked, as a static detail */
+  .bird{opacity:.75; transform:translate3d(18vw,0,0)}
+  .bird--2,.bird--3{display:none}
+  .fogdrift{opacity:.34}
+  [data-parallax]{transform:none !important; will-change:auto}
+  .mo-rise{opacity:1; transform:none}
+  /* layers stay 200% wide so the SVG keeps its aspect — they just hold still */
+  .wavedivider__layer,
+  .treeline__layer{transform:translate3d(-14%,0,0)}
+}

@@ -1,0 +1,17 @@
+# dev artifacts
+server.log
+fetch*.log
+nohup.out
+contact*.png
+slots*.json
+fetch_stock.py
+*.bak
+
+# source PNGs for generated art (the optimized .jpg ships instead)
+assets/img/tr-*.png
+assets/img/w-*.png
+
+# OS junk
+Thumbs.db
+.DS_Store
+desktop.ini

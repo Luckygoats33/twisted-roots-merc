@@ -1,0 +1,1038 @@
+/* ==========================================================
+   TWISTED ROOTS MERC — PRINT STYLES
+   Load it like this, after site.css:
+     <link rel="stylesheet" href="assets/css/print.css" media="print">
+
+   The idea: when somebody prints a page off this website it should
+   come out looking like a sheet from the store — the bakery menu on
+   the counter, the storm list you carry around the aisles — not a
+   screenshot of a website with the navigation sawed off.
+
+   Everything here is unwrapped (no @media print block) because the
+   media="print" attribute on the <link> already scopes it. If you
+   ever link this file without that attribute, wrap the whole thing
+   in @media print or it will repaint the live site.
+   ========================================================== */
+
+
+/* ----------------------------------------------------------
+   1. THE PAGE ITSELF
+   ---------------------------------------------------------- */
+@page{
+  size: Letter portrait;
+  margin: 18mm 14mm 20mm;
+}
+@page:first{
+  margin-top: 14mm;
+}
+
+html{
+  background:#fff !important;
+  scroll-behavior:auto !important;
+  -webkit-print-color-adjust:economy;
+  print-color-adjust:economy;
+}
+
+body{
+  background:#fff !important;
+  color:#000 !important;
+  overflow:visible !important;       /* site.css clips overflow-x; that kills fixed headers */
+  margin:0 !important;
+  font-family: Georgia, "Bitter", "Times New Roman", serif;
+  font-size:10.5pt;
+  line-height:1.42;
+  font-weight:400;
+  widows:3;
+  orphans:3;
+  -webkit-text-size-adjust:100%;
+}
+
+
+/* ----------------------------------------------------------
+   2. THE REPEATED STORE BLOCK
+   Chrome repeats position:fixed elements on every printed page,
+   so this is the running header and footer. Negative offsets push
+   them up into the @page margin.
+   ---------------------------------------------------------- */
+body::before{
+  content:"TWISTED ROOTS MERC  ·  Mercantile · Bakery · Kitchen  ·  101 & 151 N Gaither St, Siletz, Oregon 97380";
+  position:fixed;
+  top:-11mm; left:0; right:0;
+  display:block;
+  font-family: Georgia, "Bitter", serif;
+  font-size:7.5pt;
+  font-weight:700;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+  color:#000;
+  padding-bottom:2mm;
+  border-bottom:.75pt solid #000;
+}
+
+body::after{
+  content:"(541) 555-0134  ·  twistedrootsmerc.com  ·  Good food. Good goods. Deep roots.";
+  position:fixed;
+  bottom:-13mm; left:0; right:0;
+  display:block;
+  font-family: Georgia, "Bitter", serif;
+  font-size:7.5pt;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:#000;
+  padding-top:2mm;
+  border-top:.75pt solid #000;
+}
+
+
+/* ----------------------------------------------------------
+   3. HIDE EVERYTHING THAT IS SCREEN FURNITURE
+   ---------------------------------------------------------- */
+.site-head,
+.stormbar,
+.burger,
+.nav,
+.head-cta,
+.openpill,
+.ticker,
+.ticker-track,
+.searchbox,
+.chips,
+.chip,
+.results,
+.result-head,
+.intent-note,
+.modal,
+.modal-bg,
+.modal-card,
+.stormtoggle,
+.btn,
+.btnrow,
+button,
+input,
+select,
+textarea,
+form,
+.field,
+video,
+iframe,
+audio,
+canvas,
+svg.rootsys-svg{
+  display:none !important;
+}
+
+/* A .formbox wrapped around a form is a web form and goes.
+   A .formbox with no form in it is a panel — on visit.html it holds the
+   Hours table, which is the whole reason somebody prints that page. */
+.formbox:has(form){ display:none !important; }
+.formbox{
+  border:.75pt solid #000 !important;
+  background:#fff !important;
+  padding:7pt 9pt !important;
+  margin:0 0 8pt !important;
+  break-inside:avoid !important;
+  page-break-inside:avoid !important;
+}
+
+/* Motion / atmosphere layers — every last one */
+.rootsys,
+.rootsprout,
+.wavedivider,
+.wavedivider__layer,
+.treeline,
+.treeline__layer,
+.fogdrift,
+.rainlayer,
+.rain,
+.birds,
+.bird,
+.hangsign,
+.hangsign__beam,
+.hangsign__rig,
+.hangsign__chain,
+.hangsign__chain--l,
+.hangsign__chain--r,
+.hangsign__plate,
+.hangsign__board,
+.wood--breathe,
+.meter .bar,
+.drive-cell .bar,
+.figframe::after,
+.hero::after,
+.good .ph::after{
+  display:none !important;
+  content:none !important;
+}
+
+/* Kill every animation and transition so nothing prints mid-flight */
+*,
+*::before,
+*::after{
+  animation:none !important;
+  transition:none !important;
+  text-shadow:none !important;
+  box-shadow:none !important;
+  filter:none !important;
+  transform:none !important;
+  will-change:auto !important;
+  background-image:none !important;
+  scroll-behavior:auto !important;
+}
+
+/* Reveal-on-scroll classes start at opacity:0. Without this the
+   printed page is mostly blank below the fold. Non-negotiable. */
+.rv,
+.rv.in,
+.mo-rise,
+.flip,
+[data-rv-stagger] > *{
+  opacity:1 !important;
+  transform:none !important;
+  visibility:visible !important;
+}
+
+
+/* ----------------------------------------------------------
+   4. FLATTEN COLOR — black on white, everywhere
+   ---------------------------------------------------------- */
+main,
+section,
+article,
+aside,
+div,
+header,
+footer,
+figure,
+p, li, td, th, span, b, em, i, strong,
+h1, h2, h3, h4, h5, h6{
+  background:transparent !important;
+  color:#000 !important;
+  text-shadow:none !important;
+}
+
+.band,
+.band--tight,
+.band--cream,
+.band--sand,
+.band--paper,
+.band--ink,
+.band--bark,
+.band--pine,
+.band--teal,
+.band--rust,
+.band--dark,
+.board,
+.board-head,
+.board-cell,
+.drive,
+.drive-cell,
+.drive-cell--us,
+.card,
+.req,
+.stat,
+.hero,
+.hero-in,
+.site-foot{
+  background:#fff !important;
+  color:#000 !important;
+}
+
+.band{
+  padding:0 0 14pt !important;
+  border:0 !important;
+}
+.band--tight{ padding:0 0 10pt !important; }
+
+.wrap,
+.wrap--mid,
+.wrap--narrow{
+  width:100% !important;
+  max-width:none !important;
+  margin:0 !important;
+  padding:0 !important;
+}
+
+/* Anything still leaning on a custom property gets a printable value */
+:root{
+  --ink:#000; --ink-2:#000; --bark:#000;
+  --cream:#fff; --paper:#fff; --sand:#fff;
+  --wood:#000; --wood-lt:#000; --wood-dk:#000;
+  --rust:#000; --rust-lt:#000;
+  --teal:#000; --teal-lt:#000;
+  --pine:#000; --amber:#000; --amber-hi:#000;
+  --red:#000; --ok:#000;
+  --line:#999; --line-2:#000;
+}
+
+.muted,
+.small.muted,
+.lede{
+  opacity:1 !important;
+}
+
+
+/* ----------------------------------------------------------
+   5. TYPE
+   ---------------------------------------------------------- */
+h1, h2, h3, h4,
+.h-mega, .h1, .h2, .h3, .h4{
+  font-family: Georgia, "Bitter", "Times New Roman", serif;
+  color:#000 !important;
+  letter-spacing:0 !important;
+  break-after:avoid !important;
+  page-break-after:avoid !important;
+  break-inside:avoid !important;
+  margin-top:0;
+}
+
+.h-mega{
+  font-size:22pt !important;
+  line-height:1.04 !important;
+  font-weight:700 !important;
+  text-transform:none !important;
+  margin:0 0 4pt !important;
+}
+.h1{
+  font-size:16pt !important;
+  line-height:1.1 !important;
+  font-weight:700 !important;
+  text-transform:none !important;
+  margin:0 0 6pt !important;
+  padding-bottom:3pt;
+  border-bottom:1pt solid #000;
+}
+.h2{
+  font-size:13pt !important;
+  line-height:1.15 !important;
+  font-weight:700 !important;
+  margin:0 0 5pt !important;
+}
+.h3{
+  font-size:11pt !important;
+  line-height:1.2 !important;
+  font-weight:700 !important;
+  margin:10pt 0 4pt !important;
+}
+.h4{ font-size:10pt !important; margin:0 0 3pt !important; }
+
+.eyebrow{
+  font-family: Helvetica, Arial, sans-serif;
+  font-size:7pt !important;
+  font-weight:700 !important;
+  letter-spacing:.18em !important;
+  text-transform:uppercase !important;
+  color:#000 !important;
+  display:block !important;
+  margin:0 0 4pt !important;
+  break-after:avoid;
+}
+.eyebrow::before{ content:"" !important; display:none !important; }
+.eyebrow--c, .center, .center .lede, .center .eyebrow{ text-align:left !important; }
+
+.hero-tag{
+  font-family: Helvetica, Arial, sans-serif;
+  font-size:7.5pt !important;
+  letter-spacing:.16em !important;
+  text-transform:uppercase !important;
+  color:#000 !important;
+  margin:0 0 4pt !important;
+}
+.hero-motto{
+  font-size:10pt !important;
+  font-weight:700 !important;
+  letter-spacing:.06em !important;
+  text-transform:none !important;
+  color:#000 !important;
+  margin:4pt 0 8pt !important;
+}
+
+.lede{
+  font-size:10.5pt !important;
+  line-height:1.45 !important;
+  max-width:none !important;
+  margin:0 0 7pt !important;
+}
+p{ margin:0 0 7pt !important; }
+.small{ font-size:9pt !important; }
+.serif-caps{
+  font-family: Helvetica, Arial, sans-serif;
+  font-size:8pt !important;
+  letter-spacing:.14em;
+}
+.stamp{
+  border:.75pt solid #000 !important;
+  color:#000 !important;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size:7.5pt !important;
+  padding:3pt 7pt !important;
+}
+.rule{ background:#000 !important; height:.5pt !important; margin:8pt 0 !important; }
+.rule--dia{ display:none !important; }
+.two-col{ columns:2 !important; column-gap:20pt !important; }
+
+
+/* ----------------------------------------------------------
+   6. LINKS — expand external ones, leave internal nav alone
+   ---------------------------------------------------------- */
+a{
+  color:#000 !important;
+  text-decoration:none !important;
+}
+a[href^="http"]::after{
+  content:" (" attr(href) ")";
+  font-family: Helvetica, Arial, sans-serif;
+  font-size:7.5pt;
+  font-weight:400;
+  letter-spacing:0;
+  word-break:break-all;
+  color:#333 !important;
+}
+/* Internal nav, in-page anchors, phone and mail links stay clean */
+a[href^="#"]::after,
+a[href^="tel"]::after,
+a[href^="mailto"]::after,
+a[href^="./"]::after,
+a[href^="/"]::after,
+a[href$=".html"]::after,
+a[href^="https://twistedrootsmerc.com"]::after,
+.nav a::after,
+.site-foot a::after,
+.good::after,
+.good a::after,
+.btn::after{
+  content:"" !important;
+  display:none !important;
+}
+
+
+/* ----------------------------------------------------------
+   7. IMAGES — drop the photography, keep the logo
+   ---------------------------------------------------------- */
+img,
+picture,
+figure,
+figcaption,
+.hero-img,
+.figframe,
+.good .ph img,
+.card > img{
+  display:none !important;
+}
+
+.site-foot .foot-top img{
+  display:block !important;
+  width:34mm !important;
+  height:auto !important;
+  margin:0 0 5pt !important;
+  filter:none !important;
+}
+
+
+/* ----------------------------------------------------------
+   8. HERO — becomes a plain page title block
+   ---------------------------------------------------------- */
+.hero{
+  position:static !important;
+  min-height:0 !important;
+  height:auto !important;
+  display:block !important;
+  overflow:visible !important;
+  color:#000 !important;
+  padding:0 !important;
+  margin:0 0 10pt !important;
+  border-bottom:1.5pt solid #000;
+}
+.hero-in{
+  position:static !important;
+  padding:0 0 8pt !important;
+  z-index:auto !important;
+}
+.hero h1,
+.hero h1 em{
+  color:#000 !important;
+  font-style:normal !important;
+}
+.hero-btns{ display:none !important; }
+
+
+/* ----------------------------------------------------------
+   9. LAYOUT — collapse the screen grids
+   ---------------------------------------------------------- */
+.split,
+.split--rev,
+.split--top{
+  display:block !important;
+  gap:0 !important;
+}
+.split--rev > *:first-child{ order:0 !important; }
+.split > * + *{ margin-top:8pt; }
+
+.goods,
+.cards,
+.meters,
+.reqs{
+  display:block !important;
+  gap:0 !important;
+  background:#fff !important;
+}
+
+
+/* ----------------------------------------------------------
+   10. DEPARTMENT TILES (.good) — become a plain list
+   ---------------------------------------------------------- */
+.good{
+  display:block !important;
+  break-inside:avoid !important;
+  page-break-inside:avoid !important;
+  padding:5pt 0 !important;
+  border-bottom:.5pt solid #999 !important;
+  text-decoration:none !important;
+}
+.good .ph{
+  position:static !important;
+  aspect-ratio:auto !important;
+  overflow:visible !important;
+  background:none !important;
+  display:block !important;
+}
+.good .num{
+  position:static !important;
+  display:inline !important;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size:7.5pt !important;
+  font-weight:700;
+  letter-spacing:.14em;
+  color:#000 !important;
+  margin-right:6pt;
+}
+.good .lab{
+  position:static !important;
+  display:inline !important;
+  left:auto !important; right:auto !important; bottom:auto !important;
+  color:#000 !important;
+}
+.good .lab h3{
+  display:inline !important;
+  font-size:11pt !important;
+  margin:0 !important;
+  text-transform:none !important;
+  border:0 !important;
+}
+.good .lab p{
+  display:inline !important;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size:8pt !important;
+  letter-spacing:.08em;
+  margin:0 0 0 6pt !important;
+  color:#000 !important;
+}
+.good .foot{
+  display:block !important;
+  border:0 !important;
+  padding:2pt 0 0 !important;
+  margin:0 !important;
+  font-size:9pt;
+}
+.good .foot em{ font-style:italic !important; opacity:1 !important; }
+.good .foot span{ display:none !important; }
+
+
+/* ----------------------------------------------------------
+   11. PRODUCT ROWS (.prod) — name, aisle, stock, price
+   ---------------------------------------------------------- */
+.prod{
+  display:grid !important;
+  grid-template-columns:1fr auto auto !important;
+  gap:0 10pt !important;
+  align-items:baseline !important;
+  padding:3.5pt 0 !important;
+  border-bottom:.5pt solid #bbb !important;
+  break-inside:avoid !important;
+  page-break-inside:avoid !important;
+  background:#fff !important;
+}
+.prod:hover{ background:#fff !important; }
+.prod .nm{
+  font-family: Georgia, "Bitter", serif;
+  font-weight:700 !important;
+  font-size:10pt !important;
+  line-height:1.25 !important;
+}
+.prod .mt{
+  font-family: Helvetica, Arial, sans-serif;
+  font-size:7.5pt !important;
+  font-weight:400 !important;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:#444 !important;
+  margin-top:1pt !important;
+}
+.prod .pr{
+  font-family: Georgia, "Bitter", serif;
+  font-weight:700 !important;
+  font-size:10pt !important;
+  white-space:nowrap;
+  text-align:right;
+}
+.prod .act{ display:none !important; }
+
+.stk,
+.stk--in,
+.stk--low,
+.stk--out{
+  font-family: Helvetica, Arial, sans-serif;
+  font-size:7pt !important;
+  font-weight:700 !important;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  padding:1pt 4pt !important;
+  border:.5pt solid #000 !important;
+  background:#fff !important;
+  color:#000 !important;
+  white-space:nowrap;
+}
+.stk--out{ border-style:dashed !important; color:#555 !important; }
+
+
+/* ----------------------------------------------------------
+   12. MENUS (.menu-list / .menu-item)
+   ---------------------------------------------------------- */
+.menu-list{
+  display:block !important;
+  gap:0 !important;
+}
+.menu-item{
+  display:flex !important;
+  flex-wrap:wrap !important;
+  align-items:baseline !important;
+  gap:0 8pt !important;
+  padding:4pt 0 !important;
+  border-bottom:.5pt dotted #999 !important;
+  break-inside:avoid !important;
+  page-break-inside:avoid !important;
+}
+.menu-item .nm{
+  font-family: Georgia, "Bitter", serif;
+  font-weight:700 !important;
+  font-size:10.5pt !important;
+}
+.menu-item .dots{
+  flex:1 !important;
+  min-width:14pt !important;
+  border-bottom:.5pt dotted #666 !important;
+  transform:none !important;
+  position:relative;
+  top:-2pt;
+}
+.menu-item .pr{
+  font-family: Georgia, "Bitter", serif;
+  font-weight:700 !important;
+  font-size:10.5pt !important;
+  white-space:nowrap;
+}
+.menu-item .ds{
+  flex-basis:100% !important;
+  font-size:8.5pt !important;
+  line-height:1.35 !important;
+  color:#333 !important;
+  opacity:1 !important;
+  margin-top:1pt !important;
+}
+/* "· 4 left today" is a live count. It is a lie the moment it prints. */
+.menu-item .ds b{ display:none !important; }
+.menu-item.sold .nm{ opacity:1 !important; color:#555 !important; }
+.menu-item.sold .pr{ opacity:1 !important; color:#555 !important; }
+
+
+/* ----------------------------------------------------------
+   13. TABLES
+   ---------------------------------------------------------- */
+.tablewrap{ overflow:visible !important; }
+table.tr-table{
+  width:100% !important;
+  min-width:0 !important;
+  border-collapse:collapse !important;
+  font-size:9pt !important;
+  margin:0 0 8pt !important;
+  break-inside:auto;
+}
+table.tr-table thead{ display:table-header-group; }
+table.tr-table th{
+  font-family: Helvetica, Arial, sans-serif;
+  font-size:7.5pt !important;
+  font-weight:700 !important;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  text-align:left;
+  padding:4pt 6pt 3pt 0 !important;
+  border-bottom:1pt solid #000 !important;
+  color:#000 !important;
+  opacity:1 !important;
+}
+table.tr-table td{
+  padding:4pt 6pt 4pt 0 !important;
+  border-bottom:.5pt solid #bbb !important;
+  vertical-align:top;
+  color:#000 !important;
+}
+table.tr-table tr{
+  break-inside:avoid !important;
+  page-break-inside:avoid !important;
+}
+table.tr-table tr:hover td{ background:#fff !important; }
+
+
+/* ----------------------------------------------------------
+   14. CARDS / KITS / REQUESTS / STATS / BOARD / DRIVE
+   ---------------------------------------------------------- */
+.card{
+  display:block !important;
+  border:.75pt solid #000 !important;
+  padding:7pt 9pt !important;
+  margin:0 0 7pt !important;
+  break-inside:avoid !important;
+  page-break-inside:avoid !important;
+}
+.card-in{ padding:0 !important; display:block !important; }
+.card-in ul{ margin:5pt 0 !important; padding:0 !important; list-style:none !important; font-size:9pt !important; }
+.card-in ul li{
+  display:flex !important;
+  justify-content:space-between !important;
+  gap:10pt;
+  padding:2pt 0 !important;
+  border-bottom:.5pt dotted #999 !important;
+}
+.card-in ul li span{ opacity:1 !important; color:#333 !important; }
+.card .foot{ display:block !important; padding:4pt 0 0 !important; margin:0 !important; }
+.card .tot{ font-family: Georgia, "Bitter", serif; font-weight:700 !important; font-size:11pt !important; }
+
+.req{
+  display:block !important;
+  background:#fff !important;
+  border:.5pt solid #000 !important;
+  padding:6pt 8pt !important;
+  margin:0 0 5pt !important;
+  break-inside:avoid !important;
+  page-break-inside:avoid !important;
+}
+.req .top{ display:flex !important; justify-content:space-between !important; gap:8pt; }
+.req .nm{ font-weight:700 !important; font-size:10pt !important; }
+.req .ct{ font-size:8.5pt !important; opacity:1 !important; color:#444 !important; }
+.req .st,
+.st--stocked, .st--ordered, .st--thinking{
+  display:inline-block !important;
+  background:#fff !important;
+  color:#000 !important;
+  border:.5pt solid #000 !important;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size:7pt !important;
+  letter-spacing:.1em;
+  padding:1pt 4pt !important;
+  margin-top:4pt !important;
+}
+.req .nt{ font-size:8.5pt !important; opacity:1 !important; color:#333 !important; margin-top:3pt !important; }
+
+.stat-row{
+  display:grid !important;
+  grid-template-columns:repeat(4, 1fr) !important;
+  gap:0 !important;
+  background:#fff !important;
+  border:.75pt solid #000 !important;
+  margin:8pt 0 !important;
+  break-inside:avoid !important;
+  page-break-inside:avoid !important;
+}
+.stat{
+  background:#fff !important;
+  border-left:.5pt solid #999 !important;
+  padding:6pt 7pt !important;
+  text-align:center;
+  break-inside:avoid !important;
+  page-break-inside:avoid !important;
+}
+.stat:first-child{ border-left:0 !important; }
+.stat .v{ font-family: Georgia, "Bitter", serif; font-weight:700 !important; font-size:13pt !important; line-height:1.05 !important; }
+.stat .k{
+  font-family: Helvetica, Arial, sans-serif;
+  font-size:7pt !important; letter-spacing:.1em; text-transform:uppercase;
+  opacity:1 !important; color:#333 !important; margin-top:3pt !important;
+}
+
+/* Today at the Merc board */
+.board{
+  border:.75pt solid #000 !important;
+  margin:0 0 8pt !important;
+  break-inside:avoid !important;
+  page-break-inside:avoid !important;
+}
+.board-head{
+  padding:5pt 8pt !important;
+  border-bottom:.5pt solid #000 !important;
+  display:block !important;
+}
+.board-head h3{
+  font-family: Helvetica, Arial, sans-serif;
+  font-size:8pt !important; letter-spacing:.16em; text-transform:uppercase;
+  font-weight:700 !important; margin:0 !important; border:0 !important;
+}
+.board-head .when{ font-size:7.5pt !important; opacity:1 !important; color:#444 !important; }
+.board-grid{ display:grid !important; grid-template-columns:repeat(4,1fr) !important; }
+.board-cell{ padding:6pt 8pt !important; border-left:.5pt solid #999 !important; }
+.board-cell:first-child{ border-left:0 !important; }
+.board-cell .k{
+  font-family: Helvetica, Arial, sans-serif;
+  font-size:6.5pt !important; letter-spacing:.14em; opacity:1 !important; color:#444 !important; margin-bottom:2pt !important;
+}
+.board-cell .v{ font-size:10pt !important; font-weight:700 !important; }
+.board-cell .v small{ font-size:8pt !important; opacity:1 !important; color:#333 !important; }
+
+/* Drive-time comparison */
+.drive{ border:0 !important; margin:0 0 8pt !important; }
+.drive-grid{ display:grid !important; grid-template-columns:repeat(4,1fr) !important; }
+.drive-cell{
+  padding:5pt 8pt !important;
+  border-left:.5pt solid #999 !important;
+  break-inside:avoid !important;
+}
+.drive-cell:first-child{ border-left:0 !important; }
+.drive-cell b{ font-family: Helvetica, Arial, sans-serif; font-size:7pt !important; letter-spacing:.12em; opacity:1 !important; color:#444 !important; }
+.drive-cell .t{ font-size:11pt !important; font-weight:700 !important; margin-top:1pt !important; }
+
+/* Pills */
+.pillrow{ display:block !important; margin:5pt 0 !important; }
+.pill{
+  display:inline-block !important;
+  border:.5pt solid #666 !important;
+  border-radius:0 !important;
+  padding:1.5pt 5pt !important;
+  font-size:8pt !important;
+  margin:0 4pt 3pt 0 !important;
+  opacity:1 !important;
+}
+
+/* Live meters are bar charts. On paper they are decoration. */
+.meters{ display:none !important; }
+
+
+/* ----------------------------------------------------------
+   15. FOOTER — the store block, nav columns gone
+   ---------------------------------------------------------- */
+.site-foot{
+  background:#fff !important;
+  color:#000 !important;
+  padding:10pt 0 0 !important;
+  border-top:1pt solid #000 !important;
+  break-inside:avoid !important;
+  page-break-inside:avoid !important;
+}
+.foot-top{
+  display:block !important;
+  grid-template-columns:none !important;
+  gap:0 !important;
+  padding:0 !important;
+  border-bottom:0 !important;
+}
+/* Column 1 is the logo + address + phone. Columns 2-4 are site nav. */
+.foot-top > div{ display:none !important; }
+.foot-top > div:first-child{ display:block !important; }
+.foot-top p.small{ opacity:1 !important; font-size:9pt !important; line-height:1.4 !important; }
+.foot-top h4, .foot-top ul{ display:none !important; }
+.foot-motto{
+  font-family: Georgia, "Bitter", serif;
+  font-weight:700 !important;
+  font-size:11pt !important;
+  text-align:left !important;
+  text-transform:none !important;
+  letter-spacing:0 !important;
+  color:#000 !important;
+  padding:6pt 0 4pt !important;
+}
+.foot-legal{
+  display:block !important;
+  font-size:8pt !important;
+  opacity:1 !important;
+  color:#444 !important;
+}
+.foot-legal span{ display:block; }
+
+
+/* ----------------------------------------------------------
+   16. GENERIC BREAK RULES
+   ---------------------------------------------------------- */
+.card,
+.prod,
+.req,
+.stat,
+.menu-item,
+.good,
+.board,
+.drive-cell,
+figure,
+li,
+tr{
+  break-inside:avoid !important;
+  page-break-inside:avoid !important;
+}
+
+h1, h2, h3, h4,
+.h-mega, .h1, .h2, .h3, .h4,
+.eyebrow{
+  break-after:avoid !important;
+  page-break-after:avoid !important;
+}
+
+.hide{ display:none !important; }
+
+
+/* ==========================================================
+   17. PAGE-SPECIFIC — bakery.html prints as a paper menu
+   Hooked off markup that only exists on that page.
+   ========================================================== */
+body:has([data-bakery="breakfast"]) .hero{
+  border-bottom:2pt solid #000;
+  padding-bottom:5pt !important;
+}
+body:has([data-bakery="breakfast"]) .h-mega{
+  font-size:26pt !important;
+  text-align:center;
+}
+body:has([data-bakery="breakfast"]) .hero-tag,
+body:has([data-bakery="breakfast"]) .hero-motto{
+  text-align:center;
+}
+
+/* Two columns of dot-leader menu, like a board menu on paper */
+body:has([data-bakery="breakfast"]) .menu-list{
+  columns:2 !important;
+  column-gap:22pt !important;
+  column-fill:balance;
+  margin-top:4pt !important;
+}
+body:has([data-bakery="breakfast"]) .menu-item{
+  break-inside:avoid !important;
+  page-break-inside:avoid !important;
+  -webkit-column-break-inside:avoid;
+}
+
+/* The drive-time strip on bakery is really the service-hours strip — keep it,
+   it is the single most useful thing on a printed menu. */
+body:has([data-bakery="breakfast"]) .drive{
+  border:.75pt solid #000 !important;
+  padding:4pt 0 !important;
+  margin:0 0 10pt !important;
+}
+
+/* Order form is interactive; the phone number is what a paper menu needs. */
+body:has([data-bakery="breakfast"]) #order{ display:none !important; }
+body:has([data-bakery="breakfast"]) #order + section{ break-before:auto; }
+
+
+/* ==========================================================
+   18. PAGE-SPECIFIC — storm.html prints as a carry-around checklist
+   The real use case: somebody prints this and walks the aisles
+   ticking boxes. Give them boxes big enough to tick with a pen.
+   ========================================================== */
+body:has(#status):has(#kit) .h-mega{ font-size:26pt !important; }
+
+/* Every storm item gets a real checkbox */
+body:has(#status):has(#kit) [data-ids] .prod{
+  grid-template-columns:auto 1fr auto auto !important;
+  gap:0 8pt !important;
+  padding:5pt 0 !important;
+  align-items:center !important;
+}
+body:has(#status):has(#kit) [data-ids] .prod::before{
+  content:"";
+  display:block;
+  width:11pt;
+  height:11pt;
+  border:1pt solid #000;
+  background:#fff;
+  flex:none;
+  align-self:center;
+}
+body:has(#status):has(#kit) [data-ids] .prod .nm{ font-size:10.5pt !important; }
+body:has(#status):has(#kit) [data-ids] .prod .mt{ font-size:7pt !important; }
+
+/* Kit cards get checkboxes on each line too */
+body:has(#status):has(#kit) .card-in ul li::before{
+  content:"";
+  display:inline-block;
+  width:9pt;
+  height:9pt;
+  border:.75pt solid #000;
+  margin-right:6pt;
+  vertical-align:-1pt;
+}
+body:has(#status):has(#kit) .card-in ul li{ align-items:center; }
+
+/* The live status section has nothing to say on paper — the bars are gone,
+   so replace it with the one honest sentence. */
+body:has(#status):has(#kit) #status .lede{ display:none !important; }
+body:has(#status):has(#kit) #status .small{ display:none !important; }
+body:has(#status):has(#kit) #status [data-meters]{
+  display:block !important;
+  border:.75pt solid #000 !important;
+  padding:6pt 8pt !important;
+  margin:4pt 0 0 !important;
+}
+body:has(#status):has(#kit) #status [data-meters] > *{ display:none !important; }
+body:has(#status):has(#kit) #status [data-meters]::after{
+  content:"Live counts are on the website: twistedrootsmerc.com/storm.html — or call the store, (541) 555-0134. This sheet is the list. Tick what you already have at home; buy the rest.";
+  display:block;
+  font-size:9pt;
+  line-height:1.4;
+}
+
+/* Categorised headings become clear checklist section rules */
+body:has(#status):has(#kit) .h3{
+  border-bottom:.75pt solid #000;
+  padding-bottom:2pt;
+  margin:12pt 0 4pt !important;
+  break-after:avoid !important;
+}
+
+/* Storm sheet fits better in two columns of items; each block stays whole */
+body:has(#status):has(#kit) [data-ids]{
+  break-inside:auto;
+}
+
+
+/* ==========================================================
+   19. PAGE-SPECIFIC — hq.html prints as the stockroom walk sheet
+   Carrie prints "Needs attention" and walks the back room with it.
+   ========================================================== */
+body:has(#hqTable) #hqTable{ font-size:9.5pt !important; }
+body:has(#hqTable) #hqRows tr td:first-child::before{
+  content:"";
+  display:inline-block;
+  width:10pt;
+  height:10pt;
+  border:1pt solid #000;
+  margin-right:6pt;
+  vertical-align:-1pt;
+}
+/* Purchase-order cards get a tick box per line too */
+body:has(#hqTable) #hqPOs .card-in ul li::before{
+  content:"";
+  display:inline-block;
+  width:9pt;
+  height:9pt;
+  border:.75pt solid #000;
+  margin-right:6pt;
+  vertical-align:-1pt;
+}
+/* Keep the reorder table and the supplier POs together on one sheet if they fit */
+body:has(#hqTable) #hqPOs .card{ margin-bottom:6pt !important; }
+
+
+/* ==========================================================
+   20. NARROW PAPER / A5 / half sheets
+   ========================================================== */
+@media print and (max-width: 5in){
+  .stat-row,
+  .board-grid,
+  .drive-grid{ grid-template-columns:repeat(2,1fr) !important; }
+  .menu-list{ columns:1 !important; }
+  .two-col{ columns:1 !important; }
+}

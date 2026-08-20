@@ -1,0 +1,221 @@
+<section class="band band--bark band--dark band--tight" style="padding-top:clamp(44px,5vw,72px)">
+  <div class="wrap">
+    <p class="eyebrow">Twisted Roots HQ · owners only</p>
+    <h1 class="h-mega" style="font-size:clamp(2.2rem,5.4vw,4rem)">Good morning,<br>Carrie &amp; Eric.</h1>
+    <p class="lede" style="margin-top:22px">This is the whole back office. One screen, one button.
+      No spreadsheets, no second app, no nightly homework.</p>
+    <p class="stamp" style="margin-top:8px">Demo view · live data comes from Square</p>
+  </div>
+</section>
+
+<!-- TODAY -->
+<section class="band band--ink band--dark band--tight">
+  <div class="wrap">
+    <div class="board">
+      <div class="board-head"><h3>Twisted Roots Today</h3><span class="when" data-boardwhen></span></div>
+      <div class="board-grid">
+        <div class="board-cell"><div class="k">Sales today</div><div class="v">$2,840<small>Merc $1,910 · Kitchen $930</small></div></div>
+        <div class="board-cell"><div class="k">Transactions</div><div class="v">96<small>Average ticket $29.58</small></div></div>
+        <div class="board-cell"><div class="k">Needs reordered</div><div class="v" id="hqLowCount">—<small>At or below minimum</small></div></div>
+        <div class="board-cell"><div class="k">Requests waiting</div><div class="v">8<small>From the website &amp; counter</small></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEEDS ATTENTION -->
+<section class="band band--paper">
+  <div class="wrap">
+    <div class="split split--top" style="align-items:end; margin-bottom:28px">
+      <div>
+        <p class="eyebrow">Red, yellow, green — that's the whole system</p>
+        <h2 class="h1 mb0">Needs attention</h2>
+      </div>
+      <p class="lede mb0">You don't have to understand inventory science. Look at the colour, look at the
+        number in the last column, and hit the button at the bottom.</p>
+    </div>
+
+    <div class="btnrow" style="margin-bottom:24px">
+      <button class="btn btn--sm btn--ghost" data-stormtoggle aria-pressed="false"><i></i>Storm Mode Off</button>
+      <span class="small muted" style="align-self:center">Flip this when the forecast turns and the minimums below jump automatically.</span>
+    </div>
+
+    <div class="tablewrap">
+      <table class="tr-table" id="hqTable">
+        <thead><tr><th></th><th>Item</th><th>Dept</th><th>On hand</th><th>Minimum</th><th>Sells / wk</th><th>Order</th></tr></thead>
+        <tbody id="hqRows"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ONE BUTTON -->
+<section class="band band--cream">
+  <div class="wrap">
+    <div class="center" style="margin-bottom:34px">
+      <p class="eyebrow eyebrow--c">The part that saves the evening</p>
+      <h2 class="h1">This week's orders, grouped by supplier</h2>
+      <p class="lede mx-auto">You never have to work out "what do I need from vendor A." The screen already did.</p>
+    </div>
+    <div class="cards" id="hqPOs"></div>
+    <div class="center" style="margin-top:36px">
+      <button class="btn btn--amber" id="hqCreate">Create this week's purchase orders</button>
+      <p class="small muted" style="margin-top:14px" id="hqCreateNote">One click writes them into Square as draft POs. You approve, they send.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ADD PRODUCT -->
+<section class="band band--bark band--dark">
+  <div class="wrap">
+    <div class="split split--top">
+      <div>
+        <p class="eyebrow">New product, one time, one place</p>
+        <h2 class="h1">Adding something to the shelf</h2>
+        <p class="lede">Scan it, photograph it, fill in eight fields, save. It appears at the register,
+          in inventory, and on the website — automatically. You never call the tech guy to update
+          three systems.</p>
+        <ol style="padding-left:22px; font-size:1.02rem; line-height:1.8">
+          <li>Scan the barcode with the counter iPad</li>
+          <li>Take the photo right there on the shelf</li>
+          <li>Name, cost, price, supplier, department</li>
+          <li>Minimum quantity, ideal quantity, case size</li>
+          <li>Save</li>
+        </ol>
+      </div>
+      <div class="formbox">
+        <p class="serif-caps" style="opacity:.6; margin:0 0 18px">Add product</p>
+        <div class="field"><label>Barcode</label><input value="0 41333 00133 8" readonly></div>
+        <div class="split" style="gap:0 20px">
+          <div class="field"><label>Cost</label><input value="$6.10" readonly></div>
+          <div class="field"><label>Price</label><input value="$9.99" readonly></div>
+        </div>
+        <div class="split" style="gap:0 20px">
+          <div class="field"><label>Minimum</label><input value="10" readonly></div>
+          <div class="field"><label>Ideal</label><input value="24" readonly></div>
+        </div>
+        <div class="field" style="margin-bottom:0"><label>Storm minimum</label><input value="100" readonly></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT IT LEARNS -->
+<section class="band band--paper">
+  <div class="wrap">
+    <p class="eyebrow">After about six months</p>
+    <h2 class="h1">It starts telling you what to buy.</h2>
+    <p class="lede">Same data you're already creating every time something crosses the scanner. Nobody
+      has to analyse anything — the recommendations just show up on this screen.</p>
+    <div class="tablewrap" style="margin-top:26px">
+      <table class="tr-table">
+        <thead><tr><th>What it noticed</th><th>What it says</th></tr></thead>
+        <tbody>
+          <tr><td>Milk sells 14 gallons a week, steady</td><td>Hold at 14. Don't grow it.</td></tr>
+          <tr><td>AAA sells twice as fast as C</td><td>Cut C to a half-facing, double AAA</td></tr>
+          <tr><td>Flashlight sales spike 3 days before wind events</td><td>Turn Storm Mode on Thursday, not Saturday</td></tr>
+          <tr><td>Pet food sells heavy Friday–Sunday</td><td>Face it Thursday night</td></tr>
+          <tr><td>Poster board spikes late August</td><td>Move it to the register August 15</td></tr>
+          <tr><td>Brand X paper towel: 2 sold in 90 days</td><td>Stop ordering. Free up the shelf.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- REQUESTS -->
+<section class="band band--sand">
+  <div class="wrap">
+    <div class="split split--top" style="margin-bottom:30px">
+      <div><p class="eyebrow">From the website &amp; the notepad by the register</p>
+        <h2 class="h1 mb0">Customer requests</h2></div>
+      <p class="lede mb0">Counted and deduplicated automatically. When something crosses about five
+        requests, it's usually worth a shelf.</p>
+    </div>
+    <div class="reqs" data-requests></div>
+  </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var SUPPLIERS = {
+    everyday: "Pacific Wholesale Grocers",
+    fixit:    "Ace / Hardware Wholesale",
+    yard:     "Coast Building Supply",
+    storm:    "Ace / Hardware Wholesale",
+    outdoors: "Northwest Outdoor Dist.",
+    local:    "Local makers (direct)"
+  };
+  var money = function (n) { return "$" + n.toFixed(2); };
+  var storm = function () { return document.documentElement.dataset.storm === "on"; };
+  var floorFor = function (it) { return (storm() && it.stormMin) ? it.stormMin : it.min; };
+
+  // deterministic pseudo weekly velocity so the demo is stable
+  function weekly(it) {
+    var h = 0, s = it.id + it.n;
+    for (var i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) % 9973;
+    return Math.max(1, Math.round(floorFor(it) * (0.5 + (h % 90) / 100)));
+  }
+
+  function render() {
+    var low = TR_CATALOG.filter(function (it) { return it.q <= floorFor(it); })
+      .sort(function (a, b) { return (a.q - floorFor(a)) - (b.q - floorFor(b)); });
+
+    document.getElementById("hqLowCount").innerHTML =
+      low.length + "<small>At or below minimum</small>";
+
+    document.getElementById("hqRows").innerHTML = low.slice(0, 18).map(function (it) {
+      var target = Math.max(floorFor(it) * 2, floorFor(it) + weekly(it));
+      var order = Math.max(0, target - it.q);
+      var dot = it.q === 0 ? "#A8321F" : (it.q <= floorFor(it) / 2 ? "#A8321F" : "#D99A34");
+      return '<tr>' +
+        '<td><span style="display:inline-block;width:11px;height:11px;border-radius:50%;background:' + dot + '"></span></td>' +
+        '<td><b>' + it.n + '</b></td>' +
+        '<td class="muted">' + TR_DEPTS[it.d].name + '</td>' +
+        '<td><b>' + it.q + '</b></td>' +
+        '<td class="muted">' + floorFor(it) + '</td>' +
+        '<td class="muted">' + weekly(it) + '</td>' +
+        '<td><b style="color:var(--rust)">Order ' + order + '</b></td>' +
+        '</tr>';
+    }).join("");
+
+    // group into supplier POs
+    var groups = {};
+    low.forEach(function (it) {
+      var sup = SUPPLIERS[it.d] || "Other";
+      var target = Math.max(floorFor(it) * 2, floorFor(it) + weekly(it));
+      var qty = Math.max(0, target - it.q);
+      if (!qty) return;
+      (groups[sup] = groups[sup] || []).push({ it: it, qty: qty });
+    });
+
+    document.getElementById("hqPOs").innerHTML = Object.keys(groups).map(function (sup) {
+      var rows = groups[sup];
+      var cost = rows.reduce(function (a, r) { return a + r.qty * (r.it.p * 0.62); }, 0);
+      return '<article class="card"><div class="card-in">' +
+        '<p class="serif-caps" style="opacity:.55;margin:0 0 8px">Purchase order</p>' +
+        '<h3 class="h3">' + sup + '</h3>' +
+        '<ul>' + rows.slice(0, 8).map(function (r) {
+          return '<li>' + r.it.n + '<span>× ' + r.qty + '</span></li>';
+        }).join("") +
+        (rows.length > 8 ? '<li class="muted">+ ' + (rows.length - 8) + ' more<span></span></li>' : '') +
+        '</ul>' +
+        '<div class="foot"><span class="tot">' + money(cost) + '</span>' +
+        '<span class="stk stk--low">' + rows.length + ' lines</span></div>' +
+        '</div></article>';
+    }).join("");
+  }
+
+  render();
+  document.querySelectorAll("[data-stormtoggle]").forEach(function (b) {
+    b.addEventListener("click", function () { setTimeout(render, 30); });
+  });
+  var btn = document.getElementById("hqCreate");
+  if (btn) btn.addEventListener("click", function () {
+    btn.textContent = "Purchase orders drafted in Square ✓";
+    btn.classList.remove("btn--amber");
+    document.getElementById("hqCreateNote").textContent =
+      "Demo only. In the live store these are now sitting in Square as draft POs waiting for your approval.";
+  });
+});
+</script>

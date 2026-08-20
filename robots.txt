@@ -1,0 +1,20 @@
+# Twisted Roots Merc — Siletz, Oregon
+# Good food. Good goods. Deep roots.
+# Crawl the store. The back office is not for the public.
+
+User-agent: *
+Allow: /
+
+# Owner dashboard — private
+Disallow: /hq.html
+
+# Working folders, not pages
+Disallow: /seo/
+Disallow: /print/
+Disallow: /_parts/
+
+# Stop query-string duplicates of the stock search
+Disallow: /*?q=
+Disallow: /*?search=
+
+Sitemap: https://twistedrootsmerc.com/sitemap.xml
