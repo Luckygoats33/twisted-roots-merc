@@ -28,7 +28,7 @@
 #    deploy/netlify.toml already contains that rule.
 #
 # The canonical host is the APEX: https://twistedrootsmerc.com
-# That is not a preference — every <link rel="canonical"> in the nine pages
+# That is not a preference — every <link rel="canonical"> in the ten pages
 # and every <loc> in sitemap.xml already points at the apex. Choosing www
 # would mean editing all of them. Don't.
 

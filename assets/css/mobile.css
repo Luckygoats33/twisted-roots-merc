@@ -156,15 +156,17 @@
 }
 
 /* Freeze the page behind the open menu. CSS-only; if :has() is
-   missing the menu still works exactly as it does today. */
-@media (max-width:900px){
+   missing the menu still works exactly as it does today.
+   Scoped to touch so a narrow desktop window does not jump by the
+   width of its classic scrollbar when the menu opens. */
+@media (max-width:900px) and (hover:none){
   body:has(.nav.open){ overflow:hidden }
 }
 
 /* Short landscape phones: the header must not eat the screen. */
-@media (max-height:460px) and (orientation:landscape){
+@media (max-width:950px) and (max-height:460px) and (orientation:landscape){
   :root{ --head-h:56px }
-  .brand img,.hangsign--sm{ --hs-h:34px; --hs-drop:8px; --hs-beam-h:5px }
+  .hangsign--sm{ --hs-h:34px; --hs-drop:8px; --hs-beam-h:5px }
   .hero{ min-height:auto }
   .hero-in{ padding-top:64px; padding-bottom:32px }
 }
@@ -243,8 +245,8 @@
     margin-top:10px;
     font-family:var(--f-display);
     font-weight:800;
-    font-size:.62rem;
-    letter-spacing:.16em;
+    font-size:.7rem;
+    letter-spacing:.14em;
     text-transform:uppercase;
     opacity:.55;
   }
@@ -324,11 +326,11 @@
 
   /* Footer + inline links were 18px tall hit boxes. */
   .foot-top li{ margin-bottom:0 }
-  .foot-top a{ display:inline-block; padding:13px 0; line-height:1.15 }
+  .foot-top a{ display:inline-flex; align-items:center; min-height:44px; padding:11px 0; line-height:1.2 }
   .foot-legal{ gap:14px 20px }
-  .foot-legal a{ display:inline-block; padding:11px 0 }
+  .foot-legal a{ display:inline-flex; align-items:center; min-height:44px }
   a[href^="tel:"],
-  a[href^="mailto:"]{ display:inline-block; padding:6px 0 }
+  a[href^="mailto:"]{ display:inline-flex; align-items:center; min-height:44px }
 
   /* The whole department tile should be tappable, not just the
      photo — it already is, this just guarantees the footer row
@@ -408,6 +410,13 @@
   .btnrow{ gap:11px }
   .pillrow{ gap:8px; margin-top:16px }
   .results{ margin-top:22px }
+
+  /* Storm banner ran ~147px tall at 360 (4 wrapped lines + link).
+     Tighten it so it warns without owning the first screen. */
+  .stormbar{ font-size:.8rem }
+  .stormbar .wrap{ padding:9px 0; gap:8px 12px; line-height:1.45 }
+  .stormbar b{ padding:3px 9px; font-size:.62rem }
+  .stormbar a{ margin-left:0 }
 }
 
 /* Hero: use the dynamic viewport so the first fold does not

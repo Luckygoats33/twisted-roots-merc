@@ -1,17 +1,99 @@
-# dev artifacts
+# Twisted Roots Merc — what never goes in the repo (and therefore never ships)
+#
+# The repo root IS the published website. There is no build step and no dist/
+# folder, so ANYTHING COMMITTED HERE IS DOWNLOADABLE BY THE PUBLIC at
+# https://twistedrootsmerc.com/<that-path>. Treat this file as the deploy
+# filter, not just a tidiness tool.
+#
+# Before adding something here, ARCHIVE IT (Drive/Dropbox) first. Ignoring a
+# file does not delete it locally, but the repo stops being its backup.
+
+# ─── dev artifacts ──────────────────────────────────────────────────────────
 server.log
 fetch*.log
+*.log
 nohup.out
 contact*.png
 slots*.json
 fetch_stock.py
 *.bak
 
-# source PNGs for generated art (the optimized .jpg ships instead)
+# ─── source PNGs for generated art (the optimized .jpg ships instead) ───────
+# ~45 MB of tr-*.png and ~36 MB of w-*.png masters, none of them referenced by
+# any .html, .css or .js. ARCHIVE THE MASTERS before committing this file.
 assets/img/tr-*.png
 assets/img/w-*.png
 
-# OS junk
+# ─── page-assembly tooling (dev only — must NOT be published) ───────────────
+# _parts/ holds the header/footer fragments build.py stitches into each page.
+# Harmless EXCEPT _parts/hq.html, which is a copy of the PRIVATE owner
+# dashboard markup. Published, it would sit at
+#     https://twistedrootsmerc.com/_parts/hq.html
+# completely outside whatever protection you put on /hq. This is not
+# hypothetical — it is the exact file that would leak. Keep it out.
+# Keep the folder on the owners' machine and in the shared drive.
+# See DEPLOY.md → "Where the working files live".
+/_parts/
+/build.py
+/build_blog.py
+/_build_board.py
+
+# blog/data/ is the SOURCE the blog builder reads. Note this ignores the
+# source only, NOT blog/ itself — if build_blog.py starts emitting
+# blog/*.html, those are real public pages and must ship. Add them to
+# sitemap.xml when they appear.
+/blog/data/
+
+# ─── transactional email templates (not web pages) ──────────────────────────
+# email/*.html are Gmail/Outlook templates for order and pickup mail. They are
+# not part of the website and would otherwise be browsable at /email/. They
+# belong with the sending platform's configuration, not the public site.
+/email/
+
+# ─── internal documents (would be world-readable if committed) ──────────────
+# Keep these in a SEPARATE PRIVATE repo (suggested: twisted-roots-docs).
+/TECH-PLAN.md
+/QA-REPORT.md
+/seo/
+/print/
+assets/css/MOTION-USAGE.md
+
+# ─── OS and editor junk ─────────────────────────────────────────────────────
 Thumbs.db
+ehthumbs.db
 .DS_Store
+._*
+.Spotlight-V100
+.Trashes
 desktop.ini
+$RECYCLE.BIN/
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+*.code-workspace
+
+# ─── local tooling / secrets ────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+node_modules/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.wrangler/
+.dev.vars
+
+
+# ─── Deliberately NOT ignored (these must ship) ─────────────────────────────
+#   index.html merc.html bakery.html yard.html storm.html
+#   local.html roots.html visit.html hq.html
+#   robots.txt sitemap.xml assets/
+#   _headers _redirects   (Cloudflare Pages reads them and does not serve them)
+#
+# README.md and deploy/ DO ship and ARE publicly readable. Neither is secret,
+# but README.md names hq.html. /_redirects already bounces /README.md to the
+# home page. Add /deploy/ here once you have moved _headers and _redirects to
+# the root, if you want it gone too.

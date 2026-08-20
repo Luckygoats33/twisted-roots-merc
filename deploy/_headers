@@ -54,7 +54,7 @@
 #          alternative is to keep the ld+json inline and give it a nonce.
 #       c. Nonces must be regenerated per request, which a static file cannot
 #          do. On Cloudflare Pages that means a Pages Function that rewrites
-#          the HTML on the fly. For a nine-page store site that is a lot of
+#          the HTML on the fly. For a ten-page store site that is a lot of
 #          moving parts for a small win. Recommendation: do (a), which at
 #          least removes the hq.html block, and keep 'unsafe-inline' for the
 #          one ld+json island. Revisit only if the site ever accepts and
@@ -113,7 +113,7 @@
 #     and gets a 4-byte 304 if not. Cost: one tiny conditional request per
 #     file per 5 minutes per visitor. Benefit: a CSS fix is live for everyone
 #     within 5 minutes, every time, with no cache-busting discipline required.
-#     For a nine-page site with fewer visitors than a coffee shop has
+#     For a ten-page site with fewer visitors than a coffee shop has
 #     customers, this is the right trade. Do not "optimise" it.
 #
 #   • IF you later want year-long CSS/JS caching, the cache-busting approach
@@ -173,6 +173,10 @@
 /local
   Cache-Control: public, max-age=0, must-revalidate
 /local.html
+  Cache-Control: public, max-age=0, must-revalidate
+/board
+  Cache-Control: public, max-age=0, must-revalidate
+/board.html
   Cache-Control: public, max-age=0, must-revalidate
 /roots
   Cache-Control: public, max-age=0, must-revalidate

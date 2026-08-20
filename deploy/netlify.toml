@@ -43,7 +43,7 @@
   # repo — the difference is that Netlify lets you TURN IT OFF, and this is
   # the switch. Leave it false.
   #
-  # Every <link rel="canonical"> in the nine pages, every <loc> in
+  # Every <link rel="canonical"> in the ten pages, every <loc> in
   # sitemap.xml, the `Disallow: /hq.html` line in robots.txt, and every
   # internal href in the site all use the .html form. With pretty_urls = false
   # they all resolve directly, with no redirect hop and no canonical pointing
