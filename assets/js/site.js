@@ -437,25 +437,129 @@ const TR = (() => {
     });
   }
 
-  /* ---------------- HERO VIDEO ---------------- */
+  /* ---------------- HERO VIDEO ----------------
+     The still is what actually ships in the HTML. The video is
+     only fetched when it will not cost the visitor anything they
+     would mind: motion allowed, not on Save-Data, not on a slow
+     connection, and only once the hero is on screen. If any of
+     that fails, the still is the finished design, not a fallback.  */
   function heroVideo(){
-    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    $$("video.hero-img").forEach(function(v){
-      if (reduce){ v.removeAttribute("autoplay"); v.pause(); return; }
-      v.muted = true; v.playsInline = true;
-      var go = function(){ var p = v.play(); if (p && p.catch) p.catch(function(){}); };
-      go();
-      v.addEventListener("loadeddata", go, { once:true });
-      v.addEventListener("canplay", go, { once:true });
-      /* pause it when it scrolls away so we're not decoding video for nothing */
+    var vids = $$("video.hero-video");
+    if (!vids.length) return;
+
+    var mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    var net = navigator.connection || {};
+    var slow = net.saveData === true ||
+               /^(slow-)?2g$/.test(net.effectiveType || "") ||
+               net.effectiveType === "3g";
+
+    vids.forEach(function(v){
+      if (mq.matches || slow) return;            /* still only */
+
+      var start = function(){
+        if (v.dataset.loaded) return;
+        v.dataset.loaded = "1";
+        var small = window.innerWidth < 900 || (net.effectiveType === "4g" && net.downlink && net.downlink < 3);
+        v.src = small ? v.dataset.srcSm : v.dataset.src;
+        v.preload = "auto";
+        v.load();
+        var go = function(){
+          var p = v.play();
+          if (p && p.catch) p.catch(function(){});
+        };
+        v.addEventListener("canplay", function(){
+          go();
+          v.classList.add("is-playing");         /* cross-fades over the still */
+        }, { once:true });
+        go();
+      };
+
       if ("IntersectionObserver" in window){
-        new IntersectionObserver(function(es){
-          es.forEach(function(e){ e.isIntersecting ? go() : v.pause(); });
-        }, { threshold:.05 }).observe(v);
+        var io = new IntersectionObserver(function(es){
+          es.forEach(function(e){
+            if (e.isIntersecting){ start(); }
+            else if (v.dataset.loaded) { v.pause(); }
+          });
+        }, { threshold:.05 });
+        io.observe(v);
+      } else {
+        start();
       }
+
       document.addEventListener("visibilitychange", function(){
-        document.hidden ? v.pause() : go();
+        if (!v.dataset.loaded) return;
+        if (document.hidden) v.pause();
+        else { var p = v.play(); if (p && p.catch) p.catch(function(){}); }
       });
+    });
+
+    /* respect a mid-session change of heart */
+    if (mq.addEventListener) mq.addEventListener("change", function(){
+      if (mq.matches) vids.forEach(function(v){ v.pause(); v.classList.remove("is-playing"); });
+    });
+  }
+
+  /* ---------------- DOCK BAR + BACK TO TOP ----------------
+     One always-reachable action on a phone, and a way back to the
+     top once the page is long enough to need it. Injected here so
+     every page gets it without touching markup.                   */
+  function dockbar(){
+    if ($(".dockbar")) return;
+
+    /* the storm banner is fixed on phones, so its height has to be
+       fed to the layout rather than guessed */
+    var measure = function(){
+      var sb = $(".stormbar");
+      var h = (sb && getComputedStyle(sb).display !== "none") ? sb.offsetHeight : 0;
+      document.documentElement.style.setProperty("--stormbar-h", h + "px");
+    };
+    measure();
+    window.addEventListener("resize", measure, { passive:true });
+
+    var onVisit = /visit\.html$/.test(location.pathname) || location.pathname.endsWith("/visit.html");
+    var href = onVisit ? "#contact" : "visit.html#contact";
+
+    var bar = document.createElement("div");
+    bar.className = "dockbar";
+    bar.setAttribute("aria-label", "Quick actions");
+    bar.innerHTML =
+      '<a class="dockbar__cta" href="' + href + '">Contact Us</a>' +
+      '<a class="dockbar__btn" href="' + STORE.phoneHref + '" aria-label="Call Twisted Roots Merc">' +
+        '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">' +
+        '<path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .7-.2 1l-2.3 2.2z"/></svg>' +
+      '</a>' +
+      '<button class="dockbar__btn dockbar__top" data-totop aria-label="Back to top">' +
+        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+        '<path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>' +
+      '</button>';
+    document.body.appendChild(bar);
+
+    var top = document.createElement("button");
+    top.className = "totop";
+    top.setAttribute("data-totop", "");
+    top.setAttribute("aria-label", "Back to top");
+    top.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>';
+    document.body.appendChild(top);
+
+    var btns = $$("[data-totop]");
+    var showAt = Math.max(600, window.innerHeight * 0.9);
+    var tick = 0;
+    var onScroll = function(){
+      if (tick) return;
+      tick = requestAnimationFrame(function(){
+        tick = 0;
+        var on = (window.scrollY || window.pageYOffset) > showAt;
+        btns.forEach(function(b){ b.classList.toggle("show", on); });
+      });
+    };
+    window.addEventListener("scroll", onScroll, { passive:true });
+    onScroll();
+
+    document.addEventListener("click", function(e){
+      if (e.target.closest("[data-totop]")){
+        e.preventDefault();
+        window.scrollTo({ top:0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+      }
     });
   }
 
@@ -559,7 +663,7 @@ const TR = (() => {
       }
     });
 
-    heroVideo();
+    heroVideo(); dockbar();
     paintOpenPills(); paintBoard(); paintLists(); paintMeters();
     paintKits(); paintRequests(); paintBakery(); ticker(); reveals(); driveBars();
     setInterval(paintOpenPills, 60000);

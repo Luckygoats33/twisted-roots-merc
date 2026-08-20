@@ -196,8 +196,8 @@
       "stk pr  act";
     align-items:center;
     gap:10px 12px;
-    padding:14px 6px;
-    margin-inline:-6px;
+    padding:14px 0;
+    margin-inline:0;
   }
   .prod > :first-child{ grid-area:nm; min-width:0 }
   .prod .nm{ font-size:1.04rem; line-height:1.28 }
@@ -592,3 +592,118 @@ body{ background:var(--paper) }
 [data-storm="on"] .burger{ background:var(--amber-hi); border-color:#0F2B34; color:#0F2B34 }
 [data-storm="on"] .nav{ background:linear-gradient(180deg,#17414E 0%, #12313B 45%) }
 [data-storm="on"] .nav a{ border-bottom-color:rgba(255,255,255,.14) }
+
+/* ==========================================================
+   STICKY HEADER ON PHONES
+   body{overflow-x:clip} can defeat position:sticky, so on phones
+   the header is pinned outright and the page is offset to match.
+   ========================================================== */
+@media (max-width:1010px){
+  .site-head{ position:fixed; top:0; left:0; right:0; z-index:200 }
+  body{ padding-top:var(--head-h) }
+  [data-storm="on"] body{ padding-top:calc(var(--head-h) + var(--stormbar-h, 0px)) }
+  .stormbar{ position:fixed; top:0; left:0; right:0; z-index:201 }
+  [data-storm="on"] .site-head{ top:var(--stormbar-h, 0px) }
+  .nav{ top:calc(var(--head-h) + var(--stormbar-h, 0px)) }
+  html{ scroll-padding-top:calc(var(--head-h) + var(--stormbar-h, 0px) + 16px) }
+}
+
+/* ==========================================================
+   DOCK BAR
+   A persistent bar at the bottom of a phone: the one action
+   worth having always in reach, plus a way back to the top.
+   ========================================================== */
+.dockbar{
+  position:fixed; left:0; right:0; bottom:0; z-index:190;
+  display:none; align-items:stretch; gap:8px;
+  padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));
+  background:linear-gradient(180deg, rgba(32,24,15,0) 0%, rgba(32,24,15,.55) 38%, rgba(32,24,15,.9) 100%);
+  pointer-events:none;
+}
+@media (max-width:1010px){ .dockbar{ display:flex } }
+
+.dockbar > *{ pointer-events:auto }
+
+.dockbar__cta{
+  flex:1; display:flex; align-items:center; justify-content:center;
+  min-height:52px; padding:14px 18px;
+  background:var(--amber); color:var(--ink); text-decoration:none;
+  font-family:var(--f-display); font-weight:800; font-size:.86rem;
+  letter-spacing:.14em; text-transform:uppercase;
+  border:2px solid var(--ink); border-radius:2px;
+  box-shadow:0 6px 18px rgba(32,24,15,.35);
+}
+.dockbar__cta:active{ background:var(--amber-hi) }
+
+.dockbar__btn{
+  flex:0 0 52px; width:52px; min-height:52px;
+  display:flex; align-items:center; justify-content:center;
+  background:var(--paper); color:var(--ink);
+  border:2px solid var(--ink); border-radius:2px;
+  box-shadow:0 6px 18px rgba(32,24,15,.35);
+  font-size:1.15rem; line-height:1;
+}
+.dockbar__btn:active{ background:var(--amber) }
+.dockbar__top{ opacity:0; transform:translateY(8px); transition:opacity .25s, transform .25s; pointer-events:none }
+.dockbar__top.show{ opacity:1; transform:none; pointer-events:auto }
+
+[data-storm="on"] .dockbar__cta{ background:var(--amber-hi); border-color:#0F2B34; color:#0F2B34 }
+
+/* Desktop: no bar, just a quiet back-to-top once you are deep in. */
+.totop{
+  position:fixed; right:22px; bottom:22px; z-index:190;
+  width:50px; height:50px; display:none;
+  align-items:center; justify-content:center;
+  background:var(--paper); color:var(--ink);
+  border:2px solid var(--ink); border-radius:50%;
+  box-shadow:0 8px 22px rgba(32,24,15,.28);
+  opacity:0; transform:translateY(10px); transition:opacity .25s, transform .25s;
+  font-size:1.1rem;
+}
+@media (min-width:1011px){ .totop{ display:flex } }
+.totop.show{ opacity:1; transform:none }
+.totop:hover{ background:var(--amber) }
+
+@media print{ .dockbar,.totop{ display:none !important } }
+
+/* ==========================================================
+   TRANSLUCENT HEADER ON PHONES
+   The header is now pinned, so it sits over the page the whole
+   way down. Making it glass lets the photography and the roots
+   read through it instead of the header cutting the page in two.
+   ========================================================== */
+@media (max-width:1010px){
+  .site-head{
+    background:rgba(244,237,225,.72);
+    -webkit-backdrop-filter:blur(14px) saturate(1.25);
+    backdrop-filter:blur(14px) saturate(1.25);
+    border-bottom:1px solid rgba(32,24,15,.14);
+    box-shadow:0 2px 14px rgba(32,24,15,.10);
+  }
+  .nav{
+    background:linear-gradient(180deg, rgba(246,231,200,.94) 0%, rgba(244,237,225,.90) 42%);
+    -webkit-backdrop-filter:blur(16px) saturate(1.2);
+    backdrop-filter:blur(16px) saturate(1.2);
+  }
+  .stormbar{
+    background:rgba(33,92,107,.86);
+    -webkit-backdrop-filter:blur(12px);
+    backdrop-filter:blur(12px);
+  }
+  [data-storm="on"] .site-head{
+    background:rgba(18,49,59,.72);
+    border-bottom-color:rgba(255,255,255,.18);
+  }
+  [data-storm="on"] .nav{
+    background:linear-gradient(180deg, rgba(23,65,78,.94) 0%, rgba(18,49,59,.92) 45%);
+  }
+}
+
+/* No backdrop-filter support: fall back to a solid header rather
+   than an unreadable one. */
+@supports not ((backdrop-filter:blur(2px)) or (-webkit-backdrop-filter:blur(2px))){
+  @media (max-width:1010px){
+    .site-head{ background:var(--cream) }
+    [data-storm="on"] .site-head{ background:#12313B }
+  }
+}

@@ -454,9 +454,18 @@ table.tr-table tr:hover td{background:rgba(217,154,52,.09)}
 }
 
 
-/* ---------- VIDEO HEROES ---------- */
-video.hero-img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:.62; border:0}
-@media (prefers-reduced-motion:reduce){ video.hero-img{display:none} .hero{background-size:cover; background-position:center} }
+/* ---------- VIDEO HEROES ----------
+   The still renders first and is the finished design on its own.
+   The video fades in over it only once it can actually play, so
+   there is never a black box, a flash, or a gap while it buffers. */
+video.hero-img{
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; object-position:center; border:0;
+  opacity:0; transition:opacity 1s ease; z-index:1; background:transparent;
+}
+video.hero-img.is-playing{ opacity:.66 }
+img.hero-still{ z-index:0 }
+@media (prefers-reduced-motion:reduce){ video.hero-img{ display:none } }
 
 
 /* ==========================================================
