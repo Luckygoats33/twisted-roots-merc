@@ -12,11 +12,13 @@
      · they drift with the scroll, so they sit in the scene
        instead of on top of it
 
-   TIMING. The source clip was shot slow motion, so played back
-   at its own rate the bird looks like it is swimming. The sheet
-   holds 18 beat frames plus 7 of glide, so the beat is 18/25 of
-   the cycle: a 0.27s cycle puts the beat itself near 0.19s,
-   which is a crow working rather than drifting.
+   TIMING. An American crow beats around three times a second in
+   level flight, and it covers ground unhurriedly. The sheet holds
+   18 beat frames plus 7 of glide, so the beat is 18/25 of the
+   cycle: a 0.44s cycle puts the beat itself near 0.32s. Faster
+   than that and it turns into a sparrow; slower and it swims.
+   Crossing takes 38-70s, because a bird in the middle distance
+   does not shoot across a landscape.
    ========================================================== */
 
 (function () {
@@ -49,9 +51,9 @@
          appears slower because it is further from the eye. */
       var scale = 0.30 + (1 - depth) * 0.42;
       var top   = SKY_TOP + t * (SKY_BOTTOM - SKY_TOP) + (i % 2 ? 3.5 : -2.5);
-      var cross = 17 + depth * 16 + (i % 3) * 3;        /* seconds to cross */
+      var cross = 58 + depth * 34 + (i % 3) * 8;        /* seconds to cross */
       var delay = -(i * 6 + (i % 3) * 3.5);
-      var flap  = 0.27 + depth * 0.10 + (i % 2) * 0.03; /* ~4-5 beats/sec */
+      var flap  = 0.62 + depth * 0.16 + (i % 2) * 0.05; /* ~2 beats/sec, cruising */
 
       crow.style.cssText =
         "top:" + top.toFixed(1) + "%;" +

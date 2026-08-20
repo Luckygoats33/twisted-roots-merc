@@ -707,3 +707,70 @@ body{ background:var(--paper) }
     [data-storm="on"] .site-head{ background:#12313B }
   }
 }
+
+/* ==========================================================
+   PHONE HEADER
+   Hamburger on the left, the carved sign centred and hanging
+   off the top edge as an overlay. The sign is the brand on a
+   phone, so the wordmark steps out of the way.
+   ========================================================== */
+
+/* --- the hamburger, as an actual icon --- */
+.burger__box{ display:none }
+.burger__txt{ display:inline }
+
+@media (max-width:1010px){
+  .burger{
+    order:1; margin-left:0; margin-right:auto;
+    display:inline-flex; align-items:center; justify-content:center;
+    width:52px; height:46px; min-width:52px; padding:0;
+    background:rgba(217,154,52,.92); border:2px solid var(--ink); border-radius:2px;
+  }
+  .burger__txt{
+    position:absolute; width:1px; height:1px; overflow:hidden;
+    clip:rect(0 0 0 0); clip-path:inset(50%); white-space:nowrap;
+  }
+  .burger__box{
+    display:block; position:relative; width:24px; height:16px;
+  }
+  .burger__box i{
+    position:absolute; left:0; right:0; height:2.5px; border-radius:2px;
+    background:var(--ink); transition:transform .28s cubic-bezier(.2,.9,.3,1), opacity .18s;
+  }
+  .burger__box i:nth-child(1){ top:0 }
+  .burger__box i:nth-child(2){ top:6.75px }
+  .burger__box i:nth-child(3){ top:13.5px }
+  .burger.is-open .burger__box i:nth-child(1){ transform:translateY(6.75px) rotate(45deg) }
+  .burger.is-open .burger__box i:nth-child(2){ opacity:0 }
+  .burger.is-open .burger__box i:nth-child(3){ transform:translateY(-6.75px) rotate(-45deg) }
+
+  /* --- the sign, centred and overhanging --- */
+  .head-in{ position:relative; gap:12px }
+  .brand{
+    order:2;
+    position:absolute; left:50%; top:0;
+    transform:translateX(-50%);
+    display:block; text-align:center;
+    z-index:6;
+  }
+  .brand-txt{ display:none }
+  .brand .hangsign{
+    --tr-sign-h:78px;
+    margin:0; display:block;
+  }
+  .brand .hangsign__plate{
+    height:var(--tr-sign-h) !important;
+    filter:drop-shadow(0 6px 14px rgba(32,24,15,.45));
+  }
+
+  .head-cta{ order:3; margin-left:auto }
+  .nav{ z-index:205 }
+}
+
+@media (max-width:400px){
+  .brand .hangsign{ --tr-sign-h:66px }
+  .burger{ width:48px; min-width:48px }
+}
+
+/* Lock the page behind an open menu. */
+html.nav-open, html.nav-open body{ overflow:hidden }

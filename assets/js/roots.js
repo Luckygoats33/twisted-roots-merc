@@ -1,16 +1,27 @@
 /* ==========================================================
-   TWISTED ROOTS — THE LIVING ROOT SYSTEM
+   TWISTED ROOTS — THE ROOT SYSTEM
    ----------------------------------------------------------
-   One root system. It leaves the carved sign in the header and
-   works its way down the whole page as you scroll.
+   Not a line down the side of the page. A root.
 
-   Two rules govern everything here:
+   Four things make it read as a root rather than a stroke:
 
-   1. CONNECTED. Every branch starts at a point sampled off the
-      parent path with getPointAtLength(), so roots genuinely
-      join the trunk instead of floating alongside it.
-   2. QUIET. This is background. Few roots, clean curves, no
-      fuzz. If it competes with the copy, it is wrong.
+   1. FILLED, TAPERING RIBBONS. A stroked path has one width for
+      its whole length, which is exactly what a root does not do.
+      Every strand here is a filled outline whose width falls off
+      along its length and wobbles locally, so it thins, swells
+      and finally comes to a point.
+
+   2. BRAIDED STRANDS. Three strands share a centreline and each
+      carries its own rotating phase, so they cross over one
+      another on the way down. That crossing is the twist.
+
+   3. FRACTAL WANDER. The centreline is several octaves of noise
+      rather than one sine, so it never repeats a shape the eye
+      can predict.
+
+   4. GROWTH BY CLIP. Because the shapes are filled, growth is a
+      clip rectangle tied to the scroll — so the root genuinely
+      grows on the way down and contracts on the way back up.
    ========================================================== */
 
 (function () {
@@ -19,111 +30,110 @@
   var NS = "http://www.w3.org/2000/svg";
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* Seeded RNG so the system looks identical on every visit
-     rather than rearranging itself on each reload. */
-  function rng(seed) {
-    var s = seed;
+  var S = { host: null, svg: null, g: null, clip: null, H: 0, raf: 0, built: 0 };
+
+  /* ---------- deterministic value noise ---------- */
+  function mulberry(seed) {
     return function () {
-      s = (s * 1664525 + 1013904223) % 4294967296;
-      return s / 4294967296;
+      seed |= 0; seed = seed + 0x6D2B79F5 | 0;
+      var t = Math.imul(seed ^ seed >>> 15, 1 | seed);
+      t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+      return ((t ^ t >>> 14) >>> 0) / 4294967296;
     };
   }
-
-  var S = { host: null, svg: null, paths: [], tips: [], raf: 0, built: 0 };
-
-  /* ---------- path helpers ---------- */
-
-  function round(n) { return Math.round(n * 10) / 10; }
-
-  /* Catmull-Rom through the points, as cubic beziers — no corners. */
-  function curve(pts) {
-    if (pts.length < 2) return "";
-    var d = "M" + round(pts[0][0]) + "," + round(pts[0][1]);
-    for (var i = 0; i < pts.length - 1; i++) {
-      var p0 = pts[i - 1] || pts[i], p1 = pts[i],
-          p2 = pts[i + 1], p3 = pts[i + 2] || p2;
-      d += "C" + round(p1[0] + (p2[0] - p0[0]) / 6) + "," + round(p1[1] + (p2[1] - p0[1]) / 6)
-         + " " + round(p2[0] - (p3[0] - p1[0]) / 6) + "," + round(p2[1] - (p3[1] - p1[1]) / 6)
-         + " " + round(p2[0]) + "," + round(p2[1]);
-    }
-    return d;
+  function noiseField(seed, n) {
+    var r = mulberry(seed), a = [];
+    for (var i = 0; i < n; i++) a.push(r() * 2 - 1);
+    return function (x) {
+      var i = Math.floor(x), f = x - i;
+      var v0 = a[(i % n + n) % n], v1 = a[((i + 1) % n + n) % n];
+      var s = f * f * (3 - 2 * f);
+      return v0 + (v1 - v0) * s;
+    };
+  }
+  function fractal(fn, x) {
+    return fn(x) * 0.6 + fn(x * 2.3 + 11) * 0.28 + fn(x * 5.1 + 29) * 0.12;
   }
 
-  /* A trunk that drifts slowly. One low-frequency wave only —
-     the old version wobbled and read as a scribble. */
-  function trunk(x0, y0, y1, amp, drift, rand) {
-    var pts = [], steps = Math.max(6, Math.round((y1 - y0) / 220));
-    var phase = rand() * 6.283;
+  /* ---------- a filled, tapering, gnarled ribbon ---------- */
+  function ribbon(pts, w0, w1, wob, seed) {
+    var nz = noiseField(seed, 24);
+    var L = [], R = [], n = pts.length;
+    for (var i = 0; i < n; i++) {
+      var t = i / (n - 1);
+      var p = pts[i], a = pts[Math.max(0, i - 1)], b = pts[Math.min(n - 1, i + 1)];
+      var dx = b[0] - a[0], dy = b[1] - a[1];
+      var len = Math.hypot(dx, dy) || 1;
+      var nx = -dy / len, ny = dx / len;
+
+      var w = w0 + (w1 - w0) * Math.pow(t, 0.72);
+      w *= 1 + fractal(nz, t * 7) * wob;
+      w = Math.max(0.35, w);
+
+      L.push([p[0] + nx * w * 0.5, p[1] + ny * w * 0.5]);
+      R.push([p[0] - nx * w * 0.5, p[1] - ny * w * 0.5]);
+    }
+    R.reverse();
+    return "M" + L.concat(R).map(function (q) {
+      return q[0].toFixed(1) + "," + q[1].toFixed(1);
+    }).join("L") + "Z";
+  }
+
+  /* ---------- a braided root ---------- */
+  function braid(x0, y0, y1, amp, drift, seed, strands, w0, w1) {
+    var nz = noiseField(seed, 32);
+    var steps = Math.max(26, Math.round((y1 - y0) / 26));
+    var centre = [];
     for (var i = 0; i <= steps; i++) {
       var t = i / steps;
-      pts.push([
-        x0 + Math.sin(phase + t * 3.1) * amp * (0.3 + t * 0.7) + drift * t,
-        y0 + (y1 - y0) * t
+      centre.push([x0 + fractal(nz, t * 3.4) * amp + drift * t, y0 + (y1 - y0) * t]);
+    }
+    var out = [];
+    for (var k = 0; k < strands; k++) {
+      var phase = (k / strands) * Math.PI * 2;
+      var pts = centre.map(function (p, i) {
+        var t = i / steps;
+        /* the twist: each strand swings around the centreline and
+           tightens as the root thins toward the tip */
+        var swing = Math.sin(t * 9.5 + phase) * (w0 * 0.42) * (1 - t * 0.55);
+        var wob = fractal(nz, t * 6 + k * 3) * w0 * 0.16;
+        return [p[0] + swing + wob, p[1]];
+      });
+      out.push({ d: ribbon(pts, w0 * (0.62 + 0.2 * (k % 2)), w1, 0.34, seed + k * 97), pts: pts });
+    }
+    return { strands: out, centre: centre };
+  }
+
+  function offshoot(pts, at, dir, len, seed, w0) {
+    var nz = noiseField(seed, 20);
+    var p = pts[Math.min(pts.length - 1, Math.max(0, at))];
+    var steps = 14, out = [];
+    for (var i = 0; i <= steps; i++) {
+      var t = i / steps;
+      out.push([
+        p[0] + dir * len * Math.pow(t, 0.66) + fractal(nz, t * 5) * len * 0.16,
+        p[1] + len * (0.34 + fractal(nz, t * 3 + 7) * 0.16) * t * t + len * 0.1 * t
       ]);
     }
-    return curve(pts);
+    return { d: ribbon(out, w0, 0.5, 0.42, seed + 31), pts: out };
   }
 
-  /* A branch leaving a parent path at `atY`, found by walking the
-     parent's own geometry. This is what makes it look connected. */
-  function branchFrom(parentEl, atY, dir, len, rand) {
-    var total = parentEl.getTotalLength();
-    if (!total) return null;
-
-    /* binary search the parent for the point nearest atY */
-    var lo = 0, hi = total, pt = null;
-    for (var i = 0; i < 18; i++) {
-      var mid = (lo + hi) / 2;
-      pt = parentEl.getPointAtLength(mid);
-      if (pt.y < atY) lo = mid; else hi = mid;
-    }
-    if (!pt) return null;
-
-    /* a short tangent so the branch leaves at a believable angle */
-    var back = parentEl.getPointAtLength(Math.max(0, lo - 26));
-    var ang = Math.atan2(pt.y - back.y, pt.x - back.x);
-
-    var pts = [[pt.x, pt.y]], steps = 4, ex = pt.x, ey = pt.y;
-    for (var k = 1; k <= steps; k++) {
-      var t = k / steps;
-      /* peel away from the trunk, then bend back down under its own weight */
-      var spread = dir * len * Math.pow(t, 0.62);
-      var fall = len * (0.30 + rand() * 0.22) * t * t;
-      ex = pt.x + Math.cos(ang) * len * 0.10 * t + spread;
-      ey = pt.y + Math.sin(ang) * len * 0.10 * t + fall;
-      pts.push([ex, ey]);
-    }
-    return { d: curve(pts), end: [ex, ey], at: [pt.x, pt.y] };
-  }
-
-  function addPath(d, cls, y0, y1) {
+  function add(d, cls) {
     var p = document.createElementNS(NS, "path");
     p.setAttribute("d", d);
     p.setAttribute("class", cls);
-    S.svg.appendChild(p);
-
-    /* A twin drawn over the top, carrying the pulse. Same
-       geometry, so the pulse can only ever travel along a root. */
-    var q = document.createElementNS(NS, "path");
-    q.setAttribute("d", d);
-    q.setAttribute("class", "rt-pulse rt-pulse--" + cls.replace("rt-", ""));
-    S.svg.appendChild(q);
-
-    var rec = { el: p, pulse: q, y0: y0, y1: y1, len: 0 };
-    S.paths.push(rec);
+    S.g.appendChild(p);
     return p;
   }
 
   /* ---------- build ---------- */
-
   function build() {
     if (!S.host) return;
     S.host.innerHTML = "";
-    S.paths = [];
-    S.tips = [];
 
     var W = document.documentElement.clientWidth;
     var H = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+    S.H = H;
     S.host.style.height = H + "px";
 
     var svg = document.createElementNS(NS, "svg");
@@ -131,11 +141,23 @@
     svg.setAttribute("preserveAspectRatio", "none");
     svg.setAttribute("aria-hidden", "true");
     S.svg = svg;
-    S.host.appendChild(svg);          /* in the DOM before measuring */
 
-    var rand = rng(20260820);
+    var defs = document.createElementNS(NS, "defs");
+    var cp = document.createElementNS(NS, "clipPath");
+    cp.setAttribute("id", "tr-rootclip");
+    var rect = document.createElementNS(NS, "rect");
+    rect.setAttribute("x", 0); rect.setAttribute("y", 0);
+    rect.setAttribute("width", W);
+    rect.setAttribute("height", reduce ? H : 0);
+    cp.appendChild(rect); defs.appendChild(cp); svg.appendChild(defs);
+    S.clip = rect;
 
-    /* Start directly under the carved sign in the header. */
+    var g = document.createElementNS(NS, "g");
+    g.setAttribute("clip-path", "url(#tr-rootclip)");
+    svg.appendChild(g);
+    S.g = g;
+    S.host.appendChild(svg);
+
     var brandImg = document.querySelector(".brand img");
     var seedX = 74;
     if (brandImg) {
@@ -143,80 +165,34 @@
       seedX = b.left + b.width / 2 + window.scrollX;
     }
     var headH = (document.querySelector(".site-head") || {}).offsetHeight || 86;
+    var lane = Math.max(30, Math.min(seedX, W * 0.085));
+    var amp = Math.min(46, W * 0.032);
+    var thick = W < 700 ? 13 : 19;
 
-    /* Stay in the margin. On a narrow screen the margin is the
-       page edge, so hug it rather than crossing the text. */
-    var lane = Math.max(34, Math.min(seedX, W * 0.10));
-    var amp = Math.min(34, W * 0.022);
-
-    /* ---- the trunk: sign to footer, one continuous root ---- */
-    var tapEl = addPath(
-      trunk(lane, headH - 6, H - 90, amp, Math.min(90, W * 0.05), rand),
-      "rt-tap", 0, H
-    );
-
-    /* ---- branches, one every other section, alternating ---- */
-    var secs = Array.prototype.slice.call(document.querySelectorAll("main > section"));
-    var picks = secs.filter(function (_, i) { return i < 3 || i % 2 === 0; });
-
-    picks.forEach(function (sec, n) {
-      var r = sec.getBoundingClientRect();
-      var top = r.top + window.scrollY;
-      var atY = top + Math.min(r.height * 0.4, 300);
-      if (atY < headH + 60 || atY > H - 160) return;
-
-      var len = 60 + rand() * Math.min(120, W * 0.075);
-      var br = branchFrom(tapEl, atY, 1, len, rand);
-      if (!br) return;
-
-      addPath(br.d, "rt-major", atY - window.innerHeight * 0.7, atY + 130);
-
-      /* one child root, so it reads as a system and not a comb */
-      if (n % 2 === 0) {
-        var sub = branchFrom(S.paths[S.paths.length - 1].el,
-                             br.at[1] + len * 0.42, 1, len * 0.5, rand);
-        if (sub) addPath(sub.d, "rt-minor", atY - window.innerHeight * 0.66, atY + 200);
-      }
-
-      var tip = document.createElementNS(NS, "circle");
-      tip.setAttribute("cx", round(br.end[0]));
-      tip.setAttribute("cy", round(br.end[1]));
-      svg.appendChild(tip);
-      S.tips.push({ el: tip, y: atY });
+    var main = braid(lane, headH - 20, H - 80, amp, Math.min(110, W * 0.06),
+                     20260820, 3, thick, 1.1);
+    main.strands.forEach(function (s, i) {
+      add(s.d, i === 0 ? "rt-strand rt-strand--a" : "rt-strand rt-strand--b");
     });
 
-    /* ---- the trunk returns to the sign in the footer ---- */
-    var foot = document.querySelector(".site-foot img");
-    if (foot) {
-      var fr = foot.getBoundingClientRect();
-      var fx = fr.left + fr.width / 2 + window.scrollX;
-      var fy = fr.top + window.scrollY;
-      addPath(curve([
-        [lane + 14, fy - 300],
-        [lane + (fx - lane) * 0.4, fy - 180],
-        [lane + (fx - lane) * 0.82, fy - 70],
-        [fx - 18, fy - 4]
-      ]), "rt-major", fy - 300 - window.innerHeight * 0.6, fy);
-    }
-
-    /* measure once; from here on we only touch stroke-dashoffset */
-    S.paths.forEach(function (o, i) {
-      var L = 2000;
-      try { L = o.el.getTotalLength() || 2000; } catch (e) {}
-      o.len = L;
-      o.el.style.strokeDasharray = L;
-      o.el.style.strokeDashoffset = reduce ? 0 : L;
-
-      /* One short bright dash, then a gap the length of the whole
-         root — so exactly one pulse travels it per cycle. Speed is
-         held constant by scaling duration with length, and every
-         root is offset so they never pulse in unison. */
-      if (o.pulse) {
-        var head = Math.max(16, Math.min(46, L * 0.05));
-        o.pulse.style.strokeDasharray = head + " " + L;
-        o.pulse.style.setProperty("--L", (L + head).toFixed(1));
-        o.pulse.style.animationDuration = (L / 150 + 3.2).toFixed(2) + "s";
-        o.pulse.style.animationDelay = (-(i * 2.7 + (i % 5) * 1.9)).toFixed(2) + "s";
+    /* offshoots taken off the real strand, so they are attached
+       rather than floating next to it */
+    var secs = Array.prototype.slice.call(document.querySelectorAll("main > section"));
+    var host = main.strands[0].pts;
+    var y0 = host[0][1], y1 = host[host.length - 1][1];
+    secs.forEach(function (sec, n) {
+      if (n % 2) return;
+      var r = sec.getBoundingClientRect();
+      var y = r.top + window.scrollY + Math.min(r.height * 0.36, 280);
+      if (y < headH + 40 || y > H - 140) return;
+      var idx = Math.round((y - y0) / Math.max(1, y1 - y0) * (host.length - 1));
+      var len = 60 + (n % 3) * 34 + Math.min(120, W * 0.07);
+      var o = offshoot(host, idx, 1, len, 4000 + n * 131, thick * 0.4);
+      add(o.d, "rt-strand rt-strand--c");
+      if (n % 4 === 0) {
+        var o2 = offshoot(o.pts, Math.round(o.pts.length * 0.55), 1, len * 0.5,
+                          7000 + n * 17, thick * 0.2);
+        add(o2.d, "rt-strand rt-strand--d");
       }
     });
 
@@ -224,40 +200,20 @@
     paint();
   }
 
-  /* ---------- grow as you scroll ---------- */
-
+  /* ---------- grow and contract with the scroll ---------- */
   function paint() {
-    if (reduce) return;
-    var eye = (window.scrollY || window.pageYOffset) + window.innerHeight * 0.9;
-
-    for (var i = 0; i < S.paths.length; i++) {
-      var o = S.paths[i];
-      var p = (eye - o.y0) / Math.max(1, o.y1 - o.y0);
-      p = p < 0 ? 0 : p > 1 ? 1 : p;
-      o.el.style.strokeDashoffset = o.len * (1 - p);
-
-      /* nothing flows through a root that has not grown yet */
-      if (o.pulse && !o.flowing && p > 0.55) {
-        o.flowing = 1;
-        o.pulse.classList.add("on");
-      }
-    }
-    for (var j = 0; j < S.tips.length; j++) {
-      var t = S.tips[j];
-      if (!t.lit && eye > t.y + 60) { t.lit = 1; t.el.classList.add("lit"); }
-    }
+    if (!S.clip || reduce) return;
+    var y = window.scrollY || window.pageYOffset;
+    var reach = y + window.innerHeight * 0.92;
+    S.clip.setAttribute("height", Math.max(0, Math.min(S.H, reach)).toFixed(0));
   }
-
   function queue() {
     if (S.raf) return;
     S.raf = requestAnimationFrame(function () { S.raf = 0; paint(); });
   }
 
-  /* ---------- init ---------- */
-
   function init() {
     if (document.querySelector(".rootsys")) return;
-
     var host = document.createElement("div");
     host.className = "rootsys";
     host.setAttribute("aria-hidden", "true");
@@ -268,21 +224,12 @@
       document.body.style.position = "relative";
     }
 
-    var brand = document.querySelector(".brand");
-    if (brand && !brand.querySelector(".rt-seed")) {
-      var stem = document.createElement("span");
-      stem.className = "rt-seed";
-      brand.appendChild(stem);
-    }
-
     build();
     window.addEventListener("scroll", queue, { passive: true });
 
     var t;
-    function later() { clearTimeout(t); t = setTimeout(build, 250); }
+    function later() { clearTimeout(t); t = setTimeout(build, 240); }
     window.addEventListener("resize", later, { passive: true });
-
-    /* the page gets taller as the client-side lists render */
     setTimeout(build, 500);
     setTimeout(build, 1600);
     if ("ResizeObserver" in window) {

@@ -671,3 +671,101 @@ img.hero-still{ z-index:0 }
 .brand .hangsign{ --tr-sign-h:86px; margin-top:-16px; margin-bottom:-46px }
 @media (max-width:1010px){ .brand .hangsign{ --tr-sign-h:62px; margin-top:-12px; margin-bottom:-34px } }
 @media (max-width:400px){  .brand .hangsign{ --tr-sign-h:52px; margin-top:-10px; margin-bottom:-28px } }
+
+/* ==========================================================
+   HEADER ON SCROLL
+   Transparent over the hero, then a white sheet with a little
+   transparency once you are into the page, so the nav always
+   has something to sit on.
+   ========================================================== */
+.site-head{ transition:background-color .3s ease, box-shadow .3s ease }
+.site-head.is-scrolled{
+  background:rgba(255,255,255,.82);
+  box-shadow:0 2px 20px rgba(32,24,15,.13);
+  border-bottom-color:rgba(32,24,15,.10);
+}
+[data-storm="on"] .site-head.is-scrolled{ background:rgba(15,43,52,.86) }
+@supports not ((backdrop-filter:blur(2px)) or (-webkit-backdrop-filter:blur(2px))){
+  .site-head.is-scrolled{ background:#fff }
+}
+
+/* ---------- THE SIGN WIGGLES WHEN YOU SCROLL ----------
+   A hanging sign does not sit still while the wind of the page
+   moves past it. --sign-tilt is fed from the scroll delta, so
+   the sign leans into the direction of travel and settles. */
+.brand .hangsign__rig,
+.brand .hangsign__plate{
+  transform-origin:50% 0;
+}
+.brand .hangsign__plate{
+  transform:rotate(var(--sign-tilt,0deg)) scale(var(--sign-grow,1));
+  transition:transform .45s cubic-bezier(.22,1.4,.36,1);
+}
+
+/* ---------- MOBILE: no wordmark, bigger sign ---------- */
+@media (max-width:1010px){
+  .brand-txt{ display:none !important }
+}
+
+/* ==========================================================
+   THE SIGN IS THE WORDMARK
+   The carved sign already says Twisted Roots Merc and Oregon
+   Coast. Setting it again in type beside it is redundant, so
+   the sign carries the brand on its own at every width and gets
+   the room that buys.
+   ========================================================== */
+.brand-txt{ display:none !important }
+
+.brand .hangsign{ --tr-sign-h:118px; margin-top:-18px; margin-bottom:-72px }
+.brand .hangsign__plate{ height:var(--tr-sign-h) !important; width:auto !important }
+.brand .hangsign{ --hs-drop:30px }
+
+@media (max-width:1010px){
+  .brand .hangsign{ --tr-sign-h:86px; --hs-drop:22px; margin-top:-14px; margin-bottom:-52px }
+}
+@media (max-width:400px){
+  .brand .hangsign{ --tr-sign-h:70px; --hs-drop:18px; margin-top:-12px; margin-bottom:-42px }
+}
+
+/* The sign now overhangs a long way, so it must never be clipped
+   and never take a tap. */
+.site-head,.head-in,.brand{ overflow:visible }
+.brand .hangsign,.brand .hangsign *{ pointer-events:none }
+
+
+/* ==========================================================
+   HEADER STATE — final word
+   Several blocks above set .site-head's background as the design
+   moved. This is the one that decides, so it is stated last and
+   stated once.
+   ========================================================== */
+.site-head{
+  background:rgba(244,237,225,.25) !important;      /* 75% transparent over the hero */
+}
+.site-head.is-scrolled{
+  background:rgba(255,255,255,.82) !important;      /* white sheet once you are in */
+  box-shadow:0 2px 20px rgba(32,24,15,.13) !important;
+}
+[data-storm="on"] .site-head{ background:rgba(18,49,59,.28) !important }
+[data-storm="on"] .site-head.is-scrolled{ background:rgba(15,43,52,.88) !important }
+@supports not ((backdrop-filter:blur(2px)) or (-webkit-backdrop-filter:blur(2px))){
+  .site-head{ background:var(--cream) !important }
+  .site-head.is-scrolled{ background:#fff !important }
+}
+
+/* ==========================================================
+   BEAM
+   The beam was running wider than the sign it carries, which
+   left a pale bar sticking out beside the logo. It should be
+   just wide enough to take the two chains.
+   ========================================================== */
+.brand .hangsign__beam{
+  width:calc(100% - 26px) !important;
+  left:13px !important; right:auto !important;
+  height:7px !important;
+}
+
+/* The root now grows out of the sign for real, so the painted
+   stub underneath it is redundant — and it was the stray mark
+   showing under the logo. */
+.brand .rt-seed{ display:none !important }

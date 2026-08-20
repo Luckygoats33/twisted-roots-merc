@@ -1,12 +1,12 @@
 /* ==========================================================
-   TWISTED ROOTS — THE LIVING ROOT SYSTEM
+   TWISTED ROOTS — THE ROOT SYSTEM
    ----------------------------------------------------------
-   A single root system that leaves the carved sign in the
-   header and works its way down the page as you scroll.
+   Filled, tapering, braided strands — not a stroked line.
+   Geometry is generated in assets/js/roots.js; this file only
+   decides how it sits on the page.
 
-   It is BACKGROUND. It should read as grain in the paper —
-   something you notice on the second visit, never something
-   that competes with a word of copy.
+   It is background. It reads on the second look, never on the
+   first, and it must never fight a word of copy.
    ========================================================== */
 
 .rootsys{
@@ -17,68 +17,51 @@
   z-index:3;
   overflow:hidden;
   contain:paint;
-
-  /* One warm ink, low opacity. Reads as a soft tan line on the
-     cream bands and as a faint lift on the dark ones, without a
-     blend mode that behaves differently on every background. */
-  opacity:1;
 }
-.rootsys svg{display:block; width:100%; height:100%; overflow:visible}
+.rootsys svg{ display:block; width:100%; height:100%; overflow:visible }
 
-.rootsys path{
-  fill:none;
-  stroke:#8A6238;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-  will-change:stroke-dashoffset;
-}
+/* The lead strand is darkest; the ones braided behind it sit
+   back, so the twist reads as depth instead of three lines. */
+.rootsys .rt-strand{ stroke:none; fill:#7A5533; pointer-events:none }
+.rootsys .rt-strand--a{ fill:#6E4A2B; opacity:.30 }
+.rootsys .rt-strand--b{ fill:#8A6238; opacity:.20 }
+.rootsys .rt-strand--c{ fill:#7A5533; opacity:.24 }
+.rootsys .rt-strand--d{ fill:#8A6238; opacity:.18 }
 
-/* One continuous system, tapering the further it travels. */
-.rootsys .rt-tap   { stroke-width:7;   opacity:.44 }
-.rootsys .rt-major { stroke-width:3.4; opacity:.36 }
-.rootsys .rt-minor { stroke-width:1.9; opacity:.28 }
+[data-storm="on"] .rootsys .rt-strand--a{ fill:#3E7C8C; opacity:.30 }
+[data-storm="on"] .rootsys .rt-strand--b{ fill:#5E93A2; opacity:.20 }
+[data-storm="on"] .rootsys .rt-strand--c{ fill:#4A8697; opacity:.24 }
+[data-storm="on"] .rootsys .rt-strand--d{ fill:#5E93A2; opacity:.18 }
 
-/* Root tips — barely there, just a thickening where a root stops. */
-  .rootsys circle{
-  fill:#8A6238; opacity:0; r:2.2;
-  transition:opacity .9s ease;
-}
-.rootsys circle.lit{ opacity:.4 }
-
-/* Storm mode: the system cools and digs in a little harder. */
-[data-storm="on"] .rootsys{ opacity:1 }
-[data-storm="on"] .rootsys path{ stroke:#5E93A2; opacity:.24 }
-[data-storm="on"] .rootsys circle{ fill:#5E93A2 }
-
-/* The stem that leaves the carved sign, so the first root is
-   clearly coming out of the logo and not out of nowhere. */
+/* The stub leaving the carved sign, so the root visibly comes
+   out of the logo rather than starting near it. */
 .brand{ position:relative }
 .brand .rt-seed{
-  position:absolute; left:50%; bottom:-14px; width:3px; height:16px;
-  background:linear-gradient(#6B4A28, transparent);
-  opacity:.85; pointer-events:none;
+  position:absolute; left:50%; bottom:-16px; width:5px; height:18px;
+  border-radius:0 0 3px 3px;
+  background:linear-gradient(#6E4A2B, rgba(110,74,43,0));
+  opacity:.5; pointer-events:none;
 }
 
 @media (max-width:900px){
-  .rootsys{ opacity:.92 }
-  .rootsys .rt-tap{ stroke-width:5.5 }
-  .rootsys .rt-major{ stroke-width:2.8 }
+  .rootsys .rt-strand--a{ opacity:.26 }
+  .rootsys .rt-strand--b{ opacity:.17 }
+  .rootsys .rt-strand--c{ opacity:.21 }
+  .rootsys .rt-strand--d{ opacity:.15 }
 }
-
-@media (prefers-reduced-motion:reduce){
-  .rootsys path{ stroke-dashoffset:0 !important }
-  .rootsys circle{ opacity:.22 }
-}
-
-/* Print: the roots are decoration, and decoration does not print. */
+@media (prefers-reduced-motion:reduce){ .rootsys .rt-strand{ opacity:.2 } }
 @media print{ .rootsys{ display:none !important } }
 
 /* ==========================================================
    STACKING
    The root sits ABOVE each band's background colour but BELOW
    every word on the page. Content lives inside .wrap, so
-   lifting the wrappers one layer is all it takes — the root
-   passes behind the text instead of over it.
+   lifting the wrappers one layer is all it takes.
+
+   NOTE: .site-head, .stormbar and .modal are deliberately NOT
+   listed here — they carry their own position and a much higher
+   z-index. Restating them flattens the sticky header and
+   silently kills taps on the burger.
    ========================================================== */
 .wrap,
 .wrap--mid,
@@ -87,65 +70,6 @@
 .hero-in,
 .cinema-in{ z-index:6 }
 
-/* Anything that must stay above the root regardless.
-   NOTE: .site-head, .stormbar and .modal are deliberately NOT
-   listed here — they already carry their own position and a much
-   higher z-index (200 / 500). Restating them here would flatten
-   the sticky header to position:relative and drop it under the
-   page, which silently kills taps on the burger. */
 .site-foot .foot-top,
 .site-foot .foot-motto,
 .site-foot .foot-legal{ position:relative; z-index:5 }
-
-/* ==========================================================
-   SAP PULSES
-   A short bright head travelling the length of each root, once
-   per cycle, offset so they never fire together. Reads as
-   something moving through the system — not as a light show.
-   ========================================================== */
-.rootsys .rt-pulse{
-  fill:none;
-  stroke:#E8B45A;
-  stroke-linecap:round;
-  opacity:0;                       /* nothing until the root has grown */
-  pointer-events:none;
-}
-.rootsys .rt-pulse--tap  { stroke-width:5.6 }
-.rootsys .rt-pulse--major{ stroke-width:2.8 }
-.rootsys .rt-pulse--minor{ stroke-width:1.6 }
-
-.rootsys .rt-pulse.on{
-  animation-name:rt-flow;
-  animation-timing-function:linear;
-  animation-iteration-count:infinite;
-  will-change:stroke-dashoffset;
-}
-
-/* The head starts past the end of the root and runs to the tip.
-   --L is the path length plus the head, set per path in JS. */
-@keyframes rt-flow{
-  0%   { stroke-dashoffset:var(--L,1200); opacity:0 }
-  6%   { opacity:.6 }
-  50%  { opacity:.68 }
-  88%  { opacity:.46 }
-  100% { stroke-dashoffset:0; opacity:0 }
-}
-
-/* The trunk gets a faint glow; the finer roots stay flat so the
-   effect never turns into fairy lights. */
-.rootsys .rt-pulse--tap.on{ filter:drop-shadow(0 0 5px rgba(232,180,90,.5)) }
-
-/* Storm mode: cooler, quicker, a little brighter — the system
-   working harder. */
-[data-storm="on"] .rootsys .rt-pulse{ stroke:#7FD4E8 }
-[data-storm="on"] .rootsys .rt-pulse.on{ animation-duration:2.4s !important }
-[data-storm="on"] .rootsys .rt-pulse--tap.on{ filter:drop-shadow(0 0 6px rgba(127,212,232,.55)) }
-
-@media (max-width:900px){
-  .rootsys .rt-pulse--tap  { stroke-width:4.4 }
-  .rootsys .rt-pulse--major{ stroke-width:2.4 }
-}
-
-@media (prefers-reduced-motion:reduce){
-  .rootsys .rt-pulse{ display:none }
-}

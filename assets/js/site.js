@@ -563,24 +563,53 @@ const TR = (() => {
     });
   }
 
-  /* ---------------- THE SIGN GROWS ----------------
-     The carved sign opens up over the first screen of scroll, so
-     the root leaving it reads as something the sign is doing
-     rather than a line that happens to start there. */
-  function signGrow(){
-    var signs = $$(".brand img, .hangsign__plate");
-    if (!signs.length) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    var raf = 0;
+  /* ---------------- THE SIGN, AND THE HEADER ON SCROLL ----------
+     A hanging sign does not sit still while the page moves past
+     it. The tilt is driven by scroll VELOCITY, not position, so
+     it leans into the direction of travel and settles when you
+     stop — which is what a real sign on two chains does.
+
+     The header is transparent over the hero and picks up a white
+     sheet once you are into the page, so the nav always has
+     something to sit on.                                        */
+  function signAndHeader(){
+    var head  = $(".site-head");
+    var signs = $$(".brand .hangsign__plate, .brand img");
+    var still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    var last = window.scrollY || window.pageYOffset;
+    var vel = 0, raf = 0, settle = 0;
+
     var run = function(){
       if (raf) return;
       raf = requestAnimationFrame(function(){
         raf = 0;
-        var k = Math.min(1, (window.scrollY || window.pageYOffset) / Math.max(1, window.innerHeight * 0.5));
-        var g = (1 + k * 0.5).toFixed(3);          /* up to +50% */
-        signs.forEach(function(el){ el.style.setProperty("--sign-grow", g); });
+        var y = window.scrollY || window.pageYOffset;
+        var d = y - last;
+        last = y;
+
+        if (head) head.classList.toggle("is-scrolled", y > 40);
+        if (still || !signs.length) return;
+
+        /* velocity, damped — a heavy sign has momentum */
+        vel = vel * 0.82 + d * 0.18;
+        var tilt = Math.max(-7, Math.min(7, vel * 0.55));
+        var grow = 1 + Math.min(1, y / Math.max(1, window.innerHeight * 0.5)) * 0.18;
+
+        signs.forEach(function(el){
+          el.style.setProperty("--sign-tilt", tilt.toFixed(2) + "deg");
+          el.style.setProperty("--sign-grow", grow.toFixed(3));
+        });
+
+        /* when scrolling stops, let it swing back to rest */
+        clearTimeout(settle);
+        settle = setTimeout(function(){
+          vel = 0;
+          signs.forEach(function(el){ el.style.setProperty("--sign-tilt", "0deg"); });
+        }, 140);
       });
     };
+
     window.addEventListener("scroll", run, { passive:true });
     run();
   }
@@ -595,7 +624,9 @@ const TR = (() => {
       burger.addEventListener("click", () => {
         const open = nav.classList.toggle("open");
         burger.setAttribute("aria-expanded", open ? "true" : "false");
-        burger.textContent = open ? "Close" : "Menu";
+        burger.setAttribute("aria-label", open ? "Close menu" : "Menu");
+        burger.classList.toggle("is-open", open);
+        document.documentElement.classList.toggle("nav-open", open);
       });
     }
 
@@ -685,7 +716,7 @@ const TR = (() => {
       }
     });
 
-    heroVideo(); dockbar(); signGrow();
+    heroVideo(); dockbar(); signAndHeader();
     paintOpenPills(); paintBoard(); paintLists(); paintMeters();
     paintKits(); paintRequests(); paintBakery(); ticker(); reveals(); driveBars();
     setInterval(paintOpenPills, 60000);
