@@ -72,3 +72,25 @@
 
 /* Print: the roots are decoration, and decoration does not print. */
 @media print{ .rootsys{ display:none !important } }
+
+/* ==========================================================
+   STACKING
+   The root sits ABOVE each band's background colour but BELOW
+   every word on the page. Content lives inside .wrap, so
+   lifting the wrappers one layer is all it takes — the root
+   passes behind the text instead of over it.
+   ========================================================== */
+.wrap,
+.wrap--mid,
+.wrap--narrow{ position:relative; z-index:4 }
+
+.hero-in,
+.cinema-in{ z-index:6 }
+
+/* Anything that must stay above the root regardless */
+.site-head,
+.stormbar,
+.modal,
+.site-foot .foot-top,
+.site-foot .foot-motto,
+.site-foot .foot-legal{ position:relative; z-index:5 }

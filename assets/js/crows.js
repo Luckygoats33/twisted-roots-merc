@@ -1,61 +1,19 @@
 /* ==========================================================
    TWISTED ROOTS — CROWS
    ----------------------------------------------------------
-   A loose group of crows working their way across the hero.
-   Real crow shape: broad wings, fingered tips, a wedge tail,
-   and a slow deliberate flap with a glide in the middle of it.
+   A loose group of crows working across the hero.
 
-   Drop <div class="crows" data-crows="5"></div> in a
-   position:relative parent. Everything else happens here.
+   The bird is a real silhouette, not a drawn path: a 4-frame
+   sprite (up, level, down, level) generated from photographic
+   crow references and aligned on the body so the wingbeat does
+   not jitter. Frames are stepped, so the flap is a real
+   wingbeat rather than a rotating shape.
    ========================================================== */
 
 (function () {
   "use strict";
 
-  var NS = "http://www.w3.org/2000/svg";
-
-  /* A crow in profile, facing the direction of travel. The wings
-     are rooted well inside the body so there is never a seam
-     between them, however far the flap swings. */
-  function crowSVG() {
-    var svg = document.createElementNS(NS, "svg");
-    svg.setAttribute("viewBox", "0 0 120 56");
-    svg.setAttribute("class", "crow__svg");
-    svg.setAttribute("aria-hidden", "true");
-
-    /* Body: wedge tail at the back, deep chest, small head, short
-       heavy beak. That heavy beak is most of what says crow
-       rather than gull. */
-    var body = document.createElementNS(NS, "path");
-    body.setAttribute("class", "crow__body");
-    body.setAttribute("d",
-      "M14 27 C22 24.6 34 23.4 48 23.4 C62 23.4 74 24.4 84 26 " +
-      "C90 27 95 28 99 29 L107 30.8 C109.6 31.4 110 32.8 108 33.2 " +
-      "C106 33.6 102.6 33.4 99 32.8 L92 31.6 C86 33.4 76 34.6 64 34.8 " +
-      "C50 35 34 33.8 22 31.6 L14 30 C12.4 29.6 12.4 27.4 14 27 Z");
-
-    /* Near wing — broad arm, swept hand, three fingers at the tip. */
-    var wl = document.createElementNS(NS, "path");
-    wl.setAttribute("class", "crow__wing crow__wing--l");
-    wl.setAttribute("d",
-      "M66 32 C56 26 44 17 33 10 C27 6.2 21 3.4 15 2 " +
-      "C18 7 23 13 29 18.6 C34.6 24 41 28.4 47 31.2 " +
-      "C53 33.4 60 34 66 33.6 Z");
-
-    /* Far wing — the same arm, shorter and higher, so the bird
-       reads as three dimensional instead of flat. */
-    var wr = document.createElementNS(NS, "path");
-    wr.setAttribute("class", "crow__wing crow__wing--r");
-    wr.setAttribute("d",
-      "M60 31 C64 25 70 18 77 12.6 C81.4 9.2 85.8 6.8 90 5.6 " +
-      "C88.6 10 86 14.8 82.6 19.2 C79 23.8 74.6 27.6 70.4 30 " +
-      "C66.6 32 63 32.6 60 32.4 Z");
-
-    svg.appendChild(wr);      /* far wing behind the body */
-    svg.appendChild(body);
-    svg.appendChild(wl);      /* near wing in front */
-    return svg;
-  }
+  var FRAMES = 4;
 
   function build(host) {
     var n = parseInt(host.dataset.crows || "4", 10);
@@ -66,14 +24,14 @@
       var crow = document.createElement("span");
       crow.className = "crow";
 
-      /* Deterministic spread so the flock looks arranged, not random.
-         Leaders are larger and lower; stragglers smaller and higher. */
-      var t = i / Math.max(1, n - 1);
-      var scale = 0.5 + (i % 3) * 0.26;                 /* depth */
-      var top = 12 + t * 34 + (i % 2 ? 6 : -4);         /* % from top */
-      var cross = 46 + i * 9 + (i % 3) * 5;             /* seconds to cross */
-      var delay = -(i * 7 + (i % 3) * 4);               /* stagger, already in flight */
-      var flap = 0.62 + (i % 3) * 0.16;                 /* wingbeat */
+      /* Deterministic, so the flock is arranged rather than random.
+         Nearer birds are bigger, lower and beat slower. */
+      var t = n > 1 ? i / (n - 1) : 0.5;
+      var scale = 0.34 + (i % 3) * 0.19;
+      var top = 10 + t * 36 + (i % 2 ? 7 : -5);
+      var cross = 52 + i * 11 + (i % 3) * 6;
+      var delay = -(i * 9 + (i % 3) * 5);
+      var flap = 0.72 + (i % 3) * 0.2;
 
       crow.style.cssText =
         "top:" + top.toFixed(1) + "%;" +
@@ -81,9 +39,11 @@
         "--cr-cross:" + cross + "s;" +
         "--cr-delay:" + delay + "s;" +
         "--cr-flap:" + flap.toFixed(2) + "s;" +
-        "--cr-bob:" + (5 + (i % 3) * 3) + "px;";
+        "--cr-bob:" + (6 + (i % 3) * 4) + "px;";
 
-      crow.appendChild(crowSVG());
+      var wing = document.createElement("i");
+      wing.className = "crow__sprite";
+      crow.appendChild(wing);
       host.appendChild(crow);
     }
   }
@@ -91,15 +51,11 @@
   function init() {
     var hosts = document.querySelectorAll(".crows");
     if (!hosts.length) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      /* one crow, parked, so the hero still has a bird in it */
-      Array.prototype.forEach.call(hosts, function (h) {
-        h.dataset.crows = "1";
-        build(h);
-      });
-      return;
-    }
-    Array.prototype.forEach.call(hosts, build);
+    var still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    Array.prototype.forEach.call(hosts, function (h) {
+      if (still) h.dataset.crows = "2";
+      build(h);
+    });
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
