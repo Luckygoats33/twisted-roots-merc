@@ -1,10 +1,12 @@
 /* ==========================================================
    TWISTED ROOTS — THE LIVING ROOT SYSTEM
    ----------------------------------------------------------
-   A procedural root network that starts at the carved sign in
-   the header and grows down through every section of the page
-   as you scroll, ending in the footer where it re-forms the
-   logo. Generated in assets/js/roots.js.
+   A single root system that leaves the carved sign in the
+   header and works its way down the page as you scroll.
+
+   It is BACKGROUND. It should read as grain in the paper —
+   something you notice on the second visit, never something
+   that competes with a word of copy.
    ========================================================== */
 
 .rootsys{
@@ -12,84 +14,61 @@
   inset:0;
   width:100%;
   pointer-events:none;
-  z-index:4;
+  z-index:3;
   overflow:hidden;
   contain:paint;
+
+  /* One warm ink, low opacity. Reads as a soft tan line on the
+     cream bands and as a faint lift on the dark ones, without a
+     blend mode that behaves differently on every background. */
+  opacity:1;
 }
 .rootsys svg{display:block; width:100%; height:100%; overflow:visible}
 
-/* Root strokes. Wood tone reads against both the cream bands
-   and the dark bark bands without needing per-section swaps. */
 .rootsys path{
   fill:none;
-  stroke:var(--wood-dk, #8A6238);
+  stroke:#8A6238;
   stroke-linecap:round;
   stroke-linejoin:round;
-  opacity:.5;
   will-change:stroke-dashoffset;
 }
-.rootsys .rt-tap   { stroke-width:7.5; opacity:.6 }
-.rootsys .rt-major { stroke-width:3.6; opacity:.55 }
-.rootsys .rt-minor { stroke-width:1.9; opacity:.48 }
-.rootsys .rt-hair  { stroke-width:1;   opacity:.4 }
 
-/* Root tips — the little nodes where a root reaches a section */
-.rootsys circle{
-  fill:var(--wood-dk, #8A6238);
-  opacity:0;
-  transform-box:fill-box;
-  transform-origin:center;
-  transition:opacity .5s ease, transform .5s cubic-bezier(.2,1.6,.4,1);
+/* One continuous system, tapering the further it travels. */
+.rootsys .rt-tap   { stroke-width:5;   opacity:.26 }
+.rootsys .rt-major { stroke-width:2.4; opacity:.21 }
+.rootsys .rt-minor { stroke-width:1.3; opacity:.17 }
+
+/* Root tips — barely there, just a thickening where a root stops. */
+  .rootsys circle{
+  fill:#8A6238; opacity:0; r:2.2;
+  transition:opacity .9s ease;
 }
-.rootsys circle.lit{ opacity:.62; }
-.rootsys circle.pulse{ animation:rt-pulse 2.6s ease-in-out infinite }
-@keyframes rt-pulse{
-  0%,100%{ r:3.4; opacity:.5 }
-  50%    { r:5.2; opacity:.85 }
-}
+.rootsys circle.lit{ opacity:.22 }
 
-/* A root that has reached a section gets a warmer, live colour */
-.rootsys .rt-live{ stroke:var(--amber, #D99A34); opacity:.72 }
+/* Storm mode: the system cools and digs in a little harder. */
+[data-storm="on"] .rootsys{ opacity:1 }
+[data-storm="on"] .rootsys path{ stroke:#5E93A2; opacity:.24 }
+[data-storm="on"] .rootsys circle{ fill:#5E93A2 }
 
-/* Storm mode: the roots dig in — cooler, deeper, and they shiver */
-[data-storm="on"] .rootsys path{ stroke:var(--teal-lt, #3D95A8); opacity:.42 }
-[data-storm="on"] .rootsys circle{ fill:var(--amber-hi, #F2B953) }
-[data-storm="on"] .rootsys{ animation:rt-shiver 5.5s ease-in-out infinite }
-@keyframes rt-shiver{
-  0%,100%{ transform:translateX(0) }
-  25%    { transform:translateX(1.4px) }
-  75%    { transform:translateX(-1.4px) }
-}
-
-/* Seedling markers that sprout beside section headings */
-.rootsprout{
-  display:inline-block; width:16px; height:16px; margin-right:10px;
-  vertical-align:-2px; opacity:0; transform:scale(.4) rotate(-18deg);
-  transition:opacity .6s ease, transform .6s cubic-bezier(.2,1.5,.4,1);
-}
-.rootsprout.in{ opacity:.8; transform:none }
-.rootsprout path{ fill:none; stroke:var(--rust,#8E4826); stroke-width:1.6; stroke-linecap:round }
-.band--dark .rootsprout path,.band--ink .rootsprout path,
-.band--pine .rootsprout path,.band--teal .rootsprout path,
-.band--rust .rootsprout path,.band--bark .rootsprout path{ stroke:var(--amber-hi,#F2B953) }
-
-/* The header sign grows the first root */
+/* The stem that leaves the carved sign, so the first root is
+   clearly coming out of the logo and not out of nowhere. */
 .brand{ position:relative }
 .brand .rt-seed{
-  position:absolute; left:50%; bottom:-14px; width:2px; height:14px;
-  background:linear-gradient(var(--wood-dk,#8A6238), transparent);
-  opacity:.6; pointer-events:none;
+  position:absolute; left:50%; bottom:-10px; width:1.5px; height:11px;
+  background:linear-gradient(#6B4A28, transparent);
+  opacity:.5; pointer-events:none;
 }
 
-/* Keep the roots subtle on small screens, and out of the way */
 @media (max-width:900px){
   .rootsys{ opacity:.7 }
-  .rootsys .rt-tap{ stroke-width:5 }
-  .rootsys .rt-major{ stroke-width:2.4 }
+  .rootsys .rt-tap{ stroke-width:4 }
+  .rootsys .rt-major{ stroke-width:2 }
 }
+
 @media (prefers-reduced-motion:reduce){
   .rootsys path{ stroke-dashoffset:0 !important }
-  .rootsys circle{ opacity:.5; animation:none }
-  .rootsys{ animation:none }
-  .rootsprout{ opacity:.8; transform:none; transition:none }
+  .rootsys circle{ opacity:.22 }
 }
+
+/* Print: the roots are decoration, and decoration does not print. */
+@media print{ .rootsys{ display:none !important } }

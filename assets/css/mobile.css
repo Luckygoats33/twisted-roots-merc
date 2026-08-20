@@ -453,3 +453,77 @@
   }
   .nav .nav-cta::after{ display:none }
 }
+
+
+/* ==========================================================
+   MOBILE HARDENING
+   ========================================================== */
+
+/* 1. The hanging sign was stretching — the plate must keep its
+      own aspect ratio no matter what box it is handed. */
+.hangsign__plate,
+.hangsign img{
+  width:auto !important;
+  max-width:none;
+  object-fit:contain;
+  image-rendering:auto;
+}
+@media (max-width:1010px){
+  .brand img,.hangsign__plate{ height:44px !important; width:auto !important }
+  .hangsign--sm{ --hs-h:44px }
+}
+@media (max-width:400px){
+  .brand img,.hangsign__plate{ height:38px !important }
+  .hangsign--sm{ --hs-h:38px }
+  .brand-txt b{ font-size:.92rem }
+}
+
+/* 2. No white strip under the footer. The page ends in the
+      footer's colour, including any overscroll gutter. */
+html{ background:var(--ink) }
+body{ background:var(--paper) }
+.site-foot{ margin-bottom:0; padding-bottom:calc(36px + env(safe-area-inset-bottom,0px)) }
+
+/* 3. Nothing on a phone should be under 12px, and body copy
+      should not be under 14px. */
+@media (max-width:1010px){
+  .small,.card-in ul,.req .nt,.menu-item .ds,.good .foot em{ font-size:.9rem }
+  .eyebrow,.serif-caps,.stat .k,.board-cell .k,.drive-cell b,
+  .prod .mt,.result-head .cnt,.chips .lbl,figcaption{ font-size:.76rem }
+  .hero-tag{ font-size:.8rem; letter-spacing:.18em }
+  .openpill,.st,.ribbon,.stamp,.ticker span{ font-size:.74rem }
+  .board-cell .v small,.meter .vl,.req .ct{ font-size:.85rem }
+  .foot-legal{ font-size:.82rem }
+}
+
+/* 4. Every pill is a real target on a phone, including the
+      filter row on The Board. */
+@media (max-width:1010px){
+  a.pill,.pillrow a{ min-height:44px; display:inline-flex; align-items:center; padding:10px 16px }
+  .pill{ padding:9px 15px }
+}
+
+/* 5. Long unbroken product and post names must wrap, not push
+      the page sideways. */
+.prod .nm,.menu-item .nm,.req .nm,.card-in h3,.good .lab h3,.h1,.h2,.h3,.h-mega{
+  overflow-wrap:anywhere;
+}
+@media (max-width:640px){
+  .menu-item{ flex-wrap:wrap }
+  .menu-item .nm{ flex:1 1 auto; min-width:0 }
+  .menu-item .dots{ display:none }
+}
+
+/* 6. Full-bleed sections must never create a scrollbar on a
+      phone, where 100vw can exceed the layout width. */
+@media (max-width:1010px){
+  .fullbleed{ width:100%; left:auto; right:auto; margin-left:0; margin-right:0 }
+}
+
+/* 7. A hard floor on the smallest labels. Nothing on a phone
+      drops below 11.5px, including the status badges and the
+      storm banner chip. */
+@media (max-width:1010px){
+  .st,.stormbar b,.ribbon,.good .num,.receipt,.brand-txt span{ font-size:.72rem !important }
+  .req .ct{ font-size:.8rem }
+}
