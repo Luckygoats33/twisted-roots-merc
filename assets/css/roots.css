@@ -34,16 +34,16 @@
 }
 
 /* One continuous system, tapering the further it travels. */
-.rootsys .rt-tap   { stroke-width:5;   opacity:.26 }
-.rootsys .rt-major { stroke-width:2.4; opacity:.21 }
-.rootsys .rt-minor { stroke-width:1.3; opacity:.17 }
+.rootsys .rt-tap   { stroke-width:7;   opacity:.44 }
+.rootsys .rt-major { stroke-width:3.4; opacity:.36 }
+.rootsys .rt-minor { stroke-width:1.9; opacity:.28 }
 
 /* Root tips — barely there, just a thickening where a root stops. */
   .rootsys circle{
   fill:#8A6238; opacity:0; r:2.2;
   transition:opacity .9s ease;
 }
-.rootsys circle.lit{ opacity:.22 }
+.rootsys circle.lit{ opacity:.4 }
 
 /* Storm mode: the system cools and digs in a little harder. */
 [data-storm="on"] .rootsys{ opacity:1 }
@@ -54,15 +54,15 @@
    clearly coming out of the logo and not out of nowhere. */
 .brand{ position:relative }
 .brand .rt-seed{
-  position:absolute; left:50%; bottom:-10px; width:1.5px; height:11px;
+  position:absolute; left:50%; bottom:-14px; width:3px; height:16px;
   background:linear-gradient(#6B4A28, transparent);
-  opacity:.5; pointer-events:none;
+  opacity:.85; pointer-events:none;
 }
 
 @media (max-width:900px){
-  .rootsys{ opacity:.7 }
-  .rootsys .rt-tap{ stroke-width:4 }
-  .rootsys .rt-major{ stroke-width:2 }
+  .rootsys{ opacity:.92 }
+  .rootsys .rt-tap{ stroke-width:5.5 }
+  .rootsys .rt-major{ stroke-width:2.8 }
 }
 
 @media (prefers-reduced-motion:reduce){
@@ -125,9 +125,9 @@
    --L is the path length plus the head, set per path in JS. */
 @keyframes rt-flow{
   0%   { stroke-dashoffset:var(--L,1200); opacity:0 }
-  6%   { opacity:.42 }
-  50%  { opacity:.5 }
-  88%  { opacity:.34 }
+  6%   { opacity:.6 }
+  50%  { opacity:.68 }
+  88%  { opacity:.46 }
   100% { stroke-dashoffset:0; opacity:0 }
 }
 

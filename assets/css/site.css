@@ -542,15 +542,19 @@ img.hero-still{ z-index:0 }
 
 /* ==========================================================
    CROWS
-   A 4-frame silhouette sprite, stepped so the wingbeat is a
-   real beat. 200px per frame, 4 frames, 800px sheet.
+   A real wingbeat sliced out of green-screen footage, not a
+   drawn shape. --cr-frames is the number of cells in the sheet;
+   the animation steps one cell per frame, which at 18+ cells
+   reads as continuous flight rather than a flip-book.
    ========================================================== */
-.crows{ position:absolute; inset:0; z-index:2; pointer-events:none; overflow:hidden }
-
+.crows{
+  position:absolute; inset:0; z-index:2; pointer-events:none; overflow:hidden;
+  --cr-frames:18;
+}
 .crow{
   position:absolute; left:0; display:block;
-  width:88px; height:107px;                     /* 200x244 sprite frame */
-  transform:translate3d(-24vw,0,0) scale(var(--cr-scale,1));
+  width:var(--cr-w,104px); height:var(--cr-h,104px);
+  transform:translate3d(-26vw,0,0) scale(var(--cr-scale,1));
   animation:crow-cross var(--cr-cross,60s) linear infinite;
   animation-delay:var(--cr-delay,0s);
   will-change:transform;
@@ -559,31 +563,32 @@ img.hero-still{ z-index:0 }
   display:block; width:100%; height:100%;
   background-image:url("../img/crow-sprite.png");
   background-repeat:no-repeat;
-  background-size:400% 100%;                    /* 4 frames across */
+  background-size:calc(var(--cr-frames) * 100%) 100%;
   background-position:0 0;
-  opacity:.86;
+  opacity:.88;
   animation:
-    crow-flap var(--cr-flap,.8s) steps(1) infinite,
-    crow-bob  calc(var(--cr-flap,.8s) * 5) ease-in-out infinite;
+    crow-flap var(--cr-flap,.85s) steps(var(--cr-frames)) infinite,
+    crow-bob  calc(var(--cr-flap,.85s) * 4) ease-in-out infinite;
 }
 
-/* Step through the four frames: up, level, down, level. */
+/* One steps() run walks the whole sheet: the browser holds each
+   cell for exactly one step, so no cell is ever half shown. */
 @keyframes crow-flap{
-  0%,24%   { background-position:0%   0 }
-  25%,49%  { background-position:33.333% 0 }
-  50%,74%  { background-position:66.667% 0 }
-  75%,100% { background-position:100%  0 }
+  from { background-position:0 0 }
+  to   { background-position:calc(var(--cr-frames) * -100%) 0 }
 }
 @keyframes crow-bob{
   0%,100% { transform:translateY(0) }
-  50%     { transform:translateY(calc(var(--cr-bob,6px) * -1)) }
+  50%     { transform:translateY(calc(var(--cr-bob,7px) * -1)) }
 }
+/* --cr-drift / --cr-rise are set from the scroll position, so the
+   flock slides and lifts with the page while still flying. */
 @keyframes crow-cross{
-  from { transform:translate3d(-24vw,0,0) scale(var(--cr-scale,1)) }
-  to   { transform:translate3d(124vw,0,0) scale(var(--cr-scale,1)) }
+  from { transform:translate3d(calc(-26vw + var(--cr-drift,0px)), var(--cr-rise,0px), 0) scale(var(--cr-scale,1)) }
+  to   { transform:translate3d(calc(126vw + var(--cr-drift,0px)), var(--cr-rise,0px), 0) scale(var(--cr-scale,1)) }
 }
 
-@media (max-width:640px){ .crow{ width:62px; height:76px } }
+@media (max-width:640px){ .crow{ width:calc(var(--cr-w,104px) * .68); height:calc(var(--cr-h,104px) * .68) } }
 
 @media (prefers-reduced-motion:reduce){
   .crow,.crow__sprite{ animation:none }
@@ -591,3 +596,78 @@ img.hero-still{ z-index:0 }
   .crow__sprite{ background-image:url("../img/crow-glide.png"); background-size:100% 100% }
 }
 @media print{ .crows{ display:none !important } }
+
+
+/* ==========================================================
+   HEADER GLASS
+   75% transparent on every screen. The blur is what keeps the
+   nav legible: it destroys the detail underneath without
+   hiding the colour, so the page still reads through.
+   ========================================================== */
+.site-head{
+  background:rgba(244,237,225,.25);
+  -webkit-backdrop-filter:blur(22px) saturate(1.5);
+  backdrop-filter:blur(22px) saturate(1.5);
+  border-bottom:1px solid rgba(32,24,15,.16);
+}
+[data-storm="on"] .site-head{ background:rgba(18,49,59,.28) }
+
+/* Without backdrop-filter, transparency would make the nav
+   unreadable, so those browsers get the solid header. */
+@supports not ((backdrop-filter:blur(2px)) or (-webkit-backdrop-filter:blur(2px))){
+  .site-head{ background:var(--cream) }
+  [data-storm="on"] .site-head{ background:#12313B }
+}
+
+/* ---------- THE SIGN GROWS AS YOU SCROLL ----------
+   --sign-grow is driven by scroll in site.js: the carved sign
+   opens up as the roots leave it, then settles. */
+.brand img,.hangsign__plate{
+  transform:scale(var(--sign-grow,1));
+  transform-origin:50% 0;
+  transition:transform .25s ease-out;
+}
+
+/* ==========================================================
+   THE SIGN HANGS OVER THE HEADER
+   The beam sits above the header's top edge and the carved sign
+   swings down across it, overhanging the bottom rule — the way a
+   real sign hangs off a storefront rather than sitting inside a
+   box. The header must not clip it, and it must not take taps.
+   ========================================================== */
+.site-head{ overflow:visible }
+.head-in{ overflow:visible }
+
+.brand{ overflow:visible }
+.brand .hangsign{
+  margin-top:calc(var(--sign-drop, 34px) * -1);   /* beam above the header */
+  margin-bottom:calc(var(--sign-drop, 34px) * -1);
+  z-index:3;
+  pointer-events:none;
+}
+.brand .hangsign,
+.brand .hangsign *{ pointer-events:none }
+
+/* The plate hangs past the header's bottom rule. */
+.hangsign--sm{ --hs-drop:26px }
+
+@media (min-width:1011px){
+  .brand .hangsign{ --sign-drop:40px }
+  .hangsign--sm{ --hs-h:70px }
+}
+@media (max-width:1010px){
+  .brand .hangsign{ --sign-drop:26px }
+  .hangsign--sm{ --hs-h:50px; --hs-drop:20px }
+}
+@media (max-width:400px){
+  .brand .hangsign{ --sign-drop:20px }
+  .hangsign--sm{ --hs-h:42px; --hs-drop:16px }
+}
+
+/* The sign must be taller than the header for the overhang to be
+   real. Size the plate directly so nothing upstream can win. */
+.brand .hangsign{ align-self:flex-start }
+.brand .hangsign__plate{ height:var(--tr-sign-h) !important; width:auto !important }
+.brand .hangsign{ --tr-sign-h:86px; margin-top:-16px; margin-bottom:-46px }
+@media (max-width:1010px){ .brand .hangsign{ --tr-sign-h:62px; margin-top:-12px; margin-bottom:-34px } }
+@media (max-width:400px){  .brand .hangsign{ --tr-sign-h:52px; margin-top:-10px; margin-bottom:-28px } }

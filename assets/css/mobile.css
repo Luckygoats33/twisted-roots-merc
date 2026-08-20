@@ -674,9 +674,9 @@ body{ background:var(--paper) }
    ========================================================== */
 @media (max-width:1010px){
   .site-head{
-    background:rgba(244,237,225,.72);
-    -webkit-backdrop-filter:blur(14px) saturate(1.25);
-    backdrop-filter:blur(14px) saturate(1.25);
+    background:rgba(244,237,225,.25);          /* 75% transparent */
+    -webkit-backdrop-filter:blur(22px) saturate(1.5);
+    backdrop-filter:blur(22px) saturate(1.5);
     border-bottom:1px solid rgba(32,24,15,.14);
     box-shadow:0 2px 14px rgba(32,24,15,.10);
   }
@@ -691,7 +691,7 @@ body{ background:var(--paper) }
     backdrop-filter:blur(12px);
   }
   [data-storm="on"] .site-head{
-    background:rgba(18,49,59,.72);
+    background:rgba(18,49,59,.28);
     border-bottom-color:rgba(255,255,255,.18);
   }
   [data-storm="on"] .nav{

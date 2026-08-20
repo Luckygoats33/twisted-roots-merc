@@ -563,6 +563,28 @@ const TR = (() => {
     });
   }
 
+  /* ---------------- THE SIGN GROWS ----------------
+     The carved sign opens up over the first screen of scroll, so
+     the root leaving it reads as something the sign is doing
+     rather than a line that happens to start there. */
+  function signGrow(){
+    var signs = $$(".brand img, .hangsign__plate");
+    if (!signs.length) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    var raf = 0;
+    var run = function(){
+      if (raf) return;
+      raf = requestAnimationFrame(function(){
+        raf = 0;
+        var k = Math.min(1, (window.scrollY || window.pageYOffset) / Math.max(1, window.innerHeight * 0.5));
+        var g = (1 + k * 0.5).toFixed(3);          /* up to +50% */
+        signs.forEach(function(el){ el.style.setProperty("--sign-grow", g); });
+      });
+    };
+    window.addEventListener("scroll", run, { passive:true });
+    run();
+  }
+
   /* ---------------- INIT ---------------- */
   function init(){
     try { if (localStorage.getItem("tr-storm") === "on") document.documentElement.dataset.storm = "on"; } catch(e){}
@@ -663,7 +685,7 @@ const TR = (() => {
       }
     });
 
-    heroVideo(); dockbar();
+    heroVideo(); dockbar(); signGrow();
     paintOpenPills(); paintBoard(); paintLists(); paintMeters();
     paintKits(); paintRequests(); paintBakery(); ticker(); reveals(); driveBars();
     setInterval(paintOpenPills, 60000);
