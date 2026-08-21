@@ -27,7 +27,7 @@
 <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
 <link rel="icon" href="assets/img/favicon-64.png" sizes="64x64">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-<link rel="stylesheet" href="assets/css/site.css?v=06a2175b">
+<link rel="stylesheet" href="assets/css/site.css?v=1598ec6e">
 <link rel="stylesheet" href="assets/css/motion.css?v=e4213a7b">
 <link rel="stylesheet" href="assets/css/roots.css?v=42e7b082">
 <link rel="stylesheet" href="assets/css/mobile.css?v=1c92929c">
@@ -56,11 +56,12 @@
       <a href="local.html">Local</a>
       <a href="roots.html">Our Roots</a>
       <a href="visit.html">Visit</a>
-      <a class="nav-cta" href="#check">Check Stock</a>
+      <a class="nav-cta" href="shop.html">Shop Now</a>
     </nav>
     <div class="head-cta">
       <span class="openpill" data-openpill><i></i>Open</span>
-      <a class="btn btn--sm btn--amber" href="#check">Check Stock</a>
+      <a class="btn btn--sm btn--amber" href="shop.html">Shop Now</a>
+      <button class="carttoggle" data-carttoggle aria-label="Basket, empty">Basket <span class="cartbadge" data-cartcount hidden>0</span></button>
     </div>
   </div>
 </header>
@@ -197,8 +198,32 @@
         <h2 class="h1 mb0">Outdoors</h2>
       </div>
       <p class="lede mb0">Fishing basics, camp supplies, firewood, ice, rain gear and the stuff people
-        remember they forgot about a mile past the store.</p>
+        remember they forgot about a mile past the store. Ammunition and field gear are next door in
+        <a href="hunt.html">Hunt &amp; Field</a>.</p>
     </div>
+
+    <!-- ammo is the thing people drive furthest for, so it leads -->
+    <div class="split split--top" style="margin-bottom:34px; align-items:center">
+      <figure class="figframe" style="margin:0">
+        <img data-parallax="0.12" src="assets/img/hunt-field.jpg" alt="Blaze orange vest, knife, ammunition and binoculars on a shop counter" loading="lazy" width="1100" height="1366">
+        <figcaption>Ammunition is behind the counter — just ask</figcaption>
+      </figure>
+      <div>
+        <p class="eyebrow">Behind the counter</p>
+        <h3 class="h2">Ammunition</h3>
+        <p>We stock the calibres people around here actually shoot, deep, rather than forty calibres
+          one box at a time. If we do not have yours, we will tell you straight and you can drive to
+          Toledo instead of wasting the trip.</p>
+        <p class="small muted">No firearms — that needs a Federal Firearms Licence and we do not hold one.</p>
+        <div data-ids="h01,h02,h03,h05,h06,h07,h10"></div>
+        <div class="btnrow" style="margin-top:22px">
+          <a class="btn btn--amber" href="hunt.html">All of Hunt &amp; Field</a>
+        </div>
+      </div>
+    </div>
+
+    <hr class="rule" style="margin:0 0 34px">
+    <h3 class="h3">Fishing, camp and river</h3>
     <div data-dept="outdoors"></div>
   </div>
 </section>
@@ -254,7 +279,8 @@
 </footer>
 
 <script src="assets/js/catalog.js?v=cdc9c20e"></script>
-<script src="assets/js/site.js?v=72eae147"></script>
+<script src="assets/js/cart.js?v=37edf57f"></script>
+<script src="assets/js/site.js?v=3ac5f34e"></script>
 <script src="assets/js/motion.js?v=bf716f00"></script>
 <script src="assets/js/roots.js?v=93423d8d"></script>
 </body>

@@ -12,12 +12,16 @@
      · they drift with the scroll, so they sit in the scene
        instead of on top of it
 
-   TIMING. These are distant birds, and distance flattens motion:
-   the further away something is, the slower it appears to move
-   even though it is doing the same thing. So the beat runs long
-   and the crossing runs very long — two and a half to four
-   minutes to clear the frame. They should register as something
-   happening at the edge of the valley, not as an animation.
+   TIMING. Worth knowing why this took several passes: while the
+   sprite maths was broken it painted two half-birds at once, so
+   any natural rate looked frantic and the only way to calm it
+   was to slow it past the point of realism. With the frames
+   landing correctly a normal beat reads as a normal beat.
+
+   The sheet is 18 beat frames plus 7 of glide, so the beat is
+   18/25 of the cycle: a 0.80s cycle puts the beat near 0.58s.
+   Distance flattens apparent motion, so the far birds run a
+   little slower again. Crossing takes 74-120s.
    ========================================================== */
 
 (function () {
@@ -50,9 +54,9 @@
          appears slower because it is further from the eye. */
       var scale = 0.26 + (1 - depth) * 0.62;
       var top   = SKY_TOP + t * (SKY_BOTTOM - SKY_TOP) + (i % 2 ? 3.5 : -2.5);
-      var cross = 150 + depth * 70 + (i % 3) * 22;      /* seconds to cross */
+      var cross = 74 + depth * 34 + (i % 3) * 11;       /* seconds to cross */
       var delay = -(i * 6 + (i % 3) * 3.5);
-      var flap  = 1.45 + depth * 0.35 + (i % 2) * 0.12; /* far off, unhurried */
+      var flap  = 0.80 + depth * 0.22 + (i % 2) * 0.07; /* steady working beat */
 
       /* Pixel-exact sprite maths needs the cell size in px, not a
          percentage — see the CROWS block in site.css. */

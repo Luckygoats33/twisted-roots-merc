@@ -941,3 +941,107 @@ img.hero-still{ z-index:0 }
 .brand .hangsign__chain--r{
   height:calc(var(--hs-drop, 15px) + var(--tr-sign-h, 118px) * 0.168) !important;
 }
+
+/* ==========================================================
+   THE BASKET
+   A pickup basket, not a checkout. Nothing is paid for here,
+   so the language is "reserve", never "buy".
+   ========================================================== */
+.carttoggle{
+  position:relative; display:inline-flex; align-items:center; gap:9px;
+  font-family:var(--f-display); font-weight:800; font-size:.78rem;
+  letter-spacing:.12em; text-transform:uppercase;
+  padding:11px 16px; border:2px solid var(--ink); border-radius:2px;
+  background:var(--paper); color:var(--ink); text-decoration:none;
+}
+.carttoggle:hover{ background:var(--amber); border-color:var(--ink); color:var(--ink) }
+.carttoggle.has-items{ background:var(--amber) }
+.cartbadge{
+  min-width:21px; height:21px; padding:0 6px; border-radius:99px;
+  background:var(--ink); color:var(--paper);
+  font-size:.7rem; line-height:21px; text-align:center; font-weight:800;
+}
+
+/* add-to-basket button on a product row */
+.btn--add{ position:relative; overflow:hidden }
+.btn--add.in-cart{ background:var(--pine); border-color:var(--pine); color:#fff }
+.btn--add.is-added::after{
+  content:"Added"; position:absolute; inset:0;
+  display:flex; align-items:center; justify-content:center;
+  background:var(--pine); color:#fff;
+  animation:add-pop 1.4s ease forwards;
+}
+.btn--add.is-max::after{
+  content:"That's all we have"; position:absolute; inset:0; font-size:.62rem;
+  display:flex; align-items:center; justify-content:center;
+  background:var(--rust); color:#fff;
+  animation:add-pop 1.4s ease forwards;
+}
+@keyframes add-pop{ 0%{opacity:0} 12%{opacity:1} 78%{opacity:1} 100%{opacity:0} }
+
+/* ---- drawer ---- */
+.cartdrawer{ position:fixed; inset:0; z-index:520; display:none }
+.cartdrawer.open{ display:block }
+.cartdrawer__veil{ position:absolute; inset:0; background:rgba(20,14,8,.62) }
+.cartdrawer__panel{
+  position:absolute; top:0; right:0; bottom:0; width:min(100%, 460px);
+  background:var(--paper); border-left:2px solid var(--ink);
+  display:flex; flex-direction:column;
+  box-shadow:-18px 0 50px rgba(20,14,8,.35);
+  animation:cart-in .28s cubic-bezier(.2,.9,.3,1);
+}
+@keyframes cart-in{ from{ transform:translateX(100%) } to{ transform:none } }
+.cartdrawer__head{
+  display:flex; align-items:center; gap:14px; padding:18px 22px;
+  background:var(--ink); color:var(--paper); flex:none;
+}
+.cartdrawer__head h3{
+  margin:0; font-family:var(--f-display); font-weight:900; font-size:1.05rem;
+  text-transform:uppercase; letter-spacing:.02em;
+}
+.cartdrawer__x{ margin-left:auto; background:none; border:0; color:inherit; font-size:1.7rem; line-height:1; opacity:.7; padding:0 4px }
+.cartdrawer__x:hover{ opacity:1 }
+.cartdrawer__body{ flex:1; overflow-y:auto; padding:6px 22px 18px; -webkit-overflow-scrolling:touch }
+.cartdrawer__foot{ flex:none; padding:18px 22px calc(18px + env(safe-area-inset-bottom,0px)); border-top:2px solid var(--ink); background:var(--cream) }
+.cartfoot__row{ display:flex; justify-content:space-between; align-items:baseline; font-family:var(--f-display); font-weight:800; font-size:1.15rem }
+
+.cartline{ display:grid; grid-template-columns:1fr auto auto auto; gap:12px; align-items:center; padding:15px 0; border-bottom:1px solid var(--line) }
+.cartline__nm{ font-family:var(--f-display); font-weight:700; font-size:.98rem; line-height:1.3 }
+.cartline__mt{ font-size:.74rem; opacity:.6; margin-top:3px; letter-spacing:.08em; text-transform:uppercase; font-weight:600; font-family:var(--f-display) }
+.cartline__qty{ display:inline-flex; align-items:center; border:1px solid var(--line-2); border-radius:2px }
+.cartline__qty button{ width:34px; height:34px; background:none; border:0; font-size:1.05rem; line-height:1; color:var(--ink) }
+.cartline__qty button:hover:not(:disabled){ background:var(--amber) }
+.cartline__qty button:disabled{ opacity:.3 }
+.cartline__qty input{ width:38px; height:34px; border:0; border-left:1px solid var(--line-2); border-right:1px solid var(--line-2); text-align:center; font-family:var(--f-display); font-weight:700; font-size:.92rem; background:transparent; color:var(--ink) }
+.cartline__pr{ font-family:var(--f-display); font-weight:800; font-size:1rem; white-space:nowrap }
+.cartline__x{ background:none; border:0; font-size:1.25rem; line-height:1; opacity:.4; color:var(--ink); padding:0 2px }
+.cartline__x:hover{ opacity:1; color:var(--rust) }
+.cartempty{ padding:44px 0; text-align:center }
+.cartempty .h3{ margin-bottom:8px }
+
+@media (max-width:640px){
+  .cartline{ grid-template-columns:1fr auto; gap:8px 12px }
+  .cartline__main{ grid-column:1 / -1 }
+  .cartline__pr{ text-align:right }
+  .cartdrawer__panel{ width:100% }
+}
+@media print{ .cartdrawer,.carttoggle{ display:none !important } }
+
+/* ---------- LONG-FORM PROSE (blog) ---------- */
+.tr-prose{font-size:1.09rem; line-height:1.75}
+.tr-prose > p{margin:0 0 1.15em; max-width:70ch}
+.tr-prose > h2{font-family:var(--f-display); font-weight:900; font-size:clamp(1.4rem,2.6vw,2rem);
+  line-height:1.15; margin:2.2em 0 .6em; letter-spacing:-.015em}
+.tr-prose > h3{font-family:var(--f-display); font-weight:800; font-size:1.16rem; margin:1.8em 0 .5em}
+.tr-prose ul,.tr-prose ol{margin:0 0 1.3em; padding-left:1.35em; max-width:70ch}
+.tr-prose li{margin-bottom:.5em}
+.tr-prose li::marker{color:var(--rust)}
+.tr-prose a{color:var(--rust); text-underline-offset:3px}
+.tr-prose blockquote{margin:1.8em 0; padding:18px 24px; border-left:3px solid var(--amber);
+  background:var(--cream); font-family:var(--f-display); font-weight:600; font-size:1.05rem}
+.tr-prose blockquote p{margin:0}
+.tr-prose table{width:100%; border-collapse:collapse; margin:1.6em 0; font-size:.96rem}
+.tr-prose th{text-align:left; font-family:var(--f-display); font-weight:800; font-size:.7rem;
+  letter-spacing:.14em; text-transform:uppercase; padding:11px 13px; border-bottom:2px solid var(--ink); opacity:.7}
+.tr-prose td{padding:12px 13px; border-bottom:1px solid var(--line); vertical-align:top}
+.tr-prose strong{font-weight:700}

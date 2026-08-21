@@ -155,7 +155,7 @@ const TR = (() => {
       ${stockChip(it)}
       <div class="pr">${it.p > 0 ? money(it.p) : "Free"}</div>
       <div class="act">${canHold
-        ? `<button class="btn btn--sm btn--ghost" data-hold="${it.id}">Hold it</button>`
+        ? `<button class="btn btn--sm btn--amber btn--add" data-add="${it.id}">Add</button>`
         : `<button class="btn btn--sm btn--ghost" data-tellus="${esc(it.n)}">Tell us</button>`}</div>
     </div>`;
   }
@@ -441,6 +441,23 @@ const TR = (() => {
       '<p class="small muted" style="margin:14px 0 0">Rather talk to somebody? ' +
       '<a href="' + STORE.phoneHref + '">' + esc(STORE.phone) + '</a></p>');
     void open;
+  }
+
+  /* ---------------- RESERVE THE BASKET ---------------- */
+  function basketModal(lines, list){
+    modal("Reserve for pickup",
+      '<p class="small muted" style="margin-top:0">We will pull these and set them behind the counter ' +
+      'under your name. Nothing is charged now — you pay when you collect.</p>' +
+      '<div style="background:var(--sand); padding:14px 16px; margin:16px 0">' +
+        '<b style="font-family:var(--f-display)">' + list.length + ' line' + (list.length>1?"s":"") +
+        '</b> <span class="muted">· held until close today</span></div>' +
+      '<form data-basketform>' +
+        '<div class="field"><label for="bn">Your name</label><input id="bn" name="name" required autocomplete="name" placeholder="First name is fine"></div>' +
+        '<div class="field"><label for="bp">Phone</label><input id="bp" name="phone" required type="tel" autocomplete="tel" placeholder="(541) 555-0134"></div>' +
+        '<button class="btn btn--wide btn--amber" type="submit">Reserve it</button>' +
+      '</form>');
+    var f = $("[data-basketform]");
+    if (f) f.dataset.lines = lines;
   }
 
   /* ---------------- STORM MODE ---------------- */
@@ -826,6 +843,15 @@ const TR = (() => {
           <button class="btn btn--wide" data-close style="margin-top:18px">Done</button>`;
         return;
       }
+      const bf = e.target.closest("[data-basketform]");
+      if (bf){
+        e.preventDefault();
+        const fd = new FormData(bf);
+        $("#trModalTitle").textContent = "Set aside for you";
+        $(".modal-body").innerHTML = receipt(fd.get("name") || "Neighbor", bf.dataset.lines || "", TRCart.count());
+        TRCart.clear();
+        return;
+      }
       const of_ = e.target.closest("[data-orderform]");
       if (of_){
         e.preventDefault();
@@ -854,5 +880,5 @@ const TR = (() => {
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
   else init();
 
-  return { STORE, searchItems, findIntent, renderSearch, stockState, stockLabel, setStorm, money, byId, tellUsModal };
+  return { STORE, searchItems, findIntent, renderSearch, stockState, stockLabel, setStorm, money, byId, tellUsModal, basketModal };
 })();
