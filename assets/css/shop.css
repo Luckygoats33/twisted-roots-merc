@@ -1,0 +1,211 @@
+/* ==========================================================
+   TWISTED ROOTS MERC — THE SHOP PAGE
+   ----------------------------------------------------------
+   Additive only, and only for things site.css genuinely has no
+   word for: the filter rack, the product card, and the empty
+   shelf. Everything else on this page — bands, wraps, eyebrows,
+   .btn, .chip, .stk, .pill, .card — is the existing system and
+   is not restated here.
+
+   Loads after mobile.css and before print.css, so equal
+   specificity lands in this file's favour.
+   ========================================================== */
+
+
+/* ==========================================================
+   1. THE HERO
+   A utility page gets a short hat, not a brochure cover.
+   ========================================================== */
+.shop-hero__in{
+  display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);
+  gap:clamp(20px,4vw,64px); align-items:end;
+}
+.shop-hero__pills{ margin-top:clamp(20px,2.4vw,30px) }
+.shop-hero__pills .pill{ background:rgba(255,255,255,.5); border-color:var(--line) }
+.shop-hero__pills .pill:first-child{
+  background:var(--ink); color:var(--cream); border-color:var(--ink); font-weight:700;
+}
+
+@media (max-width:900px){
+  .shop-hero__in{ grid-template-columns:1fr; align-items:start; gap:18px }
+}
+
+
+/* ==========================================================
+   2. THE FILTER RACK
+   Four groups, each one a labelled row of chips. The label is
+   part of the group, not a heading, so a screen reader reads
+   "Department, group" and then the chips inside it.
+   ========================================================== */
+.filters{
+  margin-top:clamp(22px,2.6vw,34px);
+  display:grid; gap:clamp(16px,1.8vw,22px);
+}
+.filters__group{ display:grid; gap:10px }
+.filters__group--row{
+  display:flex; flex-wrap:wrap; gap:16px 28px; align-items:flex-end;
+  justify-content:space-between; padding-top:4px;
+}
+.filters__lbl{
+  display:block;
+  font-family:var(--f-display); font-weight:800; font-size:.66rem;
+  letter-spacing:.2em; text-transform:uppercase; opacity:.55;
+}
+.chips--filter{ margin-top:0; gap:8px }
+.chips--filter .filters__lbl{ align-self:center; margin-right:2px }
+
+/* The chip itself is site.css's. These are only its two states. */
+.chip__n{
+  font-family:var(--f-display); font-weight:800; font-size:.72rem;
+  font-variant-numeric:tabular-nums; opacity:.5; margin-left:2px;
+}
+.chip.is-on{
+  background:var(--ink); border-color:var(--ink); color:var(--cream); font-weight:700;
+}
+.chip.is-on .chip__n{ opacity:.7 }
+.chip.is-on:hover,.chip.is-on:focus-visible{
+  background:var(--rust); border-color:var(--rust); color:#fff;
+}
+.chip.is-zero{ opacity:.42 }
+.chip--all{ font-weight:700 }
+
+/* Sort sits in the same row as the stock toggle and has to read
+   as a control, not as a form field dropped on a band. */
+.sortbox{ display:flex; align-items:center; gap:10px }
+.sortbox select{
+  font-family:var(--f-display); font-weight:700; font-size:.84rem;
+  padding:9px 34px 9px 14px; border:1px solid var(--line-2); border-radius:99px;
+  background:var(--paper); color:var(--ink); min-height:40px;
+  appearance:none; -webkit-appearance:none;
+  background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%2320180F' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat:no-repeat; background-position:right 13px center;
+}
+.sortbox select:hover{ border-color:var(--ink) }
+
+
+/* ==========================================================
+   3. THE COUNT LINE
+   A live region, so it is announced. It is also the honest
+   answer to "did that filter do anything".
+   ========================================================== */
+.shopbar{
+  display:flex; align-items:center; justify-content:space-between; gap:16px 24px;
+  flex-wrap:wrap; margin-top:clamp(20px,2.4vw,28px);
+  padding-top:16px; border-top:2px solid var(--ink);
+}
+.shopbar__count{
+  margin:0; font-family:var(--f-display); font-weight:700; font-size:1rem; line-height:1.4;
+}
+
+
+/* ==========================================================
+   4. THE GRID
+   auto-fill, not auto-fit: a single result should stay the width
+   of a product card instead of stretching across the whole page
+   like a billboard.
+   ========================================================== */
+.shopgrid{
+  display:grid; gap:clamp(14px,1.6vw,22px);
+  grid-template-columns:repeat(auto-fill,minmax(258px,1fr));
+}
+.shopgrid--empty{ display:block }
+
+.prodcard{
+  padding:20px 22px 18px; gap:0;
+  background:var(--paper); border:1px solid var(--line-2);
+
+  /* MEASURED, not guessed. All 260 cards go in with one innerHTML
+     write, which costs ~6ms; it was the LAYOUT of 260 offscreen
+     cards that cost the other ~22ms and pushed a filter change
+     over two frames. Skipping the offscreen ones takes the whole
+     render+layout to ~7ms, which is why there is no "show more"
+     button on this page — there is nothing to protect anyone from.
+     The `auto` keyword means the guessed height is replaced by the
+     real one the first time a card is drawn. */
+  content-visibility:auto;
+  contain-intrinsic-size:auto 183px;
+}
+.prodcard:hover{ border-color:var(--ink); transform:translateY(-3px) }
+.prodcard__top{
+  display:flex; align-items:center; justify-content:space-between; gap:10px;
+  margin-bottom:12px; min-height:26px;
+}
+.prodcard__dept{
+  font-family:var(--f-display); font-weight:800; font-size:.64rem;
+  letter-spacing:.18em; text-transform:uppercase; color:var(--rust);
+}
+.prodcard .stk{ font-size:.62rem; padding:5px 9px }
+.prodcard__nm{
+  font-family:var(--f-display); font-weight:700; font-size:1.02rem; line-height:1.28;
+  margin:0; letter-spacing:-.005em; overflow-wrap:break-word;
+}
+.prodcard__mt{
+  margin:6px 0 0; font-family:var(--f-display); font-weight:700; font-size:.7rem;
+  letter-spacing:.1em; text-transform:uppercase; opacity:.5;
+}
+.prodcard__foot{
+  margin-top:auto; padding-top:16px;
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+}
+.prodcard__pr{
+  font-family:var(--f-display); font-weight:900; font-size:1.18rem;
+  font-variant-numeric:tabular-nums;
+}
+.prodcard__btn{ flex:none; min-width:84px }
+
+
+
+/* ==========================================================
+   5. THE EMPTY SHELF
+   ========================================================== */
+.shopempty{
+  max-width:60ch; margin:clamp(20px,4vw,52px) auto; text-align:center;
+  padding:clamp(24px,3vw,40px) clamp(20px,3vw,36px);
+  border:1px dashed var(--line-2); background:var(--cream);
+}
+.shopempty .eyebrow{ justify-content:center }
+.shopempty .lede{ margin-inline:auto }
+.shopempty .btnrow{ justify-content:center; margin-top:22px }
+
+
+/* ==========================================================
+   6. PHONES
+   Every control on this page is something you press with a
+   thumb, so nothing here is allowed under 44px.
+   ========================================================== */
+@media (max-width:640px){
+  .chips--filter .chip{
+    min-height:44px; padding:10px 15px; display:inline-flex; align-items:center;
+  }
+  .sortbox{ width:100%; justify-content:space-between }
+  .sortbox select{ min-height:44px; flex:1; max-width:62% }
+  .filters__group--row{ gap:14px }
+  .filters__group--row > .chips--filter{ width:100% }
+  .filters__group--row .chip{ flex:1 }
+
+  .shopgrid{ grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr)) }
+  .prodcard{ padding:16px 18px 16px }
+  .prodcard__btn{ min-height:44px; padding:11px 18px }
+  .shopbar__count{ font-size:.94rem }
+}
+
+/* At the very narrow end the search field and its button already
+   stack (site.css), and the grid is one column. Nothing here may
+   push the page sideways. */
+@media (max-width:420px){
+  .filters__group--row{ align-items:stretch }
+  .prodcard__foot{ flex-wrap:wrap }
+}
+
+
+/* ==========================================================
+   7. PRINT
+   Somebody will print a filtered list and walk the aisles with
+   it. Give them the list, not the controls.
+   ========================================================== */
+@media print{
+  .shop-controls,.shop-hero__pills{ display:none !important }
+  .shopgrid{ grid-template-columns:repeat(2,1fr); gap:8px; content-visibility:visible }
+  .prodcard{ break-inside:avoid; padding:10px 12px }
+  .prodcard__btn{ display:none !important }
+}

@@ -298,9 +298,6 @@
      7. DRAWING IT
      ========================================================== */
 
-  var PAGE = 96;               /* measured, see SHOP-NOTES.md */
-  var shown = PAGE;
-
   function card(it) {
     var st = stockOf(it);
     var can = it.q > 0;
@@ -358,9 +355,11 @@
     return n + " things" + tail + " · out of " + total + ".";
   }
 
-  var grid, more, moreWrap, countEl, resetEl;
+  var grid, countEl, resetEl;
   var lastRenderMs = 0;
 
+  /* One write. Never a loop of appendChild, and — measured — never
+     a "show more", because the whole shelf lands in about 7ms. */
   function render() {
     var t0 = performance.now();
     var out = evaluate();
@@ -371,17 +370,11 @@
     if (!res.length) {
       grid.className = "shopgrid shopgrid--empty";
       grid.innerHTML = emptyState();
-      moreWrap.hidden = true;
     } else {
       grid.className = "shopgrid";
-      var take = Math.min(shown, res.length);
-      var html = new Array(take);
-      for (var i = 0; i < take; i++) html[i] = card(res[i].it);
+      var html = new Array(res.length);
+      for (var i = 0; i < res.length; i++) html[i] = card(res[i].it);
       grid.innerHTML = html.join("");
-      moreWrap.hidden = take >= res.length;
-      if (!moreWrap.hidden) {
-        $("[data-shopmorebtn]").textContent = "Show " + Math.min(PAGE, res.length - take) + " more";
-      }
     }
 
     countEl.innerHTML = countLine(res.length, ITEMS.length);
@@ -409,13 +402,13 @@
     $("[data-deptchips]").innerHTML =
       '<button type="button" class="chip chip--all" data-deptall aria-pressed="true">Everything</button>' +
       DEPT_ORDER.map(function (d) {
-        return chipHTML(d, esc(TR_DEPTS[d].name), false, 0, "data-dept");
+        return chipHTML(d, esc(TR_DEPTS[d].name), false, 0, "data-deptchip");
       }).join("");
     $("[data-pricechips]").innerHTML = PRICE_BANDS.map(function (b) {
-      return chipHTML(b.k, b.label, false, 0, "data-price");
+      return chipHTML(b.k, b.label, false, 0, "data-pricechip");
     }).join("");
     $("[data-locchips]").innerHTML = LOCATIONS.map(function (l) {
-      return chipHTML(l.k, l.label, false, 0, "data-loc");
+      return chipHTML(l.k, l.label, false, 0, "data-locchip");
     }).join("");
   }
 
@@ -428,16 +421,16 @@
   }
 
   function paintChips(counts) {
-    $$("[data-dept]").forEach(function (el) {
-      var k = el.dataset.dept;
+    $$("[data-deptchip]").forEach(function (el) {
+      var k = el.dataset.deptchip;
       paintOne(el, S.dept.indexOf(k) > -1, counts.dept[k] || 0);
     });
-    $$("[data-price]").forEach(function (el) {
-      var k = el.dataset.price;
+    $$("[data-pricechip]").forEach(function (el) {
+      var k = el.dataset.pricechip;
       paintOne(el, S.price.indexOf(k) > -1, counts.price[k] || 0);
     });
-    $$("[data-loc]").forEach(function (el) {
-      var k = el.dataset.loc;
+    $$("[data-locchip]").forEach(function (el) {
+      var k = el.dataset.locchip;
       paintOne(el, S.loc.indexOf(k) > -1, counts.loc[k] || 0);
     });
     var all = $("[data-deptall]");
@@ -471,7 +464,6 @@
   }
 
   function change(push) {
-    shown = PAGE;
     writeURL(push !== false);
     render();
   }
@@ -479,7 +471,6 @@
   function init() {
     grid     = $("[data-shopgrid]");
     if (!grid) return;
-    moreWrap = $("[data-shopmore]");
     countEl  = $("#shopCount");
     resetEl  = $("[data-shopreset]");
 
@@ -503,7 +494,6 @@
         clearTimeout(t);
         t = setTimeout(function () {
           S.q = input.value.trim();
-          shown = PAGE;
           writeURL(false);
           render();
         }, 140);
@@ -526,14 +516,14 @@
     document.addEventListener("click", function (e) {
       var el;
 
-      el = e.target.closest("[data-dept]");
-      if (el) { toggle(S.dept, el.dataset.dept); change(true); return; }
+      el = e.target.closest("[data-deptchip]");
+      if (el) { toggle(S.dept, el.dataset.deptchip); change(true); return; }
 
-      el = e.target.closest("[data-price]");
-      if (el) { toggle(S.price, el.dataset.price); change(true); return; }
+      el = e.target.closest("[data-pricechip]");
+      if (el) { toggle(S.price, el.dataset.pricechip); change(true); return; }
 
-      el = e.target.closest("[data-loc]");
-      if (el) { toggle(S.loc, el.dataset.loc); change(true); return; }
+      el = e.target.closest("[data-locchip]");
+      if (el) { toggle(S.loc, el.dataset.locchip); change(true); return; }
 
       if (e.target.closest("[data-deptall]")) { S.dept = []; change(true); return; }
 
@@ -547,18 +537,12 @@
         return;
       }
 
-      if (e.target.closest("[data-shopmorebtn]")) {
-        shown += PAGE;
-        render();
-        return;
-      }
     });
 
     /* the back button walks back through the filters */
     window.addEventListener("popstate", function () {
       readURL();
       syncControls();
-      shown = PAGE;
       render();
     });
 

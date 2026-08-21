@@ -63,7 +63,6 @@
     <priority>0.6</priority>
   </url>
 
-
   <url><loc>https://twistedrootsmerc.com/journal.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://twistedrootsmerc.com/blog/fix-running-toilet-diagnose.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://twistedrootsmerc.com/blog/fix-replace-toilet-flapper.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
@@ -117,4 +116,56 @@
   <url><loc>https://twistedrootsmerc.com/blog/fix-caulk-gun-oozing.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://twistedrootsmerc.com/blog/fix-painting-coastal-humidity.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://twistedrootsmerc.com/blog/fix-twenty-things-worth-owning.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-what-fails-first.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-how-the-power-comes-back.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-two-week-kit.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-water-storage.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-water-purification.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-generator-safety.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-generator-fuel.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-extension-cords.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-noaa-weather-radio.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-power-banks.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-flashlights-headlamps-lanterns.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-batteries.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-candles-vs-lanterns.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-heating-without-power.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-carbon-monoxide.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-keeping-warm-in-bed.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-fridge-and-freezer.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-cooking-without-power.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-camp-stove-indoors.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-food-safety-after-outage.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-tarping-a-roof.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-poly-sheeting-and-window-plastic.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-sandbags-and-water-intrusion.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-gutters-before-the-storm.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-the-leaning-tree.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-chainsaw-readiness.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-tree-across-the-drive.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-windproofing-the-yard.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-livestock-and-chickens.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-pets-in-an-emergency.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-car-kit.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-driving-the-coast-range.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-getting-stuck.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-king-tides.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-watch-vs-warning.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-landslides.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-well-pump.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-septic-in-a-flood.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-medications-and-medical-devices.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-checking-on-neighbors.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-kids-during-an-outage.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-paper-phone-list.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-cash-when-cards-are-down.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-radio-stations.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-what-a-store-can-do.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-restocking-after.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-damage-walk-around.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-insurance-photos.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-earthquake-and-tsunami.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-go-bag-vs-stay-home-kit.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-rotating-your-kit.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/storm-whats-on-the-storm-wall.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
 </urlset>
