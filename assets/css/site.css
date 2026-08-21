@@ -544,14 +544,23 @@ img.hero-still{ z-index:0 }
 
 /* ==========================================================
    CROWS
-   A real wingbeat sliced out of green-screen footage, not a
-   drawn shape. --cr-frames is the number of cells in the sheet;
-   the animation steps one cell per frame, which at 18+ cells
-   reads as continuous flight rather than a flip-book.
+   A real wingbeat sliced out of green-screen footage.
+
+   PIXEL-EXACT SPRITE MATH. This was glitching because it used
+   percentage background-position. A percentage does NOT mean
+   "one sheet width across" — CSS resolves it as
+   (box width - image width) x percent, so stepping by
+   calc(frames * -100%) lands BETWEEN cells and paints two half
+   birds at once.
+
+   Everything here is in pixels instead: the sheet is exactly
+   frames x cellW wide, and one steps(frames) run travels exactly
+   that far. Every step therefore lands on a whole cell boundary,
+   and the wrap at the end is frame 0 again.
    ========================================================== */
 .crows{
   position:absolute; inset:0; z-index:2; pointer-events:none; overflow:hidden;
-  --cr-frames:18;
+  --cr-frames:25;
 }
 .crow{
   position:absolute; left:0; display:block;
@@ -564,33 +573,45 @@ img.hero-still{ z-index:0 }
 .crow__sprite{
   display:block; width:100%; height:100%;
   background-image:url("../img/crow-sprite.png");
-  background-repeat:no-repeat;
-  background-size:calc(var(--cr-frames) * 100%) 100%;
+  background-repeat:repeat-x;
+  background-size:calc(var(--cr-w,104px) * var(--cr-frames,25)) 100%;
   background-position:0 0;
-  opacity:.88;
+
+  /* AERIAL PERSPECTIVE. Distance does not just make a bird
+     smaller — it washes it out. Air between you and the bird
+     scatters light into the silhouette, so far birds go paler,
+     lower contrast and very slightly soft. Without this they
+     read as stickers at different sizes; with it they sit in
+     the landscape. --cr-haze runs 0 (near) to 1 (far). */
+  opacity:calc(0.92 - var(--cr-haze,0) * 0.42);
+  filter:
+    blur(calc(var(--cr-haze,0) * 0.7px))
+    contrast(calc(1 - var(--cr-haze,0) * 0.3))
+    brightness(calc(1 + var(--cr-haze,0) * 0.28));
+
   animation:
-    crow-flap var(--cr-flap,.85s) steps(var(--cr-frames)) infinite,
-    crow-bob  calc(var(--cr-flap,.85s) * 4) ease-in-out infinite;
+    crow-flap  var(--cr-flap,1.5s) steps(var(--cr-frames,25)) infinite,
+    crow-drift calc(var(--cr-cross,60s) / 3) ease-in-out infinite;
 }
 
-/* One steps() run walks the whole sheet: the browser holds each
-   cell for exactly one step, so no cell is ever half shown. */
 @keyframes crow-flap{
-  from { background-position:0 0 }
-  to   { background-position:calc(var(--cr-frames) * -100%) 0 }
+  from { background-position-x:0 }
+  to   { background-position-x:calc(var(--cr-w,104px) * var(--cr-frames,25) * -1) }
 }
-@keyframes crow-bob{
-  0%,100% { transform:translateY(0) }
-  50%     { transform:translateY(calc(var(--cr-bob,7px) * -1)) }
+/* Birds do not hold an altitude. A long, uneven rise and fall
+   across the crossing, much slower than the wingbeat. */
+@keyframes crow-drift{
+  0%   { transform:translateY(0) }
+  28%  { transform:translateY(calc(var(--cr-bob,7px) * -1.6)) }
+  55%  { transform:translateY(calc(var(--cr-bob,7px) * 0.7)) }
+  78%  { transform:translateY(calc(var(--cr-bob,7px) * -1.1)) }
+  100% { transform:translateY(0) }
 }
-/* --cr-drift / --cr-rise are set from the scroll position, so the
-   flock slides and lifts with the page while still flying. */
+/* --cr-drift / --cr-rise come from the scroll position. */
 @keyframes crow-cross{
   from { transform:translate3d(calc(-26vw + var(--cr-drift,0px)), var(--cr-rise,0px), 0) scale(var(--cr-scale,1)) }
   to   { transform:translate3d(calc(126vw + var(--cr-drift,0px)), var(--cr-rise,0px), 0) scale(var(--cr-scale,1)) }
 }
-
-@media (max-width:640px){ .crow{ width:calc(var(--cr-w,104px) * .68); height:calc(var(--cr-h,104px) * .68) } }
 
 @media (prefers-reduced-motion:reduce){
   .crow,.crow__sprite{ animation:none }
@@ -598,7 +619,6 @@ img.hero-still{ z-index:0 }
   .crow__sprite{ background-image:url("../img/crow-glide.png"); background-size:100% 100% }
 }
 @media print{ .crows{ display:none !important } }
-
 
 /* ==========================================================
    HEADER GLASS
@@ -783,7 +803,7 @@ img.hero-still{ z-index:0 }
   opacity:0;
   background-image:url("../img/crow-perch.png");
   background-repeat:no-repeat;
-  background-size:calc(var(--pc-frames,34) * 100%) 100%;
+  background-size:calc(var(--pc-w,190px) * var(--pc-frames,34)) 100%;
   background-position:0 0;
   filter:drop-shadow(0 3px 6px rgba(32,24,15,.32));
 }
@@ -792,8 +812,8 @@ img.hero-still{ z-index:0 }
   animation:perch-run var(--pc-run,7600ms) steps(var(--pc-frames,34)) 1 both;
 }
 @keyframes perch-run{
-  from { background-position:0 0 }
-  to   { background-position:calc(var(--pc-frames,34) * -100%) 0 }
+  from { background-position-x:0 }
+  to   { background-position-x:calc(var(--pc-w,190px) * var(--pc-frames,34) * -1) }
 }
 @media (prefers-reduced-motion:reduce){ .perchcrow{ display:none } }
 @media print{ .perchcrow{ display:none !important } }
@@ -885,4 +905,39 @@ img.hero-still{ z-index:0 }
 }
 .brand .hangsign__plate{
   transform:rotate(calc(var(--sign-tilt,0deg) + var(--sign-lean,0deg))) scale(var(--sign-grow,1));
+}
+
+/* ==========================================================
+   CHAIN LENGTHS
+   The carved sign is Oregon-shaped, so its top edge is not
+   level: at the left chain (22% across) the wood starts
+   immediately, but at the right chain (78%) the silhouette
+   steps down about 17% of the sign's height. Equal chains
+   therefore leave the right one hanging in mid-air.
+
+   The right chain is lengthened by exactly that step so both
+   land on wood.
+   ========================================================== */
+.brand .hangsign__chain--l{
+  height:var(--hs-drop, 30px) !important;
+}
+.brand .hangsign__chain--r{
+  height:calc(var(--hs-drop, 30px) + var(--tr-sign-h, 118px) * 0.168) !important;
+}
+
+/* ==========================================================
+   THE BRACKET CARRIES THE SIGN
+   With a long chain drop the sign floated well under the beam
+   and read as two separate objects. Tightening the drop pulls
+   the plate up under the bracket so the bracket is visibly
+   holding it — which is the whole point of a hanging sign.
+   ========================================================== */
+.brand .hangsign{ --hs-drop:15px !important }
+@media (max-width:1010px){ .brand .hangsign{ --hs-drop:12px !important } }
+@media (max-width:400px){  .brand .hangsign{ --hs-drop:10px !important } }
+
+/* Right chain still has to reach the sign's lower right shoulder. */
+.brand .hangsign__chain--l{ height:var(--hs-drop, 15px) !important }
+.brand .hangsign__chain--r{
+  height:calc(var(--hs-drop, 15px) + var(--tr-sign-h, 118px) * 0.168) !important;
 }

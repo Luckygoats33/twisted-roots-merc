@@ -48,19 +48,26 @@
 
       /* Further away: smaller, higher, slower across, and the beat
          appears slower because it is further from the eye. */
-      var scale = 0.30 + (1 - depth) * 0.42;
+      var scale = 0.26 + (1 - depth) * 0.62;
       var top   = SKY_TOP + t * (SKY_BOTTOM - SKY_TOP) + (i % 2 ? 3.5 : -2.5);
       var cross = 150 + depth * 70 + (i % 3) * 22;      /* seconds to cross */
       var delay = -(i * 6 + (i % 3) * 3.5);
       var flap  = 1.45 + depth * 0.35 + (i % 2) * 0.12; /* far off, unhurried */
 
+      /* Pixel-exact sprite maths needs the cell size in px, not a
+         percentage — see the CROWS block in site.css. */
+      var cw = 104, ch = Math.round(cw * (147 / 190));
+
       crow.style.cssText =
         "top:" + top.toFixed(1) + "%;" +
+        "--cr-w:" + cw + "px;" +
+        "--cr-h:" + ch + "px;" +
         "--cr-scale:" + scale.toFixed(2) + ";" +
         "--cr-cross:" + cross.toFixed(0) + "s;" +
         "--cr-delay:" + delay.toFixed(1) + "s;" +
         "--cr-flap:" + flap.toFixed(2) + "s;" +
-        "--cr-bob:" + (5 + (1 - depth) * 6).toFixed(0) + "px;";
+        "--cr-haze:" + depth.toFixed(2) + ";" +
+        "--cr-bob:" + (7 + (1 - depth) * 9).toFixed(0) + "px;";
 
       var sprite = document.createElement("i");
       sprite.className = "crow__sprite";
@@ -147,9 +154,10 @@
     var headroom = landY - 4;
     if (headroom < h * FEET) h = Math.max(22, headroom / FEET);
 
-    var w = h * RATIO;
+    var w = Math.round(h * RATIO);
     el.style.height = Math.round(h) + "px";
-    el.style.width  = Math.round(w) + "px";
+    el.style.width  = w + "px";
+    el.style.setProperty("--pc-w", w + "px");   /* exact cell width */
     el.style.left = Math.round(landX - w * 0.5) + "px";
     el.style.top  = Math.round(landY + window.scrollY - h * FEET) + "px";
   }

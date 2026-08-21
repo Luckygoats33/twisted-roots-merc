@@ -14,6 +14,7 @@ const TR_DEPTS = {
   storm:    { name: "Storm Ready",tag: "Power Out • Wind • Rain",           blurb: "Stocked before you need it." },
   outdoors: { name: "Outdoors",   tag: "Fishing • Camping • River • Work",  blurb: "What you forgot in the truck." },
   local:    { name: "Local",      tag: "Oregon Made • Gifts • Merch",       blurb: "Made near here." },
+  hunt:     { name: "Hunt & Field", tag: "Ammo • Knives • Blaze • Field Care", blurb: "Season starts before daylight." },
   bakery:   { name: "Bakery + Kitchen", tag: "Breakfast • Lunch • Coffee",  blurb: "Made here. Served here." }
 };
 
@@ -205,6 +206,71 @@ const TR_CATALOG = [
   { id:"o13", n:"Wool Socks, 2pk", d:"outdoors", p:19.99, q:16, min:6, a:"Outdoors", t:["wool socks","socks","warm feet"] },
   { id:"o14", n:"Beanie, Twisted Roots", d:"outdoors", p:24.99, q:18, min:8, a:"Outdoors", t:["beanie","hat","warm"] },
 
+
+  /* ---------------- HUNT & FIELD ----------------
+     WHAT IS DELIBERATELY NOT HERE: firearms. Selling them needs a
+     Federal Firearms License, which Twisted Roots does not hold.
+     Toledo and Newport do. Everything below is the ammunition,
+     cutlery, optics, field-care and safety side.
+
+     TWO THINGS TO CONFIRM WITH COUNSEL AND OREGON STATE POLICE
+     BEFORE ORDERING, because both have moved recently:
+       - Measure 114's permit and magazine provisions have been
+         through the courts more than once. Nothing stocked here
+         is a magazine, deliberately.
+       - ORS 166 restricts certain knives, including switchblades
+         and the concealed carry of dirks and daggers. Everything
+         below is a fixed-blade or folding work knife.
+     This is flagged again in TECH-PLAN.md. Do not skip it.       */
+  { id:"h01", n:"Rifle Ammunition, .30-06 Springfield, 20ct", d:"hunt", p:38.99, q:14, min:8, a:"Behind Counter", t:["30-06","rifle ammo","ammunition","elk","deer"] },
+  { id:"h02", n:"Rifle Ammunition, .308 Winchester, 20ct", d:"hunt", p:36.99, q:16, min:8, a:"Behind Counter", t:["308","rifle ammo","ammunition","deer","elk"] },
+  { id:"h03", n:"Rifle Ammunition, .270 Winchester, 20ct", d:"hunt", p:37.99, q:11, min:6, a:"Behind Counter", t:["270","rifle ammo","ammunition","deer"] },
+  { id:"h04", n:"Rifle Ammunition, .243 Winchester, 20ct", d:"hunt", p:32.99, q:9, min:6, a:"Behind Counter", t:["243","rifle ammo","ammunition","deer","coyote"] },
+  { id:"h05", n:"Rimfire Ammunition, .22 LR, 50ct", d:"hunt", p:8.99, q:38, min:20, a:"Behind Counter", t:["22 lr","rimfire","plinking","ammunition","small game"] },
+  { id:"h06", n:"Shotshells, 12ga Birdshot, 25ct", d:"hunt", p:14.99, q:22, min:12, a:"Behind Counter", t:["12 gauge","birdshot","shotshell","ammunition","upland"] },
+  { id:"h07", n:"Shotshells, 12ga Steel Waterfowl, 25ct", d:"hunt", p:29.99, q:12, min:8, a:"Behind Counter", t:["steel shot","waterfowl","duck","goose","12 gauge"] },
+  { id:"h08", n:"Shotshells, 12ga Buckshot, 5ct", d:"hunt", p:11.99, q:14, min:8, a:"Behind Counter", t:["buckshot","12 gauge","ammunition"] },
+  { id:"h09", n:"Shotshells, 20ga Birdshot, 25ct", d:"hunt", p:15.99, q:13, min:8, a:"Behind Counter", t:["20 gauge","birdshot","shotshell","ammunition"] },
+  { id:"h10", n:"Slugs, 12ga Rifled, 5ct", d:"hunt", p:13.99, q:10, min:6, a:"Behind Counter", t:["slug","12 gauge","deer","ammunition"] },
+  { id:"h11", n:"Fixed Blade Hunting Knife", d:"hunt", p:64.99, q:8, min:4, a:"Hunt Wall", t:["hunting knife","fixed blade","knife","skinning"] },
+  { id:"h12", n:"Folding Lockback Knife", d:"hunt", p:44.99, q:12, min:6, a:"Hunt Wall", t:["folding knife","pocket knife","knife","lockback"] },
+  { id:"h13", n:"Replaceable-Blade Skinner + 12 Blades", d:"hunt", p:39.99, q:9, min:4, a:"Hunt Wall", t:["skinner","replaceable blade","field dressing","knife"] },
+  { id:"h14", n:"Gut Hook Field Dressing Knife", d:"hunt", p:34.99, q:7, min:4, a:"Hunt Wall", t:["gut hook","field dressing","knife"] },
+  { id:"h15", n:"Bone Saw, Folding", d:"hunt", p:29.99, q:8, min:4, a:"Hunt Wall", t:["bone saw","field dressing","quartering"] },
+  { id:"h16", n:"Diamond Sharpening Stone", d:"hunt", p:26.99, q:11, min:5, a:"Hunt Wall", t:["sharpener","whetstone","knife sharpening"] },
+  { id:"h17", n:"Pull-Through Knife Sharpener", d:"hunt", p:16.99, q:14, min:6, a:"Hunt Wall", t:["sharpener","knife"] },
+  { id:"h18", n:"Game Bags, Quarter Size, 4pk", d:"hunt", p:24.99, q:10, min:5, a:"Hunt Wall", t:["game bag","elk","quarters","meat care"] },
+  { id:"h19", n:"Drag Rope", d:"hunt", p:18.99, q:9, min:4, a:"Hunt Wall", t:["drag rope","deer drag","hauling"] },
+  { id:"h20", n:"Nitrile Field Dressing Gloves, 10pk", d:"hunt", p:12.99, q:16, min:8, a:"Hunt Wall", t:["gloves","field dressing","nitrile"] },
+  { id:"h21", n:"Blaze Orange Vest", d:"hunt", p:22.99, q:15, min:8, a:"Hunt Wall", t:["blaze orange","hunter orange","vest","safety"] },
+  { id:"h22", n:"Blaze Orange Beanie", d:"hunt", p:16.99, q:18, min:8, a:"Hunt Wall", t:["blaze orange","beanie","hat","safety"] },
+  { id:"h23", n:"Game Cart, Folding", d:"hunt", p:129.99, q:3, min:2, a:"Out Back", t:["game cart","hauling","elk","deer"] },
+  { id:"h24", n:"Binoculars, 10x42", d:"hunt", p:149.99, q:5, min:3, a:"Hunt Wall", t:["binoculars","optics","glassing"] },
+  { id:"h25", n:"Rangefinder, 600 yd", d:"hunt", p:189.99, q:4, min:2, a:"Behind Counter", t:["rangefinder","optics","yardage"] },
+  { id:"h26", n:"Elk Bugle Call", d:"hunt", p:34.99, q:8, min:4, a:"Hunt Wall", t:["elk call","bugle","calling"] },
+  { id:"h27", n:"Deer Grunt Call", d:"hunt", p:19.99, q:11, min:5, a:"Hunt Wall", t:["deer call","grunt","calling"] },
+  { id:"h28", n:"Duck & Goose Call", d:"hunt", p:26.99, q:7, min:4, a:"Hunt Wall", t:["duck call","goose call","waterfowl"] },
+  { id:"h29", n:"Scent Eliminator Spray", d:"hunt", p:14.99, q:13, min:6, a:"Hunt Wall", t:["scent","cover scent","spray"] },
+  { id:"h30", n:"Trail Camera", d:"hunt", p:119.99, q:5, min:3, a:"Behind Counter", t:["trail camera","game camera","scouting"] },
+  { id:"h31", n:"Shooting Ear Protection", d:"hunt", p:24.99, q:12, min:6, a:"Hunt Wall", t:["ear protection","muffs","hearing","range"] },
+  { id:"h32", n:"Shooting Glasses", d:"hunt", p:18.99, q:10, min:5, a:"Hunt Wall", t:["shooting glasses","eye protection","range"] },
+  { id:"h33", n:"Gun Cleaning Kit, Universal", d:"hunt", p:39.99, q:8, min:4, a:"Hunt Wall", t:["cleaning kit","bore","gun care"] },
+  { id:"h34", n:"Gun Oil + Solvent", d:"hunt", p:16.99, q:14, min:6, a:"Hunt Wall", t:["gun oil","solvent","clp","maintenance"] },
+  { id:"h35", n:"Cable Gun Lock", d:"hunt", p:12.99, q:16, min:8, a:"Hunt Wall", t:["gun lock","cable lock","safe storage","child safety"] },
+  { id:"h36", n:"Paper Targets, 12pk", d:"hunt", p:9.99, q:19, min:8, a:"Hunt Wall", t:["targets","sighting in","range"] },
+  { id:"h37", n:"Archery Field Points, 12pk", d:"hunt", p:11.99, q:12, min:6, a:"Hunt Wall", t:["field points","archery","arrow","bow"] },
+  { id:"h38", n:"Broadheads, 3pk", d:"hunt", p:39.99, q:7, min:4, a:"Hunt Wall", t:["broadhead","archery","bow","arrow"] },
+  { id:"h39", n:"Bow String Wax", d:"hunt", p:8.99, q:11, min:5, a:"Hunt Wall", t:["bow wax","string","archery"] },
+  { id:"h40", n:"Survival Kit, 4 Person", d:"hunt", p:79.99, q:6, min:3, stormMin:12, a:"Hunt Wall", t:["survival kit","emergency","bug out"] },
+  { id:"h41", n:"Fire Starter, Ferro Rod", d:"hunt", p:14.99, q:17, min:8, stormMin:20, a:"Hunt Wall", t:["ferro rod","fire starter","flint","survival"] },
+  { id:"h42", n:"Emergency Bivvy Sack", d:"hunt", p:19.99, q:12, min:6, stormMin:18, a:"Hunt Wall", t:["bivvy","emergency shelter","survival","warmth"] },
+  { id:"h43", n:"Signal Mirror + Whistle", d:"hunt", p:11.99, q:14, min:6, stormMin:16, a:"Hunt Wall", t:["signal mirror","whistle","survival","rescue"] },
+  { id:"h44", n:"Water Filter, Pump", d:"hunt", p:69.99, q:6, min:3, stormMin:10, a:"Hunt Wall", t:["water filter","purification","survival","backcountry"] },
+  { id:"h45", n:"Compass, Baseplate", d:"hunt", p:24.99, q:9, min:4, a:"Hunt Wall", t:["compass","navigation","map","orienteering"] },
+  { id:"h46", n:"Multi-Tool, 14 Function", d:"hunt", p:59.99, q:10, min:5, a:"Hunt Wall", t:["multi tool","pliers","survival"] },
+  { id:"h47", n:"Paracord Bracelet", d:"hunt", p:9.99, q:20, min:8, a:"Hunt Wall", t:["paracord","bracelet","survival"] },
+  { id:"h48", n:"Wool Blend Hunting Socks, 2pk", d:"hunt", p:24.99, q:14, min:6, a:"Hunt Wall", t:["wool socks","hunting socks","warm feet"] },
+
   /* ---------------- LOCAL ---------------- */
   { id:"l01", n:"Siletz Valley Wildflower Honey, 12oz", d:"local", p:14.99, q:19, min:8, a:"Local Shelf", t:["honey","local honey","wildflower"], maker:"Yaquina Bee Co." },
   { id:"l02", n:"Marionberry Jam", d:"local", p:11.99, q:16, min:8, a:"Local Shelf", t:["jam","marionberry","preserves"], maker:"Rock Creek Preserves" },
@@ -303,6 +369,21 @@ const TR_INTENTS = [
   { q:["snow","ice","icy roads","winter driving","frost","freezing"],
     title:"Ice and winter driving", picks:["f87","s10","f85","s12","e31"],
     note:"Keep a blanket in the car from November on. Every single year." },
+  { q:["going hunting","hunting","elk season","deer season","opening day","hunt"],
+    title:"Heading out hunting", picks:["h21","h01","h11","h18","h20","h41"],
+    note:"Blaze orange first. Everything else can be borrowed — that cannot." },
+  { q:["field dressing","gut a deer","quarter an elk","dress a deer","pack out"],
+    title:"Field dressing and packing out", picks:["h13","h15","h18","h20","h19","h23"],
+    note:"Bring more game bags than you think you need. Meat on the ground is meat lost." },
+  { q:["sighting in","sight in","zero rifle","range day","shooting range"],
+    title:"Sighting in before the season", picks:["h36","h31","h32","h05","h34"],
+    note:"Sight in with the load you will actually hunt. Different ammo, different point of impact." },
+  { q:["survival kit","bug out","emergency kit","lost in the woods","backcountry"],
+    title:"Getting caught out overnight", picks:["h40","h41","h42","h43","h45","h46"],
+    note:"A whistle carries further than your voice and never gets hoarse." },
+  { q:["sharpen a knife","dull knife","knife sharpening","sharpening"],
+    title:"Sharpening a knife", picks:["h16","h17","h12"],
+    note:"Coarse to set the edge, fine to finish. Same angle every stroke is the whole trick." },
   { q:["new baby","baby stuff","baby"],
     title:"Baby run", picks:["e17","e18","e26","e16"],
     note:"We keep sizes 3, 4 and 5. Ask if you need a different one and we'll get it in." },
