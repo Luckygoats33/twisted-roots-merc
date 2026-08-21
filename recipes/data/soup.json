@@ -1,0 +1,1578 @@
+[
+ {
+  "slug": "soup-roasted-bone-stock",
+  "title": "Stock from Bones",
+  "dek": "Roast them dark, cover them cold, and never let it boil. Everything else in this category starts here.",
+  "category": "Soup, Chowder & Stew",
+  "tags": [
+   "stock",
+   "bones",
+   "beef",
+   "foundation",
+   "freezer"
+  ],
+  "yield": "About 4 litres",
+  "activeTime": "40 minutes",
+  "totalTime": "8 hours, mostly unattended",
+  "intro": "<p>Everything else on this page is only as good as what you built it on, and a stock is three decisions. Roast the bones or do not — roasted gives colour and roasted flavour, raw gives a cleaner, paler stock. Start in cold water so the proteins leach out slowly and rise as scum you lift off, rather than seizing and clouding the pot. And hold it below a simmer, because a rolling boil emulsifies fat into the liquid and shreds the connective tissue into cloudy particles that will never settle out. A stock at a bare tremble for eight hours gives you something that sets to jelly when cold, which is the only test that matters.</p>",
+  "ingredients": [
+   {
+    "group": "Bones",
+    "items": [
+     "2.5 kg beef or elk bones, a mix of marrow, knuckle and neck",
+     "1 tablespoon neutral oil"
+    ]
+   },
+   {
+    "group": "Aromatics",
+    "items": [
+     "2 large onions, halved, skins left on",
+     "3 carrots, cut in thick lengths",
+     "3 ribs celery, cut in thick lengths",
+     "1 head garlic, halved crosswise",
+     "2 tablespoons tomato paste",
+     "2 bay leaves",
+     "1 teaspoon black peppercorns",
+     "6 sprigs thyme",
+     "10 stems parsley"
+    ]
+   },
+   {
+    "group": "Liquid",
+    "items": [
+     "5 litres cold water, plus more as needed",
+     "125 ml red wine or water, for deglazing"
+    ]
+   }
+  ],
+  "method": [
+   "<p>Heat the oven to 450°F (230°C). Toss the bones with the oil, spread them on a heavy roasting tray in a single layer, and roast until they are deep brown and the fat has rendered out and gone golden in the bottom of the tray, about forty minutes. Pale bones give a weak, flat stock.</p>",
+   "<p>Add the onions, carrots and celery to the tray, brush the bones with the tomato paste, and roast another twenty minutes, until the vegetables have browned at the edges and the tomato paste has darkened from red to brick.</p>",
+   "<p>Move everything into a tall stockpot. Put the roasting tray over a burner, pour in the wine, and scrape hard with a wooden spoon until every brown patch has lifted off the metal and the liquid has reduced by half. Tip that into the pot. Leaving it behind throws away a third of your flavour.</p>",
+   "<p>Cover with cold water by about 5 cm. Cold, not hot: it draws proteins out gradually and they coagulate at the surface where you skim them, instead of clouding the whole pot at once.</p>",
+   "<p>Bring it up slowly. As it approaches a simmer a grey-brown foam will form. Skim it off with a ladle until what rises is white or clear rather than muddy grey, then add the garlic, bay, peppercorns and herbs.</p>",
+   "<p>Now bring it down to where the surface barely trembles and a bubble breaks maybe once every two or three seconds. This is the single most important instruction here. If it is rolling, the stock will be cloudy and greasy and no amount of straining fixes it.</p>",
+   "<p>Hold it there for six to eight hours, topping up with hot water if the bones ever break the surface. It is done when the liquid tastes of beef rather than of water, has a slight body to it on the tongue, and the knuckle bones have gone soft enough to break with tongs.</p>",
+   "<p>Strain through a fine sieve into a clean pot. Do not press the solids, which forces particles through and clouds it. Discard the vegetables — they have given everything they had and taste of nothing.</p>",
+   "<p>Cool it fast, which is a food safety matter as much as a quality one. Set the pot in a sink of ice water and stir, or divide into shallow containers, and get it cold within a couple of hours rather than leaving a warm stockpot on the stove overnight.</p>",
+   "<p>Once cold, lift the solid cap of fat off the top and keep it for roasting potatoes. Good stock underneath will have set to a wobbling jelly. If it is liquid, it still tastes fine but it had less collagen than you wanted — use more knuckle and joint bones next time.</p>"
+  ],
+  "notes": [
+   "<p><strong>Stock versus broth:</strong> stock is made from bones and is about body and gelatin, seasoned later. Broth is made from meat and is seasoned to drink. This is stock, so it is deliberately unsalted — you will be reducing it in other dishes and salt concentrates.</p>",
+   "<p><strong>Vinegar</strong> is sometimes added on the theory that it draws minerals from the bone. The effect on nutrition is negligible; the effect on flavour at more than a tablespoon is not. Leave it out.</p>",
+   "<p><strong>Remouillage:</strong> the spent bones will give a second, weaker stock if you cover them again and go another four hours. It is not as good, but it is free, and it makes a fine base for a vegetable soup.</p>"
+  ],
+  "storage": "Five days cold, six months frozen. Freeze it in a way that suits how you cook: 500 ml containers for soup, an ice cube tray for pan sauces. Reduced hard to a syrup and frozen in cubes it takes a tenth of the space, and one cube plus 250 ml of water is roughly the original stock again."
+ },
+ {
+  "slug": "soup-quick-vegetable-stock",
+  "title": "Quick Vegetable Stock",
+  "dek": "Forty-five minutes, no bones, and better than what comes in a carton. Built from what you were going to throw out.",
+  "category": "Soup, Chowder & Stew",
+  "tags": [
+   "stock",
+   "vegetarian",
+   "quick",
+   "foundation",
+   "scraps"
+  ],
+  "yield": "About 2 litres",
+  "activeTime": "15 minutes",
+  "totalTime": "50 minutes",
+  "intro": "<p>Vegetable stock is not a shorter version of meat stock, it is a different thing with different rules. There is no collagen to extract, so long cooking gains you nothing and actively costs you — after about forty-five minutes the vegetables start giving up bitter and sulphurous compounds and the stock turns muddy and cabbagey. So it is a fast job. The other rule is about what goes in. Onion, carrot, celery, leek, mushroom, tomato and herb stems are all good. Brassicas, potato peel, beetroot and anything from the cabbage family will dominate or cloud it, no matter how small the quantity looks.</p>",
+  "ingredients": [
+   {
+    "group": "Base",
+    "items": [
+     "2 tablespoons olive oil",
+     "2 large onions, roughly chopped, skins on for colour",
+     "3 carrots, roughly chopped",
+     "4 ribs celery with leaves, chopped",
+     "1 leek, split and washed, all of it including the green",
+     "200 g mushrooms or mushroom stems"
+    ]
+   },
+   {
+    "group": "Flavour",
+    "items": [
+     "1 head garlic, halved crosswise",
+     "2 tablespoons tomato paste",
+     "2 bay leaves",
+     "1 teaspoon black peppercorns",
+     "6 stems parsley",
+     "4 sprigs thyme",
+     "1 tablespoon soy sauce, optional",
+     "15 g dried mushrooms, optional"
+    ]
+   },
+   {
+    "group": "Liquid",
+    "items": [
+     "2.5 litres water"
+    ]
+   }
+  ],
+  "method": [
+   "<p>Heat the oil in a large pot over medium-high and add the onion, carrot, celery, leek and mushrooms. Cook, stirring occasionally, until the onions are translucent and the pot bottom has picked up some brown, about ten minutes. This browning is where most of the depth comes from, so do not rush past it into a pale pot.</p>",
+   "<p>Add the tomato paste and stir it around the hot pan until it darkens to brick and smells sweet instead of metallic, about a minute.</p>",
+   "<p>Pour in the water, scraping the bottom of the pot until nothing brown is stuck to it. Add the garlic, bay, peppercorns, herbs, and the soy and dried mushrooms if you are using them.</p>",
+   "<p>Bring to a boil, then drop to a gentle simmer with steady small bubbles. Vegetable stock does not need the delicate handling that bone stock needs — there is no fat to emulsify and no collagen to shred — so a real simmer is fine and faster.</p>",
+   "<p>Cook for thirty to forty minutes, no longer. It is ready when the carrot has gone completely soft and pale, the liquid has taken on colour, and it tastes sweet and rounded rather than sharp and raw. Past three quarters of an hour it starts going bitter and there is no way back.</p>",
+   "<p>Strain through a fine sieve without pressing the solids. Pressing gives you a cloudy stock full of vegetable particles that will cook into a grey sludge in whatever you use it for.</p>",
+   "<p>Taste it. If it is thin, put it back on the heat and reduce it by a quarter, which concentrates rather than adds. Do not salt it — you will be seasoning the finished dish, and a salted stock that gets reduced becomes inedible.</p>",
+   "<p>Cool quickly in shallow containers, then keep it cold or freeze it.</p>"
+  ],
+  "notes": [
+   "<p><strong>The scrap container:</strong> keep a bag in the freezer and add onion ends, carrot peel, celery butts, leek greens, mushroom stems, parsley stalks and corn cobs. When it is full, you have a stock. Leave out anything from the cabbage family, potato peel, and artichoke, all of which take over.</p>",
+   "<p><strong>Corn cobs</strong> deserve a specific mention. Stripped cobs simmered in water give a sweet, faintly milky stock that is the best possible base for corn chowder, and they cost nothing.</p>",
+   "<p><strong>Roasting first</strong> makes it darker and sweeter — spread the vegetables on a tray at 425°F (220°C) until browned at the edges, then proceed. It adds forty minutes and turns a light stock into something that will stand up in a stew.</p>"
+  ],
+  "storage": "Four days cold and three months frozen. It freezes well in flat bags, which stack. Reduce it by half before freezing if space is short, and add back the water when you use it."
+ },
+ {
+  "slug": "soup-clam-chowder",
+  "title": "Clam Chowder, Thickened Properly",
+  "dek": "A blond roux, clam liquor, and dairy that goes in at the end and never boils. Coastal Oregon, not a paste.",
+  "category": "Soup, Chowder & Stew",
+  "tags": [
+   "chowder",
+   "clams",
+   "shellfish",
+   "coast",
+   "roux"
+  ],
+  "yield": "6 bowls, about 2.5 litres",
+  "activeTime": "45 minutes",
+  "totalTime": "1 hour",
+  "intro": "<p>The chowder in most bowls on this coast has been thickened with cornstarch until a spoon will stand up in it, which hides that there is not much clam in there. This one is thickened with a blond roux — equal weights of butter and flour, cooked two minutes until it smells of toasted crackers — at a ratio that gives a soup you drink rather than a pudding you chew. The dairy goes in at the very end, off the boil, because a chowder that boils after the cream is added will break into grains and greasy pools. And the clams go in last of all, because a clam has about ninety seconds before it turns to rubber.</p>",
+  "ingredients": [
+   {
+    "group": "Clams",
+    "items": [
+     "1.5 kg fresh clams in the shell, scrubbed, or 400 g chopped clam meat",
+     "250 ml water or dry white wine, for steaming"
+    ]
+   },
+   {
+    "group": "Base",
+    "items": [
+     "150 g thick-cut bacon, diced",
+     "1 tablespoon butter, if the bacon is lean",
+     "2 medium onions, diced",
+     "3 ribs celery, diced",
+     "2 bay leaves",
+     "1 teaspoon fresh thyme leaves",
+     "50 g butter",
+     "50 g all-purpose flour",
+     "900 g Yukon gold potatoes, cut in 1.5 cm dice",
+     "750 ml clam liquor topped up with water or stock"
+    ]
+   },
+   {
+    "group": "Finishing",
+    "items": [
+     "375 ml half and half or whole milk, warmed",
+     "1 1/2 teaspoons coarse black pepper",
+     "Fine salt, to taste",
+     "2 tablespoons chopped parsley",
+     "1 teaspoon cider vinegar"
+    ]
+   }
+  ],
+  "method": [
+   "<p>If you are using clams in the shell, put them in a wide pot with the water or wine, cover, and steam over high heat until the shells have opened, five to eight minutes. Pull them out as they open rather than waiting for the last stubborn ones — overcooked clams are rubber. Discard any that stay shut.</p>",
+   "<p>Strain the liquid left in the pot through a cloth or a fine sieve to catch the sand, and keep it. That is clam liquor, and it is most of the flavour of this soup. Pull the meat from the shells and chop it roughly.</p>",
+   "<p>Render the bacon in a heavy pot over medium heat until the fat has run out and the pieces are browned and crisp at the edges. Lift them out with a slotted spoon and set aside, leaving the fat behind.</p>",
+   "<p>Cook the onion and celery in the bacon fat with the bay and thyme until the onion is completely soft and translucent with no crunch left, about eight minutes. Do not brown them; this is a white soup and browned onion turns it grey.</p>",
+   "<p>Add the 50 g of butter and let it melt, then sprinkle over the flour. Stir constantly and cook until the mixture smells like toasted crackers rather than raw dough and has gone the colour of pale straw, about two minutes. Stop there. A darker roux tastes better and thickens worse, and this soup needs the thickening power.</p>",
+   "<p>Add the clam liquor a ladle at a time, stirring smooth after each addition. Getting the lumps out while it is still thick is easy; once it is thin they are permanent.</p>",
+   "<p>Add the potatoes, bring to a gentle simmer, and cook until a knife slides into a cube with no resistance, about fifteen minutes. The potato starch that leaches out here adds body on top of the roux, which is why this recipe uses less flour than you might expect.</p>",
+   "<p>Take the pot off the heat. Stir in the warmed dairy. From this point the soup must never boil — above about 180°F (82°C) the milk proteins tighten and curdle and the fat separates out, and a broken chowder does not come back together.</p>",
+   "<p>Return to low heat, stir in the clams and the bacon, and warm through only until steam rises and the surface shivers, two or three minutes. The clams are already cooked; you are heating them, not cooking them.</p>",
+   "<p>Season with the pepper, salt to taste, parsley and the vinegar. Taste before salting — clam liquor and bacon have already brought a great deal. The vinegar is not there to be tasted, it is there to stop the cream and starch tasting heavy.</p>"
+  ],
+  "notes": [
+   "<p><strong>It broke:</strong> it boiled after the dairy went in, or the dairy was cold and hit a very hot pot. Warm the dairy first, add it off the heat, and keep the finished soup below a simmer.</p>",
+   "<p><strong>Razor clams,</strong> if you dug them, are better here than anything you will buy — clean them, use only the tender parts and chop the tougher neck fine, and add them at the same point.</p>",
+   "<p><strong>The roux ratio</strong> is 50 g flour and 50 g butter to about 1.1 litres of total liquid, which gives a chowder that coats a spoon and still runs off it. Double the flour and you have gravy with potatoes in it.</p>"
+  ],
+  "storage": "Four days cold and it is better on the second day, once the potato starch has fully hydrated and the thyme has spread out. Reheat gently over low heat, stirring, and never let it boil. It does not freeze — dairy and potato both come out of the freezer with the texture wrecked. If you want to freeze ahead, make everything up to the point before the dairy goes in, freeze that, and finish it fresh."
+ },
+ {
+  "slug": "soup-smoked-salmon-chowder",
+  "title": "Smoked Salmon Chowder",
+  "dek": "Hot-smoked salmon, potato and dill. The smoke does most of the work, so the base stays quiet.",
+  "category": "Soup, Chowder & Stew",
+  "tags": [
+   "chowder",
+   "salmon",
+   "smoked",
+   "coast",
+   "dill"
+  ],
+  "yield": "6 bowls, about 2.5 litres",
+  "activeTime": "35 minutes",
+  "totalTime": "50 minutes",
+  "intro": "<p>Smoked salmon chowder goes wrong in one direction almost every time: too much smoke, too much salt, and a base built as though the salmon needed help. It does not. Hot-smoked salmon is intensely flavoured and already salted through the cure, so the job here is to build a mild, slightly sweet potato and leek base and then fold the salmon in at the end, off the heat, where it warms without falling into threads. Dill and lemon keep it from going heavy. Use hot-smoked salmon, the flaky kind, not the cold-smoked slices, which dissolve into a soup and leave it tasting oddly of nothing.</p>",
+  "ingredients": [
+   {
+    "group": "Base",
+    "items": [
+     "3 tablespoons butter",
+     "2 leeks, white and pale green only, split, washed and sliced",
+     "2 ribs celery, diced",
+     "1 fennel bulb, diced, optional",
+     "3 cloves garlic, minced",
+     "35 g all-purpose flour",
+     "1 litre vegetable or light stock",
+     "700 g Yukon gold potatoes, cut in 1.5 cm dice",
+     "2 bay leaves",
+     "1 teaspoon black pepper"
+    ]
+   },
+   {
+    "group": "To finish",
+    "items": [
+     "400 g hot-smoked salmon, skin removed, broken into large flakes",
+     "300 ml half and half, warmed",
+     "3 tablespoons chopped fresh dill",
+     "1 tablespoon lemon juice",
+     "Fine salt, to taste",
+     "60 g corn kernels, optional"
+    ]
+   }
+  ],
+  "method": [
+   "<p>Melt the butter in a heavy pot over medium heat and add the leeks, celery and fennel with a pinch of salt. Cook until everything has collapsed and gone completely soft and sweet-smelling with no colour on it, eight to ten minutes. Leeks that still have bite will stay stringy in the finished soup.</p>",
+   "<p>Add the garlic and cook until fragrant, about thirty seconds, then sprinkle over the flour and stir. Cook the roux until it smells like toasted crackers and turns pale straw, about two minutes, no darker. This is a light chowder and a browned roux would both colour it and weaken its thickening.</p>",
+   "<p>Add the stock a ladle at a time, stirring each addition smooth before the next. Add the potatoes, bay leaves and pepper.</p>",
+   "<p>Bring to a gentle simmer and cook until a knife enters a potato cube with no resistance and a few of the smaller pieces have started to break down and cloud the liquid, about fifteen minutes. That breakdown is doing half the thickening.</p>",
+   "<p>Take the pot off the heat entirely. Stir in the warmed half and half. Keep the soup below a simmer from here — dairy that boils in a soup this thin will curdle into grains, and adding the salmon to a boiling pot would shred it.</p>",
+   "<p>Fold in the salmon flakes, the corn if you are using it, the dill and the lemon juice. Set over low heat only until steam rises and the salmon is warmed through, two or three minutes.</p>",
+   "<p>Taste before you add any salt. Between the smoked salmon and the stock there may already be enough. A properly hot-smoked salmon has been taken to an internal temperature of 145 degrees Fahrenheit (63°C) during smoking and is fully cooked, so all you are doing is warming it.</p>",
+   "<p>Serve with more dill and a great deal of black pepper. It wants a heel of sourdough alongside more than it wants crackers.</p>"
+  ],
+  "notes": [
+   "<p><strong>If you are smoking the salmon yourself,</strong> hot-smoke it to an internal temperature of 145 degrees Fahrenheit (63°C) checked at the thickest part with an instant-read thermometer. Cold-smoked salmon is cured but not cooked and is the wrong ingredient for this soup on both counts.</p>",
+   "<p><strong>It went stringy:</strong> the salmon was added too early or the pot was too hot. Fold it in off the heat and treat it as the last step, not an ingredient that cooks.</p>",
+   "<p><strong>Salmon skin,</strong> if you have it, crisped hard in a dry pan and crumbled over the top, is the best garnish this soup will ever get.</p>"
+  ],
+  "storage": "Three days cold. Reheat over low heat, stirring, and stop when it steams. It does not freeze — the potato goes grainy and the dairy separates. Leftovers thin with a splash of milk, because it thickens considerably overnight."
+ },
+ {
+  "slug": "soup-corn-chowder",
+  "title": "Corn Chowder, Thickened Without Flour",
+  "dek": "The cobs make the stock, the corn starch does the thickening, and there is no roux anywhere in it.",
+  "category": "Soup, Chowder & Stew",
+  "tags": [
+   "chowder",
+   "corn",
+   "vegetarian option",
+   "summer",
+   "no roux"
+  ],
+  "yield": "6 bowls, about 2.5 litres",
+  "activeTime": "35 minutes",
+  "totalTime": "1 hour 10 minutes",
+  "intro": "<p>This chowder has no roux in it and does not need one. Corn kernels are full of starch, and blending a portion of the finished soup releases enough of it — along with the starch from the potatoes — to give real body. The other half of the technique is the cobs. Scrape them hard with the back of a knife after cutting off the kernels and you get a thick, sweet, milky liquid that is the most concentrated corn flavour available; then simmer the stripped cobs in the stock for half an hour and they give up more. Skip both and you have a potato soup with corn in it.</p>",
+  "ingredients": [
+   {
+    "group": "Corn and its stock",
+    "items": [
+     "8 ears sweet corn, husked",
+     "1.25 litres water or light vegetable stock",
+     "2 bay leaves"
+    ]
+   },
+   {
+    "group": "Base",
+    "items": [
+     "120 g thick-cut bacon, diced, or 3 tablespoons butter for a meatless pot",
+     "1 large onion, diced",
+     "2 ribs celery, diced",
+     "1 red bell pepper, diced",
+     "3 cloves garlic, minced",
+     "1 teaspoon smoked paprika",
+     "700 g Yukon gold potatoes, cut in 1.5 cm dice",
+     "1 teaspoon fine salt, plus more to taste",
+     "1 teaspoon black pepper"
+    ]
+   },
+   {
+    "group": "Finishing",
+    "items": [
+     "250 ml whole milk or half and half, warmed",
+     "1 tablespoon lime juice or cider vinegar",
+     "3 tablespoons sliced green onion",
+     "A pinch of cayenne"
+    ]
+   }
+  ],
+  "method": [
+   "<p>Stand each ear in a wide bowl and cut the kernels off. Then take the back of the knife and scrape down each stripped cob, hard, from top to bottom. A thick white liquid comes out. That is corn milk, it is loaded with starch and sugar, and it is the reason this recipe works without flour. Keep it with the kernels.</p>",
+   "<p>Break the bare cobs in half and simmer them in the water or stock with the bay leaves for thirty minutes, until the liquid smells sweetly of corn and has taken on a faint body. Pull the cobs out and discard them. This is your chowder liquid.</p>",
+   "<p>Meanwhile, render the bacon in a heavy pot over medium heat until browned and crisp at the edges and the fat has run. Lift the pieces out and set them aside. If you are going meatless, melt the butter instead.</p>",
+   "<p>Cook the onion, celery and bell pepper in the fat until soft, translucent and just beginning to catch gold at the edges, about eight minutes. Add the garlic and paprika and cook until fragrant, thirty seconds.</p>",
+   "<p>Add the potatoes, the corn stock, the salt and pepper. Simmer until the potatoes give no resistance to a knife, about fifteen minutes.</p>",
+   "<p>Add the kernels and all the scraped corn milk and simmer another five minutes, until the kernels are tender but still pop between the teeth. Longer and they go flabby and lose the texture that makes this worth eating.</p>",
+   "<p>Ladle about a third of the soup into a blender and puree until completely smooth, then stir it back in. It should visibly thicken as it returns, going from watery to something that coats a spoon. If it is still thin, blend another ladleful. If it is too thick, add stock.</p>",
+   "<p>Off the heat, stir in the warmed milk, the lime juice and the cayenne, and taste for salt. Warm through gently and stop when steam rises — this soup will curdle if boiled after the dairy, just like any other chowder.</p>",
+   "<p>Serve topped with the bacon and green onion. Keeping the bacon out until serving means it is still crisp instead of soft and pale.</p>"
+  ],
+  "notes": [
+   "<p><strong>Frozen corn works</strong> out of season, but you lose the cobs and the corn milk, which is most of the point. Compensate by blending half the soup instead of a third, and add a knob of butter at the end.</p>",
+   "<p><strong>It is bland:</strong> corn needs acid and salt more than most vegetables. The lime at the end is doing real work, and under-salting a corn soup makes it taste like sweet water.</p>",
+   "<p><strong>Vegan version:</strong> butter to oil, dairy to unsweetened oat milk or coconut milk. Coconut and corn are a better match than they sound, especially with the cayenne turned up.</p>"
+  ],
+  "storage": "Four days cold and good on the second day. It freezes better than most chowders if you leave the dairy out — freeze the blended base for three months and stir in milk when you reheat. With the dairy already in, expect separation on thawing."
+ },
+ {
+  "slug": "soup-tomato-for-grilled-cheese",
+  "title": "Tomato Soup for Grilled Cheese",
+  "dek": "Roasted tinned tomatoes, a little butter, no cream to speak of. Built to be dipped into.",
+  "category": "Soup, Chowder & Stew",
+  "tags": [
+   "tomato",
+   "vegetarian",
+   "lunch",
+   "grilled cheese",
+   "roasted"
+  ],
+  "yield": "6 bowls, about 2 litres",
+  "activeTime": "20 minutes",
+  "totalTime": "1 hour 15 minutes",
+  "intro": "<p>A tomato soup that gets dipped into has different requirements from one eaten alone. It needs to be thick enough to cling to a corner of toasted bread, salty enough to stand up to a mouthful of cheese, and acidic enough to cut it. That rules out the very creamy versions, which turn the whole plate into one soft note. Roasting good tinned tomatoes concentrates them and adds browning that raw tomatoes never provide, and a little butter stirred in at the end gives richness without diluting anything. Tinned tomatoes are the right choice for eight months of the year on this coast, and no apology is required.</p>",
+  "ingredients": [
+   {
+    "group": "Roasting tray",
+    "items": [
+     "2 tins whole peeled tomatoes, about 800 g each, drained, juice kept",
+     "2 large onions, cut in thick wedges",
+     "1 head garlic, cloves peeled",
+     "3 tablespoons olive oil",
+     "1 tablespoon brown sugar",
+     "2 teaspoons fine salt",
+     "1 teaspoon black pepper"
+    ]
+   },
+   {
+    "group": "Pot",
+    "items": [
+     "2 tablespoons olive oil",
+     "1 tablespoon tomato paste",
+     "750 ml vegetable stock",
+     "The reserved tomato juice, about 250 ml",
+     "1 teaspoon dried oregano",
+     "1 bay leaf",
+     "A small handful of basil, about 10 g"
+    ]
+   },
+   {
+    "group": "Finishing",
+    "items": [
+     "45 g cold butter, cubed",
+     "60 ml heavy cream, optional",
+     "1 teaspoon sherry vinegar or red wine vinegar",
+     "Fine salt and black pepper, to taste"
+    ]
+   }
+  ],
+  "method": [
+   "<p>Heat the oven to 425°F (220°C). Spread the drained tomatoes, onion wedges and garlic cloves on a heavy rimmed tray, toss with the olive oil, brown sugar, salt and pepper, and arrange the tomatoes cut side up.</p>",
+   "<p>Roast for forty to fifty minutes, until the tomatoes have collapsed and darkened with charred patches at the edges, the onions are browned and soft, and the tray has a sticky brown residue on it. Those charred patches are the whole reason to do this rather than opening a tin into a pot.</p>",
+   "<p>Warm the olive oil and tomato paste in a heavy pot over medium heat and cook until the paste darkens to brick and smells sweet, about a minute. Scrape in everything from the roasting tray, using a little of the stock to lift the sticky residue off the metal.</p>",
+   "<p>Add the rest of the stock, the reserved tomato juice, oregano and bay leaf. Simmer, uncovered, for twenty minutes, until the flavour has pulled together and the soup has reduced enough to coat a spoon thinly.</p>",
+   "<p>Pull the bay leaf out and add the basil. Blend until completely smooth with an immersion blender, or in batches in an upright blender. If you use an upright, fill it no more than halfway and hold the lid down with a towel — hot soup expands violently and will paint the ceiling.</p>",
+   "<p>For a very smooth soup, push it through a fine sieve. Tinned tomatoes are usually smooth enough that this is optional; if you used fresh, the skins and seeds make it worth doing.</p>",
+   "<p>Return it to low heat and whisk in the cold butter a cube at a time, letting each melt before the next. This gives body and gloss without the flatness that a lot of cream brings. Add the cream too if you want it milder.</p>",
+   "<p>Finish with the vinegar and taste hard for salt. Tomato soup is almost always under-salted, and it needs enough acid that it tastes bright rather than jammy. Serve it hot enough to steam, alongside a grilled cheese cut on the diagonal.</p>"
+  ],
+  "notes": [
+   "<p><strong>The grilled cheese it belongs with:</strong> three cheeses on sourdough, buttered on the outside and cooked slowly in a covered pan over medium-low until the cheese has fully melted and the bread is deep golden. Rushing it gives you burnt bread around unmelted cheese.</p>",
+   "<p><strong>Fresh tomatoes</strong> only make this better for about six weeks of the year. Use 2 kg of ripe ones, halved, roasted the same way, and expect to sieve out the skins.</p>",
+   "<p><strong>Brown sugar is not for sweetness,</strong> it is for browning. A tablespoon across two tins is not detectable as sugar in the finished soup, but the caramelisation it enables in the oven is.</p>"
+  ],
+  "storage": "Five days cold and genuinely better on the second day. It freezes well for four months, which is rare in this category, because there is very little dairy in it — freeze it before the butter goes in if you want it perfect. Reheat gently and re-season, since freezing dulls the salt and the acid."
+ },
+ {
+  "slug": "soup-french-onion",
+  "title": "French Onion Soup",
+  "dek": "The onions take an hour. Anyone who tells you fifteen minutes has not made it and is not going to.",
+  "category": "Soup, Chowder & Stew",
+  "tags": [
+   "onion",
+   "beef stock",
+   "gruyere",
+   "slow",
+   "broiler"
+  ],
+  "yield": "6 bowls",
+  "activeTime": "1 hour 15 minutes",
+  "totalTime": "2 hours",
+  "intro": "<p>Every shortcut version of this soup fails at the same place. Caramelising onions is not a browning step that takes fifteen minutes, it is a slow dehydration and sugar-browning process that takes the better part of an hour for four pounds of onion, and there is no way to compress it that does not either scorch them or leave you with soft onions that taste of nothing but onion. What you are after is a jammy, deep mahogany mass reduced to about a fifth of its starting volume. The stock matters too — a weak stock behind a great pile of caramelised onion tastes hollow, and this is the soup to spend a real bone stock on.</p>",
+  "ingredients": [
+   {
+    "group": "Onions",
+    "items": [
+     "1.8 kg yellow onions, about 6 large, halved and sliced thin",
+     "60 g butter",
+     "2 tablespoons olive oil",
+     "1 1/2 teaspoons fine salt",
+     "1/2 teaspoon sugar",
+     "1/4 teaspoon baking soda, optional"
+    ]
+   },
+   {
+    "group": "Soup",
+    "items": [
+     "180 ml dry sherry, dry vermouth or white wine",
+     "1.75 litres good beef stock",
+     "3 sprigs thyme",
+     "2 bay leaves",
+     "1 tablespoon sherry vinegar",
+     "1 teaspoon black pepper",
+     "Fine salt, to taste"
+    ]
+   },
+   {
+    "group": "The top",
+    "items": [
+     "6 thick slices baguette or sourdough",
+     "250 g gruyere, grated",
+     "50 g parmesan, grated",
+     "1 clove garlic, halved, for rubbing the toast"
+    ]
+   }
+  ],
+  "method": [
+   "<p>Melt the butter and oil in a wide heavy pot over medium heat. Add all the onions with the salt — they will fill the pot to the rim and look absurd — and stir to coat. They collapse to a third of that within fifteen minutes.</p>",
+   "<p>Cook, stirring every few minutes, until the onions have released their water, gone completely limp and translucent, and the liquid in the bottom has cooked away. Twenty minutes or so. Nothing has browned yet.</p>",
+   "<p>Now the long part. Turn the heat to medium-low, add the sugar, and keep cooking for forty-five minutes to an hour, stirring every five minutes and scraping the bottom. The onions go from pale to gold to amber to a deep mahogany jam, and a brown film builds on the pot which you scrape back in each time. If they are sticking hard or smell sharp and burnt, the heat is too high; add a splash of water and lower it.</p>",
+   "<p>The baking soda, if you use it, raises the pH and speeds browning noticeably — expect to save fifteen minutes. It also softens the onions further, which some people dislike. A quarter teaspoon is the limit before they turn to mush and taste faintly metallic.</p>",
+   "<p>They are ready when the mass is dark brown, glossy, sweet, reduced to about 500 ml in volume, and tastes of caramel more than of onion. This is not a stage you should guess at from a clock.</p>",
+   "<p>Pour in the sherry and scrape the pot bottom clean while it bubbles. Let it reduce until the pot is nearly dry again and the alcohol smell has gone, two or three minutes.</p>",
+   "<p>Add the stock, thyme and bay. Simmer gently, uncovered, for thirty minutes, until the broth has taken on the colour and sweetness of the onions and tastes like one thing rather than two. Add the vinegar, pepper, and salt to taste.</p>",
+   "<p>Toast the bread until dry and firm all the way through — it has to survive being submerged — and rub one side with the cut garlic.</p>",
+   "<p>Ladle the soup into ovenproof bowls, float a toast on each, and pile the gruyere and parmesan on top, taking it right out to the rim so it welds to the edge of the bowl and does not slide off.</p>",
+   "<p>Set the bowls on a tray under a broiler until the cheese has melted, bubbled and browned in patches, two to four minutes. Watch it constantly — the distance between browned and burnt at this heat is about thirty seconds. Serve immediately, and warn people that the bowl is dangerously hot.</p>"
+  ],
+  "notes": [
+   "<p><strong>It tastes thin:</strong> the stock was weak. Caramelised onion cannot carry a soup on its own. If your stock is from a carton, reduce a litre of it by a third first and add a spoon of soy sauce.</p>",
+   "<p><strong>It tastes burnt:</strong> the heat was too high during the long stage, or the fond on the pot bottom went black rather than brown. Once it is bitter there is no recovery.</p>",
+   "<p><strong>No ovenproof bowls:</strong> broil the cheese on the toasts on a tray, then float them on the soup. Not the same theatre, same eating.</p>"
+  ],
+  "storage": "The soup base without bread or cheese keeps five days cold and freezes for four months, and it improves for the first two days. The caramelised onions alone freeze beautifully in portions and are worth making in a double batch, since the work is identical for twice the onion."
+ },
+ {
+  "slug": "soup-chicken-and-rice",
+  "title": "Chicken and Rice Soup",
+  "dek": "Thighs, not breast. Rice cooked separately, so the leftovers are not a bowl of porridge.",
+  "category": "Soup, Chowder & Stew",
+  "tags": [
+   "chicken",
+   "rice",
+   "weeknight",
+   "comfort"
+  ],
+  "yield": "6 bowls, about 3 litres",
+  "activeTime": "30 minutes",
+  "totalTime": "1 hour",
+  "intro": "<p>Two decisions make this soup better than the version most people have had. The first is thighs instead of breast. Breast meat has almost no connective tissue and no fat, so by the time it has flavoured a broth it is dry and stringy; thigh meat stays succulent through a long simmer and gives the pot far more. The second is cooking the rice separately and adding it to the bowl. Rice left in soup keeps absorbing liquid all night, and what was a soup becomes a solid mass by morning. Cook it apart, store it apart, and you have soup on the second day instead of a casserole.</p>",
+  "ingredients": [
+   {
+    "group": "Chicken",
+    "items": [
+     "900 g bone-in, skin-on chicken thighs, about 6",
+     "1 1/2 teaspoons fine salt",
+     "1 teaspoon black pepper",
+     "1 tablespoon neutral oil"
+    ]
+   },
+   {
+    "group": "Soup",
+    "items": [
+     "2 tablespoons butter",
+     "1 large onion, diced",
+     "3 carrots, sliced 1 cm thick",
+     "3 ribs celery, sliced",
+     "4 cloves garlic, minced",
+     "2 litres chicken stock",
+     "2 bay leaves",
+     "3 sprigs thyme",
+     "1 strip lemon zest"
+    ]
+   },
+   {
+    "group": "Rice and finishing",
+    "items": [
+     "200 g long grain white rice",
+     "500 ml water",
+     "1/2 teaspoon fine salt for the rice",
+     "2 tablespoons lemon juice",
+     "3 tablespoons chopped parsley or dill",
+     "Fine salt and black pepper, to taste"
+    ]
+   }
+  ],
+  "method": [
+   "<p>Season the chicken thighs on both sides and let them sit while you get everything else ready. Pat the skin dry before it goes in the pan — wet skin steams and will not brown.</p>",
+   "<p>Heat the oil in a heavy pot over medium-high and lay the thighs in skin side down. Leave them without moving until the skin is deep golden and releases from the pot on its own, six to eight minutes. Turn and give the other side two minutes. Lift them out. They are not cooked through yet and are not meant to be.</p>",
+   "<p>Pour off all but about 2 tablespoons of fat. Add the butter, onion, carrot and celery and cook until the onion is translucent and the vegetables have softened, about eight minutes, scraping up the browned bits from the chicken as they loosen. Add the garlic and cook until fragrant, thirty seconds.</p>",
+   "<p>Add the stock, bay, thyme and lemon zest, and return the thighs to the pot along with any juice on the plate. Bring to a bare simmer — surface barely moving. A boil will toughen the meat and cloud the broth.</p>",
+   "<p>Simmer for about twenty-five minutes, until the meat pulls easily from the bone. Chicken is safe at an internal temperature of 165°F (74°C); check the thickest part of a thigh against the bone with an instant-read thermometer, and note that thigh meat is actually better a good deal past that, at around 175°F (79°C), where the connective tissue has broken down.</p>",
+   "<p>While that happens, cook the rice separately: rinse it until the water runs clear, then simmer covered in the water with the salt until the grains are tender and the water has been absorbed, about fifteen minutes. Fluff and set aside.</p>",
+   "<p>Lift the chicken out, let it cool enough to handle, then pull the meat off in large pieces and discard the skin and bones. Do not shred it to threads; pieces you have to chew are the point.</p>",
+   "<p>Return the meat to the pot, pull out the bay, thyme stems and zest, and add the lemon juice and herbs. Taste for salt — this is the step that decides whether the soup tastes finished or flat, and it usually needs more than you expect.</p>",
+   "<p>To serve, put a scoop of rice in each bowl and ladle the soup over it. Warm the whole thing through until steaming and serve.</p>"
+  ],
+  "notes": [
+   "<p><strong>If you must use breast,</strong> poach it whole in the finished broth off the heat until the centre reaches 165°F (74°C), then slice it. Simmering breast meat for twenty-five minutes gives you sawdust.</p>",
+   "<p><strong>Lemon and dill</strong> take this in a Greek direction; ginger, a spoon of white miso and green onion take it somewhere else entirely. The base does not care.</p>",
+   "<p><strong>The zest strip</strong> goes in whole and comes out whole. Grated zest left in turns bitter over a long simmer.</p>"
+  ],
+  "storage": "Broth and meat hold five days cold and freeze for three months. Rice holds four days cold and freezes acceptably. Kept separate, this reheats into something that still looks like soup; kept together, you will be eating chicken rice pilaf, which is not a disaster but is not what you made."
+ },
+ {
+  "slug": "soup-chicken-noodle-from-a-carcass",
+  "title": "Chicken Noodle from a Carcass",
+  "dek": "The whole point of roasting a chicken. Broth in the evening, soup the next day, nothing wasted.",
+  "category": "Soup, Chowder & Stew",
+  "tags": [
+   "chicken",
+   "carcass",
+   "noodles",
+   "leftovers",
+   "broth"
+  ],
+  "yield": "6 bowls, about 3 litres",
+  "activeTime": "35 minutes",
+  "totalTime": "4 hours, mostly unattended",
+  "intro": "<p>A roasted chicken carcass is worth more than most of the meat that came off it. The bones are already browned, the skin and cartilage are loaded with collagen, and the roasting tray is coated in fond. Simmered for three hours it gives a broth with real body — one that sets to a soft jelly in the cold, which is the only reliable test. This is a two-evening job by design: broth on the night you roast the bird, soup the next day. Trying to do both in one go means either a rushed, thin broth or eating at ten at night.</p>",
+  "ingredients": [
+   {
+    "group": "Broth",
+    "items": [
+     "1 roasted chicken carcass, plus any wing tips, skin and pan drippings",
+     "1 large onion, quartered, skin on",
+     "2 carrots, cut in chunks",
+     "3 ribs celery with leaves",
+     "1 head garlic, halved crosswise",
+     "2 bay leaves",
+     "1 teaspoon black peppercorns",
+     "6 stems parsley",
+     "3 litres cold water"
+    ]
+   },
+   {
+    "group": "Soup",
+    "items": [
+     "2 tablespoons butter or schmaltz",
+     "1 onion, diced",
+     "3 carrots, sliced 5 mm thick",
+     "3 ribs celery, sliced",
+     "2 cloves garlic, minced",
+     "1 teaspoon fresh thyme leaves",
+     "300 g cooked chicken meat, pulled in large pieces",
+     "180 g wide egg noodles",
+     "2 tablespoons chopped dill or parsley",
+     "1 tablespoon lemon juice",
+     "Fine salt and black pepper, to taste"
+    ]
+   }
+  ],
+  "method": [
+   "<p>Break the carcass up with your hands so it packs down and stays submerged. Put it in a pot with the onion, carrot, celery, garlic, bay, peppercorns, parsley and any jellied drippings from the roasting tray, and cover with the cold water.</p>",
+   "<p>Bring it up slowly and skim off the grey foam that rises as it approaches a simmer, until what comes up is clear rather than muddy.</p>",
+   "<p>Drop the heat until the surface barely trembles, with a bubble breaking every couple of seconds, and hold it there for three hours. Never let it boil. A boiled broth is cloudy and greasy, and the fat that emulsifies into it cannot be skimmed back out.</p>",
+   "<p>It is done when the broth tastes strongly of chicken rather than of water and the bones crumble under light pressure from tongs. Strain it, without pressing the solids, and cool it fast in shallow containers. Overnight in the cold it should set to a soft jelly with a cap of fat on top.</p>",
+   "<p>The next day, lift off the fat and keep it — that is schmaltz, and it is the best fat to start the soup in. Warm 2 tablespoons of it in a heavy pot.</p>",
+   "<p>Cook the onion, carrot and celery in the fat with a good pinch of salt until the onion is translucent and the carrot has begun to soften, about eight minutes. Add the garlic and thyme and cook until fragrant, thirty seconds.</p>",
+   "<p>Add 2.5 litres of the broth and simmer until the carrots are tender all the way through, about ten minutes. Season it now, properly. Unsalted broth tastes like dishwater and people blame the recipe.</p>",
+   "<p>Cook the noodles separately in salted water until just short of tender, then drain. Noodles cooked in the soup release starch that clouds the broth and, worse, keep swelling in the leftovers until there is no liquid left.</p>",
+   "<p>Add the pulled chicken to the pot and bring back to a simmer until the meat is heated through. If any of your chicken is not already fully cooked, simmer it until the thickest piece reaches an internal temperature of 165°F (74°C) on an instant-read thermometer.</p>",
+   "<p>Add the dill and lemon juice off the heat. Put a nest of noodles in each bowl and ladle the soup over. Taste one more time for salt — hot soup needs more than a cool spoonful suggests.</p>"
+  ],
+  "notes": [
+   "<p><strong>Broth that did not gel</strong> tastes fine but had less collagen than ideal. Add a couple of chicken feet or a wing or two next time; both are almost pure collagen and cost very little.</p>",
+   "<p><strong>Freeze carcasses</strong> until you have two or three. A single bird makes a thin broth. Three make something you could stand a spoon in.</p>",
+   "<p><strong>Skimming fat:</strong> the easy way is time. Cold broth wears a solid fat cap you lift off in one piece. Chasing fat around a hot pot with a ladle is a waste of an evening.</p>"
+  ],
+  "storage": "Broth: five days cold, six months frozen. Assembled soup without noodles: four days cold, three months frozen. Noodles: keep them separate, always. The soup is better on the second day and the noodles are not."
+ },
+ {
+  "slug": "soup-split-pea-ham-hock",
+  "title": "Split Pea with a Smoked Hock",
+  "dek": "One hock, a bag of split peas, and four hours of doing nothing. The cheapest good pot of soup there is.",
+  "category": "Soup, Chowder & Stew",
+  "tags": [
+   "split pea",
+   "smoked hock",
+   "cheap",
+   "slow",
+   "freezer"
+  ],
+  "yield": "8 bowls, about 3.5 litres",
+  "activeTime": "25 minutes",
+  "totalTime": "3 hours",
+  "intro": "<p>This is a soup built on one cheap smoky ingredient and a bag of dried peas, and it asks for almost nothing except time. Split peas have had their skins removed, which is why they need no soaking and why they collapse entirely into the liquid instead of staying whole — that collapse is the thickening, and there is no flour or cream anywhere in it. A smoked hock brings salt, smoke and a great deal of gelatin from the skin and joint, and it is already fully cured and cooked when you buy it, so the long simmer is about extracting what it has rather than making it safe.</p>",
+  "ingredients": [
+   {
+    "group": "The pot",
+    "items": [
+     "1 smoked ham hock, about 700 g, or 2 smaller ones",
+     "500 g green split peas, picked over and rinsed",
+     "2 tablespoons butter or olive oil",
+     "2 large onions, diced",
+     "3 carrots, diced",
+     "3 ribs celery, diced",
+     "4 cloves garlic, minced",
+     "2.5 litres water or light stock",
+     "2 bay leaves",
+     "1 teaspoon fresh thyme leaves",
+     "1 teaspoon black pepper"
+    ]
+   },
+   {
+    "group": "Finishing",
+    "items": [
+     "1 tablespoon cider vinegar",
+     "Fine salt, to taste",
+     "2 tablespoons chopped parsley",
+     "60 g croutons per bowl, optional"
+    ]
+   }
+  ],
+  "method": [
+   "<p>Melt the butter in a large heavy pot over medium heat and cook the onion, carrot and celery until soft and the onion is translucent, about ten minutes. Let them take a little colour at the edges; it costs nothing and adds depth. Add the garlic and cook until fragrant, thirty seconds.</p>",
+   "<p>Add the split peas, water, bay, thyme, pepper, and the hock, pushing it down so it is submerged. Do not add salt yet — the hock will release a lot of it and you have no way of knowing how much until later.</p>",
+   "<p>Bring to a boil, then drop to a low simmer with the lid slightly ajar. Skim any foam that rises in the first fifteen minutes.</p>",
+   "<p>Simmer for two to two and a half hours, stirring every half hour and scraping the bottom. Split peas sink and scorch, and scorched pea soup tastes burnt all the way through with no way to fix it. If the pot is getting thick and sluggish, add water.</p>",
+   "<p>It is ready when the peas have completely disintegrated and the soup is thick, uniform and pale green, with no distinct pea shapes left. If you still see individual peas, it needs longer — old dried peas take considerably more time and some very old ones never soften at all.</p>",
+   "<p>Lift the hock out and let it cool enough to handle. Pull off the meat, discard the skin, bone and any hard fat, and chop the meat. Stir it back into the pot. Some hocks give a generous amount of meat and some give almost none; either way the gelatin has already gone into the soup, which is the main job.</p>",
+   "<p>Now season. Add the vinegar first, then salt in small increments, tasting each time. A smoked hock varies enormously and a soup this thick swallows salt without seeming to change until suddenly it is too much.</p>",
+   "<p>If it is thicker than you want — and it will thicken further as it cools — loosen it with water or stock. If it is thin, simmer uncovered until it holds a spoon track for a second. Serve with parsley and croutons.</p>"
+  ],
+  "notes": [
+   "<p><strong>Meatless version:</strong> leave out the hock, add 2 teaspoons of smoked paprika and 1 tablespoon of soy sauce, and use a well-made vegetable stock. It is a genuinely good soup, not a consolation prize, though it will need more salt.</p>",
+   "<p><strong>Blending:</strong> most of the time it is unnecessary — properly cooked split peas do it themselves. If you want it silky, an immersion blender for thirty seconds gets you there.</p>",
+   "<p><strong>Yellow split peas</strong> behave the same way and taste slightly milder and earthier. They take about the same time and look better in a bowl, if that matters to you.</p>"
+  ],
+  "storage": "Five days cold, and it sets to something you could slice. Loosen it with water when reheating and expect to add salt again. It freezes very well for four months, which makes it worth doubling — this is one of the few soups where the second batch costs almost no extra work."
+ },
+ {
+  "slug": "soup-lentil-soup",
+  "title": "Lentil Soup with Enough Going On",
+  "dek": "Brown lentils, a lot of aromatics, and acid at the end. Lentils are dull only when nobody seasons them.",
+  "category": "Soup, Chowder & Stew",
+  "tags": [
+   "lentil",
+   "vegetarian",
+   "vegan option",
+   "cheap",
+   "weeknight"
+  ],
+  "yield": "6 bowls, about 3 litres",
+  "activeTime": "25 minutes",
+  "totalTime": "1 hour",
+  "intro": "<p>Lentil soup has a reputation for being worthy and boring, which is a seasoning failure rather than an ingredient failure. Lentils are starchy, earthy and low in fat, and left alone they taste flat. Three things fix that. Real browning at the start, including tomato paste cooked until it darkens. Spice that goes into hot fat rather than into liquid, so it blooms instead of tasting dusty. And a serious amount of acid at the end — lemon or vinegar — which is the single biggest improvement available to any pot of legumes. Brown or green lentils hold their shape; red lentils dissolve entirely and make a different, smoother soup.</p>",
+  "ingredients": [
+   {
+    "group": "Base",
+    "items": [
+     "3 tablespoons olive oil",
+     "2 onions, diced",
+     "3 carrots, diced",
+     "3 ribs celery, diced",
+     "5 cloves garlic, minced",
+     "2 tablespoons tomato paste",
+     "2 teaspoons ground cumin",
+     "1 teaspoon ground coriander",
+     "1 teaspoon smoked paprika",
+     "1/2 teaspoon red pepper flakes"
+    ]
+   },
+   {
+    "group": "The pot",
+    "items": [
+     "400 g brown or green lentils, rinsed and picked over",
+     "1 tin diced tomatoes, about 400 g",
+     "2 litres vegetable or light stock",
+     "2 bay leaves",
+     "1 teaspoon fine salt, plus more to taste",
+     "1 teaspoon black pepper"
+    ]
+   },
+   {
+    "group": "Finishing",
+    "items": [
+     "150 g spinach or chard, chopped",
+     "3 tablespoons lemon juice, or 2 tablespoons red wine vinegar",
+     "3 tablespoons chopped parsley or cilantro",
+     "2 tablespoons good olive oil, for drizzling",
+     "A pinch of flaky salt"
+    ]
+   }
+  ],
+  "method": [
+   "<p>Heat the olive oil in a heavy pot over medium-high and cook the onion, carrot and celery with a good pinch of salt until softened and browning at the edges, ten to twelve minutes. Take this further than you think you should — the brown at the bottom of the pot is where the soup gets its backbone.</p>",
+   "<p>Add the garlic and cook until fragrant, about thirty seconds, then the tomato paste. Stir it around the hot pot until it turns from bright red to brick and smells sweet rather than sharp, a minute or so.</p>",
+   "<p>Add the cumin, coriander, paprika and pepper flakes directly into the hot fat and stir for about thirty seconds, until they smell strongly toasted. Ground spices added to liquid taste raw and dusty; the same spices bloomed in fat taste like a different set of ingredients.</p>",
+   "<p>Add the lentils, tomatoes, stock, bay, salt and pepper. Scrape the bottom of the pot clean. Bring to a boil, then reduce to a gentle simmer.</p>",
+   "<p>Simmer, partly covered, for thirty-five to forty-five minutes, until the lentils are completely tender with no chalky centre when you bite one, and the soup has thickened as their starch releases. Older lentils take longer and some never soften; if they are still hard at an hour, they were too old.</p>",
+   "<p>Stir in the greens and cook only until they have wilted and gone dark, a minute or two. Longer and they turn olive-drab and sulphurous.</p>",
+   "<p>Off the heat, add the lemon juice and taste. Then taste again after adding more salt. A pot this size usually needs another teaspoon or more, and the difference between an under-seasoned and a correctly seasoned lentil soup is not subtle.</p>",
+   "<p>Blend a ladleful or two and stir it back if you want a thicker, more cohesive soup. Serve with parsley, a hard drizzle of good olive oil and a pinch of flaky salt on each bowl.</p>"
+  ],
+  "notes": [
+   "<p><strong>Red lentils</strong> collapse completely in about twenty minutes and give a smooth, dal-like soup. They are not interchangeable with brown lentils here — use less stock and expect no texture from the lentils themselves.</p>",
+   "<p><strong>Do not salt heavily at the start</strong> and do not add the tomatoes before the lentils have begun to soften if your lentils are old. Acid and salt both slow the softening of legume skins, and while the effect is smaller than folklore says, with tired lentils it is enough to matter.</p>",
+   "<p><strong>A parmesan rind</strong> dropped in with the stock adds savoury depth and dissolves almost entirely. Keep the rinds in the freezer for exactly this.</p>"
+  ],
+  "storage": "Five days cold and better on the second day, once the spice has spread out. It thickens a lot; loosen with stock. It freezes for four months, though the greens go slack — add those fresh when reheating if you care."
+ },
+ {
+  "slug": "soup-minestrone",
+  "title": "Minestrone, Whatever Is In the Drawer",
+  "dek": "A method rather than a recipe. Beans, a hard cheese rind, whatever vegetables you have, in the right order.",
+  "category": "Soup, Chowder & Stew",
+  "tags": [
+   "minestrone",
+   "vegetarian",
+   "beans",
+   "flexible",
+   "vegetables"
+  ],
+  "yield": "8 bowls, about 4 litres",
+  "activeTime": "35 minutes",
+  "totalTime": "1 hour 15 minutes",
+  "intro": "<p>Minestrone is not a fixed recipe and never was; it is a structure for turning whatever vegetables are in the drawer into a substantial soup. The structure is what matters. A slowly cooked aromatic base, then hard vegetables that need time, then a starch, then soft vegetables and greens near the end, then acid and cheese off the heat. Follow that order and almost any combination works. Ignore it and you get mush and crunch in the same spoonful. The other constant is a hard cheese rind in the pot, which dissolves slowly and gives the broth a savoury weight that stock alone will not.</p>",
+  "ingredients": [
+   {
+    "group": "Base",
+    "items": [
+     "4 tablespoons olive oil",
+     "120 g pancetta or bacon, diced, optional",
+     "2 onions, diced",
+     "3 carrots, diced",
+     "3 ribs celery, diced",
+     "5 cloves garlic, minced",
+     "2 tablespoons tomato paste",
+     "1 teaspoon dried oregano",
+     "1/2 teaspoon red pepper flakes"
+    ]
+   },
+   {
+    "group": "The pot",
+    "items": [
+     "1 tin diced tomatoes, about 400 g",
+     "2 litres vegetable or light stock",
+     "1 parmesan rind, about 50 g",
+     "2 bay leaves",
+     "400 g cooked cannellini or borlotti beans, drained",
+     "500 g hard vegetables — potato, squash, turnip, cut in 1.5 cm dice",
+     "1 1/2 teaspoons fine salt"
+    ]
+   },
+   {
+    "group": "Late additions",
+    "items": [
+     "150 g small pasta, such as ditalini",
+     "300 g soft vegetables — zucchini, green beans, peas",
+     "150 g greens — kale, chard or spinach, chopped"
+    ]
+   },
+   {
+    "group": "Finishing",
+    "items": [
+     "3 tablespoons chopped basil or parsley",
+     "2 tablespoons good olive oil",
+     "1 tablespoon red wine vinegar",
+     "60 g grated parmesan, to taste",
+     "Black pepper, to taste"
+    ]
+   }
+  ],
+  "method": [
+   "<p>Heat the oil in a large heavy pot over medium and render the pancetta, if using, until browned and its fat has run. Add the onion, carrot and celery with a pinch of salt and cook until soft and lightly golden, about twelve minutes. Do not rush this; it is the base of everything else.</p>",
+   "<p>Add the garlic, oregano and pepper flakes and cook until fragrant, thirty seconds. Add the tomato paste and cook, stirring, until it darkens to brick and smells sweet, about a minute.</p>",
+   "<p>Add the tomatoes, stock, parmesan rind, bay leaves and salt. Bring to a simmer and scrape the bottom clean.</p>",
+   "<p>Add the hard vegetables and the beans. Simmer for about twenty minutes, until the potato or squash gives no resistance to a knife but has not started falling apart.</p>",
+   "<p>Add the pasta and cook until it is just short of tender, since it will keep softening in the hot soup. If you plan on leftovers, cook the pasta separately instead and add it by the bowl — pasta left in soup overnight swells into paste and drinks all the broth.</p>",
+   "<p>Add the soft vegetables and cook until they are tender but still have some structure, about five minutes. Zucchini in particular goes from cooked to disintegrated very quickly.</p>",
+   "<p>Add the greens last and cook only until wilted and dark, one to three minutes depending on whether it is spinach or kale.</p>",
+   "<p>Pull out the bay leaves and whatever is left of the rind. Off the heat, stir in the basil, olive oil and vinegar, and taste for salt and pepper. The vinegar is what stops a vegetable soup tasting flat and muddy.</p>",
+   "<p>Serve with grated parmesan and more olive oil. This soup should be thick enough that the spoon meets resistance; if it is thin, simmer uncovered a few minutes, and if it is stodgy, add stock.</p>"
+  ],
+  "notes": [
+   "<p><strong>The order is the recipe.</strong> Anything that takes twenty minutes goes in early, anything that takes five goes in late, anything that takes one goes in at the end. Substitute freely inside those groups.</p>",
+   "<p><strong>Dried beans</strong> cooked from scratch give a better bean and a starchy cooking liquid worth using in place of some of the stock. Tinned beans are entirely acceptable; rinse them, since the liquid in the tin tastes tinny.</p>",
+   "<p><strong>Keep rinds in the freezer.</strong> The stub end of a wedge of parmesan is worth as much in a pot as anything you would buy for the purpose.</p>"
+  ],
+  "storage": "Five days cold and better after one night. Freeze without the pasta and greens for four months. If the pasta is already in it, accept that the leftovers are a thick vegetable stew rather than a soup, and eat them as such."
+ },
+ {
+  "slug": "soup-beef-and-barley",
+  "title": "Beef and Barley",
+  "dek": "Chuck browned properly, barley added late so it does not drink the whole pot overnight.",
+  "category": "Soup, Chowder & Stew",
+  "tags": [
+   "beef",
+   "barley",
+   "slow",
+   "winter",
+   "make-ahead"
+  ],
+  "yield": "8 bowls, about 4 litres",
+  "activeTime": "45 minutes",
+  "totalTime": "3 hours",
+  "intro": "<p>Two things decide how this turns out. The first is the browning: chuck cut in large cubes, dried, and seared in batches until genuinely dark, because a grey pot of stewed beef never recovers the flavour it did not build at the start. The second is when the barley goes in. Pearl barley absorbs about three times its volume in liquid and keeps absorbing for as long as it is in contact with it, so barley added at the beginning gives you a soup at dinner and a solid porridge by morning. Cook it separately, or add it in the last forty minutes and accept that leftovers need thinning.</p>",
+  "ingredients": [
+   {
+    "group": "Beef",
+    "items": [
+     "1.1 kg beef chuck, cut in 4 cm cubes",
+     "2 teaspoons fine salt",
+     "1 teaspoon black pepper",
+     "3 tablespoons neutral oil"
+    ]
+   },
+   {
+    "group": "Pot",
+    "items": [
+     "2 onions, diced",
+     "3 carrots, cut in 1 cm coins",
+     "3 ribs celery, sliced",
+     "250 g mushrooms, quartered",
+     "4 cloves garlic, minced",
+     "2 tablespoons tomato paste",
+     "180 ml red wine",
+     "2.5 litres beef stock",
+     "2 bay leaves",
+     "4 sprigs thyme",
+     "1 tablespoon Worcestershire sauce"
+    ]
+   },
+   {
+    "group": "Barley and finishing",
+    "items": [
+     "200 g pearl barley",
+     "750 ml water, to cook the barley apart from the soup",
+     "3 tablespoons chopped parsley",
+     "1 tablespoon red wine vinegar",
+     "Fine salt and black pepper, to taste"
+    ]
+   }
+  ],
+  "method": [
+   "<p>Season the beef and let it sit while the pot heats. Pat the cubes dry immediately before searing — surface moisture has to boil off before browning starts, and in a crowded pot it never does.</p>",
+   "<p>Heat the oil in a heavy pot over medium-high until it shimmers. Sear the beef in three batches, without crowding, turning each cube only once it has released from the metal and shows a dark brown crust. Grey meat means the pan was too cool or too full. Set the seared beef aside.</p>",
+   "<p>Lower the heat to medium and add the onion, carrot, celery and mushrooms with a pinch of salt. Cook until the onions are translucent and the mushrooms have given up their water and started to brown, about ten minutes, scraping the pot bottom as things loosen.</p>",
+   "<p>Add the garlic, then the tomato paste, and cook until the paste has darkened from red to brick and smells sweet, about a minute.</p>",
+   "<p>Pour in the wine and scrape until every brown patch has lifted off the bottom of the pot. Reduce until the pot looks almost dry and the raw alcohol smell has gone, three or four minutes.</p>",
+   "<p>Return the beef with any juices, add the stock, bay, thyme and Worcestershire, and bring to the barest simmer — a bubble breaking every second or two. Cover with the lid slightly ajar.</p>",
+   "<p>Cook for about two hours. It is done when a cube of chuck falls apart under light pressure from a spoon and a fork twists out of it with no resistance. This is a collagen conversion, not a temperature target: undercooked chuck is tough, and the fix is always more time, never more heat.</p>",
+   "<p>While it cooks, simmer the barley separately in the water with a pinch of salt until the grains are tender with a slight chew, about thirty minutes, then drain. Cooking it apart is the difference between soup tomorrow and porridge tomorrow.</p>",
+   "<p>Pull out the bay and thyme stems. Skim the fat off the surface, or chill the pot and lift the cap off cold. Stir in as much barley as you want in the pot now, keeping the rest aside for the leftovers.</p>",
+   "<p>Finish with the parsley, vinegar, and salt and pepper to taste. Long-simmered beef soup goes flat without acid at the end; the vinegar will not read as vinegar, it will read as the soup tasting finished.</p>"
+  ],
+  "notes": [
+   "<p><strong>Cut the beef large.</strong> Small cubes look sensible and disintegrate into threads over two hours. Four centimetres is about right, and they will shrink by a third.</p>",
+   "<p><strong>Oven method:</strong> after the stock goes in, put the covered pot in a 300°F (150°C) oven for the same length of time. The heat is more even and you cannot scorch the bottom.</p>",
+   "<p><strong>Hulled barley,</strong> the whole grain version, takes about an hour and keeps more chew. Pearl barley is faster and releases more starch, which thickens the soup slightly.</p>"
+  ],
+  "storage": "Five days cold and clearly better on the second day. It freezes for four months; barley in the freezer goes a little soft but is entirely acceptable. Expect to add stock or water on reheating, because the barley will have taken up whatever liquid it could find."
+ },
+ {
+  "slug": "soup-elk-stew",
+  "title": "Elk Stew",
+  "dek": "A lean animal in a wet climate. Low heat, long time, and fat added back because there is none in the meat.",
+  "category": "Soup, Chowder & Stew",
+  "tags": [
+   "elk",
+   "game",
+   "stew",
+   "braise",
+   "freezer"
+  ],
+  "yield": "6 bowls",
+  "activeTime": "45 minutes",
+  "totalTime": "3 hours 30 minutes",
+  "intro": "<p>Elk is not beef with a different label. A wild animal that walks over mountains all year has dense, close-grained muscle, a good deal of connective tissue, and almost no intramuscular fat, which means two adjustments. Fat has to come from somewhere else — bacon, butter or beef suet — or the finished stew is dry no matter how long it cooks. And the braise has to stay genuinely low, because lean muscle fibres squeeze out their moisture hard at a boil and you end up with tough shreds sitting in liquid. Shoulder, neck and shank are the right cuts. Backstrap in a stew is a waste of the best thing in the freezer.</p>",
+  "ingredients": [
+   {
+    "group": "Meat",
+    "items": [
+     "1.1 kg elk shoulder, neck or shank, cut in 4 cm cubes",
+     "2 teaspoons fine salt",
+     "1 teaspoon black pepper",
+     "40 g all-purpose flour, for dusting",
+     "120 g bacon, diced",
+     "2 tablespoons neutral oil"
+    ]
+   },
+   {
+    "group": "Braise",
+    "items": [
+     "2 onions, diced",
+     "3 carrots, cut in thick coins",
+     "3 ribs celery, sliced",
+     "5 cloves garlic, smashed",
+     "2 tablespoons tomato paste",
+     "250 ml dry red wine",
+     "1.25 litres beef or game stock",
+     "2 bay leaves",
+     "4 sprigs thyme",
+     "6 juniper berries, crushed",
+     "1 tablespoon Worcestershire sauce"
+    ]
+   },
+   {
+    "group": "Late additions",
+    "items": [
+     "600 g Yukon gold potatoes, cut in 3 cm chunks",
+     "250 g mushrooms, halved",
+     "2 tablespoons butter",
+     "3 tablespoons chopped parsley",
+     "1 tablespoon red wine vinegar"
+    ]
+   }
+  ],
+  "method": [
+   "<p>Render the bacon in a heavy pot over medium heat until browned and its fat has run out. Lift the pieces out and keep them. That fat is doing a job the elk cannot do for itself.</p>",
+   "<p>Season the elk, dust it lightly with the flour and shake off the excess. Add the oil to the bacon fat and sear the meat in batches over medium-high, without crowding, until each piece has a dark crust and releases from the pot on its own. Set it aside.</p>",
+   "<p>Cook the onion, carrot and celery in the remaining fat until softened and browning at the edges, about ten minutes, scraping the pot bottom. Add the garlic, then the tomato paste, and cook until the paste turns brick coloured and smells sweet.</p>",
+   "<p>Pour in the wine and scrape hard until nothing is stuck to the pot. Reduce by half, until the sharp alcohol smell has gone.</p>",
+   "<p>Return the meat and bacon, add the stock, bay, thyme, juniper and Worcestershire. The liquid should come about three quarters of the way up the meat, not cover it — this is a braise, not a boil.</p>",
+   "<p>Bring it to the point where the surface barely moves, then cover and put it in a 300°F (150°C) oven, or hold it on the lowest burner setting. An oven is more forgiving because the heat comes from all sides and nothing scorches on the bottom.</p>",
+   "<p>Cook for two to two and a half hours. It is done when a piece of elk gives no resistance to a fork and pulls apart in strands under gentle pressure. Lean game meat has a wider window than beef between tough and dry, and the only way through it is low heat and patience.</p>",
+   "<p>Add the potatoes and mushrooms and cook another thirty to forty minutes, until a knife slides into a potato chunk without resistance and the mushrooms have shrunk and darkened.</p>",
+   "<p>Stir in the butter off the heat, along with the parsley and vinegar. The butter gives the sauce body and gloss and, again, replaces fat the animal never had. Taste for salt.</p>",
+   "<p>If the sauce is thin, lift the solids out and reduce the liquid over medium heat until it coats a spoon, then recombine. Adding more flour at this stage tastes raw and pasty.</p>"
+  ],
+  "notes": [
+   "<p><strong>Freezer-burnt meat</strong> from the bottom of the chest is still usable here — trim the grey papery surfaces off hard and accept a slightly less sweet result. A long braise hides a lot, but it does not hide rancid fat, so trim any fat that smells sharp.</p>",
+   "<p><strong>Juniper and elk</strong> is not a decoration. Juniper cuts through the mineral, faintly liverish edge that some wild meat carries. Six berries in this size pot is enough to notice their absence and not enough to taste as gin.</p>",
+   "<p><strong>Venison, moose and bear shoulder</strong> all behave the same way in this recipe. Bear needs to be cooked to well done for parasite safety — take it well past fork-tender and check with an instant-read thermometer that the thickest piece has passed 165°F (74°C).</p>"
+  ],
+  "storage": "Four days cold and noticeably better on the second day, once the fat has redistributed and the juniper has spread out. It freezes for six months, which makes it the right thing to cook when a shoulder comes out of the freezer whole. Freeze it without the potatoes if you can — potato goes grainy — and add them fresh on reheating."
+ },
+ {
+  "slug": "soup-venison-chili",
+  "title": "Venison Chili",
+  "dek": "Ground venison, real dried chiles, and fat added back. A lean grind makes a thin, dry chili on its own.",
+  "category": "Soup, Chowder & Stew",
+  "tags": [
+   "chili",
+   "venison",
+   "game",
+   "ground meat",
+   "freezer"
+  ],
+  "yield": "8 bowls, about 3.5 litres",
+  "activeTime": "45 minutes",
+  "totalTime": "2 hours 30 minutes",
+  "intro": "<p>Most venison ground at a processor comes in around ninety-five percent lean, which is why so much venison chili tastes dry and grainy. The meat has nothing to carry flavour and nothing to keep the crumbles tender, so this recipe adds fat back in the form of bacon and a little beef fat. The other change worth making is the chile. Powder from a tin is mostly filler and stale; whole dried chiles toasted and blended into a paste give a chili with actual depth, colour and a low warm heat rather than a flat dusty burn. Neither change is difficult and together they make it a different dish.</p>",
+  "ingredients": [
+   {
+    "group": "Chile paste",
+    "items": [
+     "4 dried ancho chiles, stemmed and seeded",
+     "2 dried guajillo chiles, stemmed and seeded",
+     "1 dried chipotle, stemmed",
+     "500 ml boiling water",
+     "1 tablespoon cumin seed",
+     "1 teaspoon coriander seed",
+     "1 teaspoon dried oregano"
+    ]
+   },
+   {
+    "group": "Meat",
+    "items": [
+     "1.1 kg ground venison",
+     "180 g bacon, diced",
+     "2 tablespoons beef fat or neutral oil",
+     "2 teaspoons fine salt",
+     "1 teaspoon black pepper"
+    ]
+   },
+   {
+    "group": "Pot",
+    "items": [
+     "2 large onions, diced",
+     "6 cloves garlic, minced",
+     "1 tin diced tomatoes, about 800 g",
+     "750 ml beef or game stock",
+     "1 tablespoon cocoa powder",
+     "1 tablespoon cider vinegar",
+     "2 teaspoons fine salt, to taste",
+     "800 g cooked pinto or kidney beans, drained, optional"
+    ]
+   },
+   {
+    "group": "The table",
+    "items": [
+     "150 g grated sharp cheddar",
+     "120 ml sour cream",
+     "4 tablespoons sliced green onion",
+     "1 lime, cut in wedges"
+    ]
+   }
+  ],
+  "method": [
+   "<p>Toast the dried chiles in a dry skillet over medium heat, pressing them flat for a few seconds a side, until they smell fragrant and toasty and have softened slightly. Watch closely — a chile that goes past toasted to scorched turns bitter and will ruin the pot.</p>",
+   "<p>Cover the toasted chiles with the boiling water and leave them until fully soft and pliable, about twenty minutes. Meanwhile toast the cumin and coriander seed in the same dry pan until they smell strongly nutty and start to pop, then grind them.</p>",
+   "<p>Blend the soaked chiles with about 250 ml of their soaking liquid, the ground spices and the oregano until it is a smooth paste. Taste the soaking water first; if it is bitter, use plain water instead.</p>",
+   "<p>Render the bacon in a large heavy pot until browned and its fat has run. Lift it out and keep it.</p>",
+   "<p>Add the beef fat and brown the venison in two batches over medium-high, pressing it flat and leaving it alone until a dark crust forms before breaking it up. A lean grind will try to steam; crowding it guarantees grey meat and no flavour. Ground meat must reach an internal temperature of 160°F (71°C), so check the thickest part with an instant-read thermometer rather than relying on colour, which is unreliable in game.</p>",
+   "<p>Lower the heat, add the onions to the pot and cook until translucent and starting to brown, about eight minutes. Add the garlic and cook until fragrant.</p>",
+   "<p>Add the chile paste and cook it in the hot fat, stirring, until it darkens a shade and smells roasted rather than raw, three or four minutes. This step is what separates a chili that tastes cooked from one that tastes stirred together.</p>",
+   "<p>Return the meat and bacon and add the tomatoes, stock and cocoa powder. Bring to a simmer, then hold it at the barest bubble, uncovered, for at least ninety minutes.</p>",
+   "<p>It is ready when the fat has separated and pooled dark red at the surface, the liquid has reduced enough that a spoon dragged through leaves a track for a moment, and the raw tomato edge has gone. If you are adding beans, put them in for the last twenty minutes so they warm without collapsing.</p>",
+   "<p>Off the heat, add the vinegar and salt to taste. Serve with cheddar, sour cream, green onion and a lime wedge, and let people build their own bowl.</p>"
+  ],
+  "notes": [
+   "<p><strong>Beans or no beans</strong> is a regional argument with no correct answer. This pot works either way; without them, reduce the stock by 250 ml so it does not come out thin.</p>",
+   "<p><strong>Cocoa powder</strong> is not there to make it taste of chocolate. A tablespoon in a pot this size adds bitterness and colour that reads as depth, in the same way a small amount of coffee does.</p>",
+   "<p><strong>If it tastes flat</strong> after all that, it needs salt and acid, in that order, not more chile. Chili is very easy to over-spice and nearly impossible to un-spice.</p>"
+  ],
+  "storage": "Five days cold and substantially better on the second and third days — this is the clearest example in this whole category of a dish that improves overnight. It freezes for six months and reheats without complaint. Make double."
+ },
+ {
+  "slug": "soup-three-bean-chili",
+  "title": "Three Bean Chili",
+  "dek": "No meat, no apology, and no soy crumbles. Depth comes from toasted chiles, mushrooms and a long simmer.",
+  "category": "Soup, Chowder & Stew",
+  "tags": [
+   "chili",
+   "vegetarian",
+   "vegan option",
+   "beans",
+   "freezer"
+  ],
+  "yield": "8 bowls, about 3.5 litres",
+  "activeTime": "40 minutes",
+  "totalTime": "1 hour 45 minutes",
+  "intro": "<p>A vegetarian chili fails when it is built as a meat chili with the meat removed. What is actually missing is browning, fat and savoury depth, so this recipe replaces each of them deliberately: mushrooms cooked hard until the pan goes brown and sticky, a toasted whole-chile paste rather than powder, and soy sauce for glutamates. Three kinds of bean is not a gimmick either — black beans hold their shape and stay firm, pintos break down and thicken the pot, and chickpeas keep a distinct bite. Together they give you three textures in a spoonful, which is what a chili without meat is otherwise short of.</p>",
+  "ingredients": [
+   {
+    "group": "Chile paste",
+    "items": [
+     "4 dried ancho chiles, stemmed and seeded",
+     "2 dried guajillo chiles, stemmed and seeded",
+     "500 ml boiling water",
+     "1 tablespoon cumin seed",
+     "2 teaspoons dried oregano",
+     "1 teaspoon smoked paprika"
+    ]
+   },
+   {
+    "group": "Base",
+    "items": [
+     "4 tablespoons olive oil",
+     "450 g mushrooms, finely chopped",
+     "2 large onions, diced",
+     "2 bell peppers, diced",
+     "6 cloves garlic, minced",
+     "2 tablespoons tomato paste",
+     "2 tablespoons soy sauce"
+    ]
+   },
+   {
+    "group": "The pot",
+    "items": [
+     "1 tin diced tomatoes, about 800 g",
+     "1 litre vegetable stock",
+     "400 g cooked black beans, drained",
+     "400 g cooked pinto beans, drained",
+     "400 g cooked chickpeas, drained",
+     "1 tablespoon cocoa powder",
+     "2 teaspoons fine salt, to taste",
+     "1 tablespoon cider vinegar",
+     "200 g corn kernels, optional"
+    ]
+   },
+   {
+    "group": "The table",
+    "items": [
+     "120 ml sour cream or cashew cream",
+     "100 g crumbled feta or grated cheddar",
+     "4 tablespoons chopped cilantro",
+     "1 lime, cut in wedges"
+    ]
+   }
+  ],
+  "method": [
+   "<p>Toast the chiles in a dry skillet over medium heat, a few seconds a side, until fragrant and slightly softened. Do not let them darken past a light toasting — scorched chile is bitter and there is no fixing a pot it has gone into.</p>",
+   "<p>Soak them in the boiling water for twenty minutes until fully soft. Toast and grind the cumin seed while you wait. Blend the chiles with 250 ml of the soaking liquid, the cumin, oregano and paprika into a smooth paste.</p>",
+   "<p>Heat 2 tablespoons of the oil in a large pot over medium-high and add the mushrooms. Cook well past the point where they look done: the water comes out, the pot starts to hiss instead of bubble, the mushrooms shrink and brown, and a sticky brown film builds on the bottom. Ten to twelve minutes. That film is the meaty depth this chili is otherwise missing.</p>",
+   "<p>Add the rest of the oil, the onions and the peppers with a pinch of salt, and cook until softened and browning at the edges, about eight minutes. Add the garlic and cook until fragrant.</p>",
+   "<p>Add the tomato paste and cook until it darkens to brick, about a minute, then the chile paste, and cook it in the hot oil, stirring, until it smells roasted and has deepened in colour, three or four minutes.</p>",
+   "<p>Add the soy sauce, tomatoes, stock and cocoa. Scrape the bottom of the pot clean and bring to a simmer.</p>",
+   "<p>Simmer uncovered for forty-five minutes, until the liquid has reduced, the colour has gone from bright red to a deep brick, and the raw tomato taste is gone. Stir occasionally and scrape the bottom; a thick pot scorches easily.</p>",
+   "<p>Add all three beans and the corn and simmer another twenty minutes, until the pintos have started to break down and thicken the chili and the black beans and chickpeas are hot through but still whole.</p>",
+   "<p>Off the heat, add the vinegar and salt to taste. Vegetarian chili almost always needs more salt than you expect, because there is no cured meat in it doing that job quietly in the background.</p>",
+   "<p>Serve with sour cream, cheese, cilantro and lime. The dairy and the acid are not garnish here; they are what balances a pot that is otherwise all earth and smoke.</p>"
+  ],
+  "notes": [
+   "<p><strong>Dried beans</strong> cooked from scratch are better and give you a starchy cooking liquid to use in place of some of the stock. Use 200 g dried per 400 g cooked and season the cooking water.</p>",
+   "<p><strong>To make it vegan,</strong> skip the dairy toppings and use a cashew cream. Everything in the pot is already vegan as written.</p>",
+   "<p><strong>Mash a ladleful</strong> of the beans against the side of the pot if you want it thicker. It is a better tool than cornstarch, which gives chili a glossy, slightly artificial texture.</p>"
+  ],
+  "storage": "Five days cold and better on the second day. It freezes for six months and is one of the most useful things to have in a freezer, since it reheats into a full meal with nothing else needed. Thin with stock on reheating; the beans keep drinking liquid."
+ },
+ {
+  "slug": "soup-potato-leek",
+  "title": "Potato Leek Soup",
+  "dek": "Four ingredients and nowhere to hide. Wash the leeks properly and do not let a blender near it for too long.",
+  "category": "Soup, Chowder & Stew",
+  "tags": [
+   "potato",
+   "leek",
+   "vegetarian",
+   "simple",
+   "blended"
+  ],
+  "yield": "6 bowls, about 2.5 litres",
+  "activeTime": "25 minutes",
+  "totalTime": "50 minutes",
+  "intro": "<p>This soup is potatoes, leeks, stock and butter, which means every mistake shows. There are three worth knowing about. Grit, because leeks grow in sand and hold it between their layers, and one unwashed leek ruins the whole pot in a way nothing fixes. Browning, because leeks cooked hot go sweet and dark and turn what should be a pale, delicate soup into something muddy. And over-blending, because potato starch cells burst under a high-speed blade and release enough free starch to turn a smooth soup into wallpaper paste in about fifteen seconds.</p>",
+  "ingredients": [
+   {
+    "group": "Soup",
+    "items": [
+     "4 large leeks, about 900 g, white and pale green parts only",
+     "60 g butter",
+     "900 g Yukon gold or russet potatoes, peeled and cut in 2 cm chunks",
+     "1.25 litres vegetable or light stock",
+     "2 bay leaves",
+     "1 1/2 teaspoons fine salt, plus more to taste",
+     "1/2 teaspoon white pepper"
+    ]
+   },
+   {
+    "group": "Finishing",
+    "items": [
+     "125 ml heavy cream or whole milk, warmed",
+     "2 tablespoons chopped chives",
+     "1 tablespoon good olive oil, for drizzling",
+     "A pinch of flaky salt"
+    ]
+   }
+  ],
+  "method": [
+   "<p>Split the leeks lengthwise, then slice them. Drop the slices into a big bowl of cold water and swish them hard with your hands so the layers open and the grit falls to the bottom. Lift them out with your hands rather than pouring, which would tip the sand straight back over them. Repeat until the bottom of the bowl is clean.</p>",
+   "<p>Melt the butter in a heavy pot over medium-low, add the leeks and a pinch of salt, and cover. Cook gently, stirring occasionally, until they have collapsed and are completely soft with no colour on them at all, twelve to fifteen minutes. If they start to brown, the heat is too high. Browned leeks make a soup that tastes fine and looks grey.</p>",
+   "<p>Add the potatoes, stock, bay leaves, salt and white pepper. Bring to a simmer and cook until a knife goes into a potato chunk and it falls off the blade under its own weight, about twenty minutes.</p>",
+   "<p>Pull out the bay leaves. Now blend carefully. Use an immersion blender in short bursts, or a food mill or a potato masher for a rustic version. If you use a high-speed upright blender, run it briefly and stop the moment it is smooth — thirty seconds too long and the soup turns gluey and stretchy, and there is no way back from that.</p>",
+   "<p>Return it to low heat, stir in the warmed cream, and bring it back until it steams. Do not boil it after the dairy goes in.</p>",
+   "<p>Taste for salt, and taste twice. A potato soup absorbs salt without seeming to change and then arrives all at once, so add it in small increments.</p>",
+   "<p>Adjust the thickness with stock. It should pour smoothly off a ladle and coat the back of a spoon lightly. It will thicken considerably as it cools, so leave it slightly looser than you want it.</p>",
+   "<p>Serve with chives, a drizzle of olive oil and a pinch of flaky salt.</p>"
+  ],
+  "notes": [
+   "<p><strong>Cold, this is vichyssoise.</strong> Blend it completely smooth, add an extra 125 ml of cream, chill it thoroughly, and taste for salt again — cold food needs noticeably more seasoning than hot food to taste the same.</p>",
+   "<p><strong>Do not throw the dark green tops away.</strong> They are too tough for this soup and perfect in the stock pot.</p>",
+   "<p><strong>Russets</strong> break down more and give a fluffier, thicker soup. Yukon golds hold together and give a silkier, more buttery one. Waxy red potatoes give a soup that never quite thickens.</p>"
+  ],
+  "storage": "Four days cold. It thickens hard in the cold and needs thinning with stock or milk. It does not freeze well — potato turns grainy and mealy on thawing, and the cream separates. If you must freeze it, do so before the cream goes in and accept a slightly grainy texture."
+ },
+ {
+  "slug": "soup-mushroom",
+  "title": "Mushroom Soup, Dried and Fresh Together",
+  "dek": "Fresh mushrooms give texture, dried ones give the flavour. Using only fresh is why most mushroom soup tastes of cream.",
+  "category": "Soup, Chowder & Stew",
+  "tags": [
+   "mushroom",
+   "vegetarian",
+   "blended",
+   "umami",
+   "sherry"
+  ],
+  "yield": "6 bowls, about 2.5 litres",
+  "activeTime": "35 minutes",
+  "totalTime": "55 minutes",
+  "intro": "<p>Fresh mushrooms are about ninety percent water. That water has to be driven off before browning starts, and even when it has, what is left behind is texture more than flavour. Dried mushrooms are the concentrated version — the drying process converts compounds that make them far more savoury than their fresh equivalent — and their soaking liquid is close to a mushroom stock. Using both is the whole idea here: fresh for body and bite, dried and their liquor for depth. Sherry at the end is traditional and worth including, since mushrooms and a little oxidised wine are one of those pairings that works for reasons nobody needs to explain.</p>",
+  "ingredients": [
+   {
+    "group": "Dried",
+    "items": [
+     "30 g dried porcini, shiitake or a mixed pack",
+     "500 ml boiling water"
+    ]
+   },
+   {
+    "group": "Fresh",
+    "items": [
+     "700 g fresh mushrooms — cremini, button or wild, sliced thick",
+     "3 tablespoons butter",
+     "2 tablespoons olive oil",
+     "1 large onion, diced",
+     "3 cloves garlic, minced",
+     "2 teaspoons fresh thyme leaves",
+     "1 1/2 teaspoons fine salt, plus more to taste"
+    ]
+   },
+   {
+    "group": "Soup",
+    "items": [
+     "35 g all-purpose flour",
+     "1 litre vegetable or light stock",
+     "60 ml dry sherry or madeira",
+     "1 teaspoon soy sauce",
+     "180 ml heavy cream, warmed",
+     "1 teaspoon black pepper",
+     "1 tablespoon lemon juice",
+     "2 tablespoons chopped parsley"
+    ]
+   }
+  ],
+  "method": [
+   "<p>Cover the dried mushrooms with the boiling water and leave them until fully soft, about twenty minutes. Lift them out, chop them, and keep the liquid. Pour the liquid off carefully and leave the last spoonful behind, since grit settles at the bottom.</p>",
+   "<p>Heat the butter and oil in a heavy pot over medium-high and add the fresh mushrooms with a pinch of salt. They will release a great deal of water and appear to boil. Keep going.</p>",
+   "<p>Cook until the liquid has gone entirely, the pot has begun to hiss rather than bubble, the mushrooms have shrunk to a third of their volume and are browned at the edges, and a sticky brown film has built on the pot bottom. Ten to twelve minutes. Stopping short of this is the single most common reason mushroom soup tastes of nothing.</p>",
+   "<p>Set aside a large handful of the browned mushrooms for garnish. Add the onion to the pot and cook until soft and golden, then the garlic and thyme until fragrant.</p>",
+   "<p>Sprinkle over the flour and stir it in. Cook until it smells like toasted crackers rather than raw dough, about two minutes. This is a light roux — 35 g of flour for 1.5 litres of total liquid — which gives body without making a sauce of it.</p>",
+   "<p>Add the sherry and scrape the pot bottom until it is clean. Let it reduce until the alcohol smell has gone, about a minute.</p>",
+   "<p>Add the stock, the strained mushroom liquor, the chopped soaked mushrooms and the soy sauce. Simmer for twenty minutes, until the flavours have pulled together and the soup has thickened enough to coat a spoon.</p>",
+   "<p>Blend to whatever texture you want. Fully smooth makes it elegant; blending half and leaving the rest gives you something to chew. An immersion blender in short bursts is easiest.</p>",
+   "<p>Off the heat, stir in the warmed cream, the pepper and the lemon juice. Bring it back to a steam over low heat, and stop there — boiling after the cream will split it.</p>",
+   "<p>Serve with the reserved browned mushrooms and the parsley on top, and taste for salt one more time before it leaves the stove.</p>"
+  ],
+  "notes": [
+   "<p><strong>Chanterelles,</strong> if you have found any on this coast, want different handling: cook them dry in a hot pan first until their water has gone, then add butter. They are worth using as the garnish rather than blending into the soup.</p>",
+   "<p><strong>Vegan version:</strong> olive oil for butter, and full-fat oat milk or a cashew cream for the dairy. The mushroom flavour carries it without difficulty.</p>",
+   "<p><strong>The soaking liquid is the point.</strong> Throwing it out and using more stock costs you most of what the dried mushrooms were for.</p>"
+  ],
+  "storage": "Four days cold. It thickens overnight; thin with stock. Freeze it before the cream goes in for three months, then finish it fresh — mushroom soup with the cream already in comes out of the freezer separated and grainy."
+ },
+ {
+  "slug": "soup-roasted-squash",
+  "title": "Roasted Squash Soup",
+  "dek": "Roast the squash instead of boiling it. Boiled squash soup tastes like a wet vegetable and no amount of cream fixes it.",
+  "category": "Soup, Chowder & Stew",
+  "tags": [
+   "squash",
+   "vegetarian",
+   "vegan option",
+   "roasted",
+   "autumn"
+  ],
+  "yield": "6 bowls, about 2.5 litres",
+  "activeTime": "25 minutes",
+  "totalTime": "1 hour 20 minutes",
+  "intro": "<p>Squash is mostly water and sugar, and how you cook it decides which of those you end up tasting. Simmered in stock, it dilutes into something pale and vaguely sweet that people try to rescue with cream and nutmeg. Roasted, it loses water and its sugars caramelise into something concentrated and nutty that needs very little help. The extra step is forty minutes of oven time you spend doing something else. Butternut, kabocha and red kuri all work; kabocha is drier and gives the thickest soup, butternut is the easiest to peel and the most forgiving.</p>",
+  "ingredients": [
+   {
+    "group": "Roasting tray",
+    "items": [
+     "1.6 kg winter squash, halved and seeded",
+     "2 onions, cut in thick wedges",
+     "1 head garlic, top cut off",
+     "3 tablespoons olive oil",
+     "2 teaspoons fine salt",
+     "1 teaspoon black pepper"
+    ]
+   },
+   {
+    "group": "Pot",
+    "items": [
+     "2 tablespoons butter or olive oil",
+     "1 tablespoon grated fresh ginger",
+     "1 teaspoon ground cumin",
+     "1/2 teaspoon ground coriander",
+     "A pinch of cayenne",
+     "1.25 litres vegetable or light stock",
+     "1 tablespoon cider vinegar or lime juice",
+     "Fine salt, to taste"
+    ]
+   },
+   {
+    "group": "Finishing",
+    "items": [
+     "125 ml coconut milk or heavy cream",
+     "3 tablespoons pumpkin seeds, toasted",
+     "2 tablespoons good olive oil",
+     "1 tablespoon chopped sage or parsley"
+    ]
+   }
+  ],
+  "method": [
+   "<p>Heat the oven to 425°F (220°C). Rub the squash halves, onion wedges and the cut head of garlic with the olive oil and season them. Lay the squash cut side down on a heavy tray, with the onion and garlic alongside.</p>",
+   "<p>Roast for forty to fifty minutes, until a knife pushes through the skin of the squash with no resistance, the cut faces have browned where they met the tray, and the onions have gone soft and caught colour at the tips. That browning on the cut face is where the flavour is, so do not pull it early because the flesh is technically soft.</p>",
+   "<p>Let it cool enough to handle, then scoop the flesh from the skin and squeeze the roasted garlic cloves out of their skins.</p>",
+   "<p>Warm the butter in a heavy pot over medium heat, add the ginger and the ground spices, and cook for about thirty seconds, until they smell strongly toasted. Ground spice added straight to liquid stays dusty and raw-tasting; bloomed in fat it does what it is supposed to.</p>",
+   "<p>Add the squash flesh, roasted onions and garlic, and the stock. Break the squash up with a spoon and simmer for ten minutes, until everything is soft enough to fall apart against the side of the pot.</p>",
+   "<p>Blend until completely smooth. Squash has no free starch to speak of, so unlike potato soup it will not turn gluey no matter how long you run the blender — take it as smooth as you like.</p>",
+   "<p>Thin with stock to the consistency you want. Season with salt and add the vinegar or lime, which is doing more work than anything else on this list; a squash soup without acid tastes flat and cloying no matter how much salt goes in.</p>",
+   "<p>Stir in the coconut milk or cream and warm through until it steams. Serve with toasted pumpkin seeds, a drizzle of oil and the herbs. The seeds matter — this is a completely smooth soup and it needs one crunchy thing.</p>"
+  ],
+  "notes": [
+   "<p><strong>Peeling raw squash</strong> is not necessary. Roast it in halves, skin on, and scoop. The only reason to peel and cube is if you want browned edges on every piece, which is a legitimate choice and takes twice the tray space.</p>",
+   "<p><strong>Apple or pear,</strong> one, cored and roasted alongside, adds acidity and a little more sweetness. Do not add both apple and maple syrup; the soup ends up like dessert.</p>",
+   "<p><strong>It tastes flat:</strong> almost always acid, occasionally salt, never more cream. Cream mutes an already mild soup.</p>"
+  ],
+  "storage": "Five days cold. This is one of the better freezers in this category — four months, with no starch or dairy issues if you freeze it before the cream goes in. It thickens in the cold; thin it with stock and re-season, since freezing dulls both the salt and the acid."
+ },
+ {
+  "slug": "soup-broccoli-cheddar",
+  "title": "Broccoli Cheddar Soup",
+  "dek": "Grate your own cheese, take the pot off the heat before it goes in, and it will not turn grainy on you.",
+  "category": "Soup, Chowder & Stew",
+  "tags": [
+   "broccoli",
+   "cheddar",
+   "vegetarian",
+   "roux",
+   "lunch"
+  ],
+  "yield": "6 bowls, about 2.5 litres",
+  "activeTime": "30 minutes",
+  "totalTime": "45 minutes",
+  "intro": "<p>Cheese soup breaks for reasons worth understanding. Cheese is protein and fat held in an emulsion, and heat above roughly 180 degrees Fahrenheit (82°C) tightens those proteins into strings and squeezes the fat out as an oily film. Pre-grated cheese makes it worse, because the anti-caking starch on it turns the soup slightly gritty. So the rules are: grate your own from a block, take the pot off the heat before the cheese goes in, add it a handful at a time, and never let it boil afterwards. The roux is there to help too, since starch in the liquid physically gets between the proteins and slows them clumping.</p>",
+  "ingredients": [
+   {
+    "group": "Base",
+    "items": [
+     "60 g butter",
+     "1 large onion, finely diced",
+     "2 carrots, grated",
+     "3 cloves garlic, minced",
+     "50 g all-purpose flour",
+     "750 ml vegetable or light stock",
+     "500 ml whole milk, warmed",
+     "1 teaspoon fine salt",
+     "1/2 teaspoon black pepper",
+     "1/4 teaspoon grated nutmeg",
+     "1/2 teaspoon dry mustard powder"
+    ]
+   },
+   {
+    "group": "Broccoli",
+    "items": [
+     "700 g broccoli, florets in small pieces, stems peeled and diced"
+    ]
+   },
+   {
+    "group": "Cheese and finishing",
+    "items": [
+     "300 g sharp cheddar, grated from a block",
+     "50 g parmesan, grated",
+     "1 teaspoon Worcestershire sauce, optional",
+     "1 teaspoon lemon juice",
+     "Fine salt, to taste"
+    ]
+   }
+  ],
+  "method": [
+   "<p>Melt the butter in a heavy pot over medium heat and cook the onion and grated carrot until the onion is translucent and soft, about eight minutes. Keep the heat moderate; this soup should stay pale, and browned onion turns it a dull khaki.</p>",
+   "<p>Add the garlic and cook until fragrant, about thirty seconds. Sprinkle over the flour and stir constantly, cooking until it smells like toasted crackers rather than raw dough and has gone pale straw in colour, about two minutes. Under-cooked roux is why so many cheese soups have a chalky background taste.</p>",
+   "<p>Add the stock a ladle at a time, stirring smooth after each addition, then the warmed milk. Work the lumps out while the mixture is thick; they are permanent once it thins.</p>",
+   "<p>Add the salt, pepper, nutmeg and mustard powder and bring to a gentle simmer. Cook for five minutes, stirring, until it has thickened enough to coat a spoon.</p>",
+   "<p>Add the diced broccoli stems first and cook three minutes, then the florets, and simmer only until the florets are tender at the stalk when pierced and still bright green, four to five minutes more. Overcooked broccoli goes olive-drab and sulphurous, and it happens fast.</p>",
+   "<p>Blend a third of the soup and stir it back in if you want it thicker and more uniform, or leave it entirely chunky. Do this before the cheese goes in — blending a cheese soup at speed risks breaking the emulsion.</p>",
+   "<p>Take the pot completely off the heat and wait a minute. Then add the cheddar and parmesan a large handful at a time, stirring until each addition has fully melted before adding the next. The soup should stay glossy and smooth.</p>",
+   "<p>Finish with the Worcestershire and lemon juice and taste for salt, keeping in mind that the cheese has already brought a lot. Serve immediately, in warm bowls.</p>",
+   "<p>If it needs to be held, keep it below a simmer over the lowest possible heat, stirring now and then. If it must be reheated later, do so gently and stop as soon as it steams.</p>"
+  ],
+  "notes": [
+   "<p><strong>It went grainy:</strong> too hot, too fast, or pre-grated cheese. Sometimes a broken cheese soup will come back if you blend it hard with a splash of cold milk, but do not count on it.</p>",
+   "<p><strong>Sodium citrate,</strong> a quarter teaspoon per 100 g of cheese, makes the emulsion essentially unbreakable and is what processed cheese uses. It is not cheating, it is chemistry, and it is worth having if you make this often.</p>",
+   "<p><strong>Very aged cheddar</strong> tastes better and breaks more easily, because its proteins are already broken down. A medium-sharp cheddar of about a year is the practical compromise.</p>"
+  ],
+  "storage": "Three days cold, and it is at its best the day it is made. Reheat over low heat, stirring, and never let it simmer. It does not freeze — the cheese emulsion separates on thawing and cannot be brought back."
+ },
+ {
+  "slug": "soup-chowder-base-that-holds",
+  "title": "A Chowder Base That Does Not Break",
+  "dek": "One base, four chowders. Built so it will sit on a low burner through a lunch rush without splitting.",
+  "category": "Soup, Chowder & Stew",
+  "tags": [
+   "chowder",
+   "base",
+   "technique",
+   "batch",
+   "dairy"
+  ],
+  "yield": "About 3 litres of base, enough for 10 bowls",
+  "activeTime": "35 minutes",
+  "totalTime": "50 minutes",
+  "intro": "<p>A chowder splits for one of three reasons: it boiled after the dairy went in, the dairy was too lean, or there was not enough starch in the liquid to protect the proteins. This base addresses all three. It is thickened with a proper blond roux, which puts starch between the milk proteins and slows them clumping. It uses half and half rather than milk, because more fat means a more stable emulsion. And it is built to be held below a simmer, with the dairy stirred in at the end, so a pot standing on a low burner for two hours stays smooth. Add clams, salmon, corn or potatoes to finish.</p>",
+  "ingredients": [
+   {
+    "group": "Base",
+    "items": [
+     "150 g bacon, diced, or 100 g butter for a meatless base",
+     "2 large onions, finely diced",
+     "3 ribs celery, finely diced",
+     "1 leek, white part only, split, washed and sliced",
+     "3 cloves garlic, minced",
+     "2 bay leaves",
+     "2 teaspoons fresh thyme leaves",
+     "80 g butter",
+     "80 g all-purpose flour"
+    ]
+   },
+   {
+    "group": "Liquid",
+    "items": [
+     "1.5 litres light stock, clam liquor or a mix",
+     "900 g Yukon gold potatoes, cut in 1.5 cm dice",
+     "500 ml half and half, warmed",
+     "2 teaspoons coarse black pepper",
+     "1 teaspoon fine salt, to taste",
+     "1 teaspoon cider vinegar"
+    ]
+   }
+  ],
+  "method": [
+   "<p>Render the bacon in a heavy pot over medium heat until browned and the fat has run, then lift the pieces out. If you are going meatless, melt 100 g of butter instead.</p>",
+   "<p>Cook the onion, celery and leek in the fat with the bay and thyme until entirely soft and translucent with no colour, eight to ten minutes. Colour here would turn a white soup grey, and any vegetable that is still firm now will still be firm in the bowl.</p>",
+   "<p>Add the garlic and cook until fragrant, then add the 80 g of butter and let it melt.</p>",
+   "<p>Sprinkle over the flour and cook, stirring constantly, until it smells of toasted crackers and turns pale straw, about two minutes. Equal weights of fat and flour, cooked blond — the ratio here is 80 g of each to 2 litres of total liquid, which gives a chowder that coats a spoon and still pours.</p>",
+   "<p>Add the stock a ladle at a time, stirring smooth between additions. Every lump you fail to break up now is a lump in the finished soup.</p>",
+   "<p>Add the potatoes and simmer until a knife enters a cube with no resistance and the smallest pieces have begun to break down and cloud the liquid, about fifteen minutes. That released potato starch adds body on top of the roux and is why this base holds so well.</p>",
+   "<p>Take the pot off the heat and stir in the warmed half and half. Warming it first matters: cold dairy hitting a hot starchy base is the classic way to shock it into curdling.</p>",
+   "<p>Return to the lowest heat and bring it back only until it steams and the surface shivers. From here it must never exceed about 180 degrees Fahrenheit (82°C) — the point where milk proteins tighten and the fat separates out. On a home stove, that means the lowest burner setting and an occasional stir.</p>",
+   "<p>Season with the pepper, salt and vinegar. Now add whatever the chowder is going to be: cooked clams, flakes of hot-smoked salmon — smoked to an internal temperature of 145 degrees Fahrenheit (63°C), and so already cooked — corn and its scraped milk, or roasted mushrooms, folded in off the heat and warmed through for two or three minutes.</p>",
+   "<p>If it does break — a grainy look with oil at the edges — take it off the heat immediately, add a splash of cold cream, and blend a portion smooth before stirring it back. That works sometimes. Not boiling it in the first place works always.</p>"
+  ],
+  "notes": [
+   "<p><strong>Holding it on a stove:</strong> a heat diffuser or a pot set inside a larger pan of barely simmering water will hold a chowder for hours without any risk. This is how it is done in a kitchen and it works at home.</p>",
+   "<p><strong>Do not use skim or low-fat milk.</strong> Fat is what stabilises the emulsion, and a low-fat chowder is one that has been engineered to break.</p>",
+   "<p><strong>Salt at the end,</strong> especially with clam liquor or bacon in the pot. Both bring a great deal of salt and the amount varies with everything.</p>"
+  ],
+  "storage": "The base holds four days cold and is arguably better on the second day. It does not freeze — potato and dairy both come out ruined. If you want a freezer version, make everything up to and including the stock and potatoes, freeze that, and add the dairy when you reheat."
+ },
+ {
+  "slug": "soup-crew-pot-two-days",
+  "title": "A Pot That Feeds a Crew for Two Days",
+  "dek": "Twelve litres of white bean and sausage soup. Scaled honestly, with the parts that do not scale called out.",
+  "category": "Soup, Chowder & Stew",
+  "tags": [
+   "crowd",
+   "beans",
+   "sausage",
+   "batch",
+   "kale"
+  ],
+  "yield": "About 12 litres, 24 large bowls",
+  "activeTime": "1 hour",
+  "totalTime": "3 hours",
+  "intro": "<p>Most recipes lie about scaling. Multiply a soup by four and several things stop behaving: browning takes far longer because the pan is crowded and the moisture has nowhere to go, seasoning does not scale linearly and salt in particular needs adding by taste rather than by multiplication, and a twelve litre pot takes hours to cool, which is a food safety problem rather than an inconvenience. This is a soup built for that scale on purpose — beans, sausage, greens and stock, nothing that breaks or goes grainy — with the awkward parts flagged. It feeds a working crew twice and is better the second day.</p>",
+  "ingredients": [
+   {
+    "group": "Beans",
+    "items": [
+     "1.4 kg dried cannellini or great northern beans",
+     "6 litres water, for soaking",
+     "2 tablespoons fine salt, for the soaking water"
+    ]
+   },
+   {
+    "group": "Pot",
+    "items": [
+     "1.8 kg Italian sausage, casings removed",
+     "4 tablespoons olive oil",
+     "4 large onions, diced",
+     "6 carrots, diced",
+     "6 ribs celery, diced",
+     "12 cloves garlic, minced",
+     "3 tablespoons tomato paste",
+     "1 tablespoon fennel seed, crushed",
+     "2 teaspoons red pepper flakes",
+     "2 tins diced tomatoes, about 800 g each",
+     "6 litres chicken or vegetable stock",
+     "4 bay leaves",
+     "2 parmesan rinds"
+    ]
+   },
+   {
+    "group": "Late and finishing",
+    "items": [
+     "900 g kale or chard, stemmed and chopped",
+     "3 tablespoons red wine vinegar",
+     "3 tablespoons fine salt, to taste",
+     "150 g grated parmesan, for the table",
+     "125 ml good olive oil, for drizzling"
+    ]
+   }
+  ],
+  "method": [
+   "<p>Soak the beans overnight in the water with the salt. Salted soaking water gives beans that cook more evenly with skins that stay intact, which is the opposite of the old advice and is what actually happens. Drain them before cooking.</p>",
+   "<p>Brown the sausage in your largest pot in four batches, not one. This is the step that does not scale: a crowded pot steams the meat grey and you lose the browning that carries the whole soup. Each batch wants a hot pan and space. Ground meat has to reach an internal temperature of 160°F (71°C), so check the thickest crumbles with an instant-read thermometer rather than judging by colour. Lift each batch out and keep the fat.</p>",
+   "<p>Cook the onion, carrot and celery in the sausage fat and olive oil until softened and browning at the edges. At this volume expect twenty to twenty-five minutes rather than the ten a small pot takes, and stir often so the bottom does not scorch.</p>",
+   "<p>Add the garlic, fennel seed and pepper flakes and cook until fragrant, then the tomato paste, cooking until it darkens to brick.</p>",
+   "<p>Add the drained beans, tomatoes, stock, bay leaves and parmesan rinds. Return the sausage. Bring to a boil, then hold it at a low simmer.</p>",
+   "<p>Simmer for about ninety minutes, stirring and scraping the bottom every twenty minutes. Beans sink and a twelve litre pot scorches easily. The soup is ready when a bean crushes smoothly against the roof of your mouth with no chalk at the centre — test five, since one soft bean proves nothing.</p>",
+   "<p>Add the greens and cook until they are tender and dark, five to ten minutes for kale and one or two for chard.</p>",
+   "<p>Now season, off the heat, in stages. Add half the salt, stir thoroughly, wait two minutes and taste. A pot this size takes several minutes to distribute salt, and tasting too soon leads to over-salting. Add the vinegar at the end.</p>",
+   "<p>Cooling is the part people get wrong. A full pot left on the stove stays in the temperature range where bacteria multiply for hours. Divide it into shallow containers no more than 8 cm deep, or set the pot in a sink of ice water and stir it down, and get it cold within a couple of hours.</p>",
+   "<p>To serve on the second day, reheat only what you need, bringing each batch to a full steaming simmer. Serve with parmesan, olive oil and bread.</p>"
+  ],
+  "notes": [
+   "<p><strong>Feeding twenty-four:</strong> plan 500 ml a head for a working crew and 350 ml for a mixed room. Add a loaf of bread per six people and it stretches further than the numbers suggest.</p>",
+   "<p><strong>What does not scale:</strong> browning, seasoning, and cooling. Everything else multiplies cleanly. Budget more time than the arithmetic suggests for the first and taste your way through the second.</p>",
+   "<p><strong>Meatless version:</strong> leave out the sausage, double the fennel seed, add 700 g of mushrooms browned hard, and use vegetable stock. It is a good soup and it needs more salt than the meat version.</p>"
+  ],
+  "storage": "Five days cold in shallow containers, and better on the second day. It freezes for four months and portions well into 1 litre containers. The greens go slack in the freezer, so if you plan to freeze most of the pot, add the greens by the batch when reheating instead."
+ },
+ {
+  "slug": "soup-end-of-the-week",
+  "title": "The Last of Everything",
+  "dek": "Friday soup, made from what is left. There is a structure to it, and it is not throwing things in a pot.",
+  "category": "Soup, Chowder & Stew",
+  "tags": [
+   "leftovers",
+   "flexible",
+   "thrift",
+   "method",
+   "weeknight"
+  ],
+  "yield": "About 3 litres, varies with what you have",
+  "activeTime": "30 minutes",
+  "totalTime": "1 hour",
+  "intro": "<p>The end-of-week soup is the oldest thing in any kitchen, and it goes wrong when it becomes an act of disposal rather than of cooking. What separates a good one from a sad one is structure. Every soup that works has the same five parts: fat and aromatics browned at the start, a liquid with some body, a starch, something with texture added near the end, and acid plus salt to finish. If what you have covers those five, you have a soup. If it does not, you are missing a part and you should find it rather than adding more of what you already have.</p>",
+  "ingredients": [
+   {
+    "group": "The five parts, with amounts",
+    "items": [
+     "3 tablespoons fat — butter, olive oil, bacon fat or drippings",
+     "500 g aromatics — onion, leek, carrot, celery, garlic, in any proportion",
+     "2 litres liquid — stock, the water from cooking beans, or a tin of tomatoes plus water",
+     "400 g starch — potato, rice, pasta, barley, or cooked beans",
+     "400 g the rest — cooked meat, roasted vegetables, greens, corn, whatever is left",
+     "2 tablespoons acid — vinegar, lemon, or a spoon of pickle brine",
+     "2 teaspoons fine salt, and more to taste"
+    ]
+   },
+   {
+    "group": "Things that rescue a dull pot",
+    "items": [
+     "1 parmesan rind",
+     "1 tablespoon soy sauce or fish sauce",
+     "2 tablespoons tomato paste",
+     "1 teaspoon smoked paprika",
+     "3 tablespoons chopped fresh herbs, any kind",
+     "1 teaspoon black pepper"
+    ]
+   }
+  ],
+  "method": [
+   "<p>Take stock of what you actually have before you turn on the heat, and sort it into the five parts. This takes two minutes and prevents the most common failure, which is a pot with three kinds of starch in it and nothing else.</p>",
+   "<p>Heat the fat in a heavy pot over medium-high and cook the aromatics with a pinch of salt until they are soft and browning at the edges, ten to twelve minutes. This is not the step to rush, whatever the rest of the ingredients are. Everything after this is assembly.</p>",
+   "<p>If you have tomato paste, add it now and cook until it turns brick coloured and smells sweet. If you have a spice you want to use, add it here too and cook it in the fat for thirty seconds until it smells toasted, rather than adding it to liquid later.</p>",
+   "<p>Add the liquid, scraping the pot bottom until nothing is stuck. Drop in a parmesan rind if you have one, plus a bay leaf. Simmer for ten minutes to give it a chance to become one thing rather than several.</p>",
+   "<p>Add the starch and cook until it is tender — twenty minutes for raw potato or barley, ten for rice, two for cooked beans or leftover pasta. If you want leftovers of the leftovers, cook the pasta or rice separately and add it by the bowl, since it will keep absorbing liquid overnight.</p>",
+   "<p>Add whatever else you have, in order of how long it needs. Roasted vegetables and cooked meat want three or four minutes to warm through. Hardy greens want five. Spinach wants one. Anything already cooked is being reheated, not cooked — if it goes in early it turns to mush.</p>",
+   "<p>Bring the pot to a full steaming simmer once everything is in. Leftovers being reheated should get to at least 165°F (74°C) throughout, which in practice means visibly steaming and bubbling rather than merely hot, and it is worth checking with an instant-read thermometer if there is cooked meat in there.</p>",
+   "<p>Now fix it. Taste. If it tastes thin, it needs salt. If it tastes flat and heavy after enough salt, it needs acid. If it tastes like nothing at all, it needs a savoury hit — soy sauce, a rind, a spoon of miso. Add one thing at a time and taste between them.</p>",
+   "<p>Finish with herbs, black pepper and a hard drizzle of olive oil. The oil at the end is not decoration; a soup made from leftovers is usually short on fat, and fat is what carries flavour.</p>"
+  ],
+  "notes": [
+   "<p><strong>Things that do not belong:</strong> anything breaded, anything already sauced with a dairy sauce, cured olives in quantity, and more than one strongly flavoured leftover at a time. Two competing dinners in one pot taste like neither.</p>",
+   "<p><strong>The freezer bag</strong> of vegetable ends, the bag of parmesan rinds and the container of bean cooking liquid are all worth keeping specifically for this. They cost nothing and they are exactly the parts that a leftovers soup is usually short of.</p>",
+   "<p><strong>Blending is a legitimate rescue.</strong> A pot that looks like an accident becomes a respectable puree with an immersion blender and a swirl of cream, and nobody needs to know what was in it.</p>"
+  ],
+  "storage": "Three days cold, which is shorter than the other soups here because the ingredients already had a life before this. Do not freeze it unless every component went in fresh — most of this pot has already been cooled and reheated once, and each round costs texture. If in doubt about how long something has been in the cold, it goes in the bin rather than the pot."
+ }
+]

@@ -1075,3 +1075,26 @@ img.hero-still{ z-index:0 }
   .head-cta .btn{ display:none }
   .carttoggle{ padding:10px 13px; font-size:.72rem }
 }
+
+/* ---------- RECIPES ---------- */
+.rc-grid{display:grid; grid-template-columns:minmax(230px,.8fr) 1.2fr; gap:clamp(26px,4vw,54px); align-items:start; margin-top:1.6em}
+.rc-ings{position:sticky; top:calc(var(--head-h) + 20px)}
+.rc-ing{list-style:none; padding:0; margin:0 0 1.3em}
+.rc-ing li{padding:8px 0; border-bottom:1px dotted var(--line); font-size:.98rem; line-height:1.45}
+.rc-steps{counter-reset:rc; list-style:none; padding:0; margin:0}
+.rc-steps > li{position:relative; padding:0 0 1.15em 44px; margin:0 0 1.15em; border-bottom:1px solid var(--line)}
+.rc-steps > li:last-child{border-bottom:0}
+.rc-steps > li::before{
+  counter-increment:rc; content:counter(rc);
+  position:absolute; left:0; top:0; width:30px; height:30px;
+  display:flex; align-items:center; justify-content:center;
+  background:var(--amber); color:var(--ink); border-radius:50%;
+  font-family:var(--f-display); font-weight:800; font-size:.88rem;
+}
+.rc-steps > li p{margin:0 0 .6em}
+.rc-steps > li p:last-child{margin-bottom:0}
+@media (max-width:820px){
+  .rc-grid{grid-template-columns:1fr}
+  .rc-ings{position:static}
+}
+@media print{ .rc-ings{position:static} .rc-steps > li::before{background:none; border:1px solid #000} }

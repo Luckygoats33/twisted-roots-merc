@@ -1,0 +1,1267 @@
+[
+ {
+  "slug": "bread-first-sourdough",
+  "title": "Your First Sourdough Loaf",
+  "dek": "One loaf, 71% hydration, written for somebody who has never done this before.",
+  "category": "Bread & Sourdough",
+  "tags": [
+   "sourdough",
+   "beginner",
+   "levain",
+   "dutch oven"
+  ],
+  "yield": "One loaf, about 870 g baked",
+  "activeTime": "45 minutes",
+  "totalTime": "About 24 hours, nearly all of it waiting",
+  "intro": "<p>The first loaf is not the good loaf. The first loaf is the one that teaches your hands what the dough is supposed to feel like, and everything after that is adjustment. So this one is built forgiving: seventy-one percent hydration, which is wet enough to open up and dry enough to handle without swearing, a small amount of whole wheat for flavour and fermentation speed, and a long cold night in the fridge that does most of the work while you are asleep. Weights are in grams because cups measure the scoop, not the flour. If you own one thing before you start, own a scale.</p>",
+  "ingredients": [
+   {
+    "group": "Levain (the night before, or twelve hours ahead)",
+    "items": [
+     "20 g mature sourdough starter",
+     "60 g bread flour (about 1/2 cup)",
+     "60 g water, lukewarm (about 1/4 cup)"
+    ]
+   },
+   {
+    "group": "Dough",
+    "items": [
+     "440 g bread flour (about 3 1/2 cups)",
+     "50 g whole wheat flour (about 1/3 cup)",
+     "330 g water (about 1 1/3 cups)",
+     "10 g fine sea salt (about 1 3/4 tsp)",
+     "140 g levain, all of it from above",
+     "Rice flour for the banneton, about 2 tbsp"
+    ]
+   }
+  ],
+  "method": [
+   "<p>Build the levain. Stir the starter, flour and water into a paste in a clean tub, cover loosely, and leave it somewhere around 78 degrees Fahrenheit (26°C). It is ready when it has risen, domed, and just begun to go flat in the middle — usually six to twelve hours depending on how warm the house is. Domed and rising is the window. Flat, sunken and smelling of nail polish means you missed it by a few hours; feed it again rather than pushing on.</p>",
+   "<p>Mix the flours with the water only. No salt, no levain. Squeeze it together until there is no dry flour left, cover, and walk away for 45 minutes. This is the autolyse, and it is free gluten development — the flour hydrates and starts organising itself while you do nothing.</p>",
+   "<p>Add the levain and the salt. Pinch and fold them through with a wet hand for two or three minutes until the dough stops looking streaky and starts feeling like one thing rather than two. It will be sticky. That is correct and it stops being true later.</p>",
+   "<p>Bulk fermentation: four sets of stretch and folds, 30 minutes apart, then leave it alone. To fold, wet your hand, pull one side up until it resists, fold it over the middle, turn the tub a quarter and repeat four times. By the fourth set the dough should stretch a long way before it wants to tear. <strong>If it tears instead of stretching, it is under-developed</strong> — give it another twenty minutes and one more fold.</p>",
+   "<p>Total bulk is done when the dough has grown by about half, feels airy and domed rather than slack and flat, and shows bubbles at the edge where it meets the tub. In a warm kitchen that is four hours from mixing. In a cold coastal house in winter it can be seven. Watch the dough, not the clock.</p>",
+   "<p>Tip it onto a bare counter, no flour. Preshape into a loose round by dragging it toward you against the surface until it holds a shape, then rest it uncovered for 20 minutes. If it puddles flat immediately, it needs more tension; drag it up again.</p>",
+   "<p>Shape properly: flip it, fold the sides to the middle, roll it up from the bottom, and roll the seam under so the surface is tight enough to be shiny. Dust a banneton or a colander lined with a tea towel heavily with rice flour, and set the loaf in seam side up.</p>",
+   "<p>Cover and refrigerate overnight, twelve to sixteen hours at fridge temperature, around 4°C. Cold does two useful things: it develops flavour, and it firms the dough so a beginner can score it without it collapsing.</p>",
+   "<p>Put a Dutch oven with its lid on into a cold oven and heat to 500°F (260°C). Give it a full 45 minutes after the oven says it is up to temperature. Cast iron lies about being ready long before it is.</p>",
+   "<p>Tip the cold loaf onto parchment, score one confident slash about a centimetre deep at a shallow angle, and lower it into the pot. Lid on, drop the oven to 475°F (245°C), and bake 20 minutes. Take the lid off and bake another 22 to 25 minutes, until the crust is properly dark brown — not tan, dark — and an instant-read pushed through the base reads 205°F (96°C).</p>",
+   "<p>Cool on a rack for at least two hours. It will tick and crackle as it cools, which is the crust contracting and is a good sign. Cutting it hot gives you a gummy centre and no more bread than if you had waited.</p>",
+   "<p>Read the crumb. Tight and dense with a gummy line at the base means under-fermented or cut too early. Wide ragged holes with a flat pale loaf means over-fermented. A gap under the top crust usually means the shaping was loose. Change one thing next time, not three.</p>"
+  ],
+  "notes": [
+   "Bread flour, not all-purpose, for the first few. The extra protein is a wider margin for error.",
+   "No Dutch oven: bake on a preheated tray with a metal bowl inverted over the loaf for the first twenty minutes.",
+   "A kitchen scale that reads in single grams costs less than the flour you will waste without one."
+  ],
+  "storage": "Cut side down on a board for two days. After that, slice it and freeze it — refrigerating bread stales it faster than the counter does."
+ },
+ {
+  "slug": "bread-starter-from-scratch",
+  "title": "A Sourdough Starter From Nothing",
+  "dek": "Flour, water, a warm shelf, and about two weeks of paying attention.",
+  "category": "Bread & Sourdough",
+  "tags": [
+   "sourdough",
+   "starter",
+   "levain",
+   "fermentation"
+  ],
+  "yield": "One working starter, roughly 100 g maintained",
+  "activeTime": "5 minutes a day",
+  "totalTime": "10 to 21 days before it will raise a loaf",
+  "intro": "<p>You are not catching wild yeast out of the air so much as picking a winner out of what is already living on the flour. Whole rye has the most of it, which is why it goes in at the start even if you never bake rye again. The whole business takes ten days to three weeks, and there is a dead patch around day four where it smells like feet and nothing rises. That is normal and it is where most people quit. Keep feeding it. The bacteria sort themselves out and the smell turns from sour milk to something closer to yogurt and green apple.</p>",
+  "ingredients": [
+   {
+    "group": "The build",
+    "items": [
+     "About 500 g stone-ground whole rye flour, over the whole build (roughly 4 cups)",
+     "About 500 g unbleached bread flour, over the whole build (roughly 4 cups)",
+     "Water, as needed — figure on 1 litre over the two weeks",
+     "1 clean straight-sided tub or wide-mouth glass vessel, at least 750 ml"
+    ]
+   }
+  ],
+  "method": [
+   "<p>Day one. Mix 50 g whole rye flour with 50 g water at about 30°C to a thick paste. Scrape down the sides, put the lid on loose so gas can leave, and mark the level with a rubber band. Leave it somewhere around 78 degrees Fahrenheit (26°C) — the top of the fridge, or an oven with only the light on.</p>",
+   "<p>Day two. It may have bubbled hard and risen. Do not celebrate; that is usually leuconostoc bacteria having a party and they will die off. Discard all but 50 g, then feed 50 g rye and 50 g water. Same place, same routine.</p>",
+   "<p>Days three to five. This is the flat spot. It will go quiet, smell sharply of cheese or vomit, and do nothing visible. Halve the flour to a 50 g rye and 50 g white blend, keep the water at 50 g, and feed once a day. Do not throw it out.</p>",
+   "<p>Days six to ten. Feed twice a day now: discard down to 25 g and add 50 g flour (half rye, half white) and 50 g water each time. Somewhere in here it starts rising predictably and the smell shifts from unpleasant to tangy and faintly of apples.</p>",
+   "<p>Test it. A ready starter at least doubles within four to six hours of a feed, domes on top, and smells sour but clean. If a spoonful floats in water, there is enough gas in it. The float test lies often enough that the reliable signal is the doubling and the dome.</p>",
+   "<p>Once it doubles reliably two feeds running, move it onto bread flour alone if you want a milder starter, or keep 20 percent rye in the feed for a faster, sourer one. Either works. It will take another few days to settle after the change.</p>",
+   "<p>Bake a test loaf before you trust it. Build a levain from it and watch the timing. A young starter often smells right and still lacks the power to lift a loaf, in which case the bread comes out dense and slightly sweet. Another week of twice-daily feeding fixes it.</p>",
+   "<p>For maintenance, keep 20 g and feed 40 g flour and 40 g water. That ratio is small enough to waste almost nothing and strong enough to be ready in five or six hours in a warm room. If you use an instant-read thermometer on the water, aim for 30°C going in.</p>"
+  ],
+  "notes": [
+   "Chlorinated tap water is usually fine. If yours is heavily treated, leave it uncovered overnight or use filtered.",
+   "A damp coastal kitchen is on your side here — starters establish faster in humid air than in dry heat.",
+   "Glass looks nice and insulates badly. A plastic tub with a loose lid ferments more evenly."
+  ],
+  "storage": "Once established, fed and left in the fridge, it keeps a week between feeds without complaint and considerably longer than that with a grudge."
+ },
+ {
+  "slug": "bread-keeping-a-starter-alive",
+  "title": "Keeping A Starter, And Bringing One Back",
+  "dek": "How to feed it, how to park it, and how to revive the one that has been in the back of the fridge.",
+  "category": "Bread & Sourdough",
+  "tags": [
+   "sourdough",
+   "starter",
+   "maintenance",
+   "discard"
+  ],
+  "yield": "One maintained starter plus a jar of usable discard",
+  "activeTime": "5 minutes",
+  "totalTime": "2 to 5 days for a full revival",
+  "intro": "<p>A starter is not a pet and it does not die easily. It is a stable culture of bacteria and yeast in a low pH environment, which is to say it is a hostile place for anything that would kill it. The grey liquid on top is alcohol, the culture is hungry, and pouring it off costs you nothing. What actually kills a starter is mould with colour and fuzz, and that is rare. Nearly everything else is a feeding problem, and feeding problems are fixed by feeding it.</p>",
+  "ingredients": [
+   {
+    "group": "Routine feed",
+    "items": [
+     "20 g existing starter",
+     "40 g bread flour (about 5 tbsp)",
+     "40 g water at about 30°C (about 3 tbsp)"
+    ]
+   },
+   {
+    "group": "Revival feed",
+    "items": [
+     "10 g of whatever is left, scraped from the middle not the surface",
+     "25 g whole rye flour (about 3 tbsp)",
+     "25 g water at about 30°C (about 2 tbsp)",
+     "A pinch of rye flour extra on the second day if it is sluggish"
+    ]
+   }
+  ],
+  "method": [
+   "<p>The routine: discard down to 20 g, add 40 g flour and 40 g water, stir until no dry flour remains, mark the level. At warm room temperature it peaks in five to seven hours and is at its strongest between the dome and the first sign of flattening.</p>",
+   "<p>To park it: feed it, let it work for an hour so the yeast is active, then lid it and put it in the fridge. A week between feeds is comfortable, three is survivable, and a month is a revival job rather than a feed.</p>",
+   "<p>For a long absence, smear a thin layer on parchment, let it dry hard, then crumble it into a sealed bag. Dried starter keeps for a year and rehydrates with equal weight water plus a feed.</p>",
+   "<p>Reviving. Pour off the dark liquid. Take 10 g from the middle of the mass, not the crust on top, and feed it 25 g rye and 25 g water. Leave it somewhere warm, around 78 degrees Fahrenheit (26°C).</p>",
+   "<p>Feed it that way twice a day for two to four days. The first feeds will do almost nothing, then it will rise slowly, then it will rise fast. When it doubles inside six hours, twice running, it is back.</p>",
+   "<p>Do not bake with it until it passes that test twice. A weak starter makes a dense loaf and you will blame your shaping instead of the culture.</p>",
+   "<p>Know what is actually wrong. Smells like acetone or paint thinner: starving, feed it more often. Smells like sour milk and never rises: too cold, move it. Thin and soupy: too much water or too warm, stiffen the feed. Pink, orange or fuzzy growth: throw the whole thing out and start again, that one is real.</p>",
+   "<p>Keep the discard in a covered container in the fridge and use it within a week, in flatbread, pancakes or crackers. Cold discard has no lift left but plenty of flavour, and it is free.</p>"
+  ],
+  "notes": [
+   "Starter kept at fridge temperature, around 4°C, gets sourer over time because the acid-producing bacteria stay active longer than the yeast does.",
+   "Two identical tubs, alternating, means you never have to wash a crusted one in a hurry.",
+   "Weigh the feed. Eyeballed feeds drift, and drifting is why a starter that worked all autumn suddenly does not."
+  ],
+  "storage": "Fridge, lid on, fed once a week. A skin on top is not a problem — stir it in or scrape it off, both work."
+ },
+ {
+  "slug": "bread-working-hours-schedule",
+  "title": "Sourdough On A Working Schedule",
+  "dek": "A 74% loaf timed around a shift, not around somebody who is home all day.",
+  "category": "Bread & Sourdough",
+  "tags": [
+   "sourdough",
+   "schedule",
+   "cold retard",
+   "weeknight"
+  ],
+  "yield": "One loaf, about 900 g baked",
+  "activeTime": "35 minutes, split into four short visits",
+  "totalTime": "About 36 hours, none of it during working hours",
+  "intro": "<p>Most sourdough writing assumes you are standing next to the tub for six hours on a Saturday. Most people are not. This one is arranged around a normal working day: you touch the dough before you leave in the morning, again when you get home, and again the following evening, and every long fermentation happens either while you are at work or while you are asleep. It is not a compromise loaf. The cool overnight bulk and the long cold proof are what a slow schedule buys you, and they make better bread than rushing it in a warm kitchen would.</p>",
+  "ingredients": [
+   {
+    "group": "Levain (built before work, day one)",
+    "items": [
+     "20 g mature starter",
+     "80 g bread flour (about 2/3 cup)",
+     "80 g water, cool (about 1/3 cup)"
+    ]
+   },
+   {
+    "group": "Dough (mixed that evening)",
+    "items": [
+     "450 g bread flour (about 3 2/3 cups)",
+     "50 g whole wheat flour (about 1/3 cup)",
+     "345 g water (about 1 1/3 cups plus 1 tbsp)",
+     "10 g fine sea salt (about 1 3/4 tsp)",
+     "180 g levain, all of it"
+    ]
+   }
+  ],
+  "method": [
+   "<p>Morning, day one, five minutes. Build the levain with cool water and leave it on the counter, not anywhere warm. Built cool and left at ordinary room temperature it takes ten to twelve hours to peak, which puts it ready when you walk back in the door.</p>",
+   "<p>Evening, day one. Check the levain: domed, webbed with bubbles, only just starting to sink. If it has sunk hard, it is past peak — usable, but the loaf will be sourer and rise a little less.</p>",
+   "<p>Mix the flours and water, leave 30 minutes, then add levain and salt and pinch through until uniform. Total flour here is 590 g and total water 435 g, which is 74% hydration, and the salt at 10 g is 1.7% — deliberately just under the usual two, because a long cool ferment does not need holding back much.</p>",
+   "<p>Three sets of folds at 30 minute intervals while you eat. Then cover and leave it out for an hour, and put the whole tub in the fridge overnight.</p>",
+   "<p>Morning, day two, two minutes. Take the tub out and leave it on the counter before you go. It will finish its bulk slowly through the day as it warms — this is the step people distrust and it works. It is done when it has grown by half and the surface is domed and bubbled.</p>",
+   "<p>Evening, day two. Preshape on a bare counter, rest 20 minutes, shape tight, and put it seam up in a floured banneton. If the dough feels slack and refuses to hold a round, it went slightly too far during the day; shape it tighter and expect a flatter loaf.</p>",
+   "<p>Straight back into the fridge, at least two hours and up to sixteen. From here you bake whenever you like, including at ten at night, which is often when there is finally time.</p>",
+   "<p>Heat a Dutch oven at 500°F (260°C) for 45 minutes. Score the cold loaf and bake covered 20 minutes, then uncovered at 460°F (240°C) for 20 to 25 minutes more, until the crust is dark and the internal temperature reads 205°F (96°C).</p>",
+   "<p>Cool at least two hours before cutting, which means the loaf is ready for the next morning rather than for tonight. Plan on that.</p>",
+   "<p>If your evenings are unreliable, the dough will wait in the fridge shaped for a second night. It will be sourer and the crust will blister more. Neither is a fault.</p>"
+  ],
+  "notes": [
+   "The whole schedule shifts an hour or two in either direction without breaking. Cold slows everything down and forgives the rest.",
+   "In a cold house the day-two counter bulk can take a full nine hours. In a warm one, watch it after five."
+  ],
+  "storage": "Two days cut-side down on a board, then sliced and frozen. Toast it straight from frozen."
+ },
+ {
+  "slug": "bread-overnight-cold-retard",
+  "title": "The Overnight Cold Retard",
+  "dek": "Two loaves shaped at night, baked in the morning, 74% hydration.",
+  "category": "Bread & Sourdough",
+  "tags": [
+   "sourdough",
+   "cold retard",
+   "two loaves",
+   "blistered crust"
+  ],
+  "yield": "Two loaves, about 690 g each baked",
+  "activeTime": "50 minutes",
+  "totalTime": "About 22 hours",
+  "intro": "<p>Cold proofing is the single change that makes home sourdough look like bakery sourdough. Chilled dough is firm enough to score cleanly, the crust blisters because the surface starch behaves differently after a long cold rest, and the flavour deepens because the bacteria keep working after the yeast has mostly stopped. It also decouples shaping from baking, which is the practical part: you shape when you have time at night and bake when you want bread. Two loaves, because if the oven is on for one it should be on for two.</p>",
+  "ingredients": [
+   {
+    "group": "Levain",
+    "items": [
+     "20 g mature starter",
+     "70 g bread flour (about 1/2 cup plus 1 tbsp)",
+     "70 g water (about 1/4 cup plus 1 tbsp)"
+    ]
+   },
+   {
+    "group": "Dough",
+    "items": [
+     "700 g bread flour (about 5 2/3 cups)",
+     "100 g whole wheat flour (about 3/4 cup)",
+     "570 g water (about 2 1/3 cups)",
+     "16 g fine sea salt (about 2 3/4 tsp)",
+     "160 g levain, all of it"
+    ]
+   }
+  ],
+  "method": [
+   "<p>Build the levain six to ten hours before you mix. Use it when it is domed and lively rather than sunk.</p>",
+   "<p>Mix flours and water and rest 45 minutes. Add levain and salt, pinch through, and rest 30 minutes. Totals here are 880 g flour and 650 g water — 74% hydration — with salt at 1.8%.</p>",
+   "<p>Four sets of folds at 30 minute intervals. By the last set the dough should hold a smooth dome for a few seconds after you stop touching it. If it slumps immediately it needs more time or another fold.</p>",
+   "<p>Bulk until risen by half with visible bubbles under the surface and a domed, jiggly feel when you shake the tub. Four to six hours from mixing in a normal kitchen.</p>",
+   "<p>Divide in two, preshape each into a loose round, rest 25 minutes uncovered.</p>",
+   "<p>Shape into batards or rounds, seam side up in floured bannetons, and cover. Give them 30 minutes at room temperature before they go in the fridge — that head start matters if your fridge runs cold.</p>",
+   "<p>Refrigerate ten to sixteen hours at around 4°C. A poke on the cold dough should spring back slowly and leave a shallow dent. If it springs straight back it is under-proofed and wants another hour on the counter tomorrow.</p>",
+   "<p>Heat the oven and a Dutch oven to 500°F (260°C), a full 45 minutes. Bake the loaves one at a time and leave the second in the fridge until its turn.</p>",
+   "<p>Score cold, straight from the fridge. Bake covered 20 minutes at 480°F (250°C), then uncovered 20 to 24 minutes until the crust is deep brown and the base sounds hollow rather than dull when tapped. An instant-read reads 205°F (96°C) at the centre.</p>",
+   "<p>Cool completely on a rack. If the crust softens as it cools, the loaf was slightly underbaked; next time take it four minutes further and accept the darker colour.</p>"
+  ],
+  "notes": [
+   "Blistering comes from cold dough into a very hot pot. A warm shaped loaf will not blister no matter what else you do.",
+   "If your fridge is packed, a covered tub on a cold porch works in winter as long as it stays below about 8°C."
+  ],
+  "storage": "Both loaves keep two days on the counter. Freeze the second one sliced the day it is baked rather than watching it go stale."
+ },
+ {
+  "slug": "bread-same-day-sourdough",
+  "title": "Same-Day Sourdough",
+  "dek": "Mixed after breakfast, out of the oven by supper, at 70% hydration.",
+  "category": "Bread & Sourdough",
+  "tags": [
+   "sourdough",
+   "same day",
+   "warm ferment",
+   "quick"
+  ],
+  "yield": "One loaf, about 900 g baked",
+  "activeTime": "40 minutes",
+  "totalTime": "9 to 10 hours",
+  "intro": "<p>Sourdough does not require two days. It requires enough fermentation, and you get that either from time or from a large, young, warm levain. This loaf uses nineteen percent prefermented flour and a deliberately warm kitchen, which cuts the schedule to a single day. The trade is flavour: a fast loaf is milder and less complex than one that spent a night in the fridge, and it will not blister. What it will do is be finished and cooled by the time people are hungry, which some days is the whole requirement.</p>",
+  "ingredients": [
+   {
+    "group": "Levain (early morning, 4 hours ahead)",
+    "items": [
+     "30 g mature starter, recently fed and lively",
+     "100 g bread flour (about 3/4 cup plus 1 tbsp)",
+     "100 g water at about 30°C (about 1/3 cup plus 1 tbsp)"
+    ]
+   },
+   {
+    "group": "Dough",
+    "items": [
+     "435 g bread flour (about 3 1/2 cups)",
+     "50 g whole wheat flour (about 1/3 cup)",
+     "305 g water at about 30°C (about 1 1/4 cups)",
+     "11 g fine sea salt (about 2 tsp)",
+     "230 g levain, all of it"
+    ]
+   }
+  ],
+  "method": [
+   "<p>Build the levain warm and use it young — at three to four hours, when it has roughly doubled and is still climbing. A young levain is sweeter and stronger. A peaked one works but pushes the sour up.</p>",
+   "<p>Mix everything at once, levain and salt included, using warm water. Skip the autolyse; you are trading a little extensibility for an hour of clock. Work it in the bowl for three minutes until cohesive.</p>",
+   "<p>Rest 20 minutes, then slap and fold on the counter for two minutes until the dough goes from ragged to smooth and starts sticking to itself rather than to your hands.</p>",
+   "<p>Three sets of coil folds at 40 minute intervals. Keep the tub somewhere around 78 degrees Fahrenheit (26°C) — an oven with the light on is the usual trick.</p>",
+   "<p>Bulk finishes at four to five hours from mixing, when the dough is up by two-thirds, domed, and full of bubbles you can see through the side of the tub. Warm dough moves faster than you expect at the end, so start checking at three and a half.</p>",
+   "<p>Preshape, rest 20 minutes, shape tight, and proof at room temperature in a floured banneton for 60 to 90 minutes. The poke test rules here: a floured fingertip should leave a dent that fills back in slowly and not quite completely.</p>",
+   "<p>Heat the Dutch oven at 500°F (260°C) for 45 minutes while the loaf proofs. Chill the shaped loaf in the freezer for the last 15 minutes if you can — cold skin scores better.</p>",
+   "<p>Score and bake covered 20 minutes at 480°F (250°C), then uncovered 20 to 25 minutes until the crust is a solid brown and the internal temperature is 205°F (96°C).</p>",
+   "<p>Cool two hours. A same-day loaf is more fragile than a retarded one and cutting it warm does more damage.</p>",
+   "<p>If the crumb comes out tight and the loaf is squat, the bulk was short — warm ferments finish faster and people still stop at the four-hour mark out of habit. Judge it by rise and bubbles.</p>"
+  ],
+  "notes": [
+   "This is the schedule to use when your starter is at its strongest, not when it is recovering.",
+   "A proofing box, or a cooler with a jug of hot water in the bottom, makes a January kitchen behave like a July one."
+  ],
+  "storage": "Best the day it is baked. It goes stale a day sooner than a cold-proofed loaf, which is the other half of the trade."
+ },
+ {
+  "slug": "bread-no-knead",
+  "title": "No-Knead Bread",
+  "dek": "One gram of yeast, eighteen hours, no work at all.",
+  "category": "Bread & Sourdough",
+  "tags": [
+   "no knead",
+   "yeast",
+   "beginner",
+   "dutch oven"
+  ],
+  "yield": "One round loaf, about 620 g baked",
+  "activeTime": "10 minutes",
+  "totalTime": "18 to 20 hours",
+  "intro": "<p>The reason this works is that gluten will organise itself given enough time and enough water. Kneading is just a way of hurrying that along. Leave a slack dough alone overnight with a trace of yeast and it develops the same structure while you sleep, and the long ferment gives it more flavour than a fast kneaded loaf would have. It is the least demanding bread in this collection and the most reliable one to hand somebody who says they cannot bake. Eighty-two percent hydration, which is why you never touch it with your hands until the end.</p>",
+  "ingredients": [
+   {
+    "group": "Dough",
+    "items": [
+     "400 g bread flour (about 3 1/4 cups)",
+     "330 g cool water (about 1 1/3 cups)",
+     "8 g fine sea salt (about 1 1/2 tsp)",
+     "1 g instant dried yeast (about 1/4 tsp)",
+     "Semolina or extra flour for the towel, about 2 tbsp"
+    ]
+   }
+  ],
+  "method": [
+   "<p>Stir the flour, salt and yeast together dry, then add the water and mix with a spoon or a hand for 30 seconds until there is no dry flour left. It will be a shaggy, wet, unpromising mess. Do not knead it and do not tidy it up.</p>",
+   "<p>Cover the bowl and leave it at cool room temperature, around 20°C, for 16 to 18 hours. It is ready when the surface is covered in bubbles, the dough has more than doubled, and it smells yeasty and faintly of beer.</p>",
+   "<p>Flour the counter well and scrape the dough out. Fold it over on itself twice with a scraper — that is the entire amount of handling it gets. Rest it 15 minutes under the bowl.</p>",
+   "<p>Shape it roughly into a ball by tucking the edges under, and set it seam side down on a well-floured tea towel. Cover with a second towel and prove for two hours at room temperature, until it has spread and puffed and a finger pressed into it leaves a mark that fills in slowly.</p>",
+   "<p>Half an hour before the end, put a Dutch oven with its lid on into the oven and heat to 475°F (245°C). Let it sit at temperature at least 30 minutes.</p>",
+   "<p>Tip the dough into the hot pot seam side up — it will look wrong and it does not matter. Lid on, bake 30 minutes.</p>",
+   "<p>Uncover and bake 15 to 20 minutes more, until the crust is deep brown all over and an instant-read through the base reads 208°F (98°C). Pale bread is underbaked bread; go darker than feels comfortable.</p>",
+   "<p>Turn it out and cool on a rack for an hour at minimum. In a damp house this loaf softens quickly once cooled, so if the crust matters to you, eat it the first day.</p>",
+   "<p>If the dough is soupy and will not hold any shape at all, the flour was thirstier than expected or the room was too warm and it over-fermented. Next time use 310 g water and check it at 14 hours.</p>"
+  ],
+  "notes": [
+   "One gram of yeast is roughly a quarter teaspoon and it really is that little. More yeast makes it faster and blander.",
+   "A cast iron pot, an enamelled one, or a heavy lidded casserole all work. The lid is doing the job, by trapping steam."
+  ],
+  "storage": "Two days in a paper bag. Plastic keeps it soft but turns the crust leathery by morning."
+ },
+ {
+  "slug": "bread-siletz-river-sourdough",
+  "title": "Siletz River Sourdough",
+  "dek": "The house loaf: two big rounds at 75% hydration, with rye and whole wheat in the mix.",
+  "category": "Bread & Sourdough",
+  "tags": [
+   "sourdough",
+   "house loaf",
+   "dutch oven",
+   "two loaves",
+   "rye"
+  ],
+  "yield": "Two loaves, about 840 g each baked",
+  "activeTime": "55 minutes",
+  "totalTime": "About 26 hours",
+  "intro": "<p>This is the loaf that goes on the rack at six and is usually gone by nine. It is mostly strong white flour with a hundred grams of whole wheat and fifty of rye, which is enough to give it colour and a bit of pasture flavour without making it heavy. Hydration sits just over seventy-five percent, high enough for an open, custardy crumb and low enough that you can shape it without a bench scraper welded to your hand. Everything about it is ordinary technique done attentively, which is the only trick there is.</p>",
+  "ingredients": [
+   {
+    "group": "Levain",
+    "items": [
+     "20 g mature starter",
+     "100 g bread flour (about 3/4 cup plus 1 tbsp)",
+     "100 g water (about 1/3 cup plus 1 tbsp)"
+    ]
+   },
+   {
+    "group": "Dough",
+    "items": [
+     "800 g strong bread flour (about 6 1/2 cups)",
+     "100 g whole wheat flour (about 3/4 cup)",
+     "50 g whole rye flour (about 1/3 cup)",
+     "690 g water (about 2 3/4 cups plus 2 tbsp)",
+     "19 g fine sea salt (about 1 tbsp)",
+     "220 g levain, all of it"
+    ]
+   }
+  ],
+  "method": [
+   "<p>Build the levain the evening before and use it in the morning at its peak — domed, smelling of yogurt, not yet collapsing.</p>",
+   "<p>Mix the three flours with 620 g of the water. Hold back 70 g. Rest one hour covered. Holding water back is worth the trouble: the flour tells you during mixing whether it wants all of it, and in a wet coastal week it often does not.</p>",
+   "<p>Add the levain, work it through, rest 20 minutes, then add the salt with the held-back water a splash at a time. The dough will loosen and go slippery and then come back together. If it will not take the last of the water without turning to soup, stop and leave it out.</p>",
+   "<p>Four sets of stretch and folds, 45 minutes apart. Judge development by the windowpane: pull a corner thin and hold it to the light. Translucent without tearing is done. Tearing at the edges means keep going.</p>",
+   "<p>Bulk ends four to six hours from mixing, when the dough has grown by half to two-thirds, the surface is domed and blistered, and it wobbles as one mass. Totals are 1060 g flour and 800 g water, so 75.5% hydration, with salt at 1.8%.</p>",
+   "<p>Divide into two pieces of about 940 g. Preshape round, rest 30 minutes uncovered so a skin forms.</p>",
+   "<p>Shape tight, seam up into floured bannetons, 20 minutes at room temperature, then into the fridge for 12 to 16 hours at around 4°C.</p>",
+   "<p>Heat the oven with a Dutch oven inside to 500°F (260°C) for 45 minutes. Bake one loaf at a time.</p>",
+   "<p>Score the cold loaf with one long off-centre slash held at a shallow angle. Bake covered 22 minutes at 480°F (250°C), then uncovered 22 to 26 minutes at 450°F (230°C), until the crust is mahogany brown and the internal temperature reads 206°F (97°C).</p>",
+   "<p>Reheat the pot for at least 15 minutes before the second loaf goes in. A cool pot is the usual reason the second loaf is flatter than the first.</p>",
+   "<p>Cool both on racks a minimum of two hours. Cut into one before that and the crumb will smear rather than slice.</p>",
+   "<p>If the ear does not open and the crust is smooth and dull, either the score was too shallow and too flat, or the loaf was over-proofed and had nothing left to push with. A poke on the cold dough that does not spring back at all points to the second.</p>"
+  ],
+  "notes": [
+   "Rye ferments faster than white. If your kitchen runs warm, drop the rye to 30 g rather than shortening the bulk.",
+   "Sold whole at the counter, and it makes the best of the sandwiches here, which is not a coincidence."
+  ],
+  "storage": "Cut side down on a board, three days. It toasts well on days two and three, which is when most of it gets eaten anyway."
+ },
+ {
+  "slug": "bread-sourdough-pan-sandwich-loaf",
+  "title": "Sourdough Sandwich Loaf",
+  "dek": "A soft square-shouldered pan loaf with milk, butter and honey, built for slicing.",
+  "category": "Bread & Sourdough",
+  "tags": [
+   "sourdough",
+   "pan loaf",
+   "sandwich",
+   "enriched",
+   "milk"
+  ],
+  "yield": "One 9 x 5 inch loaf, about 900 g baked",
+  "activeTime": "40 minutes",
+  "totalTime": "About 20 hours",
+  "intro": "<p>A round hearth loaf makes a bad sandwich. The slices are different sizes, the crust fights the filling, and half the loaf is the wrong shape for a lunchbox. This is the other kind of bread: milk and butter for softness, a little honey for colour and keeping quality, and a tin to force it into square slices. It is still naturally leavened, so it has flavour, but the enrichment tames the sourness. This is what the sandwiches at the counter would be on if they were not on the hearth loaf.</p>",
+  "ingredients": [
+   {
+    "group": "Levain",
+    "items": [
+     "20 g mature starter",
+     "60 g bread flour (about 1/2 cup)",
+     "60 g water (about 1/4 cup)"
+    ]
+   },
+   {
+    "group": "Dough",
+    "items": [
+     "500 g bread flour (about 4 cups)",
+     "320 g whole milk, cool (about 1 1/3 cups)",
+     "40 g water (about 3 tbsp)",
+     "30 g unsalted butter, soft (about 2 tbsp)",
+     "25 g honey (about 1 tbsp)",
+     "11 g fine sea salt (about 2 tsp)",
+     "140 g levain, all of it"
+    ]
+   }
+  ],
+  "method": [
+   "<p>Build the levain and use it at peak. Because this dough is enriched and slow, a sluggish levain shows up badly here.</p>",
+   "<p>Mix flour, milk, water and honey to a shaggy mass and rest 30 minutes. Add levain and salt and work through, then rest 15 minutes.</p>",
+   "<p>Add the soft butter in three lots, squeezing each in until the dough stops looking greasy and comes back together. It will fall apart and reassemble each time; that is what butter does to gluten and it is temporary.</p>",
+   "<p>Knead or slap and fold for six to eight minutes until the dough is smooth, glossy and pulls cleanly off the counter. This one wants real development — a pan loaf with weak gluten collapses into a wedge.</p>",
+   "<p>Bulk with two folds in the first hour, then leave it. Counting the milk as water, hydration is about 65% — the true figure is nearer 58% since milk is roughly 87% water, and that is close enough to plan by. It is done when risen by two-thirds and domed, four to six hours warm.</p>",
+   "<p>Degas gently, shape into a tight cylinder the length of the tin, and set it seam down in a buttered 9 x 5 inch pan.</p>",
+   "<p>Cover and refrigerate overnight, 10 to 14 hours. Take it out in the morning and let it finish at room temperature until the crown stands about 2 cm above the rim and a floured finger leaves a dent that fills slowly. In a cold kitchen that final stretch takes two hours.</p>",
+   "<p>Heat the oven to 375°F (190°C). Brush the top with milk for a soft crust, or with egg for a shiny dark one.</p>",
+   "<p>Bake 40 to 48 minutes, until the top is deep gold, the sides have set firm enough that the loaf releases from the tin without tearing, and an instant-read in the centre reads 200°F (93°C). Tent with foil at the 30 minute mark if it is colouring fast.</p>",
+   "<p>Turn out immediately onto a rack. Leaving it in the hot tin steams the sides soft and then soggy.</p>",
+   "<p>Cool fully, at least three hours, before slicing. Warm enriched bread tears rather than slices, and this loaf is worth a bread knife and some patience.</p>"
+  ],
+  "notes": [
+   "For a flat top for square sandwiches, use a lidded Pullman tin and fill it no more than two-thirds full.",
+   "Butter goes in after the gluten is partly built, never at the start, or you are kneading a paste that will not develop."
+  ],
+  "storage": "Four days in a bag on the counter — the honey and butter keep it soft far longer than a lean loaf. Freezes well sliced."
+ },
+ {
+  "slug": "bread-wholewheat-levain",
+  "title": "Wholewheat Levain",
+  "dek": "Eighty-five percent whole grain at 82% hydration, without the density that usually comes with it.",
+  "category": "Bread & Sourdough",
+  "tags": [
+   "sourdough",
+   "whole wheat",
+   "whole grain",
+   "high hydration"
+  ],
+  "yield": "Two loaves, about 640 g each baked",
+  "activeTime": "45 minutes",
+  "totalTime": "About 20 hours",
+  "intro": "<p>Wholewheat bread is usually bad for two reasons: not enough water, and too much time. Bran is sharp and it cuts gluten strands, so a whole grain dough needs more water to stay extensible and less fermentation before that damage compounds into a brick. This runs at eighty-two percent hydration, which sounds alarming until you handle it and find that the bran has drunk most of it. The bulk is deliberately short. The fifteen percent white flour is there for structure and it is the difference between a loaf and a doorstop.</p>",
+  "ingredients": [
+   {
+    "group": "Levain",
+    "items": [
+     "20 g mature starter",
+     "70 g whole wheat flour (about 1/2 cup plus 1 tbsp)",
+     "70 g water (about 1/4 cup plus 1 tbsp)"
+    ]
+   },
+   {
+    "group": "Dough",
+    "items": [
+     "600 g whole wheat flour, stone ground if you have it (about 5 cups)",
+     "120 g bread flour (about 1 cup)",
+     "576 g water (about 2 1/3 cups plus 1 tbsp)",
+     "16 g fine sea salt (about 2 3/4 tsp)",
+     "160 g levain, all of it"
+    ]
+   }
+  ],
+  "method": [
+   "<p>Build the levain on whole wheat. It will move faster than a white one — whole grain carries more of its own enzymes and minerals — so check it at five hours rather than eight.</p>",
+   "<p>Mix the flours and all the water and leave one full hour. A long autolyse matters more here than in any white loaf, because the bran needs time to soften before you develop anything. Skip it and the dough will feel like wet sand.</p>",
+   "<p>Add levain and salt and squeeze through thoroughly. The dough will be sticky and slightly gritty and will not come clean off your hand. That is the bran, not a mistake.</p>",
+   "<p>Three sets of coil folds, 40 minutes apart. Strength comes slowly and then all at once; by the third fold it should hold a dome and stop spreading flat in the tub.</p>",
+   "<p>Bulk only until risen by about half, three and a half to four and a half hours warm. Totals are 800 g flour and 656 g water, which is 82% hydration, with salt at 2%. <strong>Whole wheat over-ferments quietly</strong> — it goes slack and smells faintly of cheese before it looks wrong, so err early.</p>",
+   "<p>Divide, preshape gently, rest 20 minutes. Handle lightly; there is less gluten here to repair after rough treatment.</p>",
+   "<p>Shape and set seam up in bannetons dusted with rice flour. Whole wheat sticks harder than white, so use more than looks sensible.</p>",
+   "<p>Refrigerate 10 to 14 hours at around 4°C.</p>",
+   "<p>Heat a Dutch oven at 500°F (260°C) for 45 minutes. Score cold, bake covered 22 minutes at 475°F (245°C), then uncovered 20 to 24 minutes until the crust is dark brown with a reddish cast and an instant-read reads 207°F (97°C).</p>",
+   "<p>Cool three hours. Whole grain crumb sets slowly and a loaf cut at one hour will read gummy even when it is baked through.</p>",
+   "<p>If the crumb is tight and the loaf is short, the two likely causes are not enough water — flour varies, and stone ground varies most — or a bulk that ran long. Add 20 g water before you add time.</p>"
+  ],
+  "notes": [
+   "Fresh-milled flour drinks noticeably more water than bagged, and it ferments faster. Expect to adjust both.",
+   "Bran can be softened further by scalding 100 g of the flour with 200 g boiling water the night before and cooling it — a soaker buys you a lighter crumb at the cost of a day."
+  ],
+  "storage": "Three days on the counter. Whole grain loaves stale from the outside in and revive well with five minutes in a hot oven."
+ },
+ {
+  "slug": "bread-rye-sour",
+  "title": "Forty Percent Rye With A Rye Sour",
+  "dek": "A dense-crumbed caraway rye built on a separate rye sour, at 68% hydration.",
+  "category": "Bread & Sourdough",
+  "tags": [
+   "rye",
+   "sourdough",
+   "caraway",
+   "deli"
+  ],
+  "yield": "One large loaf, about 1 kg baked",
+  "activeTime": "40 minutes",
+  "totalTime": "About 22 hours",
+  "intro": "<p>Rye has almost no useful gluten and a great deal of pentosan gum, which means it holds water like a sponge and builds structure by a different mechanism than wheat. It also needs acid: without it the starch-degrading enzymes in rye keep working during the bake and leave you with a sticky, unset crumb. A separate rye sour handles that. Forty percent is the point where you get real rye flavour and a tight moist crumb while the wheat still does the lifting, which makes it the most useful rye ratio for anybody not running a proper rye oven.</p>",
+  "ingredients": [
+   {
+    "group": "Rye sour",
+    "items": [
+     "20 g mature starter",
+     "150 g medium rye flour (about 1 1/4 cups)",
+     "150 g water at about 30°C (about 2/3 cup)"
+    ]
+   },
+   {
+    "group": "Dough",
+    "items": [
+     "420 g bread flour (about 3 1/3 cups)",
+     "120 g medium rye flour (about 1 cup)",
+     "316 g water (about 1 1/4 cups plus 1 tbsp)",
+     "14 g fine sea salt (about 2 1/2 tsp)",
+     "8 g caraway seeds, lightly crushed (about 1 1/2 tsp)",
+     "320 g rye sour, all of it"
+    ]
+   }
+  ],
+  "method": [
+   "<p>Build the rye sour 12 to 16 hours ahead and leave it at cool room temperature. Rye sour looks like thick porridge and does not dome the way a wheat levain does. It is ready when it is domed with fine bubbles, smells sharply sour, and has just started to crack across the top.</p>",
+   "<p>Mix everything together at once. Rye does not benefit from an autolyse and it does not need one.</p>",
+   "<p>Work the dough for three or four minutes only. It will feel tacky and clay-like and will never be smooth or elastic. Chasing a windowpane in a rye dough is chasing something that does not exist.</p>",
+   "<p>Bulk for two to three hours with one fold at the hour mark, until it has risen by about a third and the surface is pocked with small bubbles. Totals here are 700 g flour and 476 g water, so 68% hydration, and salt is at 2% — rye needs the full amount to slow the enzymes.</p>",
+   "<p>Shape with wet hands into a tight oval on a wet counter, smoothing the surface with water rather than flour. Set it seam down in a heavily floured oval banneton, or into a buttered 9 x 5 inch tin if you would rather not gamble.</p>",
+   "<p>Proof 60 to 90 minutes at room temperature. Rye is proofed when fine cracks open across the surface and a poke leaves a dent that does not spring back. Waiting for a wheat-style dramatic rise will take you well past it.</p>",
+   "<p>Heat the oven to 450°F (230°C) with a tray for steam. Do not score deeply; rye tears where it wants to. A few shallow docks with a skewer are enough.</p>",
+   "<p>Bake 15 minutes with steam, then vent the oven, drop to 400°F (205°C) and bake 40 to 50 minutes more, until the crust is very dark, the loaf sounds hollow underneath, and an instant-read reads 208°F (98°C). Rye is one of the few breads where a lower internal temperature genuinely leaves a gummy centre.</p>",
+   "<p>Cool it for a minimum of eight hours, and a full day is better. Rye crumb sets by cooling, not by baking, and a rye loaf cut warm is sticky and ruined.</p>",
+   "<p>If the crumb is dense and wet with a dark seam near the base, it was cut too early or underbaked. If it is crumbly and dry, the sour was too young and there was not enough acid.</p>"
+  ],
+  "notes": [
+   "Medium rye is the workhorse. Dark rye ferments faster and gets stickier; light rye behaves more like wheat and tastes like less.",
+   "Crush the caraway lightly with the flat of a knife. Whole seeds pass through; crushed ones flavour the loaf."
+  ],
+  "storage": "Wrapped in a cloth on the counter, this improves for two days and keeps for five. It is the best keeper here by a distance."
+ },
+ {
+  "slug": "bread-seeded-multigrain",
+  "title": "Seeded Multigrain With A Hot Soaker",
+  "dek": "Sunflower, flax, sesame and pumpkin, soaked first so they take water from the seeds rather than the dough.",
+  "category": "Bread & Sourdough",
+  "tags": [
+   "sourdough",
+   "seeds",
+   "soaker",
+   "multigrain"
+  ],
+  "yield": "Two loaves, about 620 g each baked",
+  "activeTime": "45 minutes",
+  "totalTime": "About 22 hours plus an overnight soaker",
+  "intro": "<p>Dry seeds stirred into a dough are thirsty, and what they drink comes out of the crumb. The bread goes tight and dry a day early and nobody can work out why. Soaking the seeds in boiling water first fixes it entirely: they arrive already full, they soften enough not to cut the gluten, and the toasted flavour comes forward. The dough itself runs at sixty-nine percent on the flour, not counting the water locked in the soaker, which is the only honest way to state hydration once a soaker is involved.</p>",
+  "ingredients": [
+   {
+    "group": "Soaker (the night before)",
+    "items": [
+     "50 g sunflower seeds (about 1/3 cup)",
+     "30 g pumpkin seeds (about 1/4 cup)",
+     "20 g golden flaxseed (about 2 tbsp)",
+     "20 g sesame seeds (about 2 tbsp)",
+     "120 g boiling water (about 1/2 cup)",
+     "A pinch of salt"
+    ]
+   },
+   {
+    "group": "Levain",
+    "items": [
+     "20 g mature starter",
+     "80 g bread flour (about 2/3 cup)",
+     "80 g water (about 1/3 cup)"
+    ]
+   },
+   {
+    "group": "Dough",
+    "items": [
+     "520 g bread flour (about 4 1/4 cups)",
+     "100 g whole wheat flour (about 3/4 cup)",
+     "400 g water (about 1 2/3 cups)",
+     "15 g fine sea salt (about 2 1/2 tsp)",
+     "180 g levain, all of it",
+     "Extra sesame and sunflower seeds for the crust, about 60 g"
+    ]
+   }
+  ],
+  "method": [
+   "<p>Toast the sunflower and pumpkin seeds in a dry pan over medium heat, shaking often, until they smell nutty and the sunflower seeds are patched with gold — four to six minutes, and they go from toasted to burnt in under one.</p>",
+   "<p>Tip the toasted seeds into a bowl with the flax, sesame and salt, pour the boiling water over, stir, cover and leave overnight. By morning it should be a thick clump with no free water in the bottom.</p>",
+   "<p>Build the levain to peak on the same schedule.</p>",
+   "<p>Mix flours and water and rest 45 minutes, then add levain and salt and pinch through.</p>",
+   "<p>Add the soaker and fold it in, cutting the dough over itself with a scraper until the seeds are evenly spread. It will look ruined and come back together within two folds.</p>",
+   "<p>Three sets of folds at 40 minute intervals. Bulk until risen by half, four to five hours. On the flour, this is 710 g flour to 490 g water, so 69% hydration, with the soaker water on top of that and accounted for separately.</p>",
+   "<p>Divide, preshape, rest 20 minutes, then shape into batards.</p>",
+   "<p>Roll the shaped loaves on a damp towel and then through a tray of the extra seeds so the crust is coated. Set seam up in bannetons.</p>",
+   "<p>Refrigerate 10 to 14 hours.</p>",
+   "<p>Heat a Dutch oven at 500°F (260°C) for 45 minutes. Score once down the length. Bake covered 20 minutes at 475°F (245°C), then uncovered 20 to 25 minutes at 450°F (230°C), until the crust is dark and the seeds on it are toasted rather than pale, and an instant-read reads 206°F (97°C).</p>",
+   "<p>Watch the seed crust in the last ten minutes. Sesame burns before the loaf is done if the oven runs hot, and burnt sesame is bitter all the way through the slice.</p>",
+   "<p>Cool two hours before cutting.</p>"
+  ],
+  "notes": [
+   "Flax is the one to keep in the mix even if you dislike it. It holds water and keeps the crumb moist for days.",
+   "A soaker left more than about eighteen hours at room temperature starts fermenting on its own. Refrigerate it if you are running late."
+  ],
+  "storage": "Four days wrapped on the counter. Of everything on this list, seeded loaves make the best toast on day three."
+ },
+ {
+  "slug": "bread-olive-rosemary",
+  "title": "Olive And Rosemary Loaf",
+  "dek": "Kalamatas folded in late, rosemary in the dough, salt dialled back because the olives bring their own.",
+  "category": "Bread & Sourdough",
+  "tags": [
+   "sourdough",
+   "olive",
+   "rosemary",
+   "inclusions"
+  ],
+  "yield": "Two loaves, about 610 g each baked",
+  "activeTime": "45 minutes",
+  "totalTime": "About 20 hours",
+  "intro": "<p>Two things go wrong with olive bread. The olives get folded in at the start and are shredded into grey streaks by the time the dough is developed, and the loaf comes out too salty because nobody adjusted for a hundred and eighty grams of brined fruit. So: olives in at the last fold, patted properly dry, and the dough salt down to one point seven percent. Rosemary goes in early, chopped fine, because whole needles in a slice are like eating a hedge. Seventy-one percent hydration, which the oil in the dough makes feel lower than it is.</p>",
+  "ingredients": [
+   {
+    "group": "Levain",
+    "items": [
+     "20 g mature starter",
+     "80 g bread flour (about 2/3 cup)",
+     "80 g water (about 1/3 cup)"
+    ]
+   },
+   {
+    "group": "Dough",
+    "items": [
+     "600 g bread flour (about 4 3/4 cups)",
+     "400 g water (about 1 2/3 cups)",
+     "12 g fine sea salt (about 2 tsp)",
+     "20 g olive oil (about 1 1/2 tbsp)",
+     "2 tsp rosemary needles, chopped fine",
+     "180 g levain, all of it",
+     "180 g pitted kalamata olives, halved and patted dry (about 1 1/4 cups)"
+    ]
+   }
+  ],
+  "method": [
+   "<p>Build the levain to peak.</p>",
+   "<p>Halve the olives and spread them on a tea towel for an hour. Wet olives leak brine into the dough, which slackens it and makes the crumb around each one grey and dense.</p>",
+   "<p>Mix flour and water, rest 45 minutes, then add levain, salt, oil and rosemary and work through until uniform.</p>",
+   "<p>Two sets of folds at 40 minute intervals. On the third set, spread the dough out flat, scatter the olives over it, and roll it up like a letter. Two more gentle folds spread them the rest of the way.</p>",
+   "<p>Bulk until risen by half with a domed, bubbled surface. Totals are 690 g flour and 490 g water, so 71% hydration, and the salt at 12 g works out to 1.7%.</p>",
+   "<p>Divide, preshape, rest 25 minutes. Tuck any olive that breaks the surface back inside — exposed olives burn and stick to the pot.</p>",
+   "<p>Shape into rounds or batards, seam up in floured bannetons, and refrigerate 10 to 14 hours.</p>",
+   "<p>Heat a Dutch oven at 500°F (260°C) for 45 minutes. Score cold, bake covered 20 minutes at 480°F (250°C), then uncovered 20 to 24 minutes at 450°F (230°C), until the crust is deep brown and an instant-read reads 205°F (96°C).</p>",
+   "<p>Expect this loaf to colour faster than a plain one. The oil and the olive sugars push the crust along, so check it earlier than you would a lean loaf and pull it when the colour is right rather than when the timer says so.</p>",
+   "<p>Cool at least 90 minutes. Olive bread is the one people are most tempted to cut hot and the fat makes the warm crumb pasty.</p>"
+  ],
+  "notes": [
+   "Green olives work but need a rinse. Anything stuffed with pimento is a different and worse bread.",
+   "A tablespoon of the brine in place of a tablespoon of the water is a good trade if your olives are mild."
+  ],
+  "storage": "Three days on the counter. It is a good loaf for grilling in a pan with more oil on day three."
+ },
+ {
+  "slug": "bread-walnut-levain",
+  "title": "Walnut Levain",
+  "dek": "Toasted walnuts, a little honey, three flours, and a crumb that comes out lilac-grey and is supposed to.",
+  "category": "Bread & Sourdough",
+  "tags": [
+   "sourdough",
+   "walnut",
+   "rye",
+   "inclusions",
+   "cheese bread"
+  ],
+  "yield": "Two loaves, about 620 g each baked",
+  "activeTime": "45 minutes",
+  "totalTime": "About 20 hours",
+  "intro": "<p>Walnut bread turns purple-grey inside and every time somebody bakes it for the first time they assume something has gone wrong. Nothing has. Walnut skins are full of tannins, they leach into an alkaline wheat dough, and the colour is the proof the nuts were in there long enough to flavour it. Toast them first, which drives off the raw bitterness, and use a little honey and rye to meet the tannin halfway. This is the loaf to have in the house when there is good cheese, and it is worth baking for that reason alone.</p>",
+  "ingredients": [
+   {
+    "group": "Levain",
+    "items": [
+     "20 g mature starter",
+     "70 g bread flour (about 1/2 cup plus 1 tbsp)",
+     "70 g water (about 1/4 cup plus 1 tbsp)"
+    ]
+   },
+   {
+    "group": "Dough",
+    "items": [
+     "450 g bread flour (about 3 2/3 cups)",
+     "100 g whole wheat flour (about 3/4 cup)",
+     "50 g whole rye flour (about 1/3 cup)",
+     "420 g water (about 1 3/4 cups)",
+     "12 g fine sea salt (about 2 tsp)",
+     "20 g honey (about 1 tbsp)",
+     "160 g levain, all of it",
+     "160 g walnut halves (about 1 1/2 cups)"
+    ]
+   }
+  ],
+  "method": [
+   "<p>Toast the walnuts at 350°F (175°C) for 8 to 10 minutes, until they smell nutty and the skins have darkened and started to flake. Cool them completely, then rub off the loose skins in a towel and break them into rough halves.</p>",
+   "<p>Build the levain to peak.</p>",
+   "<p>Mix the flours with the water and honey, rest 45 minutes, then work in the levain and salt.</p>",
+   "<p>Two sets of folds 40 minutes apart, then laminate the walnuts in: stretch the dough out on a wet counter into a rectangle, scatter the nuts, roll it up, and fold it twice more over the following hour.</p>",
+   "<p>Bulk until the dough is up by half and feels alive rather than slack, four to five hours. Totals are 680 g flour and 500 g water, so about 73% hydration, with salt at 1.8%.</p>",
+   "<p>Divide, preshape, rest 25 minutes, shape into rounds. Nuts tear a dough, so shape with a firm hand and expect the surface to be less than perfect.</p>",
+   "<p>Seam up in floured bannetons, refrigerate 10 to 14 hours.</p>",
+   "<p>Heat a Dutch oven at 500°F (260°C) for 45 minutes. Score cold in a cross or a simple square, bake covered 20 minutes at 475°F (245°C), then uncovered 20 to 24 minutes at 450°F (230°C), until the crust is dark brown and an instant-read reads 205°F (96°C).</p>",
+   "<p>Any walnut sticking out of the crust will char. Pick the worst offenders out before it goes in the pot, or accept a few bitter bits.</p>",
+   "<p>Cool two hours. The colour deepens as it cools and it will be more purple in the morning than it was at noon.</p>"
+  ],
+  "notes": [
+   "Untoasted walnuts make a bitter loaf. This is the step to not skip.",
+   "Swap 60 g of the walnuts for dried cranberries or chopped dried figs if you want it sweeter — add them at the same stage."
+  ],
+  "storage": "Three days wrapped. The nuts keep the crumb moist longer than a plain loaf of the same hydration would stay."
+ },
+ {
+  "slug": "bread-open-crumb-high-hydration",
+  "title": "High Hydration, Open Crumb",
+  "dek": "Eighty-five percent water, bassinage, and an honest account of what actually makes the holes.",
+  "category": "Bread & Sourdough",
+  "tags": [
+   "sourdough",
+   "high hydration",
+   "open crumb",
+   "bassinage"
+  ],
+  "yield": "One large loaf, about 1 kg baked",
+  "activeTime": "60 minutes",
+  "totalTime": "About 22 hours",
+  "intro": "<p>Open crumb is mostly not about water. It is about strong flour, thorough gluten development, a bulk taken far enough to be slightly frightening, and shaping that adds tension without expelling the gas you spent all day making. Water helps because a slack dough allows bubbles to expand, but plenty of people push hydration up, keep everything else the same, and get a flat loaf with a wet streak. This runs at eighty-five percent with the last of the water added in stages once the gluten is already built, which is the only way that number is manageable at home.</p>",
+  "ingredients": [
+   {
+    "group": "Levain",
+    "items": [
+     "20 g mature starter",
+     "100 g bread flour (about 3/4 cup plus 1 tbsp)",
+     "100 g water (about 1/3 cup plus 1 tbsp)"
+    ]
+   },
+   {
+    "group": "Dough",
+    "items": [
+     "460 g high-protein bread flour, 13% or better (about 3 3/4 cups)",
+     "50 g whole wheat flour (about 1/3 cup)",
+     "357 g water for the mix (about 1 1/2 cups)",
+     "60 g water held back for bassinage (about 1/4 cup)",
+     "12 g fine sea salt (about 2 tsp)",
+     "220 g levain, all of it"
+    ]
+   }
+  ],
+  "method": [
+   "<p>Build the levain and use it young, at about three-quarters of its full rise. A young levain has more yeast activity and less acid, and acid degrades gluten, which is exactly what you cannot afford at this hydration.</p>",
+   "<p>Mix the flours with 357 g water only. Rest one hour. The dough should already feel cohesive rather than sloppy at this stage.</p>",
+   "<p>Add the levain, work it in, rest 20 minutes, then add the salt. Now slap and fold on the counter for five to eight minutes until the dough is smooth, tightens visibly as you work it, and passes a windowpane — pulled thin enough to see light through without tearing.</p>",
+   "<p>Bassinage: add the held-back 60 g of water 20 g at a time, working each addition fully in before the next. The dough will break down into a slurry and come back each time. If it will not come back after five minutes of work, stop and leave the rest of the water out.</p>",
+   "<p>Four sets of coil folds at 45 minute intervals, handled gently. From here you are protecting gas, not building strength.</p>",
+   "<p>Bulk until the dough has grown by 75 percent, is domed and jiggly, and large bubbles are visible against the side of the tub. Totals are 620 g flour and 527 g water, which is 85% hydration, with salt at 1.9%. This is the step people cut short and it is the main reason open crumb does not happen.</p>",
+   "<p>Turn out gently on a lightly floured counter. Preshape with a scraper and the lightest hand you have, and rest 30 minutes.</p>",
+   "<p>Shape without degassing: fold the sides in, roll it up, and stitch the seam rather than dragging the whole thing across the counter. Into a well-floured banneton, seam up.</p>",
+   "<p>Refrigerate 12 to 16 hours. This dough is much easier to handle cold and effectively impossible to score warm.</p>",
+   "<p>Heat a Dutch oven at 500°F (260°C) for 45 minutes. Score one decisive slash, bake covered 22 minutes, then uncovered at 460°F (240°C) for 22 to 26 minutes until the crust is very dark and an instant-read reads 208°F (98°C).</p>",
+   "<p>Cool three hours minimum. A high hydration loaf holds a lot of steam and the crumb needs all of that time to set.</p>",
+   "<p>If you get one enormous tunnel under the crust and dense bread below it, the shaping was loose. If the whole crumb is even but tight, the bulk was short. If it spread flat and the crumb is wild and irregular, it went too far.</p>"
+  ],
+  "notes": [
+   "All-purpose flour will not do this. Protein at 13% or higher is the entry requirement.",
+   "In a damp week, hold back more of the bassinage water. Flour that has been sitting open in a coastal kitchen has already taken on some of its own."
+  ],
+  "storage": "Two days, and it is at its best on the first. This is a loaf that rewards being eaten promptly."
+ },
+ {
+  "slug": "bread-everyday-low-hydration",
+  "title": "The Everyday 65% Loaf",
+  "dek": "A firm, easy-handling sourdough with a tight even crumb, for people who want bread rather than a project.",
+  "category": "Bread & Sourdough",
+  "tags": [
+   "sourdough",
+   "low hydration",
+   "everyday",
+   "beginner"
+  ],
+  "yield": "One loaf, about 950 g baked",
+  "activeTime": "35 minutes",
+  "totalTime": "About 20 hours",
+  "intro": "<p>There is a quiet assumption that wetter is better, and for a certain kind of loaf it is. But a sixty-five percent dough is easier to shape, holds its form without a banneton, cuts into slices that hold butter instead of dropping it through a hole, and makes better toast. It is also the hydration most working bakeries used for most of history. This one is deliberately plain: one flour, one fold schedule, no inclusions, and a crumb that is even enough to build a sandwich on without an engineering degree.</p>",
+  "ingredients": [
+   {
+    "group": "Levain",
+    "items": [
+     "20 g mature starter",
+     "60 g bread flour (about 1/2 cup)",
+     "60 g water (about 1/4 cup)"
+    ]
+   },
+   {
+    "group": "Dough",
+    "items": [
+     "600 g bread flour (about 4 3/4 cups)",
+     "365 g water (about 1 1/2 cups)",
+     "12 g fine sea salt (about 2 tsp)",
+     "140 g levain, all of it"
+    ]
+   }
+  ],
+  "method": [
+   "<p>Build the levain and use it at peak.</p>",
+   "<p>Mix everything together, including salt, and knead on the counter for six to eight minutes. At this hydration kneading is pleasant rather than a fight, and the dough should end up smooth, firm and springing back when pressed.</p>",
+   "<p>Bulk with two folds in the first two hours, then leave it alone. Totals are 670 g flour and 435 g water, so 65% hydration, with salt at 1.8%.</p>",
+   "<p>A stiffer dough rises more slowly and shows it less obviously. It is done when it has grown by about two-thirds and a poke leaves a dent that fills in halfway, five to seven hours warm.</p>",
+   "<p>Preshape, rest 20 minutes, shape into a tight round or a batard. This dough holds a shape well enough to proof on a floured tray under a cloth if you do not own a banneton.</p>",
+   "<p>Refrigerate 10 to 14 hours, or proof at room temperature for 90 minutes and bake the same day. Both work; the cold version tastes better and scores more cleanly.</p>",
+   "<p>Heat a Dutch oven at 500°F (260°C) for 45 minutes. Score a cross or three parallel cuts a little deeper than you would in a wet dough — stiff dough resists opening.</p>",
+   "<p>Bake covered 22 minutes at 480°F (250°C), then uncovered 22 to 26 minutes at 450°F (230°C), until the crust is deep brown and the loaf reads 205°F (96°C) inside.</p>",
+   "<p>Cool 90 minutes.</p>",
+   "<p>If the crumb is dense and heavy rather than tight and even, that is under-fermentation rather than hydration. A stiff dough needs longer, not more water.</p>"
+  ],
+  "notes": [
+   "This is the dough to hand somebody who is intimidated by wet sourdough. It behaves like the bread they have seen made.",
+   "It also takes an egg wash and a seeded crust better than a slack dough does, since the surface stays where you put it."
+  ],
+  "storage": "Four days on the counter, cut side down. Low hydration loaves stale more slowly than high ones at the same weight."
+ },
+ {
+  "slug": "bread-focaccia",
+  "title": "Pan Focaccia",
+  "dek": "Eighty percent hydration, a cold night in the fridge, and more olive oil than feels reasonable.",
+  "category": "Bread & Sourdough",
+  "tags": [
+   "focaccia",
+   "sourdough",
+   "olive oil",
+   "sheet pan"
+  ],
+  "yield": "One 9 x 13 inch pan, 12 pieces",
+  "activeTime": "30 minutes",
+  "totalTime": "About 24 hours",
+  "intro": "<p>Focaccia is the most forgiving bread there is, because you never shape it and nobody expects an even crumb. What it does need is enough oil in the pan to effectively shallow-fry the base, and a dough slack enough to spread into the corners under its own weight. Eighty percent hydration handles that. The overnight cold rest is not strictly required, but it turns a decent flatbread into something with actual flavour, and it means the fiddly part happens the night before rather than an hour before people arrive.</p>",
+  "ingredients": [
+   {
+    "group": "Levain",
+    "items": [
+     "20 g mature starter",
+     "80 g bread flour (about 2/3 cup)",
+     "80 g water (about 1/3 cup)"
+    ]
+   },
+   {
+    "group": "Dough",
+    "items": [
+     "610 g bread flour (about 5 cups)",
+     "470 g water (about 2 cups)",
+     "14 g fine sea salt (about 2 1/2 tsp)",
+     "60 g olive oil, for the dough (about 1/4 cup)",
+     "180 g levain, all of it"
+    ]
+   },
+   {
+    "group": "Pan and top",
+    "items": [
+     "40 g olive oil for the pan (about 3 tbsp)",
+     "2 tbsp olive oil for the dimples",
+     "1 tsp flaky salt",
+     "1 tbsp rosemary needles, or a handful of halved cherry tomatoes"
+    ]
+   }
+  ],
+  "method": [
+   "<p>Build the levain to peak.</p>",
+   "<p>Mix flour and water and rest 30 minutes, then squeeze in the levain, salt and the 60 g of oil. It will be sloppy and will look like it will never hold together. Keep folding it in the bowl for two minutes and it will.</p>",
+   "<p>Four sets of folds in the bowl at 30 minute intervals, using a wet hand. Totals are 700 g flour and 560 g water, so 80% hydration, with salt at 2%.</p>",
+   "<p>After the last fold, cover the bowl and refrigerate 12 to 18 hours. The dough should roughly double and be full of large bubbles by morning.</p>",
+   "<p>Pour the 40 g of oil into a 9 x 13 inch pan and spread it up the sides. Tip the cold dough in, turn it once to coat, and leave it 2 to 3 hours to warm and relax.</p>",
+   "<p>Stretch it gently toward the corners with flat hands. It will pull back. Wait 20 minutes and stretch again — two or three rounds of that gets it to the edges without tearing, and forcing it in one go tears the gluten and gives you a flat corner.</p>",
+   "<p>Heat the oven to 450°F (230°C). Oil your fingers and press dimples right down to the bottom of the pan, all over. Scatter the flaky salt and rosemary and drizzle the last of the oil into the hollows.</p>",
+   "<p>Bake 22 to 28 minutes, until the top is deep gold, the edges are crisp and pulling away from the pan, and the base is browned and crackling when you lift a corner with a spatula. An instant-read in the middle reads 205°F (96°C).</p>",
+   "<p>Slide it straight out onto a rack. Left in the pan it steams and the fried base goes soft, which loses the best part of it.</p>",
+   "<p>If the base is pale and greasy rather than crisp, the pan was underheated or there was not enough oil. Use metal, not glass, and do not economise on the oil.</p>"
+  ],
+  "notes": [
+   "For a yeasted same-day version, use 5 g instant yeast in place of the levain and give it four hours warm instead of the overnight fridge.",
+   "Anything wet on top — tomato, onion, olives — should be pressed into the dimples so it does not slide off, and it will add a few minutes to the bake."
+  ],
+  "storage": "Best the day it is baked. Day two, split it and use it as sandwich bread, or reheat at 350°F (175°C) for six minutes until the base crisps again."
+ },
+ {
+  "slug": "bread-ciabatta-biga",
+  "title": "Ciabatta With A Biga",
+  "dek": "A stiff overnight biga, 78% final hydration, and a dough you handle with a scraper and nothing else.",
+  "category": "Bread & Sourdough",
+  "tags": [
+   "ciabatta",
+   "biga",
+   "yeast",
+   "preferment",
+   "open crumb"
+  ],
+  "yield": "Two ciabatta, about 380 g each baked",
+  "activeTime": "35 minutes",
+  "totalTime": "About 18 hours",
+  "intro": "<p>A biga is a stiff yeasted preferment, around fifty percent hydration, left overnight. Stiff and cool favours the yeast over the acid-producing bacteria, so a biga contributes strength and a sweet, nutty flavour where a wet poolish contributes extensibility and a milder tang. Ciabatta wants the strength, because the final dough is wet, barely handled and expected to hold enormous holes. The name means slipper, which tells you how much shaping is involved: you cut it into rectangles and you do not touch it again.</p>",
+  "ingredients": [
+   {
+    "group": "Biga (the night before)",
+    "items": [
+     "300 g bread flour (about 2 1/2 cups)",
+     "150 g cool water (about 2/3 cup)",
+     "1 g instant dried yeast (about 1/4 tsp)"
+    ]
+   },
+   {
+    "group": "Final dough",
+    "items": [
+     "200 g bread flour (about 1 2/3 cups)",
+     "240 g water (about 1 cup)",
+     "10 g fine sea salt (about 1 3/4 tsp)",
+     "2 g instant dried yeast (about 1/2 tsp)",
+     "451 g biga, all of it",
+     "Semolina for dusting, about 3 tbsp"
+    ]
+   }
+  ],
+  "method": [
+   "<p>Make the biga 12 to 16 hours ahead. Rub the yeast into the flour, add the water, and work it into a stiff, shaggy lump. It will not be smooth. Cover and leave at cool room temperature, around 18°C.</p>",
+   "<p>The biga is ready when it has roughly tripled, is webbed with strands when you tear it open, and smells sweet and alcoholic. If it smells sharp and has collapsed into a puddle, the room was too warm and it is past its best — the bread will still work but will taste more acidic.</p>",
+   "<p>Tear the biga into walnut-sized pieces into a mixer bowl or a wide tub. Add the final flour, yeast and 200 g of the water and mix until the biga pieces have broken down and the dough is uniform, four to six minutes in a mixer or eight by hand.</p>",
+   "<p>Add the salt and the last 40 g of water in two goes, working each in until the dough comes back together. It should now be very slack but glossy, and stretch a long way before tearing. Totals are 500 g flour and 390 g water, so 78% hydration, with salt at 2%.</p>",
+   "<p>Bulk for two to three hours with three sets of coil folds in the first ninety minutes. It is ready when it is domed, alive with bubbles, and trembles when you shake the tub.</p>",
+   "<p>Dust the counter heavily with a mix of flour and semolina and pour the dough out. Do not degas it, do not knead it, do not shape it. Coax it into a rough rectangle with a scraper.</p>",
+   "<p>Cut it in half with a scraper in one decisive stroke, and lift each piece onto a floured couche or a semolina-dusted parchment, stretching each gently into a slipper shape as you go.</p>",
+   "<p>Prove 45 to 60 minutes uncovered, until puffy and slack. Ciabatta is proofed when the dough no longer holds a defined edge and a poke leaves a lasting dent.</p>",
+   "<p>Heat the oven to 480°F (250°C) with a baking stone or heavy tray and a steam pan. Slide the loaves in, do not score them, and add steam.</p>",
+   "<p>Bake 12 minutes with steam, then vent and bake 12 to 15 minutes more at 450°F (230°C), until the crust is blistered and deep gold, the loaves are light for their size, and an instant-read reads 208°F (98°C).</p>",
+   "<p>Cool on a rack at least an hour. If the crumb is even and closed rather than wildly holey, the usual cause is degassing during the transfer. Use the scraper more and your hands less.</p>"
+  ],
+  "notes": [
+   "In a warm coastal summer the biga will run faster than the schedule says. Use cooler water and put it somewhere cold.",
+   "Semolina on the peel and the couche is what stops a dough this wet from welding itself to everything it touches."
+  ],
+  "storage": "One day. Ciabatta is a bread with a short life and it is designed to be split and filled at lunch."
+ },
+ {
+  "slug": "bread-baguettes",
+  "title": "Baguettes With Old Dough",
+  "dek": "Three short baguettes at 65% hydration, leaning on a piece of yesterday's dough for flavour.",
+  "category": "Bread & Sourdough",
+  "tags": [
+   "baguette",
+   "pate fermentee",
+   "yeast",
+   "scoring"
+  ],
+  "yield": "Three baguettes, about 250 g each baked",
+  "activeTime": "50 minutes",
+  "totalTime": "About 20 hours",
+  "intro": "<p>Home ovens are too short for a real baguette, so these are made to fit a domestic tray at about thirty-five centimetres, which is nobody's tradition but does mean they will actually go in. The flavour comes from pâte fermentée, which is simply a lump of salted, yeasted dough fermented overnight. Sixty-five percent hydration keeps it stiff enough to roll into a taut cylinder, and taut is what makes the score open. Everything hard about a baguette is in the shaping and the scoring, and both take a few attempts.</p>",
+  "ingredients": [
+   {
+    "group": "Pâte fermentée (the night before)",
+    "items": [
+     "150 g bread flour (about 1 1/4 cups)",
+     "95 g water (about 1/3 cup plus 1 tbsp)",
+     "3 g fine sea salt (about 1/2 tsp)",
+     "1/2 g instant dried yeast (a pinch, about 1/8 tsp)"
+    ]
+   },
+   {
+    "group": "Final dough",
+    "items": [
+     "350 g bread flour (about 2 3/4 cups)",
+     "230 g water (about 1 cup)",
+     "7 g fine sea salt (about 1 1/4 tsp)",
+     "2 g instant dried yeast (about 1/2 tsp)",
+     "248 g pâte fermentée, all of it, cut into pieces"
+    ]
+   }
+  ],
+  "method": [
+   "<p>Mix the pâte fermentée the night before into a stiff smooth dough, knead it for a minute, and leave it covered at room temperature for two hours before refrigerating overnight. It should double and then hold.</p>",
+   "<p>Mix the final flour, water and yeast and rest 45 minutes. Add the salt and the pâte fermentée in pieces and work until fully combined and smooth, six to eight minutes by hand.</p>",
+   "<p>Bulk two to two and a half hours with folds at 45 and 90 minutes, until roughly doubled and springy. Totals are 500 g flour and 325 g water, so 65% hydration, with salt at 2%.</p>",
+   "<p>Divide into three pieces of about 275 g. Preshape each into a loose cylinder and rest 25 minutes under a cloth. Under-rested dough fights back and will not lengthen without tearing.</p>",
+   "<p>Shape: flatten each piece into a rectangle, fold the top third down and seal, fold again and seal with the heel of your hand, then roll from the centre outward with even pressure until it reaches about 35 cm, tapering the ends.</p>",
+   "<p>Lay them seam side up in the folds of a heavily floured couche or a pleated tea towel, so the cloth supports the sides.</p>",
+   "<p>Prove 45 to 60 minutes at room temperature. They are ready when a floured finger leaves a dent that fills in slowly and about halfway. Over-proofed baguettes will not open at the score no matter how sharp the blade.</p>",
+   "<p>Heat the oven to 500°F (260°C) with a heavy tray or stone and a pan for steam, a full 40 minutes.</p>",
+   "<p>Flip each onto parchment seam down and score three or four overlapping cuts almost parallel to the length, blade held at a shallow angle, each one about a centimetre deep. Slash confidently; hesitating drags the dough.</p>",
+   "<p>Bake with steam for 10 minutes, then vent the oven and bake 12 to 15 minutes more at 460°F (240°C), until the crust is deep gold to brown, the ears have opened, and an instant-read reads 208°F (98°C).</p>",
+   "<p>Cool on a rack for 20 minutes and eat them the same day. Baguettes are stale in six hours and there is no fixing that; it is the price of the shape.</p>",
+   "<p>If the score seals shut and the loaf splits along the side instead, the blade was too flat, the cut too shallow, or the dough over-proofed. If the crust is thick and dull, there was not enough steam early on.</p>"
+  ],
+  "notes": [
+   "A lame is a razor blade on a stick. A clean single-edge blade held between two fingers does the same job.",
+   "Steam matters more here than in a Dutch oven loaf, because there is no lid. A tray of lava rocks with a cup of boiling water poured over is the cheapest reliable method."
+  ],
+  "storage": "Same day, and preferably the same hour. Leftovers become croutons or the base of a panzanella and nothing else."
+ },
+ {
+  "slug": "bread-poolish-white",
+  "title": "Poolish White Loaf",
+  "dek": "Half the flour prefermented wet overnight, for a mild, creamy crumb and a thin crust.",
+  "category": "Bread & Sourdough",
+  "tags": [
+   "poolish",
+   "yeast",
+   "preferment",
+   "white bread"
+  ],
+  "yield": "One loaf, about 760 g baked",
+  "activeTime": "30 minutes",
+  "totalTime": "About 18 hours",
+  "intro": "<p>A poolish is equal weights flour and water with a trace of yeast, left overnight until it is domed and bubbling and just about to fall. Wet prefermentation favours enzyme activity and extensibility, which gives a dough that stretches easily, a crumb that is creamy rather than chalky, and a crust that stays thin. Half the flour goes through it here, which is a lot and is the point. There is no sourdough starter involved, so this is the loaf to make when yours is out of commission and you still want bread with some character.</p>",
+  "ingredients": [
+   {
+    "group": "Poolish (the night before)",
+    "items": [
+     "250 g bread flour (about 2 cups)",
+     "250 g water at room temperature (about 1 cup)",
+     "1/2 g instant dried yeast (a pinch, about 1/8 tsp)"
+    ]
+   },
+   {
+    "group": "Final dough",
+    "items": [
+     "250 g bread flour (about 2 cups)",
+     "100 g water (about 1/3 cup plus 1 tbsp)",
+     "10 g fine sea salt (about 1 3/4 tsp)",
+     "3 g instant dried yeast (about 1 tsp)",
+     "500 g poolish, all of it"
+    ]
+   }
+  ],
+  "method": [
+   "<p>Whisk the poolish together the night before and leave it covered at cool room temperature for 12 to 16 hours. It is ready when the surface is domed and covered in bubbles and the very centre has just begun to dip. Once it has collapsed entirely it is past peak and the loaf will be sourer and rise less.</p>",
+   "<p>Add the final flour, water and yeast to the poolish and mix to a rough dough. Rest 20 minutes, then add the salt.</p>",
+   "<p>Knead or slap and fold for five minutes until smooth and elastic. Poolish dough develops quickly because half the flour has been hydrating all night.</p>",
+   "<p>Bulk 90 minutes to two hours with one fold at the halfway point, until roughly doubled and puffy. Totals are 500 g flour and 350 g water, so 70% hydration, with salt at 2%.</p>",
+   "<p>Preshape into a round, rest 20 minutes, then shape into a tight boule or a batard.</p>",
+   "<p>Prove seam up in a floured banneton for 45 to 70 minutes, until a floured finger leaves a dent that fills in slowly and not completely.</p>",
+   "<p>Heat the oven with a Dutch oven inside to 480°F (250°C) for 40 minutes.</p>",
+   "<p>Score and bake covered 20 minutes, then uncovered 18 to 22 minutes at 450°F (230°C), until the crust is a light chestnut brown — this loaf is at its best a shade paler than a sourdough — and an instant-read reads 205°F (96°C).</p>",
+   "<p>Cool at least an hour.</p>",
+   "<p>If the loaf tastes flat and yeasty, the poolish was young. If it tastes sharp and the crumb is fragile, it was old. Both are timing, and in a warm kitchen you want to build it later at night than you think.</p>"
+  ],
+  "notes": [
+   "The same poolish makes very good pizza dough: add 250 g flour, 60 g water, 10 g salt and 15 g oil instead.",
+   "In a cold house the poolish can take a full 18 hours. Use the dome, not the clock."
+  ],
+  "storage": "Two days in a paper bag. The thin crust is the first thing to go, and it comes back with five minutes in a hot oven."
+ },
+ {
+  "slug": "bread-tangzhong-milk-bread",
+  "title": "Tangzhong Milk Bread",
+  "dek": "A cooked flour paste that lets a soft loaf hold far more liquid, and stay soft for four days.",
+  "category": "Bread & Sourdough",
+  "tags": [
+   "tangzhong",
+   "milk bread",
+   "enriched",
+   "pan loaf",
+   "soft"
+  ],
+  "yield": "One 9 x 5 inch loaf, about 750 g baked",
+  "activeTime": "40 minutes",
+  "totalTime": "About 5 hours",
+  "intro": "<p>Tangzhong is one part flour cooked with five parts liquid until it thickens into a paste. Gelatinised starch holds several times its weight in water and holds onto it through baking and for days afterward, which is why a milk bread made this way is still soft on day four while a plain enriched loaf is stale on day two. It is five minutes of work at a stove and it changes the entire loaf. This one is a straight-yeasted same-day bread, shaped as three coils in a tin so it pulls apart along the seams.</p>",
+  "ingredients": [
+   {
+    "group": "Tangzhong",
+    "items": [
+     "25 g bread flour (about 3 tbsp)",
+     "125 g whole milk (about 1/2 cup)"
+    ]
+   },
+   {
+    "group": "Dough",
+    "items": [
+     "375 g bread flour (about 3 cups)",
+     "145 g whole milk, lukewarm (about 2/3 cup)",
+     "1 large egg, about 50 g",
+     "50 g caster sugar (about 1/4 cup)",
+     "8 g fine sea salt (about 1 1/2 tsp)",
+     "6 g instant dried yeast (about 2 tsp)",
+     "45 g unsalted butter, soft (about 3 tbsp)"
+    ]
+   },
+   {
+    "group": "Finish",
+    "items": [
+     "1 egg beaten with 1 tbsp milk, for the wash",
+     "10 g butter for brushing after baking (about 2 tsp)"
+    ]
+   }
+  ],
+  "method": [
+   "<p>Whisk the tangzhong flour and milk together cold in a small pan, then cook over medium heat, stirring constantly, until it thickens to the consistency of loose mashed potato and the whisk leaves tracks that hold — about 65°C, and two to three minutes. Scrape it into a bowl and cool it to lukewarm.</p>",
+   "<p>Combine the dough flour, sugar, salt and yeast, keeping the salt and yeast on opposite sides of the bowl until you mix. Add the milk, egg and the cooled tangzhong.</p>",
+   "<p>Mix to a shaggy dough, then knead 8 to 10 minutes until smooth. It will be tacky. Resist adding flour — the tangzhong makes it feel wetter than it is.</p>",
+   "<p>Add the soft butter in three lots, kneading each fully in. The dough will slacken and look broken each time and will come back. When it is done it should pull into a thin translucent windowpane without tearing.</p>",
+   "<p>Bulk in a covered bowl until doubled, 60 to 90 minutes in a warm kitchen. The liquid comes to about 80% of the flour weight, which reads high until you remember the tangzhong has locked most of it up.</p>",
+   "<p>Knock back gently and divide into three equal pieces of about 275 g. Roll each into an oval, fold the long sides in, then roll it up tightly from the short end into a coil.</p>",
+   "<p>Set the three coils side by side, spirals facing out, in a buttered 9 x 5 inch tin.</p>",
+   "<p>Prove covered 45 to 70 minutes, until the dough crowns about 2 cm above the rim and a light poke springs back slowly leaving a shallow mark.</p>",
+   "<p>Heat the oven to 350°F (175°C). Brush with the egg wash, gently — an aggressive brush will deflate a soft dough at this stage.</p>",
+   "<p>Bake 32 to 38 minutes, until the top is deep glossy brown, the loaf has pulled slightly from the sides of the tin, and an instant-read in the centre reads 190°F (88°C). Cover with foil at 25 minutes if the top is running ahead.</p>",
+   "<p>Turn out immediately and brush the hot crust with butter, which keeps it soft as it cools.</p>",
+   "<p>Cool at least two hours before tearing into it. If the crumb is dense and the pull-apart seams did not form, the shaping was loose or the prove was cut short.</p>"
+  ],
+  "notes": [
+   "The same dough makes excellent burger buns at 90 g a piece, baked 16 to 18 minutes at 375°F (190°C) to the same internal temperature.",
+   "Tangzhong works in most enriched doughs. Take 5% of the flour and 25% of the liquid, cook them together, and reduce both elsewhere in the recipe by the same amounts."
+  ],
+  "storage": "Four days in a sealed bag at room temperature, which is the whole point of the method. Freezes cleanly sliced."
+ },
+ {
+  "slug": "bread-discard-flatbread",
+  "title": "Skillet Flatbread From Discard",
+  "dek": "A firm, oiled dough from the starter you were about to throw away, cooked dry in a hot pan.",
+  "category": "Bread & Sourdough",
+  "tags": [
+   "discard",
+   "flatbread",
+   "skillet",
+   "quick",
+   "sourdough"
+  ],
+  "yield": "Six flatbreads, about 70 g each",
+  "activeTime": "25 minutes",
+  "totalTime": "1 hour 30 minutes",
+  "intro": "<p>Discard has no lift left in it and plenty of flavour, which makes it exactly right for something cooked flat and fast. This dough is firm on purpose. A soft flatbread dough sticks to the pin, rolls out unevenly, and puffs in patches; a firm one rolls thin, releases cleanly, and balloons in the pan. They cook in a dry skillet in about three minutes and they are best within about ten of that, so make them while whatever they are going with is nearly ready rather than in advance.</p>",
+  "ingredients": [
+   {
+    "group": "Dough",
+    "items": [
+     "200 g sourdough discard, straight from the fridge (about 3/4 cup)",
+     "170 g all-purpose flour (about 1 1/3 cups)",
+     "40 g water (about 3 tbsp)",
+     "25 g olive oil (about 2 tbsp)",
+     "5 g fine sea salt (about 1 tsp)",
+     "Extra flour for rolling, about 3 tbsp"
+    ]
+   },
+   {
+    "group": "To finish",
+    "items": [
+     "2 tbsp melted butter or olive oil",
+     "A pinch of flaky salt",
+     "1 tbsp chopped parsley or chives, optional"
+    ]
+   }
+  ],
+  "method": [
+   "<p>Mix everything to a stiff, slightly tacky dough and knead it on the counter for three minutes until smooth. Total flour comes to 270 g and total water to 140 g, which is near 52% — firm, and deliberately so.</p>",
+   "<p>Cover and rest one hour at room temperature. The rest is not for rising, it is for relaxing the gluten so the dough will roll thin instead of springing back.</p>",
+   "<p>Divide into six pieces of about 70 g, roll each into a ball, and rest them another 10 minutes under a cloth.</p>",
+   "<p>Heat a cast iron skillet or a heavy pan over medium-high heat, dry, for a good five minutes. It is hot enough when a drop of water skates across it and vanishes rather than sitting and hissing. If you would rather not guess, an instant-read laid flat on the surface should read around 205°C.</p>",
+   "<p>Roll one ball at a time on a lightly floured counter to about 2 mm, roughly the size of a side plate. Roll the next one while the first cooks.</p>",
+   "<p>Lay it in the dry pan. It is ready to turn when the surface goes from wet-looking to matte, bubbles rise across it, and the underside is spotted brown — about 60 to 90 seconds.</p>",
+   "<p>Turn it and cook the second side until it puffs, or at least blisters, and takes on its own brown spots, another 45 to 60 seconds. Press the edge lightly with a folded towel to encourage the puff.</p>",
+   "<p>Stack them in a clean tea towel as they come off the pan. The trapped steam is what keeps them pliable; left on a rack they turn into crackers within minutes.</p>",
+   "<p>Brush with melted butter or oil, scatter flaky salt and herbs, and serve warm.</p>",
+   "<p>If they come out dry and leathery, the pan was not hot enough and they cooked too long. If they scorch before the middle sets, it was too hot. The window is narrower than it sounds and the second one is always better than the first.</p>"
+  ],
+  "notes": [
+   "Cold discard from a well-fed starter is mild. Discard that has been in the fridge a fortnight is sharp and makes a more interesting flatbread.",
+   "Half a teaspoon of baking powder in the dough gives a softer, more tender result if your discard is very old and flat."
+  ],
+  "storage": "They keep a day in a bag and reheat for 30 seconds a side in a dry pan until soft and flexible again."
+ },
+ {
+  "slug": "bread-damp-coastal-kitchen",
+  "title": "Baking Bread In A Damp Kitchen",
+  "dek": "What coastal humidity actually does to flour, dough and crust, and a calibration loaf to work it out on.",
+  "category": "Bread & Sourdough",
+  "tags": [
+   "technique",
+   "humidity",
+   "hydration",
+   "dough temperature",
+   "coastal"
+  ],
+  "yield": "One loaf, about 830 g baked",
+  "activeTime": "35 minutes",
+  "totalTime": "About 20 hours",
+  "intro": "<p>Recipes are written by people in kitchens that are not yours. On this coast the air sits near saturation for months at a stretch, and open flour quietly takes on water from it — enough that a bag which behaved in August can want thirty grams less water in the middle of a wet winter. Nothing about that is a disaster, but it does explain the loaf that was fine last month and is soup this week. Here is what actually changes, what does not, and a plain loaf built to be measured against so you can find your own numbers.</p>",
+  "ingredients": [
+   {
+    "group": "Levain",
+    "items": [
+     "20 g mature starter",
+     "45 g bread flour (about 6 tbsp)",
+     "45 g water (about 3 tbsp)"
+    ]
+   },
+   {
+    "group": "Calibration loaf",
+    "items": [
+     "500 g bread flour (about 4 cups)",
+     "320 g water to start (about 1 1/3 cups)",
+     "40 g water held back (about 3 tbsp)",
+     "10 g fine sea salt (about 1 3/4 tsp)",
+     "110 g levain, all of it"
+    ]
+   }
+  ],
+  "method": [
+   "<p>Understand the first variable. Flour is hygroscopic and a paper sack in a humid pantry gains moisture. That water counts as part of your hydration even though you never weighed it, so the dough behaves wetter than the recipe says. Keep flour in a sealed tub and the problem mostly goes away.</p>",
+   "<p>Mix the flour with 320 g of water only, and rest 45 minutes. That is 64% on the flour in the bowl, stiffer than the loaf you are aiming at.</p>",
+   "<p>Add the levain and salt, then add the held-back 40 g in two lots, watching what the dough does. If it takes both and still feels firm, your flour is dry and you can run wetter next time. If it goes slack and greasy after the first 20 g, stop there. All in, this is 555 g flour to 415 g water, or just under 75%, and with the held-back water left out it is 375 g to 555 g, or a shade under 68% — that is the range you are calibrating within.</p>",
+   "<p>Take the dough temperature. This is the second variable and it matters more than humidity. For hand mixing, aim for 26°C in the finished dough and set the water by subtracting the flour, room and levain temperatures from three times your target: with flour at 16°C, room at 17°C and levain at 20°C, that is 78 minus 53, so water at 25°C.</p>",
+   "<p>Four sets of folds 30 minutes apart, then bulk until risen by half with a domed and bubbled surface. Damp air does not change fermentation speed. Temperature does, and a cold damp house is slow for the second reason, not the first.</p>",
+   "<p>Preshape, rest 25 minutes, shape tight, and set seam up in a banneton dusted with rice flour rather than wheat. Rice flour does not absorb ambient moisture and go pasty the way wheat flour does in a wet room, and this is the single most useful change for a coastal kitchen.</p>",
+   "<p>Refrigerate 12 to 16 hours. A fridge is a dehumidifier, so the surface will dry slightly, which is good — a dry skin scores better.</p>",
+   "<p>Heat a Dutch oven at 500°F (260°C) for 45 minutes. Score cold and bake covered 20 minutes at 480°F (250°C), then uncovered 22 to 26 minutes at 450°F (230°C), until the crust is dark brown and an instant-read reads 206°F (97°C).</p>",
+   "<p>Bake it darker than you would inland. Crust is dried starch and it will pull moisture back out of the air within an hour of cooling; the extra few minutes buy you a crust that is still crisp at supper.</p>",
+   "<p>Cool on a rack with air all around it, never on a board and never in a bag. Trapped steam plus damp air is how a good crust turns to leather in twenty minutes.</p>",
+   "<p>Write down what you did: the water you ended up using, the room temperature, how long the bulk took. Three loaves of that and you will know what your own kitchen wants, which is worth more than any recipe.</p>",
+   "<p>Two things that get blamed on humidity and are usually something else: a flat loaf is over-proofing or weak shaping, and a gummy crumb is under-baking or cutting it hot.</p>"
+  ],
+  "notes": [
+   "Salt draws water and clumps in damp air. Keep it dry and weigh it; a clumped teaspoon measures short.",
+   "Instant yeast, if you use it, deteriorates fast once opened in a humid house. Keep the packet in the freezer."
+  ],
+  "storage": "In a paper bag inside a bread box, not in plastic. On a wet coast, plastic keeps bread soft and turns the crust to rubber overnight."
+ }
+]

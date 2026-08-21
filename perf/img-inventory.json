@@ -1,0 +1,1927 @@
+{
+"apple-touch-icon.png": {
+"bytes": 55512,
+"dim": [
+180,
+180
+]
+},
+"apron-600.jpg": {
+"bytes": 41745,
+"dim": [
+600,
+900
+]
+},
+"apron-600.webp": {
+"bytes": 21076,
+"dim": [
+600,
+900
+]
+},
+"apron-900.jpg": {
+"bytes": 79437,
+"dim": [
+900,
+1350
+]
+},
+"apron-900.webp": {
+"bytes": 37834,
+"dim": [
+900,
+1350
+]
+},
+"apron.jpg": {
+"bytes": 197166,
+"dim": [
+1600,
+2400
+]
+},
+"apron.webp": {
+"bytes": 89228,
+"dim": [
+1600,
+2400
+]
+},
+"bakery-case-600.jpg": {
+"bytes": 95442,
+"dim": [
+600,
+900
+]
+},
+"bakery-case-600.webp": {
+"bytes": 73224,
+"dim": [
+600,
+900
+]
+},
+"bakery-case-900.jpg": {
+"bytes": 173904,
+"dim": [
+900,
+1350
+]
+},
+"bakery-case-900.webp": {
+"bytes": 120998,
+"dim": [
+900,
+1350
+]
+},
+"bakery-case.jpg": {
+"bytes": 479496,
+"dim": [
+1800,
+2700
+]
+},
+"bakery-case.webp": {
+"bytes": 280264,
+"dim": [
+1800,
+2700
+]
+},
+"batteries.jpg": {
+"bytes": 86647,
+"dim": [
+1600,
+1067
+]
+},
+"beach.jpg": {
+"bytes": 192347,
+"dim": [
+1800,
+1202
+]
+},
+"berry-pastry-600.jpg": {
+"bytes": 37400,
+"dim": [
+600,
+429
+]
+},
+"berry-pastry-600.webp": {
+"bytes": 28322,
+"dim": [
+600,
+429
+]
+},
+"berry-pastry-900.jpg": {
+"bytes": 68775,
+"dim": [
+900,
+644
+]
+},
+"berry-pastry-900.webp": {
+"bytes": 47974,
+"dim": [
+900,
+644
+]
+},
+"berry-pastry.jpg": {
+"bytes": 166036,
+"dim": [
+1600,
+1144
+]
+},
+"berry-pastry.webp": {
+"bytes": 97888,
+"dim": [
+1600,
+1144
+]
+},
+"breakfast-plate-600.jpg": {
+"bytes": 51077,
+"dim": [
+600,
+400
+]
+},
+"breakfast-plate-600.webp": {
+"bytes": 42878,
+"dim": [
+600,
+400
+]
+},
+"breakfast-plate-900.jpg": {
+"bytes": 95643,
+"dim": [
+900,
+600
+]
+},
+"breakfast-plate-900.webp": {
+"bytes": 73864,
+"dim": [
+900,
+600
+]
+},
+"breakfast-plate.jpg": {
+"bytes": 236738,
+"dim": [
+1600,
+1067
+]
+},
+"breakfast-plate.webp": {
+"bytes": 157426,
+"dim": [
+1600,
+1067
+]
+},
+"breakfast-sandwich-600.jpg": {
+"bytes": 40042,
+"dim": [
+600,
+400
+]
+},
+"breakfast-sandwich-600.webp": {
+"bytes": 29644,
+"dim": [
+600,
+400
+]
+},
+"breakfast-sandwich-900.jpg": {
+"bytes": 77074,
+"dim": [
+900,
+600
+]
+},
+"breakfast-sandwich-900.webp": {
+"bytes": 54018,
+"dim": [
+900,
+600
+]
+},
+"breakfast-sandwich.jpg": {
+"bytes": 211165,
+"dim": [
+1600,
+1067
+]
+},
+"breakfast-sandwich.webp": {
+"bytes": 130444,
+"dim": [
+1600,
+1067
+]
+},
+"burrito-600.jpg": {
+"bytes": 74846,
+"dim": [
+600,
+900
+]
+},
+"burrito-600.webp": {
+"bytes": 51568,
+"dim": [
+600,
+900
+]
+},
+"burrito-900.jpg": {
+"bytes": 138698,
+"dim": [
+900,
+1350
+]
+},
+"burrito-900.webp": {
+"bytes": 86034,
+"dim": [
+900,
+1350
+]
+},
+"burrito.jpg": {
+"bytes": 374953,
+"dim": [
+1600,
+2400
+]
+},
+"burrito.webp": {
+"bytes": 208768,
+"dim": [
+1600,
+2400
+]
+},
+"camping.jpg": {
+"bytes": 722799,
+"dim": [
+1600,
+2405
+]
+},
+"candle-600.jpg": {
+"bytes": 42490,
+"dim": [
+600,
+400
+]
+},
+"candle-600.webp": {
+"bytes": 35348,
+"dim": [
+600,
+400
+]
+},
+"candle-900.jpg": {
+"bytes": 92834,
+"dim": [
+900,
+600
+]
+},
+"candle-900.webp": {
+"bytes": 79296,
+"dim": [
+900,
+600
+]
+},
+"candle.jpg": {
+"bytes": 257689,
+"dim": [
+1600,
+1067
+]
+},
+"candle.webp": {
+"bytes": 205998,
+"dim": [
+1600,
+1067
+]
+},
+"chalkboard.jpg": {
+"bytes": 579227,
+"dim": [
+1600,
+2400
+]
+},
+"cinnamon-roll-600.jpg": {
+"bytes": 105301,
+"dim": [
+600,
+900
+]
+},
+"cinnamon-roll-600.webp": {
+"bytes": 87584,
+"dim": [
+600,
+900
+]
+},
+"cinnamon-roll-900.jpg": {
+"bytes": 205987,
+"dim": [
+900,
+1350
+]
+},
+"cinnamon-roll-900.webp": {
+"bytes": 156442,
+"dim": [
+900,
+1350
+]
+},
+"cinnamon-roll.jpg": {
+"bytes": 541949,
+"dim": [
+1600,
+2400
+]
+},
+"cinnamon-roll.webp": {
+"bytes": 356960,
+"dim": [
+1600,
+2400
+]
+},
+"coastal-forest-600.jpg": {
+"bytes": 55796,
+"dim": [
+600,
+899
+]
+},
+"coastal-forest-600.webp": {
+"bytes": 37136,
+"dim": [
+600,
+899
+]
+},
+"coastal-forest-900.jpg": {
+"bytes": 116375,
+"dim": [
+900,
+1348
+]
+},
+"coastal-forest-900.webp": {
+"bytes": 75258,
+"dim": [
+900,
+1348
+]
+},
+"coastal-forest.jpg": {
+"bytes": 463618,
+"dim": [
+2000,
+2996
+]
+},
+"coastal-forest.webp": {
+"bytes": 257690,
+"dim": [
+2000,
+2996
+]
+},
+"coffee-pour-600.jpg": {
+"bytes": 49492,
+"dim": [
+600,
+900
+]
+},
+"coffee-pour-600.webp": {
+"bytes": 22908,
+"dim": [
+600,
+900
+]
+},
+"coffee-pour-900.jpg": {
+"bytes": 116574,
+"dim": [
+900,
+1350
+]
+},
+"coffee-pour-900.webp": {
+"bytes": 58542,
+"dim": [
+900,
+1350
+]
+},
+"coffee-pour.jpg": {
+"bytes": 425182,
+"dim": [
+1600,
+2400
+]
+},
+"coffee-pour.webp": {
+"bytes": 259152,
+"dim": [
+1600,
+2400
+]
+},
+"concrete-bags.jpg": {
+"bytes": 138799,
+"dim": [
+1600,
+2400
+]
+},
+"cookie-600.jpg": {
+"bytes": 57218,
+"dim": [
+600,
+900
+]
+},
+"cookie-600.webp": {
+"bytes": 32992,
+"dim": [
+600,
+900
+]
+},
+"cookie-900.jpg": {
+"bytes": 137663,
+"dim": [
+900,
+1350
+]
+},
+"cookie-900.webp": {
+"bytes": 101532,
+"dim": [
+900,
+1350
+]
+},
+"cookie.jpg": {
+"bytes": 548488,
+"dim": [
+1600,
+2400
+]
+},
+"cookie.webp": {
+"bytes": 434300,
+"dim": [
+1600,
+2400
+]
+},
+"crow-glide.png": {
+"bytes": 41422,
+"dim": [
+260,
+409
+]
+},
+"crow-perch.png": {
+"bytes": 325634,
+"dim": [
+6460,
+147
+]
+},
+"crow-sprite.png": {
+"bytes": 810772,
+"dim": [
+6500,
+409
+]
+},
+"crow1.png": {
+"bytes": 1899082,
+"dim": [
+2048,
+2048
+]
+},
+"crow2.png": {
+"bytes": 1759864,
+"dim": [
+2048,
+2048
+]
+},
+"crow3.png": {
+"bytes": 2013457,
+"dim": [
+2048,
+2048
+]
+},
+"crow4.png": {
+"bytes": 2462812,
+"dim": [
+2048,
+2048
+]
+},
+"dog.jpg": {
+"bytes": 261319,
+"dim": [
+1600,
+1067
+]
+},
+"fasteners.jpg": {
+"bytes": 398062,
+"dim": [
+1600,
+2400
+]
+},
+"favicon-32.png": {
+"bytes": 2270,
+"dim": [
+32,
+32
+]
+},
+"favicon-64.png": {
+"bytes": 8140,
+"dim": [
+64,
+64
+]
+},
+"fishing-600.jpg": {
+"bytes": 30905,
+"dim": [
+600,
+400
+]
+},
+"fishing-600.webp": {
+"bytes": 20270,
+"dim": [
+600,
+400
+]
+},
+"fishing-900.jpg": {
+"bytes": 57662,
+"dim": [
+900,
+600
+]
+},
+"fishing-900.webp": {
+"bytes": 34912,
+"dim": [
+900,
+600
+]
+},
+"fishing.jpg": {
+"bytes": 137301,
+"dim": [
+1600,
+1067
+]
+},
+"fishing.webp": {
+"bytes": 75428,
+"dim": [
+1600,
+1067
+]
+},
+"forest-road.jpg": {
+"bytes": 409835,
+"dim": [
+1800,
+2700
+]
+},
+"grocery-basics.jpg": {
+"bytes": 285575,
+"dim": [
+1600,
+2000
+]
+},
+"hero-alt.jpg": {
+"bytes": 1018643,
+"dim": [
+2200,
+2933
+]
+},
+"hero-store-b.jpg": {
+"bytes": 327216,
+"dim": [
+2000,
+1335
+]
+},
+"hero-store.jpg": {
+"bytes": 624038,
+"dim": [
+1706,
+2559
+]
+},
+"honey-jam-600.jpg": {
+"bytes": 27571,
+"dim": [
+600,
+400
+]
+},
+"honey-jam-600.webp": {
+"bytes": 20296,
+"dim": [
+600,
+400
+]
+},
+"honey-jam-900.jpg": {
+"bytes": 54677,
+"dim": [
+900,
+600
+]
+},
+"honey-jam-900.webp": {
+"bytes": 36032,
+"dim": [
+900,
+600
+]
+},
+"honey-jam.jpg": {
+"bytes": 163688,
+"dim": [
+1600,
+1067
+]
+},
+"honey-jam.webp": {
+"bytes": 88202,
+"dim": [
+1600,
+1067
+]
+},
+"hunt-field-sm.jpg": {
+"bytes": 80743,
+"dim": [
+620,
+770
+]
+},
+"hunt-field.jpg": {
+"bytes": 236727,
+"dim": [
+1100,
+1366
+]
+},
+"lantern-600.jpg": {
+"bytes": 25516,
+"dim": [
+600,
+800
+]
+},
+"lantern-600.webp": {
+"bytes": 12372,
+"dim": [
+600,
+800
+]
+},
+"lantern-900.jpg": {
+"bytes": 46579,
+"dim": [
+900,
+1200
+]
+},
+"lantern-900.webp": {
+"bytes": 20452,
+"dim": [
+900,
+1200
+]
+},
+"lantern.jpg": {
+"bytes": 107970,
+"dim": [
+1600,
+2133
+]
+},
+"lantern.webp": {
+"bytes": 47716,
+"dim": [
+1600,
+2133
+]
+},
+"logo-carved-600.jpg": {
+"bytes": 80643,
+"dim": [
+600,
+496
+]
+},
+"logo-carved-600.webp": {
+"bytes": 72160,
+"dim": [
+600,
+496
+]
+},
+"logo-carved-900.jpg": {
+"bytes": 172398,
+"dim": [
+900,
+743
+]
+},
+"logo-carved-900.webp": {
+"bytes": 152090,
+"dim": [
+900,
+743
+]
+},
+"logo-carved-web-600.webp": {
+"bytes": 128926,
+"dim": [
+600,
+505
+]
+},
+"logo-carved-web-900.webp": {
+"bytes": 265636,
+"dim": [
+900,
+758
+]
+},
+"logo-carved-web.png": {
+"bytes": 1755373,
+"dim": [
+1000,
+862
+]
+},
+"logo-carved-web.webp": {
+"bytes": 315698,
+"dim": [
+1000,
+842
+]
+},
+"logo-carved.png": {
+"bytes": 3064197,
+"dim": [
+1380,
+1140
+]
+},
+"logo-carved.webp": {
+"bytes": 321904,
+"dim": [
+1380,
+1140
+]
+},
+"logo-foot.png": {
+"bytes": 362933,
+"dim": [
+440,
+379
+]
+},
+"logo-foot.webp": {
+"bytes": 73786,
+"dim": [
+440,
+371
+]
+},
+"logo-head.png": {
+"bytes": 95724,
+"dim": [
+220,
+190
+]
+},
+"logo-trans-sm.png": {
+"bytes": 461001,
+"dim": [
+520,
+438
+]
+},
+"logo-trans-sm.webp": {
+"bytes": 73366,
+"dim": [
+520,
+438
+]
+},
+"logo-trans.png": {
+"bytes": 2674019,
+"dim": [
+1293,
+1114
+]
+},
+"lumber-rack-600.jpg": {
+"bytes": 54019,
+"dim": [
+600,
+400
+]
+},
+"lumber-rack-600.webp": {
+"bytes": 45096,
+"dim": [
+600,
+400
+]
+},
+"lumber-rack-900.jpg": {
+"bytes": 121833,
+"dim": [
+900,
+600
+]
+},
+"lumber-rack-900.webp": {
+"bytes": 105188,
+"dim": [
+900,
+600
+]
+},
+"lumber-rack.jpg": {
+"bytes": 478020,
+"dim": [
+1800,
+1200
+]
+},
+"lumber-rack.webp": {
+"bytes": 379840,
+"dim": [
+1800,
+1200
+]
+},
+"maker-pottery-600.jpg": {
+"bytes": 113284,
+"dim": [
+600,
+750
+]
+},
+"maker-pottery-600.webp": {
+"bytes": 97846,
+"dim": [
+600,
+750
+]
+},
+"maker-pottery-900.jpg": {
+"bytes": 212397,
+"dim": [
+900,
+1125
+]
+},
+"maker-pottery-900.webp": {
+"bytes": 165918,
+"dim": [
+900,
+1125
+]
+},
+"maker-pottery.jpg": {
+"bytes": 494980,
+"dim": [
+1600,
+2000
+]
+},
+"maker-pottery.webp": {
+"bytes": 330142,
+"dim": [
+1600,
+2000
+]
+},
+"merch-hats.jpg": {
+"bytes": 220760,
+"dim": [
+1600,
+1067
+]
+},
+"og-image.jpg": {
+"bytes": 181560,
+"dim": [
+1200,
+630
+]
+},
+"owners-porch-600.jpg": {
+"bytes": 51228,
+"dim": [
+600,
+400
+]
+},
+"owners-porch-600.webp": {
+"bytes": 39356,
+"dim": [
+600,
+400
+]
+},
+"owners-porch-900.jpg": {
+"bytes": 100155,
+"dim": [
+900,
+600
+]
+},
+"owners-porch-900.webp": {
+"bytes": 72144,
+"dim": [
+900,
+600
+]
+},
+"owners-porch.jpg": {
+"bytes": 261319,
+"dim": [
+1600,
+1067
+]
+},
+"owners-porch.webp": {
+"bytes": 171652,
+"dim": [
+1600,
+1067
+]
+},
+"owners.jpg": {
+"bytes": 410407,
+"dim": [
+1600,
+2416
+]
+},
+"paint-tools.jpg": {
+"bytes": 243968,
+"dim": [
+1600,
+1067
+]
+},
+"plumbing-600.jpg": {
+"bytes": 51559,
+"dim": [
+600,
+800
+]
+},
+"plumbing-600.webp": {
+"bytes": 31362,
+"dim": [
+600,
+800
+]
+},
+"plumbing-900.jpg": {
+"bytes": 109198,
+"dim": [
+900,
+1200
+]
+},
+"plumbing-900.webp": {
+"bytes": 67744,
+"dim": [
+900,
+1200
+]
+},
+"plumbing.jpg": {
+"bytes": 318414,
+"dim": [
+1600,
+2133
+]
+},
+"plumbing.webp": {
+"bytes": 202096,
+"dim": [
+1600,
+2133
+]
+},
+"rain-window-600.jpg": {
+"bytes": 27551,
+"dim": [
+600,
+400
+]
+},
+"rain-window-600.webp": {
+"bytes": 17360,
+"dim": [
+600,
+400
+]
+},
+"rain-window-900.jpg": {
+"bytes": 53305,
+"dim": [
+900,
+600
+]
+},
+"rain-window-900.webp": {
+"bytes": 32126,
+"dim": [
+900,
+600
+]
+},
+"rain-window.jpg": {
+"bytes": 135831,
+"dim": [
+1600,
+1067
+]
+},
+"rain-window.webp": {
+"bytes": 74448,
+"dim": [
+1600,
+1067
+]
+},
+"river-600.jpg": {
+"bytes": 47499,
+"dim": [
+600,
+337
+]
+},
+"river-600.webp": {
+"bytes": 40176,
+"dim": [
+600,
+337
+]
+},
+"river-900.jpg": {
+"bytes": 102411,
+"dim": [
+900,
+506
+]
+},
+"river-900.webp": {
+"bytes": 84098,
+"dim": [
+900,
+506
+]
+},
+"river.jpg": {
+"bytes": 376118,
+"dim": [
+1800,
+1011
+]
+},
+"river.webp": {
+"bytes": 308204,
+"dim": [
+1800,
+1011
+]
+},
+"rope-tarp.jpg": {
+"bytes": 228919,
+"dim": [
+1600,
+1067
+]
+},
+"sandwich-600.jpg": {
+"bytes": 27168,
+"dim": [
+600,
+400
+]
+},
+"sandwich-600.webp": {
+"bytes": 17202,
+"dim": [
+600,
+400
+]
+},
+"sandwich-900.jpg": {
+"bytes": 49671,
+"dim": [
+900,
+600
+]
+},
+"sandwich-900.webp": {
+"bytes": 28928,
+"dim": [
+900,
+600
+]
+},
+"sandwich.jpg": {
+"bytes": 116802,
+"dim": [
+1600,
+1067
+]
+},
+"sandwich.webp": {
+"bytes": 61088,
+"dim": [
+1600,
+1067
+]
+},
+"shelves-goods.jpg": {
+"bytes": 177931,
+"dim": [
+1600,
+1067
+]
+},
+"shop-interior.jpg": {
+"bytes": 417263,
+"dim": [
+2000,
+1333
+]
+},
+"soup.jpg": {
+"bytes": 603824,
+"dim": [
+1600,
+2844
+]
+},
+"sourdough-600.jpg": {
+"bytes": 94156,
+"dim": [
+600,
+800
+]
+},
+"sourdough-600.webp": {
+"bytes": 81212,
+"dim": [
+600,
+800
+]
+},
+"sourdough-900.jpg": {
+"bytes": 189790,
+"dim": [
+900,
+1200
+]
+},
+"sourdough-900.webp": {
+"bytes": 157072,
+"dim": [
+900,
+1200
+]
+},
+"sourdough.jpg": {
+"bytes": 514629,
+"dim": [
+1600,
+2133
+]
+},
+"sourdough.webp": {
+"bytes": 377716,
+"dim": [
+1600,
+2133
+]
+},
+"storefront.jpg": {
+"bytes": 798577,
+"dim": [
+1800,
+1481
+]
+},
+"storm-coast-600.jpg": {
+"bytes": 49570,
+"dim": [
+600,
+450
+]
+},
+"storm-coast-600.webp": {
+"bytes": 42978,
+"dim": [
+600,
+450
+]
+},
+"storm-coast-900.jpg": {
+"bytes": 106400,
+"dim": [
+900,
+675
+]
+},
+"storm-coast-900.webp": {
+"bytes": 92272,
+"dim": [
+900,
+675
+]
+},
+"storm-coast.jpg": {
+"bytes": 462421,
+"dim": [
+2000,
+1500
+]
+},
+"storm-coast.webp": {
+"bytes": 365930,
+"dim": [
+2000,
+1500
+]
+},
+"tools-wall-600.jpg": {
+"bytes": 29547,
+"dim": [
+600,
+400
+]
+},
+"tools-wall-600.webp": {
+"bytes": 18356,
+"dim": [
+600,
+400
+]
+},
+"tools-wall-900.jpg": {
+"bytes": 54626,
+"dim": [
+900,
+600
+]
+},
+"tools-wall-900.webp": {
+"bytes": 32368,
+"dim": [
+900,
+600
+]
+},
+"tools-wall.jpg": {
+"bytes": 134583,
+"dim": [
+1600,
+1067
+]
+},
+"tools-wall.webp": {
+"bytes": 72802,
+"dim": [
+1600,
+1067
+]
+},
+"tr-interior-600.jpg": {
+"bytes": 56745,
+"dim": [
+600,
+335
+]
+},
+"tr-interior-600.webp": {
+"bytes": 49056,
+"dim": [
+600,
+335
+]
+},
+"tr-interior-sm.jpg": {
+"bytes": 101323,
+"dim": [
+900,
+502
+]
+},
+"tr-interior-sm.webp": {
+"bytes": 88404,
+"dim": [
+900,
+502
+]
+},
+"tr-interior.jpg": {
+"bytes": 350044,
+"dim": [
+1800,
+1005
+]
+},
+"tr-interior.png": {
+"bytes": 11090420,
+"dim": [
+2752,
+1536
+]
+},
+"tr-storefront-600.jpg": {
+"bytes": 44762,
+"dim": [
+600,
+335
+]
+},
+"tr-storefront-600.webp": {
+"bytes": 39912,
+"dim": [
+600,
+335
+]
+},
+"tr-storefront-sm.jpg": {
+"bytes": 83160,
+"dim": [
+900,
+502
+]
+},
+"tr-storefront-sm.webp": {
+"bytes": 70642,
+"dim": [
+900,
+502
+]
+},
+"tr-storefront-storm.png": {
+"bytes": 7547797,
+"dim": [
+2752,
+1536
+]
+},
+"tr-storefront.jpg": {
+"bytes": 325029,
+"dim": [
+1800,
+1005
+]
+},
+"tr-storefront.png": {
+"bytes": 6654727,
+"dim": [
+2752,
+1536
+]
+},
+"tr-storefront.webp": {
+"bytes": 269988,
+"dim": [
+1800,
+1005
+]
+},
+"tr-storm-600.jpg": {
+"bytes": 44560,
+"dim": [
+600,
+335
+]
+},
+"tr-storm-600.webp": {
+"bytes": 38948,
+"dim": [
+600,
+335
+]
+},
+"tr-storm-sm.jpg": {
+"bytes": 80159,
+"dim": [
+900,
+502
+]
+},
+"tr-storm-sm.webp": {
+"bytes": 65966,
+"dim": [
+900,
+502
+]
+},
+"tr-storm.jpg": {
+"bytes": 294578,
+"dim": [
+1800,
+1005
+]
+},
+"tr-storm.png": {
+"bytes": 10360900,
+"dim": [
+2752,
+1536
+]
+},
+"tr-storm.webp": {
+"bytes": 263168,
+"dim": [
+1800,
+1005
+]
+},
+"tr-yard-600.jpg": {
+"bytes": 52080,
+"dim": [
+600,
+335
+]
+},
+"tr-yard-600.webp": {
+"bytes": 46088,
+"dim": [
+600,
+335
+]
+},
+"tr-yard-sm.jpg": {
+"bytes": 97504,
+"dim": [
+900,
+502
+]
+},
+"tr-yard-sm.webp": {
+"bytes": 85310,
+"dim": [
+900,
+502
+]
+},
+"tr-yard.jpg": {
+"bytes": 378508,
+"dim": [
+1800,
+1005
+]
+},
+"tr-yard.png": {
+"bytes": 10669496,
+"dim": [
+2752,
+1536
+]
+},
+"tr-yard.webp": {
+"bytes": 335706,
+"dim": [
+1800,
+1005
+]
+},
+"truck-600.jpg": {
+"bytes": 55790,
+"dim": [
+600,
+400
+]
+},
+"truck-600.webp": {
+"bytes": 48712,
+"dim": [
+600,
+400
+]
+},
+"truck-900.jpg": {
+"bytes": 119938,
+"dim": [
+900,
+600
+]
+},
+"truck-900.webp": {
+"bytes": 104046,
+"dim": [
+900,
+600
+]
+},
+"truck.jpg": {
+"bytes": 433412,
+"dim": [
+1800,
+1200
+]
+},
+"truck.webp": {
+"bytes": 375742,
+"dim": [
+1800,
+1200
+]
+},
+"tshirt.jpg": {
+"bytes": 220760,
+"dim": [
+1600,
+1067
+]
+},
+"w-interior-1800.jpg": {
+"bytes": 323542,
+"dim": [
+1800,
+764
+]
+},
+"w-interior-1800.webp": {
+"bytes": 271650,
+"dim": [
+1800,
+764
+]
+},
+"w-interior-900.jpg": {
+"bytes": 93759,
+"dim": [
+900,
+382
+]
+},
+"w-interior-900.webp": {
+"bytes": 78734,
+"dim": [
+900,
+382
+]
+},
+"w-interior-md.jpg": {
+"bytes": 186788,
+"dim": [
+1400,
+594
+]
+},
+"w-interior-md.webp": {
+"bytes": 163884,
+"dim": [
+1400,
+594
+]
+},
+"w-interior.jpg": {
+"bytes": 571597,
+"dim": [
+2560,
+1086
+]
+},
+"w-interior.png": {
+"bytes": 9238466,
+"dim": [
+3168,
+1344
+]
+},
+"w-interior.webp": {
+"bytes": 494700,
+"dim": [
+2560,
+1086
+]
+},
+"w-river-md.jpg": {
+"bytes": 165241,
+"dim": [
+1400,
+594
+]
+},
+"w-river-sm.jpg": {
+"bytes": 52982,
+"dim": [
+760,
+322
+]
+},
+"w-river.jpg": {
+"bytes": 539128,
+"dim": [
+2560,
+1086
+]
+},
+"w-river.png": {
+"bytes": 8006102,
+"dim": [
+3168,
+1344
+]
+},
+"w-storefront-1800.jpg": {
+"bytes": 214348,
+"dim": [
+1800,
+764
+]
+},
+"w-storefront-1800.webp": {
+"bytes": 177778,
+"dim": [
+1800,
+764
+]
+},
+"w-storefront-900.jpg": {
+"bytes": 59934,
+"dim": [
+900,
+382
+]
+},
+"w-storefront-900.webp": {
+"bytes": 50638,
+"dim": [
+900,
+382
+]
+},
+"w-storefront-md.jpg": {
+"bytes": 119304,
+"dim": [
+1400,
+594
+]
+},
+"w-storefront-md.webp": {
+"bytes": 107240,
+"dim": [
+1400,
+594
+]
+},
+"w-storefront.jpg": {
+"bytes": 392338,
+"dim": [
+2560,
+1086
+]
+},
+"w-storefront.png": {
+"bytes": 8493726,
+"dim": [
+3168,
+1344
+]
+},
+"w-storefront.webp": {
+"bytes": 335700,
+"dim": [
+2560,
+1086
+]
+},
+"w-storm-1800.jpg": {
+"bytes": 222630,
+"dim": [
+1800,
+764
+]
+},
+"w-storm-1800.webp": {
+"bytes": 193280,
+"dim": [
+1800,
+764
+]
+},
+"w-storm-900.jpg": {
+"bytes": 66195,
+"dim": [
+900,
+382
+]
+},
+"w-storm-900.webp": {
+"bytes": 56672,
+"dim": [
+900,
+382
+]
+},
+"w-storm-md.jpg": {
+"bytes": 126294,
+"dim": [
+1400,
+594
+]
+},
+"w-storm-md.webp": {
+"bytes": 106406,
+"dim": [
+1400,
+594
+]
+},
+"w-storm.jpg": {
+"bytes": 405554,
+"dim": [
+2560,
+1086
+]
+},
+"w-storm.png": {
+"bytes": 7658632,
+"dim": [
+3168,
+1344
+]
+},
+"w-storm.webp": {
+"bytes": 361230,
+"dim": [
+2560,
+1086
+]
+},
+"w-yard-1800.jpg": {
+"bytes": 313525,
+"dim": [
+1800,
+764
+]
+},
+"w-yard-1800.webp": {
+"bytes": 271924,
+"dim": [
+1800,
+764
+]
+},
+"w-yard-900.jpg": {
+"bytes": 83427,
+"dim": [
+900,
+382
+]
+},
+"w-yard-900.webp": {
+"bytes": 71514,
+"dim": [
+900,
+382
+]
+},
+"w-yard-md.jpg": {
+"bytes": 171645,
+"dim": [
+1400,
+594
+]
+},
+"w-yard-md.webp": {
+"bytes": 146340,
+"dim": [
+1400,
+594
+]
+},
+"w-yard.jpg": {
+"bytes": 593494,
+"dim": [
+2560,
+1086
+]
+},
+"w-yard.png": {
+"bytes": 9125646,
+"dim": [
+3168,
+1344
+]
+},
+"w-yard.webp": {
+"bytes": 502964,
+"dim": [
+2560,
+1086
+]
+},
+"wood-texture-600.jpg": {
+"bytes": 70368,
+"dim": [
+600,
+400
+]
+},
+"wood-texture-600.webp": {
+"bytes": 61396,
+"dim": [
+600,
+400
+]
+},
+"wood-texture-900.jpg": {
+"bytes": 158492,
+"dim": [
+900,
+600
+]
+},
+"wood-texture-900.webp": {
+"bytes": 135954,
+"dim": [
+900,
+600
+]
+},
+"wood-texture.jpg": {
+"bytes": 484493,
+"dim": [
+1600,
+1067
+]
+},
+"wood-texture.webp": {
+"bytes": 399820,
+"dim": [
+1600,
+1067
+]
+},
+"work-gloves.jpg": {
+"bytes": 157964,
+"dim": [
+1600,
+1067
+]
+}
+}
