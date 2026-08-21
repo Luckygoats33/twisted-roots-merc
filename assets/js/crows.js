@@ -106,3 +106,80 @@
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
   else init();
 })();
+
+/* ==========================================================
+   THE CROW THAT LANDS ON THE SIGN
+   ----------------------------------------------------------
+   One bird, one performance: it flies in from the left, flares,
+   lands on the beam the carved sign hangs from, settles, looks
+   left, looks right, then drops off the beam and goes.
+
+   It is a 34-frame sprite cut from a single green-screen take,
+   so the whole thing is one continuous piece of real footage
+   rather than poses stitched together. Stepped once through,
+   never looped — a bird that lands on a loop is a screensaver.
+
+   It is positioned off the real beam every time it runs, so it
+   stays put when the header resizes or the sign grows.
+   ========================================================== */
+(function () {
+  "use strict";
+
+  var FRAMES = 34;
+  var FEET   = 0.74;      /* where the feet sit in the cell, top-down */
+  var RATIO  = 190 / 147; /* cell aspect */
+  var RUN_MS = 7600;      /* one performance */
+
+  function place(el, beam, h) {
+    var r = beam.getBoundingClientRect();
+    var w = h * RATIO;
+    el.style.height = h + "px";
+    el.style.width = w + "px";
+    /* stand it ON the beam: feet line to the top of the beam */
+    el.style.left = Math.round(r.left + r.width * 0.46 - w * 0.5) + "px";
+    el.style.top  = Math.round(r.top + window.scrollY - h * FEET + 2) + "px";
+  }
+
+  function init() {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    var beam = document.querySelector(".brand .hangsign__beam");
+    if (!beam) return;
+
+    var el = document.createElement("div");
+    el.className = "perchcrow";
+    el.setAttribute("aria-hidden", "true");
+    el.style.setProperty("--pc-frames", FRAMES);
+    el.style.setProperty("--pc-run", RUN_MS + "ms");
+    document.body.appendChild(el);
+
+    var h = window.innerWidth < 900 ? 34 : 44;   /* a crow is small next to a shop sign */
+    var busy = false;
+
+    function run() {
+      if (busy || document.hidden) return;
+      /* only when the header is actually on screen */
+      if ((window.scrollY || window.pageYOffset) > window.innerHeight * 0.6) return;
+      busy = true;
+      place(el, beam, h);
+      el.classList.remove("is-flying");
+      void el.offsetWidth;               /* restart the animation */
+      el.classList.add("is-flying");
+      setTimeout(function () {
+        el.classList.remove("is-flying");
+        busy = false;
+      }, RUN_MS + 120);
+    }
+
+    /* keep it on the beam if the header moves under it */
+    window.addEventListener("resize", function () {
+      h = window.innerWidth < 900 ? 34 : 44;
+      if (busy) place(el, beam, h);
+    }, { passive: true });
+
+    setTimeout(run, 3800);                          /* first visit */
+    setInterval(run, 165000);                       /* now and then */
+  }
+
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
+  else init();
+})();

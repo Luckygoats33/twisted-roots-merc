@@ -662,7 +662,7 @@ body{ background:var(--paper) }
 }
 @media (min-width:1011px){ .totop{ display:flex } }
 .totop.show{ opacity:1; transform:none }
-.totop:hover{ background:var(--amber) }
+.totop:hover{ background:var(--amber); color:var(--ink) }
 
 @media print{ .dockbar,.totop{ display:none !important } }
 

@@ -22,7 +22,7 @@ from PIL import Image
 ROOT = os.path.dirname(os.path.abspath(__file__))
 IMG = os.path.join(ROOT, "assets", "img")
 TMP = os.path.join(ROOT, "_perchframes")
-CELL_W = 170                      # px per cell in the finished sheet
+CELL_W = 190                      # px per cell in the finished sheet
 
 
 def ffmpeg():
@@ -60,9 +60,13 @@ def key(path):
     green = (g - np.maximum(r, b))
     alpha = np.clip((52.0 - green) / 44.0, 0, 1)
 
-    # the beam: warm, light, and not very dark — r > g > b, bright
-    wood = (r > g + 6) & (g > b + 4) & (val > 105) & (sat > 0.12)
+    # The beam: warm, light, and never very dark. Two passes — the
+    # lit face of it, and the washed-out grey-tan edge that the
+    # first pass leaves behind as a ghost line under the feet.
+    wood = (r >= g - 2) & (g >= b - 2) & (val > 96) & (sat > 0.055)
     alpha = np.where(wood, 0.0, alpha)
+    pale = (val > 120) & (sat < 0.30) & ((r + g + b) / 3.0 > 108)
+    alpha = np.where(pale, 0.0, alpha)
 
     # anything genuinely dark is the bird, whatever else it looks like
     dark = (r + g + b) / 3.0 < 78
@@ -98,10 +102,36 @@ def main():
 
     # The camera is locked, so one shared crop keeps the bird in the
     # right place across the whole shot — no per-frame alignment.
+    #
+    # But the bird enters from off-frame, so the raw union of every
+    # bbox is the whole plate and the perched bird ends up a speck
+    # inside it. Take the box from the SETTLED portion instead —
+    # the frames where it is actually standing on the beam — then
+    # pad. The fly-in and take-off clip at the edges, which is what
+    # they should do: it arrives from outside and leaves outside.
     boxes = [k.getbbox() for k in keyed if k.getbbox()]
-    L = min(b[0] for b in boxes); T = min(b[1] for b in boxes)
-    R = max(b[2] for b in boxes); B = max(b[3] for b in boxes)
-    print("union box", (L, T, R, B), "=", R - L, "x", B - T)
+    # A perched bird has its wings FOLDED, so it covers the least
+    # area of the whole shot. Rank by ink and take the quiet band:
+    # 15th-55th percentile is the bird standing there, not the
+    # wing-spread landing or take-off.
+    order = sorted(range(len(boxes)), key=lambda i: inks[lo + i])
+    a, b_ = int(len(order) * 0.15), int(len(order) * 0.55)
+    settled = [boxes[i] for i in order[a:b_]]
+    if len(settled) < 5:
+        settled = boxes
+    import statistics as st
+    L = int(st.median([b[0] for b in settled])); T = int(st.median([b[1] for b in settled]))
+    R = int(st.median([b[2] for b in settled])); B = int(st.median([b[3] for b in settled]))
+    # Faint residue from the beam post reaches the bottom of the
+    # plate and drags the box down with it. A perched crow is about
+    # as tall as it is long, so cap the height rather than trust it.
+    print("settled box RAW", (L, T, R, B), "=", R - L, "x", B - T)
+    B = min(B, T + int((R - L) * 1.02))
+    padx = int((R - L) * 0.30); pady_t = int((B - T) * 0.45); pady_b = int((B - T) * 0.08)
+    W0, H0 = keyed[0].width, keyed[0].height
+    L = max(0, L - padx); R = min(W0, R + padx)
+    T = max(0, T - pady_t); B = min(H0, B + pady_b)
+    print("settled box padded", (L, T, R, B), "=", R - L, "x", B - T)
 
     idx = [round(i * (len(keyed) - 1) / (want - 1)) for i in range(want)]
     cells = [keyed[i].crop((L, T, R, B)) for i in idx]
