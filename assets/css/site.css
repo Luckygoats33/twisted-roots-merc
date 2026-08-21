@@ -802,8 +802,12 @@ img.hero-still{ z-index:0 }
    rule by a long way. The beam itself sits inside the header
    with clear air above it — a crow lands on that beam, and a
    bird standing on a rail needs room above it, not just below. */
-.brand .hangsign{ margin-top:38px !important }
-@media (max-width:1010px){ .brand .hangsign{ margin-top:30px !important } }
+/* The sign overhangs the header at BOTH ends: the beam rides
+   above the top edge, the plate swings well past the bottom rule.
+   The crow lands on the sign's own shoulder, not the beam, so the
+   beam does not need clear air above it. */
+.brand .hangsign{ margin-top:-14px !important }
+@media (max-width:1010px){ .brand .hangsign{ margin-top:-10px !important } }
 
 /* ==========================================================
    BUTTON CONTRAST
@@ -864,3 +868,21 @@ img.hero-still{ z-index:0 }
 }
 .brand .hangsign__chain--l{ left:22% !important; right:auto !important }
 .brand .hangsign__chain--r{ left:auto !important; right:22% !important }
+
+
+/* ==========================================================
+   THE SIGN ON A PHONE
+   A quarter bigger, and it answers to the phone itself: tilt the
+   handset and the sign swings the way a hanging sign would.
+   --sign-lean comes from the device's roll; it is added to the
+   scroll-driven tilt rather than replacing it.
+   ========================================================== */
+@media (max-width:1010px){
+  .brand .hangsign{ --tr-sign-h:108px !important }        /* +25% */
+}
+@media (max-width:400px){
+  .brand .hangsign{ --tr-sign-h:88px !important }
+}
+.brand .hangsign__plate{
+  transform:rotate(calc(var(--sign-tilt,0deg) + var(--sign-lean,0deg))) scale(var(--sign-grow,1));
+}

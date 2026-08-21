@@ -400,6 +400,49 @@ const TR = (() => {
       </form>`);
   }
 
+  /* ---------------- ORDER, AS A POP-UP ----------------
+     On a phone the dock bar's job is to get an order started
+     without losing the page you are on. So it opens the kitchen
+     right there instead of navigating away — pick a time, say
+     what you want, done.                                        */
+  function orderModal(){
+    var star = (typeof TR_BAKERY !== "undefined")
+      ? TR_BAKERY.filter(function(b){ return b.star || b.cat === "bakery"; }).slice(0, 6)
+      : [];
+    var chips = star.map(function(b){
+      var out = b.q === 0;
+      return '<button type="button" class="chip" data-additem="' + esc(b.n) + '"' +
+             (out ? ' disabled style="opacity:.45"' : '') + '>' +
+             esc(b.n) + (out ? " · sold out" : " · " + money(b.p)) + '</button>';
+    }).join("");
+
+    var h = todayHours();
+    var open = h ? fmtTime(h[0]) + " – " + fmtTime(STORE.kitchen.close === 840 ? 840 : h[1]) : "closed today";
+
+    modal("Order for pickup", '' +
+      '<p class="small muted" style="margin-top:0">Kitchen is on ' + esc(STORE.kitchen.label) +
+      '. Bakery rack goes out at six and is usually gone by nine. No account, no prepay — ' +
+      'pay at the counter.</p>' +
+      '<div class="chips" style="margin:16px 0 18px"><span class="lbl">Tap to add</span>' + chips + '</div>' +
+      '<form data-orderform>' +
+        '<div class="field"><label for="onm">Your name</label>' +
+          '<input id="onm" name="name" required autocomplete="name" placeholder="First name is fine"></div>' +
+        '<div class="field"><label for="oph">Phone</label>' +
+          '<input id="oph" name="phone" required type="tel" autocomplete="tel" placeholder="(541) 555-0134"></div>' +
+        '<div class="field"><label for="oit">What are we making?</label>' +
+          '<textarea id="oit" name="items" required placeholder="2 Siletz sandwiches, 1 biscuits &amp; gravy, 2 drip coffees"></textarea></div>' +
+        '<div class="field"><label for="otm">Pickup</label><select id="otm" name="when">' +
+          '<option>As soon as it is ready</option><option>7:00 am</option><option>7:30 am</option>' +
+          '<option>8:00 am</option><option>8:30 am</option><option>9:00 am</option>' +
+          '<option>10:30 am</option><option>11:30 am</option><option>12:30 pm</option>' +
+          '<option>Tomorrow morning</option></select></div>' +
+        '<button class="btn btn--wide btn--amber" type="submit">Send it to the kitchen</button>' +
+      '</form>' +
+      '<p class="small muted" style="margin:14px 0 0">Rather talk to somebody? ' +
+      '<a href="' + STORE.phoneHref + '">' + esc(STORE.phone) + '</a></p>');
+    void open;
+  }
+
   /* ---------------- STORM MODE ---------------- */
   function setStorm(on){
     document.documentElement.dataset.storm = on ? "on" : "off";
@@ -518,6 +561,9 @@ const TR = (() => {
 
     /* The one action worth having permanently in reach on a phone
        is ordering food, not a contact form. */
+    /* Href is still a real link, so it works with JS off and can
+       be opened in a new tab. The click handler intercepts it on
+       phones and opens the kitchen in place. */
     var onBakery = location.pathname.indexOf("bakery.html") > -1;
     var href = onBakery ? "#order" : "bakery.html#order";
 
@@ -576,8 +622,16 @@ const TR = (() => {
      something to sit on.                                        */
   function signAndHeader(){
     var head  = $(".site-head");
-    var signs = $$(".brand .hangsign__plate, .brand img");
     var still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    /* motion.js builds the hanging sign after this file runs, so the
+       plate does not exist yet at init. Resolve it lazily and cache
+       it once it turns up, rather than binding to nothing. */
+    var signs = [];
+    function targets(){
+      if (!signs.length) signs = $$(".brand .hangsign__plate, .brand img");
+      return signs;
+    }
 
     var last = window.scrollY || window.pageYOffset;
     var vel = 0, raf = 0, settle = 0;
@@ -591,14 +645,14 @@ const TR = (() => {
         last = y;
 
         if (head) head.classList.toggle("is-scrolled", y > 40);
-        if (still || !signs.length) return;
+        if (still || !targets().length) return;
 
         /* velocity, damped — a heavy sign has momentum */
         vel = vel * 0.82 + d * 0.18;
         var tilt = Math.max(-7, Math.min(7, vel * 0.55));
         var grow = 1 + Math.min(1, y / Math.max(1, window.innerHeight * 0.5)) * 0.18;
 
-        signs.forEach(function(el){
+        targets().forEach(function(el){
           el.style.setProperty("--sign-tilt", tilt.toFixed(2) + "deg");
           el.style.setProperty("--sign-grow", grow.toFixed(3));
         });
@@ -607,13 +661,60 @@ const TR = (() => {
         clearTimeout(settle);
         settle = setTimeout(function(){
           vel = 0;
-          signs.forEach(function(el){ el.style.setProperty("--sign-tilt", "0deg"); });
+          targets().forEach(function(el){ el.style.setProperty("--sign-tilt", "0deg"); });
         }, 140);
       });
     };
 
     window.addEventListener("scroll", run, { passive:true });
     run();
+  }
+
+  /* ---------------- THE SIGN ANSWERS THE PHONE ----------------
+     Tilt the handset and the sign leans with it, the way a sign
+     on two chains would. Uses the device's roll (gamma), damped
+     and clamped so it is a lean, not a spin.
+
+     iOS needs an explicit grant, and only from a real gesture, so
+     we ask once on the first tap and never nag again.            */
+  function signTilt(){
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (!window.DeviceOrientationEvent) return;
+
+    var signs = [];
+    function targets(){
+      if (!signs.length) signs = $$(".brand .hangsign__plate, .brand img");
+      return signs;
+    }
+
+    var lean = 0, raf = 0;
+    function onTilt(e){
+      var g = e.gamma;                       /* roll, -90..90 */
+      if (g === null || g === undefined) return;
+      /* damp hard: a heavy sign does not track a wobbling hand */
+      lean = lean * 0.86 + Math.max(-9, Math.min(9, g * 0.22)) * 0.14;
+      if (raf) return;
+      raf = requestAnimationFrame(function(){
+        raf = 0;
+        targets().forEach(function(el){
+          el.style.setProperty("--sign-lean", lean.toFixed(2) + "deg");
+        });
+      });
+    }
+
+    function listen(){ window.addEventListener("deviceorientation", onTilt, { passive:true }); }
+
+    if (typeof DeviceOrientationEvent.requestPermission === "function"){
+      var ask = function(){
+        document.removeEventListener("touchend", ask);
+        DeviceOrientationEvent.requestPermission()
+          .then(function(state){ if (state === "granted") listen(); })
+          .catch(function(){});
+      };
+      document.addEventListener("touchend", ask, { once:true, passive:true });
+    } else {
+      listen();
+    }
   }
 
   /* ---------------- INIT ---------------- */
@@ -674,6 +775,22 @@ const TR = (() => {
       }
       const tell = e.target.closest("[data-tellus]");
       if (tell){ tellUsModal(tell.dataset.tellus === "true" ? "" : tell.dataset.tellus); return; }
+      var cta = e.target.closest(".dockbar__cta");
+      if (cta && window.matchMedia("(max-width:1010px)").matches){
+        e.preventDefault();
+        orderModal();
+        return;
+      }
+      var addit = e.target.closest("[data-additem]");
+      if (addit){
+        var ta = $("#oit");
+        if (ta){
+          var v = ta.value.trim();
+          ta.value = (v ? v + ", " : "") + addit.dataset.additem;
+          ta.focus();
+        }
+        return;
+      }
       const close = e.target.closest("[data-close]");
       if (close){ closeModal(); }
     });
@@ -709,6 +826,16 @@ const TR = (() => {
           <button class="btn btn--wide" data-close style="margin-top:18px">Done</button>`;
         return;
       }
+      const of_ = e.target.closest("[data-orderform]");
+      if (of_){
+        e.preventDefault();
+        const fd = new FormData(of_);
+        $("#trModalTitle").textContent = "In the kitchen";
+        $(".modal-body").innerHTML = receipt(fd.get("name") || "Neighbor",
+          `<div class="rw"><span>PICKUP</span><span>${esc(fd.get("when"))}</span></div>` +
+          `<div style="margin-top:8px">${esc(fd.get("items"))}</div>`, 1);
+        return;
+      }
       const sf = e.target.closest("[data-fakeform]");
       if (sf){
         e.preventDefault();
@@ -718,7 +845,7 @@ const TR = (() => {
       }
     });
 
-    heroVideo(); dockbar(); signAndHeader();
+    heroVideo(); dockbar(); signAndHeader(); signTilt();
     paintOpenPills(); paintBoard(); paintLists(); paintMeters();
     paintKits(); paintRequests(); paintBakery(); ticker(); reveals(); driveBars();
     setInterval(paintOpenPills, 60000);

@@ -12,13 +12,12 @@
      · they drift with the scroll, so they sit in the scene
        instead of on top of it
 
-   TIMING. An American crow beats around three times a second in
-   level flight, and it covers ground unhurriedly. The sheet holds
-   18 beat frames plus 7 of glide, so the beat is 18/25 of the
-   cycle: a 0.44s cycle puts the beat itself near 0.32s. Faster
-   than that and it turns into a sparrow; slower and it swims.
-   Crossing takes 38-70s, because a bird in the middle distance
-   does not shoot across a landscape.
+   TIMING. These are distant birds, and distance flattens motion:
+   the further away something is, the slower it appears to move
+   even though it is doing the same thing. So the beat runs long
+   and the crossing runs very long — two and a half to four
+   minutes to clear the frame. They should register as something
+   happening at the edge of the valley, not as an animation.
    ========================================================== */
 
 (function () {
@@ -51,9 +50,9 @@
          appears slower because it is further from the eye. */
       var scale = 0.30 + (1 - depth) * 0.42;
       var top   = SKY_TOP + t * (SKY_BOTTOM - SKY_TOP) + (i % 2 ? 3.5 : -2.5);
-      var cross = 58 + depth * 34 + (i % 3) * 8;        /* seconds to cross */
+      var cross = 150 + depth * 70 + (i % 3) * 22;      /* seconds to cross */
       var delay = -(i * 6 + (i % 3) * 3.5);
-      var flap  = 0.62 + depth * 0.16 + (i % 2) * 0.05; /* ~2 beats/sec, cruising */
+      var flap  = 1.45 + depth * 0.35 + (i % 2) * 0.12; /* far off, unhurried */
 
       crow.style.cssText =
         "top:" + top.toFixed(1) + "%;" +
@@ -130,20 +129,37 @@
   var RATIO  = 190 / 147; /* cell aspect */
   var RUN_MS = 7600;      /* one performance */
 
-  function place(el, beam, h) {
-    var r = beam.getBoundingClientRect();
+  /* Land it on the sign's SHOULDER — the flatter stretch of the
+     carved top edge, right of the peak with the firs on it. The
+     beam rides above the top of the screen, so nothing can stand
+     on it; the shoulder is the highest thing actually visible. */
+  function place(el, plate, h) {
+    var r = plate.getBoundingClientRect();
+
+    var SHOULDER_X = 0.62;    /* across the plate, right of the peak */
+    var SHOULDER_Y = 0.16;    /* down from the plate's top edge      */
+
+    var landX = r.left + r.width * SHOULDER_X;
+    var landY = r.top + r.height * SHOULDER_Y;
+
+    /* A bird needs room above whatever it stands on. Size it to
+       the headroom that actually exists rather than assuming. */
+    var headroom = landY - 4;
+    if (headroom < h * FEET) h = Math.max(22, headroom / FEET);
+
     var w = h * RATIO;
-    el.style.height = h + "px";
-    el.style.width = w + "px";
-    /* stand it ON the beam: feet line to the top of the beam */
-    el.style.left = Math.round(r.left + r.width * 0.46 - w * 0.5) + "px";
-    el.style.top  = Math.round(r.top + window.scrollY - h * FEET + 2) + "px";
+    el.style.height = Math.round(h) + "px";
+    el.style.width  = Math.round(w) + "px";
+    el.style.left = Math.round(landX - w * 0.5) + "px";
+    el.style.top  = Math.round(landY + window.scrollY - h * FEET) + "px";
   }
 
   function init() {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    var beam = document.querySelector(".brand .hangsign__beam");
-    if (!beam) return;
+    /* motion.js builds the sign after this file loads, so resolve
+       the plate at run time rather than at init. */
+    function plateNow(){ return document.querySelector(".brand .hangsign__plate"); }
+    if (!document.querySelector(".brand")) return;
 
     var el = document.createElement("div");
     el.className = "perchcrow";
@@ -152,7 +168,7 @@
     el.style.setProperty("--pc-run", RUN_MS + "ms");
     document.body.appendChild(el);
 
-    var h = window.innerWidth < 900 ? 34 : 44;   /* a crow is small next to a shop sign */
+    var h = window.innerWidth < 900 ? 30 : 40;   /* a crow is small next to a shop sign */
     var busy = false;
 
     function run() {
@@ -160,7 +176,9 @@
       /* only when the header is actually on screen */
       if ((window.scrollY || window.pageYOffset) > window.innerHeight * 0.6) return;
       busy = true;
-      place(el, beam, h);
+      var plate = plateNow();
+      if (!plate) { busy = false; return; }
+      place(el, plate, h);
       el.classList.remove("is-flying");
       void el.offsetWidth;               /* restart the animation */
       el.classList.add("is-flying");
@@ -172,8 +190,9 @@
 
     /* keep it on the beam if the header moves under it */
     window.addEventListener("resize", function () {
-      h = window.innerWidth < 900 ? 34 : 44;
-      if (busy) place(el, beam, h);
+      h = window.innerWidth < 900 ? 30 : 40;
+      var pl = plateNow();
+      if (busy && pl) place(el, pl, h);
     }, { passive: true });
 
     setTimeout(run, 3800);                          /* first visit */
