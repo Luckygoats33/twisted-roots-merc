@@ -96,6 +96,10 @@
 .shopbar__count{
   margin:0; font-family:var(--f-display); font-weight:700; font-size:1rem; line-height:1.4;
 }
+/* .btn sets display:inline-flex on a class, which outranks the UA
+   sheet's [hidden]{display:none}. Without this the reset button
+   sits there offering to clear filters nobody has set. */
+[data-shopreset][hidden]{ display:none }
 
 
 /* ==========================================================
@@ -173,19 +177,25 @@
    Every control on this page is something you press with a
    thumb, so nothing here is allowed under 44px.
    ========================================================== */
-@media (max-width:640px){
+/* Size first, by input device rather than by width — a 768px
+   tablet is still a thumb. */
+@media (max-width:640px), (pointer:coarse){
   .chips--filter .chip{
     min-height:44px; padding:10px 15px; display:inline-flex; align-items:center;
   }
+  .sortbox select{ min-height:44px }
+  .prodcard__btn{ min-height:44px; padding:11px 18px }
+}
+
+@media (max-width:640px){
   .sortbox{ width:100%; justify-content:space-between }
-  .sortbox select{ min-height:44px; flex:1; max-width:62% }
+  .sortbox select{ flex:1; max-width:62% }
   .filters__group--row{ gap:14px }
   .filters__group--row > .chips--filter{ width:100% }
   .filters__group--row .chip{ flex:1 }
 
   .shopgrid{ grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr)) }
   .prodcard{ padding:16px 18px 16px }
-  .prodcard__btn{ min-height:44px; padding:11px 18px }
   .shopbar__count{ font-size:.94rem }
 }
 

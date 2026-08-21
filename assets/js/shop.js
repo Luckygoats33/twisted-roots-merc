@@ -130,6 +130,14 @@
      you ask for it.
      ========================================================== */
 
+  /* "Most on hand" means how deep the shelf is. A made-to-order
+     sandwich carries a sentinel 99 in the data, which is not a
+     count of anything, so it sorts last rather than pretending to
+     be the deepest-stocked thing in the building. */
+  function onHand(it) {
+    return (it.kind === "kitchen" && it.q >= 99) ? -1 : it.q;
+  }
+
   function stockOf(it) {
     if (it.q <= 0) return "out";
     if (it.kind === "kitchen") return it.q <= 4 ? "low" : "in";
@@ -284,7 +292,7 @@
       if (by === "name-asc")   return a.it.n.localeCompare(b2.it.n);
       if (by === "price-asc")  return a.it.p - b2.it.p || a.it.n.localeCompare(b2.it.n);
       if (by === "price-desc") return b2.it.p - a.it.p || a.it.n.localeCompare(b2.it.n);
-      if (by === "qty-desc")   return b2.it.q - a.it.q || a.it.n.localeCompare(b2.it.n);
+      if (by === "qty-desc")   return onHand(b2.it) - onHand(a.it) || a.it.n.localeCompare(b2.it.n);
       /* relevance: score when there is a query, shelf order when not */
       if (S.q) return b2.s - a.s || a.it.n.localeCompare(b2.it.n);
       return a.it.ord - b2.it.ord;

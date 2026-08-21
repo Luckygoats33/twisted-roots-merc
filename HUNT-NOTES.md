@@ -33,7 +33,8 @@ Chrome parity was verified by diffing everything between `<body>` and `<main>`, 
 everything after `</main>`, against `yard.html`:
 
 - footer chrome: **byte-identical**
-- header chrome: **byte-identical apart from one `aria-current="page"`** — see §5
+- header chrome: **byte-identical** once `aria-current="page"` is normalised — hunt is
+  not in the nav, so it has no current-page marker. See §5.1.
 
 ### Re-building after editing `_parts/hunt.html`
 
@@ -111,7 +112,7 @@ its own meter wall would read as a duplicate of the storm wall.
 |---|---|---|
 | `assets/img/forest-road.jpg` | hero | "Rain falling through dark coastal trees before daylight" |
 | `assets/img/tr-interior-sm.jpg` | good card 1 | "The front counter and the shelves behind it" |
-| `assets/img/rope-tarp.jpg` | good card 2 | "Coiled rope and a steel hook" |
+| `assets/img/hunt-field-sm.jpg` | good card 2 | "Blaze orange vest, knife, ammunition and binoculars on a shop counter" |
 | `assets/img/tools-wall.jpg` | good card 3 | "Tools hanging on a wall rack" |
 | `assets/img/camping.jpg` | good card 4 | "Night sky over a snowy ridge" |
 | `assets/img/coastal-forest.jpg` | survival figframe | "Fog lying across a forested ridge above a wet highway" |
@@ -120,6 +121,15 @@ Alt text describes what is actually in each photograph rather than what the sect
 about — `forest-road.jpg`, despite its filename, is rain in dark foliage, not a road,
 and `shelves-goods.jpg` (an obvious first pick) is a stack of pink Japanese canned fish,
 so it was rejected.
+
+`hunt-field.jpg` / `hunt-field-sm.jpg` appeared in `assets/img/` partway through this
+build — another process shot a proper department still life (blaze vest, ammunition
+boxes, fixed blade, bone saw, whetstone, binoculars, rope, wool socks) and wired it into
+`merc.html` and `index.html`. The small crop is now good card 2 here, with the same alt
+text those pages use. The **hero was deliberately left as `forest-road.jpg`**: every
+other department hero on this site is atmosphere, not merchandise, and the department
+still life already appears twice elsewhere. Swapping the hero to `hunt-field.jpg` is a
+one-line change in `_parts/hunt.html` if that call goes the other way.
 
 ---
 
@@ -234,24 +244,27 @@ store's opinion.
 
 ## 5. Known gaps / placeholder
 
-1. **Hunt & Field is not in the site nav.** The header and footer come from `merc.html`,
-   which is off-limits, so there is no `<a href="hunt.html">` anywhere on the site and
-   nothing links into this page. It is reachable only by URL. To wire it up, someone who
-   owns the shared files needs to add:
-   - a nav link in `merc.html`'s `<nav class="nav">` and `<div class="head-cta">` region,
-     which propagates to every page on the next build;
-   - a footer link under "The Store" in `merc.html`;
-   - a `.good` card on `merc.html`'s department grid and on `index.html`;
-   - an entry in `_parts/pages.json` (with the caveat in §1 about `build.py`'s thin head);
-   - a `<url>` entry in `sitemap.xml`.
-   Because hunt.html carries no `aria-current="page"`, it is the *only* difference
-   between its header chrome and yard.html's.
-2. **`?v=` hashes drift.** `merc.html` moved from `site.css?v=794fc26b` to
-   `?v=06a2175b` while this page was being written — another process is rewriting the
-   built pages. The build script reads the hashes out of merc at build time, so re-run
-   it after any asset-hash bump or `hunt.html` will point at a stale stylesheet.
-3. **`merc.html` has no `crows.js` tag**; every other built page does. The script tag is
-   copied from `yard.html`. If crows.js is ever versioned again, re-run the build.
+1. **Hunt & Field is only half-wired into the site.** While this page was being built
+   another process added inbound links, so it is no longer orphaned:
+   - `index.html` has a `.good` card (No. 07) pointing at `hunt.html`
+   - `merc.html` has an in-body section with an "All of Hunt & Field" button
+   Still missing, and all of it lives in files this task does not own:
+   - a nav link in `merc.html`'s `<nav class="nav">`, which propagates to every page
+   - a footer link under "The Store" in `merc.html`
+   - an entry in `_parts/pages.json` (with the caveat in §1 about `build.py`'s thin head)
+   - a `<url>` entry in `sitemap.xml` — currently no `hunt` entry at all
+   Because `hunt.html` is not in the nav it carries no `aria-current="page"`, which after
+   normalising for that attribute makes its header and footer chrome **byte-identical to
+   `yard.html`, `storm.html`, `local.html`, `roots.html` and `bakery.html`**.
+2. **`?v=` hashes and the whole chrome drift, fast.** During this build `merc.html` moved
+   `site.css` from `?v=794fc26b` to `?v=06a2175b`, gained `cart.js`, re-versioned
+   `site.js`, and changed its nav CTA from "Check Stock" to "Shop Now"/`shop.html`. The
+   build script therefore derives the stylesheet block, the script block and the entire
+   header/footer from whatever `merc.html` says at build time rather than hardcoding any
+   of it. **Re-run it after any shared-chrome change**, then re-diff against `yard.html`.
+3. **`merc.html` has no `crows.js` tag**; every other built page does. The tag is copied
+   verbatim from `yard.html` (it re-versioned to `?v=a06dbbea` mid-build). The build
+   script skips the copy if merc ever grows its own.
 4. **Prices and quantities are whatever is in `catalog.js`.** All 48 hunt items are
    currently in stock, so the page has never been seen with a "low" or "out" badge on it.
 5. **`data-tellus` button** ("Ask us to stock a caliber") uses the existing site-wide

@@ -168,4 +168,7 @@
   <url><loc>https://twistedrootsmerc.com/blog/storm-go-bag-vs-stay-home-kit.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://twistedrootsmerc.com/blog/storm-rotating-your-kit.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://twistedrootsmerc.com/blog/storm-whats-on-the-storm-wall.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <url><loc>https://twistedrootsmerc.com/hunt.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://twistedrootsmerc.com/shop.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
 </urlset>

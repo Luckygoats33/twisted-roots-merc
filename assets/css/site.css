@@ -1045,3 +1045,26 @@ img.hero-still{ z-index:0 }
   letter-spacing:.14em; text-transform:uppercase; padding:11px 13px; border-bottom:2px solid var(--ink); opacity:.7}
 .tr-prose td{padding:12px 13px; border-bottom:1px solid var(--line); vertical-align:top}
 .tr-prose strong{font-weight:700}
+
+/* ==========================================================
+   HEADER FIT
+   The nav grew: Merc, Bakery, The Yard, Storm, Hunt, Local,
+   Our Roots, The Board, Visit — plus Shop Now and the basket.
+   That no longer fits beside the hanging sign much under
+   1240px, so the burger takes over earlier rather than the
+   header quietly overflowing the page.
+   ========================================================== */
+@media (max-width:1239px){
+  .burger{ display:block }
+  .nav{
+    position:fixed; inset:var(--head-h) 0 auto 0;
+    flex-direction:column; align-items:stretch; gap:0;
+    padding:10px 22px 24px; display:none;
+    max-height:calc(100dvh - var(--head-h)); overflow:auto;
+  }
+  .nav.open{ display:flex }
+  .nav a{ padding:16px 4px; font-size:.95rem; border-bottom:1px solid var(--line); white-space:normal }
+  .nav a::after{ display:none }
+  .head-cta .btn{ display:none }
+  .carttoggle{ padding:10px 13px; font-size:.72rem }
+}
