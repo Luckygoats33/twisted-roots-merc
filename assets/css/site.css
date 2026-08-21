@@ -1053,15 +1053,28 @@ img.hero-still{ z-index:0 }
    MEASURED, not guessed. With the labels trimmed to one word
    each (Yard, Roots, Board), the real desktop nav row is 651px;
    with the sign at 152px and the header buttons at 81px the whole
-   header needs about 949px. The burger therefore takes over below
-   1180px, which leaves ~230px of headroom.
+   header needs about 949px. The burger therefore took over below
+   1180px.
 
    An earlier version of this measurement cloned the nav and got
    1375px — wrong, because the clone inherited the MOBILE column
    padding. Measure the element in its real state or do not
    measure it.
+
+   REVISED once the ten links became five groups. Re-measured the
+   same way — by switching the mobile media blocks off in the
+   CSSOM and reading the real desktop layout, not a clone:
+
+       Shop 70 · Kitchen 94 · Local 76 · Our Roots 96 · Visit 56
+       nav row 401 · sign 152 · header buttons 398 · gaps 36
+       = 987px, and 902px below 1181 where the Open pill hides
+
+   So the burger now takes over below 1011px rather than 1180px,
+   which matches the older block just below and means a 1093px
+   laptop — the common case — finally gets the real nav instead
+   of a hamburger.
    ========================================================== */
-@media (max-width:1179px){
+@media (max-width:1010px){
   .burger{ display:block }
   .nav{
     position:fixed; inset:var(--head-h) 0 auto 0;
@@ -1098,3 +1111,89 @@ img.hero-still{ z-index:0 }
   .rc-ings{position:static}
 }
 @media print{ .rc-ings{position:static} .rc-steps > li::before{background:none; border:1px solid #000} }
+
+
+/* ==========================================================
+   NAV - FIVE ITEMS, THREE OF THEM GROUPED
+   ----------------------------------------------------------
+   Ten links across the header crowded the hanging sign and were
+   what pushed the burger breakpoint all the way up to 1179px.
+   Five reads as a row instead of a list, and every page still
+   has a home: Shop holds the four selling floors, Kitchen holds
+   the bakery and the recipes, Local holds the makers and the
+   two boards.
+
+   Desktop opens on hover AND on click, because hover alone is
+   unreachable from a keyboard and a lie on a touchscreen. Below
+   the burger breakpoint the same markup is a plain accordion.
+   ========================================================== */
+/* stretch to the full header height so top:100% on the panel lands
+   on the header's bottom edge, not partway up it */
+.navitem{ position:relative; display:flex; align-items:center; align-self:stretch }
+.navitem__top{
+  background:none; border:0; cursor:pointer; color:inherit;
+  /* deliberately identical to .nav a so grouped and plain items
+     sit on the same baseline with the same rhythm */
+  font-family:var(--f-display); font-weight:700; font-size:.73rem;
+  letter-spacing:.1em; text-transform:uppercase; padding:10px 10px;
+  opacity:.78; position:relative; white-space:nowrap;
+  display:inline-flex; align-items:center; gap:6px;
+}
+.navitem__top::after{
+  content:""; position:absolute; left:10px; right:22px; bottom:4px; height:2px;
+  background:var(--rust); transform:scaleX(0); transition:transform .2s;
+}
+.navitem:hover .navitem__top,
+.navitem.open .navitem__top{ opacity:1 }
+.navitem:hover .navitem__top::after,
+.navitem.open .navitem__top::after{ transform:scaleX(1) }
+/* a current page inside a group lights the group up */
+.navitem:has(a[aria-current="page"]) .navitem__top{ opacity:1 }
+.navitem:has(a[aria-current="page"]) .navitem__top::after{ transform:scaleX(1) }
+[data-storm="on"] .navitem__top::after{ background:var(--amber-hi) }
+
+.navitem__car{
+  width:0; height:0; border-left:4px solid transparent; border-right:4px solid transparent;
+  border-top:5px solid currentColor; opacity:.55; transition:transform .2s;
+}
+.navitem.open .navitem__car{ transform:rotate(180deg) }
+
+.subnav{
+  position:absolute; top:100%; left:0; min-width:214px;
+  background:var(--paper,#F4EDE1); border:1px solid var(--line-2);
+  border-radius:var(--r); box-shadow:0 18px 40px rgba(30,20,10,.18);
+  padding:8px; display:none; flex-direction:column; z-index:250;
+}
+.navitem.open > .subnav{ display:flex }
+@media (hover:hover) and (min-width:1011px){
+  .navitem:hover > .subnav{ display:flex }
+}
+.nav .subnav a{
+  padding:11px 12px; font-size:.72rem; opacity:.85; border-radius:6px;
+  white-space:nowrap; border-bottom:0;
+}
+.nav .subnav a::after{ display:none }
+.nav .subnav a:hover{ background:rgba(0,0,0,.06); opacity:1 }
+.nav .subnav a[aria-current="page"]{ background:rgba(184,92,56,.12); opacity:1 }
+[data-storm="on"] .subnav{ background:#12313B; border-color:rgba(255,255,255,.22) }
+[data-storm="on"] .nav .subnav a:hover{ background:rgba(255,255,255,.10) }
+
+/* ---- inside the burger drawer ---- */
+@media (max-width:1010px){
+  .navitem{ display:block; border-bottom:1px solid var(--line) }
+  .navitem__top{
+    display:flex; width:100%; justify-content:space-between;
+    padding:16px 4px; font-size:.95rem; min-height:48px; opacity:.9;
+  }
+  .navitem__top::after{ display:none }
+  .navitem__car{ opacity:.7 }
+  .subnav{
+    position:static; min-width:0; background:transparent; border:0;
+    box-shadow:none; padding:0 0 10px 16px; border-radius:0;
+  }
+  .nav .subnav a{
+    font-size:.85rem; padding:12px 6px; min-height:44px;
+    display:flex; align-items:center; border-bottom:0; letter-spacing:.08em;
+  }
+  [data-storm="on"] .navitem{ border-bottom-color:rgba(255,255,255,.14) }
+}

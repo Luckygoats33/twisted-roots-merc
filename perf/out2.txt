@@ -1,0 +1,91 @@
+================================================================================
+shop-desktop  |  desktop simulate
+  SCORES: perf=98 a11y=95 bp=96 seo=100
+  FCP=526ms LCP=1012ms TBT=0ms CLS=0.053 SI=526ms TTFB=1ms
+  total bytes: 1174 KB
+  --PERFORMANCE FAILURES--
+    w= 0 score=0.00  cache-insight                              Est savings of 1,078 KiB
+    w= 0 score=0.00  image-delivery-insight                     Est savings of 434 KiB
+    w= 0 score=0.00  network-dependency-tree-insight            
+    w= 0 score=0.00  render-blocking-insight                    Est savings of 310 ms
+    w= 0 score=0.00  unminified-css                             Est savings of 49 KiB
+    w= 0 score=0.00  unminified-javascript                      Est savings of 45 KiB
+    w= 0 score=0.00  unused-css-rules                           Est savings of 124 KiB
+    w= 0 score=0.00  unused-javascript                          Est savings of 23 KiB
+    w= 0 score=0.50  document-latency-insight                   Est savings of 7 KiB
+  --ACCESSIBILITY FAILURES--
+    w= 7 score=0.00  color-contrast                             
+    w= 3 score=0.00  heading-order                              
+  --BEST-PRACTICES FAILURES--
+    w= 1 score=0.00  image-aspect-ratio                         
+================================================================================
+shop-mobile  |  mobile simulate
+  SCORES: perf=68 a11y=95 bp=96 seo=100
+  FCP=3178ms LCP=6837ms TBT=187ms CLS=0.028 SI=3272ms TTFB=1ms
+  total bytes: 1174 KB
+  --PERFORMANCE FAILURES--
+    w=25 score=0.07  largest-contentful-paint                   6.8 s
+    w=10 score=0.44  first-contentful-paint                     3.2 s
+    w= 0 score=0.00  cache-insight                              Est savings of 1,078 KiB
+    w= 0 score=0.00  forced-reflow-insight                      
+    w= 0 score=0.00  image-delivery-insight                     Est savings of 91 KiB
+    w= 0 score=0.00  network-dependency-tree-insight            
+    w= 0 score=0.00  render-blocking-insight                    Est savings of 1,100 ms
+    w= 0 score=0.00  unminified-css                             Est savings of 49 KiB
+    w= 0 score=0.00  unminified-javascript                      Est savings of 45 KiB
+    w= 0 score=0.00  unused-css-rules                           Est savings of 115 KiB
+    w= 0 score=0.00  unused-javascript                          Est savings of 23 KiB
+    w= 0 score=0.50  document-latency-insight                   Est savings of 7 KiB
+    w= 0 score=0.54  interactive                                6.9 s
+    w= 0 score=0.54  max-potential-fid                          240 ms
+  --ACCESSIBILITY FAILURES--
+    w= 7 score=0.00  color-contrast                             
+    w= 3 score=0.00  heading-order                              
+  --BEST-PRACTICES FAILURES--
+    w= 1 score=0.00  image-aspect-ratio                         
+================================================================================
+journal-desktop  |  desktop simulate
+  SCORES: perf=94 a11y=98 bp=92 seo=100
+  FCP=857ms LCP=1572ms TBT=0ms CLS=0.013 SI=857ms TTFB=1ms
+  total bytes: 1446 KB
+  --PERFORMANCE FAILURES--
+    w=25 score=0.78  largest-contentful-paint                   1.6 s
+    w= 0 score=0.00  cache-insight                              Est savings of 1,277 KiB
+    w= 0 score=0.00  image-delivery-insight                     Est savings of 519 KiB
+    w= 0 score=0.00  lcp-discovery-insight                      
+    w= 0 score=0.00  network-dependency-tree-insight            
+    w= 0 score=0.00  render-blocking-insight                    Est savings of 560 ms
+    w= 0 score=0.00  unminified-css                             Est savings of 45 KiB
+    w= 0 score=0.00  unminified-javascript                      Est savings of 59 KiB
+    w= 0 score=0.00  unused-css-rules                           Est savings of 122 KiB
+    w= 0 score=0.50  document-latency-insight                   Est savings of 56 KiB
+    w= 0 score=0.50  unused-javascript                          Est savings of 23 KiB
+  --ACCESSIBILITY FAILURES--
+    w= 3 score=0.00  heading-order                              
+  --BEST-PRACTICES FAILURES--
+    w= 1 score=0.00  image-aspect-ratio                         
+    w= 1 score=0.00  errors-in-console                          
+================================================================================
+journal-mobile  |  mobile simulate
+  SCORES: perf=68 a11y=98 bp=92 seo=100
+  FCP=3309ms LCP=9161ms TBT=0ms CLS=0.012 SI=3366ms TTFB=1ms
+  total bytes: 1446 KB
+  --PERFORMANCE FAILURES--
+    w=25 score=0.01  largest-contentful-paint                   9.2 s
+    w=10 score=0.40  first-contentful-paint                     3.3 s
+    w= 0 score=0.00  cache-insight                              Est savings of 1,277 KiB
+    w= 0 score=0.00  image-delivery-insight                     Est savings of 550 KiB
+    w= 0 score=0.00  lcp-discovery-insight                      
+    w= 0 score=0.00  network-dependency-tree-insight            
+    w= 0 score=0.00  render-blocking-insight                    Est savings of 2,070 ms
+    w= 0 score=0.00  unminified-css                             Est savings of 45 KiB
+    w= 0 score=0.00  unminified-javascript                      Est savings of 59 KiB
+    w= 0 score=0.00  unused-css-rules                           Est savings of 113 KiB
+    w= 0 score=0.00  unused-javascript                          Est savings of 23 KiB
+    w= 0 score=0.32  interactive                                9.2 s
+    w= 0 score=0.50  document-latency-insight                   Est savings of 56 KiB
+  --ACCESSIBILITY FAILURES--
+    w= 3 score=0.00  heading-order                              
+  --BEST-PRACTICES FAILURES--
+    w= 1 score=0.00  image-aspect-ratio                         
+    w= 1 score=0.00  errors-in-console                          

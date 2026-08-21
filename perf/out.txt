@@ -1,0 +1,31 @@
+================================================================================
+index-mobile  |  mobile simulate
+  SCORES: perf=58 a11y=98 bp=96 seo=100
+  FCP=3170ms LCP=16374ms TBT=260ms CLS=0.139 SI=3714ms TTFB=1ms
+  total bytes: 4085 KB
+  --PERFORMANCE FAILURES--
+    w=30 score=0.83  total-blocking-time                        260 ms
+    w=25 score=0.00  largest-contentful-paint                   16.4 s
+    w=25 score=0.79  cumulative-layout-shift                    0.139
+    w=10 score=0.44  first-contentful-paint                     3.2 s
+    w=10 score=0.85  speed-index                                3.7 s
+    w= 0 score=0.00  cache-insight                              Est savings of 3,970 KiB
+    w= 0 score=0.00  cls-culprits-insight                       
+    w= 0 score=0.00  forced-reflow-insight                      
+    w= 0 score=0.00  image-delivery-insight                     Est savings of 1,516 KiB
+    w= 0 score=0.00  network-dependency-tree-insight            
+    w= 0 score=0.00  render-blocking-insight                    Est savings of 1,190 ms
+    w= 0 score=0.00  unminified-css                             Est savings of 45 KiB
+    w= 0 score=0.00  unminified-javascript                      Est savings of 36 KiB
+    w= 0 score=0.00  unused-css-rules                           Est savings of 98 KiB
+    w= 0 score=0.00  mainthread-work-breakdown                  2.3 s
+    w= 0 score=0.00  layout-shifts                              1 layout shift found
+    w= 0 score=0.05  interactive                                16.7 s
+    w= 0 score=0.33  max-potential-fid                          310 ms
+    w= 0 score=0.50  document-latency-insight                   Est savings of 19 KiB
+    w= 0 score=0.50  total-byte-weight                          Total size was 4,085 KiB
+    w= 0 score=0.50  unsized-images                             
+  --ACCESSIBILITY FAILURES--
+    w= 3 score=0.00  heading-order                              
+  --BEST-PRACTICES FAILURES--
+    w= 1 score=0.00  image-aspect-ratio                         

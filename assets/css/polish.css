@@ -1,0 +1,414 @@
+/* ==========================================================
+   TWISTED ROOTS MERC — POLISH
+   ----------------------------------------------------------
+   Additive. Loads LAST, after site.css / motion.css / roots.css /
+   mobile.css / shop.css. Nothing in here restructures anything —
+   every rule below fixes a defect measured during the UX audit
+   and is annotated with what was measured.
+
+   !important is used only where site.css already used it (the
+   "HEADER STATE — final word" block near the end of site.css).
+
+   Companion document: UX-AUDIT.md
+   ========================================================== */
+
+
+/* ==========================================================
+   1. FULL-BLEED BANDS OVERHANG THE VIEWPORT  [HIGH]
+   ----------------------------------------------------------
+   site.css:479 gives .fullbleed width:100vw with -50vw margins.
+   100vw includes the classic scrollbar, so on every desktop
+   viewport the band is ~15px wider than the page and sits 6px
+   off-centre to the left. Measured on index.html:
+
+     1024px viewport (clientWidth 1027) -> band left -6, right 1033
+     1280px          (1283)             -> left -6, right 1289
+     1440px          (1443)             -> left -6, right 1449
+     1920px          (1923)             -> left -6, right 1929
+
+   body{overflow-x:clip} (site.css:44) hides the scrollbar this
+   would otherwise create, so the symptom is silent: the three
+   cinema bands on index.html are cropped 6px each side and are
+   the only elements on the page not aligned to the grid.
+
+   mobile.css:519-521 already has the correct fix but scopes it
+   to max-width:1010px. All three .fullbleed sections are direct
+   children of <main>, which is full-width, so they never needed
+   to escape a container at any width.
+   ========================================================== */
+.fullbleed{
+  width:100%;
+  left:auto; right:auto;
+  margin-left:0; margin-right:0;
+}
+
+
+/* ==========================================================
+   2. HEADER CONTRAST OVER THE HERO  [HIGH — WCAG 1.4.3 fail]
+   ----------------------------------------------------------
+   site.css:765 sets the un-scrolled header to
+   rgba(244,237,225,.25) over a photographic hero, with ink
+   (#20180F) nav/burger/brand text on top.
+
+   Contrast measured by compositing the cream at .25 over the
+   actual hero pixels under the header strip (worst 120px-wide
+   sample across the bar, sRGB relative luminance):
+
+     local.html   maker-pottery.jpg   2.73:1   FAIL (needs 4.5)
+     bakery.html  bakery-case.jpg     3.16:1   FAIL
+     roots.html   owners-porch.jpg    3.84:1   FAIL
+     board.html   tr-storm.jpg        5.37:1   pass
+     storm.html   storm-coast.jpg    10.38:1   pass
+     index.html   w-river.jpg         9.36:1   pass
+     yard.html    lumber-rack.jpg    11.28:1   pass
+
+   Raising the alpha to .52 lifts the worst case to 5.35:1 while
+   keeping the header visibly translucent — the hero still reads
+   through it. Measured at .52: local 5.35, bakery 5.83,
+   roots 6.51, board 7.9.
+
+   The header text also changes with the hero VIDEO frame on
+   index.html, so a fixed floor is the only safe answer.
+   ========================================================== */
+.site-head{
+  background:rgba(244,237,225,.52) !important;
+}
+[data-storm="on"] .site-head{
+  background:rgba(18,49,59,.58) !important;
+}
+
+/* The scrolled header was pure white (rgba(255,255,255,.82),
+   site.css:768) on a site whose paper is #FBF7EF and whose cream
+   is #F4EDE1. It reads cold against every band it sits above.
+   Same alpha, warm base. */
+.site-head.is-scrolled{
+  background:rgba(251,247,239,.88) !important;
+}
+
+@supports not ((backdrop-filter:blur(2px)) or (-webkit-backdrop-filter:blur(2px))){
+  .site-head{ background:var(--cream) !important }
+  .site-head.is-scrolled{ background:var(--paper) !important }
+  [data-storm="on"] .site-head{ background:#12313B !important }
+}
+
+
+/* ==========================================================
+   3. THE DEMO DISCLAIMER IS THE FAINTEST TEXT IN THE RECEIPT
+      [BLOCKER — the user can believe a real order was placed]
+   ----------------------------------------------------------
+   Measured in the "Set aside for you" modal after reserving a
+   basket (site.js:846-853 -> receipt(), site.js:367-386):
+
+     "Set aside for you"                    title, 16.8px
+     "TR-260821-910"                        hold number, real-looking
+     "HELD UNTIL 8pm"                       computed from real hours
+     "It's behind the counter. Just say
+      your name."                           14.4px, full opacity
+     "This is a demo - in the live store
+      this drops straight into Square and
+      prints at the counter."               13.92px at opacity .66
+
+   The one sentence that says nothing happened is the smallest,
+   palest thing on screen (ink at 66% over paper = ~4.4:1, right
+   on the AA boundary) and sits BELOW three lines that read as a
+   completed transaction. This is the same p.small.muted that
+   follows .receipt in all three receipt-bearing flows (hold a
+   kit, order, reserve a basket).
+
+   This rule promotes it to a labelled notice. It cannot fix the
+   ordering of the modal (that is Patch 2 in UX-AUDIT.md) but it
+   makes the sentence impossible to skim past.
+   ========================================================== */
+.modal-body .receipt + p.small.muted{
+  opacity:1;
+  font-size:.9rem;
+  font-weight:600;
+  color:var(--rust);
+  background:rgba(142,72,38,.07);
+  border-left:3px solid var(--rust);
+  padding:12px 14px;
+  margin-top:18px;
+}
+.modal-body .receipt + p.small.muted::before{
+  content:"Demo site \2014 ";
+  font-family:var(--f-display);
+  font-weight:800;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  font-size:.72rem;
+  display:block;
+  margin-bottom:4px;
+}
+
+
+/* ==========================================================
+   4. TAP TARGETS BETWEEN 901px AND 1180px  [HIGH]
+   ----------------------------------------------------------
+   The header collapses to a burger below 1180px, which is the
+   site's own declaration that these widths are touch territory.
+   Every tap-target floor in mobile.css is scoped to
+   max-width:900px (mobile.css:319-333) or max-width:1010px.
+
+   Measured in the gap, at a 1024px viewport (clientWidth 1027):
+
+     .burger        69 x 43   (1px short)
+     .carttoggle    81 x 42   (2px short)  - also short at 360px
+     .chip          183 x 25  (19px short) - "Try" chips, index
+     .chip          200 x 25  - merc
+     .stormtoggle   166 x 39  - bakery, storm, hq footers
+     select#shopSort 192 x 40 - shop (also short at 768 and 834)
+
+   1024 is iPad landscape. Extending the existing floors to match
+   the burger breakpoint is the smallest correct change.
+   ========================================================== */
+@media (max-width:1180px){
+  .btn--sm{ min-height:44px; padding-block:11px }
+  .btn{ min-height:48px }
+  .chip{ min-height:44px; display:inline-flex; align-items:center }
+  .stormtoggle{ min-height:44px; display:inline-flex; align-items:center }
+  .burger{ min-height:44px; min-width:44px }
+  .carttoggle{ min-height:44px; display:inline-flex; align-items:center }
+  .searchbox button{ min-height:52px }
+  .field input,.field select,.sortbox select{ min-height:48px }
+  .prod .act .btn{ min-height:44px; padding-inline:16px }
+  /* The burger panel's own rows. .nav a is floored at 48px in
+     mobile.css:146 but only to 1010px, and .navitem__top (the
+     grouped accordion headers the panel builds) is not floored
+     anywhere. Measured at 1093px: "Shop" 70x39, "Kitchen" 94x39,
+     "Local" 76x39, "Our Roots" 96x39, "Visit" 56x39. */
+  .nav a,
+  .navitem__top{ min-height:48px; display:flex; align-items:center }
+  .foot-top a,
+  .foot-legal a,
+  a[href^="tel:"],
+  a[href^="mailto:"]{ display:inline-flex; align-items:center; min-height:44px }
+}
+
+/* The basket drawer's own controls are the only sub-44px targets
+   with NO mobile override anywhere (site.css:1012, 1015, 1017 —
+   grep "cartline" in mobile.css returns nothing). Measured
+   34x34 (minus/plus), 38x34 (quantity), ~20px (remove).
+   These are the controls a phone user touches most. */
+@media (max-width:1180px){
+  .cartline__qty button{ width:44px; height:44px }
+  .cartline__qty input{ width:48px; height:44px; font-size:16px }
+  .cartline__x{ min-width:44px; min-height:44px; padding:0; display:inline-flex; align-items:center; justify-content:center }
+  .cartdrawer__x{ min-width:44px; min-height:44px; display:inline-flex; align-items:center; justify-content:center; padding:0 }
+}
+
+
+/* ==========================================================
+   5. RAIN THAT RUNS WHEN THERE IS NO STORM  [MEDIUM]
+   ----------------------------------------------------------
+   motion.css:528-567 gives .rainlayer three infinite
+   background-position animations (2.1s, 1.25s and 0.72s) on the
+   element and both pseudo-elements. The element's base state is
+   opacity:0 (motion.css:531) — the animations run regardless.
+
+   .rainlayer is on index.html (x2), hunt.html, kitchen.html and
+   journal.html. With Storm Mode OFF that is six invisible
+   animations per page, one of them repainting at 0.72s, forever,
+   on battery.
+
+   Measured on index.html scrolled to the foot of the page,
+   Storm Mode off: 33 animations still in playState "running",
+   including all six rain animations. Nothing was on screen.
+   ========================================================== */
+html:not([data-storm="on"]) .rainlayer:not(.rainlayer--on):not(.is-on):not(.rainlayer--always),
+html:not([data-storm="on"]) .rainlayer:not(.rainlayer--on):not(.is-on):not(.rainlayer--always)::before,
+html:not([data-storm="on"]) .rainlayer:not(.rainlayer--on):not(.is-on):not(.rainlayer--always)::after{
+  animation-play-state:paused;
+}
+
+
+/* ==========================================================
+   6. ANIMATED WAVE CRESTS CROSSING THE HERO COPY  [MEDIUM]
+   ----------------------------------------------------------
+   .wavedivider--float is z-index:4 (motion.css:439) while the
+   hero copy block .hero-in is z-index:3 (site.css:163). The
+   band is clamp(64px, 8.5vw, 128px) tall and its three layers
+   scroll infinitely (15s at the fastest, 8.5s in storm). On a
+   short or landscape viewport the moving crests pass over the
+   hero motto and the two hero buttons.
+
+   Dropping it to 2 puts it above the hero image and the crows
+   (both z-index 2) but under the copy, which is where a divider
+   belongs. pointer-events were already none, so nothing changes
+   for the mouse.
+   ========================================================== */
+.wavedivider--float{ z-index:2 }
+
+/* The procedural root system is z-index:3 and spans the whole
+   document (roots.css:12-20). roots.css:66-71 lifts .wrap,
+   .wrap--mid, .wrap--narrow, .hero-in and .cinema-in above it —
+   but .ticker (index.html:185) is position:static with no
+   z-index (site.css:194), so the brown root fill paints over the
+   ticker's 0.8rem uppercase text. The root's lane is x = 30-190px
+   at these amplitudes, i.e. straight through the ticker's first
+   words. */
+.ticker{ position:relative; z-index:4 }
+
+
+/* ==========================================================
+   7. REDUCED-MOTION GAPS  [MEDIUM — WCAG 2.3.3]
+   ----------------------------------------------------------
+   motion.css and the JS modules are thorough: every JS effect
+   checks matchMedia itself (motion.js:30, roots.js:31,
+   crows.js:31, site.js:510/642/698). The gaps are all in CSS
+   that is TRIGGERED by JS but ANIMATED by CSS, so the JS guard
+   never sees it:
+
+     site.css:216   @keyframes flipin   board cells rotateX(-85deg)
+     site.css:346   @keyframes pop      modal scale-in
+     site.css:991   @keyframes cart-in  drawer slide
+     site.css:972   @keyframes add-pop  "Added" badge
+     site.css:188   .drive .bar i       width transition 1s
+     site.css:365   .meter .bar i       width transition .9s
+     site.css:104   .btn:hover          translateY(-2px)
+     site.css:268   .good .ph img:hover scale(1.06)
+     site.css:286   .card:hover         translateY(-3px)
+     site.css:139   .nav a::after       scaleX
+     mobile.css     contains NO prefers-reduced-motion block at
+                    all (dockbar :647, back-to-top :660,
+                    burger bars :738)
+     html{scroll-behavior:smooth}  site.css:41 — unguarded
+
+   The bars are the important ones: a reduce user still watches
+   eight stock meters grow, which is the exact vestibular trigger
+   the media query exists for.
+   ========================================================== */
+@media (prefers-reduced-motion:reduce){
+
+  html{ scroll-behavior:auto }
+
+  .flip,
+  .modal,
+  .modal-panel,
+  .cartdrawer__panel,
+  .btn--add.is-added::after,
+  .btn--add.is-max::after{
+    animation:none !important;
+  }
+
+  /* Bars must still reach their measured width — JS writes it as
+     an inline style. Kill the travel, keep the value. */
+  .drive .bar i,
+  .meter .bar i{
+    transition:none !important;
+  }
+
+  /* Hover lifts and underline sweeps */
+  .btn:hover,
+  .card:hover,
+  .good:hover,
+  .prodcard:hover{
+    transform:none !important;
+  }
+  .good .ph img,
+  .nav a::after{
+    transition:none !important;
+  }
+
+  /* mobile.css has no reduce block of its own */
+  .dockbar,
+  .dockbar__top,
+  .burger__box i,
+  .site-head{
+    transition:none !important;
+  }
+
+  /* Belt and braces for anything added later */
+  *,
+  *::before,
+  *::after{
+    animation-duration:.001ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;
+    scroll-behavior:auto !important;
+  }
+}
+
+
+/* ==========================================================
+   8. SMALL CONSISTENCY REPAIRS  [LOW / POLISH]
+   ========================================================== */
+
+/* 8a. The inert "While you're here..." chips on bakery.html:216-219
+   are <span class="pill"> that sit inside a form, next to real
+   controls, and look exactly like the tappable .chip buttons on
+   index and shop. Nothing happens when you press them. Until the
+   markup changes (Patch 8), make them read as labels, not
+   controls. Scoped to the order form so the pill rows elsewhere
+   on the site are untouched. */
+#order .pill{
+  cursor:default;
+  border-style:dashed;
+  opacity:.85;
+}
+
+/* 8b. .btn--add.in-cart turns pine green (site.css:967) but the
+   label still says "Add", so a returning user cannot tell the
+   item is already in the basket, or how many. A check mark is
+   the cheapest honest signal available without touching JS. */
+.btn--add.in-cart::before{
+  content:"\2713";
+  font-weight:900;
+  margin-right:2px;
+}
+
+/* 8c. The 260-card shop grid is 20,869px tall. content-visibility
+   is already doing the right thing; give the cards a stable
+   focus ring so keyboard users tabbing the grid never lose their
+   place behind a contained ancestor. */
+.prodcard:focus-within{
+  outline:3px solid var(--amber);
+  outline-offset:3px;
+}
+
+/* 8d. (merc.html:91 and visit.html:90 carry an inline
+   padding-top:clamp(48px,6vw,84px) that makes their first band
+   84/72 where every other page's tight band is 72/72. Inline
+   styles cannot be corrected from a stylesheet without
+   !important, and overriding a deliberate inline value from here
+   would be worse than the defect. See Patch 12 in UX-AUDIT.md.) */
+
+/* 8e. Search labels use .hide, which is display:none !important
+   (site.css:384). The accessible name still computes, but the
+   label can never be shown — not even on focus — and a
+   display:none label cannot be a fallback for a missing
+   placeholder. Swap the three search labels to a clip pattern so
+   they exist in the layout tree. */
+.searchbox label.hide{
+  display:block !important;
+  position:absolute;
+  width:1px; height:1px;
+  margin:-1px; padding:0;
+  overflow:hidden;
+  clip:rect(0 0 0 0);
+  clip-path:inset(50%);
+  white-space:nowrap;
+  border:0;
+}
+
+/* 8f. Give the skip link a home. The markup does not exist yet
+   (Patch 3); this styles it the moment it is added, so the patch
+   is a one-line HTML change with no CSS follow-up. */
+.skip-link{
+  position:absolute;
+  left:-9999px;
+  top:0;
+  z-index:400;
+  background:var(--ink);
+  color:var(--paper);
+  font-family:var(--f-display);
+  font-weight:800;
+  font-size:.8rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  text-decoration:none;
+  padding:14px 22px;
+}
+.skip-link:focus{
+  left:12px;
+  top:12px;
+}

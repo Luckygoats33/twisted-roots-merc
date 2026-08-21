@@ -1,0 +1,181 @@
+## shop-desktop.json
+
+=== color-contrast score=0 
+[
+ {
+  "node": {
+   "type": "node",
+   "lhId": "1-0-P",
+   "path": "1,HTML,1,BODY,2,MAIN,5,SECTION,0,DIV,0,DIV,0,ARTICLE,2,P",
+   "selector": "div.wrap > div.shopgrid > article.card > p.prodcard__mt",
+   "boundingRect": {
+    "top": 1269,
+    "bottom": 1288,
+    "left": 55,
+    "right": 311,
+    "width": 256,
+    "height": 18
+   },
+   "snippet": "<p class=\"prodcard__mt\">",
+   "nodeLabel": "AISLE 1",
+   "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 3.28 (foreground color: #8e887f, background color: #fbf7ef, font size: 8.4pt (11.2px), font weight: bold). Expected contrast ratio of 4.5:1"
+  },
+  "subItems": {
+   "type": "subitems",
+   "items": [
+    {
+     "relatedNode": {
+      "type": "node",
+      "lhId": "1-1-ARTICLE",
+      "path": "1,HTML,1,BODY,2,MAIN,5,SECTION,0,DIV,0,DIV,0,ARTICLE",
+      "selector": "section.band > div.wrap > div.shopgrid > article.card",
+      "boundingRect": {
+       "top": 1181,
+       "bottom": 1366,
+       "left": 32,
+       "right": 334,
+       "width": 302,
+       "height": 185
+      },
+      "snippet": "<article class=\"card prodcard\">",
+      "nodeLabel": "EVERYDAY\nIN STOCK\nToilet Paper, 12 Double Rolls\n\nAISLE 1\n\n$11.99\nADD"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "node": {
+   "type": "node",
+   "lhId": "1-2-P",
+   "path": "1,HTML,1,BODY,2,MAIN,5,SECTION,0,DIV,0,DIV,1,ARTICLE,2,P",
+   "selector": "div.wrap > div.shopgrid > article.card > p.prodcard__mt",
+   "boundingRect": {
+    "top": 1269,
+    "bottom": 1288,
+    "left": 378,
+    "right": 634,
+    "width": 256,
+    "height": 18
+   },
+   "snippet": "<p class=\"prodcard__mt\">",
+   "nodeLabel": "AISLE 1",
+   "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 3.28 (foreground color: #8e887f, background color: #fbf7ef, font size: 8.4pt (11.2px), font weight: bold). Expected contrast ratio of 4.5:1"
+  },
+  "subItems": {
+   "type": "subitems",
+   "items": [
+    {
+     "relatedNode": {
+      "type": "node",
+      "lhId": "1-3-ARTICLE",
+      "path": "1,HTML,1,BODY,2,MAIN,5,SECTION,0,DIV,0,DIV,1,ARTICLE",
+      "selector": "section.band > div.wrap > div.shopgrid > article.card",
+      "boundingRect": {
+       "top": 1181,
+       "bottom": 1366,
+       "left": 355,
+       "right": 657,
+       "width": 302,
+       "height": 185
+      },
+      "snippet": "<article class=\"card prodcard\">",
+      "nodeLabel": "EVERYDAY\nIN STOCK\nPaper Towels, 6 Rolls\n\nAISLE 1\n\n$9.49\nADD"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "node": {
+   "type": "node",
+   "lhId": "1-4-P",
+   "path": "1,HTML,1,BODY,2,MAIN,5,SECTION,0,DIV,0,DIV,2,ARTICLE,2,P",
+   "selector": "div.wrap > div.shopgrid > article.card > p.prodcard__mt",
+   "boundingRect": {
+    "top": 1269,
+    "bottom": 1288,
+    "left": 701,
+    "right": 957,
+    "width": 256,
+    "height": 18
+   },
+   "snippet": "<p class=\"prodcard__mt\">",
+   "nodeLabel": "AISLE 1",
+   "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 3.28 (foreground color: #8e887f, background color: #fbf7ef, font size: 8.4pt (11.2px), font weight: bold). Expected contrast ratio of 4.5:1"
+  },
+  "subItems": {
+   "type": "subitems",
+   "items": [
+    {
+     "relatedNode": {
+      "type": "node",
+      "lhId": "1-5-ARTICLE",
+      "path": "1,HTML,1,BODY,2,MAIN,5,SECTION,0,DIV,0,DIV,2,ARTICLE",
+      "selector": "section.band > div.wrap > div.shopgrid > article.card",
+      "boundingRect": {
+       "top": 1181,
+       "bottom": 1366,
+       "left": 678,
+       "right": 980,
+       "width": 302,
+       "height": 185
+      },
+      "snippet": "<article class=\"card prodcard\">",
+      "nodeLabel": "EVERYDAY\nIN STOCK\nKitchen Garbage Bags, 40ct\n\nAISLE 1\n\n$8.99\nADD"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "node": {
+   "type": "node",
+   "lhId": "1-6-P",
+   "path": "1,HTML,1,BODY,2,MAIN,5,SECTION,0,DIV,0,DIV,3,ARTICLE,2,P",
+   "selector": "div.wrap > div.shopgrid > article.card > p.prodcard__mt",
+   "boundingRect": {
+    "top": 1269,
+    "bottom": 
+
+=== heading-order score=0 
+[
+ {
+  "node": {
+   "type": "node",
+   "lhId": "1-520-H3",
+   "path": "1,HTML,1,BODY,2,MAIN,5,SECTION,0,DIV,0,DIV,0,ARTICLE,1,H3",
+   "selector": "div.wrap > div.shopgrid > article.card > h3.prodcard__nm",
+   "boundingRect": {
+    "top": 1242,
+    "bottom": 1263,
+    "left": 55,
+    "right": 311,
+    "width": 256,
+    "height": 21
+   },
+   "snippet": "<h3 class=\"prodcard__nm\">",
+   "nodeLabel": "Toilet Paper, 12 Double Rolls",
+   "explanation": "Fix any of the following:\n  Heading order invalid"
+  }
+ },
+ {
+  "node": {
+   "type": "node",
+   "lhId": "1-521-H4",
+   "path": "1,HTML,1,BODY,3,FOOTER,0,DIV,0,DIV,1,DIV,0,H4",
+   "selector": "div.wrap > div.foot-top > div > h4",
+   "boundingRect": {
+    "top": 17415,
+    "bottom": 17434,
+    "left": 418,
+    "right": 671,
+    "width": 253,
+    "height": 19
+   },
+   "snippet": "<h4>",
+   "nodeLabel": "THE STORE",
+   "explanation": "Fix any of the following:\n  Heading order invalid"
+  }
+ }
+]

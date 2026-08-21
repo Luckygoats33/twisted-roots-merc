@@ -1,0 +1,20 @@
+######################################################################
+## index-mobile.json
+
+--- heading-order (score=0) 
+   * {"node": "<h3>"}
+   * {"node": "<h4>"}
+
+--- image-aspect-ratio (score=0) 
+   * {"url": "http://localhost:8899/assets/img/logo-foot.png", "node": "<img src=\"assets/img/logo-foot.png\" alt=\"Twisted Roots Merc\" width=\"440\" height=\"371\">", "displayedAspectRatio": "150 x 371\n        (0.40)", "actualAspectRatio": "440 x 379\n        (1.16)", "doRatiosMatch": "False"}
+
+--- unsized-images (score=0.5) 
+   * {"url": "", "node": "<img data-parallax=\"0.12\" src=\"\" alt=\"The Twisted Root cinnamon roll\" loading=\"lazy\">"}
+   * {"url": "", "node": "<img data-parallax=\"0.12\" src=\"\" alt=\"A lantern lit outside a tent at night\" loading=\"lazy\">"}
+   * {"url": "", "node": "<img data-parallax=\"0.12\" src=\"\" alt=\"A pickup truck parked on a rural Oregon road\" loading=\"lazy\">"}
+
+--- layout-shifts (score=0) 1 layout shift found
+   * {"node": "<div class=\"hero-in\">", "score": "0.1385162609518561"}
+
+--- cls-culprits-insight (score=0) 
+   * {"type": "table", "headings": "[2]", "items": "[2]"}

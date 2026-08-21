@@ -162,6 +162,21 @@ HEAD_FONTS = (
 )
 
 
+
+def seo_title(t, suffix):
+    """Keep the whole title inside Google's ~60-char display width.
+
+    Every generated title carried a 29-36 character brand suffix, which
+    pushed 250 of 383 of them past the truncation point — so the brand
+    was cut off anyway AND it ate the words that actually match a query.
+    A long title stands on its own; only a short one has room to be
+    signed."""
+    t = t.strip()
+    if len(t) + len(suffix) <= 60:
+        return t + suffix
+    return t if len(t) <= 60 else t
+
+
 def shell(depth=1):
     """Header and footer straight out of merc.html, so the chrome can
     never drift away from the rest of the site."""
@@ -172,12 +187,12 @@ def shell(depth=1):
     foot = re.sub(r'<script src="[^"]+"></script>\s*', "", foot)
     if depth:
         up = "../" * depth
-        for pat in ('href="assets/', 'src="assets/', 'data-hangsign="assets/',
-                    'href="index.html', 'href="merc.html', 'href="bakery.html',
-                    'href="yard.html', 'href="storm.html', 'href="hunt.html',
-                    'href="local.html', 'href="roots.html', 'href="visit.html',
-                    'href="shop.html', 'href="journal.html', 'href="kitchen.html',
-                    'href="hq.html'):
+        # Read the page list off disk rather than keeping it by hand.
+        # The hand-written version never learned about board.html and
+        # shipped a dead nav link on every recipe.
+        pats = ['href="assets/', 'src="assets/', 'data-hangsign="assets/']
+        pats += ['href="%s' % f for f in sorted(os.listdir(ROOT)) if f.endswith(".html")]
+        for pat in pats:
             head = head.replace(pat, pat.replace('="', '="' + up, 1))
             foot = foot.replace(pat, pat.replace('="', '="' + up, 1))
         head = head.replace('aria-current="page"', '')
@@ -212,6 +227,7 @@ def page(title, desc, canonical, body, depth=1, extra_head=""):
 <link rel="stylesheet" href="%sassets/css/motion.css">
 <link rel="stylesheet" href="%sassets/css/roots.css">
 <link rel="stylesheet" href="%sassets/css/mobile.css">
+<link rel="stylesheet" href="%sassets/css/polish.css">
 <link rel="stylesheet" href="%sassets/css/print.css" media="print">
 %s</head>
 <body>
@@ -222,7 +238,7 @@ def page(title, desc, canonical, body, depth=1, extra_head=""):
 </html>
 """ % (html.escape(title), html.escape(desc), canonical,
        html.escape(title), html.escape(desc), canonical, SITE, up, up,
-       HEAD_FONTS, up, up, up, up, up, extra_head, head, body, foot, tags)
+       HEAD_FONTS, up, up, up, up, up, up, extra_head, head, body, foot, tags)
 
 
 def related(rec, all_r, n=3):
@@ -262,6 +278,12 @@ def build_recipe(r, all_r):
         "recipeCuisine": "American",
         "keywords": ", ".join(r.get("tags", [])),
         "recipeYield": r["yield"],
+        # image is the one property Google actually requires on a Recipe,
+        # and without it none of these can appear as a rich result. There
+        # is no photograph of any individual dish yet, so this falls back
+        # to the category's own image — honest, since it does depict the
+        # kind of food, but worth replacing with real per-recipe photos.
+        "image": SITE + "assets/img/" + CATEGORIES[r["category"]][0],
         "recipeIngredient": ing_flat,
         "recipeInstructions": [
             {"@type": "HowToStep", "text": re.sub(r"<[^>]+>", "", s).strip()}
@@ -369,7 +391,7 @@ def build_recipe(r, all_r):
        html.escape(r["yield"]), html.escape(r["activeTime"]), html.escape(r["totalTime"]),
        r["intro"], ings, steps, notes, storage, rel_html)
 
-    return page("%s | Twisted Roots Merc Kitchen" % r["title"], r["dek"][:154],
+    return page(seo_title(r["title"], " | Twisted Roots Kitchen"), r["dek"][:154],
                 canonical, body, depth=1, extra_head=extra)
 
 
@@ -451,9 +473,9 @@ def build_index(recs):
               "url": SITE + "kitchen.html",
               "publisher": {"@id": SITE + "#store"},
               "hasPart": [{"@type": "Recipe", "name": r["title"],
-                           "url": "%srecipes/%s.html" % (SITE, r["slug"])} for r in recs[:120]]}
+                           "url": "%srecipes/%s.html" % (SITE, r["slug"])} for r in recs]}
     extra = '<script type="application/ld+json">%s</script>\n' % json.dumps(schema)
-    return page("The Kitchen — %d Recipes from Twisted Roots Merc, Siletz Oregon" % len(recs),
+    return page("The Kitchen — %d Recipes | Twisted Roots, Siletz" % len(recs),
                 "Bread, biscuits, breakfast, chowder, salmon, game and berry pie — %d recipes written "
                 "with real weights, temperatures and doneness cues." % len(recs),
                 SITE + "kitchen.html", body, depth=0, extra_head=extra)

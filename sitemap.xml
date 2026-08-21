@@ -63,6 +63,9 @@
     <priority>0.6</priority>
   </url>
 
+  <url><loc>https://twistedrootsmerc.com/hunt.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://twistedrootsmerc.com/shop.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+
   <url><loc>https://twistedrootsmerc.com/journal.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://twistedrootsmerc.com/blog/fix-running-toilet-diagnose.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://twistedrootsmerc.com/blog/fix-replace-toilet-flapper.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
@@ -116,6 +119,58 @@
   <url><loc>https://twistedrootsmerc.com/blog/fix-caulk-gun-oozing.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://twistedrootsmerc.com/blog/fix-painting-coastal-humidity.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://twistedrootsmerc.com/blog/fix-twenty-things-worth-owning.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-river-by-month.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-salmon-siletz.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-steelhead-winter.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-cutthroat.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-bank-access-etiquette.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-reading-water.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-coastal-river-gear.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-bait-and-tackle-basics.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-licences-and-rules.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-keeping-fish-cold.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-crabbing-clamming.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-reading-a-tide-table.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-king-tides.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-beach-safety-logs.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-rip-currents.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-agates-after-a-storm.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-storm-watching.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-coast-vs-valley-weather.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-why-it-rains-here.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-fog.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-wind.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-first-big-blow.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-how-much-rain.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-mud-moss-mildew.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-drive-to-town.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-highway-229.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-coast-range-at-night.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-elk-and-deer-on-the-road.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-logging-trucks.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-what-to-keep-in-the-truck.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-cell-dead-zones.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-landslides.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-mud-season-vehicle-check.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-the-woods.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-foraging-basics.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-blackberries.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-huckleberries.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-firewood-species.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-splitting-and-seasoning.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-bears-cougars-coyotes.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-ticks.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-raccoons-and-bins.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-chickens-out-here.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-coastal-garden.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-growing-season.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-slugs.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-deer-fencing.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-wind-tolerant-plants.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-woodstove-year.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-long-power-runs.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-town-run-logistics.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/sil-what-a-general-store-is-for.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://twistedrootsmerc.com/blog/storm-what-fails-first.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://twistedrootsmerc.com/blog/storm-how-the-power-comes-back.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://twistedrootsmerc.com/blog/storm-two-week-kit.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
@@ -168,9 +223,58 @@
   <url><loc>https://twistedrootsmerc.com/blog/storm-go-bag-vs-stay-home-kit.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://twistedrootsmerc.com/blog/storm-rotating-your-kit.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://twistedrootsmerc.com/blog/storm-whats-on-the-storm-wall.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-
-  <url><loc>https://twistedrootsmerc.com/hunt.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://twistedrootsmerc.com/shop.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-setting-a-post-in-coastal-clay.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-fast-set-vs-standard-concrete.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-how-many-bags-a-post-hole-takes.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-mixing-concrete-without-a-mixer.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-curing-concrete-in-rain-and-cold.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-why-bagged-concrete-must-stay-dry.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-reading-a-concrete-bag-label.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-concrete-vs-sand-mix-vs-mortar.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-type-s-mortar-and-small-block-work.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-form-tubes-and-footings.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-a-concrete-pad-for-a-small-shed.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-patching-cracked-concrete.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-setting-a-mailbox-post.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-fixing-a-sagging-gate.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-gate-hardware-that-lasts.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-replacing-one-fence-picket.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-rebuilding-a-fence-section.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-cedar-vs-pressure-treated-on-the-coast.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-ground-contact-rating-explained.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-cutting-pressure-treated-and-sealing-ends.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-fasteners-that-survive-salt-air.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-replacing-a-deck-board.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-finding-and-treating-rot.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-joists-ledgers-and-when-to-call-somebody.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-deck-railing-basics.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-stairs-rise-and-run.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-building-a-small-landing.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-building-an-accessibility-ramp.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-framing-a-small-shed.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-a-woodshed-that-keeps-wood-dry.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-stacking-and-seasoning-firewood.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-raised-beds-and-what-to-build-them-from.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-building-a-trellis.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-building-a-compost-bin.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-chicken-coop-and-run-basics.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-building-a-dog-kennel.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-sheeting-a-small-roof.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-what-to-do-with-a-project-panel.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-plywood-grades-in-plain-language.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-sawhorses-and-a-workbench.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-cutting-straight-without-a-table-saw.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-why-a-2x4-is-not-2-by-4.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-crown-cup-bow-and-twist.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-what-fits-in-a-short-bed-pickup.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-tying-down-a-load.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-landscape-gravel-and-drainage.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-a-simple-french-drain.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-a-gravel-parking-pad.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-retaining-walls-and-engineering.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-moss-and-cleaning-outdoor-wood.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-sealing-and-staining-in-a-wet-climate.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://twistedrootsmerc.com/blog/yard-why-the-racks-stop-at-eight-feet.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
 
   <url><loc>https://twistedrootsmerc.com/kitchen.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://twistedrootsmerc.com/recipes/bread-first-sourdough.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>

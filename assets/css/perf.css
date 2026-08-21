@@ -1,0 +1,287 @@
+/* ==========================================================================
+   perf.css — additive performance + accessibility corrections
+   Loaded LAST, after site.css / motion.css / roots.css / mobile.css / print.css.
+
+   Every value in here was derived from a measurement, not a guess:
+     - font metrics read from the actual woff2 files with fontTools
+     - contrast ratios computed with the WCAG 2.x relative-luminance formula
+     - byte savings measured against the real files in assets/img/
+   See PERF-AUDIT.md for the numbers and the method.
+
+   This file only ADDS rules. It never edits site.css, and every override is
+   scoped to a selector that already exists.
+   ========================================================================== */
+
+
+/* --------------------------------------------------------------------------
+   1. LAYOUT SHIFT FROM WEB FONT SWAP  — the single largest CLS source
+   --------------------------------------------------------------------------
+   Measured (Lighthouse, before):
+     merc.html  desktop  CLS 0.259  — h1.h-mega, cause "Web font loaded"
+                                      (Bitter + Public Sans)
+     index.html mobile   CLS 0.139  — div.hero-in, same cause
+
+   The Google Fonts stylesheet uses font-display:swap, so the page first paints
+   in Georgia / Arial, then reflows when Bitter / Public Sans / Rye arrive.
+   Georgia is ~3.5% narrower per character than Bitter, so every headline
+   re-wraps and the block below it jumps.
+
+   Fix: metric-compatible fallback faces. size-adjust makes the fallback occupy
+   exactly the same horizontal space as the real font; the ascent/descent
+   overrides make it occupy the same vertical space. The swap then costs
+   nothing in layout.
+
+   size-adjust  = (webfont xWidthAvg / upm) / (fallback xWidthAvg / upm)
+   *-override   = (webfont metric / upm) / size-adjust
+   xWidthAvg    = advance widths of a-z + space, weighted by English letter
+                  frequency (the Next.js adjustFontFallback method).
+
+   Raw metrics used:
+     Bitter       upm 1000  asc  935  desc -265  gap 0  xWidthAvg  462.16
+     Public Sans  upm 2000  asc 1900  desc -450  gap 0  xWidthAvg  922.11
+     Rye          upm 2048  asc 2020  desc -540  gap 0  xWidthAvg 1091.07
+     Georgia      upm 2048  asc 1878  desc -449  gap 0  xWidthAvg  913.13
+     Arial        upm 2048  asc 1854  desc -434  gap 67 xWidthAvg  915.53
+     Times NR     upm 2048  asc 1825  desc -443  gap 87 xWidthAvg  829.78
+   -------------------------------------------------------------------------- */
+
+@font-face{
+  font-family:"Bitter-fb";
+  src:local("Georgia");
+  size-adjust:103.65%;
+  ascent-override:90.20%;
+  descent-override:25.57%;
+  line-gap-override:0%;
+}
+/* Second rung: Linux/PSI runners generally have no Georgia, but fontconfig
+   almost always aliases "Times New Roman" to Liberation Serif. */
+@font-face{
+  font-family:"Bitter-fb2";
+  src:local("Times New Roman"), local("Liberation Serif"), local("Tinos");
+  size-adjust:114.07%;
+  ascent-override:81.97%;
+  descent-override:23.23%;
+  line-gap-override:0%;
+}
+@font-face{
+  font-family:"PublicSans-fb";
+  src:local("Arial"), local("Liberation Sans"), local("Arimo"), local("Helvetica");
+  size-adjust:103.14%;
+  ascent-override:92.11%;
+  descent-override:21.82%;
+  line-gap-override:0%;
+}
+@font-face{
+  font-family:"Rye-fb";
+  src:local("Georgia"), local("Times New Roman"), local("Liberation Serif");
+  size-adjust:119.49%;
+  ascent-override:82.55%;
+  descent-override:22.07%;
+  line-gap-override:0%;
+}
+
+/* site.css:30-32 defines these three. Re-declaring them here inserts the
+   metric-matched faces between the web font and the generic fallback, so the
+   stack degrades without reflowing. Keep the original tails intact. */
+:root{
+  --f-display:"Bitter","Bitter-fb","Bitter-fb2",Georgia,"Times New Roman",serif;
+  --f-sign:"Rye","Rye-fb",Georgia,serif;
+  --f-body:"Public Sans","PublicSans-fb",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+}
+
+
+/* --------------------------------------------------------------------------
+   2. COLOUR CONTRAST  — WCAG 2.1 AA (1.4.3)
+   --------------------------------------------------------------------------
+   Every one of these failed because of an `opacity` value, not a colour value.
+   Raising the opacity is the minimal, background-agnostic correction: it keeps
+   the designed hue and stays correct if the surface behind it ever changes.
+
+   The recovered ink colour and the resulting ratio are noted per rule.
+   Ratios verified against the exact foreground/background pairs Lighthouse
+   reported.  !important is used deliberately — these are accessibility
+   corrections and must not lose to a later authored rule.
+   -------------------------------------------------------------------------- */
+
+/* shop.css:146 — opacity .5  ->  #8e887f on #fbf7ef = 3.29:1  (needs 4.5)
+   520 nodes on shop.html. Ink #352d23; at opacity .72 -> ~5.0:1 */
+.prodcard__mt{ opacity:.72 !important; }
+
+/* site.css:321 — opacity .5  ->  #8a8378 on #f4ede1 = 3.22:1
+   Ink #20190f; at opacity .68 -> ~5.1:1 */
+.req .ct{ opacity:.68 !important; }
+
+/* site.css:381 — opacity .55 ->  #837c74 on #fbf7ef = 3.85:1
+   Ink #21170f; at opacity .68 -> ~5.4:1 */
+.stat .k{ opacity:.68 !important; }
+
+/* site.css:185 — opacity .55 ->  #735320 on amber #d99a34 = 2.89:1
+   Ink #201910; at opacity .82 -> ~4.9:1  (max possible here is 7.15:1) */
+.drive-cell b{ opacity:.82 !important; }
+
+
+/* --------------------------------------------------------------------------
+   3. DECORATIVE CROW SPRITES  — 1,110 KB of PNG on every single page
+   --------------------------------------------------------------------------
+   Measured on index.html (Lighthouse network log):
+     crow-sprite.png   792.0 KB   priority HIGH    6500x409, alpha
+     crow-perch.png    318.2 KB   priority Low     6460x147, alpha
+
+   crow-sprite.png is fetched at HIGH priority because its rule matches an
+   element in the initial viewport. On the mobile run it therefore competes
+   directly with the LCP image for bandwidth — 792 KB of decoration ahead of
+   the thing the user came to see.
+
+   These are flat-colour silhouettes with alpha: exactly the case WebP wins.
+   Re-encoded at q82 (visually identical, verified frame-stepping is unaffected
+   because the sprite geometry is unchanged):
+     crow-sprite  792 KB -> 178 KB   (-77%)
+     crow-perch   318 KB -> 117 KB   (-63%)
+     total       1110 KB -> 295 KB   (-815 KB per page, ~73%)
+
+   Chrome only fetches the winning background-image declaration, so overriding
+   it here genuinely prevents the PNG request — the saving is real, not additive.
+
+   NOTE FOR THE LEAD DEV: the .webp files currently live in /perf/img/ because
+   that is the directory I own. Move them to assets/img/ and change these two
+   URLs to ../img/ — see patch #7 in PERF-AUDIT.md. The intrinsic pixel
+   dimensions are identical to the PNGs, so background-size math is unchanged.
+   -------------------------------------------------------------------------- */
+
+.crow__sprite{
+  background-image:url("../../perf/img/crow-sprite.webp");
+}
+.perchcrow{
+  background-image:url("../../perf/img/crow-perch.webp");
+}
+
+
+/* --------------------------------------------------------------------------
+   4. RESERVED SPACE FOR CLIENT-RENDERED LISTS
+   --------------------------------------------------------------------------
+   Every product list is injected by JS after first paint. shop.html ships
+   <div class="shopgrid" data-shopgrid></div> empty, so the footer paints high
+   and is pushed down when ~260 cards arrive.
+
+   Measured CLS on shop.html was 0.053 (desktop) / 0.028 (mobile) — real but
+   not yet catastrophic, because the grid is the last block before the footer.
+   Reserving a plausible height removes it entirely and, more importantly,
+   stops it becoming a large shift on a slower connection where the JS lands
+   later relative to paint.
+
+   :empty only — the moment JS fills the container the reservation is dropped,
+   so it can never fight the real content height.
+   -------------------------------------------------------------------------- */
+
+[data-shopgrid]:empty{ min-height:70vh; }
+[data-results]:empty,
+[data-prodgrid]:empty,
+[data-board]:empty{ min-height:40vh; }
+
+/* Cards are injected into an existing grid; give the grid a stable row size so
+   images arriving late cannot re-flow the rows around them. */
+.shopgrid{ contain-intrinsic-size:auto 300px; }
+
+
+/* --------------------------------------------------------------------------
+   5. RENDERING WORK ON THE LONG LIST PAGES
+   --------------------------------------------------------------------------
+   shop.html renders ~260 product cards, journal.html ~104. Cards below the
+   fold still cost layout, paint and style resolution on first render.
+
+   content-visibility:auto skips that work until the card is near the viewport.
+   contain-intrinsic-size uses the `auto` keyword so Chrome remembers the real
+   measured size after the first render — that is what stops this optimisation
+   from introducing scrollbar jitter or CLS of its own.
+
+   Scoped to the two card grids only. Deliberately NOT applied to whole
+   <section>s: that risks breaking in-page anchor targets and is where
+   content-visibility usually goes wrong.
+   -------------------------------------------------------------------------- */
+
+@media (min-width:0px){
+  .shopgrid > .card{
+    content-visibility:auto;
+    contain-intrinsic-size:auto 300px;
+  }
+}
+
+
+/* --------------------------------------------------------------------------
+   6. IMAGE SAFETY NET
+   --------------------------------------------------------------------------
+   Lighthouse `unsized-images` flags three parallax images on index.html that
+   have no width/height and an empty src until motion.js swaps one in:
+     <img data-parallax="0.12" src="" alt="..." loading="lazy">
+   Until those get real width/height attributes (patch #4), give any img that
+   has no dimensions a stable box so it cannot collapse to 0 and then jump.
+
+   :not([width]) is an attribute test, so this stops applying the instant the
+   attribute is added — this rule retires itself as the patches land.
+   -------------------------------------------------------------------------- */
+
+img[data-parallax]:not([width]){
+  aspect-ratio:3 / 2;
+  width:100%;
+  height:auto;
+}
+
+/* An <img> with width+height attributes but object-fit styling can still be
+   reported as an aspect-ratio mismatch. Make the intent explicit for the two
+   full-bleed hero elements so the ratio is honoured rather than inferred. */
+.hero-img{ object-fit:cover; }
+
+
+/* --------------------------------------------------------------------------
+   7. SUPPORT FOR THE HEADING-ORDER PATCHES
+   --------------------------------------------------------------------------
+   Lighthouse `heading-order` (weight 3) fails on 12 of the 13 pages audited,
+   in two places:
+
+     a) footer:  <h2 class="h1"> ... then <h4>The Store</h4>   -> h2 to h4
+        279 pages. Patch #2 renames it to <h3>.
+     b) index/board: <h1> ... then <div class="board-head"><h3>Today at the
+        Merc</h3>                                              -> h1 to h3
+        Patch #3 renames it to <h2>.
+
+   Renaming the tag would otherwise lose the styling, because site.css targets
+   them by tag name (.foot-top h4 at line 399, .board-head h3 at line 208).
+   These two rules re-point the identical declarations at the new tags, so the
+   patches are visually a no-op. Both selectors are additive — the original
+   rules keep working for any page that has not been patched yet.
+   -------------------------------------------------------------------------- */
+
+/* mirrors .foot-top h4 (site.css:399) */
+.foot-top h3{
+  font-family:var(--f-sign); font-weight:400; font-size:.72rem;
+  letter-spacing:.2em; text-transform:uppercase;
+  color:var(--amber); margin:0 0 18px;
+}
+/* mirrors .board-head h3 (site.css:208) */
+.board-head h2{
+  margin:0; font-family:var(--f-sign); font-size:.9rem; letter-spacing:.2em;
+  text-transform:uppercase; color:var(--amber-hi); font-weight:400;
+}
+
+
+/* --------------------------------------------------------------------------
+   8. REDUCED MOTION
+   --------------------------------------------------------------------------
+   The crow animations, parallax and the autoplaying hero video are decorative.
+   site.css/motion.css handle some of this, but the crow sprite background
+   animation and the hero video are worth stopping unconditionally for users
+   who ask for reduced motion — it is both an accessibility win (WCAG 2.3.3)
+   and it removes the sprite from the compositor budget.
+   -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion:reduce){
+  .crow,
+  .crow__sprite,
+  .perchcrow{
+    animation:none !important;
+    transition:none !important;
+  }
+  .crow{ display:none !important; }
+  .hero-video{ display:none !important; }
+  .hero-still{ display:block !important; }
+}

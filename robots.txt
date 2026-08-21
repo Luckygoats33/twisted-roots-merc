@@ -13,8 +13,14 @@ Disallow: /seo/
 Disallow: /print/
 Disallow: /_parts/
 
-# Stop query-string duplicates of the stock search
-Disallow: /*?q=
+# Stop query-string duplicates of the stock search.
+#
+# ?q= is deliberately NOT blocked. It is the parameter shop.js reads,
+# so it is the URL the sitelinks searchbox has to point at, and it is
+# how the repair guides deep-link a pre-filtered shelf ("toilet
+# flappers, on the shelf" → shop.html?q=flapper). Blocking it would
+# close off both. Duplicate-content risk is handled by the canonical
+# tag on shop.html instead, which is the right tool for it.
 Disallow: /*?search=
 
 Sitemap: https://twistedrootsmerc.com/sitemap.xml

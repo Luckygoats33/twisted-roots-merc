@@ -24,13 +24,14 @@
 <meta name="twitter:description" content="Ammunition, knives, game bags, blaze orange, optics and calls. A hunt wall, not a gun counter — we don't sell firearms.">
 <meta name="twitter:image" content="https://twistedrootsmerc.com/assets/img/og-image.jpg">
 <meta name="theme-color" content="#F4EDE1">
-<link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
-<link rel="icon" href="assets/img/favicon-64.png" sizes="64x64">
-<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-<link rel="stylesheet" href="assets/css/site.css?v=a049115b">
+<link rel="icon" href="assets/img/favicon-32.png?v=ccb53bc6" sizes="32x32">
+<link rel="icon" href="assets/img/favicon-64.png?v=7316fae5" sizes="64x64">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png?v=ce873322">
+<link rel="stylesheet" href="assets/css/site.css?v=1ac4e3d0">
 <link rel="stylesheet" href="assets/css/motion.css?v=e4213a7b">
 <link rel="stylesheet" href="assets/css/roots.css?v=42e7b082">
 <link rel="stylesheet" href="assets/css/mobile.css?v=1c92929c">
+<link rel="stylesheet" href="assets/css/polish.css?v=1ac86af1">
 <link rel="stylesheet" href="assets/css/print.css?v=65e49f4e" media="print">
 </head>
 <body>
@@ -49,15 +50,32 @@
     </a>
     <button class="burger" data-burger aria-expanded="false" aria-controls="siteNav" aria-label="Menu"><span class="burger__box" aria-hidden="true"><i></i><i></i><i></i></span><span class="burger__txt">Menu</span></button>
     <nav class="nav" id="siteNav">
-      <a href="merc.html">Merc</a>
-      <a href="bakery.html">Bakery</a>
-      <a href="yard.html">Yard</a>
-      <a href="storm.html">Storm</a>
-      <a href="hunt.html">Hunt</a>
-      <a href="local.html">Local</a>
-      <a href="roots.html">Roots</a>
-      <a href="kitchen.html">Recipes</a>
-      <a href="journal.html">Board</a>
+      <div class="navitem" data-navitem>
+        <button class="navitem__top" data-subtoggle aria-expanded="false" aria-controls="sub-shop">Shop<i class="navitem__car" aria-hidden="true"></i></button>
+        <div class="subnav" id="sub-shop">
+          <a href="shop.html">Shop everything</a>
+          <a href="merc.html">The Merc</a>
+          <a href="yard.html">The Yard</a>
+          <a href="hunt.html" aria-current="page">Hunt &amp; Field</a>
+          <a href="storm.html">Storm Ready</a>
+        </div>
+      </div>
+      <div class="navitem" data-navitem>
+        <button class="navitem__top" data-subtoggle aria-expanded="false" aria-controls="sub-kitchen">Kitchen<i class="navitem__car" aria-hidden="true"></i></button>
+        <div class="subnav" id="sub-kitchen">
+          <a href="bakery.html">The Bakery</a>
+          <a href="kitchen.html">Recipes</a>
+        </div>
+      </div>
+      <div class="navitem" data-navitem>
+        <button class="navitem__top" data-subtoggle aria-expanded="false" aria-controls="sub-local">Local<i class="navitem__car" aria-hidden="true"></i></button>
+        <div class="subnav" id="sub-local">
+          <a href="local.html">Local Goods</a>
+          <a href="board.html">The Board</a>
+          <a href="journal.html">Notes</a>
+        </div>
+      </div>
+      <a href="roots.html">Our Roots</a>
       <a href="visit.html">Visit</a>
       <a class="nav-cta" href="shop.html">Shop Now</a>
     </nav>
@@ -71,7 +89,7 @@
 
 <main>
 <section class="hero" style="min-height:min(64vh,640px)">
-  <img class="hero-img" data-parallax="0.18" src="assets/img/forest-road.jpg" alt="Rain falling through dark coastal trees before daylight" fetchpriority="high">
+  <img class="hero-img" data-parallax="0.18" src="assets/img/forest-road.jpg?v=316b5001" alt="Rain falling through dark coastal trees before daylight" fetchpriority="high">
   <div class="rainlayer" aria-hidden="true"></div>
   <div class="crows" data-crows="4" aria-hidden="true"></div>
   <div class="hero-in">
@@ -166,19 +184,19 @@
   <div class="wrap">
     <div class="goods" data-rv-stagger="90">
       <a class="good" href="#ammo">
-        <div class="ph"><span class="num">No. 01</span><img src="assets/img/tr-interior-sm.jpg" alt="The front counter and the shelves behind it" loading="lazy">
+        <div class="ph"><span class="num">No. 01</span><img src="assets/img/tr-interior-sm.jpg?v=809d4b9f" alt="The front counter and the shelves behind it" loading="lazy">
           <span class="lab"><h3>Behind the Counter</h3><p>Ammunition · Rangefinder · Trail camera</p></span></div>
       </a>
       <a class="good" href="#wall">
-        <div class="ph"><span class="num">No. 02</span><img src="assets/img/hunt-field-sm.jpg" alt="Blaze orange vest, knife, ammunition and binoculars on a shop counter" loading="lazy">
+        <div class="ph"><span class="num">No. 02</span><img src="assets/img/hunt-field-sm.jpg?v=eb6e8d17" alt="Blaze orange vest, knife, ammunition and binoculars on a shop counter" loading="lazy">
           <span class="lab"><h3>Knives &amp; Field Care</h3><p>Blades · Saws · Game bags · Gloves</p></span></div>
       </a>
       <a class="good" href="#safety">
-        <div class="ph"><span class="num">No. 03</span><img src="assets/img/tools-wall.jpg" alt="Tools hanging on a wall rack" loading="lazy">
+        <div class="ph"><span class="num">No. 03</span><img src="assets/img/tools-wall.jpg?v=2426bb12" alt="Tools hanging on a wall rack" loading="lazy">
           <span class="lab"><h3>Blaze &amp; Gun Care</h3><p>Orange · Ears · Eyes · Locks · Cleaning</p></span></div>
       </a>
       <a class="good" href="#survival">
-        <div class="ph"><span class="num">No. 04</span><img src="assets/img/camping.jpg" alt="Night sky over a snowy ridge" loading="lazy">
+        <div class="ph"><span class="num">No. 04</span><img src="assets/img/camping.jpg?v=e8463f0f" alt="Night sky over a snowy ridge" loading="lazy">
           <span class="lab"><h3>Optics &amp; Survival</h3><p>Glass · Calls · Archery · Fire · Compass</p></span></div>
       </a>
     </div>
@@ -287,7 +305,7 @@
   <div class="wrap">
     <div class="split">
       <figure class="figframe" style="margin:0">
-        <img src="assets/img/coastal-forest.jpg" alt="Fog lying across a forested ridge above a wet highway" loading="lazy">
+        <img src="assets/img/coastal-forest.jpg?v=bb1cd296" alt="Fog lying across a forested ridge above a wet highway" loading="lazy">
         <figcaption>Eleven degrees colder than the truck said</figcaption>
       </figure>
       <div>
@@ -416,7 +434,7 @@
   <div class="wrap">
     <div class="foot-top">
       <div>
-        <img src="assets/img/logo-foot.png" alt="Twisted Roots Merc" width="440" height="371">
+        <img src="assets/img/logo-foot.png?v=51cd242d" alt="Twisted Roots Merc" width="440" height="371">
         <p class="small" style="opacity:.8">Mercantile · Bakery · Kitchen<br>101 &amp; 151 N Gaither St, Siletz, Oregon 97380<br>
           <a href="tel:+15415550134">(541) 555-0134</a></p>
         <button class="stormtoggle" data-stormtoggle aria-pressed="false"><i></i>Storm Mode Off</button>
@@ -441,7 +459,7 @@
 
 <script src="assets/js/catalog.js?v=cdc9c20e"></script>
 <script src="assets/js/cart.js?v=37edf57f"></script>
-<script src="assets/js/site.js?v=3ac5f34e"></script>
+<script src="assets/js/site.js?v=cd1eed60"></script>
 <script src="assets/js/motion.js?v=bf716f00"></script>
 <script src="assets/js/roots.js?v=93423d8d"></script>
 <script src="assets/js/crows.js?v=a06dbbea"></script>

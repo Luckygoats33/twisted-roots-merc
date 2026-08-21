@@ -1,0 +1,11 @@
+logo-foot.png (440, 379) 354 KB
+logo-carved-web.png (1000, 862) 1714 KB
+logo-carved.png (1380, 1140) 2992 KB
+logo-trans.png (1293, 1114) 2611 KB
+hero-store.jpg (1706, 2559) 609 KB
+
+board_head_h3                2
+footer_h4_TheStore           279
+logo_foot_wrong_height       279
+pages_with_logo_foot         279
+total pages: 279

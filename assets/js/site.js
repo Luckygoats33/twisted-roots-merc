@@ -882,3 +882,66 @@ const TR = (() => {
 
   return { STORE, searchItems, findIntent, renderSearch, stockState, stockLabel, setStorm, money, byId, tellUsModal, basketModal };
 })();
+
+
+/* ==========================================================
+   NAV SUBMENUS
+   ----------------------------------------------------------
+   CSS opens them on hover for a mouse. This is here for the
+   other two ways in: a click and a keyboard. It also makes sure
+   only one is ever open, closes on Escape, and closes when you
+   click away - three things a hover-only menu gets wrong the
+   moment a finger is involved.
+   ========================================================== */
+(function () {
+  "use strict";
+  function all() {
+    return Array.prototype.slice.call(document.querySelectorAll("[data-navitem]"));
+  }
+  function shut(it) {
+    it.classList.remove("open");
+    var b = it.querySelector("[data-subtoggle]");
+    if (b) b.setAttribute("aria-expanded", "false");
+  }
+  function shutAll(except) {
+    all().forEach(function (it) { if (it !== except) shut(it); });
+  }
+
+  document.addEventListener("click", function (e) {
+    var btn = e.target.closest && e.target.closest("[data-subtoggle]");
+    if (btn) {
+      e.preventDefault();
+      var it = btn.closest("[data-navitem]");
+      var open = !it.classList.contains("open");
+      shutAll(it);
+      it.classList.toggle("open", open);
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+      return;
+    }
+    /* a link inside a submenu is navigating away, so leave it alone,
+       but a click anywhere else closes whatever is hanging open */
+    if (!(e.target.closest && e.target.closest("[data-navitem]"))) shutAll(null);
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "Escape") return;
+    var open = all().filter(function (it) { return it.classList.contains("open"); })[0];
+    if (!open) return;
+    var b = open.querySelector("[data-subtoggle]");
+    shutAll(null);
+    if (b) b.focus();
+  });
+
+  /* leaving the group with a mouse closes it, so the panel does not
+     sit there after the pointer has moved on */
+  document.addEventListener("mouseleave", function (e) {
+    if (!window.matchMedia("(min-width:1011px)").matches) return;
+    var it = e.target.closest && e.target.closest("[data-navitem]");
+    if (it) shut(it);
+  }, true);
+
+  /* closing the burger drawer must not leave an accordion open */
+  document.addEventListener("click", function (e) {
+    if (e.target.closest && e.target.closest("[data-burger]")) shutAll(null);
+  });
+})();

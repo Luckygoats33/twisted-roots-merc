@@ -1,0 +1,132 @@
+## blogpost-desktop.json
+
+=== heading-order score=0 
+[
+ {
+  "node": {
+   "type": "node",
+   "lhId": "1-0-H3",
+   "path": "1,HTML,1,BODY,2,MAIN,1,ARTICLE,0,DIV,1,H3",
+   "selector": "main > article.band > div.wrap--narrow > h3",
+   "boundingRect": {
+    "top": 781,
+    "bottom": 813,
+    "left": 238,
+    "right": 1098,
+    "width": 860,
+    "height": 32
+   },
+   "snippet": "<h3>",
+   "nodeLabel": "What you need",
+   "explanation": "Fix any of the following:\n  Heading order invalid"
+  }
+ }
+]
+
+=== errors-in-console score=0 
+[
+ {
+  "source": "exception",
+  "description": "SyntaxError: Identifier 'TR_DEPTS' has already been declared",
+  "sourceLocation": {
+   "type": "source-location",
+   "url": "http://localhost:8899/assets/js/catalog.js",
+   "urlProvider": "network",
+   "line": 0,
+   "column": 0
+  }
+ },
+ {
+  "source": "exception",
+  "description": "SyntaxError: Identifier 'TR' has already been declared",
+  "sourceLocation": {
+   "type": "source-location",
+   "url": "http://localhost:8899/assets/js/site.js",
+   "urlProvider": "network",
+   "line": 0,
+   "column": 0
+  }
+ }
+]
+
+=== td-has-header score=0 
+[
+ {
+  "node": {
+   "type": "node",
+   "lhId": "1-1-TABLE",
+   "path": "1,HTML,1,BODY,2,MAIN,1,ARTICLE,0,DIV,12,TABLE",
+   "selector": "main > article.band > div.wrap--narrow > table",
+   "boundingRect": {
+    "top": 2655,
+    "bottom": 2958,
+    "left": 238,
+    "right": 1098,
+    "width": 860,
+    "height": 303
+   },
+   "snippet": "<table>",
+   "nodeLabel": "\t100 PERCENT SILICONE\tSILICONIZED LATEX\nWaterproof\tFully\tGood, not as good\nFlex…",
+   "explanation": "Fix all of the following:\n  Some non-empty data cells do not have table headers"
+  },
+  "subItems": {
+   "type": "subitems",
+   "items": [
+    {
+     "relatedNode": {
+      "type": "node",
+      "lhId": "1-2-TD",
+      "path": "1,HTML,1,BODY,2,MAIN,1,ARTICLE,0,DIV,12,TABLE,1,TBODY,0,TR,0,TD",
+      "selector": "table > tbody > tr > td",
+      "boundingRect": {
+       "top": 2698,
+       "bottom": 2750,
+       "left": 238,
+       "right": 457,
+       "width": 219,
+       "height": 52
+      },
+      "snippet": "<td>",
+      "nodeLabel": "Waterproof"
+     }
+    },
+    {
+     "relatedNode": {
+      "type": "node",
+      "lhId": "1-3-TD",
+      "path": "1,HTML,1,BODY,2,MAIN,1,ARTICLE,0,DIV,12,TABLE,1,TBODY,1,TR,0,TD",
+      "selector": "table > tbody > tr > td",
+      "boundingRect": {
+       "top": 2750,
+       "bottom": 2802,
+       "left": 238,
+       "right": 457,
+       "width": 219,
+       "height": 52
+      },
+      "snippet": "<td>",
+      "nodeLabel": "Flexibility"
+     }
+    },
+    {
+     "relatedNode": {
+      "type": "node",
+      "lhId": "1-4-TD",
+      "path": "1,HTML,1,BODY,2,MAIN,1,ARTICLE,0,DIV,12,TABLE,1,TBODY,2,TR,0,TD",
+      "selector": "table > tbody > tr > td",
+      "boundingRect": {
+       "top": 2802,
+       "bottom": 2854,
+       "left": 238,
+       "right": 457,
+       "width": 219,
+       "height": 52
+      },
+      "snippet": "<td>",
+      "nodeLabel": "Paintable"
+     }
+    }
+   ]
+  }
+ }
+]

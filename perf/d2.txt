@@ -1,0 +1,98 @@
+## index-mobile.json
+
+=== heading-order score=0 
+[
+ {
+  "node": {
+   "type": "node",
+   "lhId": "1-0-H3",
+   "path": "1,HTML,1,BODY,2,MAIN,5,SECTION,0,DIV,0,DIV,0,DIV,0,H3",
+   "selector": "div.wrap > div.board > div.board-head > h3",
+   "boundingRect": {
+    "top": 830,
+    "bottom": 854,
+    "left": 33,
+    "right": 244,
+    "width": 211,
+    "height": 24
+   },
+   "snippet": "<h3>",
+   "nodeLabel": "TODAY AT THE MERC",
+   "explanation": "Fix any of the following:\n  Heading order invalid"
+  }
+ },
+ {
+  "node": {
+   "type": "node",
+   "lhId": "1-1-H4",
+   "path": "1,HTML,1,BODY,3,FOOTER,0,DIV,0,DIV,1,DIV,0,H4",
+   "selector": "div.wrap > div.foot-top > div > h4",
+   "boundingRect": {
+    "top": 17688,
+    "bottom": 17707,
+    "left": 16,
+    "right": 194,
+    "width": 178,
+    "height": 19
+   },
+   "snippet": "<h4>",
+   "nodeLabel": "THE STORE",
+   "explanation": "Fix any of the following:\n  Heading order invalid"
+  }
+ }
+]
+
+=== cls-culprits-insight score=0 
+[
+ {
+  "type": "table",
+  "headings": [
+   {
+    "key": "node",
+    "valueType": "node",
+    "subItemsHeading": {
+     "key": "extra"
+    },
+    "label": "Element"
+   },
+   {
+    "key": "score",
+    "valueType": "numeric",
+    "subItemsHeading": {
+     "key": "cause",
+     "valueType": "text"
+    },
+    "granularity": 0.001,
+    "label": "Layout shift score"
+   }
+  ],
+  "items": [
+   {
+    "node": {
+     "type": "text",
+     "value": "Total"
+    },
+    "score": 0.1385162609518561
+   },
+   {
+    "node": {
+     "type": "node",
+     "lhId": "page-7-DIV",
+     "path": "1,HTML,1,BODY,2,MAIN,1,SECTION,4,DIV",
+     "selector": "body > main > section.hero > div.hero-in",
+     "boundingRect": {
+      "top": 193,
+      "bottom": 712,
+      "left": 0,
+      "right": 412,
+      "width": 412,
+      "height": 519
+     },
+     "snippet": "<div class=\"hero-in\">",
+     "nodeLabel": "MERCANTILE  ·  BAKERY  ·  KITCHEN  ·  SILETZ, OREGON\n\nTHE STUFF SILETZ\nACTUALLY…"
+    },
+    "score": 0.1385162609518561
+   }
+  ]
+ }
+]
