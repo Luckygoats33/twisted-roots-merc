@@ -1,0 +1,17 @@
+================================================================================
+maxindex-mobile  |  mobile simulate
+  SCORES: perf=77 a11y=100 bp=100 seo=100
+  FCP=2583ms LCP=5180ms TBT=0ms CLS=0.000 SI=3086ms TTFB=28ms
+  total bytes: 1698 KB
+  --PERFORMANCE FAILURES--
+    w=25 score=0.24  largest-contentful-paint                   5.2 s
+    w=10 score=0.64  first-contentful-paint                     2.6 s
+    w= 0 score=0.00  forced-reflow-insight                      
+    w= 0 score=0.00  image-delivery-insight                     Est savings of 291 KiB
+    w= 0 score=0.00  network-dependency-tree-insight            
+    w= 0 score=0.50  render-blocking-insight                    
+    w= 0 score=0.50  unminified-css                             Est savings of 2 KiB
+    w= 0 score=0.50  unminified-javascript                      Est savings of 7 KiB
+    w= 0 score=0.50  unused-css-rules                           Est savings of 10 KiB
+    w= 0 score=0.50  mainthread-work-breakdown                  2.3 s
+    w= 0 score=0.73  interactive                                5.3 s

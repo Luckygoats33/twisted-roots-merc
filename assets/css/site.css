@@ -1197,3 +1197,31 @@ img.hero-still{ z-index:0 }
   }
   [data-storm="on"] .navitem{ border-bottom-color:rgba(255,255,255,.14) }
 }
+
+/* ==========================================================
+   THE PREVIEW NOTICE
+   ----------------------------------------------------------
+   Every form on this site is a demo. The reserve receipt is
+   convincing enough — a hold number, a real closing time, "just
+   say your name" — that somebody could drive to Siletz on the
+   strength of it. So the notice is deliberately NOT quiet: it
+   sits at the top of the dialog, it is the same in all five
+   places, and it is the one piece of small print that gets a
+   border and a colour. Delete it the day these post to Square.
+   ========================================================== */
+.demonote{
+  margin:0 0 16px; padding:11px 14px;
+  background:rgba(217,154,52,.14); border-left:3px solid var(--amber, #D99A34);
+  border-radius:4px; font-size:.86rem; line-height:1.5; color:inherit; opacity:1;
+}
+.demonote b{ font-family:var(--f-display); letter-spacing:.02em }
+.demonote a{ color:inherit; text-decoration:underline; text-underline-offset:2px }
+[data-storm="on"] .demonote{ background:rgba(255,255,255,.12); border-left-color:var(--amber-hi) }
+
+/* Announced, not shown. The live region and any label that a
+   screen reader needs but the layout does not. */
+.visually-hidden{
+  position:absolute !important; width:1px; height:1px; margin:-1px;
+  padding:0; overflow:hidden; clip:rect(0 0 0 0); clip-path:inset(50%);
+  white-space:nowrap; border:0;
+}

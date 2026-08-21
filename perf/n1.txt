@@ -1,0 +1,33 @@
+## maxindex-mobile.json
+
+--- ALL REQUESTS by transfer size ---
+     854.7 KB  Media        Low    http://127.0.0.1:8898/assets/video/river-sm.mp4
+     178.6 KB  Image        High   http://127.0.0.1:8898/perf/img/crow-sprite.webp
+     118.4 KB  Image        Low    http://127.0.0.1:8898/assets/img/bakery-case-900.webp
+     116.8 KB  Image        Low    http://127.0.0.1:8898/perf/img/crow-perch.webp
+      93.7 KB  Image        High   http://127.0.0.1:8898/assets/img/logo-head.png
+      86.5 KB  Image        Low    http://127.0.0.1:8898/assets/img/tr-interior-sm.webp
+      51.9 KB  Image        High   http://127.0.0.1:8898/assets/img/w-river-sm.jpg
+      33.4 KB  Font         High   https://fonts.gstatic.com/s/bitter/v42/rax8HiqOu8IVPmn7f4xpLjpSmw.woff2
+      31.8 KB  Image        Low    http://127.0.0.1:8898/assets/img/tools-wall-900.webp
+      26.0 KB  Font         High   https://fonts.gstatic.com/s/publicsans/v21/ijwRs572Xtc6ZYQws9YVwnNGfJ7QwOk1.woff2
+      22.4 KB  Font         VeryHigh https://fonts.gstatic.com/s/rye/v17/r05XGLJT86YzEZ7tfumh4g.woff2
+      19.2 KB  Stylesheet   VeryHigh http://127.0.0.1:8898/perf/bundle.css
+      14.4 KB  Script       Low    http://127.0.0.1:8898/assets/js/site.js
+      14.1 KB  Script       Low    http://127.0.0.1:8898/assets/js/catalog.js
+       8.5 KB  Document     VeryHigh http://127.0.0.1:8898/perf/preview/max-index.html
+       6.6 KB  Script       Low    http://127.0.0.1:8898/assets/js/motion.js
+       6.5 KB  Stylesheet   VeryLow http://127.0.0.1:8898/assets/css/print.css
+       4.2 KB  Script       Low    http://127.0.0.1:8898/assets/js/cart.js
+       3.6 KB  Script       Low    http://127.0.0.1:8898/assets/js/roots.js
+       3.5 KB  Script       Low    http://127.0.0.1:8898/assets/js/crows.js
+       2.4 KB  Other        High   http://127.0.0.1:8898/assets/img/favicon-32.png
+       1.3 KB  Stylesheet   VeryHigh https://fonts.googleapis.com/css2
+  TOTAL 1698.4 KB over 22 requests
+
+--- lcp-discovery-insight (score=1) 
+    {"type": "checklist", "items": {"priorityHinted": {"label": "fetchpriority=high applied", "value": true}, "requestDiscoverable": {"label": "Request is discoverable in initial document", "value": true}, "eagerlyLoaded": {"label": "LCP resources should not use loading=lazy", "value": true}}}
+    {"type": "node", "lhId": "page-3-IMG", "path": "1,HTML,1,BODY,2,MAIN,1,SECTION,1,IMG", "selector": "body > main > section.hero > img.hero-img", "boundingRect": {"top": 70, "bottom": 712, "left": 0, "right": 412, "width": 412, "height": 642}, "snippet": "<img class=\"hero-img hero-still\" src=\"http://127.0.0.1:8898/assets/img/w-river-sm.jpg\" srcset=\"assets/img/w-river-sm.jpg 760w, assets/img/w-river-md.jpg 1400w, assets/im…\" sizes=\"100vw\" width=\"2560\" height=\"1086\" fetchpriority=\"high\" alt=\"The Siletz River running through the Oregon Coast Range\">", "nodeLabel": "The Siletz River 
+
+--- render-blocking-insight (score=0.5) 
+    {"url": "http://127.0.0.1:8898/perf/bundle.css", "totalBytes": 19633, "wastedMs": 602}

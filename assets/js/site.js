@@ -324,7 +324,28 @@ const TR = (() => {
     });
   }
 
-  /* ---------------- HOLD FOR PICKUP ---------------- */
+  /* ---------------- HOLD FOR PICKUP ----------------
+
+     THE DEMO NOTICE. None of these forms send anywhere yet. The
+     receipt in particular is convincing — a hold number, a real
+     closing time, "just say your name" — and the only thing that
+     said otherwise was the smallest, palest line in the box, last.
+     Somebody would drive to Siletz on the strength of it.
+
+     So the notice goes FIRST, at the top of every one of these
+     dialogs, in the same place every time, and it is not styled
+     to be ignored. Delete demoNote() the day these post to Square,
+     not before.                                                  */
+  function demoNote(what){
+    return '<p class="demonote" role="note"><b>Preview site.</b> ' + what +
+           ' Nothing is sent to the store yet and nothing is charged. ' +
+           'To actually reserve something, call <a href="' + STORE.phoneHref + '">' +
+           esc(STORE.phone) + '</a>.</p>';
+  }
+
+  /* what had focus before a dialog opened, so it can go back */
+  var lastFocus = null;
+
   function modal(title, bodyHtml){
     let m = $("#trModal");
     if (!m){
@@ -343,17 +364,57 @@ const TR = (() => {
     $(".modal-body", m).innerHTML = bodyHtml;
     m.classList.add("open");
     document.body.style.overflow = "hidden";
-    const f = $(".modal-body input", m); if (f) setTimeout(() => f.focus(), 60);
+    /* remember where we came from so Escape does not dump the user
+       at the top of the page */
+    lastFocus = document.activeElement;
+    const f = $(".modal-body input, .modal-body button, .modal-body a", m) || $(".modal-head button", m);
+    if (f) setTimeout(() => f.focus(), 60);
+    trapFocus(m);
     return m;
   }
   function closeModal(){
     const m = $("#trModal");
     if (m) m.classList.remove("open");
     document.body.style.overflow = "";
+    if (lastFocus && lastFocus.focus) { try { lastFocus.focus(); } catch(e){} }
+    lastFocus = null;
+  }
+
+  /* Tab must not walk out of an open dialog and start operating the
+     page behind it. One listener, installed once per dialog element. */
+  function trapFocus(box){
+    if (box.dataset.trapped) return;
+    box.dataset.trapped = "1";
+    var SEL = 'a[href],button:not([disabled]),input:not([disabled]),select,textarea,[tabindex]:not([tabindex="-1"])';
+    box.addEventListener("keydown", function(e){
+      if (e.key !== "Tab") return;
+      var f = $$(SEL, box).filter(function(el){ return el.offsetParent !== null; });
+      if (!f.length) return;
+      var first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+    });
+  }
+
+  /* One polite live region for the whole site. Adding to the basket,
+     reserving, and every form result speak through it, so a screen
+     reader is told what happened instead of nothing happening. */
+  function say(msg){
+    var r = $("#trLive");
+    if (!r){
+      r = document.createElement("p");
+      r.id = "trLive"; r.className = "visually-hidden";
+      r.setAttribute("role", "status");
+      r.setAttribute("aria-live", "polite");
+      document.body.appendChild(r);
+    }
+    r.textContent = "";
+    setTimeout(function(){ r.textContent = msg; }, 40);
   }
 
   function holdForm(titleLines, ref){
-    return `<p class="small muted" style="margin-top:0">We'll set it behind the counter with your name on it and hold it until close.
+    return demoNote("This hold form is a preview of how it will work.") +
+      `<p class="small muted" style="margin-top:0">We'll set it behind the counter with your name on it and hold it until close.
       No account, no prepay — pay when you pick it up.</p>
       <div style="background:var(--sand); padding:14px 16px; margin:18px 0; font-family:var(--f-display); font-weight:700">${titleLines}</div>
       <form data-holdform data-ref="${esc(ref)}">
@@ -367,7 +428,7 @@ const TR = (() => {
   function receipt(name, lines, qty){
     const d = new Date();
     const num = "TR-" + String(d.getFullYear()).slice(2) + String(d.getMonth()+1).padStart(2,"0") + String(d.getDate()).padStart(2,"0") + "-" + Math.floor(100 + Math.random()*899);
-    return `<div class="receipt">
+    return demoNote("Nothing was actually held.") + `<div class="receipt">
       <div class="big">Twisted Roots Merc</div>
       Siletz, Oregon<br>
       ${esc(STORE.phone)}
@@ -381,13 +442,13 @@ const TR = (() => {
       <div class="rw"><span>HELD UNTIL</span><span>${fmtTime(todayHours() ? todayHours()[1] : 1140)}</span></div>
       <div style="margin-top:14px">It's behind the counter. Just say your name.</div>
     </div>
-    <p class="small muted" style="margin-top:18px">This is a demo — in the live store this drops straight into Square and prints at the counter.</p>
+    <p class="small muted" style="margin-top:18px">In the live store this drops straight into Square and prints at the counter.</p>
     <button class="btn btn--wide" data-close style="margin-top:8px">Done</button>`;
   }
 
   /* ---------------- SUGGESTION FORM ---------------- */
   function tellUsModal(prefill = ""){
-    modal("What should we carry?", `
+    modal("What should we carry?", demoNote("This suggestion box is a preview.") + `
       <p class="small muted" style="margin-top:0">Tell Carrie &amp; Eric what Twisted Roots should stock.
         We're not promising to order everything — but if enough neighbors ask, it goes on the shelf.</p>
       <form data-tellform>
@@ -419,7 +480,7 @@ const TR = (() => {
     var h = todayHours();
     var open = h ? fmtTime(h[0]) + " – " + fmtTime(STORE.kitchen.close === 840 ? 840 : h[1]) : "closed today";
 
-    modal("Order for pickup", '' +
+    modal("Order for pickup", demoNote("This order form is a preview.") +
       '<p class="small muted" style="margin-top:0">Kitchen is on ' + esc(STORE.kitchen.label) +
       '. Bakery rack goes out at six and is usually gone by nine. No account, no prepay — ' +
       'pay at the counter.</p>' +
@@ -445,7 +506,7 @@ const TR = (() => {
 
   /* ---------------- RESERVE THE BASKET ---------------- */
   function basketModal(lines, list){
-    modal("Reserve for pickup",
+    modal("Reserve for pickup", demoNote("This reservation is a preview.") +
       '<p class="small muted" style="margin-top:0">We will pull these and set them behind the counter ' +
       'under your name. Nothing is charged now — you pay when you collect.</p>' +
       '<div style="background:var(--sand); padding:14px 16px; margin:16px 0">' +
@@ -581,14 +642,32 @@ const TR = (() => {
     /* Href is still a real link, so it works with JS off and can
        be opened in a new tab. The click handler intercepts it on
        phones and opens the kitchen in place. */
-    var onBakery = location.pathname.indexOf("bakery.html") > -1;
-    var href = onBakery ? "#order" : "bakery.html#order";
+    /* "Order Online" was on every page, always pointing at the
+       bakery — including on shop.html and yard.html, on a site whose
+       whole proposition is that it does NOT sell online. The dock now
+       offers whatever the page you are on is actually for. */
+    var path = location.pathname;
+    var here = function(n){ return path.indexOf(n) > -1; };
+    var onBakery = here("bakery.html");
+    var href  = onBakery ? "#order" : "bakery.html#order";
+    var label = "Order food";
+    if (here("shop.html") || here("merc.html") || here("hunt.html") || here("storm.html")) {
+      href = "shop.html"; label = "Shop the shelf";
+    } else if (here("yard.html")) {
+      href = "yard.html#stock"; label = "Check the yard";
+    } else if (here("visit.html")) {
+      href = STORE.phoneHref; label = "Call the counter";
+    } else if (here("kitchen.html") || path.indexOf("/recipes/") > -1) {
+      href = onBakery ? "#order" : "../bakery.html#order";
+      if (path.indexOf("/recipes/") === -1) href = "bakery.html#order";
+      label = "Order food";
+    }
 
     var bar = document.createElement("div");
     bar.className = "dockbar";
     bar.setAttribute("aria-label", "Quick actions");
     bar.innerHTML =
-      '<a class="dockbar__cta" href="' + href + '">Order Online</a>' +
+      '<a class="dockbar__cta" href="' + href + '">' + label + '</a>' +
       '<a class="dockbar__btn" href="' + STORE.phoneHref + '" aria-label="Call Twisted Roots Merc">' +
         '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">' +
         '<path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .7-.2 1l-2.3 2.2z"/></svg>' +
@@ -793,7 +872,12 @@ const TR = (() => {
       const tell = e.target.closest("[data-tellus]");
       if (tell){ tellUsModal(tell.dataset.tellus === "true" ? "" : tell.dataset.tellus); return; }
       var cta = e.target.closest(".dockbar__cta");
-      if (cta && window.matchMedia("(max-width:1010px)").matches){
+      /* Only the FOOD dock opens the kitchen in place. On a shop or
+         yard page the dock is a real link to a real page and must be
+         left alone, or it would open a bakery order from the lumber
+         rack. */
+      if (cta && /#order$/.test(cta.getAttribute("href") || "") &&
+          window.matchMedia("(max-width:1010px)").matches){
         e.preventDefault();
         orderModal();
         return;
@@ -880,7 +964,7 @@ const TR = (() => {
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
   else init();
 
-  return { STORE, searchItems, findIntent, renderSearch, stockState, stockLabel, setStorm, money, byId, tellUsModal, basketModal };
+  return { STORE, searchItems, findIntent, renderSearch, stockState, stockLabel, setStorm, money, byId, tellUsModal, basketModal, say };
 })();
 
 

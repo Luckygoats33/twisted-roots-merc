@@ -1,0 +1,120 @@
+## maxindex-mobile.json
+
+=== render-blocking-insight score=0.5 
+[
+ {
+  "url": "http://127.0.0.1:8898/perf/bundle.css",
+  "totalBytes": 19633,
+  "wastedMs": 602
+ }
+]
+
+=== network-dependency-tree-insight score=0 
+[
+ {
+  "type": "list-section",
+  "value": {
+   "type": "network-tree",
+   "chains": {
+    "990648955411278AB44459B614BE7DFA": {
+     "url": "http://127.0.0.1:8898/perf/preview/max-index.html",
+     "navStartToEndTime": 39,
+     "transferSize": 8708,
+     "isLongest": true,
+     "children": {
+      "20564.5": {
+       "url": "http://127.0.0.1:8898/perf/bundle.css",
+       "navStartToEndTime": 49,
+       "transferSize": 19633,
+       "isLongest": true,
+       "children": {}
+      }
+     }
+    }
+   },
+   "longestChain": {
+    "duration": 49
+   }
+  }
+ },
+ {
+  "type": "list-section",
+  "title": "Preconnected origins",
+  "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+  "value": {
+   "type": "table",
+   "headings": [
+    {
+     "key": "origin",
+     "valueType": "text",
+     "subItemsHeading": {
+      "key": "warning"
+     },
+     "label": "Origin"
+    },
+    {
+     "key": "source",
+     "valueType": "node",
+     "label": "Source"
+    }
+   ],
+   "items": [
+    {
+     "origin": "https://fonts.googleapis.com/",
+     "source": {
+      "type": "node",
+      "lhId": "page-18-LINK",
+      "path": "1,HTML,0,HEAD,5,LINK",
+      "selector": "head > link",
+      "boundingRect": {
+       "top": 0,
+       "bottom": 0,
+       "left": 0,
+       "right": 0,
+       "width": 0,
+       "height": 0
+      },
+      "snippet": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">",
+      "nodeLabel": "head > link"
+     },
+     "subItems": {
+      "type": "subitems",
+      "items": []
+     }
+    },
+    {
+     "origin": "https://fonts.gstatic.com/",
+     "source": {
+      "type": "node",
+      "lhId": "page-19-LINK",
+      "path": "1,HTML,0,HEAD,6,LINK",
+      "selector": "head > link",
+      "boundingRect": {
+       "top": 0,
+       "bottom": 0,
+       "left": 0,
+       "right": 0,
+       "width": 0,
+       "height": 0
+      },
+      "snippet": "<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin=\"\">",
+      "nodeLabel": "head > link"
+     },
+     "subItems": {
+      "type": "subitems",
+      "items": []
+     }
+    }
+   ]
+  }
+ },
+ {
+  "type": "list-section",
+  "title": "Preconnect candidates",
+  "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4.",
+  "value": {
+   "type": "text",
+   "value": "No additional origins are good candidates for preconnecting"
+  }
+ }
+]

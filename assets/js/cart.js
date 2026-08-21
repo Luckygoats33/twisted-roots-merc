@@ -73,6 +73,11 @@ const TRCart = (() => {
     if (line) line.qty = want; else state.push({ id: id, qty: want });
     save();
     flash(id, "added");
+    /* say it out loud too — the colour change on the button is
+       invisible to a screen reader */
+    if (typeof TR !== "undefined" && TR.say) {
+      TR.say(it.n + " added. Basket has " + count() + " item" + (count() === 1 ? "" : "s") + ".");
+    }
     return true;
   }
   function setQty(id, qty) {
@@ -207,10 +212,16 @@ const TRCart = (() => {
     }).join("") +
       '<hr><div class="rw"><span>SUBTOTAL</span><span>' + money(total()) + '</span></div>';
 
-    close();
-    if (typeof TR !== "undefined" && TR.basketModal) { TR.basketModal(lines, list); return; }
-    /* if site.js is not around for some reason, do not lose the basket */
-    alert("Basket reserved. Bring your name to the counter.");
+    if (typeof TR !== "undefined" && TR.basketModal) { close(); TR.basketModal(lines, list); return; }
+    /* If site.js is not around for some reason, do not lose the basket
+       and do not lie about what happened. An alert() would also freeze
+       the page, so say it in the drawer instead. */
+    var foot = $("[data-cartfoot]");
+    if (foot) {
+      foot.insertAdjacentHTML("afterbegin",
+        '<p class="demonote" role="status"><b>Preview site.</b> This basket has not been sent ' +
+        'to the store and nothing is charged. Call the counter to actually reserve it.</p>');
+    }
   }
 
   /* ---------- events ---------- */
