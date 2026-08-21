@@ -1050,11 +1050,18 @@ img.hero-still{ z-index:0 }
    HEADER FIT
    The nav grew: Merc, Bakery, The Yard, Storm, Hunt, Local,
    Our Roots, The Board, Visit — plus Shop Now and the basket.
-   That no longer fits beside the hanging sign much under
-   1240px, so the burger takes over earlier rather than the
-   header quietly overflowing the page.
+   MEASURED, not guessed. With the labels trimmed to one word
+   each (Yard, Roots, Board), the real desktop nav row is 651px;
+   with the sign at 152px and the header buttons at 81px the whole
+   header needs about 949px. The burger therefore takes over below
+   1180px, which leaves ~230px of headroom.
+
+   An earlier version of this measurement cloned the nav and got
+   1375px — wrong, because the clone inherited the MOBILE column
+   padding. Measure the element in its real state or do not
+   measure it.
    ========================================================== */
-@media (max-width:1239px){
+@media (max-width:1179px){
   .burger{ display:block }
   .nav{
     position:fixed; inset:var(--head-h) 0 auto 0;
