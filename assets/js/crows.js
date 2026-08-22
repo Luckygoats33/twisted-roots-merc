@@ -288,17 +288,35 @@
          is continuous across the swap, and putting the two centroids
          at the same point means it does not jump. */
       var FLY_SPAN = 0.85, FLY_CX = 0.500, FLY_CY = 0.538;
-      var P2_SPAN  = 0.516, P2_CX  = 0.112, P2_CY  = 0.340;
+      /* The bird is in a completely different place and size at each
+         end of the performance, so ONE flying geometry cannot match
+         both. Arriving it has to match perch frame 02; leaving, it
+         has to match frame 33 — which is why the take-off still
+         jumped after the landing was fixed. Both measured off the
+         sheet the same way. */
+      var P_IN  = { span: 0.516, cx: 0.112, cy: 0.340 };   /* frame 02 */
+      var P_OUT = { span: 0.553, cx: 0.780, cy: 0.050 };   /* frame 33 */
 
-      var fw = Math.round(g.w * P2_SPAN / FLY_SPAN);
-      var fh = Math.round(fw * 80 / 104);
-      fly.style.width  = fw + "px";
-      fly.style.height = fh + "px";
-      fly.style.backgroundSize = (fw * FLY_FRAMES) + "px 100%";
-      /* put the flying bird's centroid exactly where perch frame 2
-         puts its own, in the element's own coordinates */
-      fly.style.left = Math.round(g.w * P2_CX - fw * FLY_CX) + "px";
-      fly.style.top  = Math.round(g.h * P2_CY - fh * FLY_CY) + "px";
+      function flyGeom(m) {
+        var w = Math.round(g.w * m.span / FLY_SPAN);
+        var h2 = Math.round(w * 80 / 104);
+        return { w: w, h: h2,
+                 left: Math.round(g.w * m.cx - w * FLY_CX),
+                 top:  Math.round(g.h * m.cy - h2 * FLY_CY) };
+      }
+      var GIN = flyGeom(P_IN), GOUT = flyGeom(P_OUT);
+      var fw = GIN.w, fh = GIN.h, applied = null;
+
+      function useGeom(gm) {
+        if (applied === gm) return;
+        applied = gm; fw = gm.w; fh = gm.h;
+        fly.style.width  = gm.w + "px";
+        fly.style.height = gm.h + "px";
+        fly.style.backgroundSize = (gm.w * FLY_FRAMES) + "px 100%";
+        fly.style.left = gm.left + "px";
+        fly.style.top  = gm.top + "px";
+      }
+      useGeom(GIN);
 
       sit.style.backgroundSize = (g.w * SHEET) + "px 100%";
 
@@ -366,12 +384,18 @@
         else if (t < OUT + BLEND){ flyA = (t - OUT) / BLEND; sitA = 1 - flyA; }
         else                     { flyA = 1; sitA = 0; }
 
-        fly.style.display = flyA > 0 ? "block" : "none";
-        sit.style.display = sitA > 0 ? "block" : "none";
-        fly.style.opacity = flyA.toFixed(2);
-        sit.style.opacity = sitA.toFixed(2);
+        /* OPACITY ONLY — never display:none mid-performance.
+           Toggling display throws the sprite's compositing layer
+           away and forces the browser to re-raster a 190KB sheet on
+           the very frame the bird changes phase. That is the hitch
+           at take-off on desktop, and on a phone it is enough to
+           drop frames outright. Both children stay painted for the
+           whole run and simply fade past each other. */
+        fly.style.opacity = flyA.toFixed(3);
+        sit.style.opacity = sitA.toFixed(3);
 
         if (flyA > 0) {
+          useGeom(t < IN ? GIN : GOUT);
           fly.style.transform = mirror || t < IN ? "scaleX(-1)" : "none";
           var fIdx = Math.floor(t / FLAP_MS * FLY_FRAMES) % FLY_FRAMES;
           fly.style.backgroundPositionX = (-fIdx * fw) + "px";
@@ -399,12 +423,33 @@
       }
 
       el.style.opacity = "0";
+      fly.style.display = "block";
+      sit.style.display = "block";
+      fly.style.opacity = "0";
+      sit.style.opacity = "0";
       rafId = requestAnimationFrame(frame);
     }
 
     window.addEventListener("resize", function () {
       h = window.innerWidth < 900 ? 30 : 40;
     }, { passive: true });
+
+    /* Decode both sheets while nothing is happening. Otherwise the
+       first frame of the first flight pays for decoding them, which
+       is exactly the wrong moment. */
+    function warm() {
+      /* Resolve the image paths off a stylesheet link rather than
+         guessing the depth: blog and recipe pages sit one level down,
+         and a wrong prefix would silently 404 and warm nothing. */
+      var link = document.querySelector('link[rel="stylesheet"][href*="assets/css/"]');
+      var base = link ? link.getAttribute("href").replace(/assets\/css\/.*$/, "") : "";
+      ["assets/img/crow-perch.webp", "assets/img/crow-sprite.webp"].forEach(function (src) {
+        var i = new Image();
+        i.src = base + src;
+        if (i.decode) i.decode().catch(function () {});
+      });
+    }
+    if (window.requestIdleCallback) requestIdleCallback(warm); else setTimeout(warm, 900);
 
     setTimeout(run, 4200);          /* first visit */
     setInterval(run, 165000);       /* now and then */

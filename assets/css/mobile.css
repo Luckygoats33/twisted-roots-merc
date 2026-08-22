@@ -542,10 +542,17 @@ body{ background:var(--paper) }
 .wavedivider,.treeline,.fogdrift,.rainlayer,.birds,
 .hangsign__beam,.hangsign__chain{ pointer-events:none !important }
 
-/* The sign is decoration too — the brand link stays clickable,
-   but the swinging plate must not overhang the burger. */
+/* The beam and the chains are decoration and must never take a tap.
+   The PLATE is not decoration — it is the logo, and on a phone the
+   brand text is hidden, so if the plate is inert there is nothing
+   left to tap and the only way back to the home page is the footer.
+   It is a link again; the burger and the header buttons are lifted
+   above it below, so where the swinging sign overlaps them the
+   control still wins. */
 .hangsign{ pointer-events:none }
 .brand{ pointer-events:auto }
+.brand .hangsign__plate,
+.brand .hangsign img{ pointer-events:auto; cursor:pointer }
 
 @media (max-width:1010px){
   .site-head{ position:sticky; top:0; z-index:200 }
@@ -775,6 +782,9 @@ body{ background:var(--paper) }
 
   .head-cta{ order:3; margin-left:auto }
   .nav{ z-index:205 }
+  /* .brand is z-index 6 here; the controls sit above it so the
+     overhanging plate can never swallow a tap meant for them */
+  .burger, .head-cta{ position:relative; z-index:7 }
 }
 
 @media (max-width:400px){
