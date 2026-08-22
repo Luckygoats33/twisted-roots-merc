@@ -144,8 +144,9 @@
 /* ==========================================================
    4. TAP TARGETS BETWEEN 901px AND 1180px  [HIGH]
    ----------------------------------------------------------
-   The header collapses to a burger below 1180px, which is the
-   site's own declaration that these widths are touch territory.
+   These widths are touch territory — 1024 is iPad landscape.
+   (The burger itself now takes over at 1010px, not 1180px;
+   the tap-target floors deliberately still run to 1180.)
    Every tap-target floor in mobile.css is scoped to
    max-width:900px (mobile.css:319-333) or max-width:1010px.
 
@@ -171,13 +172,13 @@
   .searchbox button{ min-height:52px }
   .field input,.field select,.sortbox select{ min-height:48px }
   .prod .act .btn{ min-height:44px; padding-inline:16px }
-  /* The burger panel's own rows. .nav a is floored at 48px in
-     mobile.css:146 but only to 1010px, and .navitem__top (the
-     grouped accordion headers the panel builds) is not floored
-     anywhere. Measured at 1093px: "Shop" 70x39, "Kitchen" 94x39,
-     "Local" 76x39, "Our Roots" 96x39, "Visit" 56x39. */
-  .nav a,
-  .navitem__top{ min-height:48px; display:flex; align-items:center }
+  /* The burger panel's rows are floored below, NOT here. This block
+     runs to 1180px, but the burger now takes over at 1010px, so
+     between 1011 and 1180 the nav is a horizontal row on a desktop
+     — and `display:flex` on `.nav a` (specificity 0,1,1) beat the
+     `.nav-cta{display:none}` in mobile.css (0,1,0) and put a second
+     "Shop Now" in the middle of the row. Floor the panel rows in
+     the burger range only. */
   .foot-top a,
   .foot-legal a,
   a[href^="tel:"],
@@ -189,6 +190,18 @@
    grep "cartline" in mobile.css returns nothing). Measured
    34x34 (minus/plus), 38x34 (quantity), ~20px (remove).
    These are the controls a phone user touches most. */
+
+/* The burger panel's own rows, scoped to the range where the panel
+   actually exists. .nav a is floored at 48px in mobile.css:146 but
+   only to 900px, and .navitem__top — the grouped accordion headers
+   — is not floored anywhere. Measured at 1093px before the burger
+   breakpoint moved: "Shop" 70x39, "Kitchen" 94x39, "Local" 76x39,
+   "Our Roots" 96x39, "Visit" 56x39. */
+@media (max-width:1010px){
+  .nav a,
+  .navitem__top{ min-height:48px; display:flex; align-items:center }
+}
+
 @media (max-width:1180px){
   .cartline__qty button{ width:44px; height:44px }
   .cartline__qty input{ width:48px; height:44px; font-size:16px }
