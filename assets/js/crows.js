@@ -202,7 +202,10 @@
      cruising, but only a little — anything more reads as a
      catapult, which is exactly what the old number did. */
   var OUT_BODY_PER_SEC = 4.4;
-  var TOTAL = MS.approach + MS.land + MS.sit + MS.takeoff + MS.depart;
+  /* everything up to the moment it leaves. The exit itself is
+     timed per run, from the width of the screen and the bird's
+     own speed, so MS.depart is only a floor. */
+  var UPTO = MS.approach + MS.land + MS.sit + MS.takeoff;
 
   function ease(t) { return 1 - Math.pow(1 - t, 3); }        /* easeOutCubic */
 
@@ -325,20 +328,36 @@
 
       sit.style.backgroundSize = (g.w * SHEET) + "px 100%";
 
-      /* It starts out over the middle of the hero, at the altitude
-         the flock uses, and finishes just left of the sign — which
-         is where the perch sheet's own first frames pick it up, so
-         the handover between the two sheets is not a jump. */
       var hero = document.querySelector(".hero");
       var hr = hero ? hero.getBoundingClientRect()
                     : { top: 0, height: window.innerHeight };
-      /* and never start it off the right-hand edge, for the same
-         reason — belt and braces now that it is fixed */
+
+      /* It starts out over the middle of the hero, at the altitude
+         the flock uses, and finishes just left of the sign — which
+         is where the perch sheet's own first frames pick it up, so
+         the handover between the two sheets is not a jump. It is
+         also clamped inside the viewport, so a fixed element being
+         translated cannot reach past the right edge. */
       var startX = Math.min(g.x + Math.max(260, window.innerWidth * 0.36),
                             window.innerWidth - fw - 8);
       var startY = hr.top + hr.height * 0.24;
       var endX   = g.x - g.w * 0.33;
       var endY   = g.y - g.h * 0.09;
+
+      /* Where it goes, and therefore how long it takes. Both are
+         derived rather than fixed: the bird has to reach past the
+         right edge, it has to come back down to the flock's band on
+         the way, and it has to do the whole thing at the same body
+         lengths per second as everything else in the sky. A fixed
+         duration would have made it fast on a wide screen and slow
+         on a narrow one. */
+      var flockY = hr.top + hr.height * 0.16;
+      var exitDx = window.innerWidth - g.x + fw + 24;
+      var exitDy = Math.max(0, flockY - g.y);
+      var pathLen = Math.sqrt(exitDx * exitDx + exitDy * exitDy);
+      var departMs = Math.round(1000 * pathLen / (OUT_BODY_PER_SEC * fw) / (1 - 0.40 / 2));
+      departMs = Math.max(1800, Math.min(9000, departMs));
+      var TOTAL = UPTO + departMs;
 
       var t0 = performance.now();
 
@@ -363,7 +382,7 @@
         } else if (t < MS.approach + MS.land + MS.sit) {
           phase = "sit"; dx = 0; dy = 0;
           idx = band(SIT, (t - MS.approach - MS.land) / MS.sit);
-        } else if (t < TOTAL - MS.depart) {
+        } else if (t < UPTO) {
           phase = "sit"; dx = 0; dy = 0;
           idx = band(TAKEOFF, (t - MS.approach - MS.land - MS.sit) / MS.takeoff);
         } else {
@@ -384,16 +403,21 @@
              a velocity that ramps up from rest over the first 40% of
              the phase. A shade brisker than cruise, because a bird
              leaving a perch is going somewhere. */
+          /* It used to climb away off the top of the screen. A crow
+             leaving a sign drops back to the height it was flying at
+             and carries on across — so it rejoins the flock's own sky
+             band and leaves to the right, the way the others do.
+             There is still a small pop upward off the push-off,
+             because that is what wings do. */
           phase = "fly";
-          var d = (t - (TOTAL - MS.depart)) / MS.depart;
+          var d = (t - UPTO) / departMs;
           var A = 0.40;                          /* the push-off */
           var far = d < A ? (d * d) / (2 * A) : d - A / 2;
           far /= (1 - A / 2);                    /* normalise to 0..1 */
 
-          var v = OUT_BODY_PER_SEC * fw;         /* px per second */
-          var reachPx = v * (MS.depart / 1000) * (1 - A / 2);
-          dx =  far * reachPx * 0.86;
-          dy = -far * reachPx * 0.52;            /* climbing away */
+          dx = far * exitDx;
+          dy = far * exitDy
+               - Math.sin(Math.PI * Math.min(1, far / 0.35)) * g.h * 0.45;
           idx = TAKEOFF[1];
         }
 
@@ -403,7 +427,7 @@
            over BLEND ms. Matching the geometry gets it most of the
            way; the blend covers the wing pose, which cannot match
            because the two takes were shot separately. */
-        var IN = MS.approach, OUT = TOTAL - MS.depart;
+        var IN = MS.approach, OUT = UPTO;
         var flyA = 1, sitA = 0;
         if (t < IN - BLEND)      { flyA = 1; sitA = 0; }
         else if (t < IN)         { sitA = (t - (IN - BLEND)) / BLEND; flyA = 1 - sitA; }
@@ -429,7 +453,7 @@
           var beat = FLAP_MS;
           if (t >= OUT) {
             var into = Math.min(1, (t - OUT) / 1000);
-            beat = 250 + (FLAP_MS - 250) * into;
+            beat = 330 + (FLAP_MS - 330) * into;
           }
           var fIdx = Math.floor(t / beat * FLY_FRAMES) % FLY_FRAMES;
           fly.style.backgroundPositionX = (-fIdx * fw) + "px";
@@ -441,9 +465,17 @@
           sit.style.backgroundPositionX = (-sIdx * g.w) + "px";
         }
 
-        /* fade the whole bird on as it comes, off as it goes */
-        el.style.opacity = t < 260 ? (t / 260).toFixed(2)
-                         : (t > TOTAL - 420 ? ((TOTAL - t) / 420).toFixed(2) : "1");
+        /* Fade on as it arrives, and fade out over the last third of
+           the exit rather than in the final 420ms. It should thin out
+           into the distance the way the flock does, not blink off at
+           the edge of the screen. */
+        var op = 1;
+        if (t < 260) op = t / 260;
+        else if (t >= UPTO) {
+          var fd = (t - UPTO) / departMs;
+          if (fd > 0.66) op = Math.max(0, 1 - (fd - 0.66) / 0.30);
+        }
+        el.style.opacity = op.toFixed(3);
 
         rafId = requestAnimationFrame(frame);
       }
