@@ -1,11 +1,11 @@
 /* bundle.css - GENERATED FILE, DO NOT EDIT.
    Built by build_css.py from, in this exact cascade order:
-     site.css -> motion.css -> roots.css -> mobile.css -> polish.css -> perf.css
+     site.css -> motion.css -> roots.css -> mobile.css -> polish.css -> perf.css -> a11y.css
    print.css is deliberately NOT bundled (media="print", already
    non-blocking).  shop.css is NOT bundled (one page links it).
    perf.css must stay last.  Edit the sources, then run:
      python build_css.py && python rehash.py
-   1014 rules, 112 at-rule blocks, 3013 declarations. */
+   1021 rules, 112 at-rule blocks, 3039 declarations. */
 :root{--ink:#20180F;--ink-2:#3A2C1E;--bark:#2A1F14;--cream:#F4EDE1;--paper:#FBF7EF;--sand:#EAE0CE;--wood:#C39A68;--wood-lt:#E4CBA4;--wood-dk:#8A6238;--rust:#8E4826;--rust-lt:#B9663C;--teal:#215C6B;--teal-lt:#3D95A8;--pine:#254E3D;--amber:#D99A34;--amber-hi:#F2B953;--red:#A8321F;--ok:#2F7D4F;--line:rgba(32,24,15,.16);--line-2:rgba(32,24,15,.28);--f-display:"Bitter",Georgia,"Times New Roman",serif;--f-sign:"Rye",Georgia,serif;--f-body:"Public Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;--wrap:1560px;--r:2px;--head-h:86px}
 [data-storm="on"]{--amber:#E9AE45;--line:rgba(33,92,107,.22)}
 *,*::before,*::after{box-sizing:border-box}
@@ -1244,3 +1244,10 @@ img[data-parallax]:not([width]){aspect-ratio:3 / 2;width:100%;height:auto}
 .hero-video{display:none !important}
 .hero-still{display:block !important}
 }
+.tr-prose>h2.a11y-rank-h3,h2.a11y-rank-h3{font-family:var(--f-display);font-weight:800;font-size:1.16rem;line-height:inherit;letter-spacing:normal;margin:1.8em 0 .5em}
+.tr-prose>h3.a11y-rank-h4,.tr-prose>h4.a11y-rank-h5{font-family:var(--f-display);font-weight:800;font-size:1.16rem;line-height:inherit;letter-spacing:normal;margin:1.8em 0 .5em}
+.card-in ul li span{opacity:.68}
+.band--sand .serif-caps[style*="opacity"],.band--cream .serif-caps[style*="opacity"],.formbox .serif-caps[style*="opacity"]{opacity:.72 !important}
+.totop:not(.show){visibility:hidden}
+.navitem:focus-within>.subnav{display:flex}
+.visually-hidden{position:absolute !important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}

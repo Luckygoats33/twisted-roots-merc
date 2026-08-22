@@ -199,8 +199,57 @@ const TRCart = (() => {
       '<button class="btn btn--wide btn--ghost btn--sm" data-cartclear style="margin-top:10px">Empty the basket</button>';
   }
 
-  function open()  { build(); $("#trCart").classList.add("open"); document.body.style.overflow = "hidden"; paint(); }
-  function close() { var c = $("#trCart"); if (c) c.classList.remove("open"); document.body.style.overflow = ""; }
+  /* THE DRAWER WAS A KEYBOARD TRAP IN REVERSE.
+     The panel is aria-modal="true", but focus was never moved into
+     it — so the first Tab landed on a link BEHIND the scrim, and a
+     screen reader was told to ignore everything outside a dialog
+     its cursor had never been placed inside. Escape then left
+     focus stranded wherever it had wandered to.
+
+     Three things fix it: put focus in on open, keep Tab inside
+     while it is open, and give focus back to whatever opened it. */
+  var lastFocus = null;
+  var FOCUSABLE = 'a[href],button:not([disabled]),input:not([disabled]),select,textarea,[tabindex]:not([tabindex="-1"])';
+
+  function focusables() {
+    var panel = $(".cartdrawer__panel");
+    if (!panel) return [];
+    return $$(FOCUSABLE, panel).filter(function (el) { return el.offsetParent !== null; });
+  }
+
+  function open() {
+    build();
+    lastFocus = document.activeElement;
+    $("#trCart").classList.add("open");
+    document.body.style.overflow = "hidden";
+    paint();
+    /* the close button, not the first line item — opening a basket
+       should not read out its whole contents before the heading */
+    var first = $(".cartdrawer__x") || focusables()[0];
+    if (first) setTimeout(function () { first.focus(); }, 40);
+  }
+
+  function close() {
+    var c = $("#trCart");
+    if (c) c.classList.remove("open");
+    document.body.style.overflow = "";
+    if (lastFocus && lastFocus.focus) { try { lastFocus.focus(); } catch (e) {} }
+    lastFocus = null;
+  }
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "Tab") return;
+    var c = $("#trCart");
+    if (!c || !c.classList.contains("open")) return;
+    var f = focusables();
+    if (!f.length) return;
+    var first = f[0], last = f[f.length - 1];
+    /* focus can start outside the panel entirely if something else
+       moved it, so pull it back rather than only wrapping the ends */
+    if (!c.contains(document.activeElement)) { e.preventDefault(); first.focus(); return; }
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  });
 
   /* ---------- reserve for pickup ---------- */
   function checkout() {

@@ -195,7 +195,8 @@
   var FEET  = 0.74;             /* where the feet sit in the perch cell */
   var RATIO = 190 / 147;        /* perch cell aspect */
 
-  var MS = { approach: 2400, land: 560, sit: 3000, takeoff: 260, depart: 1700 };
+  var MS = { approach: 2400, land: 560, sit: 5000, takeoff: 260, depart: 1700 };
+  var BLEND = 200;              /* cross-fade at each sheet swap */
   var TOTAL = MS.approach + MS.land + MS.sit + MS.takeoff + MS.depart;
 
   function ease(t) { return 1 - Math.pow(1 - t, 3); }        /* easeOutCubic */
@@ -261,17 +262,30 @@
 
       var g = place(el, plate, h);
 
-      /* The travelling bird is drawn from the flying sheet, sized so
-         its wingspan matches the body of the perched one. Left at the
-         flying sheet's own 104px cell it would arrive several times
-         too big and shrink on touchdown. */
-      var fw = Math.round(g.h * 1.55), fh = Math.round(fw * 80 / 104);
+      /* THE HANDOVER, MEASURED RATHER THAN EYEBALLED.
+         Swapping sheets is where this glitched: the flying bird was
+         sized off the perch CELL, but the perch cell is mostly empty
+         air around the bird, so the bird itself halved in size and
+         jumped sideways the instant the sheets changed.
+
+         Both sheets were measured (alpha coverage per cell):
+           flying    bird spans 0.85 of its cell, centroid 0.500/0.538
+           perch f02 bird spans 0.516 of its cell, centroid 0.112/0.340
+         Matching the BIRDS rather than the cells means the wingspan
+         is continuous across the swap, and putting the two centroids
+         at the same point means it does not jump. */
+      var FLY_SPAN = 0.85, FLY_CX = 0.500, FLY_CY = 0.538;
+      var P2_SPAN  = 0.516, P2_CX  = 0.112, P2_CY  = 0.340;
+
+      var fw = Math.round(g.w * P2_SPAN / FLY_SPAN);
+      var fh = Math.round(fw * 80 / 104);
       fly.style.width  = fw + "px";
       fly.style.height = fh + "px";
       fly.style.backgroundSize = (fw * FLY_FRAMES) + "px 100%";
-      /* centre the flying cell on the perched bird's own middle */
-      fly.style.left = Math.round(g.w * 0.5 - fw * 0.5) + "px";
-      fly.style.top  = Math.round(g.h * FEET - fh * 0.62) + "px";
+      /* put the flying bird's centroid exactly where perch frame 2
+         puts its own, in the element's own coordinates */
+      fly.style.left = Math.round(g.w * P2_CX - fw * FLY_CX) + "px";
+      fly.style.top  = Math.round(g.h * P2_CY - fh * FLY_CY) + "px";
 
       sit.style.backgroundSize = (g.w * SHEET) + "px 100%";
 
@@ -318,23 +332,43 @@
           var d = (t - (TOTAL - MS.depart)) / MS.depart;
           dx = d * window.innerWidth * 0.55;
           dy = -d * g.h * 3.4 - Math.sin(Math.PI * d * 0.5) * g.h * 0.6;
-          idx = Math.floor(t / FLAP_MS * FLY_FRAMES) % FLY_FRAMES;
+          idx = TAKEOFF[1];
         }
 
         el.style.transform = "translate3d(" + dx.toFixed(1) + "px," + dy.toFixed(1) + "px,0)";
-        fly.style.display = phase === "fly" ? "block" : "none";
-        sit.style.display = phase === "sit" ? "block" : "none";
 
-        if (phase === "fly") {
-          fly.style.transform = mirror ? "scaleX(-1)" : "none";
-          fly.style.backgroundPositionX = (-idx * fw) + "px";
-          /* fade in as it comes on, out as it goes */
-          el.style.opacity = t < 260 ? (t / 260).toFixed(2)
-                           : (t > TOTAL - 420 ? ((TOTAL - t) / 420).toFixed(2) : "1");
-        } else {
-          sit.style.backgroundPositionX = (-idx * g.w) + "px";
-          el.style.opacity = "1";
+        /* Both sheets stay in the DOM through the swap and cross-fade
+           over BLEND ms. Matching the geometry gets it most of the
+           way; the blend covers the wing pose, which cannot match
+           because the two takes were shot separately. */
+        var IN = MS.approach, OUT = TOTAL - MS.depart;
+        var flyA = 1, sitA = 0;
+        if (t < IN - BLEND)      { flyA = 1; sitA = 0; }
+        else if (t < IN)         { sitA = (t - (IN - BLEND)) / BLEND; flyA = 1 - sitA; }
+        else if (t < OUT)        { flyA = 0; sitA = 1; }
+        else if (t < OUT + BLEND){ flyA = (t - OUT) / BLEND; sitA = 1 - flyA; }
+        else                     { flyA = 1; sitA = 0; }
+
+        fly.style.display = flyA > 0 ? "block" : "none";
+        sit.style.display = sitA > 0 ? "block" : "none";
+        fly.style.opacity = flyA.toFixed(2);
+        sit.style.opacity = sitA.toFixed(2);
+
+        if (flyA > 0) {
+          fly.style.transform = mirror || t < IN ? "scaleX(-1)" : "none";
+          var fIdx = Math.floor(t / FLAP_MS * FLY_FRAMES) % FLY_FRAMES;
+          fly.style.backgroundPositionX = (-fIdx * fw) + "px";
         }
+        if (sitA > 0) {
+          /* during the fade-in the perch sheet holds its first frame,
+             so the two birds are in the same place at the same size */
+          var sIdx = phase === "sit" ? idx : LAND[0];
+          sit.style.backgroundPositionX = (-sIdx * g.w) + "px";
+        }
+
+        /* fade the whole bird on as it comes, off as it goes */
+        el.style.opacity = t < 260 ? (t / 260).toFixed(2)
+                         : (t > TOTAL - 420 ? ((TOTAL - t) / 420).toFixed(2) : "1");
 
         rafId = requestAnimationFrame(frame);
       }

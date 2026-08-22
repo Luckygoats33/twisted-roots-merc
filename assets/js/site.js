@@ -446,6 +446,19 @@ const TR = (() => {
     <button class="btn btn--wide" data-close style="margin-top:8px">Done</button>`;
   }
 
+  /* Every one of these forms swapped the dialog's contents and then
+     said nothing and moved nothing. Sighted users saw a receipt
+     appear; a screen reader was told nothing at all, and focus was
+     left on a submit button that no longer existed, which drops it
+     to <body>. One helper, called from all four. */
+  function resultShown(title, spoken){
+    $("#trModalTitle").textContent = title;
+    say(spoken);
+    var box = $(".modal-body");
+    var go = box && (box.querySelector("button, a[href], input"));
+    if (go) setTimeout(function(){ go.focus(); }, 40);
+  }
+
   /* ---------------- SUGGESTION FORM ---------------- */
   function tellUsModal(prefill = ""){
     modal("What should we carry?", demoNote("This suggestion box is a preview.") + `
@@ -909,14 +922,13 @@ const TR = (() => {
         if (k) lines = k.items.map(byId).filter(Boolean)
           .map(i => `<div class="rw"><span>${esc(i.n)}</span><span>${money(i.p)}</span></div>`).join("");
         $(".modal-body").innerHTML = receipt(fd.get("name") || "Neighbor", lines, fd.get("qty"));
-        $("#trModalTitle").textContent = "We've got it";
+        resultShown("We've got it", "Preview only. Nothing was actually held, and nothing was charged.");
         return;
       }
       const tf = e.target.closest("[data-tellform]");
       if (tf){
         e.preventDefault();
         const fd = new FormData(tf);
-        $("#trModalTitle").textContent = "Thanks — it's on the list";
         $(".modal-body").innerHTML = `<div class="receipt">
             <div class="big">Noted at the counter</div><hr>
             <div class="rw"><span>ITEM</span><span>${esc(fd.get("item"))}</span></div>
@@ -925,15 +937,16 @@ const TR = (() => {
             <div>Carrie reads these Sunday nights. If enough neighbors ask for the same thing, it goes on the shelf — and we'll post it under <b>You Asked, We Got It.</b></div>
           </div>
           <button class="btn btn--wide" data-close style="margin-top:18px">Done</button>`;
+        resultShown("Thanks — it's on the list", "Preview only. Your suggestion was not sent to the store.");
         return;
       }
       const bf = e.target.closest("[data-basketform]");
       if (bf){
         e.preventDefault();
         const fd = new FormData(bf);
-        $("#trModalTitle").textContent = "Set aside for you";
         $(".modal-body").innerHTML = receipt(fd.get("name") || "Neighbor", bf.dataset.lines || "", TRCart.count());
         TRCart.clear();
+        resultShown("Set aside for you", "Preview only. Nothing was reserved and nothing was charged.");
         return;
       }
       const of_ = e.target.closest("[data-orderform]");

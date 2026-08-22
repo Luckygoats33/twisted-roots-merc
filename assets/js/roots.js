@@ -30,7 +30,9 @@
   var NS = "http://www.w3.org/2000/svg";
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  var S = { host: null, svg: null, g: null, clip: null, H: 0, raf: 0, built: 0 };
+  var S = { host: null, svg: null, g: null, clip: null, tip: null, grad: null, H: 0, raf: 0, built: 0 };
+  /* how long the still-forming tip is, in px */
+  var FEATHER = 260;
 
   /* ---------- deterministic value noise ---------- */
   function mulberry(seed) {
@@ -142,18 +144,54 @@
     svg.setAttribute("aria-hidden", "true");
     S.svg = svg;
 
+    /* A clipPath cuts the roots off along a hard horizontal line,
+       and a hard line across a growing root does not read as growth
+       — it reads as a wipe, which is what made this look like a
+       shape appearing rather than something growing. A mask with a
+       gradient at its leading edge fades the last stretch out, so
+       the tip looks like it is still forming. */
     var defs = document.createElementNS(NS, "defs");
-    var cp = document.createElementNS(NS, "clipPath");
-    cp.setAttribute("id", "tr-rootclip");
-    var rect = document.createElementNS(NS, "rect");
-    rect.setAttribute("x", 0); rect.setAttribute("y", 0);
-    rect.setAttribute("width", W);
-    rect.setAttribute("height", reduce ? H : 0);
-    cp.appendChild(rect); defs.appendChild(cp); svg.appendChild(defs);
-    S.clip = rect;
+
+    var grad = document.createElementNS(NS, "linearGradient");
+    grad.setAttribute("id", "tr-roottip");
+    grad.setAttribute("gradientUnits", "userSpaceOnUse");
+    grad.setAttribute("x1", 0); grad.setAttribute("x2", 0);
+    grad.setAttribute("y1", 0); grad.setAttribute("y2", FEATHER);
+    var st1 = document.createElementNS(NS, "stop");
+    st1.setAttribute("offset", "0");   st1.setAttribute("stop-color", "#fff");
+    var st2 = document.createElementNS(NS, "stop");
+    st2.setAttribute("offset", "1");   st2.setAttribute("stop-color", "#000");
+    grad.appendChild(st1); grad.appendChild(st2);
+    defs.appendChild(grad);
+
+    var mask = document.createElementNS(NS, "mask");
+    mask.setAttribute("id", "tr-rootmask");
+    mask.setAttribute("maskUnits", "userSpaceOnUse");
+    mask.setAttribute("x", 0); mask.setAttribute("y", 0);
+    mask.setAttribute("width", W); mask.setAttribute("height", H);
+
+    var solid = document.createElementNS(NS, "rect");   /* everything grown */
+    solid.setAttribute("x", 0); solid.setAttribute("y", 0);
+    solid.setAttribute("width", W);
+    solid.setAttribute("height", reduce ? H : 0);
+    solid.setAttribute("fill", "#fff");
+
+    var tip = document.createElementNS(NS, "rect");     /* the fading tip */
+    tip.setAttribute("x", 0);
+    tip.setAttribute("y", reduce ? H : 0);
+    tip.setAttribute("width", W);
+    tip.setAttribute("height", reduce ? 0 : FEATHER);
+    tip.setAttribute("fill", "url(#tr-roottip)");
+
+    mask.appendChild(solid); mask.appendChild(tip);
+    defs.appendChild(mask);
+    svg.appendChild(defs);
+    S.clip = solid;
+    S.tip  = tip;
+    S.grad = grad;
 
     var g = document.createElementNS(NS, "g");
-    g.setAttribute("clip-path", "url(#tr-rootclip)");
+    g.setAttribute("mask", "url(#tr-rootmask)");
     svg.appendChild(g);
     S.g = g;
     S.host.appendChild(svg);
@@ -175,13 +213,28 @@
       add(s.d, i === 0 ? "rt-strand rt-strand--a" : "rt-strand rt-strand--b");
     });
 
+    /* A single braid down one margin is a line, not a root system.
+       A second one down the far margin, thinner and starting lower
+       — as if the same root reached under the page and came up on
+       the other side — gives the page two edges instead of one.
+       Both stay in the margins on purpose: these sit ABOVE the
+       content in the stacking order, so anything that wandered into
+       the text column would be crossing the words. */
+    var far = null;
+    if (W > 760) {
+      far = braid(W - lane * 1.15, H * 0.28, H - 60, amp * 0.8,
+                  Math.min(86, W * 0.05), 77010203, 2, thick * 0.62, 1.05);
+      far.strands.forEach(function (s, i) {
+        add(s.d, i === 0 ? "rt-strand rt-strand--c" : "rt-strand rt-strand--d");
+      });
+    }
+
     /* offshoots taken off the real strand, so they are attached
        rather than floating next to it */
     var secs = Array.prototype.slice.call(document.querySelectorAll("main > section"));
     var host = main.strands[0].pts;
     var y0 = host[0][1], y1 = host[host.length - 1][1];
     secs.forEach(function (sec, n) {
-      if (n % 2) return;
       var r = sec.getBoundingClientRect();
       var y = r.top + window.scrollY + Math.min(r.height * 0.36, 280);
       if (y < headH + 40 || y > H - 140) return;
@@ -189,10 +242,25 @@
       var len = 60 + (n % 3) * 34 + Math.min(120, W * 0.07);
       var o = offshoot(host, idx, 1, len, 4000 + n * 131, thick * 0.4);
       add(o.d, "rt-strand rt-strand--c");
-      if (n % 4 === 0) {
-        var o2 = offshoot(o.pts, Math.round(o.pts.length * 0.55), 1, len * 0.5,
-                          7000 + n * 17, thick * 0.2);
+      /* a root that only ever forks once is a diagram. Fork most of
+         them, and fork a few of those again. */
+      if (n % 2 === 0) {
+        var o2 = offshoot(o.pts, Math.round(o.pts.length * 0.55), 1, len * 0.52,
+                          7000 + n * 17, thick * 0.22);
         add(o2.d, "rt-strand rt-strand--d");
+        if (n % 4 === 0) {
+          var o3 = offshoot(o2.pts, Math.round(o2.pts.length * 0.6), 1, len * 0.3,
+                            9100 + n * 29, thick * 0.13);
+          add(o3.d, "rt-strand rt-strand--d");
+        }
+      }
+      if (far && n % 3 === 1) {
+        var fh = far.strands[0].pts;
+        var fi = Math.round((y - fh[0][1]) / Math.max(1, fh[fh.length - 1][1] - fh[0][1]) * (fh.length - 1));
+        if (fi > 0 && fi < fh.length - 1) {
+          var fo = offshoot(fh, fi, -1, len * 0.72, 5500 + n * 97, thick * 0.3);
+          add(fo.d, "rt-strand rt-strand--d");
+        }
       }
     });
 
@@ -204,8 +272,19 @@
   function paint() {
     if (!S.clip || reduce) return;
     var y = window.scrollY || window.pageYOffset;
-    var reach = y + window.innerHeight * 0.92;
-    S.clip.setAttribute("height", Math.max(0, Math.min(S.H, reach)).toFixed(0));
+    /* 0.92 put the growing tip below the fold at every scroll
+       position, so the roots were always ALREADY drawn wherever you
+       could see — which is why the growth never read as growth.
+       0.74 keeps the tip in the lower quarter of the screen, where
+       you can actually watch it extend as you scroll. */
+    var reach = y + window.innerHeight * 0.74;
+    reach = Math.max(0, Math.min(S.H, reach));
+    S.clip.setAttribute("height", reach.toFixed(0));
+    if (S.tip) S.tip.setAttribute("y", reach.toFixed(0));
+    if (S.grad) {
+      S.grad.setAttribute("y1", reach.toFixed(0));
+      S.grad.setAttribute("y2", (reach + FEATHER).toFixed(0));
+    }
   }
   function queue() {
     if (S.raf) return;

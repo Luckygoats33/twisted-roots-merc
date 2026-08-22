@@ -49,6 +49,7 @@ SOURCES = [
     "mobile.css",
     "polish.css",
     "perf.css",
+    "a11y.css",   # last: its contrast and focus rules must win
 ]
 
 # Sheets that are deliberately outside the bundle. Anything in assets/css/ that
