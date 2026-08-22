@@ -36,6 +36,12 @@ assets/img/w-*.png
 /_parts/
 /build.py
 /build_blog.py
+/build_recipes.py
+/build_css.py
+/build_images.py
+/build_crow.py
+/build_perch.py
+/rehash.py
 /_build_board.py
 
 # blog/data/ is the SOURCE the blog builder reads. Note this ignores the

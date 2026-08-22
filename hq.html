@@ -210,7 +210,19 @@
 </section>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+/* The site scripts moved off the critical path onto window.load, so
+   catalog.js no longer exists by DOMContentLoaded and this dashboard
+   threw "TR_CATALOG is not defined" on every visit. Wait for the data
+   rather than for the document. */
+function trReady(fn) {
+  if (typeof TR_CATALOG !== "undefined" && typeof TR !== "undefined") { fn(); return; }
+  var tries = 0;
+  var t = setInterval(function () {
+    if (typeof TR_CATALOG !== "undefined" && typeof TR !== "undefined") { clearInterval(t); fn(); }
+    else if (++tries > 200) { clearInterval(t); }   /* ~10s, then give up quietly */
+  }, 50);
+}
+trReady(function () {
   var SUPPLIERS = {
     everyday: "Pacific Wholesale Grocers",
     fixit:    "Ace / Hardware Wholesale",
