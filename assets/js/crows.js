@@ -210,6 +210,10 @@
   var FLAP_MS = 400;            /* same working beat as the flock */
   var FEET  = 0.74;             /* where the feet sit in the perch cell */
   var RATIO = 190 / 147;        /* perch cell aspect */
+  /* Below this the bird is too small to read as a bird — see place().
+     34px of cell is a perched bird about 20px tall, drawn from the
+     sheet at the same downscale the desktop already uses. */
+  var MIN_H = 34;
 
   var MS = { approach: 2400, land: 560, sit: 5000, takeoff: 230, depart: 2600 };
   var BLEND = 200;              /* cross-fade at each sheet swap */
@@ -241,17 +245,50 @@
      It used to sit at 0.62/0.16, which is the bare wooden shoulder
      above the lettering — a bird standing on nothing in particular.
      The top of a letter is something to stand on. */
+  /* Two places on the carving a bird can stand, both measured off
+     logo-head.png. The T's crossbar in "Twisted" is the better of
+     the two and is used wherever there is room above it. On a phone
+     there is not: the sign is 78px tall and sits at the very top of
+     the screen, so the crossbar leaves about 18px of sky and the
+     bird would have to be drawn 7x13 pixels to fit under it.
+
+     So it drops a line to the top of "Roots", which on a phone has
+     roughly twice the headroom and takes a bird slightly LARGER
+     than the desktop one. Chosen by measuring the room that is
+     actually there, not by a media query, so it also does the right
+     thing on a short landscape window. */
+  var PERCHES = [
+    { x: 0.407, y: 0.237 },   /* crossbar of the T in "Twisted" */
+    { x: 0.550, y: 0.475 }    /* top of "Roots", one line down    */
+  ];
+
   function place(el, plate, h) {
     var r = plate.getBoundingClientRect();
-    var PERCH_X = 0.40, PERCH_Y = 0.237;
 
-    var landX = r.left + r.width * PERCH_X;
-    var landY = r.top + r.height * PERCH_Y;
+    var spot = PERCHES[0], want = h;
+    for (var i = 0; i < PERCHES.length; i++) {
+      var room = (r.top + r.height * PERCHES[i].y) - 4;
+      var fits = Math.min(h, room / FEET);
+      if (fits >= MIN_H) { spot = PERCHES[i]; want = fits; break; }
+      if (fits > want || i === 0) { spot = PERCHES[i]; want = fits; }
+    }
+    h = want;
+
+    var landX = r.left + r.width * spot.x;
+    var landY = r.top + r.height * spot.y;
 
     /* A bird needs room above whatever it stands on. Size it to
-       the headroom that actually exists rather than assuming. */
-    var headroom = landY - 4;
-    if (headroom < h * FEET) h = Math.max(22, headroom / FEET);
+       the headroom that actually exists rather than assuming.
+
+       And if the room is not there, DO NOT SHRINK IT TO FIT. On a
+       390px phone the sign is 78px tall and the T's crossbar sits
+       18px below the top of the screen, so the old floor of 22px
+       drew a perched bird 7x13 pixels — not a crow, a speck — from
+       a sheet downscaled 14 times. At that ratio the browser
+       resamples differently frame to frame and the bird boils.
+       That is the mobile glitch, and no amount of retiming fixes
+       it, because the problem is that it is too small to draw. */
+    if (h < MIN_H) return null;   /* nowhere on this sign is big enough */
 
     var w = Math.round(h * RATIO);
     el.style.width  = w + "px";
@@ -288,7 +325,11 @@
     el.appendChild(sit);
     document.body.appendChild(el);
 
-    var h = window.innerWidth < 900 ? 30 : 40;
+    /* The sign is proportionally BIGGER on a phone - it is the whole
+       brand up there - so the bird is too. 30 was left over from when
+       it perched on the shoulder, and it is below the size the sprite
+       can be drawn at without boiling. */
+    var h = window.innerWidth < 900 ? 42 : 40;
     var busy = false, rafId = 0;
 
     function run() {
@@ -300,6 +341,10 @@
       busy = true;
 
       var g = place(el, plate, h);
+      if (!g) {                      /* no room to draw it properly */
+        busy = false;
+        return;
+      }
 
       /* THE HANDOVER, MEASURED RATHER THAN EYEBALLED.
          Swapping sheets is where this glitched: the flying bird was
@@ -550,7 +595,7 @@
     }
 
     window.addEventListener("resize", function () {
-      h = window.innerWidth < 900 ? 30 : 40;
+      h = window.innerWidth < 900 ? 42 : 40;
     }, { passive: true });
 
     /* Decode both sheets while nothing is happening. Otherwise the
