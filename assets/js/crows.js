@@ -205,7 +205,9 @@
      block above). A bird leaving a perch is a little brisker than
      cruising, but only a little — anything more reads as a
      catapult, which is exactly what the old number did. */
-  var OUT_BODY_PER_SEC = 4.4;
+  var OUT_BODY_PER_SEC = 5.0;
+  /* how long it takes to get up to that speed - a few wingbeats */
+  var ACCEL_MS = 420;
   /* everything up to the moment it leaves. The exit itself is
      timed per run, from the width of the screen and the bird's
      own speed, so MS.depart is only a floor. */
@@ -370,8 +372,19 @@
       var exitDx = window.innerWidth - g.x + fw + 24;
       var exitDy = Math.max(0, flockY - g.y);
       var pathLen = Math.sqrt(exitDx * exitDx + exitDy * exitDy);
-      var departMs = Math.round(1000 * pathLen / (OUT_BODY_PER_SEC * fw) / (1 - 0.40 / 2));
-      departMs = Math.max(1800, Math.min(9000, departMs));
+
+      /* The push-off is a FIXED length of time, not a fraction of the
+         flight. It used to be 40% of the whole exit — and because the
+         exit is sized from the width of the screen, that worked out at
+         three and a half seconds of acceleration, so the bird crept
+         forward 3px in its first third of a second and read as stuck
+         to the sign. A bird gets up to speed in a few wingbeats
+         whether it is crossing a yard or a valley. */
+      var outV = OUT_BODY_PER_SEC * fw;              /* px per second */
+      var departMs = Math.round(1000 * pathLen / outV + ACCEL_MS / 2);
+      /* a floor only - the duration is the screen divided by the speed,
+         and the speed is the thing that must not change */
+      departMs = Math.max(1600, departMs);
       var TOTAL = UPTO + departMs;
 
       var t0 = performance.now();
@@ -425,10 +438,13 @@
              There is still a small pop upward off the push-off,
              because that is what wings do. */
           phase = "fly";
-          var d = (t - UPTO) / departMs;
-          var A = 0.40;                          /* the push-off */
-          var far = d < A ? (d * d) / (2 * A) : d - A / 2;
-          far /= (1 - A / 2);                    /* normalise to 0..1 */
+          var tau = t - UPTO;                    /* ms since it let go */
+          /* distance covered: velocity ramps 0 -> outV over ACCEL_MS,
+             then holds. Integrated, not eased by feel. */
+          var gone = tau < ACCEL_MS
+            ? outV * tau * tau / (2 * ACCEL_MS * 1000)
+            : outV * (tau - ACCEL_MS / 2) / 1000;
+          var far = Math.min(1, gone / pathLen);
 
           dx = far * exitDx;
           dy = far * exitDy
@@ -498,7 +514,7 @@
         if (t < 260) op = t / 260;
         else if (t >= UPTO) {
           var fd = (t - UPTO) / departMs;
-          if (fd > 0.66) op = Math.max(0, 1 - (fd - 0.66) / 0.30);
+          if (fd > 0.70) op = Math.max(0, 1 - (fd - 0.70) / 0.26);
         }
         el.style.opacity = op.toFixed(3);
 
