@@ -151,8 +151,11 @@
 .crow__sprite{
   background-image:url("../img/crow-sprite.webp");
 }
-.perchcrow{
+.perchcrow__sit{
   background-image:url("../img/crow-perch.webp");
+}
+.perchcrow__fly{
+  background-image:url("../img/crow-sprite.webp");
 }
 
 

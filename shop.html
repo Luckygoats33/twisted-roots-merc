@@ -29,8 +29,18 @@
 <link rel="icon" href="assets/img/favicon-32.png?v=ccb53bc6" sizes="32x32">
 <link rel="icon" href="assets/img/favicon-64.png?v=7316fae5" sizes="64x64">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png?v=ce873322">
-<link rel="stylesheet" href="assets/css/bundle.css?v=10772c21">
+<link rel="stylesheet" href="assets/css/bundle.css?v=997c1f69">
 <link rel="stylesheet" href="assets/css/shop.css?v=a494862b">
+<!-- polish.css is inside bundle.css already; it is re-linked here ON PURPOSE.
+     shop.css used to sit BETWEEN mobile.css and polish.css, and the two both
+     declare .sortbox select and .prodcard:hover. Bundling moved shop.css after
+     polish, which handed the 44px min-height in shop.css:186 the win over the
+     48px tap-target floor in polish.css:172 and lifted everything below the
+     sort box by 4px at <=1180px. Re-linking polish restores the exact original
+     cascade (verified: 0 differing computed styles across 168 elements at 390 /
+     640 / 900 / 1100 / 1280px). Delete this line only once shop.css and
+     polish.css no longer overlap. -->
+<link rel="stylesheet" href="assets/css/polish.css?v=39f8e298">
 <link rel="stylesheet" href="assets/css/print.css?v=65e49f4e" media="print">
 <script type="application/ld+json">
 {
@@ -334,7 +344,7 @@ addEventListener("load", function () {
            "assets/js/site.js?v=3787c0d1",
            "assets/js/motion.js?v=bf716f00",
            "assets/js/roots.js?v=93423d8d",
-           "assets/js/crows.js?v=9ba205a1",
+           "assets/js/crows.js?v=5a08938b",
            "assets/js/shop.js?v=1bf6ba15"], i = 0;
   (function next(){
     if (i >= s.length) return;

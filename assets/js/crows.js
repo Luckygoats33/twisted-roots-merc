@@ -150,25 +150,60 @@
 /* ==========================================================
    THE CROW THAT LANDS ON THE SIGN
    ----------------------------------------------------------
-   One bird, one performance: it flies in from the left, flares,
-   lands on the beam the carved sign hangs from, settles, looks
-   left, looks right, then drops off the beam and goes.
+   One bird, one performance, in five phases:
 
-   It is a 34-frame sprite cut from a single green-screen take,
-   so the whole thing is one continuous piece of real footage
-   rather than poses stitched together. Stepped once through,
-   never looped — a bird that lands on a loop is a screensaver.
+     APPROACH  it is already out over the hero with the others,
+               turns, and flies in toward the sign
+     LAND      flares and drops onto the sign's shoulder
+     SIT       settles, looks left, looks right  (3 seconds)
+     TAKE OFF  pushes off the carving
+     DEPART    climbs away to the right and is gone
 
-   It is positioned off the real beam every time it runs, so it
-   stays put when the header resizes or the sign grows.
+   The version before this one skipped straight to LAND, so the
+   bird materialised on the sign out of clear air. The fix is not
+   a longer landing animation — it is that the bird has to arrive
+   from somewhere the eye has already been looking, which is the
+   flock over the hero.
+
+   Two sprite sheets do the work and the module swaps between
+   them: the 25-frame flying sheet for the two travelling phases,
+   the 34-frame perch sheet for the three at the sign. The perch
+   sheet is one continuous green-screen take, so the landing and
+   the head turns are real footage rather than poses stitched
+   together, and the frame bands below were MEASURED off the sheet
+   (alpha coverage and bounding box per cell) rather than guessed:
+
+     frames  0-1    empty, the bird is still out of frame
+     frames  2-11   wings spread, flaring in, then folding
+     frames 12-31   perched, narrow silhouette, head moving
+     frames 32-33   wings out again, pushing off and up
+
+   Frames are stepped from a rAF loop rather than a CSS steps()
+   animation, because the position has to move at the same time
+   and the two have to stay in step.
    ========================================================== */
 (function () {
   "use strict";
 
-  var FRAMES = 34;
-  var FEET   = 0.74;      /* where the feet sit in the cell, top-down */
-  var RATIO  = 190 / 147; /* cell aspect */
-  var RUN_MS = 7600;      /* one performance */
+  var SHEET   = 34;
+  var LAND    = [2, 11];        /* measured, see above */
+  var SIT     = [12, 31];
+  var TAKEOFF = [32, 33];
+
+  var FLY_FRAMES = 25;
+  var FLAP_MS = 400;            /* same working beat as the flock */
+  var FEET  = 0.74;             /* where the feet sit in the perch cell */
+  var RATIO = 190 / 147;        /* perch cell aspect */
+
+  var MS = { approach: 2400, land: 560, sit: 3000, takeoff: 260, depart: 1700 };
+  var TOTAL = MS.approach + MS.land + MS.sit + MS.takeoff + MS.depart;
+
+  function ease(t) { return 1 - Math.pow(1 - t, 3); }        /* easeOutCubic */
+
+  function band(range, p) {
+    var n = range[1] - range[0] + 1;
+    return range[0] + Math.min(n - 1, Math.floor(Math.max(0, p) * n));
+  }
 
   /* Land it on the sign's SHOULDER — the flatter stretch of the
      carved top edge, right of the peak with the firs on it. The
@@ -176,9 +211,7 @@
      on it; the shoulder is the highest thing actually visible. */
   function place(el, plate, h) {
     var r = plate.getBoundingClientRect();
-
-    var SHOULDER_X = 0.62;    /* across the plate, right of the peak */
-    var SHOULDER_Y = 0.16;    /* down from the plate's top edge      */
+    var SHOULDER_X = 0.62, SHOULDER_Y = 0.16;
 
     var landX = r.left + r.width * SHOULDER_X;
     var landY = r.top + r.height * SHOULDER_Y;
@@ -189,56 +222,141 @@
     if (headroom < h * FEET) h = Math.max(22, headroom / FEET);
 
     var w = Math.round(h * RATIO);
-    el.style.height = Math.round(h) + "px";
     el.style.width  = w + "px";
-    el.style.setProperty("--pc-w", w + "px");   /* exact cell width */
+    el.style.height = Math.round(h) + "px";
     el.style.left = Math.round(landX - w * 0.5) + "px";
     el.style.top  = Math.round(landY + window.scrollY - h * FEET) + "px";
+    return { w: w, h: h, x: landX, y: landY };
   }
 
   function init() {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (!document.querySelector(".brand")) return;
     /* motion.js builds the sign after this file loads, so resolve
        the plate at run time rather than at init. */
-    function plateNow(){ return document.querySelector(".brand .hangsign__plate"); }
-    if (!document.querySelector(".brand")) return;
+    function plateNow() { return document.querySelector(".brand .hangsign__plate"); }
 
     var el = document.createElement("div");
     el.className = "perchcrow";
     el.setAttribute("aria-hidden", "true");
-    el.style.setProperty("--pc-frames", FRAMES);
-    el.style.setProperty("--pc-run", RUN_MS + "ms");
+
+    var fly = document.createElement("i");
+    fly.className = "perchcrow__fly";
+    var sit = document.createElement("i");
+    sit.className = "perchcrow__sit";
+    el.appendChild(fly);
+    el.appendChild(sit);
     document.body.appendChild(el);
 
-    var h = window.innerWidth < 900 ? 30 : 40;   /* a crow is small next to a shop sign */
-    var busy = false;
+    var h = window.innerWidth < 900 ? 30 : 40;
+    var busy = false, rafId = 0;
 
     function run() {
       if (busy || document.hidden) return;
       /* only when the header is actually on screen */
       if ((window.scrollY || window.pageYOffset) > window.innerHeight * 0.6) return;
-      busy = true;
       var plate = plateNow();
-      if (!plate) { busy = false; return; }
-      place(el, plate, h);
-      el.classList.remove("is-flying");
-      void el.offsetWidth;               /* restart the animation */
-      el.classList.add("is-flying");
-      setTimeout(function () {
-        el.classList.remove("is-flying");
+      if (!plate) return;
+      busy = true;
+
+      var g = place(el, plate, h);
+
+      /* The travelling bird is drawn from the flying sheet, sized so
+         its wingspan matches the body of the perched one. Left at the
+         flying sheet's own 104px cell it would arrive several times
+         too big and shrink on touchdown. */
+      var fw = Math.round(g.h * 1.55), fh = Math.round(fw * 80 / 104);
+      fly.style.width  = fw + "px";
+      fly.style.height = fh + "px";
+      fly.style.backgroundSize = (fw * FLY_FRAMES) + "px 100%";
+      /* centre the flying cell on the perched bird's own middle */
+      fly.style.left = Math.round(g.w * 0.5 - fw * 0.5) + "px";
+      fly.style.top  = Math.round(g.h * FEET - fh * 0.62) + "px";
+
+      sit.style.backgroundSize = (g.w * SHEET) + "px 100%";
+
+      /* It starts out over the middle of the hero, at the altitude
+         the flock uses, and finishes just left of the sign — which
+         is where the perch sheet's own first frames pick it up, so
+         the handover between the two sheets is not a jump. */
+      var hero = document.querySelector(".hero");
+      var hr = hero ? hero.getBoundingClientRect()
+                    : { top: 0, height: window.innerHeight };
+      var startX = g.x + Math.max(260, window.innerWidth * 0.36);
+      var startY = hr.top + hr.height * 0.24;
+      var endX   = g.x - g.w * 0.33;
+      var endY   = g.y - g.h * 0.09;
+
+      var t0 = performance.now();
+
+      function frame(now) {
+        var t = now - t0;
+        if (t >= TOTAL) { stop(); return; }
+
+        var dx, dy, phase, idx, mirror = false;
+
+        if (t < MS.approach) {
+          phase = "fly";
+          var k = ease(t / MS.approach);
+          dx = (startX - endX) * (1 - k);
+          dy = (startY - endY) * (1 - k)
+               /* a bird flares UP before it drops onto a perch */
+               - Math.sin(Math.PI * k) * g.h * 0.55;
+          idx = Math.floor(t / FLAP_MS * FLY_FRAMES) % FLY_FRAMES;
+          mirror = true;                       /* travelling leftward */
+        } else if (t < MS.approach + MS.land) {
+          phase = "sit"; dx = 0; dy = 0;
+          idx = band(LAND, (t - MS.approach) / MS.land);
+        } else if (t < MS.approach + MS.land + MS.sit) {
+          phase = "sit"; dx = 0; dy = 0;
+          idx = band(SIT, (t - MS.approach - MS.land) / MS.sit);
+        } else if (t < TOTAL - MS.depart) {
+          phase = "sit"; dx = 0; dy = 0;
+          idx = band(TAKEOFF, (t - MS.approach - MS.land - MS.sit) / MS.takeoff);
+        } else {
+          phase = "fly";
+          var d = (t - (TOTAL - MS.depart)) / MS.depart;
+          dx = d * window.innerWidth * 0.55;
+          dy = -d * g.h * 3.4 - Math.sin(Math.PI * d * 0.5) * g.h * 0.6;
+          idx = Math.floor(t / FLAP_MS * FLY_FRAMES) % FLY_FRAMES;
+        }
+
+        el.style.transform = "translate3d(" + dx.toFixed(1) + "px," + dy.toFixed(1) + "px,0)";
+        fly.style.display = phase === "fly" ? "block" : "none";
+        sit.style.display = phase === "sit" ? "block" : "none";
+
+        if (phase === "fly") {
+          fly.style.transform = mirror ? "scaleX(-1)" : "none";
+          fly.style.backgroundPositionX = (-idx * fw) + "px";
+          /* fade in as it comes on, out as it goes */
+          el.style.opacity = t < 260 ? (t / 260).toFixed(2)
+                           : (t > TOTAL - 420 ? ((TOTAL - t) / 420).toFixed(2) : "1");
+        } else {
+          sit.style.backgroundPositionX = (-idx * g.w) + "px";
+          el.style.opacity = "1";
+        }
+
+        rafId = requestAnimationFrame(frame);
+      }
+
+      function stop() {
+        cancelAnimationFrame(rafId);
+        el.style.opacity = "0";
+        fly.style.display = "none";
+        sit.style.display = "none";
         busy = false;
-      }, RUN_MS + 120);
+      }
+
+      el.style.opacity = "0";
+      rafId = requestAnimationFrame(frame);
     }
 
-    /* keep it on the beam if the header moves under it */
     window.addEventListener("resize", function () {
       h = window.innerWidth < 900 ? 30 : 40;
-      var pl = plateNow();
-      if (busy && pl) place(el, pl, h);
     }, { passive: true });
 
-    setTimeout(run, 3800);                          /* first visit */
-    setInterval(run, 165000);                       /* now and then */
+    setTimeout(run, 4200);          /* first visit */
+    setInterval(run, 165000);       /* now and then */
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);

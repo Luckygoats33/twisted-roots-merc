@@ -51,6 +51,16 @@ SOURCES = [
     "perf.css",
 ]
 
+# Sheets that are deliberately outside the bundle. Anything in assets/css/ that
+# is neither a SOURCE nor listed here gets a warning, because the usual reason a
+# new stylesheet appears is that someone is about to add a seventh blocking
+# <link> to 383 pages - it belongs in SOURCES instead.
+NOT_BUNDLED = {
+    "print.css": 'media="print", already non-blocking',
+    "shop.css": "linked by shop.html only",
+    "bundle.css": "this file",
+}
+
 # At-rules whose body holds nested rules rather than declarations.
 GROUP_AT = ("media", "supports", "container", "layer", "scope", "document", "keyframes")
 
@@ -361,10 +371,21 @@ def build(minify=True):
     return header + body + "\n", sizes, (r, g, d, a)
 
 
+def stray_sheets():
+    known = set(SOURCES) | set(NOT_BUNDLED)
+    return sorted(f for f in os.listdir(CSS_DIR)
+                  if f.endswith(".css") and f not in known)
+
+
 def main():
     minify = "--raw" not in sys.argv
     check = "--check" in sys.argv
     out, sizes, (r, g, d, a) = build(minify)
+
+    for f in stray_sheets():
+        print("  !! assets/css/%s is neither bundled nor listed in NOT_BUNDLED." % f)
+        print("     If pages are meant to load it, add it to SOURCES (before perf.css)")
+        print("     and rebuild - do not add a second blocking <link> to 383 pages.")
 
     raw_total = sum(s for _f, s in sizes)
     new = out.encode("utf-8")
