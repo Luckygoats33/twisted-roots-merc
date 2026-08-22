@@ -187,19 +187,31 @@
 
   var SHEET   = 34;
   var LAND    = [2, 11];        /* measured, see above */
-  var SIT     = [12, 31];
-  /* Frame 33 is the bird already half out of the cell — cross-fading
-     OUT of a cropped bird is what made the take-off twitch and the
-     sprite's edges look wrong. Hold frame 32, the full wings-spread
-     push-off, and hand over from that instead. */
-  var TAKEOFF = [32, 32];
+  var SIT     = [12, 28];
+  /* THE TAKE-OFF IS FOUR FRAMES, NOT ONE.
+     Frames 29-31 are the wind-up — measured, the silhouette goes
+     60x79 -> 67x71 -> 75x65 and the centroid drops from 0.45 to
+     0.51, which is a bird crouching to spring. 32 is the launch,
+     wings out, centroid up at 0.20.
+
+     They used to be inside the SIT band, played at ~250ms a frame
+     along with the head turns, and then frame 32 appeared out of
+     nowhere. So the bird sat perfectly still and then was suddenly
+     wings-out in one jump — that is the snap at take-off. They run
+     as their own band now at roughly the rate they were filmed,
+     about 57ms a frame, so the crouch reads as a crouch.
+
+     Frame 33 is deliberately excluded: the bird is already half out
+     of the cell there, and cross-fading out of a cropped bird is a
+     cut, not a transition. */
+  var TAKEOFF = [29, 32];
 
   var FLY_FRAMES = 25;
   var FLAP_MS = 400;            /* same working beat as the flock */
   var FEET  = 0.74;             /* where the feet sit in the perch cell */
   var RATIO = 190 / 147;        /* perch cell aspect */
 
-  var MS = { approach: 2400, land: 560, sit: 5000, takeoff: 260, depart: 2600 };
+  var MS = { approach: 2400, land: 560, sit: 5000, takeoff: 230, depart: 2600 };
   var BLEND = 200;              /* cross-fade at each sheet swap */
   /* The flock cruises at 3.2 body lengths a second (see the flock
      block above). A bird leaving a perch is a little brisker than
