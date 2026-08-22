@@ -1,0 +1,4 @@
+## maxjournal-mobile.json
+
+=== heading-order score=1 
+[]

@@ -14,17 +14,18 @@
 <meta property="og:image" content="https://twistedrootsmerc.com/assets/img/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#F4EDE1">
-<link rel="icon" href="../assets/img/favicon-32.png?v=ccb53bc6" sizes="32x32">
-<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png?v=ce873322">
+<link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/site.css?v=db82a4af">
-<link rel="stylesheet" href="../assets/css/motion.css?v=e4213a7b">
-<link rel="stylesheet" href="../assets/css/roots.css?v=42e7b082">
-<link rel="stylesheet" href="../assets/css/mobile.css?v=1c92929c">
-<link rel="stylesheet" href="../assets/css/polish.css?v=1ac86af1">
-<link rel="stylesheet" href="../assets/css/print.css?v=65e49f4e" media="print">
+<link rel="stylesheet" href="../assets/css/site.css">
+<link rel="stylesheet" href="../assets/css/motion.css">
+<link rel="stylesheet" href="../assets/css/roots.css">
+<link rel="stylesheet" href="../assets/css/mobile.css">
+<link rel="stylesheet" href="../assets/css/polish.css">
+<link rel="stylesheet" href="../assets/css/print.css" media="print">
+<link rel="stylesheet" href="../assets/css/perf.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Generator Fuel: Storing It, Stabilizing It, Not Running Out of It", "description": "The generator in your shed will probably not start, and the reason is almost always the gas that has been sitting in it.", "articleSection": "Storm Ready", "keywords": "generator, fuel, gas, maintenance, storage", "mainEntityOfPage": "https://twistedrootsmerc.com/blog/storm-generator-fuel.html", "author": {"@type": "Organization", "name": "Twisted Roots Merc"}, "publisher": {"@id": "https://twistedrootsmerc.com/#store"}, "isPartOf": {"@type": "Blog", "name": "Practical Notes", "url": "https://twistedrootsmerc.com/journal.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://twistedrootsmerc.com/"}, {"@type": "ListItem", "position": 2, "name": "Practical Notes", "item": "https://twistedrootsmerc.com/journal.html"}, {"@type": "ListItem", "position": 3, "name": "Generator Fuel: Storing It, Stabilizing It, Not Running Out of It", "item": "https://twistedrootsmerc.com/blog/storm-generator-fuel.html"}]}</script>
 </head>
@@ -158,7 +159,7 @@
   <div class="wrap">
     <div class="foot-top">
       <div>
-        <img src="../assets/img/logo-foot.png?v=51cd242d" alt="Twisted Roots Merc" width="440" height="371">
+        <img src="../assets/img/logo-foot.webp?v=34aebc6d" alt="Twisted Roots Merc" width="440" height="371" loading="lazy" decoding="async">
         <p class="small" style="opacity:.8">Mercantile · Bakery · Kitchen<br>101 &amp; 151 N Gaither St, Siletz, Oregon 97380<br>
           <a href="tel:+15415550134">(541) 555-0134</a></p>
         <button class="stormtoggle" data-stormtoggle aria-pressed="false"><i></i>Storm Mode Off</button>
@@ -181,10 +182,16 @@
   </div>
 </footer>
 
-<script src="../assets/js/catalog.js?v=cdc9c20e"></script>
-<script src="../assets/js/cart.js?v=024fe1e6"></script>
-<script src="../assets/js/site.js?v=3787c0d1"></script>
-<script src="../assets/js/motion.js?v=bf716f00"></script>
-<script src="../assets/js/roots.js?v=93423d8d"></script>
+<script>
+addEventListener("load", function () {
+  var s = ["../assets/js/catalog.js?v=cdc9c20e", "../assets/js/cart.js?v=024fe1e6", "../assets/js/site.js?v=3787c0d1", "../assets/js/motion.js?v=bf716f00", "../assets/js/roots.js?v=93423d8d"], i = 0;
+  (function next(){
+    if (i >= s.length) return;
+    var e = document.createElement("script");
+    e.src = s[i++]; e.onload = next; e.onerror = next;
+    document.body.appendChild(e);
+  })();
+});
+</script>
 </body>
 </html>

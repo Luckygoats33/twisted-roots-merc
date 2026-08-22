@@ -1,0 +1,74 @@
+| Page | Perf | A11y | BP | SEO | FCP | LCP | TBT | CLS | SI | Bytes | Reqs |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| blogpost-desktop | 98 | 98 | 92 | 100 | 523ms | 1089ms | 0ms | 0.006 | 523ms | 934 KB | 22 |
+| blogpost-mobile | 71 | 98 | 92 | 100 | 3007ms | 6616ms | 49ms | 0.015 | 3257ms | 934 KB | 22 |
+| board-desktop | 97 | 94 | 96 | 100 | 533ms | 1310ms | 0ms | 0.014 | 533ms | 1263 KB | 20 |
+| ctlindex-mobile | 61 | 98 | 96 | 100 | 3243ms | 16369ms | 227ms | 0.000 | 5188ms | 4093 KB | 27 |
+| ctlmerc-desktop | 84 | 98 | 96 | 100 | 547ms | 1290ms | 0ms | 0.254 | 547ms | 1891 KB | 23 |
+| fixindex-mobile | 67 | 98 | 96 | 100 | 3029ms | 12611ms | 137ms | 0.062 | 3645ms | 3289 KB | 28 |
+| fixmerc-desktop | 97 | 98 | 96 | 100 | 529ms | 1306ms | 0ms | 0.003 | 529ms | 1903 KB | 24 |
+| fullblog-desktop | 100 | 100 | 100 | 100 | 494ms | 541ms | 0ms | 0.004 | 494ms | 279 KB | 19 |
+| fullblog-mobile | 88 | 100 | 100 | 100 | 2720ms | 3316ms | 0ms | 0.011 | 2931ms | 279 KB | 19 |
+| fullindex-desktop | 97 | 100 | 100 | 100 | 876ms | 1152ms | 0ms | 0.001 | 876ms | 4467 KB | 32 |
+| fullindex-mobile | 74 | 100 | 100 | 100 | 2618ms | 5256ms | 0ms | 0.000 | 4396ms | 1722 KB | 27 |
+| fullmerc-desktop | 98 | 98 | 100 | 100 | 899ms | 899ms | 0ms | 0.001 | 899ms | 532 KB | 23 |
+| fullshop-mobile | 86 | 98 | 100 | 100 | 2703ms | 3313ms | 0ms | 0.000 | 4269ms | 406 KB | 24 |
+| gzfixindex-desktop | 87 | 98 | 96 | 100 | 527ms | 2435ms | 0ms | 0.002 | 615ms | 6435 KB | 33 |
+| gzfixindex-mobile | 70 | 98 | 96 | 100 | 2770ms | 11117ms | 0ms | 0.055 | 3120ms | 3059 KB | 28 |
+| gzindex-desktop | 82 | 98 | 96 | 100 | 478ms | 3259ms | 0ms | 0.021 | 549ms | 7251 KB | 33 |
+| gzindex-mobile | 65 | 98 | 96 | 100 | 2719ms | 15096ms | 0ms | 0.139 | 3081ms | 3875 KB | 28 |
+| index-desktop | 81 | 98 | 96 | 100 | 553ms | 3482ms | 0ms | 0.027 | 736ms | 7460 KB | 32 |
+| index-mobile | 58 | 98 | 96 | 100 | 3170ms | 16374ms | 260ms | 0.139 | 3714ms | 4085 KB | 27 |
+| journal-desktop | 94 | 98 | 92 | 100 | 857ms | 1572ms | 0ms | 0.013 | 857ms | 1446 KB | 19 |
+| journal-mobile | 68 | 98 | 92 | 100 | 3309ms | 9161ms | 0ms | 0.012 | 3366ms | 1446 KB | 19 |
+| kitchen-desktop | 96 | 98 | 96 | 100 | 592ms | 1368ms | 0ms | 0.043 | 592ms | 1367 KB | 19 |
+| max2index-desktop | 96 | 100 | 96 | 100 | 959ms | 1227ms | 0ms | 0.001 | 959ms | 1351 KB | 27 |
+| max2index-mobile | 78 | 100 | 96 | 100 | 2639ms | 4735ms | 0ms | 0.055 | 2915ms | 769 KB | 22 |
+| max3index-mobile | 78 | 100 | 96 | 100 | 2745ms | 4730ms | 0ms | 0.000 | 2961ms | 769 KB | 21 |
+| max4index-mobile | 89 | 100 | 96 | 100 | 2833ms | 3022ms | 0ms | 0.000 | 3028ms | 474 KB | 19 |
+| max5index-mobile | 99 | 92 | 100 | 100 | 987ms | 1727ms | 0ms | 0.054 | 987ms | 408 KB | 11 |
+| max6index-desktop | 100 | 100 | 96 | 100 | 515ms | 804ms | 0ms | 0.002 | 515ms | 1056 KB | 24 |
+| max6index-mobile | 99 | 100 | 96 | 100 | 997ms | 1728ms | 18ms | 0.062 | 1243ms | 474 KB | 19 |
+| maxindex-desktop | 97 | 100 | 100 | 100 | 533ms | 1313ms | 0ms | 0.001 | 559ms | 4442 KB | 27 |
+| maxindex-mobile | 77 | 100 | 100 | 100 | 2583ms | 5180ms | 0ms | 0.000 | 3086ms | 1698 KB | 22 |
+| maxjournal-mobile | 96 | 100 | 100 | 100 | 1592ms | 2333ms | 147ms | 0.012 | 1592ms | 351 KB | 15 |
+| maxshop-mobile | 98 | 98 | 100 | 100 | 1393ms | 2185ms | 104ms | 0.029 | 1393ms | 383 KB | 19 |
+| merc-desktop | 84 | 98 | 96 | 100 | 537ms | 1290ms | 4ms | 0.259 | 537ms | 1883 KB | 23 |
+| recipe-desktop | 99 | 95 | 96 | 100 | 539ms | 967ms | 0ms | 0.018 | 539ms | 824 KB | 18 |
+| shop-desktop | 98 | 95 | 96 | 100 | 526ms | 1012ms | 0ms | 0.053 | 526ms | 1174 KB | 23 |
+| shop-mobile | 68 | 95 | 96 | 100 | 3178ms | 6837ms | 187ms | 0.028 | 3272ms | 1174 KB | 23 |
+| visit-desktop | 98 | 94 | 96 | 100 | 485ms | 1067ms | 0ms | 0.016 | 485ms | 1924 KB | 21 |
+
+
+=== ALL FAILING AUDITS (weight>0 only) ===
+[acce] w= 7  color-contrast                    6/38 pages: board-desktop, max5index-mobile, recipe-desktop, shop-desktop, shop-mobile, visit-desktop
+[acce] w= 7  link-name                         1/38 pages: max5index-mobile
+[acce] w= 3  heading-order                     23/38 pages: blogpost-desktop, blogpost-mobile, board-desktop, ctlindex-mobile, ctlmerc-desktop, fixindex-mobile, fixmerc-desktop, fullmerc-desktop, fullshop-mobile, gzfixindex-desktop, gzfixindex-mobile, gzindex-desktop, gzindex-mobile, index-desktop, index-mobile, journal-desktop, journal-mobile, kitchen-desktop, maxshop-mobile, merc-desktop, shop-desktop, shop-mobile, visit-desktop
+[best] w= 1  image-aspect-ratio                21/38 pages: blogpost-desktop, blogpost-mobile, board-desktop, ctlindex-mobile, ctlmerc-desktop, fixindex-mobile, fixmerc-desktop, gzfixindex-desktop, gzfixindex-mobile, gzindex-desktop, gzindex-mobile, index-desktop, index-mobile, journal-desktop, journal-mobile, kitchen-desktop, merc-desktop, recipe-desktop, shop-desktop, shop-mobile, visit-desktop
+[best] w= 1  errors-in-console                 10/38 pages: blogpost-desktop, blogpost-mobile, journal-desktop, journal-mobile, max2index-desktop, max2index-mobile, max3index-mobile, max4index-mobile, max6index-desktop, max6index-mobile
+[perf] w=30  total-blocking-time               2/38 pages: ctlindex-mobile, index-mobile
+[perf] w=25  largest-contentful-paint          26/38 pages: blogpost-mobile, board-desktop, ctlindex-mobile, ctlmerc-desktop, fixindex-mobile, fixmerc-desktop, fullblog-mobile, fullindex-mobile, fullshop-mobile, gzfixindex-desktop, gzfixindex-mobile, gzindex-desktop, gzindex-mobile, index-desktop, index-mobile, journal-desktop, journal-mobile, kitchen-desktop, max2index-desktop, max2index-mobile, max3index-mobile, max4index-mobile, maxindex-desktop, maxindex-mobile, merc-desktop, shop-mobile
+[perf] w=25  cumulative-layout-shift           4/38 pages: ctlmerc-desktop, gzindex-mobile, index-mobile, merc-desktop
+[perf] w=10  first-contentful-paint            16/38 pages: blogpost-mobile, ctlindex-mobile, fixindex-mobile, fullblog-mobile, fullindex-mobile, fullshop-mobile, gzfixindex-mobile, gzindex-mobile, index-mobile, journal-mobile, max2index-desktop, max2index-mobile, max3index-mobile, max4index-mobile, maxindex-mobile, shop-mobile
+[perf] w=10  speed-index                       5/38 pages: ctlindex-mobile, fixindex-mobile, fullindex-mobile, fullshop-mobile, index-mobile
+
+=== zero-weight diagnostics (informational) ===
+[acce] td-has-header                      4/38 pages
+[perf] cache-insight                      17/38 pages
+[perf] cls-culprits-insight               4/38 pages
+[perf] document-latency-insight           17/38 pages
+[perf] forced-reflow-insight              26/38 pages
+[perf] image-delivery-insight             38/38 pages
+[perf] interactive                        15/38 pages
+[perf] layout-shifts                      4/38 pages
+[perf] lcp-discovery-insight              9/38 pages
+[perf] mainthread-work-breakdown          10/38 pages
+[perf] max-potential-fid                  6/38 pages
+[perf] network-dependency-tree-insight    33/38 pages
+[perf] render-blocking-insight            33/38 pages
+[perf] total-byte-weight                  10/38 pages
+[perf] unminified-css                     38/38 pages
+[perf] unminified-javascript              37/38 pages
+[perf] unsized-images                     7/38 pages
+[perf] unused-css-rules                   29/38 pages
+[perf] unused-javascript                  15/38 pages

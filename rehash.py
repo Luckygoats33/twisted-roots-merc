@@ -15,6 +15,7 @@ def h(rel):
 # The ?v= is optional: build_blog.py and build_recipes.py write their
 # own <head> and never added one, so 369 pages were shipping uncached.
 REF = re.compile(r'((?:href|src)=")((?:\.\./)*)(assets/[^"?]+\.(?:css|js|png|jpg|jpeg|webp|svg|woff2?))(?:\?v=[0-9a-f]{6,10})?(")')
+JSREF = re.compile(r'"((?:\.\./)*)(assets/(?:js|css)/[^"?]+\.(?:js|css))(?:\?v=[0-9a-f]{6,10})?"')
 changed = 0
 pages = 0
 for dp, dn, fn in os.walk(ROOT):
@@ -30,6 +31,13 @@ for dp, dn, fn in os.walk(ROOT):
             v = h(m.group(3))
             return m.group(1) + m.group(2) + m.group(3) + ("?v=" + v if v else "") + m.group(4)
         s2 = REF.sub(sub, s)
+        # The window.load script chain lists its sources as plain JS
+        # strings, not as src= attributes, so they need stamping too or
+        # every generated page ships a stale hash forever.
+        def sub2(m):
+            v = h(m.group(2))
+            return '"' + m.group(1) + m.group(2) + ("?v=" + v if v else "") + '"'
+        s2 = JSREF.sub(sub2, s2)
         if s2 != s:
             open(p, "w", encoding="utf-8").write(s2)
             changed += 1

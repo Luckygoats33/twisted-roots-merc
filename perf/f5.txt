@@ -1,0 +1,24 @@
+## maxshop-mobile.json
+
+=== heading-order score=0 
+[
+ {
+  "node": {
+   "type": "node",
+   "lhId": "1-0-H3",
+   "path": "1,HTML,1,BODY,2,MAIN,5,SECTION,0,DIV,0,DIV,0,ARTICLE,1,H3",
+   "selector": "div.wrap > div.shopgrid > article.card > h3.prodcard__nm",
+   "boundingRect": {
+    "top": 1697,
+    "bottom": 1718,
+    "left": 35,
+    "right": 377,
+    "width": 342,
+    "height": 21
+   },
+   "snippet": "<h3 class=\"prodcard__nm\">",
+   "nodeLabel": "Toilet Paper, 12 Double Rolls",
+   "explanation": "Fix any of the following:\n  Heading order invalid"
+  }
+ }
+]

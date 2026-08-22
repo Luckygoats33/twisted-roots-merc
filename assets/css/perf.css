@@ -149,10 +149,10 @@
    -------------------------------------------------------------------------- */
 
 .crow__sprite{
-  background-image:url("../../perf/img/crow-sprite.webp");
+  background-image:url("../img/crow-sprite.webp");
 }
 .perchcrow{
-  background-image:url("../../perf/img/crow-perch.webp");
+  background-image:url("../img/crow-perch.webp");
 }
 
 

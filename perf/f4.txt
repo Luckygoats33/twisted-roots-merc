@@ -1,0 +1,19 @@
+## max6index-mobile.json
+
+=== image-aspect-ratio score=1 
+[]
+
+=== errors-in-console score=0 
+[
+ {
+  "source": "network",
+  "description": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+  "sourceLocation": {
+   "type": "source-location",
+   "url": "http://127.0.0.1:8898/undefined",
+   "urlProvider": "network",
+   "line": 0,
+   "column": 0
+  }
+ }
+]

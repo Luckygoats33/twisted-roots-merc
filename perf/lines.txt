@@ -1,0 +1,27 @@
+=== index logo-foot ===
+551:        <img src="assets/img/logo-foot.png?v=51cd242d" alt="Twisted Roots Merc" width="440" height="371">
+=== index footer h4 ===
+557:        <h4>The Store</h4>
+566:        <h4>Food</h4>
+575:        <h4>Twisted Roots</h4>
+=== index board h3 ===
+231:        <h3>Today at the Merc</h3>
+=== index scripts ===
+592:<script src="assets/js/catalog.js?v=cdc9c20e"></script>
+593:<script src="assets/js/cart.js?v=024fe1e6"></script>
+594:<script src="assets/js/site.js?v=3787c0d1"></script>
+595:<script src="assets/js/motion.js?v=bf716f00"></script>
+596:<script src="assets/js/roots.js?v=93423d8d"></script>
+597:<script src="assets/js/crows.js?v=a06dbbea"></script>
+=== index poster ===
+197:         poster="assets/img/w-river.jpg"
+=== index css links ===
+10:<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" rel="stylesheet">
+30:<link rel="stylesheet" href="assets/css/site.css?v=db82a4af">
+31:<link rel="stylesheet" href="assets/css/motion.css?v=e4213a7b">
+32:<link rel="stylesheet" href="assets/css/roots.css?v=42e7b082">
+33:<link rel="stylesheet" href="assets/css/mobile.css?v=1c92929c">
+34:<link rel="stylesheet" href="assets/css/polish.css?v=1ac86af1">
+35:<link rel="stylesheet" href="assets/css/print.css?v=65e49f4e" media="print">
+=== index logo-head ===
+149:            data-hangsign="assets/img/logo-head.png"

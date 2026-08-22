@@ -14,17 +14,18 @@
 <meta property="og:image" content="https://twistedrootsmerc.com/assets/img/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#F4EDE1">
-<link rel="icon" href="../assets/img/favicon-32.png?v=ccb53bc6" sizes="32x32">
-<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png?v=ce873322">
+<link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/site.css?v=db82a4af">
-<link rel="stylesheet" href="../assets/css/motion.css?v=e4213a7b">
-<link rel="stylesheet" href="../assets/css/roots.css?v=42e7b082">
-<link rel="stylesheet" href="../assets/css/mobile.css?v=1c92929c">
-<link rel="stylesheet" href="../assets/css/polish.css?v=1ac86af1">
-<link rel="stylesheet" href="../assets/css/print.css?v=65e49f4e" media="print">
+<link rel="stylesheet" href="../assets/css/site.css">
+<link rel="stylesheet" href="../assets/css/motion.css">
+<link rel="stylesheet" href="../assets/css/roots.css">
+<link rel="stylesheet" href="../assets/css/mobile.css">
+<link rel="stylesheet" href="../assets/css/polish.css">
+<link rel="stylesheet" href="../assets/css/print.css" media="print">
+<link rel="stylesheet" href="../assets/css/perf.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Recipe", "name": "The French Omelette", "description": "Pale, rolled, no browning, soft in the middle. A two-minute egg dish that takes a couple of tries to learn.", "recipeCategory": "Breakfast & The Griddle", "recipeCuisine": "American", "keywords": "eggs, breakfast, technique, fast", "recipeYield": "1 omelette", "image": "https://twistedrootsmerc.com/assets/img/breakfast-plate.jpg", "recipeIngredient": ["3 large eggs", "1 tablespoon (14 g) unsalted butter", "1/4 teaspoon fine salt", "Black pepper, to taste", "20 g gruyere or sharp cheddar, grated fine", "1 teaspoon chopped chives", "2 tablespoons soft goat cheese"], "recipeInstructions": [{"@type": "HowToStep", "text": "Beat the eggs and salt hard with a fork until entirely uniform and slightly foamy on top. Any unmixed white will show as a rubbery white ribbon in the middle of a very pale omelette, where it has nowhere to hide."}, {"@type": "HowToStep", "text": "Set a 20 cm nonstick pan over medium heat and add the butter. When it has melted and is foaming steadily but has not begun to colour, swirl it up the sides. If it browns, the pan is too hot for this dish; wipe it and start again."}, {"@type": "HowToStep", "text": "Pour in the eggs and immediately start stirring with a silicone spatula, small fast circles, while shaking the pan gently back and forth with the other hand. Keep it moving for about twenty seconds, until the eggs look like very loose, small-curd scramble with no liquid pooling."}, {"@type": "HowToStep", "text": "Stop stirring. Smooth the top flat with the spatula and let the omelette sit for fifteen to twenty seconds, until the underside has just set into a single sheet and the surface is still glistening and slightly wet. Scatter the cheese or herbs down the centre now."}, {"@type": "HowToStep", "text": "Tilt the pan away from you to about forty-five degrees. Use the spatula to fold the near third of the omelette over the middle, then knock the handle so the far edge lifts and rolls over on itself. Do not chase perfection here; a sloppy roll still tastes right."}, {"@type": "HowToStep", "text": "Roll it out onto a warm plate, seam side down. It should be pale yellow all over with no brown spots, and give a little when pressed. If you cut it open, the centre should be creamy and just short of runny."}, {"@type": "HowToStep", "text": "Rub the top with the butter wrapper or a small knob of butter to give it a shine, grind pepper over it, and eat it right away."}], "author": {"@type": "Organization", "name": "Twisted Roots Merc"}, "publisher": {"@id": "https://twistedrootsmerc.com/#store"}, "mainEntityOfPage": "https://twistedrootsmerc.com/recipes/brk-french-omelette.html", "prepTime": "PT6M", "totalTime": "PT6M"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://twistedrootsmerc.com/"}, {"@type": "ListItem", "position": 2, "name": "The Kitchen", "item": "https://twistedrootsmerc.com/kitchen.html"}, {"@type": "ListItem", "position": 3, "name": "The French Omelette", "item": "https://twistedrootsmerc.com/recipes/brk-french-omelette.html"}]}</script>
 </head>
@@ -149,7 +150,7 @@
   <div class="wrap">
     <div class="foot-top">
       <div>
-        <img src="../assets/img/logo-foot.png?v=51cd242d" alt="Twisted Roots Merc" width="440" height="371">
+        <img src="../assets/img/logo-foot.webp?v=34aebc6d" alt="Twisted Roots Merc" width="440" height="371" loading="lazy" decoding="async">
         <p class="small" style="opacity:.8">Mercantile · Bakery · Kitchen<br>101 &amp; 151 N Gaither St, Siletz, Oregon 97380<br>
           <a href="tel:+15415550134">(541) 555-0134</a></p>
         <button class="stormtoggle" data-stormtoggle aria-pressed="false"><i></i>Storm Mode Off</button>
@@ -172,10 +173,16 @@
   </div>
 </footer>
 
-<script src="../assets/js/catalog.js?v=cdc9c20e"></script>
-<script src="../assets/js/cart.js?v=024fe1e6"></script>
-<script src="../assets/js/site.js?v=3787c0d1"></script>
-<script src="../assets/js/motion.js?v=bf716f00"></script>
-<script src="../assets/js/roots.js?v=93423d8d"></script>
+<script>
+addEventListener("load", function () {
+  var s = ["../assets/js/catalog.js?v=cdc9c20e", "../assets/js/cart.js?v=024fe1e6", "../assets/js/site.js?v=3787c0d1", "../assets/js/motion.js?v=bf716f00", "../assets/js/roots.js?v=93423d8d"], i = 0;
+  (function next(){
+    if (i >= s.length) return;
+    var e = document.createElement("script");
+    e.src = s[i++]; e.onload = next; e.onerror = next;
+    document.body.appendChild(e);
+  })();
+});
+</script>
 </body>
 </html>
