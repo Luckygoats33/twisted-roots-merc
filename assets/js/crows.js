@@ -50,17 +50,47 @@
       var t = n > 1 ? i / (n - 1) : 0.5;
       var depth = (i % 3) / 2;             /* 0 near … 1 far */
 
+      /* Pixel-exact sprite maths needs the cell size in px, not a
+         percentage — see the CROWS block in site.css. Declared up
+         here because the speed maths below is expressed in body
+         lengths and needs it. */
+      var cw = 104, ch = Math.round(cw * (147 / 190));
+
       /* Further away: smaller, higher, slower across, and the beat
          appears slower because it is further from the eye. */
-      var scale = 0.26 + (1 - depth) * 0.62;
+      var scale = 0.26 + (1 - depth) * 0.36;
       var top   = SKY_TOP + t * (SKY_BOTTOM - SKY_TOP) + (i % 2 ? 3.5 : -2.5);
-      var cross = 74 + depth * 34 + (i % 3) * 11;       /* seconds to cross */
-      var delay = -(i * 6 + (i % 3) * 3.5);
-      var flap  = 0.80 + depth * 0.22 + (i % 2) * 0.07; /* steady working beat */
 
-      /* Pixel-exact sprite maths needs the cell size in px, not a
-         percentage — see the CROWS block in site.css. */
-      var cw = 104, ch = Math.round(cw * (147 / 190));
+      /* HOW FAST A BIRD SHOULD ACTUALLY GO
+         ---------------------------------
+         The old numbers were 74-130 seconds to cross, which on a
+         1400px hero is ~28px/s. A crow drawn 90px long covering its
+         own body length in three seconds is the slow-motion tell —
+         nothing alive moves like that.
+
+         So speed is set in BODY LENGTHS PER SECOND, which is the
+         measure that stays honest at any size or screen width, and
+         the crossing time falls out of it. A crow in level flapping
+         flight covers something like 20 body lengths a second; that
+         is a two-second streak across a hero and useless as scenery,
+         so this is deliberately an unhurried cruise rather than a
+         commute. It is the one place here that is dialled back from
+         life, and it is dialled back once, in one number.
+
+         Because px/s is proportional to apparent size, a far bird
+         gets the SAME physical speed and simply takes longer to
+         cross - which is exactly what perspective does. */
+      var BODY_PER_SEC = 3.2;
+      var travel = (window.innerWidth || 1400) * 1.52;   /* -26vw to 126vw */
+      var cross  = travel / (BODY_PER_SEC * cw * scale);
+      var delay  = -(i * (cross / n) + (i % 3) * 1.7);
+
+      /* The beat does NOT slow with distance. A far crow's wings do
+         not flap slower; it only crosses the frame slower, which the
+         line above already handles. 18 of the 25 frames are one full
+         beat, so 0.40s a cycle is 18/25 x 0.40 = 0.29s a beat, about
+         3.4 a second - a real crow's working rate. */
+      var flap  = 0.40 + (i % 3) * 0.03;
 
       crow.style.cssText =
         "top:" + top.toFixed(1) + "%;" +
@@ -71,7 +101,7 @@
         "--cr-delay:" + delay.toFixed(1) + "s;" +
         "--cr-flap:" + flap.toFixed(2) + "s;" +
         "--cr-haze:" + depth.toFixed(2) + ";" +
-        "--cr-bob:" + (7 + (1 - depth) * 9).toFixed(0) + "px;";
+        "--cr-bob:" + (3 + (1 - depth) * 4).toFixed(0) + "px;";
 
       var sprite = document.createElement("i");
       sprite.className = "crow__sprite";

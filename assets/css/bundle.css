@@ -378,7 +378,7 @@ video.hero-img{display:none}
 }
 .crows{position:absolute;inset:0;z-index:2;pointer-events:none;overflow:hidden;--cr-frames:25}
 .crow{position:absolute;left:0;display:block;width:var(--cr-w,104px);height:var(--cr-h,104px);transform:translate3d(-26vw,0,0) scale(var(--cr-scale,1));animation:crow-cross var(--cr-cross,60s) linear infinite;animation-delay:var(--cr-delay,0s);will-change:transform}
-.crow__sprite{display:block;width:100%;height:100%;background-image:url("../img/crow-sprite.png");background-repeat:repeat-x;background-size:calc(var(--cr-w,104px) * var(--cr-frames,25)) 100%;background-position:0 0;opacity:calc(0.92 - var(--cr-haze,0) * 0.42);filter:blur(calc(var(--cr-haze,0) * 0.7px)) contrast(calc(1 - var(--cr-haze,0) * 0.3)) brightness(calc(1 + var(--cr-haze,0) * 0.28));animation:crow-flap var(--cr-flap,1.5s) steps(var(--cr-frames,25)) infinite,crow-drift calc(var(--cr-cross,60s) / 3) ease-in-out infinite}
+.crow__sprite{display:block;width:100%;height:100%;background-image:url("../img/crow-sprite.png");background-repeat:repeat-x;background-size:calc(var(--cr-w,104px) * var(--cr-frames,25)) 100%;background-position:0 0;opacity:calc(0.92 - var(--cr-haze,0) * 0.42);filter:blur(calc(var(--cr-haze,0) * 0.7px)) contrast(calc(1 - var(--cr-haze,0) * 0.3)) brightness(calc(1 + var(--cr-haze,0) * 0.28));animation:crow-flap var(--cr-flap,1.5s) steps(var(--cr-frames,25)) infinite,crow-drift calc(var(--cr-flap,0.4s) * 4) ease-in-out infinite}
 @keyframes crow-flap{
 from{background-position-x:0}
 to{background-position-x:calc(var(--cr-w,104px) * var(--cr-frames,25) * -1)}

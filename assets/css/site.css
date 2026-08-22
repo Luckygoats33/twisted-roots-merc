@@ -591,7 +591,11 @@ img.hero-still{ z-index:0 }
 
   animation:
     crow-flap  var(--cr-flap,1.5s) steps(var(--cr-frames,25)) infinite,
-    crow-drift calc(var(--cr-cross,60s) / 3) ease-in-out infinite;
+    /* The body rides the wingbeat, so the bob is a multiple of the
+       flap, not a fraction of the whole crossing. Tied to the
+       crossing it produced one long swell per screen, which is a
+       glider, not a flapping bird. */
+    crow-drift calc(var(--cr-flap,0.4s) * 4) ease-in-out infinite;
 }
 
 @keyframes crow-flap{
