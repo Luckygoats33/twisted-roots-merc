@@ -18,19 +18,17 @@
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png?v=ce873322">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/site.css?v=db82a4af">
-<link rel="stylesheet" href="../assets/css/motion.css?v=e4213a7b">
-<link rel="stylesheet" href="../assets/css/roots.css?v=42e7b082">
-<link rel="stylesheet" href="../assets/css/mobile.css?v=1c92929c">
-<link rel="stylesheet" href="../assets/css/polish.css?v=39f8e298">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap"></noscript>
+<link rel="stylesheet" href="../assets/css/bundle.css?v=bfaf2686">
 <link rel="stylesheet" href="../assets/css/print.css?v=65e49f4e" media="print">
-<link rel="stylesheet" href="../assets/css/perf.css?v=8af74f1b">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "A Dripping Faucet, and Whether It Is Worth Repairing", "description": "Cartridge, compression or ball. Which one you have decides whether this is a four dollar washer or a new faucet.", "articleSection": "Fix It", "keywords": "faucet, plumbing, drip, cartridge, repair", "mainEntityOfPage": "https://twistedrootsmerc.com/blog/fix-dripping-faucet.html", "author": {"@type": "Organization", "name": "Twisted Roots Merc"}, "publisher": {"@id": "https://twistedrootsmerc.com/#store"}, "isPartOf": {"@type": "Blog", "name": "Practical Notes", "url": "https://twistedrootsmerc.com/journal.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://twistedrootsmerc.com/"}, {"@type": "ListItem", "position": 2, "name": "Practical Notes", "item": "https://twistedrootsmerc.com/journal.html"}, {"@type": "ListItem", "position": 3, "name": "A Dripping Faucet, and Whether It Is Worth Repairing", "item": "https://twistedrootsmerc.com/blog/fix-dripping-faucet.html"}]}</script>
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="stormbar">
   <div class="wrap"><b>Storm Mode</b> <span>Wind advisory on the coast. Storm supplies stocked and the yard is open.</span> <a href="../storm.html">See storm stock →</a></div>
@@ -45,7 +43,7 @@
       <span class="brand-txt"><b>Twisted Roots</b><span>Siletz, Oregon</span></span>
     </a>
     <button class="burger" data-burger aria-expanded="false" aria-controls="siteNav" aria-label="Menu"><span class="burger__box" aria-hidden="true"><i></i><i></i><i></i></span><span class="burger__txt">Menu</span></button>
-    <nav class="nav" id="siteNav">
+    <nav class="nav" id="siteNav" aria-label="Main">
       <div class="navitem" data-navitem>
         <button class="navitem__top" data-subtoggle aria-expanded="false" aria-controls="sub-shop">Shop<i class="navitem__car" aria-hidden="true"></i></button>
         <div class="subnav" id="sub-shop">
@@ -83,11 +81,11 @@
   </div>
 </header>
 
-<main>
+<main id="main" tabindex="-1">
 
 <section class="band band--cream band--tight" style="padding-top:clamp(40px,5vw,72px)">
   <div class="wrap--mid">
-    <nav class="serif-caps muted" style="margin-bottom:22px">
+    <nav class="serif-caps muted" style="margin-bottom:22px" aria-label="Breadcrumb">
       <a href="../index.html" style="text-decoration:none">Home</a> &nbsp;/&nbsp;
       <a href="../journal.html" style="text-decoration:none">Notes</a> &nbsp;/&nbsp;
       <a href="../journal.html#fix-it" style="text-decoration:none">Fix It</a>
@@ -101,22 +99,22 @@
 
 <article class="band band--paper" style="padding-top:clamp(34px,4vw,56px)">
   <div class="wrap--narrow tr-prose">
-    <p>A drip is a seal that has stopped sealing. On a faucet that is one of a small number of parts, none of them expensive. The complication is that faucets come in several fundamentally different designs, and the repair is different for each. Working out which one is on your sink is most of the job.</p><h3>What you need</h3><ul><li>A screwdriver set, usually a small Phillips and an Allen key</li><li>Channel-lock pliers</li><li>Plumber's grease if you have it</li><li>The old cartridge or washer, to match a new one</li></ul><h2>Identify the faucet first</h2><table><thead><tr><th>Type</th><th>How it feels</th><th>What drips</th></tr></thead><tbody><tr><td>Compression, two handles</td><td>Handles keep turning, you can crank them tighter</td><td>Rubber seat washer</td></tr><tr><td>Cartridge, one or two handles</td><td>Handle turns a quarter turn and stops</td><td>Cartridge or its O-rings</td></tr><tr><td>Ball, single lever with a domed cap</td><td>Lever moves in a sphere</td><td>Seats and springs in a kit</td></tr><tr><td>Ceramic disc, single lever, heavy feel</td><td>Very smooth, short travel</td><td>Disc cartridge or inlet seals</td></tr></tbody></table><p>Two handles that you can keep tightening are almost always compression, and those are old. If it is a single lever that moves smoothly and feels solid, it is ceramic disc and the repair kit is faucet specific.</p><h2>The general procedure</h2><ol><li>Shut both angle stops under the sink. Open the faucet to confirm the water is actually off, and to relieve pressure.</li><li>Plug the drain. This is not optional. A dropped set screw goes straight down the hole and you will never see it again.</li><li>Pop the decorative cap off the handle. There is usually a screw under it.</li><li>Pull the handle. Take a photo before you take anything else apart. Every faucet goes back together in exactly one orientation and none of them tell you which.</li><li>Remove the retaining nut or clip, then pull the cartridge or stem straight up. Some are stubborn. There are cartridge pullers for this, but a gentle twist while pulling usually works.</li><li>Take the old part to the store. Not a photo of it, the actual part.</li><li>Grease the new O-rings lightly, reassemble in the same order, snug rather than tight.</li><li>Turn the water on slowly, run both hot and cold, check underneath.</li></ol><h2>The honest cost math</h2><p>A washer or an O-ring set is a few dollars. A brand-name cartridge can be twenty to fifty, and for a lot of major brands it is free for the asking because they warranty them for life. That is worth a phone call before you buy anything.</p><p>Where it stops being worth it: a builder-grade faucet with a corroded body, pitted chrome and a cartridge nobody stocks. If the faucet is old enough that the parts are a special order and the finish is going anyway, a new faucet costs less than the parts plus your Saturday. On the coast, spray from salt air and constant damp under the sink means faucet bodies do genuinely corrode from the outside in. Look at the shank under the sink before you commit to repairing it.</p><h2>If the drip is at the base, not the spout</h2><p>Water welling up around the base of the spout when you run it is a different failure. That is the O-rings on the spout body, and it means water is running down inside the cabinet where you cannot see it. Check the cabinet floor for a dark patch or a soft spot. Those O-rings are cheap and the fix is the same disassembly, but ignoring it rots a cabinet base fast in a damp house.</p><h2>Where to stop</h2><p>If you get the handle off and the whole faucet body turns in the sink, or the shank nuts underneath are seized to the point where you are levering on the sink itself, put it down. Cracking a porcelain sink or an old cast iron rim to save a faucet cartridge is a bad trade. Same if the supply pipes coming out of the wall are galvanized and flaking.</p><p>Supply lines, thread seal tape, plumber's putty and the pliers to do this live on <a href="../merc.html#fixit">the Fix It wall</a>. While you are under there, look at the <a href="fix-water-supply-lines.html">supply lines</a> and the shutoffs, because that is where the expensive failures happen.</p>
+    <p>A drip is a seal that has stopped sealing. On a faucet that is one of a small number of parts, none of them expensive. The complication is that faucets come in several fundamentally different designs, and the repair is different for each. Working out which one is on your sink is most of the job.</p><h2 class="a11y-rank-h3">What you need</h2><ul><li>A screwdriver set, usually a small Phillips and an Allen key</li><li>Channel-lock pliers</li><li>Plumber's grease if you have it</li><li>The old cartridge or washer, to match a new one</li></ul><h2>Identify the faucet first</h2><table><thead><tr><th scope="col">Type</th><th scope="col">How it feels</th><th scope="col">What drips</th></tr></thead><tbody><tr><td>Compression, two handles</td><td>Handles keep turning, you can crank them tighter</td><td>Rubber seat washer</td></tr><tr><td>Cartridge, one or two handles</td><td>Handle turns a quarter turn and stops</td><td>Cartridge or its O-rings</td></tr><tr><td>Ball, single lever with a domed cap</td><td>Lever moves in a sphere</td><td>Seats and springs in a kit</td></tr><tr><td>Ceramic disc, single lever, heavy feel</td><td>Very smooth, short travel</td><td>Disc cartridge or inlet seals</td></tr></tbody></table><p>Two handles that you can keep tightening are almost always compression, and those are old. If it is a single lever that moves smoothly and feels solid, it is ceramic disc and the repair kit is faucet specific.</p><h2>The general procedure</h2><ol><li>Shut both angle stops under the sink. Open the faucet to confirm the water is actually off, and to relieve pressure.</li><li>Plug the drain. This is not optional. A dropped set screw goes straight down the hole and you will never see it again.</li><li>Pop the decorative cap off the handle. There is usually a screw under it.</li><li>Pull the handle. Take a photo before you take anything else apart. Every faucet goes back together in exactly one orientation and none of them tell you which.</li><li>Remove the retaining nut or clip, then pull the cartridge or stem straight up. Some are stubborn. There are cartridge pullers for this, but a gentle twist while pulling usually works.</li><li>Take the old part to the store. Not a photo of it, the actual part.</li><li>Grease the new O-rings lightly, reassemble in the same order, snug rather than tight.</li><li>Turn the water on slowly, run both hot and cold, check underneath.</li></ol><h2>The honest cost math</h2><p>A washer or an O-ring set is a few dollars. A brand-name cartridge can be twenty to fifty, and for a lot of major brands it is free for the asking because they warranty them for life. That is worth a phone call before you buy anything.</p><p>Where it stops being worth it: a builder-grade faucet with a corroded body, pitted chrome and a cartridge nobody stocks. If the faucet is old enough that the parts are a special order and the finish is going anyway, a new faucet costs less than the parts plus your Saturday. On the coast, spray from salt air and constant damp under the sink means faucet bodies do genuinely corrode from the outside in. Look at the shank under the sink before you commit to repairing it.</p><h2>If the drip is at the base, not the spout</h2><p>Water welling up around the base of the spout when you run it is a different failure. That is the O-rings on the spout body, and it means water is running down inside the cabinet where you cannot see it. Check the cabinet floor for a dark patch or a soft spot. Those O-rings are cheap and the fix is the same disassembly, but ignoring it rots a cabinet base fast in a damp house.</p><h2>Where to stop</h2><p>If you get the handle off and the whole faucet body turns in the sink, or the shank nuts underneath are seized to the point where you are levering on the sink itself, put it down. Cracking a porcelain sink or an old cast iron rim to save a faucet cartridge is a bad trade. Same if the supply pipes coming out of the wall are galvanized and flaking.</p><p>Supply lines, thread seal tape, plumber's putty and the pliers to do this live on <a href="../merc.html#fixit">the Fix It wall</a>. While you are under there, look at the <a href="fix-water-supply-lines.html">supply lines</a> and the shutoffs, because that is where the expensive failures happen.</p>
   </div>
 </article>
+
 
 <section class="band band--bark band--dark band--tight">
   <div class="wrap--mid">
     <div class="split split--top">
       <div>
-        <p class="eyebrow">While you're here</p>
-        <h2 class="h2 mb0">Need any of this today?</h2>
+        <p class="eyebrow">From the shelf</p>
+        <h2 class="h2 mb0">What this takes</h2>
       </div>
       <div>
-        <p class="lede mb0">Check what is on the shelf before you drive over, or tell us what we
-          should be carrying.</p>
-        <div class="btnrow" style="margin-top:20px">
-          <a class="btn btn--amber" href="../merc.html#fixit">Shop now</a>
+        <p class="lede mb0">Counts come off the register. If it says two left, there are two left.</p>
+        <div class="pillrow"><a class="pill" href="../shop.html?q=faucet" style="text-decoration:none">Faucet supply lines and sink parts</a><a class="pill" href="../shop.html?q=plumbers+putty" style="text-decoration:none">Plumber&#x27;s putty for the reseat</a></div>
+        <div class="btnrow" style="margin-top:18px">
           <button class="btn btn--ghost" data-tellus="true">Tell Carrie &amp; Eric</button>
         </div>
       </div>
@@ -159,18 +157,18 @@
   <div class="wrap">
     <div class="foot-top">
       <div>
-        <img src="../assets/img/logo-foot.webp?v=34aebc6d" alt="Twisted Roots Merc" width="440" height="371" loading="lazy" decoding="async">
+        <img src="../assets/img/logo-foot.webp?v=34aebc6d" srcset="../assets/img/logo-foot-190.webp 190w, ../assets/img/logo-foot-380.webp 380w, ../assets/img/logo-foot.webp 440w" sizes="190px" width="440" height="371" alt="Twisted Roots Merc" loading="lazy" decoding="async">
         <p class="small" style="opacity:.8">Mercantile · Bakery · Kitchen<br>101 &amp; 151 N Gaither St, Siletz, Oregon 97380<br>
           <a href="tel:+15415550134">(541) 555-0134</a></p>
         <button class="stormtoggle" data-stormtoggle aria-pressed="false"><i></i>Storm Mode Off</button>
       </div>
-      <div><h4>The Store</h4><ul>
+      <div><h3>The Store</h3><ul>
         <li><a href="../merc.html">The Merc</a></li><li><a href="../yard.html">The Yard</a></li>
         <li><a href="../storm.html">Storm Ready</a></li><li><a href="../hunt.html">Hunt &amp; Field</a></li><li><a href="../local.html">Local Goods</a></li></ul></div>
-      <div><h4>Food</h4><ul>
+      <div><h3>Food</h3><ul>
         <li><a href="../bakery.html">Bakery + Kitchen</a></li><li><a href="../kitchen.html">Recipes</a></li><li><a href="../bakery.html#breakfast">Breakfast</a></li>
         <li><a href="../bakery.html#lunch">Lunch</a></li><li><a href="../bakery.html#order">Order pickup</a></li></ul></div>
-      <div><h4>Twisted Roots</h4><ul>
+      <div><h3>Twisted Roots</h3><ul>
         <li><a href="../roots.html">Our Roots</a></li><li><a href="../journal.html">The Board</a></li><li><a href="../visit.html">Visit &amp; Hours</a></li>
         <li><a href="#" data-tellus="true">What should we carry?</a></li><li><a href="../hq.html">Owner login</a></li></ul></div>
     </div>
@@ -182,6 +180,7 @@
   </div>
 </footer>
 
+<p id="trLive" class="visually-hidden" role="status" aria-live="polite"></p>
 <script>
 addEventListener("load", function () {
   var s = ["../assets/js/catalog.js?v=cdc9c20e", "../assets/js/cart.js?v=024fe1e6", "../assets/js/site.js?v=3787c0d1", "../assets/js/motion.js?v=bf716f00", "../assets/js/roots.js?v=93423d8d"], i = 0;

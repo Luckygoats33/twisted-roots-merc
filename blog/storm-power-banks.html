@@ -18,19 +18,17 @@
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png?v=ce873322">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/site.css?v=db82a4af">
-<link rel="stylesheet" href="../assets/css/motion.css?v=e4213a7b">
-<link rel="stylesheet" href="../assets/css/roots.css?v=42e7b082">
-<link rel="stylesheet" href="../assets/css/mobile.css?v=1c92929c">
-<link rel="stylesheet" href="../assets/css/polish.css?v=39f8e298">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap"></noscript>
+<link rel="stylesheet" href="../assets/css/bundle.css?v=bfaf2686">
 <link rel="stylesheet" href="../assets/css/print.css?v=65e49f4e" media="print">
-<link rel="stylesheet" href="../assets/css/perf.css?v=8af74f1b">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Power Banks: How Big, How Many, and How to Keep Them Alive", "description": "Twenty thousand milliamp-hours does not mean four full phone charges, and the bank in your drawer has probably gone flat.", "articleSection": "Storm Ready", "keywords": "power bank, phone, charging, battery, outage", "mainEntityOfPage": "https://twistedrootsmerc.com/blog/storm-power-banks.html", "author": {"@type": "Organization", "name": "Twisted Roots Merc"}, "publisher": {"@id": "https://twistedrootsmerc.com/#store"}, "isPartOf": {"@type": "Blog", "name": "Practical Notes", "url": "https://twistedrootsmerc.com/journal.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://twistedrootsmerc.com/"}, {"@type": "ListItem", "position": 2, "name": "Practical Notes", "item": "https://twistedrootsmerc.com/journal.html"}, {"@type": "ListItem", "position": 3, "name": "Power Banks: How Big, How Many, and How to Keep Them Alive", "item": "https://twistedrootsmerc.com/blog/storm-power-banks.html"}]}</script>
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="stormbar">
   <div class="wrap"><b>Storm Mode</b> <span>Wind advisory on the coast. Storm supplies stocked and the yard is open.</span> <a href="../storm.html">See storm stock →</a></div>
@@ -45,7 +43,7 @@
       <span class="brand-txt"><b>Twisted Roots</b><span>Siletz, Oregon</span></span>
     </a>
     <button class="burger" data-burger aria-expanded="false" aria-controls="siteNav" aria-label="Menu"><span class="burger__box" aria-hidden="true"><i></i><i></i><i></i></span><span class="burger__txt">Menu</span></button>
-    <nav class="nav" id="siteNav">
+    <nav class="nav" id="siteNav" aria-label="Main">
       <div class="navitem" data-navitem>
         <button class="navitem__top" data-subtoggle aria-expanded="false" aria-controls="sub-shop">Shop<i class="navitem__car" aria-hidden="true"></i></button>
         <div class="subnav" id="sub-shop">
@@ -83,11 +81,11 @@
   </div>
 </header>
 
-<main>
+<main id="main" tabindex="-1">
 
 <section class="band band--cream band--tight" style="padding-top:clamp(40px,5vw,72px)">
   <div class="wrap--mid">
-    <nav class="serif-caps muted" style="margin-bottom:22px">
+    <nav class="serif-caps muted" style="margin-bottom:22px" aria-label="Breadcrumb">
       <a href="../index.html" style="text-decoration:none">Home</a> &nbsp;/&nbsp;
       <a href="../journal.html" style="text-decoration:none">Notes</a> &nbsp;/&nbsp;
       <a href="../journal.html#storm-ready" style="text-decoration:none">Storm Ready</a>
@@ -101,22 +99,22 @@
 
 <article class="band band--paper" style="padding-top:clamp(34px,4vw,56px)">
   <div class="wrap--narrow tr-prose">
-    <p>A phone that dies on day two is how a manageable outage becomes an anxious one. Power banks are cheap and the math is simple, but almost everybody gets two things wrong: the capacity they need, and the fact that a bank left in a drawer does not stay charged.</p><h2>The capacity math, honestly</h2><p>A modern phone battery is somewhere around 3,000 to 5,000 mAh. So a 20,000 mAh bank sounds like four or five charges. It is not, because of conversion losses — the bank's cells run at a lower voltage than USB output, and stepping that up costs you. Real-world efficiency is around sixty-five to eighty percent.</p><table><thead><tr><th>Bank capacity</th><th>Real phone charges</th><th>Good for</th></tr></thead><tbody><tr><td>5,000 mAh</td><td>About 1</td><td>Pocket top-up, a day trip</td></tr><tr><td>10,000 mAh</td><td>About 2</td><td>One person, a two-day outage</td></tr><tr><td>20,000 mAh</td><td>About 3 to 4</td><td>The household default. Charges a tablet too</td></tr><tr><td>25,000 mAh and up</td><td>4 to 6</td><td>Multiple devices, a week if you are careful</td></tr></tbody></table><p>For a two-person house, one 20,000 mAh bank per person, kept charged, gets you comfortably through most outages here. Add a second if anybody works from a laptop or if there is a powered medical device involved, in which case go read <a href="storm-medications-and-medical-devices.html">the piece on powered medical devices</a> instead, because that is a different problem entirely.</p><h2>Ports and watts</h2><p>Look for at least one USB-C port that supports Power Delivery. That is what lets a bank charge a phone fast and, on the bigger units, run a laptop. A bank with only old USB-A ports will charge your phone at a trickle, which is fine if you have all night and irritating if you do not.</p><p>Check the input too. A bank that takes four hours to refill from a wall is fine; one that takes twelve is a problem when you get power back for a two-hour window and want everything topped off.</p><h2>The part everybody gets wrong</h2><p>Lithium cells self-discharge slowly, and the electronics in the bank draw a small current forever. A bank left in a drawer loses somewhere between two and five percent a month, and cheap ones lose more. A year later it is at half or flat, and a lithium cell that has been sat at zero for months is often permanently damaged.</p><p>The fix is a habit, not a product:</p><ol><li>Charge every bank to full at the start of storm season.</li><li>Top them off whenever you change the clocks, check smoke alarms, or do any other twice-a-year household ritual you already keep.</li><li>Store them at room temperature. A cold garage and a hot attic both shorten cell life.</li><li>If a bank will sit a long time, leave it around eighty percent rather than a hundred. Lithium cells age fastest sitting at full.</li></ol><h2>Stretching what you have</h2><p>During an outage, the phone is the thing eating your power, not the bank. Turn on low power mode immediately. Drop the screen brightness, which is the single biggest draw. Turn off wifi so the phone stops hunting for a router that is dead. Do not turn off cellular entirely, because that leaves you unreachable, but do put the phone somewhere with decent signal and leave it — a phone at one bar hammering the radio to hold a connection burns battery several times faster than one sitting still with three bars.</p><p>Airplane mode with wifi off, checked once an hour, will make a phone last days. It also means you miss calls, so decide which matters more.</p><h2>Other ways to charge</h2><p>Your truck is a generator you already own. A cigarette-lighter USB adapter charges phones and banks all day, and idling ten minutes an hour is plenty for that load. A hand-crank <a href="storm-noaa-weather-radio.html">NOAA radio</a> will trickle a phone in a genuine pinch, slowly enough that you will only do it once. And a folding solar panel is real but modest on this coast in winter, where the useful daylight is short and gray.</p><p>Banks, cables and 12-volt adapters are all on the <a href="../storm.html">storm wall</a>. Buy the cable at the same time. The bank is never the thing that is missing.</p>
+    <p>A phone that dies on day two is how a manageable outage becomes an anxious one. Power banks are cheap and the math is simple, but almost everybody gets two things wrong: the capacity they need, and the fact that a bank left in a drawer does not stay charged.</p><h2>The capacity math, honestly</h2><p>A modern phone battery is somewhere around 3,000 to 5,000 mAh. So a 20,000 mAh bank sounds like four or five charges. It is not, because of conversion losses — the bank's cells run at a lower voltage than USB output, and stepping that up costs you. Real-world efficiency is around sixty-five to eighty percent.</p><table><thead><tr><th scope="col">Bank capacity</th><th scope="col">Real phone charges</th><th scope="col">Good for</th></tr></thead><tbody><tr><td>5,000 mAh</td><td>About 1</td><td>Pocket top-up, a day trip</td></tr><tr><td>10,000 mAh</td><td>About 2</td><td>One person, a two-day outage</td></tr><tr><td>20,000 mAh</td><td>About 3 to 4</td><td>The household default. Charges a tablet too</td></tr><tr><td>25,000 mAh and up</td><td>4 to 6</td><td>Multiple devices, a week if you are careful</td></tr></tbody></table><p>For a two-person house, one 20,000 mAh bank per person, kept charged, gets you comfortably through most outages here. Add a second if anybody works from a laptop or if there is a powered medical device involved, in which case go read <a href="storm-medications-and-medical-devices.html">the piece on powered medical devices</a> instead, because that is a different problem entirely.</p><h2>Ports and watts</h2><p>Look for at least one USB-C port that supports Power Delivery. That is what lets a bank charge a phone fast and, on the bigger units, run a laptop. A bank with only old USB-A ports will charge your phone at a trickle, which is fine if you have all night and irritating if you do not.</p><p>Check the input too. A bank that takes four hours to refill from a wall is fine; one that takes twelve is a problem when you get power back for a two-hour window and want everything topped off.</p><h2>The part everybody gets wrong</h2><p>Lithium cells self-discharge slowly, and the electronics in the bank draw a small current forever. A bank left in a drawer loses somewhere between two and five percent a month, and cheap ones lose more. A year later it is at half or flat, and a lithium cell that has been sat at zero for months is often permanently damaged.</p><p>The fix is a habit, not a product:</p><ol><li>Charge every bank to full at the start of storm season.</li><li>Top them off whenever you change the clocks, check smoke alarms, or do any other twice-a-year household ritual you already keep.</li><li>Store them at room temperature. A cold garage and a hot attic both shorten cell life.</li><li>If a bank will sit a long time, leave it around eighty percent rather than a hundred. Lithium cells age fastest sitting at full.</li></ol><h2>Stretching what you have</h2><p>During an outage, the phone is the thing eating your power, not the bank. Turn on low power mode immediately. Drop the screen brightness, which is the single biggest draw. Turn off wifi so the phone stops hunting for a router that is dead. Do not turn off cellular entirely, because that leaves you unreachable, but do put the phone somewhere with decent signal and leave it — a phone at one bar hammering the radio to hold a connection burns battery several times faster than one sitting still with three bars.</p><p>Airplane mode with wifi off, checked once an hour, will make a phone last days. It also means you miss calls, so decide which matters more.</p><h2>Other ways to charge</h2><p>Your truck is a generator you already own. A cigarette-lighter USB adapter charges phones and banks all day, and idling ten minutes an hour is plenty for that load. A hand-crank <a href="storm-noaa-weather-radio.html">NOAA radio</a> will trickle a phone in a genuine pinch, slowly enough that you will only do it once. And a folding solar panel is real but modest on this coast in winter, where the useful daylight is short and gray.</p><p>Banks, cables and 12-volt adapters are all on the <a href="../storm.html">storm wall</a>. Buy the cable at the same time. The bank is never the thing that is missing.</p>
   </div>
 </article>
+
 
 <section class="band band--bark band--dark band--tight">
   <div class="wrap--mid">
     <div class="split split--top">
       <div>
-        <p class="eyebrow">While you're here</p>
-        <h2 class="h2 mb0">Need any of this today?</h2>
+        <p class="eyebrow">From the shelf</p>
+        <h2 class="h2 mb0">What this takes</h2>
       </div>
       <div>
-        <p class="lede mb0">Check what is on the shelf before you drive over, or tell us what we
-          should be carrying.</p>
-        <div class="btnrow" style="margin-top:20px">
-          <a class="btn btn--amber" href="../storm.html">Shop now</a>
+        <p class="lede mb0">Counts come off the register. If it says two left, there are two left.</p>
+        <div class="pillrow"><a class="pill" href="../shop.html?q=power+bank" style="text-decoration:none">Power banks, twenty thousand milliamp</a><a class="pill" href="../shop.html?q=charging+cable" style="text-decoration:none">Charging cables that fit them</a></div>
+        <div class="btnrow" style="margin-top:18px">
           <button class="btn btn--ghost" data-tellus="true">Tell Carrie &amp; Eric</button>
         </div>
       </div>
@@ -159,18 +157,18 @@
   <div class="wrap">
     <div class="foot-top">
       <div>
-        <img src="../assets/img/logo-foot.webp?v=34aebc6d" alt="Twisted Roots Merc" width="440" height="371" loading="lazy" decoding="async">
+        <img src="../assets/img/logo-foot.webp?v=34aebc6d" srcset="../assets/img/logo-foot-190.webp 190w, ../assets/img/logo-foot-380.webp 380w, ../assets/img/logo-foot.webp 440w" sizes="190px" width="440" height="371" alt="Twisted Roots Merc" loading="lazy" decoding="async">
         <p class="small" style="opacity:.8">Mercantile · Bakery · Kitchen<br>101 &amp; 151 N Gaither St, Siletz, Oregon 97380<br>
           <a href="tel:+15415550134">(541) 555-0134</a></p>
         <button class="stormtoggle" data-stormtoggle aria-pressed="false"><i></i>Storm Mode Off</button>
       </div>
-      <div><h4>The Store</h4><ul>
+      <div><h3>The Store</h3><ul>
         <li><a href="../merc.html">The Merc</a></li><li><a href="../yard.html">The Yard</a></li>
         <li><a href="../storm.html">Storm Ready</a></li><li><a href="../hunt.html">Hunt &amp; Field</a></li><li><a href="../local.html">Local Goods</a></li></ul></div>
-      <div><h4>Food</h4><ul>
+      <div><h3>Food</h3><ul>
         <li><a href="../bakery.html">Bakery + Kitchen</a></li><li><a href="../kitchen.html">Recipes</a></li><li><a href="../bakery.html#breakfast">Breakfast</a></li>
         <li><a href="../bakery.html#lunch">Lunch</a></li><li><a href="../bakery.html#order">Order pickup</a></li></ul></div>
-      <div><h4>Twisted Roots</h4><ul>
+      <div><h3>Twisted Roots</h3><ul>
         <li><a href="../roots.html">Our Roots</a></li><li><a href="../journal.html">The Board</a></li><li><a href="../visit.html">Visit &amp; Hours</a></li>
         <li><a href="#" data-tellus="true">What should we carry?</a></li><li><a href="../hq.html">Owner login</a></li></ul></div>
     </div>
@@ -182,6 +180,7 @@
   </div>
 </footer>
 
+<p id="trLive" class="visually-hidden" role="status" aria-live="polite"></p>
 <script>
 addEventListener("load", function () {
   var s = ["../assets/js/catalog.js?v=cdc9c20e", "../assets/js/cart.js?v=024fe1e6", "../assets/js/site.js?v=3787c0d1", "../assets/js/motion.js?v=bf716f00", "../assets/js/roots.js?v=93423d8d"], i = 0;

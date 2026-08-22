@@ -7,7 +7,9 @@
 <meta name="description" content="The Siletz notice board: storm and power outage notes, road closures on 229, what's running in the river, and what we just put on the shelf.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap"></noscript>
 
 <link rel="canonical" href="https://twistedrootsmerc.com/board.html">
 <meta property="og:site_name" content="Twisted Roots Merc">
@@ -27,13 +29,8 @@
 <link rel="icon" href="assets/img/favicon-32.png?v=ccb53bc6" sizes="32x32">
 <link rel="icon" href="assets/img/favicon-64.png?v=7316fae5" sizes="64x64">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png?v=ce873322">
-<link rel="stylesheet" href="assets/css/site.css?v=db82a4af">
-<link rel="stylesheet" href="assets/css/motion.css?v=e4213a7b">
-<link rel="stylesheet" href="assets/css/roots.css?v=42e7b082">
-<link rel="stylesheet" href="assets/css/mobile.css?v=1c92929c">
-<link rel="stylesheet" href="assets/css/polish.css?v=39f8e298">
+<link rel="stylesheet" href="assets/css/bundle.css?v=bfaf2686">
 <link rel="stylesheet" href="assets/css/print.css?v=65e49f4e" media="print">
-<link rel="stylesheet" href="assets/css/perf.css?v=8af74f1b">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -81,6 +78,7 @@
 </script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="stormbar">
   <div class="wrap"><b>Storm Mode</b> <span>Wind advisory on the coast. Storm supplies stocked and the yard is open.</span> <a href="storm.html">See storm stock →</a></div>
@@ -95,7 +93,7 @@
       <span class="brand-txt"><b>Twisted Roots</b><span>Siletz, Oregon</span></span>
     </a>
     <button class="burger" data-burger aria-expanded="false" aria-controls="siteNav" aria-label="Menu"><span class="burger__box" aria-hidden="true"><i></i><i></i><i></i></span><span class="burger__txt">Menu</span></button>
-    <nav class="nav" id="siteNav">
+    <nav class="nav" id="siteNav" aria-label="Main">
       <div class="navitem" data-navitem>
         <button class="navitem__top" data-subtoggle aria-expanded="false" aria-controls="sub-shop">Shop<i class="navitem__car" aria-hidden="true"></i></button>
         <div class="subnav" id="sub-shop">
@@ -133,9 +131,9 @@
   </div>
 </header>
 
-<main>
+<main id="main" tabindex="-1">
 <section class="hero" style="min-height:min(60vh,600px)">
-  <img class="hero-img" src="assets/img/tr-storm.jpg?v=cbc0ef49" alt="Twisted Roots Merc at dusk in the rain with the lights on" fetchpriority="high">
+  <img class="hero-img" src="assets/img/tr-storm.jpg?v=cbc0ef49" srcset="assets/img/tr-storm-600.webp 600w, assets/img/tr-storm-900.webp 900w, assets/img/tr-storm-1400.webp 1400w, assets/img/tr-storm.webp 1800w" sizes="100vw" width="1800" height="1005" alt="Twisted Roots Merc at dusk in the rain with the lights on" fetchpriority="high">
   <div class="rain"></div>
   <div class="hero-in">
     <div class="wrap">
@@ -248,7 +246,7 @@
   <div class="wrap">
     <div class="split split--top">
       <figure class="figframe" style="margin:0">
-        <img src="assets/img/rain-window.jpg?v=aba10d19" alt="Rain running down a window on a dark afternoon" loading="lazy">
+        <img src="assets/img/rain-window.jpg?v=aba10d19" srcset="assets/img/rain-window-600.webp 600w, assets/img/rain-window-900.webp 900w, assets/img/rain-window.webp 1600w" sizes="(max-width:1080px) calc(100vw - 32px), min(47vw, 760px)" width="1600" height="1067" alt="Rain running down a window on a dark afternoon" loading="lazy" decoding="async">
         <figcaption>The part of the year this page exists for</figcaption>
       </figure>
       <div style="max-width:60ch">
@@ -316,7 +314,7 @@
   <div class="wrap">
     <div class="split split--top split--rev">
       <figure class="figframe" style="margin:0">
-        <img src="assets/img/fishing.jpg?v=80c86f90" alt="Sorting through a tackle box on the bank" loading="lazy">
+        <img src="assets/img/fishing.jpg?v=80c86f90" srcset="assets/img/fishing-600.webp 600w, assets/img/fishing-900.webp 900w, assets/img/fishing.webp 1600w" sizes="(max-width:1080px) calc(100vw - 32px), min(47vw, 760px)" width="1600" height="1067" alt="Sorting through a tackle box on the bank" loading="lazy" decoding="async">
         <figcaption>Eric will tell you all of this in person, at length</figcaption>
       </figure>
       <div style="max-width:60ch">
@@ -437,7 +435,7 @@
   <div class="wrap">
     <div class="split split--top">
       <figure class="figframe" style="margin:0">
-        <img src="assets/img/tr-yard.jpg?v=31a96128" alt="The Yard shed with lumber racks and pallets of concrete" loading="lazy">
+        <img src="assets/img/tr-yard.jpg?v=31a96128" srcset="assets/img/tr-yard-600.webp 600w, assets/img/tr-yard-900.webp 900w, assets/img/tr-yard.webp 1800w" sizes="(max-width:1080px) calc(100vw - 32px), min(47vw, 760px)" width="1800" height="1005" alt="The Yard shed with lumber racks and pallets of concrete" loading="lazy" decoding="async">
         <figcaption>The dry shed, which exists because paper bags and this climate don't mix</figcaption>
       </figure>
       <div style="max-width:60ch">
@@ -503,7 +501,7 @@
   <div class="wrap">
     <div class="split split--top split--rev">
       <figure class="figframe" style="margin:0">
-        <img src="assets/img/honey-jam.jpg?v=67297a93" alt="Jars of local honey on the shelf" loading="lazy">
+        <img src="assets/img/honey-jam.jpg?v=67297a93" srcset="assets/img/honey-jam-600.webp 600w, assets/img/honey-jam-900.webp 900w, assets/img/honey-jam.webp 1600w" sizes="(max-width:1080px) calc(100vw - 32px), min(47vw, 760px)" width="1600" height="1067" alt="Jars of local honey on the shelf" loading="lazy" decoding="async">
         <figcaption>Yaquina Bee Co. — spring jars pale, August jars dark</figcaption>
       </figure>
       <div style="max-width:60ch">
@@ -538,7 +536,7 @@
   <div class="wrap">
     <div class="split split--top">
       <figure class="figframe" style="margin:0">
-        <img src="assets/img/cinnamon-roll.jpg?v=f5ee3779" alt="A cinnamon roll on the bakery rack" loading="lazy">
+        <img src="assets/img/cinnamon-roll.jpg?v=f5ee3779" srcset="assets/img/cinnamon-roll-600.webp 600w, assets/img/cinnamon-roll-900.webp 900w, assets/img/cinnamon-roll.webp 1600w" sizes="(max-width:1080px) calc(100vw - 32px), min(47vw, 760px)" width="1600" height="2400" alt="A cinnamon roll on the bakery rack" loading="lazy" decoding="async">
         <figcaption>Gone by nine, most days</figcaption>
       </figure>
       <div style="max-width:60ch">
@@ -574,7 +572,7 @@
   <div class="wrap">
     <div class="split split--top split--rev">
       <figure class="figframe" style="margin:0">
-        <img src="assets/img/forest-road.jpg?v=316b5001" alt="Rain falling through dark coastal timber" loading="lazy">
+        <img src="assets/img/forest-road.jpg?v=316b5001" srcset="assets/img/forest-road-600.webp 600w, assets/img/forest-road-900.webp 900w, assets/img/forest-road.webp 1800w" sizes="(max-width:1080px) calc(100vw - 32px), min(47vw, 760px)" width="1800" height="2700" alt="Rain falling through dark coastal timber" loading="lazy" decoding="async">
         <figcaption>Nine at night in November, more or less</figcaption>
       </figure>
       <div style="max-width:60ch">
@@ -610,7 +608,7 @@
   <div class="wrap">
     <div class="split split--top">
       <figure class="figframe" style="margin:0">
-        <img src="assets/img/coastal-forest.jpg?v=bb1cd296" alt="A wet two-lane road under fogged coastal timber" loading="lazy">
+        <img src="assets/img/coastal-forest.jpg?v=bb1cd296" srcset="assets/img/coastal-forest-600.webp 600w, assets/img/coastal-forest-900.webp 900w, assets/img/coastal-forest.webp 2000w" sizes="(max-width:1080px) calc(100vw - 32px), min(47vw, 760px)" width="2000" height="2996" alt="A wet two-lane road under fogged coastal timber" loading="lazy" decoding="async">
         <figcaption>229 north, which the map is optimistic about</figcaption>
       </figure>
       <div style="max-width:60ch">
@@ -662,18 +660,18 @@
   <div class="wrap">
     <div class="foot-top">
       <div>
-        <img src="assets/img/logo-foot.webp?v=34aebc6d" alt="Twisted Roots Merc" width="440" height="371" loading="lazy" decoding="async">
+        <img src="assets/img/logo-foot.webp?v=34aebc6d" srcset="assets/img/logo-foot-190.webp 190w, assets/img/logo-foot-380.webp 380w, assets/img/logo-foot.webp 440w" sizes="190px" width="440" height="371" alt="Twisted Roots Merc" loading="lazy" decoding="async">
         <p class="small" style="opacity:.8">Mercantile · Bakery · Kitchen<br>101 &amp; 151 N Gaither St, Siletz, Oregon 97380<br>
           <a href="tel:+15415550134">(541) 555-0134</a></p>
         <button class="stormtoggle" data-stormtoggle aria-pressed="false"><i></i>Storm Mode Off</button>
       </div>
-      <div><h4>The Store</h4><ul>
+      <div><h3>The Store</h3><ul>
         <li><a href="merc.html">The Merc</a></li><li><a href="yard.html">The Yard</a></li>
         <li><a href="storm.html">Storm Ready</a></li><li><a href="hunt.html">Hunt &amp; Field</a></li><li><a href="local.html">Local Goods</a></li></ul></div>
-      <div><h4>Food</h4><ul>
+      <div><h3>Food</h3><ul>
         <li><a href="bakery.html">Bakery + Kitchen</a></li><li><a href="kitchen.html">Recipes</a></li><li><a href="bakery.html#breakfast">Breakfast</a></li>
         <li><a href="bakery.html#lunch">Lunch</a></li><li><a href="bakery.html#order">Order pickup</a></li></ul></div>
-      <div><h4>Twisted Roots</h4><ul>
+      <div><h3>Twisted Roots</h3><ul>
         <li><a href="roots.html">Our Roots</a></li><li><a href="journal.html">The Board</a></li><li><a href="visit.html">Visit &amp; Hours</a></li>
         <li><a href="#" data-tellus="true">What should we carry?</a></li><li><a href="hq.html">Owner login</a></li></ul></div>
     </div>
@@ -707,5 +705,6 @@ addEventListener("load", function () {
   })();
 });
 </script>
+<p id="trLive" class="visually-hidden" role="status" aria-live="polite"></p>
 </body>
 </html>

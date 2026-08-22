@@ -18,19 +18,17 @@
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png?v=ce873322">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/site.css?v=db82a4af">
-<link rel="stylesheet" href="../assets/css/motion.css?v=e4213a7b">
-<link rel="stylesheet" href="../assets/css/roots.css?v=42e7b082">
-<link rel="stylesheet" href="../assets/css/mobile.css?v=1c92929c">
-<link rel="stylesheet" href="../assets/css/polish.css?v=39f8e298">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap"></noscript>
+<link rel="stylesheet" href="../assets/css/bundle.css?v=bfaf2686">
 <link rel="stylesheet" href="../assets/css/print.css?v=65e49f4e" media="print">
-<link rel="stylesheet" href="../assets/css/perf.css?v=8af74f1b">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Livestock and Chickens Through a Windstorm", "description": "Animals mostly handle weather better than we do; what they cannot handle is a fence down and no water.", "articleSection": "Storm Ready", "keywords": "livestock, chickens, animals, fencing, water", "mainEntityOfPage": "https://twistedrootsmerc.com/blog/storm-livestock-and-chickens.html", "author": {"@type": "Organization", "name": "Twisted Roots Merc"}, "publisher": {"@id": "https://twistedrootsmerc.com/#store"}, "isPartOf": {"@type": "Blog", "name": "Practical Notes", "url": "https://twistedrootsmerc.com/journal.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://twistedrootsmerc.com/"}, {"@type": "ListItem", "position": 2, "name": "Practical Notes", "item": "https://twistedrootsmerc.com/journal.html"}, {"@type": "ListItem", "position": 3, "name": "Livestock and Chickens Through a Windstorm", "item": "https://twistedrootsmerc.com/blog/storm-livestock-and-chickens.html"}]}</script>
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="stormbar">
   <div class="wrap"><b>Storm Mode</b> <span>Wind advisory on the coast. Storm supplies stocked and the yard is open.</span> <a href="../storm.html">See storm stock →</a></div>
@@ -45,7 +43,7 @@
       <span class="brand-txt"><b>Twisted Roots</b><span>Siletz, Oregon</span></span>
     </a>
     <button class="burger" data-burger aria-expanded="false" aria-controls="siteNav" aria-label="Menu"><span class="burger__box" aria-hidden="true"><i></i><i></i><i></i></span><span class="burger__txt">Menu</span></button>
-    <nav class="nav" id="siteNav">
+    <nav class="nav" id="siteNav" aria-label="Main">
       <div class="navitem" data-navitem>
         <button class="navitem__top" data-subtoggle aria-expanded="false" aria-controls="sub-shop">Shop<i class="navitem__car" aria-hidden="true"></i></button>
         <div class="subnav" id="sub-shop">
@@ -83,11 +81,11 @@
   </div>
 </header>
 
-<main>
+<main id="main" tabindex="-1">
 
 <section class="band band--cream band--tight" style="padding-top:clamp(40px,5vw,72px)">
   <div class="wrap--mid">
-    <nav class="serif-caps muted" style="margin-bottom:22px">
+    <nav class="serif-caps muted" style="margin-bottom:22px" aria-label="Breadcrumb">
       <a href="../index.html" style="text-decoration:none">Home</a> &nbsp;/&nbsp;
       <a href="../journal.html" style="text-decoration:none">Notes</a> &nbsp;/&nbsp;
       <a href="../journal.html#storm-ready" style="text-decoration:none">Storm Ready</a>
@@ -101,22 +99,22 @@
 
 <article class="band band--paper" style="padding-top:clamp(34px,4vw,56px)">
   <div class="wrap--narrow tr-prose">
-    <p>Stock generally does fine in a coastal storm. They have been getting rained on their whole lives and they have better sense about wind than people give them credit for. The problems are almost always ours: a gate we did not latch, a water system that runs on a pump, and a roof panel that came off and cut something.</p><h2>Water is the whole thing</h2><p>Everything else on this list is optional and this is not. If your stock water comes from a well pump, an outage stops it completely, and the numbers are bigger than people expect.</p><table><thead><tr><th>Animal</th><th>Water per day</th><th>Two days for a small place</th></tr></thead><tbody><tr><td>Horse</td><td>8-12 gallons</td><td>20-25 gallons each</td></tr><tr><td>Beef cow</td><td>10-20 gallons</td><td>Up to 40 gallons each</td></tr><tr><td>Goat or sheep</td><td>1-3 gallons</td><td>About 5 gallons each</td></tr><tr><td>Pig</td><td>3-5 gallons</td><td>About 10 gallons each</td></tr><tr><td>Chicken</td><td>About 1 pint</td><td>A couple of gallons for a small flock</td></tr></tbody></table><p>Fill every trough and every spare barrel before the wind arrives. A stock tank full at the start of an outage is two or three days of margin, and it costs nothing but the time to turn a tap. Keep a bucket and a length of hose so you can siphon or haul from a rain barrel, and know where the nearest creek access is if it goes long.</p><h3>Feed, and the mud</h3><p>Keep enough feed for two weeks and keep it dry, off the ground, in metal cans with tight lids. Paper sacks on a concrete floor in a wet barn go mouldy fast, and rodents move indoors during storms just like everything else.</p><p>Hay is the other one. A tarp over a hay stack has to be tight and tied at every point or it becomes a sail, and hay that gets soaked is not just wasted, it heats and can go dangerous in a stack.</p><h2>Shelter, and letting them choose</h2><p>Animals will use shelter when they want it and stand in the rain when they do not, and they are usually right. What matters is that the shelter is safe and that they can get out of it.</p><ul><li>Check for loose metal roof panels and flapping siding before the wind. A sheet of roofing coming off a run-in shed with animals under it is the worst outcome on this page.</li><li>Three-sided shelters should be open <strong>away from the prevailing wind</strong>, which on this coast means not facing south or southwest.</li><li>Do not lock stock in a barn under trees during a big blow if there is open pasture available. A collapsed barn is worse than a wet horse, and horses in an open field genuinely do fine.</li><li>Chickens want to be shut in. They will not put themselves to bed in a gale, and a coop with a secured door and good ventilation up high is the right place for them.</li><li>Bed deep and dry. Wet bedding is where problems start for feet.</li></ul><h2>Fences and getting out</h2><p>Electric fence dies with the power unless it is on a solar or battery energizer, and the stock will know within a few hours. Have a plan for that: a battery energizer as backup, or move them to a field with a physical fence before the storm.</p><p>Walk the fence line before the weather. Look for trees close enough to reach it, wobbly posts, and gates that do not latch positively. After the storm, walk it again before you turn anybody out, because a limb across a wire fence puts it flat on the ground and cattle find that within the hour.</p><h2>Identification and the paperwork</h2><p>If stock does get out and travels, identification is what gets them back. Halters with a tag, a brand, a microchip, or at minimum a photo of each animal on your phone with any distinguishing marks. Keep a written list of what you have with a neighbor or in the truck.</p><p>Have a plan for who feeds them if you cannot get home — the road washes out, the drive is blocked, you are stuck in Newport. That plan is a phone number, and the phone number is on paper, because see <a href="storm-paper-phone-list.html">the paper phone list</a>.</p><h2>After</h2><p>Walk the whole place before you turn anything out. Downed wire, roofing panels and nails in the mud, broken glass, a limb across a fence, and anything from somebody else's property that blew in. Nails and metal in a pasture are how horses end up at the vet in a week when nobody has connected it to the storm.</p><p>Feed, buckets, hose, fence hardware, rope, tarps and battery energizers are stocked — see <a href="../merc.html#fixit">Fix It</a> and the <a href="../storm.html">storm wall</a>. Tell us what you run and we will keep the right feed on the shelf.</p>
+    <p>Stock generally does fine in a coastal storm. They have been getting rained on their whole lives and they have better sense about wind than people give them credit for. The problems are almost always ours: a gate we did not latch, a water system that runs on a pump, and a roof panel that came off and cut something.</p><h2>Water is the whole thing</h2><p>Everything else on this list is optional and this is not. If your stock water comes from a well pump, an outage stops it completely, and the numbers are bigger than people expect.</p><table><thead><tr><th scope="col">Animal</th><th scope="col">Water per day</th><th scope="col">Two days for a small place</th></tr></thead><tbody><tr><td>Horse</td><td>8-12 gallons</td><td>20-25 gallons each</td></tr><tr><td>Beef cow</td><td>10-20 gallons</td><td>Up to 40 gallons each</td></tr><tr><td>Goat or sheep</td><td>1-3 gallons</td><td>About 5 gallons each</td></tr><tr><td>Pig</td><td>3-5 gallons</td><td>About 10 gallons each</td></tr><tr><td>Chicken</td><td>About 1 pint</td><td>A couple of gallons for a small flock</td></tr></tbody></table><p>Fill every trough and every spare barrel before the wind arrives. A stock tank full at the start of an outage is two or three days of margin, and it costs nothing but the time to turn a tap. Keep a bucket and a length of hose so you can siphon or haul from a rain barrel, and know where the nearest creek access is if it goes long.</p><h3>Feed, and the mud</h3><p>Keep enough feed for two weeks and keep it dry, off the ground, in metal cans with tight lids. Paper sacks on a concrete floor in a wet barn go mouldy fast, and rodents move indoors during storms just like everything else.</p><p>Hay is the other one. A tarp over a hay stack has to be tight and tied at every point or it becomes a sail, and hay that gets soaked is not just wasted, it heats and can go dangerous in a stack.</p><h2>Shelter, and letting them choose</h2><p>Animals will use shelter when they want it and stand in the rain when they do not, and they are usually right. What matters is that the shelter is safe and that they can get out of it.</p><ul><li>Check for loose metal roof panels and flapping siding before the wind. A sheet of roofing coming off a run-in shed with animals under it is the worst outcome on this page.</li><li>Three-sided shelters should be open <strong>away from the prevailing wind</strong>, which on this coast means not facing south or southwest.</li><li>Do not lock stock in a barn under trees during a big blow if there is open pasture available. A collapsed barn is worse than a wet horse, and horses in an open field genuinely do fine.</li><li>Chickens want to be shut in. They will not put themselves to bed in a gale, and a coop with a secured door and good ventilation up high is the right place for them.</li><li>Bed deep and dry. Wet bedding is where problems start for feet.</li></ul><h2>Fences and getting out</h2><p>Electric fence dies with the power unless it is on a solar or battery energizer, and the stock will know within a few hours. Have a plan for that: a battery energizer as backup, or move them to a field with a physical fence before the storm.</p><p>Walk the fence line before the weather. Look for trees close enough to reach it, wobbly posts, and gates that do not latch positively. After the storm, walk it again before you turn anybody out, because a limb across a wire fence puts it flat on the ground and cattle find that within the hour.</p><h2>Identification and the paperwork</h2><p>If stock does get out and travels, identification is what gets them back. Halters with a tag, a brand, a microchip, or at minimum a photo of each animal on your phone with any distinguishing marks. Keep a written list of what you have with a neighbor or in the truck.</p><p>Have a plan for who feeds them if you cannot get home — the road washes out, the drive is blocked, you are stuck in Newport. That plan is a phone number, and the phone number is on paper, because see <a href="storm-paper-phone-list.html">the paper phone list</a>.</p><h2>After</h2><p>Walk the whole place before you turn anything out. Downed wire, roofing panels and nails in the mud, broken glass, a limb across a fence, and anything from somebody else's property that blew in. Nails and metal in a pasture are how horses end up at the vet in a week when nobody has connected it to the storm.</p><p>Feed, buckets, hose, fence hardware, rope, tarps and battery energizers are stocked — see <a href="../merc.html#fixit">Fix It</a> and the <a href="../storm.html">storm wall</a>. Tell us what you run and we will keep the right feed on the shelf.</p>
   </div>
 </article>
+
 
 <section class="band band--bark band--dark band--tight">
   <div class="wrap--mid">
     <div class="split split--top">
       <div>
-        <p class="eyebrow">While you're here</p>
-        <h2 class="h2 mb0">Need any of this today?</h2>
+        <p class="eyebrow">From the shelf</p>
+        <h2 class="h2 mb0">What this takes</h2>
       </div>
       <div>
-        <p class="lede mb0">Check what is on the shelf before you drive over, or tell us what we
-          should be carrying.</p>
-        <div class="btnrow" style="margin-top:20px">
-          <a class="btn btn--amber" href="../storm.html">Shop now</a>
+        <p class="lede mb0">Counts come off the register. If it says two left, there are two left.</p>
+        <div class="pillrow"><a class="pill" href="../shop.html?q=pet+emergency" style="text-decoration:none">Pet and livestock emergency kits</a><a class="pill" href="../storm.html" style="text-decoration:none">The storm wall, stocked ahead of it</a></div>
+        <div class="btnrow" style="margin-top:18px">
           <button class="btn btn--ghost" data-tellus="true">Tell Carrie &amp; Eric</button>
         </div>
       </div>
@@ -159,18 +157,18 @@
   <div class="wrap">
     <div class="foot-top">
       <div>
-        <img src="../assets/img/logo-foot.webp?v=34aebc6d" alt="Twisted Roots Merc" width="440" height="371" loading="lazy" decoding="async">
+        <img src="../assets/img/logo-foot.webp?v=34aebc6d" srcset="../assets/img/logo-foot-190.webp 190w, ../assets/img/logo-foot-380.webp 380w, ../assets/img/logo-foot.webp 440w" sizes="190px" width="440" height="371" alt="Twisted Roots Merc" loading="lazy" decoding="async">
         <p class="small" style="opacity:.8">Mercantile · Bakery · Kitchen<br>101 &amp; 151 N Gaither St, Siletz, Oregon 97380<br>
           <a href="tel:+15415550134">(541) 555-0134</a></p>
         <button class="stormtoggle" data-stormtoggle aria-pressed="false"><i></i>Storm Mode Off</button>
       </div>
-      <div><h4>The Store</h4><ul>
+      <div><h3>The Store</h3><ul>
         <li><a href="../merc.html">The Merc</a></li><li><a href="../yard.html">The Yard</a></li>
         <li><a href="../storm.html">Storm Ready</a></li><li><a href="../hunt.html">Hunt &amp; Field</a></li><li><a href="../local.html">Local Goods</a></li></ul></div>
-      <div><h4>Food</h4><ul>
+      <div><h3>Food</h3><ul>
         <li><a href="../bakery.html">Bakery + Kitchen</a></li><li><a href="../kitchen.html">Recipes</a></li><li><a href="../bakery.html#breakfast">Breakfast</a></li>
         <li><a href="../bakery.html#lunch">Lunch</a></li><li><a href="../bakery.html#order">Order pickup</a></li></ul></div>
-      <div><h4>Twisted Roots</h4><ul>
+      <div><h3>Twisted Roots</h3><ul>
         <li><a href="../roots.html">Our Roots</a></li><li><a href="../journal.html">The Board</a></li><li><a href="../visit.html">Visit &amp; Hours</a></li>
         <li><a href="#" data-tellus="true">What should we carry?</a></li><li><a href="../hq.html">Owner login</a></li></ul></div>
     </div>
@@ -182,6 +180,7 @@
   </div>
 </footer>
 
+<p id="trLive" class="visually-hidden" role="status" aria-live="polite"></p>
 <script>
 addEventListener("load", function () {
   var s = ["../assets/js/catalog.js?v=cdc9c20e", "../assets/js/cart.js?v=024fe1e6", "../assets/js/site.js?v=3787c0d1", "../assets/js/motion.js?v=bf716f00", "../assets/js/roots.js?v=93423d8d"], i = 0;

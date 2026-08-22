@@ -18,19 +18,17 @@
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png?v=ce873322">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/site.css?v=db82a4af">
-<link rel="stylesheet" href="../assets/css/motion.css?v=e4213a7b">
-<link rel="stylesheet" href="../assets/css/roots.css?v=42e7b082">
-<link rel="stylesheet" href="../assets/css/mobile.css?v=1c92929c">
-<link rel="stylesheet" href="../assets/css/polish.css?v=39f8e298">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap"></noscript>
+<link rel="stylesheet" href="../assets/css/bundle.css?v=bfaf2686">
 <link rel="stylesheet" href="../assets/css/print.css?v=65e49f4e" media="print">
-<link rel="stylesheet" href="../assets/css/perf.css?v=8af74f1b">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "When to Put the Screwdriver Down and Call an Electrician", "description": "Some electrical work is genuinely a homeowner job. This is the honest list of what is not, and why.", "articleSection": "Fix It", "keywords": "electrician, electrical, safety, wiring, when to call", "mainEntityOfPage": "https://twistedrootsmerc.com/blog/fix-call-an-electrician.html", "author": {"@type": "Organization", "name": "Twisted Roots Merc"}, "publisher": {"@id": "https://twistedrootsmerc.com/#store"}, "isPartOf": {"@type": "Blog", "name": "Practical Notes", "url": "https://twistedrootsmerc.com/journal.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://twistedrootsmerc.com/"}, {"@type": "ListItem", "position": 2, "name": "Practical Notes", "item": "https://twistedrootsmerc.com/journal.html"}, {"@type": "ListItem", "position": 3, "name": "When to Put the Screwdriver Down and Call an Electrician", "item": "https://twistedrootsmerc.com/blog/fix-call-an-electrician.html"}]}</script>
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="stormbar">
   <div class="wrap"><b>Storm Mode</b> <span>Wind advisory on the coast. Storm supplies stocked and the yard is open.</span> <a href="../storm.html">See storm stock →</a></div>
@@ -45,7 +43,7 @@
       <span class="brand-txt"><b>Twisted Roots</b><span>Siletz, Oregon</span></span>
     </a>
     <button class="burger" data-burger aria-expanded="false" aria-controls="siteNav" aria-label="Menu"><span class="burger__box" aria-hidden="true"><i></i><i></i><i></i></span><span class="burger__txt">Menu</span></button>
-    <nav class="nav" id="siteNav">
+    <nav class="nav" id="siteNav" aria-label="Main">
       <div class="navitem" data-navitem>
         <button class="navitem__top" data-subtoggle aria-expanded="false" aria-controls="sub-shop">Shop<i class="navitem__car" aria-hidden="true"></i></button>
         <div class="subnav" id="sub-shop">
@@ -83,11 +81,11 @@
   </div>
 </header>
 
-<main>
+<main id="main" tabindex="-1">
 
 <section class="band band--cream band--tight" style="padding-top:clamp(40px,5vw,72px)">
   <div class="wrap--mid">
-    <nav class="serif-caps muted" style="margin-bottom:22px">
+    <nav class="serif-caps muted" style="margin-bottom:22px" aria-label="Breadcrumb">
       <a href="../index.html" style="text-decoration:none">Home</a> &nbsp;/&nbsp;
       <a href="../journal.html" style="text-decoration:none">Notes</a> &nbsp;/&nbsp;
       <a href="../journal.html#fix-it" style="text-decoration:none">Fix It</a>
@@ -101,22 +99,22 @@
 
 <article class="band band--paper" style="padding-top:clamp(34px,4vw,56px)">
   <div class="wrap--narrow tr-prose">
-    <p>We sell switches, outlets, wire connectors and testers, and we would rather sell you a five dollar part than watch you drive to Newport. But a store that pretends every electrical job is a weekend project is not being helpful. Electricity is the one system in a house where a mistake that looks fine can burn the place down two years later.</p><p>Here is where the line sits, as plainly as we can put it.</p><h2>Things a careful person can genuinely do</h2><ul><li>Replace a switch, an outlet or a GFCI, like for like, with the breaker off and the circuit proven dead</li><li>Replace a light fixture on an existing box</li><li>Replace a wall plate</li><li>Reset breakers and GFCIs, and find out why they tripped</li><li>Replace a lamp cord or a plug on a portable appliance</li><li>Change bulbs, including working out which LED to buy</li></ul><p>All of those share two features: the wiring already exists, and you are not changing what the circuit does. That is the whole test.</p><h2>Things that are not a homeowner job</h2><ul><li>Anything inside the breaker panel. Adding a breaker, moving one, or even removing the cover. The main lugs stay live with the main breaker off</li><li>Running a new circuit, or extending one</li><li>Adding an outlet where there was not one</li><li>Anything involving the service entrance, the meter, or the wire from the pole</li><li>Generator connections. A transfer switch or an interlock, installed properly, is the only safe way. Backfeeding through a dryer outlet can kill a lineman</li><li>Aluminum branch wiring</li><li>Knob and tube, or cloth insulation that crumbles when moved</li><li>Anything you cannot turn off, because you cannot find the breaker</li></ul><h2>Stop signs mid-job</h2><table><thead><tr><th>What you find</th><th>What it means</th></tr></thead><tbody><tr><td>Scorch marks or melted insulation</td><td>Something has been running hot. Cause may be elsewhere</td></tr><tr><td>A burning or fishy smell near a device</td><td>Overheating plastic. Kill the breaker now</td></tr><tr><td>Warm outlet or switch plate</td><td>Loose connection or overload</td></tr><tr><td>Breaker that trips repeatedly</td><td>It is doing its job. Something is wrong</td></tr><tr><td>More wires in a box than you can explain</td><td>Multiple circuits, possibly a shared neutral</td></tr><tr><td>Two circuits in one box</td><td>One breaker off is not enough</td></tr><tr><td>No ground wire, three-prong outlets</td><td>Someone already did this wrong</td></tr><tr><td>Buzzing from the panel</td><td>Call today, not this weekend</td></tr></tbody></table><h2>The specific coastal ones</h2><p>Damp is the local hazard. Crawlspace junction boxes that have been sitting in humidity for decades, outdoor boxes with cracked gaskets, well pump circuits, and anything on an outbuilding that was wired by a previous owner with the best of intentions. A surprising amount of rural outbuilding wiring out here was run underground with cable that was never rated for burial. It works for years and then it does not.</p><p>Salt air also corrodes terminals and panel bus bars in ways that are invisible until somebody opens the cover. If your panel is more than a few decades old and lives in a garage that breathes coastal air, an inspection is cheap and it is the kind of thing that finds problems while they are still small.</p><h2>How to make the call worth it</h2><p>Electricians out here are busy and the drive is real, so batch the work. Write down everything: the outlet that got warm, the light that flickers, the breaker that trips when the dryer starts, the outbuilding you want on a proper circuit. One visit that handles eight items costs far less than four visits.</p><p>And when they are there, ask them to walk you through your panel and label it properly. A correctly labeled panel is the thing that makes all the jobs in the first list on this page safe to do yourself.</p><p>Testers, switches, outlets and connectors are on <a href="../merc.html#fixit">the Fix It wall</a>, and if you want to know who people around here actually use, ask at the counter or <a href="../visit.html">come see us</a>.</p>
+    <p>We sell switches, outlets, wire connectors and testers, and we would rather sell you a five dollar part than watch you drive to Newport. But a store that pretends every electrical job is a weekend project is not being helpful. Electricity is the one system in a house where a mistake that looks fine can burn the place down two years later.</p><p>Here is where the line sits, as plainly as we can put it.</p><h2>Things a careful person can genuinely do</h2><ul><li>Replace a switch, an outlet or a GFCI, like for like, with the breaker off and the circuit proven dead</li><li>Replace a light fixture on an existing box</li><li>Replace a wall plate</li><li>Reset breakers and GFCIs, and find out why they tripped</li><li>Replace a lamp cord or a plug on a portable appliance</li><li>Change bulbs, including working out which LED to buy</li></ul><p>All of those share two features: the wiring already exists, and you are not changing what the circuit does. That is the whole test.</p><h2>Things that are not a homeowner job</h2><ul><li>Anything inside the breaker panel. Adding a breaker, moving one, or even removing the cover. The main lugs stay live with the main breaker off</li><li>Running a new circuit, or extending one</li><li>Adding an outlet where there was not one</li><li>Anything involving the service entrance, the meter, or the wire from the pole</li><li>Generator connections. A transfer switch or an interlock, installed properly, is the only safe way. Backfeeding through a dryer outlet can kill a lineman</li><li>Aluminum branch wiring</li><li>Knob and tube, or cloth insulation that crumbles when moved</li><li>Anything you cannot turn off, because you cannot find the breaker</li></ul><h2>Stop signs mid-job</h2><table><thead><tr><th scope="col">What you find</th><th scope="col">What it means</th></tr></thead><tbody><tr><td>Scorch marks or melted insulation</td><td>Something has been running hot. Cause may be elsewhere</td></tr><tr><td>A burning or fishy smell near a device</td><td>Overheating plastic. Kill the breaker now</td></tr><tr><td>Warm outlet or switch plate</td><td>Loose connection or overload</td></tr><tr><td>Breaker that trips repeatedly</td><td>It is doing its job. Something is wrong</td></tr><tr><td>More wires in a box than you can explain</td><td>Multiple circuits, possibly a shared neutral</td></tr><tr><td>Two circuits in one box</td><td>One breaker off is not enough</td></tr><tr><td>No ground wire, three-prong outlets</td><td>Someone already did this wrong</td></tr><tr><td>Buzzing from the panel</td><td>Call today, not this weekend</td></tr></tbody></table><h2>The specific coastal ones</h2><p>Damp is the local hazard. Crawlspace junction boxes that have been sitting in humidity for decades, outdoor boxes with cracked gaskets, well pump circuits, and anything on an outbuilding that was wired by a previous owner with the best of intentions. A surprising amount of rural outbuilding wiring out here was run underground with cable that was never rated for burial. It works for years and then it does not.</p><p>Salt air also corrodes terminals and panel bus bars in ways that are invisible until somebody opens the cover. If your panel is more than a few decades old and lives in a garage that breathes coastal air, an inspection is cheap and it is the kind of thing that finds problems while they are still small.</p><h2>How to make the call worth it</h2><p>Electricians out here are busy and the drive is real, so batch the work. Write down everything: the outlet that got warm, the light that flickers, the breaker that trips when the dryer starts, the outbuilding you want on a proper circuit. One visit that handles eight items costs far less than four visits.</p><p>And when they are there, ask them to walk you through your panel and label it properly. A correctly labeled panel is the thing that makes all the jobs in the first list on this page safe to do yourself.</p><p>Testers, switches, outlets and connectors are on <a href="../merc.html#fixit">the Fix It wall</a>, and if you want to know who people around here actually use, ask at the counter or <a href="../visit.html">come see us</a>.</p>
   </div>
 </article>
+
 
 <section class="band band--bark band--dark band--tight">
   <div class="wrap--mid">
     <div class="split split--top">
       <div>
-        <p class="eyebrow">While you're here</p>
-        <h2 class="h2 mb0">Need any of this today?</h2>
+        <p class="eyebrow">From the shelf</p>
+        <h2 class="h2 mb0">What this takes</h2>
       </div>
       <div>
-        <p class="lede mb0">Check what is on the shelf before you drive over, or tell us what we
-          should be carrying.</p>
-        <div class="btnrow" style="margin-top:20px">
-          <a class="btn btn--amber" href="../merc.html#fixit">Shop now</a>
+        <p class="lede mb0">Counts come off the register. If it says two left, there are two left.</p>
+        <div class="pillrow"><a class="pill" href="../merc.html#fixit" style="text-decoration:none">What we stock, and where we stop</a><a class="pill" href="../shop.html?dept=fixit" style="text-decoration:none">The Fix It wall, live counts</a></div>
+        <div class="btnrow" style="margin-top:18px">
           <button class="btn btn--ghost" data-tellus="true">Tell Carrie &amp; Eric</button>
         </div>
       </div>
@@ -159,18 +157,18 @@
   <div class="wrap">
     <div class="foot-top">
       <div>
-        <img src="../assets/img/logo-foot.webp?v=34aebc6d" alt="Twisted Roots Merc" width="440" height="371" loading="lazy" decoding="async">
+        <img src="../assets/img/logo-foot.webp?v=34aebc6d" srcset="../assets/img/logo-foot-190.webp 190w, ../assets/img/logo-foot-380.webp 380w, ../assets/img/logo-foot.webp 440w" sizes="190px" width="440" height="371" alt="Twisted Roots Merc" loading="lazy" decoding="async">
         <p class="small" style="opacity:.8">Mercantile · Bakery · Kitchen<br>101 &amp; 151 N Gaither St, Siletz, Oregon 97380<br>
           <a href="tel:+15415550134">(541) 555-0134</a></p>
         <button class="stormtoggle" data-stormtoggle aria-pressed="false"><i></i>Storm Mode Off</button>
       </div>
-      <div><h4>The Store</h4><ul>
+      <div><h3>The Store</h3><ul>
         <li><a href="../merc.html">The Merc</a></li><li><a href="../yard.html">The Yard</a></li>
         <li><a href="../storm.html">Storm Ready</a></li><li><a href="../hunt.html">Hunt &amp; Field</a></li><li><a href="../local.html">Local Goods</a></li></ul></div>
-      <div><h4>Food</h4><ul>
+      <div><h3>Food</h3><ul>
         <li><a href="../bakery.html">Bakery + Kitchen</a></li><li><a href="../kitchen.html">Recipes</a></li><li><a href="../bakery.html#breakfast">Breakfast</a></li>
         <li><a href="../bakery.html#lunch">Lunch</a></li><li><a href="../bakery.html#order">Order pickup</a></li></ul></div>
-      <div><h4>Twisted Roots</h4><ul>
+      <div><h3>Twisted Roots</h3><ul>
         <li><a href="../roots.html">Our Roots</a></li><li><a href="../journal.html">The Board</a></li><li><a href="../visit.html">Visit &amp; Hours</a></li>
         <li><a href="#" data-tellus="true">What should we carry?</a></li><li><a href="../hq.html">Owner login</a></li></ul></div>
     </div>
@@ -182,6 +180,7 @@
   </div>
 </footer>
 
+<p id="trLive" class="visually-hidden" role="status" aria-live="polite"></p>
 <script>
 addEventListener("load", function () {
   var s = ["../assets/js/catalog.js?v=cdc9c20e", "../assets/js/cart.js?v=024fe1e6", "../assets/js/site.js?v=3787c0d1", "../assets/js/motion.js?v=bf716f00", "../assets/js/roots.js?v=93423d8d"], i = 0;

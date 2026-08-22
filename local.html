@@ -7,7 +7,9 @@
 <meta name="description" content="Local honey, marionberry jam, hand thrown stoneware, beeswax candles, myrtlewood and Twisted Roots merch — made within about an hour of Siletz, Oregon.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap"></noscript>
 
 <link rel="canonical" href="https://twistedrootsmerc.com/local.html">
 <meta property="og:site_name" content="Twisted Roots Merc">
@@ -27,13 +29,8 @@
 <link rel="icon" href="assets/img/favicon-32.png?v=ccb53bc6" sizes="32x32">
 <link rel="icon" href="assets/img/favicon-64.png?v=7316fae5" sizes="64x64">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png?v=ce873322">
-<link rel="stylesheet" href="assets/css/site.css?v=db82a4af">
-<link rel="stylesheet" href="assets/css/motion.css?v=e4213a7b">
-<link rel="stylesheet" href="assets/css/roots.css?v=42e7b082">
-<link rel="stylesheet" href="assets/css/mobile.css?v=1c92929c">
-<link rel="stylesheet" href="assets/css/polish.css?v=39f8e298">
+<link rel="stylesheet" href="assets/css/bundle.css?v=bfaf2686">
 <link rel="stylesheet" href="assets/css/print.css?v=65e49f4e" media="print">
-<link rel="stylesheet" href="assets/css/perf.css?v=8af74f1b">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -177,6 +174,7 @@
 </script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="stormbar">
   <div class="wrap"><b>Storm Mode</b> <span>Wind advisory on the coast. Storm supplies stocked and the yard is open.</span> <a href="storm.html">See storm stock →</a></div>
@@ -191,7 +189,7 @@
       <span class="brand-txt"><b>Twisted Roots</b><span>Siletz, Oregon</span></span>
     </a>
     <button class="burger" data-burger aria-expanded="false" aria-controls="siteNav" aria-label="Menu"><span class="burger__box" aria-hidden="true"><i></i><i></i><i></i></span><span class="burger__txt">Menu</span></button>
-    <nav class="nav" id="siteNav">
+    <nav class="nav" id="siteNav" aria-label="Main">
       <div class="navitem" data-navitem>
         <button class="navitem__top" data-subtoggle aria-expanded="false" aria-controls="sub-shop">Shop<i class="navitem__car" aria-hidden="true"></i></button>
         <div class="subnav" id="sub-shop">
@@ -229,9 +227,9 @@
   </div>
 </header>
 
-<main>
+<main id="main" tabindex="-1">
 <section class="hero" style="min-height:min(58vh,580px)">
-  <img class="hero-img" src="assets/img/maker-pottery.jpg?v=f9953571" alt="Hand thrown mugs from a local maker" fetchpriority="high">
+  <img class="hero-img" src="assets/img/maker-pottery.jpg?v=f9953571" srcset="assets/img/maker-pottery-600.webp 600w, assets/img/maker-pottery-900.webp 900w, assets/img/maker-pottery-1400.webp 1400w, assets/img/maker-pottery.webp 1600w" sizes="100vw" width="1600" height="2000" alt="Hand thrown mugs from a local maker" fetchpriority="high">
   <div class="rain"></div>
   <div class="hero-in">
     <div class="wrap">
@@ -264,7 +262,7 @@
 
     <div class="split" style="margin-top:44px">
       <figure class="figframe" style="margin:0">
-        <img src="assets/img/honey-jam.jpg?v=67297a93" alt="Jars of local honey" loading="lazy">
+        <img src="assets/img/honey-jam.jpg?v=67297a93" srcset="assets/img/honey-jam-600.webp 600w, assets/img/honey-jam-900.webp 900w, assets/img/honey-jam.webp 1600w" sizes="(max-width:1080px) calc(100vw - 32px), min(47vw, 760px)" width="1600" height="1067" alt="Jars of local honey" loading="lazy" decoding="async">
         <figcaption>Yaquina Bee Co. — Siletz Valley wildflower</figcaption>
       </figure>
       <div>
@@ -281,7 +279,7 @@
 
     <div class="split split--rev">
       <figure class="figframe" style="margin:0">
-        <img src="assets/img/maker-pottery.jpg?v=f9953571" alt="A wall of hand thrown mugs" loading="lazy">
+        <img src="assets/img/maker-pottery.jpg?v=f9953571" srcset="assets/img/maker-pottery-600.webp 600w, assets/img/maker-pottery-900.webp 900w, assets/img/maker-pottery.webp 1600w" sizes="(max-width:1080px) calc(100vw - 32px), min(47vw, 760px)" width="1600" height="2000" alt="A wall of hand thrown mugs" loading="lazy" decoding="async">
         <figcaption>Toledo Clay Works — thrown eight miles from here</figcaption>
       </figure>
       <div>
@@ -298,7 +296,7 @@
 
     <div class="split">
       <figure class="figframe" style="margin:0">
-        <img src="assets/img/candle.jpg?v=a7766489" alt="Hand poured candles" loading="lazy">
+        <img src="assets/img/candle.jpg?v=a7766489" srcset="assets/img/candle-600.webp 600w, assets/img/candle-900.webp 900w, assets/img/candle.webp 1600w" sizes="(max-width:1080px) calc(100vw - 32px), min(47vw, 760px)" width="1600" height="1067" alt="Hand poured candles" loading="lazy" decoding="async">
         <figcaption>Alder &amp; Ash — beeswax and cold-process soap</figcaption>
       </figure>
       <div>
@@ -338,7 +336,7 @@
         </div>
       </div>
       <figure class="figframe" style="margin:0">
-        <img src="assets/img/logo-carved.png?v=de7cb1a4" alt="The Twisted Roots carved sign" loading="lazy" style="background:var(--cream)">
+        <img src="assets/img/logo-carved.png?v=de7cb1a4" srcset="assets/img/logo-carved-600.webp 600w, assets/img/logo-carved-900.webp 900w, assets/img/logo-carved.webp 1380w" sizes="(max-width:1080px) calc(100vw - 32px), min(47vw, 760px)" width="1380" height="1140" alt="The Twisted Roots carved sign" loading="lazy" decoding="async" style="background:var(--cream)">
         <figcaption>The sign Eric carved, and the reason for the name</figcaption>
       </figure>
     </div>
@@ -367,18 +365,18 @@
   <div class="wrap">
     <div class="foot-top">
       <div>
-        <img src="assets/img/logo-foot.webp?v=34aebc6d" alt="Twisted Roots Merc" width="440" height="371" loading="lazy" decoding="async">
+        <img src="assets/img/logo-foot.webp?v=34aebc6d" srcset="assets/img/logo-foot-190.webp 190w, assets/img/logo-foot-380.webp 380w, assets/img/logo-foot.webp 440w" sizes="190px" width="440" height="371" alt="Twisted Roots Merc" loading="lazy" decoding="async">
         <p class="small" style="opacity:.8">Mercantile · Bakery · Kitchen<br>101 &amp; 151 N Gaither St, Siletz, Oregon 97380<br>
           <a href="tel:+15415550134">(541) 555-0134</a></p>
         <button class="stormtoggle" data-stormtoggle aria-pressed="false"><i></i>Storm Mode Off</button>
       </div>
-      <div><h4>The Store</h4><ul>
+      <div><h3>The Store</h3><ul>
         <li><a href="merc.html">The Merc</a></li><li><a href="yard.html">The Yard</a></li>
         <li><a href="storm.html">Storm Ready</a></li><li><a href="hunt.html">Hunt &amp; Field</a></li><li><a href="local.html">Local Goods</a></li></ul></div>
-      <div><h4>Food</h4><ul>
+      <div><h3>Food</h3><ul>
         <li><a href="bakery.html">Bakery + Kitchen</a></li><li><a href="kitchen.html">Recipes</a></li><li><a href="bakery.html#breakfast">Breakfast</a></li>
         <li><a href="bakery.html#lunch">Lunch</a></li><li><a href="bakery.html#order">Order pickup</a></li></ul></div>
-      <div><h4>Twisted Roots</h4><ul>
+      <div><h3>Twisted Roots</h3><ul>
         <li><a href="roots.html">Our Roots</a></li><li><a href="journal.html">The Board</a></li><li><a href="visit.html">Visit &amp; Hours</a></li>
         <li><a href="#" data-tellus="true">What should we carry?</a></li><li><a href="hq.html">Owner login</a></li></ul></div>
     </div>
@@ -413,5 +411,6 @@ addEventListener("load", function () {
   })();
 });
 </script>
+<p id="trLive" class="visually-hidden" role="status" aria-live="polite"></p>
 </body>
 </html>

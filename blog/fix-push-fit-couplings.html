@@ -18,19 +18,17 @@
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png?v=ce873322">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/site.css?v=db82a4af">
-<link rel="stylesheet" href="../assets/css/motion.css?v=e4213a7b">
-<link rel="stylesheet" href="../assets/css/roots.css?v=42e7b082">
-<link rel="stylesheet" href="../assets/css/mobile.css?v=1c92929c">
-<link rel="stylesheet" href="../assets/css/polish.css?v=39f8e298">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap"></noscript>
+<link rel="stylesheet" href="../assets/css/bundle.css?v=bfaf2686">
 <link rel="stylesheet" href="../assets/css/print.css?v=65e49f4e" media="print">
-<link rel="stylesheet" href="../assets/css/perf.css?v=8af74f1b">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Repairing a Pipe Without a Torch", "description": "Push-fit couplings put copper and PEX repair inside the reach of anyone who can cut a pipe square and clean a burr off it.", "articleSection": "Fix It", "keywords": "push fit, pipe repair, copper, pex, plumbing", "mainEntityOfPage": "https://twistedrootsmerc.com/blog/fix-push-fit-couplings.html", "author": {"@type": "Organization", "name": "Twisted Roots Merc"}, "publisher": {"@id": "https://twistedrootsmerc.com/#store"}, "isPartOf": {"@type": "Blog", "name": "Practical Notes", "url": "https://twistedrootsmerc.com/journal.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://twistedrootsmerc.com/"}, {"@type": "ListItem", "position": 2, "name": "Practical Notes", "item": "https://twistedrootsmerc.com/journal.html"}, {"@type": "ListItem", "position": 3, "name": "Repairing a Pipe Without a Torch", "item": "https://twistedrootsmerc.com/blog/fix-push-fit-couplings.html"}]}</script>
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="stormbar">
   <div class="wrap"><b>Storm Mode</b> <span>Wind advisory on the coast. Storm supplies stocked and the yard is open.</span> <a href="../storm.html">See storm stock →</a></div>
@@ -45,7 +43,7 @@
       <span class="brand-txt"><b>Twisted Roots</b><span>Siletz, Oregon</span></span>
     </a>
     <button class="burger" data-burger aria-expanded="false" aria-controls="siteNav" aria-label="Menu"><span class="burger__box" aria-hidden="true"><i></i><i></i><i></i></span><span class="burger__txt">Menu</span></button>
-    <nav class="nav" id="siteNav">
+    <nav class="nav" id="siteNav" aria-label="Main">
       <div class="navitem" data-navitem>
         <button class="navitem__top" data-subtoggle aria-expanded="false" aria-controls="sub-shop">Shop<i class="navitem__car" aria-hidden="true"></i></button>
         <div class="subnav" id="sub-shop">
@@ -83,11 +81,11 @@
   </div>
 </header>
 
-<main>
+<main id="main" tabindex="-1">
 
 <section class="band band--cream band--tight" style="padding-top:clamp(40px,5vw,72px)">
   <div class="wrap--mid">
-    <nav class="serif-caps muted" style="margin-bottom:22px">
+    <nav class="serif-caps muted" style="margin-bottom:22px" aria-label="Breadcrumb">
       <a href="../index.html" style="text-decoration:none">Home</a> &nbsp;/&nbsp;
       <a href="../journal.html" style="text-decoration:none">Notes</a> &nbsp;/&nbsp;
       <a href="../journal.html#fix-it" style="text-decoration:none">Fix It</a>
@@ -101,22 +99,22 @@
 
 <article class="band band--paper" style="padding-top:clamp(34px,4vw,56px)">
   <div class="wrap--narrow tr-prose">
-    <p>There was a time when repairing a copper water line meant draining the system, drying the pipe, and soldering in a wall cavity with an open flame, which is a legitimately bad idea in an old house with dry framing. Push-fit couplings changed that. Cut the bad section out, push the fitting on, done. They work on copper, PEX and CPVC, in most cases with the same fitting.</p><h3>What you need</h3><ul><li>Push-fit couplings in the right size, or a push-fit shutoff valve</li><li>A tube cutter, or a PEX cutter for plastic</li><li>Emery cloth or a deburring tool</li><li>A marker</li><li>The removal clip that comes with the fittings, or a bag of them</li></ul><h2>How they actually work</h2><p>Inside the fitting is a stainless steel ring with teeth that bite into the pipe and hold it, and behind that an O-ring that does the sealing. You push the pipe in past both. The teeth resist pull-out and the O-ring seals against the outside wall of the pipe. Which is why the outside wall of the pipe has to be clean, round, and free of scratches for the last inch. A burr or a deep gouge will run right past the O-ring and give you a permanent slow drip.</p><h2>The procedure</h2><ol><li>Shut the water off and open a low faucet to drain the line down. The pipe does not have to be bone dry, which is the whole point, but you cannot push a fitting onto a line under pressure.</li><li>Cut the pipe square. A tube cutter, not a hacksaw. An angled cut will not seat.</li><li>Deburr the inside and, more importantly, clean and smooth the outside. Emery cloth around the last inch and a half until it is bright and smooth.</li><li>Measure the insertion depth. Every brand prints it, usually around an inch for half inch pipe. Mark that depth on the pipe with a marker.</li><li>Push the fitting on with a twist until your mark disappears. It takes more force than you expect. If it is not to the mark, it is not sealed, regardless of how solid it feels.</li><li>Do the second end the same way.</li><li>Turn the water on slowly and watch. Then check again in an hour, and again the next day.</li></ol><h2>Where they belong and where they do not</h2><table><thead><tr><th>Situation</th><th>Push-fit</th></tr></thead><tbody><tr><td>Burst or split section in an accessible run</td><td>Ideal</td></tr><tr><td>Replacing a seized angle stop under a sink</td><td>Ideal, use a push-fit shutoff</td></tr><tr><td>Joining copper to PEX</td><td>Ideal, no transition fitting needed</td></tr><tr><td>Buried underground</td><td>No</td></tr><tr><td>Sealed permanently inside a finished wall</td><td>Avoid if you can</td></tr><tr><td>Old thin, pitted, or galvanized pipe</td><td>No</td></tr></tbody></table><p>The buried and behind-drywall cases are not about the fitting failing. They are about access. Anything mechanical with a rubber O-ring should be somewhere a person can look at it. Solder or crimp is the right answer for a joint that is going to be sealed up forever.</p><p>They also do not belong on galvanized steel. The outside of old galvanized is rough and pitted and the O-ring has nothing smooth to seal against.</p><h2>Taking them apart</h2><p>Push-fit fittings are removable, which is a real advantage when you are dry-fitting a repair. You need the small horseshoe clip that came with them. Slide it over the pipe against the collar, press the collar in, and pull the pipe out. Without the clip you will not get it off. Buy a couple of spares and hang them on a nail near the water heater, because the one time you need one is the one time you cannot find it.</p><h2>Being honest about the limits</h2><p>Push-fit fittings are excellent for a repair and they are genuinely rated for permanent use. What they do not do is turn an unqualified person into a plumber. If the pipe you are looking at is corroded along its whole length rather than split in one spot, you are patching a system that is failing, and each repair buys less time than the last. If you are re-piping a house, if the leak is in a slab, or if it is on the supply side before the main shutoff, that is a licensed plumber and it is not close.</p><p>Couplings, shutoff valves, tube cutters and emery cloth are stocked at <a href="../merc.html#fixit">the Fix It wall</a>. Before you cut anything, know where <a href="fix-main-water-shutoff.html">the main shutoff</a> is.</p>
+    <p>There was a time when repairing a copper water line meant draining the system, drying the pipe, and soldering in a wall cavity with an open flame, which is a legitimately bad idea in an old house with dry framing. Push-fit couplings changed that. Cut the bad section out, push the fitting on, done. They work on copper, PEX and CPVC, in most cases with the same fitting.</p><h2 class="a11y-rank-h3">What you need</h2><ul><li>Push-fit couplings in the right size, or a push-fit shutoff valve</li><li>A tube cutter, or a PEX cutter for plastic</li><li>Emery cloth or a deburring tool</li><li>A marker</li><li>The removal clip that comes with the fittings, or a bag of them</li></ul><h2>How they actually work</h2><p>Inside the fitting is a stainless steel ring with teeth that bite into the pipe and hold it, and behind that an O-ring that does the sealing. You push the pipe in past both. The teeth resist pull-out and the O-ring seals against the outside wall of the pipe. Which is why the outside wall of the pipe has to be clean, round, and free of scratches for the last inch. A burr or a deep gouge will run right past the O-ring and give you a permanent slow drip.</p><h2>The procedure</h2><ol><li>Shut the water off and open a low faucet to drain the line down. The pipe does not have to be bone dry, which is the whole point, but you cannot push a fitting onto a line under pressure.</li><li>Cut the pipe square. A tube cutter, not a hacksaw. An angled cut will not seat.</li><li>Deburr the inside and, more importantly, clean and smooth the outside. Emery cloth around the last inch and a half until it is bright and smooth.</li><li>Measure the insertion depth. Every brand prints it, usually around an inch for half inch pipe. Mark that depth on the pipe with a marker.</li><li>Push the fitting on with a twist until your mark disappears. It takes more force than you expect. If it is not to the mark, it is not sealed, regardless of how solid it feels.</li><li>Do the second end the same way.</li><li>Turn the water on slowly and watch. Then check again in an hour, and again the next day.</li></ol><h2>Where they belong and where they do not</h2><table><thead><tr><th scope="col">Situation</th><th scope="col">Push-fit</th></tr></thead><tbody><tr><td>Burst or split section in an accessible run</td><td>Ideal</td></tr><tr><td>Replacing a seized angle stop under a sink</td><td>Ideal, use a push-fit shutoff</td></tr><tr><td>Joining copper to PEX</td><td>Ideal, no transition fitting needed</td></tr><tr><td>Buried underground</td><td>No</td></tr><tr><td>Sealed permanently inside a finished wall</td><td>Avoid if you can</td></tr><tr><td>Old thin, pitted, or galvanized pipe</td><td>No</td></tr></tbody></table><p>The buried and behind-drywall cases are not about the fitting failing. They are about access. Anything mechanical with a rubber O-ring should be somewhere a person can look at it. Solder or crimp is the right answer for a joint that is going to be sealed up forever.</p><p>They also do not belong on galvanized steel. The outside of old galvanized is rough and pitted and the O-ring has nothing smooth to seal against.</p><h2>Taking them apart</h2><p>Push-fit fittings are removable, which is a real advantage when you are dry-fitting a repair. You need the small horseshoe clip that came with them. Slide it over the pipe against the collar, press the collar in, and pull the pipe out. Without the clip you will not get it off. Buy a couple of spares and hang them on a nail near the water heater, because the one time you need one is the one time you cannot find it.</p><h2>Being honest about the limits</h2><p>Push-fit fittings are excellent for a repair and they are genuinely rated for permanent use. What they do not do is turn an unqualified person into a plumber. If the pipe you are looking at is corroded along its whole length rather than split in one spot, you are patching a system that is failing, and each repair buys less time than the last. If you are re-piping a house, if the leak is in a slab, or if it is on the supply side before the main shutoff, that is a licensed plumber and it is not close.</p><p>Couplings, shutoff valves, tube cutters and emery cloth are stocked at <a href="../merc.html#fixit">the Fix It wall</a>. Before you cut anything, know where <a href="fix-main-water-shutoff.html">the main shutoff</a> is.</p>
   </div>
 </article>
+
 
 <section class="band band--bark band--dark band--tight">
   <div class="wrap--mid">
     <div class="split split--top">
       <div>
-        <p class="eyebrow">While you're here</p>
-        <h2 class="h2 mb0">Need any of this today?</h2>
+        <p class="eyebrow">From the shelf</p>
+        <h2 class="h2 mb0">What this takes</h2>
       </div>
       <div>
-        <p class="lede mb0">Check what is on the shelf before you drive over, or tell us what we
-          should be carrying.</p>
-        <div class="btnrow" style="margin-top:20px">
-          <a class="btn btn--amber" href="../merc.html#fixit">Shop now</a>
+        <p class="lede mb0">Counts come off the register. If it says two left, there are two left.</p>
+        <div class="pillrow"><a class="pill" href="../shop.html?q=push+fit" style="text-decoration:none">Push-fit couplings, no torch needed</a><a class="pill" href="../shop.html?q=shutoff+valve" style="text-decoration:none">Push-fit shutoff valves in half inch</a></div>
+        <div class="btnrow" style="margin-top:18px">
           <button class="btn btn--ghost" data-tellus="true">Tell Carrie &amp; Eric</button>
         </div>
       </div>
@@ -159,18 +157,18 @@
   <div class="wrap">
     <div class="foot-top">
       <div>
-        <img src="../assets/img/logo-foot.webp?v=34aebc6d" alt="Twisted Roots Merc" width="440" height="371" loading="lazy" decoding="async">
+        <img src="../assets/img/logo-foot.webp?v=34aebc6d" srcset="../assets/img/logo-foot-190.webp 190w, ../assets/img/logo-foot-380.webp 380w, ../assets/img/logo-foot.webp 440w" sizes="190px" width="440" height="371" alt="Twisted Roots Merc" loading="lazy" decoding="async">
         <p class="small" style="opacity:.8">Mercantile · Bakery · Kitchen<br>101 &amp; 151 N Gaither St, Siletz, Oregon 97380<br>
           <a href="tel:+15415550134">(541) 555-0134</a></p>
         <button class="stormtoggle" data-stormtoggle aria-pressed="false"><i></i>Storm Mode Off</button>
       </div>
-      <div><h4>The Store</h4><ul>
+      <div><h3>The Store</h3><ul>
         <li><a href="../merc.html">The Merc</a></li><li><a href="../yard.html">The Yard</a></li>
         <li><a href="../storm.html">Storm Ready</a></li><li><a href="../hunt.html">Hunt &amp; Field</a></li><li><a href="../local.html">Local Goods</a></li></ul></div>
-      <div><h4>Food</h4><ul>
+      <div><h3>Food</h3><ul>
         <li><a href="../bakery.html">Bakery + Kitchen</a></li><li><a href="../kitchen.html">Recipes</a></li><li><a href="../bakery.html#breakfast">Breakfast</a></li>
         <li><a href="../bakery.html#lunch">Lunch</a></li><li><a href="../bakery.html#order">Order pickup</a></li></ul></div>
-      <div><h4>Twisted Roots</h4><ul>
+      <div><h3>Twisted Roots</h3><ul>
         <li><a href="../roots.html">Our Roots</a></li><li><a href="../journal.html">The Board</a></li><li><a href="../visit.html">Visit &amp; Hours</a></li>
         <li><a href="#" data-tellus="true">What should we carry?</a></li><li><a href="../hq.html">Owner login</a></li></ul></div>
     </div>
@@ -182,6 +180,7 @@
   </div>
 </footer>
 
+<p id="trLive" class="visually-hidden" role="status" aria-live="polite"></p>
 <script>
 addEventListener("load", function () {
   var s = ["../assets/js/catalog.js?v=cdc9c20e", "../assets/js/cart.js?v=024fe1e6", "../assets/js/site.js?v=3787c0d1", "../assets/js/motion.js?v=bf716f00", "../assets/js/roots.js?v=93423d8d"], i = 0;

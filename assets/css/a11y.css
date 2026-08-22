@@ -1,0 +1,189 @@
+/* ==========================================================
+   a11y.css — accessibility corrections that are fixable in CSS
+   alone. Additive: it overrides, it never restructures.
+
+   NOT LINKED YET. Add this line to every page, LAST in the
+   stylesheet block (after perf.css, before print.css or after
+   it — order against print.css does not matter, it is
+   media="print"):
+
+     <link rel="stylesheet" href="assets/css/a11y.css">
+
+   ...and on the generated pages, in build_blog.py and
+   build_recipes.py, next to the other {up}assets/css/ links:
+
+     <link rel="stylesheet" href="{up}assets/css/a11y.css">
+
+   Until that link lands, sections 1 and 2 below are the only
+   things in this audit that are not yet live. Everything else
+   was fixed in HTML and needs nothing from this file.
+
+   Every ratio quoted here was computed with the WCAG relative
+   luminance formula against the ACTUAL rendered pixels read
+   out of getComputedStyle, not against the authored hex.
+   ========================================================== */
+
+
+/* ----------------------------------------------------------
+   1. HEADING RANK WITHOUT A SIZE CHANGE
+   ----------------------------------------------------------
+   41 of the 208 blog posts opened their body with an <h3> and
+   only then dropped into <h2>, so the rendered outline went
+   h1 -> h3. build_blog.py:fix_headings() now promotes that
+   heading to <h2> and stamps the ORIGINAL rank on it as a
+   class. This rule pins the promoted heading back to the exact
+   metrics the bare <h3> had, so the promotion is invisible.
+
+   The prose headings are styled by `.tr-prose > h2` and
+   `.tr-prose > h3` (site.css:1033-1035, and the same pair
+   concatenated into bundle.css:573-574), so this mirrors the
+   h3 rule and resets the two properties the h2 rule adds that
+   the h3 rule does not (line-height and letter-spacing).
+
+   Measured at 1366px on blog/fix-caulk-a-bathtub.html:
+     bare .tr-prose > h3   18.56px / w800 / Bitter / lh 32.48px
+                           / ls normal / margin 33.408px 0 9.28px
+     promoted h2, no CSS   32px    / w900 / Bitter / lh 36.8px
+                           / ls -0.48px / margin 70.4px 0 19.2px
+     promoted h2, this rule  ==  the bare h3 line, exactly.
+
+   THIS IS THE RULE that preserves the size for the promoted
+   headings. The other two rank changes need nothing from here:
+     - footer <h4> -> <h3>  is held by `.foot-top h3`  (perf.css:255)
+     - board  <h3> -> <h2>  is held by `.board-head h2` (perf.css:261)
+   Both were measured pixel-identical before and after — same
+   font, weight, size, letter-spacing, colour and margins.
+   -------------------------------------------------------- */
+.tr-prose > h2.a11y-rank-h3,
+h2.a11y-rank-h3{
+  font-family:var(--f-display);
+  font-weight:800;
+  font-size:1.16rem;
+  line-height:inherit;
+  letter-spacing:normal;
+  margin:1.8em 0 .5em;
+}
+/* Same shape for the ranks nothing currently produces, so a
+   future post that jumps h2 -> h4 is corrected without a
+   visual step rather than silently resized. */
+.tr-prose > h3.a11y-rank-h4,
+.tr-prose > h4.a11y-rank-h5{
+  font-family:var(--f-display);
+  font-weight:800;
+  font-size:1.16rem;
+  line-height:inherit;
+  letter-spacing:normal;
+  margin:1.8em 0 .5em;
+}
+
+
+/* ----------------------------------------------------------
+   2. COLOUR CONTRAST — the two failures the earlier pass missed
+   ----------------------------------------------------------
+   PERF-AUDIT §6.2 fixed four contrast failures in perf.css and
+   all four still hold (re-verified with axe-core: zero
+   colour-contrast findings on .prodcard__mt, .req .ct,
+   .stat .k, .drive-cell b). These two are different nodes that
+   pass did not reach. As there, the fault is an opacity, not a
+   colour, so raising the opacity is the minimal correction and
+   stays right if the surface behind it ever changes.
+   -------------------------------------------------------- */
+
+/* 2a. The price on every stock card. #20180F at opacity .55 on
+   #FBF7EF = 2.98:1 as authored, 3.85:1 as rendered — and at
+   14.88px/600 it is below the large-text threshold, so it
+   needs 4.5:1. 25 failing nodes on storm.html and 25 more on
+   yard.html; the same selector is used on merc, hunt and
+   local. Source of the fault: site.css:291.
+       opacity .55 -> 3.85:1   FAIL
+       opacity .68 -> 5.86:1   PASS  */
+.card-in ul li span{ opacity:.68 }
+
+/* 2b. bakery.html:389 — `<p class="serif-caps" style="…opacity:.6">`
+   #20180F at .6 on the #EAE0CE sand band, 12.8px/700.
+   The opacity is an INLINE style, so this needs !important to
+   reach it. The cleaner fix is patch A1 below — deleting the
+   inline value — but this makes the page pass either way.
+       opacity .60 -> 4.19:1   FAIL
+       opacity .72 -> 6.05:1   PASS  */
+.band--sand .serif-caps[style*="opacity"],
+.band--cream .serif-caps[style*="opacity"],
+.formbox .serif-caps[style*="opacity"]{ opacity:.72 !important }
+
+
+/* ----------------------------------------------------------
+   3. REACHABLE BUT NOT OPERABLE
+   ----------------------------------------------------------
+   `.totop` is `display:flex; opacity:0` above 1010px until JS
+   adds `.show` (mobile.css:653-664). display:flex keeps it in
+   the tab order, so on every page a keyboard user's last Tab
+   before leaving the document lands on a button they cannot
+   see. Measured on recipes/bread-baguettes.html: tab stop 34
+   of 35, opacity 0.
+
+   visibility:hidden takes it out of the tab order. The
+   transition list is deliberately NOT touched — `visibility`
+   is not in it (mobile.css:660 / bundle.css:1110 transition
+   only opacity and transform), so the flip is instant and the
+   existing fade is untouched. Adding visibility to the
+   transition instead delays the state by 250ms, which is long
+   enough for a fast Tab to still land on it.
+   -------------------------------------------------------- */
+.totop:not(.show){ visibility:hidden }
+
+
+/* ----------------------------------------------------------
+   4. KEYBOARD PATH THROUGH THE HOVER/CLICK SUBMENUS
+   ----------------------------------------------------------
+   `.subnav` opens on `.navitem.open` (click/Enter, JS) and on
+   `.navitem:hover` (site.css:1167-1170). There is no
+   :focus-within rule, so a submenu opened by hover collapses
+   under the pointer the instant the user starts tabbing
+   through it — the links vanish mid-traversal.
+
+   Keeping it open whenever focus is inside costs nothing and
+   makes the hover path and the keyboard path agree. The
+   aria-expanded mismatch that goes with hover-opening is a
+   markup/JS problem — patch A2.
+   -------------------------------------------------------- */
+.navitem:focus-within > .subnav{ display:flex }
+
+
+/* ----------------------------------------------------------
+   5. SKIP-LINK LANDING
+   ----------------------------------------------------------
+   <main> now carries id="main" tabindex="-1" so the skip link
+   has a real, focusable target — verified by measuring where
+   focus lands, not by looking at it:
+       Tab      -> a.skip-link            (visible, 3px ring)
+       Enter    -> document.activeElement === main#main
+       Tab      -> first control INSIDE main
+   The header's eight controls are genuinely skipped.
+
+   The focus ring on <main> is deliberately LEFT IN PLACE. It
+   is the only confirmation a sighted keyboard user gets that
+   the skip actually fired. If it is ever judged too loud,
+   soften rather than remove:
+
+       main[tabindex="-1"]:focus{ outline:none }
+       main[tabindex="-1"]:focus-visible{
+         outline:3px solid var(--amber); outline-offset:-3px }
+
+   Nothing is emitted here on purpose.
+   -------------------------------------------------------- */
+
+
+/* ----------------------------------------------------------
+   6. SAFETY NET
+   ----------------------------------------------------------
+   `.visually-hidden` (site.css:1223) is what the new structural
+   headings and the table header labels ride on. Restated here
+   with the same values so this file cannot make a heading
+   appear if it is ever loaded standalone, and so a future
+   bundler that drops site.css cannot silently un-hide them.
+   -------------------------------------------------------- */
+.visually-hidden{
+  position:absolute !important; width:1px; height:1px; margin:-1px;
+  padding:0; overflow:hidden; clip:rect(0 0 0 0); clip-path:inset(50%);
+  white-space:nowrap; border:0;
+}

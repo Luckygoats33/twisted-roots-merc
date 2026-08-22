@@ -18,19 +18,17 @@
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png?v=ce873322">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/site.css?v=db82a4af">
-<link rel="stylesheet" href="../assets/css/motion.css?v=e4213a7b">
-<link rel="stylesheet" href="../assets/css/roots.css?v=42e7b082">
-<link rel="stylesheet" href="../assets/css/mobile.css?v=1c92929c">
-<link rel="stylesheet" href="../assets/css/polish.css?v=39f8e298">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap"></noscript>
+<link rel="stylesheet" href="../assets/css/bundle.css?v=bfaf2686">
 <link rel="stylesheet" href="../assets/css/print.css?v=65e49f4e" media="print">
-<link rel="stylesheet" href="../assets/css/perf.css?v=8af74f1b">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Drywall Anchors, and Which Ones Actually Hold", "description": "Most anchors fail because somebody picked one rated in pounds without reading how those pounds are meant to hang.", "articleSection": "Fix It", "keywords": "drywall anchor, anchors, hanging, shelf, wall", "mainEntityOfPage": "https://twistedrootsmerc.com/blog/fix-drywall-anchors.html", "author": {"@type": "Organization", "name": "Twisted Roots Merc"}, "publisher": {"@id": "https://twistedrootsmerc.com/#store"}, "isPartOf": {"@type": "Blog", "name": "Practical Notes", "url": "https://twistedrootsmerc.com/journal.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://twistedrootsmerc.com/"}, {"@type": "ListItem", "position": 2, "name": "Practical Notes", "item": "https://twistedrootsmerc.com/journal.html"}, {"@type": "ListItem", "position": 3, "name": "Drywall Anchors, and Which Ones Actually Hold", "item": "https://twistedrootsmerc.com/blog/fix-drywall-anchors.html"}]}</script>
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="stormbar">
   <div class="wrap"><b>Storm Mode</b> <span>Wind advisory on the coast. Storm supplies stocked and the yard is open.</span> <a href="../storm.html">See storm stock →</a></div>
@@ -45,7 +43,7 @@
       <span class="brand-txt"><b>Twisted Roots</b><span>Siletz, Oregon</span></span>
     </a>
     <button class="burger" data-burger aria-expanded="false" aria-controls="siteNav" aria-label="Menu"><span class="burger__box" aria-hidden="true"><i></i><i></i><i></i></span><span class="burger__txt">Menu</span></button>
-    <nav class="nav" id="siteNav">
+    <nav class="nav" id="siteNav" aria-label="Main">
       <div class="navitem" data-navitem>
         <button class="navitem__top" data-subtoggle aria-expanded="false" aria-controls="sub-shop">Shop<i class="navitem__car" aria-hidden="true"></i></button>
         <div class="subnav" id="sub-shop">
@@ -83,11 +81,11 @@
   </div>
 </header>
 
-<main>
+<main id="main" tabindex="-1">
 
 <section class="band band--cream band--tight" style="padding-top:clamp(40px,5vw,72px)">
   <div class="wrap--mid">
-    <nav class="serif-caps muted" style="margin-bottom:22px">
+    <nav class="serif-caps muted" style="margin-bottom:22px" aria-label="Breadcrumb">
       <a href="../index.html" style="text-decoration:none">Home</a> &nbsp;/&nbsp;
       <a href="../journal.html" style="text-decoration:none">Notes</a> &nbsp;/&nbsp;
       <a href="../journal.html#fix-it" style="text-decoration:none">Fix It</a>
@@ -101,22 +99,22 @@
 
 <article class="band band--paper" style="padding-top:clamp(34px,4vw,56px)">
   <div class="wrap--narrow tr-prose">
-    <p>The single best drywall anchor is a stud. Nothing sold in a bag holds like a screw driven into wood. Everything below is what to do when the thing you want to hang refuses to line up with framing, which is most of the time.</p><h3>What you need</h3><ul><li>A stud finder, or a small nail and some patience</li><li>Anchors suited to the weight and to how it hangs</li><li>A drill and a bit that matches the anchor, not a bigger one</li><li>A screwdriver, and a level</li></ul><h2>Find the stud first, seriously</h2><p>Studs are usually 16 inches apart, sometimes 24. Find one, measure across, and mark. If your fixture has two mounting holes, quite often one lands on a stud and only the other needs an anchor, and that halves the problem. Failing electronics, tap along the wall and listen, then confirm with a finish nail through where the fixture will cover.</p><p>In older houses out here you may be into lath and plaster instead. Anchors behave differently in plaster: it is harder, more brittle, and it crumbles. Drill, do not hammer, and toggle-type anchors are usually the right answer.</p><h2>The types, and where each earns its keep</h2><table><thead><tr><th>Anchor</th><th>Real capacity in half inch drywall</th><th>Best for</th></tr></thead><tbody><tr><td>Plastic expansion, the ribbed cone</td><td>5 to 10 lb</td><td>Almost nothing. Light picture hooks</td></tr><tr><td>Self-drilling threaded, plastic or metal</td><td>20 to 35 lb</td><td>Towel bars, small shelves, curtain rods</td></tr><tr><td>Molly bolt, sleeve type</td><td>25 to 50 lb</td><td>Anything that will be pulled on, coat hooks</td></tr><tr><td>Toggle bolt, spring wings</td><td>50 to 100 lb</td><td>Heavy shelving, cabinets, grab rails</td></tr><tr><td>Strap toggle</td><td>Similar to toggle, easier to fit</td><td>Same jobs, and removable fixtures</td></tr><tr><td>Screw into a stud</td><td>Far more than the drywall</td><td>Everything, if you can reach one</td></tr></tbody></table><p>The plastic conical anchor that comes free in the box with a curtain rod is the worst product on this list. It relies on friction against the crumbly gypsum core and it pulls out. If a fixture came with them, throw them away and buy something else.</p><h2>Shear load and pull-out are different</h2><p>This is the part the packaging does not explain. A picture hanging flat against a wall puts a shear load on the anchor, straight down. A coat hook with a heavy wet jacket on it puts a pull-out load, levering the anchor straight out of the wall. The same anchor might handle 40 pounds of the first and 10 pounds of the second.</p><p>So look at the geometry. Anything that sticks out from the wall multiplies the force at the top fastener. Shelves, hooks, TV mounts, grab bars. For those, either hit a stud or use a toggle, and use more fasteners than you think you need.</p><h2>Two things that must not go into drywall anchors</h2><p>Grab bars in a bathroom. Those need to be into blocking or studs, because the entire point of a grab bar is that it holds when somebody falls onto it. An anchor that fails at that moment is worse than no bar at all.</p><p>And anything heavy over a bed, a crib or a desk. If it would hurt somebody when it comes down, it goes into wood.</p><h2>Installing them so they work</h2><ol><li>Drill the exact size the anchor calls for. Oversize hole, useless anchor. If you have no drill, self-drilling threaded anchors go in with a screwdriver.</li><li>Set the anchor flush with the wall surface, not sunk below it and not proud.</li><li>Drive the screw until it is snug, then stop. Over-tightening spins the anchor in the hole and destroys the gypsum around it.</li><li>If it does spin, do not keep going. Pull it, patch the hole, and move over an inch.</li></ol><p>Removing them later leaves a hole worth patching properly rather than smearing over, and that is covered in <a href="fix-patch-small-hole-drywall.html">the small hole post</a>.</p><p>Anchor kits, toggles, drill bits and stud finders live on <a href="../merc.html#fixit">the Fix It wall</a>.</p>
+    <p>The single best drywall anchor is a stud. Nothing sold in a bag holds like a screw driven into wood. Everything below is what to do when the thing you want to hang refuses to line up with framing, which is most of the time.</p><h2 class="a11y-rank-h3">What you need</h2><ul><li>A stud finder, or a small nail and some patience</li><li>Anchors suited to the weight and to how it hangs</li><li>A drill and a bit that matches the anchor, not a bigger one</li><li>A screwdriver, and a level</li></ul><h2>Find the stud first, seriously</h2><p>Studs are usually 16 inches apart, sometimes 24. Find one, measure across, and mark. If your fixture has two mounting holes, quite often one lands on a stud and only the other needs an anchor, and that halves the problem. Failing electronics, tap along the wall and listen, then confirm with a finish nail through where the fixture will cover.</p><p>In older houses out here you may be into lath and plaster instead. Anchors behave differently in plaster: it is harder, more brittle, and it crumbles. Drill, do not hammer, and toggle-type anchors are usually the right answer.</p><h2>The types, and where each earns its keep</h2><table><thead><tr><th scope="col">Anchor</th><th scope="col">Real capacity in half inch drywall</th><th scope="col">Best for</th></tr></thead><tbody><tr><td>Plastic expansion, the ribbed cone</td><td>5 to 10 lb</td><td>Almost nothing. Light picture hooks</td></tr><tr><td>Self-drilling threaded, plastic or metal</td><td>20 to 35 lb</td><td>Towel bars, small shelves, curtain rods</td></tr><tr><td>Molly bolt, sleeve type</td><td>25 to 50 lb</td><td>Anything that will be pulled on, coat hooks</td></tr><tr><td>Toggle bolt, spring wings</td><td>50 to 100 lb</td><td>Heavy shelving, cabinets, grab rails</td></tr><tr><td>Strap toggle</td><td>Similar to toggle, easier to fit</td><td>Same jobs, and removable fixtures</td></tr><tr><td>Screw into a stud</td><td>Far more than the drywall</td><td>Everything, if you can reach one</td></tr></tbody></table><p>The plastic conical anchor that comes free in the box with a curtain rod is the worst product on this list. It relies on friction against the crumbly gypsum core and it pulls out. If a fixture came with them, throw them away and buy something else.</p><h2>Shear load and pull-out are different</h2><p>This is the part the packaging does not explain. A picture hanging flat against a wall puts a shear load on the anchor, straight down. A coat hook with a heavy wet jacket on it puts a pull-out load, levering the anchor straight out of the wall. The same anchor might handle 40 pounds of the first and 10 pounds of the second.</p><p>So look at the geometry. Anything that sticks out from the wall multiplies the force at the top fastener. Shelves, hooks, TV mounts, grab bars. For those, either hit a stud or use a toggle, and use more fasteners than you think you need.</p><h2>Two things that must not go into drywall anchors</h2><p>Grab bars in a bathroom. Those need to be into blocking or studs, because the entire point of a grab bar is that it holds when somebody falls onto it. An anchor that fails at that moment is worse than no bar at all.</p><p>And anything heavy over a bed, a crib or a desk. If it would hurt somebody when it comes down, it goes into wood.</p><h2>Installing them so they work</h2><ol><li>Drill the exact size the anchor calls for. Oversize hole, useless anchor. If you have no drill, self-drilling threaded anchors go in with a screwdriver.</li><li>Set the anchor flush with the wall surface, not sunk below it and not proud.</li><li>Drive the screw until it is snug, then stop. Over-tightening spins the anchor in the hole and destroys the gypsum around it.</li><li>If it does spin, do not keep going. Pull it, patch the hole, and move over an inch.</li></ol><p>Removing them later leaves a hole worth patching properly rather than smearing over, and that is covered in <a href="fix-patch-small-hole-drywall.html">the small hole post</a>.</p><p>Anchor kits, toggles, drill bits and stud finders live on <a href="../merc.html#fixit">the Fix It wall</a>.</p>
   </div>
 </article>
+
 
 <section class="band band--bark band--dark band--tight">
   <div class="wrap--mid">
     <div class="split split--top">
       <div>
-        <p class="eyebrow">While you're here</p>
-        <h2 class="h2 mb0">Need any of this today?</h2>
+        <p class="eyebrow">From the shelf</p>
+        <h2 class="h2 mb0">What this takes</h2>
       </div>
       <div>
-        <p class="lede mb0">Check what is on the shelf before you drive over, or tell us what we
-          should be carrying.</p>
-        <div class="btnrow" style="margin-top:20px">
-          <a class="btn btn--amber" href="../merc.html#fixit">Shop now</a>
+        <p class="lede mb0">Counts come off the register. If it says two left, there are two left.</p>
+        <div class="pillrow"><a class="pill" href="../shop.html?q=drywall+anchor" style="text-decoration:none">Drywall anchors that actually hold</a><a class="pill" href="../shop.html?q=drywall+screw" style="text-decoration:none">Drywall screws by the pound</a></div>
+        <div class="btnrow" style="margin-top:18px">
           <button class="btn btn--ghost" data-tellus="true">Tell Carrie &amp; Eric</button>
         </div>
       </div>
@@ -159,18 +157,18 @@
   <div class="wrap">
     <div class="foot-top">
       <div>
-        <img src="../assets/img/logo-foot.webp?v=34aebc6d" alt="Twisted Roots Merc" width="440" height="371" loading="lazy" decoding="async">
+        <img src="../assets/img/logo-foot.webp?v=34aebc6d" srcset="../assets/img/logo-foot-190.webp 190w, ../assets/img/logo-foot-380.webp 380w, ../assets/img/logo-foot.webp 440w" sizes="190px" width="440" height="371" alt="Twisted Roots Merc" loading="lazy" decoding="async">
         <p class="small" style="opacity:.8">Mercantile · Bakery · Kitchen<br>101 &amp; 151 N Gaither St, Siletz, Oregon 97380<br>
           <a href="tel:+15415550134">(541) 555-0134</a></p>
         <button class="stormtoggle" data-stormtoggle aria-pressed="false"><i></i>Storm Mode Off</button>
       </div>
-      <div><h4>The Store</h4><ul>
+      <div><h3>The Store</h3><ul>
         <li><a href="../merc.html">The Merc</a></li><li><a href="../yard.html">The Yard</a></li>
         <li><a href="../storm.html">Storm Ready</a></li><li><a href="../hunt.html">Hunt &amp; Field</a></li><li><a href="../local.html">Local Goods</a></li></ul></div>
-      <div><h4>Food</h4><ul>
+      <div><h3>Food</h3><ul>
         <li><a href="../bakery.html">Bakery + Kitchen</a></li><li><a href="../kitchen.html">Recipes</a></li><li><a href="../bakery.html#breakfast">Breakfast</a></li>
         <li><a href="../bakery.html#lunch">Lunch</a></li><li><a href="../bakery.html#order">Order pickup</a></li></ul></div>
-      <div><h4>Twisted Roots</h4><ul>
+      <div><h3>Twisted Roots</h3><ul>
         <li><a href="../roots.html">Our Roots</a></li><li><a href="../journal.html">The Board</a></li><li><a href="../visit.html">Visit &amp; Hours</a></li>
         <li><a href="#" data-tellus="true">What should we carry?</a></li><li><a href="../hq.html">Owner login</a></li></ul></div>
     </div>
@@ -182,6 +180,7 @@
   </div>
 </footer>
 
+<p id="trLive" class="visually-hidden" role="status" aria-live="polite"></p>
 <script>
 addEventListener("load", function () {
   var s = ["../assets/js/catalog.js?v=cdc9c20e", "../assets/js/cart.js?v=024fe1e6", "../assets/js/site.js?v=3787c0d1", "../assets/js/motion.js?v=bf716f00", "../assets/js/roots.js?v=93423d8d"], i = 0;

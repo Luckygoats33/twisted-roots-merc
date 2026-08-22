@@ -18,19 +18,17 @@
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png?v=ce873322">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/site.css?v=db82a4af">
-<link rel="stylesheet" href="../assets/css/motion.css?v=e4213a7b">
-<link rel="stylesheet" href="../assets/css/roots.css?v=42e7b082">
-<link rel="stylesheet" href="../assets/css/mobile.css?v=1c92929c">
-<link rel="stylesheet" href="../assets/css/polish.css?v=39f8e298">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap"></noscript>
+<link rel="stylesheet" href="../assets/css/bundle.css?v=bfaf2686">
 <link rel="stylesheet" href="../assets/css/print.css?v=65e49f4e" media="print">
-<link rel="stylesheet" href="../assets/css/perf.css?v=8af74f1b">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Find Your Main Water Shutoff Before You Need It", "description": "Ten minutes on a dry afternoon, or twenty frantic minutes in the dark with water coming through the ceiling. Your choice.", "articleSection": "Fix It", "keywords": "water shutoff, plumbing, emergency, well, valve", "mainEntityOfPage": "https://twistedrootsmerc.com/blog/fix-main-water-shutoff.html", "author": {"@type": "Organization", "name": "Twisted Roots Merc"}, "publisher": {"@id": "https://twistedrootsmerc.com/#store"}, "isPartOf": {"@type": "Blog", "name": "Practical Notes", "url": "https://twistedrootsmerc.com/journal.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://twistedrootsmerc.com/"}, {"@type": "ListItem", "position": 2, "name": "Practical Notes", "item": "https://twistedrootsmerc.com/journal.html"}, {"@type": "ListItem", "position": 3, "name": "Find Your Main Water Shutoff Before You Need It", "item": "https://twistedrootsmerc.com/blog/fix-main-water-shutoff.html"}]}</script>
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="stormbar">
   <div class="wrap"><b>Storm Mode</b> <span>Wind advisory on the coast. Storm supplies stocked and the yard is open.</span> <a href="../storm.html">See storm stock →</a></div>
@@ -45,7 +43,7 @@
       <span class="brand-txt"><b>Twisted Roots</b><span>Siletz, Oregon</span></span>
     </a>
     <button class="burger" data-burger aria-expanded="false" aria-controls="siteNav" aria-label="Menu"><span class="burger__box" aria-hidden="true"><i></i><i></i><i></i></span><span class="burger__txt">Menu</span></button>
-    <nav class="nav" id="siteNav">
+    <nav class="nav" id="siteNav" aria-label="Main">
       <div class="navitem" data-navitem>
         <button class="navitem__top" data-subtoggle aria-expanded="false" aria-controls="sub-shop">Shop<i class="navitem__car" aria-hidden="true"></i></button>
         <div class="subnav" id="sub-shop">
@@ -83,11 +81,11 @@
   </div>
 </header>
 
-<main>
+<main id="main" tabindex="-1">
 
 <section class="band band--cream band--tight" style="padding-top:clamp(40px,5vw,72px)">
   <div class="wrap--mid">
-    <nav class="serif-caps muted" style="margin-bottom:22px">
+    <nav class="serif-caps muted" style="margin-bottom:22px" aria-label="Breadcrumb">
       <a href="../index.html" style="text-decoration:none">Home</a> &nbsp;/&nbsp;
       <a href="../journal.html" style="text-decoration:none">Notes</a> &nbsp;/&nbsp;
       <a href="../journal.html#fix-it" style="text-decoration:none">Fix It</a>
@@ -101,22 +99,22 @@
 
 <article class="band band--paper" style="padding-top:clamp(34px,4vw,56px)">
   <div class="wrap--narrow tr-prose">
-    <p>There is a category of home knowledge that is worthless right up until the moment it is the only thing that matters. Where the water shuts off is the top of that list. A burst supply line moves several gallons a minute. The difference between a mopping job and a claim is how long it takes you to find a valve.</p><h3>Go do this now</h3><ul><li>Find every shutoff in and around the house</li><li>Turn each one off and back on</li><li>Tag them, or write it on the wall with a marker</li><li>Make sure everyone in the house knows</li></ul><h2>Where it will be</h2><p>Houses on a municipal connection have at least two: a curb stop out at the street or in a meter box near the property line, and a main valve where the line enters the house. The house valve is usually in a crawlspace, a utility room, a garage, or on the wall near the water heater. Follow the pipe backwards from the water heater and you will find it.</p><p>On a well, and plenty of places out here are, it is different. There is normally a valve at the pressure tank, and shutting that isolates the house. But if the leak is between the well and the tank, or in the tank itself, you also want to kill power to the pump at the breaker, because a pump running against an open line will run until it burns up. Know which breaker it is and label it.</p><h2>Types of valve, and what they will do to you</h2><table><thead><tr><th>Valve</th><th>Looks like</th><th>Behavior</th></tr></thead><tbody><tr><td>Ball valve</td><td>Lever handle</td><td>Quarter turn, reliable, what you want</td></tr><tr><td>Gate valve</td><td>Round wheel</td><td>Many turns, seizes, may not fully close</td></tr><tr><td>Curb stop</td><td>Square nut in a box at the street</td><td>Needs a meter key</td></tr><tr><td>Angle stop</td><td>Small oval at a fixture</td><td>Isolates one fixture, seizes if never used</td></tr></tbody></table><p>Old gate valves are the trap here. They sit untouched for twenty years, the stem corrodes, and when you finally turn one in an emergency it either will not move or the stem snaps off in your hand while water keeps running. If your main is a round-wheel gate valve, exercising it once or twice a year is the minimum, and replacing it with a ball valve is the right answer. That is a plumber job on copper unless you are comfortable with a push-fit shutoff, and it is cheap compared to what it prevents.</p><h2>Turning it off properly</h2><ol><li>Close the valve. Clockwise on a wheel, or lever perpendicular to the pipe on a ball valve.</li><li>Open a faucet at the lowest point in the house and one at the highest. The low one drains the system, the high one lets air in so it can.</li><li>Wait. The pressure left in the pipes will keep the leak running for a minute after the valve closes. That is normal and it is not a sign the valve failed.</li><li>If it is freezing weather and the house will be unheated, drain it properly rather than just shutting it off.</li></ol><h2>Two things to keep with the valve</h2><p>A meter key, if your shutoff is a curb stop. They are a specific tool and a screwdriver will not do it. And a flashlight, hung on a nail right there, because the main shutoff in most houses is in the least lit place in the building and every water emergency somehow happens after dark.</p><h2>Tell everyone</h2><p>The person who knows where the valve is will not always be the person standing in the water. Show your kids. Show whoever house-sits. Write it on a piece of tape on the electrical panel: MAIN WATER IS IN THE CRAWLSPACE, LEFT OF THE HATCH. It looks silly for years and then one evening it does not.</p><p>Push-fit shutoff valves, flashlights and the tools to do this are at <a href="../merc.html#fixit">the Fix It wall</a>, and the rest of the get-ready-before-it-happens list is over in <a href="../storm.html">storm supplies</a>.</p>
+    <p>There is a category of home knowledge that is worthless right up until the moment it is the only thing that matters. Where the water shuts off is the top of that list. A burst supply line moves several gallons a minute. The difference between a mopping job and a claim is how long it takes you to find a valve.</p><h2 class="a11y-rank-h3">Go do this now</h2><ul><li>Find every shutoff in and around the house</li><li>Turn each one off and back on</li><li>Tag them, or write it on the wall with a marker</li><li>Make sure everyone in the house knows</li></ul><h2>Where it will be</h2><p>Houses on a municipal connection have at least two: a curb stop out at the street or in a meter box near the property line, and a main valve where the line enters the house. The house valve is usually in a crawlspace, a utility room, a garage, or on the wall near the water heater. Follow the pipe backwards from the water heater and you will find it.</p><p>On a well, and plenty of places out here are, it is different. There is normally a valve at the pressure tank, and shutting that isolates the house. But if the leak is between the well and the tank, or in the tank itself, you also want to kill power to the pump at the breaker, because a pump running against an open line will run until it burns up. Know which breaker it is and label it.</p><h2>Types of valve, and what they will do to you</h2><table><thead><tr><th scope="col">Valve</th><th scope="col">Looks like</th><th scope="col">Behavior</th></tr></thead><tbody><tr><td>Ball valve</td><td>Lever handle</td><td>Quarter turn, reliable, what you want</td></tr><tr><td>Gate valve</td><td>Round wheel</td><td>Many turns, seizes, may not fully close</td></tr><tr><td>Curb stop</td><td>Square nut in a box at the street</td><td>Needs a meter key</td></tr><tr><td>Angle stop</td><td>Small oval at a fixture</td><td>Isolates one fixture, seizes if never used</td></tr></tbody></table><p>Old gate valves are the trap here. They sit untouched for twenty years, the stem corrodes, and when you finally turn one in an emergency it either will not move or the stem snaps off in your hand while water keeps running. If your main is a round-wheel gate valve, exercising it once or twice a year is the minimum, and replacing it with a ball valve is the right answer. That is a plumber job on copper unless you are comfortable with a push-fit shutoff, and it is cheap compared to what it prevents.</p><h2>Turning it off properly</h2><ol><li>Close the valve. Clockwise on a wheel, or lever perpendicular to the pipe on a ball valve.</li><li>Open a faucet at the lowest point in the house and one at the highest. The low one drains the system, the high one lets air in so it can.</li><li>Wait. The pressure left in the pipes will keep the leak running for a minute after the valve closes. That is normal and it is not a sign the valve failed.</li><li>If it is freezing weather and the house will be unheated, drain it properly rather than just shutting it off.</li></ol><h2>Two things to keep with the valve</h2><p>A meter key, if your shutoff is a curb stop. They are a specific tool and a screwdriver will not do it. And a flashlight, hung on a nail right there, because the main shutoff in most houses is in the least lit place in the building and every water emergency somehow happens after dark.</p><h2>Tell everyone</h2><p>The person who knows where the valve is will not always be the person standing in the water. Show your kids. Show whoever house-sits. Write it on a piece of tape on the electrical panel: MAIN WATER IS IN THE CRAWLSPACE, LEFT OF THE HATCH. It looks silly for years and then one evening it does not.</p><p>Push-fit shutoff valves, flashlights and the tools to do this are at <a href="../merc.html#fixit">the Fix It wall</a>, and the rest of the get-ready-before-it-happens list is over in <a href="../storm.html">storm supplies</a>.</p>
   </div>
 </article>
+
 
 <section class="band band--bark band--dark band--tight">
   <div class="wrap--mid">
     <div class="split split--top">
       <div>
-        <p class="eyebrow">While you're here</p>
-        <h2 class="h2 mb0">Need any of this today?</h2>
+        <p class="eyebrow">From the shelf</p>
+        <h2 class="h2 mb0">What this takes</h2>
       </div>
       <div>
-        <p class="lede mb0">Check what is on the shelf before you drive over, or tell us what we
-          should be carrying.</p>
-        <div class="btnrow" style="margin-top:20px">
-          <a class="btn btn--amber" href="../merc.html#fixit">Shop now</a>
+        <p class="lede mb0">Counts come off the register. If it says two left, there are two left.</p>
+        <div class="pillrow"><a class="pill" href="../shop.html?q=shutoff+valve" style="text-decoration:none">Shutoff valves on the Fix It wall</a><a class="pill" href="../shop.html?q=pliers" style="text-decoration:none">Channel-lock pliers for a stiff valve</a></div>
+        <div class="btnrow" style="margin-top:18px">
           <button class="btn btn--ghost" data-tellus="true">Tell Carrie &amp; Eric</button>
         </div>
       </div>
@@ -159,18 +157,18 @@
   <div class="wrap">
     <div class="foot-top">
       <div>
-        <img src="../assets/img/logo-foot.webp?v=34aebc6d" alt="Twisted Roots Merc" width="440" height="371" loading="lazy" decoding="async">
+        <img src="../assets/img/logo-foot.webp?v=34aebc6d" srcset="../assets/img/logo-foot-190.webp 190w, ../assets/img/logo-foot-380.webp 380w, ../assets/img/logo-foot.webp 440w" sizes="190px" width="440" height="371" alt="Twisted Roots Merc" loading="lazy" decoding="async">
         <p class="small" style="opacity:.8">Mercantile · Bakery · Kitchen<br>101 &amp; 151 N Gaither St, Siletz, Oregon 97380<br>
           <a href="tel:+15415550134">(541) 555-0134</a></p>
         <button class="stormtoggle" data-stormtoggle aria-pressed="false"><i></i>Storm Mode Off</button>
       </div>
-      <div><h4>The Store</h4><ul>
+      <div><h3>The Store</h3><ul>
         <li><a href="../merc.html">The Merc</a></li><li><a href="../yard.html">The Yard</a></li>
         <li><a href="../storm.html">Storm Ready</a></li><li><a href="../hunt.html">Hunt &amp; Field</a></li><li><a href="../local.html">Local Goods</a></li></ul></div>
-      <div><h4>Food</h4><ul>
+      <div><h3>Food</h3><ul>
         <li><a href="../bakery.html">Bakery + Kitchen</a></li><li><a href="../kitchen.html">Recipes</a></li><li><a href="../bakery.html#breakfast">Breakfast</a></li>
         <li><a href="../bakery.html#lunch">Lunch</a></li><li><a href="../bakery.html#order">Order pickup</a></li></ul></div>
-      <div><h4>Twisted Roots</h4><ul>
+      <div><h3>Twisted Roots</h3><ul>
         <li><a href="../roots.html">Our Roots</a></li><li><a href="../journal.html">The Board</a></li><li><a href="../visit.html">Visit &amp; Hours</a></li>
         <li><a href="#" data-tellus="true">What should we carry?</a></li><li><a href="../hq.html">Owner login</a></li></ul></div>
     </div>
@@ -182,6 +180,7 @@
   </div>
 </footer>
 
+<p id="trLive" class="visually-hidden" role="status" aria-live="polite"></p>
 <script>
 addEventListener("load", function () {
   var s = ["../assets/js/catalog.js?v=cdc9c20e", "../assets/js/cart.js?v=024fe1e6", "../assets/js/site.js?v=3787c0d1", "../assets/js/motion.js?v=bf716f00", "../assets/js/roots.js?v=93423d8d"], i = 0;

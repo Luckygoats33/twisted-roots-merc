@@ -18,19 +18,17 @@
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png?v=ce873322">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/site.css?v=db82a4af">
-<link rel="stylesheet" href="../assets/css/motion.css?v=e4213a7b">
-<link rel="stylesheet" href="../assets/css/roots.css?v=42e7b082">
-<link rel="stylesheet" href="../assets/css/mobile.css?v=1c92929c">
-<link rel="stylesheet" href="../assets/css/polish.css?v=39f8e298">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap"></noscript>
+<link rel="stylesheet" href="../assets/css/bundle.css?v=bfaf2686">
 <link rel="stylesheet" href="../assets/css/print.css?v=65e49f4e" media="print">
-<link rel="stylesheet" href="../assets/css/perf.css?v=8af74f1b">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Wall Plates and Wire Connectors: The Small Parts That Cause Big Problems", "description": "A cracked cover plate is not cosmetic and a wire nut spun on badly is the most common cause of an outlet that dies for no reason.", "articleSection": "Fix It", "keywords": "wire connectors, wall plate, electrical, wiring, safety", "mainEntityOfPage": "https://twistedrootsmerc.com/blog/fix-wall-plates-wire-connectors.html", "author": {"@type": "Organization", "name": "Twisted Roots Merc"}, "publisher": {"@id": "https://twistedrootsmerc.com/#store"}, "isPartOf": {"@type": "Blog", "name": "Practical Notes", "url": "https://twistedrootsmerc.com/journal.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://twistedrootsmerc.com/"}, {"@type": "ListItem", "position": 2, "name": "Practical Notes", "item": "https://twistedrootsmerc.com/journal.html"}, {"@type": "ListItem", "position": 3, "name": "Wall Plates and Wire Connectors: The Small Parts That Cause Big Problems", "item": "https://twistedrootsmerc.com/blog/fix-wall-plates-wire-connectors.html"}]}</script>
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="stormbar">
   <div class="wrap"><b>Storm Mode</b> <span>Wind advisory on the coast. Storm supplies stocked and the yard is open.</span> <a href="../storm.html">See storm stock →</a></div>
@@ -45,7 +43,7 @@
       <span class="brand-txt"><b>Twisted Roots</b><span>Siletz, Oregon</span></span>
     </a>
     <button class="burger" data-burger aria-expanded="false" aria-controls="siteNav" aria-label="Menu"><span class="burger__box" aria-hidden="true"><i></i><i></i><i></i></span><span class="burger__txt">Menu</span></button>
-    <nav class="nav" id="siteNav">
+    <nav class="nav" id="siteNav" aria-label="Main">
       <div class="navitem" data-navitem>
         <button class="navitem__top" data-subtoggle aria-expanded="false" aria-controls="sub-shop">Shop<i class="navitem__car" aria-hidden="true"></i></button>
         <div class="subnav" id="sub-shop">
@@ -83,11 +81,11 @@
   </div>
 </header>
 
-<main>
+<main id="main" tabindex="-1">
 
 <section class="band band--cream band--tight" style="padding-top:clamp(40px,5vw,72px)">
   <div class="wrap--mid">
-    <nav class="serif-caps muted" style="margin-bottom:22px">
+    <nav class="serif-caps muted" style="margin-bottom:22px" aria-label="Breadcrumb">
       <a href="../index.html" style="text-decoration:none">Home</a> &nbsp;/&nbsp;
       <a href="../journal.html" style="text-decoration:none">Notes</a> &nbsp;/&nbsp;
       <a href="../journal.html#fix-it" style="text-decoration:none">Fix It</a>
@@ -101,22 +99,22 @@
 
 <article class="band band--paper" style="padding-top:clamp(34px,4vw,56px)">
   <div class="wrap--narrow tr-prose">
-    <p>These two items sit in a bin near the register and cost almost nothing, and between them they account for a surprising share of household electrical trouble. A cover plate is the barrier between a person and a live terminal. A wire connector is the joint that either holds for forty years or slowly cooks itself inside a wall.</p><h3>What you need</h3><ul><li>Wall plate to match the device, standard or oversize</li><li>Wire connectors in an assortment of sizes</li><li>A screwdriver, and a small level if you are fussy</li></ul><h2>Wall plates are not decoration</h2><p>Replace a cracked one. The crack means somebody leaned on it or the box is out of square, and a broken plate leaves the sides of a device exposed. On a switch that is unpleasant. On an outlet in a garage or a shop, where a metal object could slide down beside it, it is worse.</p><p>Sizing catches people out. Standard plates cover the device and about a quarter inch of wall. If the drywall around the box is chewed up, or the box sits crooked, an oversize or jumbo plate covers the mess without any patching. That is a legitimate and very cheap fix for a hole somebody cut too big.</p><table><thead><tr><th>Device</th><th>Plate</th></tr></thead><tbody><tr><td>Duplex outlet</td><td>Duplex, two oval openings</td></tr><tr><td>GFCI or a rocker switch</td><td>Decorator, one rectangular opening</td></tr><tr><td>Toggle switch</td><td>Toggle, one narrow slot</td></tr><tr><td>Blanked-off box</td><td>Blank plate. Required, not optional</td></tr><tr><td>Outdoors</td><td>Weatherproof, in-use bubble if a cord stays plugged in</td></tr></tbody></table><p>An open box with no plate at all, in a garage or a crawlspace, is a live box somebody will eventually put a hand into. A blank plate costs about a dollar. There is no reason for that to exist in a house.</p><h2>Wire connectors, and the way they actually work</h2><p>A twist-on wire connector is a tapered spring inside a plastic shell. As you turn it, the spring bites into the conductors and draws them together, and the plastic insulates the result. Done correctly it is a gas-tight connection that will outlast the house. Done carelessly it is a joint that arcs quietly for years.</p><ol><li>Strip about three quarters of an inch from each conductor. Same length on all of them.</li><li>Hold the wires side by side with the ends flush. Do not pre-twist copper of different sizes together, just line them up.</li><li>Push the connector on and turn clockwise, firmly, until the insulation on the wires starts to twist too. That is the signal it is fully engaged.</li><li>Tug each wire individually. Every one of them. If a wire pulls out, the connection was never made. Redo it.</li><li>No bare copper should show below the skirt of the connector. If it does, your strip length was too long.</li></ol><h2>Getting the size right</h2><p>Connectors are rated by how many wires of what size they will accept, and the range is printed on the box. Too big and the spring never grips. Too small and you cannot get it on, or you strip the shell trying. The color coding varies by brand, so read the box rather than trusting the color.</p><p>Two more rules that matter. Copper and aluminum do not go in the same ordinary connector, ever. Aluminum branch wiring needs a specific rated connector and antioxidant compound, and honestly it needs an electrician. And never use a connector where a wire is nicked or the strands are broken, because you have already lost part of the conductor and the rest will run hotter.</p><h2>Where the failures show up</h2><p>Half the mystery electrical problems in an old house are a bad connector in a box behind a light fixture. The symptom is a light or outlet that works intermittently, sometimes coming back if you thump the wall. That is arcing, it generates heat, and it belongs at the top of the fix-it-now list rather than the get-around-to-it list.</p><p>If you open a box and find a connector that is discolored, has melted plastic, or has a copper conductor blackened at the end, do not simply put a fresh connector on and close it up. Cut back to bright clean copper first, and go look at what the circuit was being asked to carry. If the box shows scorching beyond the connector itself, stop and read <a href="fix-call-an-electrician.html">the post on when to call an electrician</a>.</p><p>Wall plates, connector assortments, tape and testers are all on <a href="../merc.html#fixit">the Fix It wall</a>.</p>
+    <p>These two items sit in a bin near the register and cost almost nothing, and between them they account for a surprising share of household electrical trouble. A cover plate is the barrier between a person and a live terminal. A wire connector is the joint that either holds for forty years or slowly cooks itself inside a wall.</p><h2 class="a11y-rank-h3">What you need</h2><ul><li>Wall plate to match the device, standard or oversize</li><li>Wire connectors in an assortment of sizes</li><li>A screwdriver, and a small level if you are fussy</li></ul><h2>Wall plates are not decoration</h2><p>Replace a cracked one. The crack means somebody leaned on it or the box is out of square, and a broken plate leaves the sides of a device exposed. On a switch that is unpleasant. On an outlet in a garage or a shop, where a metal object could slide down beside it, it is worse.</p><p>Sizing catches people out. Standard plates cover the device and about a quarter inch of wall. If the drywall around the box is chewed up, or the box sits crooked, an oversize or jumbo plate covers the mess without any patching. That is a legitimate and very cheap fix for a hole somebody cut too big.</p><table><thead><tr><th scope="col">Device</th><th scope="col">Plate</th></tr></thead><tbody><tr><td>Duplex outlet</td><td>Duplex, two oval openings</td></tr><tr><td>GFCI or a rocker switch</td><td>Decorator, one rectangular opening</td></tr><tr><td>Toggle switch</td><td>Toggle, one narrow slot</td></tr><tr><td>Blanked-off box</td><td>Blank plate. Required, not optional</td></tr><tr><td>Outdoors</td><td>Weatherproof, in-use bubble if a cord stays plugged in</td></tr></tbody></table><p>An open box with no plate at all, in a garage or a crawlspace, is a live box somebody will eventually put a hand into. A blank plate costs about a dollar. There is no reason for that to exist in a house.</p><h2>Wire connectors, and the way they actually work</h2><p>A twist-on wire connector is a tapered spring inside a plastic shell. As you turn it, the spring bites into the conductors and draws them together, and the plastic insulates the result. Done correctly it is a gas-tight connection that will outlast the house. Done carelessly it is a joint that arcs quietly for years.</p><ol><li>Strip about three quarters of an inch from each conductor. Same length on all of them.</li><li>Hold the wires side by side with the ends flush. Do not pre-twist copper of different sizes together, just line them up.</li><li>Push the connector on and turn clockwise, firmly, until the insulation on the wires starts to twist too. That is the signal it is fully engaged.</li><li>Tug each wire individually. Every one of them. If a wire pulls out, the connection was never made. Redo it.</li><li>No bare copper should show below the skirt of the connector. If it does, your strip length was too long.</li></ol><h2>Getting the size right</h2><p>Connectors are rated by how many wires of what size they will accept, and the range is printed on the box. Too big and the spring never grips. Too small and you cannot get it on, or you strip the shell trying. The color coding varies by brand, so read the box rather than trusting the color.</p><p>Two more rules that matter. Copper and aluminum do not go in the same ordinary connector, ever. Aluminum branch wiring needs a specific rated connector and antioxidant compound, and honestly it needs an electrician. And never use a connector where a wire is nicked or the strands are broken, because you have already lost part of the conductor and the rest will run hotter.</p><h2>Where the failures show up</h2><p>Half the mystery electrical problems in an old house are a bad connector in a box behind a light fixture. The symptom is a light or outlet that works intermittently, sometimes coming back if you thump the wall. That is arcing, it generates heat, and it belongs at the top of the fix-it-now list rather than the get-around-to-it list.</p><p>If you open a box and find a connector that is discolored, has melted plastic, or has a copper conductor blackened at the end, do not simply put a fresh connector on and close it up. Cut back to bright clean copper first, and go look at what the circuit was being asked to carry. If the box shows scorching beyond the connector itself, stop and read <a href="fix-call-an-electrician.html">the post on when to call an electrician</a>.</p><p>Wall plates, connector assortments, tape and testers are all on <a href="../merc.html#fixit">the Fix It wall</a>.</p>
   </div>
 </article>
+
 
 <section class="band band--bark band--dark band--tight">
   <div class="wrap--mid">
     <div class="split split--top">
       <div>
-        <p class="eyebrow">While you're here</p>
-        <h2 class="h2 mb0">Need any of this today?</h2>
+        <p class="eyebrow">From the shelf</p>
+        <h2 class="h2 mb0">What this takes</h2>
       </div>
       <div>
-        <p class="lede mb0">Check what is on the shelf before you drive over, or tell us what we
-          should be carrying.</p>
-        <div class="btnrow" style="margin-top:20px">
-          <a class="btn btn--amber" href="../merc.html#fixit">Shop now</a>
+        <p class="lede mb0">Counts come off the register. If it says two left, there are two left.</p>
+        <div class="pillrow"><a class="pill" href="../shop.html?q=wire+connector" style="text-decoration:none">Wire nuts, a hundred to the box</a><a class="pill" href="../shop.html?q=wall+plate" style="text-decoration:none">The wall plate assortment</a></div>
+        <div class="btnrow" style="margin-top:18px">
           <button class="btn btn--ghost" data-tellus="true">Tell Carrie &amp; Eric</button>
         </div>
       </div>
@@ -159,18 +157,18 @@
   <div class="wrap">
     <div class="foot-top">
       <div>
-        <img src="../assets/img/logo-foot.webp?v=34aebc6d" alt="Twisted Roots Merc" width="440" height="371" loading="lazy" decoding="async">
+        <img src="../assets/img/logo-foot.webp?v=34aebc6d" srcset="../assets/img/logo-foot-190.webp 190w, ../assets/img/logo-foot-380.webp 380w, ../assets/img/logo-foot.webp 440w" sizes="190px" width="440" height="371" alt="Twisted Roots Merc" loading="lazy" decoding="async">
         <p class="small" style="opacity:.8">Mercantile · Bakery · Kitchen<br>101 &amp; 151 N Gaither St, Siletz, Oregon 97380<br>
           <a href="tel:+15415550134">(541) 555-0134</a></p>
         <button class="stormtoggle" data-stormtoggle aria-pressed="false"><i></i>Storm Mode Off</button>
       </div>
-      <div><h4>The Store</h4><ul>
+      <div><h3>The Store</h3><ul>
         <li><a href="../merc.html">The Merc</a></li><li><a href="../yard.html">The Yard</a></li>
         <li><a href="../storm.html">Storm Ready</a></li><li><a href="../hunt.html">Hunt &amp; Field</a></li><li><a href="../local.html">Local Goods</a></li></ul></div>
-      <div><h4>Food</h4><ul>
+      <div><h3>Food</h3><ul>
         <li><a href="../bakery.html">Bakery + Kitchen</a></li><li><a href="../kitchen.html">Recipes</a></li><li><a href="../bakery.html#breakfast">Breakfast</a></li>
         <li><a href="../bakery.html#lunch">Lunch</a></li><li><a href="../bakery.html#order">Order pickup</a></li></ul></div>
-      <div><h4>Twisted Roots</h4><ul>
+      <div><h3>Twisted Roots</h3><ul>
         <li><a href="../roots.html">Our Roots</a></li><li><a href="../journal.html">The Board</a></li><li><a href="../visit.html">Visit &amp; Hours</a></li>
         <li><a href="#" data-tellus="true">What should we carry?</a></li><li><a href="../hq.html">Owner login</a></li></ul></div>
     </div>
@@ -182,6 +180,7 @@
   </div>
 </footer>
 
+<p id="trLive" class="visually-hidden" role="status" aria-live="polite"></p>
 <script>
 addEventListener("load", function () {
   var s = ["../assets/js/catalog.js?v=cdc9c20e", "../assets/js/cart.js?v=024fe1e6", "../assets/js/site.js?v=3787c0d1", "../assets/js/motion.js?v=bf716f00", "../assets/js/roots.js?v=93423d8d"], i = 0;

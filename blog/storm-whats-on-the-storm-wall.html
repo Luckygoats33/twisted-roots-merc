@@ -18,19 +18,17 @@
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png?v=ce873322">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/site.css?v=db82a4af">
-<link rel="stylesheet" href="../assets/css/motion.css?v=e4213a7b">
-<link rel="stylesheet" href="../assets/css/roots.css?v=42e7b082">
-<link rel="stylesheet" href="../assets/css/mobile.css?v=1c92929c">
-<link rel="stylesheet" href="../assets/css/polish.css?v=39f8e298">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap"></noscript>
+<link rel="stylesheet" href="../assets/css/bundle.css?v=bfaf2686">
 <link rel="stylesheet" href="../assets/css/print.css?v=65e49f4e" media="print">
-<link rel="stylesheet" href="../assets/css/perf.css?v=8af74f1b">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "What Is on the Storm Wall, and Why Each Thing Is There", "description": "Front left as you come in, arranged in the order you will need it, chosen by two people who have lost power for four days.", "articleSection": "Storm Ready", "keywords": "storm wall, merc, supplies, siletz, stock", "mainEntityOfPage": "https://twistedrootsmerc.com/blog/storm-whats-on-the-storm-wall.html", "author": {"@type": "Organization", "name": "Twisted Roots Merc"}, "publisher": {"@id": "https://twistedrootsmerc.com/#store"}, "isPartOf": {"@type": "Blog", "name": "Practical Notes", "url": "https://twistedrootsmerc.com/journal.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://twistedrootsmerc.com/"}, {"@type": "ListItem", "position": 2, "name": "Practical Notes", "item": "https://twistedrootsmerc.com/journal.html"}, {"@type": "ListItem", "position": 3, "name": "What Is on the Storm Wall, and Why Each Thing Is There", "item": "https://twistedrootsmerc.com/blog/storm-whats-on-the-storm-wall.html"}]}</script>
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="stormbar">
   <div class="wrap"><b>Storm Mode</b> <span>Wind advisory on the coast. Storm supplies stocked and the yard is open.</span> <a href="../storm.html">See storm stock →</a></div>
@@ -45,7 +43,7 @@
       <span class="brand-txt"><b>Twisted Roots</b><span>Siletz, Oregon</span></span>
     </a>
     <button class="burger" data-burger aria-expanded="false" aria-controls="siteNav" aria-label="Menu"><span class="burger__box" aria-hidden="true"><i></i><i></i><i></i></span><span class="burger__txt">Menu</span></button>
-    <nav class="nav" id="siteNav">
+    <nav class="nav" id="siteNav" aria-label="Main">
       <div class="navitem" data-navitem>
         <button class="navitem__top" data-subtoggle aria-expanded="false" aria-controls="sub-shop">Shop<i class="navitem__car" aria-hidden="true"></i></button>
         <div class="subnav" id="sub-shop">
@@ -83,11 +81,11 @@
   </div>
 </header>
 
-<main>
+<main id="main" tabindex="-1">
 
 <section class="band band--cream band--tight" style="padding-top:clamp(40px,5vw,72px)">
   <div class="wrap--mid">
-    <nav class="serif-caps muted" style="margin-bottom:22px">
+    <nav class="serif-caps muted" style="margin-bottom:22px" aria-label="Breadcrumb">
       <a href="../index.html" style="text-decoration:none">Home</a> &nbsp;/&nbsp;
       <a href="../journal.html" style="text-decoration:none">Notes</a> &nbsp;/&nbsp;
       <a href="../journal.html#storm-ready" style="text-decoration:none">Storm Ready</a>
@@ -101,22 +99,22 @@
 
 <article class="band band--paper" style="padding-top:clamp(34px,4vw,56px)">
   <div class="wrap--narrow tr-prose">
-    <p>The storm wall is the first thing on your left when you come in the front door of the merc. It is there rather than in a back corner because when somebody comes through that door in a wind advisory, they are not in the mood to hunt for it.</p><p>Everything on it was picked the same way Eric picked the <a href="../merc.html#fixit">Fix It</a> wall: one good version of each thing rather than six mediocre ones, and nothing on it that neither of us would use at our own house.</p><h2>How it is arranged</h2><p>Left to right, roughly in the order the problems arrive.</p><table><thead><tr><th>Section</th><th>What is there</th><th>Why it is in that spot</th></tr></thead><tbody><tr><td>Power and light</td><td>Headlamps, lanterns, flashlights, AA, AAA and D, power banks, cords</td><td>The first thing that fails and the first thing anybody asks for</td></tr><tr><td>Information</td><td>Hand-crank NOAA radios</td><td>Next to the lights because it is the next thing you want</td></tr><tr><td>Water</td><td>Five-gallon jugs, bottled by the case, filters</td><td>Wells go down with the power. Stacked by the door in storm mode</td></tr><tr><td>Food that needs nothing</td><td>Emergency bars, canned, and the manual can opener</td><td>The can opener is on a hook at eye level on purpose</td></tr><tr><td>Warmth</td><td>Wool blankets, mylar sheets, hand warmers, wool socks, ponchos</td><td>Day three is a warmth problem, not a light problem</td></tr><tr><td>Keeping the house dry</td><td>Tarps in two sizes, poly sheeting, rope, straps, duct and repair tape</td><td>Tarps go on a pallet on the floor when storm mode is on</td></tr><tr><td>Trees and the generator</td><td>Bar and chain oil, two-cycle mix, files, gas cans, stabilizer, gloves, glasses</td><td>Bar oil is the item that runs out first, every single time</td></tr><tr><td>First aid, sanitation and pets</td><td>Kits, emergency toilet kits, pet kits, dog and cat food</td><td>The half nobody plans for and everybody needs</td></tr></tbody></table><h2>The items people are surprised by</h2><ul><li><strong>Bar and chain oil, by the case.</strong> Because on the morning after a blow every saw in the valley is running and nobody has any. It is the most reliably sold-out item on this coast.</li><li><strong>The manual can opener.</strong> The most forgotten object in emergency preparedness. It costs a few dollars and its absence ruins a pantry.</li><li><strong>D cells.</strong> Nobody owns D cells anymore until they find the old lantern in the garage that takes four of them.</li><li><strong>Wool socks.</strong> Not glamorous. Genuinely one of the highest-value items on the wall — dry feet is most of being warm.</li><li><strong>The emergency toilet kit.</strong> Which people avoid looking at and then thank us for, because a bucket takes the entire load off a <a href="storm-septic-in-a-flood.html">saturated septic system</a>.</li><li><strong>Fuel stabilizer.</strong> Two dollars of prevention against the single most common reason a generator will not start.</li></ul><h2>What Storm Mode does to it</h2><p>When the forecast turns, Carrie hits one button behind the counter and the reorder minimums jump. AA goes from ten packs to a hundred. Tarps go from ten to twenty-five. Bar oil goes from six to twenty-four. Propane cylinders go from eight to thirty-six. The wall gets refaced, the water gets stacked by the door, and the tarp pallet comes out onto the floor.</p><p>The same button rescales the bars on <a href="../storm.html">the storm page</a>, so when it says low, it means low for a storm week rather than low for an ordinary Tuesday. That is worth knowing before you drive over, because it is the difference between a wasted trip and a useful one.</p><h2>What is not on it, and where it is instead</h2><p>Lumber, plywood, gravel and sand are out in <a href="../yard.html">the yard</a>. Sealants, fasteners, cords, tape, tools and the CO alarms are on the <a href="../merc.html#fixit">Fix It</a> side. The packable, light versions — bivvies, ferro rods, pump filters, compasses — are over on <a href="../hunt.html">Hunt &amp; Field</a>, which is where the go-bag things naturally live.</p><h2>The wall is written by the neighbors</h2><p>Most of what is on it got there because somebody stood at the counter in a windstorm and asked for something we did not have. Carrie writes those down and the ones that come up more than once go on the shelf permanently, for everybody.</p><p>So if you come in during a blow and we do not have the thing you needed, that is the single most useful thing you can tell us. <a href="../visit.html">Come see us</a>, or leave a note. It is a small store and it gets better one item at a time.</p>
+    <p>The storm wall is the first thing on your left when you come in the front door of the merc. It is there rather than in a back corner because when somebody comes through that door in a wind advisory, they are not in the mood to hunt for it.</p><p>Everything on it was picked the same way Eric picked the <a href="../merc.html#fixit">Fix It</a> wall: one good version of each thing rather than six mediocre ones, and nothing on it that neither of us would use at our own house.</p><h2>How it is arranged</h2><p>Left to right, roughly in the order the problems arrive.</p><table><thead><tr><th scope="col">Section</th><th scope="col">What is there</th><th scope="col">Why it is in that spot</th></tr></thead><tbody><tr><td>Power and light</td><td>Headlamps, lanterns, flashlights, AA, AAA and D, power banks, cords</td><td>The first thing that fails and the first thing anybody asks for</td></tr><tr><td>Information</td><td>Hand-crank NOAA radios</td><td>Next to the lights because it is the next thing you want</td></tr><tr><td>Water</td><td>Five-gallon jugs, bottled by the case, filters</td><td>Wells go down with the power. Stacked by the door in storm mode</td></tr><tr><td>Food that needs nothing</td><td>Emergency bars, canned, and the manual can opener</td><td>The can opener is on a hook at eye level on purpose</td></tr><tr><td>Warmth</td><td>Wool blankets, mylar sheets, hand warmers, wool socks, ponchos</td><td>Day three is a warmth problem, not a light problem</td></tr><tr><td>Keeping the house dry</td><td>Tarps in two sizes, poly sheeting, rope, straps, duct and repair tape</td><td>Tarps go on a pallet on the floor when storm mode is on</td></tr><tr><td>Trees and the generator</td><td>Bar and chain oil, two-cycle mix, files, gas cans, stabilizer, gloves, glasses</td><td>Bar oil is the item that runs out first, every single time</td></tr><tr><td>First aid, sanitation and pets</td><td>Kits, emergency toilet kits, pet kits, dog and cat food</td><td>The half nobody plans for and everybody needs</td></tr></tbody></table><h2>The items people are surprised by</h2><ul><li><strong>Bar and chain oil, by the case.</strong> Because on the morning after a blow every saw in the valley is running and nobody has any. It is the most reliably sold-out item on this coast.</li><li><strong>The manual can opener.</strong> The most forgotten object in emergency preparedness. It costs a few dollars and its absence ruins a pantry.</li><li><strong>D cells.</strong> Nobody owns D cells anymore until they find the old lantern in the garage that takes four of them.</li><li><strong>Wool socks.</strong> Not glamorous. Genuinely one of the highest-value items on the wall — dry feet is most of being warm.</li><li><strong>The emergency toilet kit.</strong> Which people avoid looking at and then thank us for, because a bucket takes the entire load off a <a href="storm-septic-in-a-flood.html">saturated septic system</a>.</li><li><strong>Fuel stabilizer.</strong> Two dollars of prevention against the single most common reason a generator will not start.</li></ul><h2>What Storm Mode does to it</h2><p>When the forecast turns, Carrie hits one button behind the counter and the reorder minimums jump. AA goes from ten packs to a hundred. Tarps go from ten to twenty-five. Bar oil goes from six to twenty-four. Propane cylinders go from eight to thirty-six. The wall gets refaced, the water gets stacked by the door, and the tarp pallet comes out onto the floor.</p><p>The same button rescales the bars on <a href="../storm.html">the storm page</a>, so when it says low, it means low for a storm week rather than low for an ordinary Tuesday. That is worth knowing before you drive over, because it is the difference between a wasted trip and a useful one.</p><h2>What is not on it, and where it is instead</h2><p>Lumber, plywood, gravel and sand are out in <a href="../yard.html">the yard</a>. Sealants, fasteners, cords, tape, tools and the CO alarms are on the <a href="../merc.html#fixit">Fix It</a> side. The packable, light versions — bivvies, ferro rods, pump filters, compasses — are over on <a href="../hunt.html">Hunt &amp; Field</a>, which is where the go-bag things naturally live.</p><h2>The wall is written by the neighbors</h2><p>Most of what is on it got there because somebody stood at the counter in a windstorm and asked for something we did not have. Carrie writes those down and the ones that come up more than once go on the shelf permanently, for everybody.</p><p>So if you come in during a blow and we do not have the thing you needed, that is the single most useful thing you can tell us. <a href="../visit.html">Come see us</a>, or leave a note. It is a small store and it gets better one item at a time.</p>
   </div>
 </article>
+
 
 <section class="band band--bark band--dark band--tight">
   <div class="wrap--mid">
     <div class="split split--top">
       <div>
-        <p class="eyebrow">While you're here</p>
-        <h2 class="h2 mb0">Need any of this today?</h2>
+        <p class="eyebrow">From the shelf</p>
+        <h2 class="h2 mb0">What this takes</h2>
       </div>
       <div>
-        <p class="lede mb0">Check what is on the shelf before you drive over, or tell us what we
-          should be carrying.</p>
-        <div class="btnrow" style="margin-top:20px">
-          <a class="btn btn--amber" href="../storm.html">Shop now</a>
+        <p class="lede mb0">Counts come off the register. If it says two left, there are two left.</p>
+        <div class="pillrow"><a class="pill" href="../shop.html?dept=storm" style="text-decoration:none">The storm wall, live</a><a class="pill" href="../storm.html" style="text-decoration:none">Why each thing is on it</a></div>
+        <div class="btnrow" style="margin-top:18px">
           <button class="btn btn--ghost" data-tellus="true">Tell Carrie &amp; Eric</button>
         </div>
       </div>
@@ -159,18 +157,18 @@
   <div class="wrap">
     <div class="foot-top">
       <div>
-        <img src="../assets/img/logo-foot.webp?v=34aebc6d" alt="Twisted Roots Merc" width="440" height="371" loading="lazy" decoding="async">
+        <img src="../assets/img/logo-foot.webp?v=34aebc6d" srcset="../assets/img/logo-foot-190.webp 190w, ../assets/img/logo-foot-380.webp 380w, ../assets/img/logo-foot.webp 440w" sizes="190px" width="440" height="371" alt="Twisted Roots Merc" loading="lazy" decoding="async">
         <p class="small" style="opacity:.8">Mercantile · Bakery · Kitchen<br>101 &amp; 151 N Gaither St, Siletz, Oregon 97380<br>
           <a href="tel:+15415550134">(541) 555-0134</a></p>
         <button class="stormtoggle" data-stormtoggle aria-pressed="false"><i></i>Storm Mode Off</button>
       </div>
-      <div><h4>The Store</h4><ul>
+      <div><h3>The Store</h3><ul>
         <li><a href="../merc.html">The Merc</a></li><li><a href="../yard.html">The Yard</a></li>
         <li><a href="../storm.html">Storm Ready</a></li><li><a href="../hunt.html">Hunt &amp; Field</a></li><li><a href="../local.html">Local Goods</a></li></ul></div>
-      <div><h4>Food</h4><ul>
+      <div><h3>Food</h3><ul>
         <li><a href="../bakery.html">Bakery + Kitchen</a></li><li><a href="../kitchen.html">Recipes</a></li><li><a href="../bakery.html#breakfast">Breakfast</a></li>
         <li><a href="../bakery.html#lunch">Lunch</a></li><li><a href="../bakery.html#order">Order pickup</a></li></ul></div>
-      <div><h4>Twisted Roots</h4><ul>
+      <div><h3>Twisted Roots</h3><ul>
         <li><a href="../roots.html">Our Roots</a></li><li><a href="../journal.html">The Board</a></li><li><a href="../visit.html">Visit &amp; Hours</a></li>
         <li><a href="#" data-tellus="true">What should we carry?</a></li><li><a href="../hq.html">Owner login</a></li></ul></div>
     </div>
@@ -182,6 +180,7 @@
   </div>
 </footer>
 
+<p id="trLive" class="visually-hidden" role="status" aria-live="polite"></p>
 <script>
 addEventListener("load", function () {
   var s = ["../assets/js/catalog.js?v=cdc9c20e", "../assets/js/cart.js?v=024fe1e6", "../assets/js/site.js?v=3787c0d1", "../assets/js/motion.js?v=bf716f00", "../assets/js/roots.js?v=93423d8d"], i = 0;

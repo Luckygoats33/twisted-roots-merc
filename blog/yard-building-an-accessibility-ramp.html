@@ -18,19 +18,17 @@
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png?v=ce873322">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/site.css?v=db82a4af">
-<link rel="stylesheet" href="../assets/css/motion.css?v=e4213a7b">
-<link rel="stylesheet" href="../assets/css/roots.css?v=42e7b082">
-<link rel="stylesheet" href="../assets/css/mobile.css?v=1c92929c">
-<link rel="stylesheet" href="../assets/css/polish.css?v=39f8e298">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap"></noscript>
+<link rel="stylesheet" href="../assets/css/bundle.css?v=bfaf2686">
 <link rel="stylesheet" href="../assets/css/print.css?v=65e49f4e" media="print">
-<link rel="stylesheet" href="../assets/css/perf.css?v=8af74f1b">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Building a Ramp Somebody Can Actually Use", "description": "One inch of rise per foot of run, a level landing at both ends, and a rail. The slope people guess at is usually twice too steep.", "articleSection": "The Yard", "keywords": "ramp, accessibility, slope, landing, wheelchair", "mainEntityOfPage": "https://twistedrootsmerc.com/blog/yard-building-an-accessibility-ramp.html", "author": {"@type": "Organization", "name": "Twisted Roots Merc"}, "publisher": {"@id": "https://twistedrootsmerc.com/#store"}, "isPartOf": {"@type": "Blog", "name": "Practical Notes", "url": "https://twistedrootsmerc.com/journal.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://twistedrootsmerc.com/"}, {"@type": "ListItem", "position": 2, "name": "Practical Notes", "item": "https://twistedrootsmerc.com/journal.html"}, {"@type": "ListItem", "position": 3, "name": "Building a Ramp Somebody Can Actually Use", "item": "https://twistedrootsmerc.com/blog/yard-building-an-accessibility-ramp.html"}]}</script>
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="stormbar">
   <div class="wrap"><b>Storm Mode</b> <span>Wind advisory on the coast. Storm supplies stocked and the yard is open.</span> <a href="../storm.html">See storm stock →</a></div>
@@ -45,7 +43,7 @@
       <span class="brand-txt"><b>Twisted Roots</b><span>Siletz, Oregon</span></span>
     </a>
     <button class="burger" data-burger aria-expanded="false" aria-controls="siteNav" aria-label="Menu"><span class="burger__box" aria-hidden="true"><i></i><i></i><i></i></span><span class="burger__txt">Menu</span></button>
-    <nav class="nav" id="siteNav">
+    <nav class="nav" id="siteNav" aria-label="Main">
       <div class="navitem" data-navitem>
         <button class="navitem__top" data-subtoggle aria-expanded="false" aria-controls="sub-shop">Shop<i class="navitem__car" aria-hidden="true"></i></button>
         <div class="subnav" id="sub-shop">
@@ -83,11 +81,11 @@
   </div>
 </header>
 
-<main>
+<main id="main" tabindex="-1">
 
 <section class="band band--cream band--tight" style="padding-top:clamp(40px,5vw,72px)">
   <div class="wrap--mid">
-    <nav class="serif-caps muted" style="margin-bottom:22px">
+    <nav class="serif-caps muted" style="margin-bottom:22px" aria-label="Breadcrumb">
       <a href="../index.html" style="text-decoration:none">Home</a> &nbsp;/&nbsp;
       <a href="../journal.html" style="text-decoration:none">Notes</a> &nbsp;/&nbsp;
       <a href="../journal.html#the-yard" style="text-decoration:none">The Yard</a>
@@ -101,22 +99,22 @@
 
 <article class="band band--paper" style="padding-top:clamp(34px,4vw,56px)">
   <div class="wrap--narrow tr-prose">
-    <p>Ramps get built in a hurry, usually because somebody came home from the hospital and the front steps became a problem overnight. Built in a hurry, they are almost always too steep, and a ramp that is too steep is not usable by the person it was built for and is dangerous for whoever is pushing.</p><h2>The slope number</h2><p>One inch of rise for every twelve inches of run. That is the standard, written as 1:12, and it is the number to build to. It sounds gentle until you do the arithmetic.</p><table><thead><tr><th>Rise to overcome</th><th>Ramp length at 1:12</th><th>Landings needed</th></tr></thead><tbody><tr><td>6 in</td><td>6 ft</td><td>Top and bottom</td></tr><tr><td>12 in</td><td>12 ft</td><td>Top and bottom</td></tr><tr><td>18 in</td><td>18 ft</td><td>Top, bottom, one intermediate</td></tr><tr><td>24 in</td><td>24 ft</td><td>Top, bottom, one intermediate</td></tr><tr><td>30 in</td><td>30 ft</td><td>Top, bottom, two intermediate</td></tr><tr><td>36 in</td><td>36 ft</td><td>Top, bottom, two intermediate</td></tr></tbody></table><p>Thirty-six feet of ramp for a three foot porch surprises everybody. That is why real ramps switch back. A single run should not rise more than 30 inches, which means 30 feet, before it hits a level landing.</p><h2>The other dimensions</h2><ul><li><strong>Clear width:</strong> 36 inches minimum between the rails. Build the deck at 40 inches wide and you have room for the rail posts.</li><li><strong>Landings:</strong> 60 by 60 inches at the top, at the bottom, and at every turn. A turn landing needs to be big enough to pivot a chair, which is why 60 inches is not negotiable.</li><li><strong>Cross slope:</strong> as close to zero as you can manage. A ramp that tilts sideways steers a chair into the rail.</li><li><strong>Handrails:</strong> both sides, 34 to 38 inches above the ramp surface, graspable, continuous, extending 12 inches past the ends.</li><li><strong>Edge protection:</strong> a 2 inch curb or a bottom rail so a wheel cannot roll off the side.</li><li><strong>Surface:</strong> non-slip. This is a coastal ramp. It will be wet and it will grow algae.</li></ul><h2>Framing it</h2><p>A ramp is a deck on a slope. Joists at 16 inches on center, decking across, posts and footings under the beams, same as any deck. Treated ground contact material everywhere, because the underside of a ramp is the definition of a place that never dries.</p><p>Run the decking perpendicular to the direction of travel, with the gaps at 1/8 to 1/4 inch. Wider gaps catch small caster wheels and cane tips. Run the boards crown up so water sheds.</p><h2>The surface, which matters most here</h2><p>Wet wood on a slope in the shade is genuinely slippery, and by the second winter it will have a film of algae. Options, roughly in order of effectiveness: adhesive grit strips on every board, a grit additive mixed into an exterior paint or deck coating, roofing shingle strips fastened down, or expanded metal mesh. The grit-in-paint approach is the most common and needs redoing every few years.</p><p>Whatever you choose, budget for cleaning it. See <a href="yard-moss-and-cleaning-outdoor-wood.html">the moss piece</a>.</p><h2>Where to be honest</h2><p>Permanent ramps are permitted construction in Lincoln County and they should be. There are also good alternatives worth considering first: a modular aluminum ramp that can be rented or bought and reconfigured, or a threshold ramp if the rise is only a few inches. For a temporary situation, rental is often the right call and nobody at a lumber counter is going to mention it.</p><p>And this is a case where a bad build is worse than none. If you are not confident, ask around. There are volunteer groups and church crews in Lincoln County that build ramps, and local contractors who have done a dozen of them.</p><p>Treated framing to eight feet, decking, gravel and concrete are <a href="../yard.html">in the Yard</a>. Anything past eight feet, which a ramp certainly is, comes from Siletz River Lumber. Ask us for the number and we will give it to you.</p>
+    <p>Ramps get built in a hurry, usually because somebody came home from the hospital and the front steps became a problem overnight. Built in a hurry, they are almost always too steep, and a ramp that is too steep is not usable by the person it was built for and is dangerous for whoever is pushing.</p><h2>The slope number</h2><p>One inch of rise for every twelve inches of run. That is the standard, written as 1:12, and it is the number to build to. It sounds gentle until you do the arithmetic.</p><table><thead><tr><th scope="col">Rise to overcome</th><th scope="col">Ramp length at 1:12</th><th scope="col">Landings needed</th></tr></thead><tbody><tr><td>6 in</td><td>6 ft</td><td>Top and bottom</td></tr><tr><td>12 in</td><td>12 ft</td><td>Top and bottom</td></tr><tr><td>18 in</td><td>18 ft</td><td>Top, bottom, one intermediate</td></tr><tr><td>24 in</td><td>24 ft</td><td>Top, bottom, one intermediate</td></tr><tr><td>30 in</td><td>30 ft</td><td>Top, bottom, two intermediate</td></tr><tr><td>36 in</td><td>36 ft</td><td>Top, bottom, two intermediate</td></tr></tbody></table><p>Thirty-six feet of ramp for a three foot porch surprises everybody. That is why real ramps switch back. A single run should not rise more than 30 inches, which means 30 feet, before it hits a level landing.</p><h2>The other dimensions</h2><ul><li><strong>Clear width:</strong> 36 inches minimum between the rails. Build the deck at 40 inches wide and you have room for the rail posts.</li><li><strong>Landings:</strong> 60 by 60 inches at the top, at the bottom, and at every turn. A turn landing needs to be big enough to pivot a chair, which is why 60 inches is not negotiable.</li><li><strong>Cross slope:</strong> as close to zero as you can manage. A ramp that tilts sideways steers a chair into the rail.</li><li><strong>Handrails:</strong> both sides, 34 to 38 inches above the ramp surface, graspable, continuous, extending 12 inches past the ends.</li><li><strong>Edge protection:</strong> a 2 inch curb or a bottom rail so a wheel cannot roll off the side.</li><li><strong>Surface:</strong> non-slip. This is a coastal ramp. It will be wet and it will grow algae.</li></ul><h2>Framing it</h2><p>A ramp is a deck on a slope. Joists at 16 inches on center, decking across, posts and footings under the beams, same as any deck. Treated ground contact material everywhere, because the underside of a ramp is the definition of a place that never dries.</p><p>Run the decking perpendicular to the direction of travel, with the gaps at 1/8 to 1/4 inch. Wider gaps catch small caster wheels and cane tips. Run the boards crown up so water sheds.</p><h2>The surface, which matters most here</h2><p>Wet wood on a slope in the shade is genuinely slippery, and by the second winter it will have a film of algae. Options, roughly in order of effectiveness: adhesive grit strips on every board, a grit additive mixed into an exterior paint or deck coating, roofing shingle strips fastened down, or expanded metal mesh. The grit-in-paint approach is the most common and needs redoing every few years.</p><p>Whatever you choose, budget for cleaning it. See <a href="yard-moss-and-cleaning-outdoor-wood.html">the moss piece</a>.</p><h2>Where to be honest</h2><p>Permanent ramps are permitted construction in Lincoln County and they should be. There are also good alternatives worth considering first: a modular aluminum ramp that can be rented or bought and reconfigured, or a threshold ramp if the rise is only a few inches. For a temporary situation, rental is often the right call and nobody at a lumber counter is going to mention it.</p><p>And this is a case where a bad build is worse than none. If you are not confident, ask around. There are volunteer groups and church crews in Lincoln County that build ramps, and local contractors who have done a dozen of them.</p><p>Treated framing to eight feet, decking, gravel and concrete are <a href="../yard.html">in the Yard</a>. Anything past eight feet, which a ramp certainly is, comes from Siletz River Lumber. Ask us for the number and we will give it to you.</p>
   </div>
 </article>
+
 
 <section class="band band--bark band--dark band--tight">
   <div class="wrap--mid">
     <div class="split split--top">
       <div>
-        <p class="eyebrow">While you're here</p>
-        <h2 class="h2 mb0">Need any of this today?</h2>
+        <p class="eyebrow">From the shelf</p>
+        <h2 class="h2 mb0">What this takes</h2>
       </div>
       <div>
-        <p class="lede mb0">Check what is on the shelf before you drive over, or tell us what we
-          should be carrying.</p>
-        <div class="btnrow" style="margin-top:20px">
-          <a class="btn btn--amber" href="../yard.html">Shop now</a>
+        <p class="lede mb0">Counts come off the register. If it says two left, there are two left.</p>
+        <div class="pillrow"><a class="pill" href="../shop.html?q=pressure+treated" style="text-decoration:none">Pressure treated lumber for a ramp</a><a class="pill" href="../yard.html#kits" style="text-decoration:none">Project kits and what they include</a></div>
+        <div class="btnrow" style="margin-top:18px">
           <button class="btn btn--ghost" data-tellus="true">Tell Carrie &amp; Eric</button>
         </div>
       </div>
@@ -159,18 +157,18 @@
   <div class="wrap">
     <div class="foot-top">
       <div>
-        <img src="../assets/img/logo-foot.webp?v=34aebc6d" alt="Twisted Roots Merc" width="440" height="371" loading="lazy" decoding="async">
+        <img src="../assets/img/logo-foot.webp?v=34aebc6d" srcset="../assets/img/logo-foot-190.webp 190w, ../assets/img/logo-foot-380.webp 380w, ../assets/img/logo-foot.webp 440w" sizes="190px" width="440" height="371" alt="Twisted Roots Merc" loading="lazy" decoding="async">
         <p class="small" style="opacity:.8">Mercantile · Bakery · Kitchen<br>101 &amp; 151 N Gaither St, Siletz, Oregon 97380<br>
           <a href="tel:+15415550134">(541) 555-0134</a></p>
         <button class="stormtoggle" data-stormtoggle aria-pressed="false"><i></i>Storm Mode Off</button>
       </div>
-      <div><h4>The Store</h4><ul>
+      <div><h3>The Store</h3><ul>
         <li><a href="../merc.html">The Merc</a></li><li><a href="../yard.html">The Yard</a></li>
         <li><a href="../storm.html">Storm Ready</a></li><li><a href="../hunt.html">Hunt &amp; Field</a></li><li><a href="../local.html">Local Goods</a></li></ul></div>
-      <div><h4>Food</h4><ul>
+      <div><h3>Food</h3><ul>
         <li><a href="../bakery.html">Bakery + Kitchen</a></li><li><a href="../kitchen.html">Recipes</a></li><li><a href="../bakery.html#breakfast">Breakfast</a></li>
         <li><a href="../bakery.html#lunch">Lunch</a></li><li><a href="../bakery.html#order">Order pickup</a></li></ul></div>
-      <div><h4>Twisted Roots</h4><ul>
+      <div><h3>Twisted Roots</h3><ul>
         <li><a href="../roots.html">Our Roots</a></li><li><a href="../journal.html">The Board</a></li><li><a href="../visit.html">Visit &amp; Hours</a></li>
         <li><a href="#" data-tellus="true">What should we carry?</a></li><li><a href="../hq.html">Owner login</a></li></ul></div>
     </div>
@@ -182,6 +180,7 @@
   </div>
 </footer>
 
+<p id="trLive" class="visually-hidden" role="status" aria-live="polite"></p>
 <script>
 addEventListener("load", function () {
   var s = ["../assets/js/catalog.js?v=cdc9c20e", "../assets/js/cart.js?v=024fe1e6", "../assets/js/site.js?v=3787c0d1", "../assets/js/motion.js?v=bf716f00", "../assets/js/roots.js?v=93423d8d"], i = 0;

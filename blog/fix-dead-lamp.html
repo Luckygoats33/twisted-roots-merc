@@ -18,19 +18,17 @@
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png?v=ce873322">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/site.css?v=db82a4af">
-<link rel="stylesheet" href="../assets/css/motion.css?v=e4213a7b">
-<link rel="stylesheet" href="../assets/css/roots.css?v=42e7b082">
-<link rel="stylesheet" href="../assets/css/mobile.css?v=1c92929c">
-<link rel="stylesheet" href="../assets/css/polish.css?v=39f8e298">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap"></noscript>
+<link rel="stylesheet" href="../assets/css/bundle.css?v=bfaf2686">
 <link rel="stylesheet" href="../assets/css/print.css?v=65e49f4e" media="print">
-<link rel="stylesheet" href="../assets/css/perf.css?v=8af74f1b">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "A Lamp That Stopped Working", "description": "Four things it can be, in the order to check them, and the one that means you should buy a new lamp instead.", "articleSection": "Fix It", "keywords": "lamp, electrical, repair, cord, socket", "mainEntityOfPage": "https://twistedrootsmerc.com/blog/fix-dead-lamp.html", "author": {"@type": "Organization", "name": "Twisted Roots Merc"}, "publisher": {"@id": "https://twistedrootsmerc.com/#store"}, "isPartOf": {"@type": "Blog", "name": "Practical Notes", "url": "https://twistedrootsmerc.com/journal.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://twistedrootsmerc.com/"}, {"@type": "ListItem", "position": 2, "name": "Practical Notes", "item": "https://twistedrootsmerc.com/journal.html"}, {"@type": "ListItem", "position": 3, "name": "A Lamp That Stopped Working", "item": "https://twistedrootsmerc.com/blog/fix-dead-lamp.html"}]}</script>
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="stormbar">
   <div class="wrap"><b>Storm Mode</b> <span>Wind advisory on the coast. Storm supplies stocked and the yard is open.</span> <a href="../storm.html">See storm stock →</a></div>
@@ -45,7 +43,7 @@
       <span class="brand-txt"><b>Twisted Roots</b><span>Siletz, Oregon</span></span>
     </a>
     <button class="burger" data-burger aria-expanded="false" aria-controls="siteNav" aria-label="Menu"><span class="burger__box" aria-hidden="true"><i></i><i></i><i></i></span><span class="burger__txt">Menu</span></button>
-    <nav class="nav" id="siteNav">
+    <nav class="nav" id="siteNav" aria-label="Main">
       <div class="navitem" data-navitem>
         <button class="navitem__top" data-subtoggle aria-expanded="false" aria-controls="sub-shop">Shop<i class="navitem__car" aria-hidden="true"></i></button>
         <div class="subnav" id="sub-shop">
@@ -83,11 +81,11 @@
   </div>
 </header>
 
-<main>
+<main id="main" tabindex="-1">
 
 <section class="band band--cream band--tight" style="padding-top:clamp(40px,5vw,72px)">
   <div class="wrap--mid">
-    <nav class="serif-caps muted" style="margin-bottom:22px">
+    <nav class="serif-caps muted" style="margin-bottom:22px" aria-label="Breadcrumb">
       <a href="../index.html" style="text-decoration:none">Home</a> &nbsp;/&nbsp;
       <a href="../journal.html" style="text-decoration:none">Notes</a> &nbsp;/&nbsp;
       <a href="../journal.html#fix-it" style="text-decoration:none">Fix It</a>
@@ -101,22 +99,22 @@
 
 <article class="band band--paper" style="padding-top:clamp(34px,4vw,56px)">
   <div class="wrap--narrow tr-prose">
-    <p>A table lamp is about as simple as electrical gets: a plug, a cord, a switch and a socket. When one dies it is one of those four, and you can work through all of them in fifteen minutes. Unplug it first. Everything below assumes the cord is out of the wall and stays out of the wall.</p><h3>What you need</h3><ul><li>A known-good bulb</li><li>A small flathead screwdriver</li><li>Replacement socket or a lamp cord set, if it comes to that</li><li>Electrical tape</li></ul><h2>Work through it in order</h2><ol><li><strong>The bulb.</strong> Obvious, and it is the answer often enough to be worth doing first. Try a bulb you know works, from a lamp that is currently on.</li><li><strong>The outlet.</strong> Plug something else in. In a bathroom, garage or kitchen, check for a tripped GFCI, possibly one in another room entirely. Also check whether the outlet is controlled by a wall switch, which is the classic ten minutes wasted.</li><li><strong>The cord and plug.</strong> Run your hand along the whole cord. Look for cuts, flat spots where a chair leg has been parked, and especially the last few inches at the plug and where it enters the lamp base. That is where flexing breaks conductors. A cord that only works at a certain angle is broken inside and it will arc.</li><li><strong>The socket.</strong> Unplugged, look down into it. There is a small brass tab at the bottom that should be angled up. Bulbs flatten it over time and then they no longer make contact. Pry it up gently with a screwdriver, unplugged, and try again. This fixes a startling number of dead lamps.</li><li><strong>The switch.</strong> If it feels loose, spins freely, or clicks without doing anything, the socket assembly has failed. Sockets and switches are usually one unit and you replace the whole thing.</li></ol><h2>Replacing a socket</h2><p>Sockets come apart. There is an outer shell that presses onto a cap, usually marked PRESS at the base. Push in hard at that spot while pulling and the shell comes off, exposing an insulating sleeve and then the two screws.</p><ol><li>Note which wire went to which screw. The neutral, marked with ribs or a stripe on the cord, goes to the silver screw. The smooth conductor goes to brass.</li><li>Loosen both screws and free the wires.</li><li>Tie an underwriter's knot in the cord inside the cap: a simple loop in each conductor passed through the other, pulled snug. It takes strain off the terminals when somebody tugs the cord, which they will.</li><li>Hook each wire clockwise under its screw, tighten firmly.</li><li>Sleeve on, shell on, press until it clicks.</li></ol><p>Getting neutral and hot correct matters even on a lamp. The neutral feeds the threaded shell that your fingers touch when changing a bulb. Wired backwards, that shell is hot.</p><h2>When the answer is a new lamp</h2><table><thead><tr><th>What you find</th><th>Verdict</th></tr></thead><tbody><tr><td>Flattened contact tab</td><td>Bend it up, free fix</td></tr><tr><td>Failed switch or socket</td><td>Replace socket, worth doing</td></tr><tr><td>Frayed cord near the plug</td><td>Replace the whole cord set</td></tr><tr><td>Cloth-covered cord, brittle, crumbling</td><td>Rewire completely or retire it</td></tr><tr><td>Cracked or scorched socket shell</td><td>Replace immediately, do not use meanwhile</td></tr><tr><td>Cheap lamp, corroded base, loose everything</td><td>Not worth the parts</td></tr></tbody></table><p>An old lamp with a decent body is absolutely worth rewiring, and a complete cord and socket kit is under fifteen dollars. A vintage lamp with cloth-covered rubber wiring should be rewired before it is used at all, not after. That insulation turns to dust and the conductors end up touching inside the base.</p><h2>The coastal footnote</h2><p>Lamps in damp rooms and outbuildings corrode at the socket contacts. A green or white powder on the brass means the contact is going. Sometimes it cleans up with a fine abrasive, unplugged, but a corroded socket in a damp shop is worth replacing rather than nursing.</p><p>Sockets, cord sets, plugs, LED bulbs and electrical tape are all on <a href="../merc.html#fixit">the Fix It wall</a>. If the bulb is fine but the light is the wrong color, that is <a href="fix-led-bulbs-color-temperature.html">a different problem</a>.</p>
+    <p>A table lamp is about as simple as electrical gets: a plug, a cord, a switch and a socket. When one dies it is one of those four, and you can work through all of them in fifteen minutes. Unplug it first. Everything below assumes the cord is out of the wall and stays out of the wall.</p><h2 class="a11y-rank-h3">What you need</h2><ul><li>A known-good bulb</li><li>A small flathead screwdriver</li><li>Replacement socket or a lamp cord set, if it comes to that</li><li>Electrical tape</li></ul><h2>Work through it in order</h2><ol><li><strong>The bulb.</strong> Obvious, and it is the answer often enough to be worth doing first. Try a bulb you know works, from a lamp that is currently on.</li><li><strong>The outlet.</strong> Plug something else in. In a bathroom, garage or kitchen, check for a tripped GFCI, possibly one in another room entirely. Also check whether the outlet is controlled by a wall switch, which is the classic ten minutes wasted.</li><li><strong>The cord and plug.</strong> Run your hand along the whole cord. Look for cuts, flat spots where a chair leg has been parked, and especially the last few inches at the plug and where it enters the lamp base. That is where flexing breaks conductors. A cord that only works at a certain angle is broken inside and it will arc.</li><li><strong>The socket.</strong> Unplugged, look down into it. There is a small brass tab at the bottom that should be angled up. Bulbs flatten it over time and then they no longer make contact. Pry it up gently with a screwdriver, unplugged, and try again. This fixes a startling number of dead lamps.</li><li><strong>The switch.</strong> If it feels loose, spins freely, or clicks without doing anything, the socket assembly has failed. Sockets and switches are usually one unit and you replace the whole thing.</li></ol><h2>Replacing a socket</h2><p>Sockets come apart. There is an outer shell that presses onto a cap, usually marked PRESS at the base. Push in hard at that spot while pulling and the shell comes off, exposing an insulating sleeve and then the two screws.</p><ol><li>Note which wire went to which screw. The neutral, marked with ribs or a stripe on the cord, goes to the silver screw. The smooth conductor goes to brass.</li><li>Loosen both screws and free the wires.</li><li>Tie an underwriter's knot in the cord inside the cap: a simple loop in each conductor passed through the other, pulled snug. It takes strain off the terminals when somebody tugs the cord, which they will.</li><li>Hook each wire clockwise under its screw, tighten firmly.</li><li>Sleeve on, shell on, press until it clicks.</li></ol><p>Getting neutral and hot correct matters even on a lamp. The neutral feeds the threaded shell that your fingers touch when changing a bulb. Wired backwards, that shell is hot.</p><h2>When the answer is a new lamp</h2><table><thead><tr><th scope="col">What you find</th><th scope="col">Verdict</th></tr></thead><tbody><tr><td>Flattened contact tab</td><td>Bend it up, free fix</td></tr><tr><td>Failed switch or socket</td><td>Replace socket, worth doing</td></tr><tr><td>Frayed cord near the plug</td><td>Replace the whole cord set</td></tr><tr><td>Cloth-covered cord, brittle, crumbling</td><td>Rewire completely or retire it</td></tr><tr><td>Cracked or scorched socket shell</td><td>Replace immediately, do not use meanwhile</td></tr><tr><td>Cheap lamp, corroded base, loose everything</td><td>Not worth the parts</td></tr></tbody></table><p>An old lamp with a decent body is absolutely worth rewiring, and a complete cord and socket kit is under fifteen dollars. A vintage lamp with cloth-covered rubber wiring should be rewired before it is used at all, not after. That insulation turns to dust and the conductors end up touching inside the base.</p><h2>The coastal footnote</h2><p>Lamps in damp rooms and outbuildings corrode at the socket contacts. A green or white powder on the brass means the contact is going. Sometimes it cleans up with a fine abrasive, unplugged, but a corroded socket in a damp shop is worth replacing rather than nursing.</p><p>Sockets, cord sets, plugs, LED bulbs and electrical tape are all on <a href="../merc.html#fixit">the Fix It wall</a>. If the bulb is fine but the light is the wrong color, that is <a href="fix-led-bulbs-color-temperature.html">a different problem</a>.</p>
   </div>
 </article>
+
 
 <section class="band band--bark band--dark band--tight">
   <div class="wrap--mid">
     <div class="split split--top">
       <div>
-        <p class="eyebrow">While you're here</p>
-        <h2 class="h2 mb0">Need any of this today?</h2>
+        <p class="eyebrow">From the shelf</p>
+        <h2 class="h2 mb0">What this takes</h2>
       </div>
       <div>
-        <p class="lede mb0">Check what is on the shelf before you drive over, or tell us what we
-          should be carrying.</p>
-        <div class="btnrow" style="margin-top:20px">
-          <a class="btn btn--amber" href="../merc.html#fixit">Shop now</a>
+        <p class="lede mb0">Counts come off the register. If it says two left, there are two left.</p>
+        <div class="pillrow"><a class="pill" href="../shop.html?q=bulb" style="text-decoration:none">LED bulbs, before you rewire anything</a><a class="pill" href="../shop.html?q=screwdriver" style="text-decoration:none">Screwdrivers, phillips and flathead</a></div>
+        <div class="btnrow" style="margin-top:18px">
           <button class="btn btn--ghost" data-tellus="true">Tell Carrie &amp; Eric</button>
         </div>
       </div>
@@ -159,18 +157,18 @@
   <div class="wrap">
     <div class="foot-top">
       <div>
-        <img src="../assets/img/logo-foot.webp?v=34aebc6d" alt="Twisted Roots Merc" width="440" height="371" loading="lazy" decoding="async">
+        <img src="../assets/img/logo-foot.webp?v=34aebc6d" srcset="../assets/img/logo-foot-190.webp 190w, ../assets/img/logo-foot-380.webp 380w, ../assets/img/logo-foot.webp 440w" sizes="190px" width="440" height="371" alt="Twisted Roots Merc" loading="lazy" decoding="async">
         <p class="small" style="opacity:.8">Mercantile · Bakery · Kitchen<br>101 &amp; 151 N Gaither St, Siletz, Oregon 97380<br>
           <a href="tel:+15415550134">(541) 555-0134</a></p>
         <button class="stormtoggle" data-stormtoggle aria-pressed="false"><i></i>Storm Mode Off</button>
       </div>
-      <div><h4>The Store</h4><ul>
+      <div><h3>The Store</h3><ul>
         <li><a href="../merc.html">The Merc</a></li><li><a href="../yard.html">The Yard</a></li>
         <li><a href="../storm.html">Storm Ready</a></li><li><a href="../hunt.html">Hunt &amp; Field</a></li><li><a href="../local.html">Local Goods</a></li></ul></div>
-      <div><h4>Food</h4><ul>
+      <div><h3>Food</h3><ul>
         <li><a href="../bakery.html">Bakery + Kitchen</a></li><li><a href="../kitchen.html">Recipes</a></li><li><a href="../bakery.html#breakfast">Breakfast</a></li>
         <li><a href="../bakery.html#lunch">Lunch</a></li><li><a href="../bakery.html#order">Order pickup</a></li></ul></div>
-      <div><h4>Twisted Roots</h4><ul>
+      <div><h3>Twisted Roots</h3><ul>
         <li><a href="../roots.html">Our Roots</a></li><li><a href="../journal.html">The Board</a></li><li><a href="../visit.html">Visit &amp; Hours</a></li>
         <li><a href="#" data-tellus="true">What should we carry?</a></li><li><a href="../hq.html">Owner login</a></li></ul></div>
     </div>
@@ -182,6 +180,7 @@
   </div>
 </footer>
 
+<p id="trLive" class="visually-hidden" role="status" aria-live="polite"></p>
 <script>
 addEventListener("load", function () {
   var s = ["../assets/js/catalog.js?v=cdc9c20e", "../assets/js/cart.js?v=024fe1e6", "../assets/js/site.js?v=3787c0d1", "../assets/js/motion.js?v=bf716f00", "../assets/js/roots.js?v=93423d8d"], i = 0;

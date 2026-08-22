@@ -18,19 +18,17 @@
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png?v=ce873322">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/site.css?v=db82a4af">
-<link rel="stylesheet" href="../assets/css/motion.css?v=e4213a7b">
-<link rel="stylesheet" href="../assets/css/roots.css?v=42e7b082">
-<link rel="stylesheet" href="../assets/css/mobile.css?v=1c92929c">
-<link rel="stylesheet" href="../assets/css/polish.css?v=39f8e298">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap"></noscript>
+<link rel="stylesheet" href="../assets/css/bundle.css?v=bfaf2686">
 <link rel="stylesheet" href="../assets/css/print.css?v=65e49f4e" media="print">
-<link rel="stylesheet" href="../assets/css/perf.css?v=8af74f1b">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Building a Small Landing at the Bottom of the Stairs", "description": "The step at the bottom is where stairs rot and where people slip. A pad or a small platform fixes both.", "articleSection": "The Yard", "keywords": "landing, stairs, concrete, gravel, platform", "mainEntityOfPage": "https://twistedrootsmerc.com/blog/yard-building-a-small-landing.html", "author": {"@type": "Organization", "name": "Twisted Roots Merc"}, "publisher": {"@id": "https://twistedrootsmerc.com/#store"}, "isPartOf": {"@type": "Blog", "name": "Practical Notes", "url": "https://twistedrootsmerc.com/journal.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://twistedrootsmerc.com/"}, {"@type": "ListItem", "position": 2, "name": "Practical Notes", "item": "https://twistedrootsmerc.com/journal.html"}, {"@type": "ListItem", "position": 3, "name": "Building a Small Landing at the Bottom of the Stairs", "item": "https://twistedrootsmerc.com/blog/yard-building-a-small-landing.html"}]}</script>
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="stormbar">
   <div class="wrap"><b>Storm Mode</b> <span>Wind advisory on the coast. Storm supplies stocked and the yard is open.</span> <a href="../storm.html">See storm stock →</a></div>
@@ -45,7 +43,7 @@
       <span class="brand-txt"><b>Twisted Roots</b><span>Siletz, Oregon</span></span>
     </a>
     <button class="burger" data-burger aria-expanded="false" aria-controls="siteNav" aria-label="Menu"><span class="burger__box" aria-hidden="true"><i></i><i></i><i></i></span><span class="burger__txt">Menu</span></button>
-    <nav class="nav" id="siteNav">
+    <nav class="nav" id="siteNav" aria-label="Main">
       <div class="navitem" data-navitem>
         <button class="navitem__top" data-subtoggle aria-expanded="false" aria-controls="sub-shop">Shop<i class="navitem__car" aria-hidden="true"></i></button>
         <div class="subnav" id="sub-shop">
@@ -83,11 +81,11 @@
   </div>
 </header>
 
-<main>
+<main id="main" tabindex="-1">
 
 <section class="band band--cream band--tight" style="padding-top:clamp(40px,5vw,72px)">
   <div class="wrap--mid">
-    <nav class="serif-caps muted" style="margin-bottom:22px">
+    <nav class="serif-caps muted" style="margin-bottom:22px" aria-label="Breadcrumb">
       <a href="../index.html" style="text-decoration:none">Home</a> &nbsp;/&nbsp;
       <a href="../journal.html" style="text-decoration:none">Notes</a> &nbsp;/&nbsp;
       <a href="../journal.html#the-yard" style="text-decoration:none">The Yard</a>
@@ -101,22 +99,22 @@
 
 <article class="band band--paper" style="padding-top:clamp(34px,4vw,56px)">
   <div class="wrap--narrow tr-prose">
-    <p>Stringers ending in dirt is the most common stair detail out here and the worst one. The end grain of the stringer sits in soil, water splashes up onto the bottom tread, the mud gets slick, and in three years the bottom of the stairs is soft. A landing solves the whole cluster of problems and it is a half-day project.</p><h2>Three ways to do it</h2><table><thead><tr><th>Type</th><th>Cost</th><th>Time</th><th>Best when</th></tr></thead><tbody><tr><td>Compacted gravel pad</td><td>Lowest</td><td>2 to 3 hours</td><td>Casual back steps, good drainage matters</td></tr><tr><td>Concrete pad</td><td>Middle</td><td>Half day plus cure</td><td>Main entry, heavy traffic, wheeled things</td></tr><tr><td>Framed wood platform</td><td>Middle</td><td>Half day</td><td>Uneven ground, or you need height</td></tr></tbody></table><h2>Sizing it</h2><p>A landing should be at least as wide as the stairs and at least 36 inches deep in the direction of travel. If a door swings out over it, add the door swing plus a place to stand. If somebody carries groceries in, a landing that only fits both feet is not enough.</p><p>Slope it about a quarter inch per foot away from the house or the structure. Water on a flat landing sits, freezes on the two cold nights we get, and grows moss the rest of the time.</p><h2>The gravel pad version</h2><ol><li>Excavate 6 inches down, a little wider than the finished landing on all sides.</li><li>Lay landscape fabric in the hole. This is the step people skip and it is what keeps the gravel from disappearing into the clay over five years.</li><li>Fill with 4 inches of crushed gravel in two lifts, compacting each one. Crushed, angular gravel locks together. Round river rock does not and will always feel loose.</li><li>Top with a 1 inch layer of finer crushed material and compact again.</li><li>Set the stringer bottoms on a treated 2x block or a paver so the wood never touches the gravel directly.</li></ol><p>This drains, it does not crack, and it costs a fraction of concrete. On a shaded north side where a concrete pad would just grow moss, it is often the better answer.</p><h2>The concrete pad version</h2><p>A 4 foot by 4 foot pad at 4 inches thick is 5.3 cubic feet, or about 9 bags of 80 lb mix. That is a reasonable one-person pour. Base prep is the same as any slab: strip the topsoil, 4 inches of compacted gravel, then form and pour. See <a href="yard-a-concrete-pad-for-a-small-shed.html">the pad piece</a> for the full sequence.</p><p>Two details specific to a landing. Broom finish it across the direction of travel, not with it, so the texture catches a wet boot. And set a treated 2x4 sleeper or a couple of anchors in the wet concrete so you have something to fasten the stringers to, rather than drilling into cured concrete later.</p><h2>The framed platform version</h2><p>Sometimes the ground drops away and a pad would need a foot of fill. A small framed platform is easier. Four treated 4x4 blocks on gravel or on precast pier blocks, a 2x6 frame, joists at 16 inches, decking on top. Keep every piece of wood at least 2 inches off the soil, use ground contact rated material for anything low, and leave the underside open so air moves.</p><p>The temptation is to skirt it in so it looks finished. Do not close it up tight. A skirt with no ventilation makes a damp box, and that is where rot lives. Lattice or a gapped skirt is fine.</p><h3>Handrail and light</h3><p>If the stair has four or more risers, the handrail must continue to the bottom and end at the landing, not stop three feet up. And a light at an outside stair is worth more than most safety measures people spend money on. It gets dark here at four in the afternoon in the wet half of the year.</p><p>Gravel, concrete, treated 2x lumber and pier blocks are <a href="../yard.html">in the Yard</a>. Landscape fabric, anchors and exterior fasteners are inside on the <a href="../merc.html#fixit">Fix It wall</a>.</p>
+    <p>Stringers ending in dirt is the most common stair detail out here and the worst one. The end grain of the stringer sits in soil, water splashes up onto the bottom tread, the mud gets slick, and in three years the bottom of the stairs is soft. A landing solves the whole cluster of problems and it is a half-day project.</p><h2>Three ways to do it</h2><table><thead><tr><th scope="col">Type</th><th scope="col">Cost</th><th scope="col">Time</th><th scope="col">Best when</th></tr></thead><tbody><tr><td>Compacted gravel pad</td><td>Lowest</td><td>2 to 3 hours</td><td>Casual back steps, good drainage matters</td></tr><tr><td>Concrete pad</td><td>Middle</td><td>Half day plus cure</td><td>Main entry, heavy traffic, wheeled things</td></tr><tr><td>Framed wood platform</td><td>Middle</td><td>Half day</td><td>Uneven ground, or you need height</td></tr></tbody></table><h2>Sizing it</h2><p>A landing should be at least as wide as the stairs and at least 36 inches deep in the direction of travel. If a door swings out over it, add the door swing plus a place to stand. If somebody carries groceries in, a landing that only fits both feet is not enough.</p><p>Slope it about a quarter inch per foot away from the house or the structure. Water on a flat landing sits, freezes on the two cold nights we get, and grows moss the rest of the time.</p><h2>The gravel pad version</h2><ol><li>Excavate 6 inches down, a little wider than the finished landing on all sides.</li><li>Lay landscape fabric in the hole. This is the step people skip and it is what keeps the gravel from disappearing into the clay over five years.</li><li>Fill with 4 inches of crushed gravel in two lifts, compacting each one. Crushed, angular gravel locks together. Round river rock does not and will always feel loose.</li><li>Top with a 1 inch layer of finer crushed material and compact again.</li><li>Set the stringer bottoms on a treated 2x block or a paver so the wood never touches the gravel directly.</li></ol><p>This drains, it does not crack, and it costs a fraction of concrete. On a shaded north side where a concrete pad would just grow moss, it is often the better answer.</p><h2>The concrete pad version</h2><p>A 4 foot by 4 foot pad at 4 inches thick is 5.3 cubic feet, or about 9 bags of 80 lb mix. That is a reasonable one-person pour. Base prep is the same as any slab: strip the topsoil, 4 inches of compacted gravel, then form and pour. See <a href="yard-a-concrete-pad-for-a-small-shed.html">the pad piece</a> for the full sequence.</p><p>Two details specific to a landing. Broom finish it across the direction of travel, not with it, so the texture catches a wet boot. And set a treated 2x4 sleeper or a couple of anchors in the wet concrete so you have something to fasten the stringers to, rather than drilling into cured concrete later.</p><h2>The framed platform version</h2><p>Sometimes the ground drops away and a pad would need a foot of fill. A small framed platform is easier. Four treated 4x4 blocks on gravel or on precast pier blocks, a 2x6 frame, joists at 16 inches, decking on top. Keep every piece of wood at least 2 inches off the soil, use ground contact rated material for anything low, and leave the underside open so air moves.</p><p>The temptation is to skirt it in so it looks finished. Do not close it up tight. A skirt with no ventilation makes a damp box, and that is where rot lives. Lattice or a gapped skirt is fine.</p><h3>Handrail and light</h3><p>If the stair has four or more risers, the handrail must continue to the bottom and end at the landing, not stop three feet up. And a light at an outside stair is worth more than most safety measures people spend money on. It gets dark here at four in the afternoon in the wet half of the year.</p><p>Gravel, concrete, treated 2x lumber and pier blocks are <a href="../yard.html">in the Yard</a>. Landscape fabric, anchors and exterior fasteners are inside on the <a href="../merc.html#fixit">Fix It wall</a>.</p>
   </div>
 </article>
+
 
 <section class="band band--bark band--dark band--tight">
   <div class="wrap--mid">
     <div class="split split--top">
       <div>
-        <p class="eyebrow">While you're here</p>
-        <h2 class="h2 mb0">Need any of this today?</h2>
+        <p class="eyebrow">From the shelf</p>
+        <h2 class="h2 mb0">What this takes</h2>
       </div>
       <div>
-        <p class="lede mb0">Check what is on the shelf before you drive over, or tell us what we
-          should be carrying.</p>
-        <div class="btnrow" style="margin-top:20px">
-          <a class="btn btn--amber" href="../yard.html">Shop now</a>
+        <p class="lede mb0">Counts come off the register. If it says two left, there are two left.</p>
+        <div class="pillrow"><a class="pill" href="../shop.html?q=2x6+pt" style="text-decoration:none">Pressure treated 2x6</a><a class="pill" href="../yard.html#kits" style="text-decoration:none">Project kits, priced out</a></div>
+        <div class="btnrow" style="margin-top:18px">
           <button class="btn btn--ghost" data-tellus="true">Tell Carrie &amp; Eric</button>
         </div>
       </div>
@@ -159,18 +157,18 @@
   <div class="wrap">
     <div class="foot-top">
       <div>
-        <img src="../assets/img/logo-foot.webp?v=34aebc6d" alt="Twisted Roots Merc" width="440" height="371" loading="lazy" decoding="async">
+        <img src="../assets/img/logo-foot.webp?v=34aebc6d" srcset="../assets/img/logo-foot-190.webp 190w, ../assets/img/logo-foot-380.webp 380w, ../assets/img/logo-foot.webp 440w" sizes="190px" width="440" height="371" alt="Twisted Roots Merc" loading="lazy" decoding="async">
         <p class="small" style="opacity:.8">Mercantile · Bakery · Kitchen<br>101 &amp; 151 N Gaither St, Siletz, Oregon 97380<br>
           <a href="tel:+15415550134">(541) 555-0134</a></p>
         <button class="stormtoggle" data-stormtoggle aria-pressed="false"><i></i>Storm Mode Off</button>
       </div>
-      <div><h4>The Store</h4><ul>
+      <div><h3>The Store</h3><ul>
         <li><a href="../merc.html">The Merc</a></li><li><a href="../yard.html">The Yard</a></li>
         <li><a href="../storm.html">Storm Ready</a></li><li><a href="../hunt.html">Hunt &amp; Field</a></li><li><a href="../local.html">Local Goods</a></li></ul></div>
-      <div><h4>Food</h4><ul>
+      <div><h3>Food</h3><ul>
         <li><a href="../bakery.html">Bakery + Kitchen</a></li><li><a href="../kitchen.html">Recipes</a></li><li><a href="../bakery.html#breakfast">Breakfast</a></li>
         <li><a href="../bakery.html#lunch">Lunch</a></li><li><a href="../bakery.html#order">Order pickup</a></li></ul></div>
-      <div><h4>Twisted Roots</h4><ul>
+      <div><h3>Twisted Roots</h3><ul>
         <li><a href="../roots.html">Our Roots</a></li><li><a href="../journal.html">The Board</a></li><li><a href="../visit.html">Visit &amp; Hours</a></li>
         <li><a href="#" data-tellus="true">What should we carry?</a></li><li><a href="../hq.html">Owner login</a></li></ul></div>
     </div>
@@ -182,6 +180,7 @@
   </div>
 </footer>
 
+<p id="trLive" class="visually-hidden" role="status" aria-live="polite"></p>
 <script>
 addEventListener("load", function () {
   var s = ["../assets/js/catalog.js?v=cdc9c20e", "../assets/js/cart.js?v=024fe1e6", "../assets/js/site.js?v=3787c0d1", "../assets/js/motion.js?v=bf716f00", "../assets/js/roots.js?v=93423d8d"], i = 0;

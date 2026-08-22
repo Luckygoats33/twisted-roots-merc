@@ -18,19 +18,17 @@
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png?v=ce873322">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/site.css?v=db82a4af">
-<link rel="stylesheet" href="../assets/css/motion.css?v=e4213a7b">
-<link rel="stylesheet" href="../assets/css/roots.css?v=42e7b082">
-<link rel="stylesheet" href="../assets/css/mobile.css?v=1c92929c">
-<link rel="stylesheet" href="../assets/css/polish.css?v=39f8e298">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap"></noscript>
+<link rel="stylesheet" href="../assets/css/bundle.css?v=bfaf2686">
 <link rel="stylesheet" href="../assets/css/print.css?v=65e49f4e" media="print">
-<link rel="stylesheet" href="../assets/css/perf.css?v=8af74f1b">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Adjusting a Strike Plate So the Door Latches", "description": "The door closes, the latch does not catch, and you have been slamming it for months. This is a fifteen minute repair.", "articleSection": "Fix It", "keywords": "strike plate, door, latch, hardware, adjustment", "mainEntityOfPage": "https://twistedrootsmerc.com/blog/fix-strike-plate.html", "author": {"@type": "Organization", "name": "Twisted Roots Merc"}, "publisher": {"@id": "https://twistedrootsmerc.com/#store"}, "isPartOf": {"@type": "Blog", "name": "Practical Notes", "url": "https://twistedrootsmerc.com/journal.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://twistedrootsmerc.com/"}, {"@type": "ListItem", "position": 2, "name": "Practical Notes", "item": "https://twistedrootsmerc.com/journal.html"}, {"@type": "ListItem", "position": 3, "name": "Adjusting a Strike Plate So the Door Latches", "item": "https://twistedrootsmerc.com/blog/fix-strike-plate.html"}]}</script>
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="stormbar">
   <div class="wrap"><b>Storm Mode</b> <span>Wind advisory on the coast. Storm supplies stocked and the yard is open.</span> <a href="../storm.html">See storm stock →</a></div>
@@ -45,7 +43,7 @@
       <span class="brand-txt"><b>Twisted Roots</b><span>Siletz, Oregon</span></span>
     </a>
     <button class="burger" data-burger aria-expanded="false" aria-controls="siteNav" aria-label="Menu"><span class="burger__box" aria-hidden="true"><i></i><i></i><i></i></span><span class="burger__txt">Menu</span></button>
-    <nav class="nav" id="siteNav">
+    <nav class="nav" id="siteNav" aria-label="Main">
       <div class="navitem" data-navitem>
         <button class="navitem__top" data-subtoggle aria-expanded="false" aria-controls="sub-shop">Shop<i class="navitem__car" aria-hidden="true"></i></button>
         <div class="subnav" id="sub-shop">
@@ -83,11 +81,11 @@
   </div>
 </header>
 
-<main>
+<main id="main" tabindex="-1">
 
 <section class="band band--cream band--tight" style="padding-top:clamp(40px,5vw,72px)">
   <div class="wrap--mid">
-    <nav class="serif-caps muted" style="margin-bottom:22px">
+    <nav class="serif-caps muted" style="margin-bottom:22px" aria-label="Breadcrumb">
       <a href="../index.html" style="text-decoration:none">Home</a> &nbsp;/&nbsp;
       <a href="../journal.html" style="text-decoration:none">Notes</a> &nbsp;/&nbsp;
       <a href="../journal.html#fix-it" style="text-decoration:none">Fix It</a>
@@ -101,22 +99,22 @@
 
 <article class="band band--paper" style="padding-top:clamp(34px,4vw,56px)">
   <div class="wrap--narrow tr-prose">
-    <p>A latch has to line up with a hole. When the house moves or the hinges sag, the latch bolt ends up hitting the strike plate above or below its opening, and the door either has to be lifted or slammed to catch. Nobody fixes this because everybody adapts to it. It takes fifteen minutes and one of three approaches.</p><h3>What you need</h3><ul><li>A screwdriver, a pencil and a chisel</li><li>Lipstick or a dark marker</li><li>Metal file, if the adjustment is small</li><li>Longer screws, and wood filler or dowel if you are moving the plate</li></ul><h2>Find out exactly where it is missing</h2><ol><li>Put a smear of lipstick or marker on the end of the latch bolt.</li><li>Close the door until the bolt touches the strike plate, then open it.</li><li>The mark shows exactly where the bolt lands relative to the hole. Usually it is a sixteenth to an eighth of an inch high or low.</li><li>Note which way it needs to move. High means the door has sagged and the bolt is landing above the opening, so the plate needs to go up, or the door needs to come up.</li></ol><h2>Fix the cause first if it is easy</h2><p>If the bolt is landing high, the door has probably dropped, and driving 3 inch screws into the top hinge is the better fix because it puts the door back where it belongs and also stops it rubbing at the corner. Try that before you start filing the strike plate, since it takes the same amount of time. That is covered in <a href="fix-sticking-door.html">the sticking door post</a>.</p><h2>Three ways to adjust the plate</h2><table><thead><tr><th>How far off</th><th>Method</th></tr></thead><tbody><tr><td>Up to 1/16 in</td><td>File the strike plate opening</td></tr><tr><td>1/16 to 1/8 in</td><td>File, or reposition the plate slightly</td></tr><tr><td>More than 1/8 in</td><td>Move the plate properly, fill and re-mortise</td></tr><tr><td>Bolt does not reach the plate at all</td><td>Weatherstripping too thick, or the door is not closing fully</td></tr></tbody></table><p><strong>Filing.</strong> Take the plate off, put it in a vise or hold it firmly on a block, and file the opening in the direction you need. A half-round or flat file, a few strokes at a time. Test frequently. Deburr the edge and the plate goes back with the hole slightly enlarged. This is by far the easiest fix and it handles most cases.</p><p><strong>Repositioning.</strong> For a bigger move, remove the plate and reposition it. The new screw holes will overlap the old ones, so the screws will want to drift back into the old holes. Fill the old holes with glued dowel or matchsticks, let it set, then drill fresh pilot holes and mount the plate where you want it. Skipping the filling step is why so many repositioned strike plates end up right back where they started.</p><p>You will also need to extend the mortise, the shallow recess the plate sits in, with a chisel. Score the outline with a utility knife first, then pare down to depth. The plate must sit flush or slightly below the jamb surface, never proud, because a proud plate stops the door closing.</p><p><strong>The latch hole behind it.</strong> Do not forget that the strike plate covers a pocket drilled into the jamb. Enlarging the plate opening does nothing if the bolt then hits wood behind it. Chisel or drill the pocket to match.</p><h2>The other reasons a door will not latch</h2><p>If the bolt lines up but the door will not close far enough, something is holding it open. New weatherstripping that is too thick, a build-up of paint on the stop, or a carpet the door is riding on. Look at the gap when the door is pushed to. If there is a quarter inch you cannot close by hand, the problem is not the strike.</p><p>If the latch retracts sluggishly or sticks out unevenly, the latch mechanism itself is worn or gummed up. A shot of dry lubricant into the latch, working the handle, fixes many of them. On the coast, latch mechanisms on exterior doors corrode, and a lock that has become stiff is usually corrosion rather than wear. Dry lubricant, not oil, because oil holds dust and salt.</p><p>Strike plates, chisels, files, hinges and lubricants are all on <a href="../merc.html#fixit">the Fix It wall</a>.</p>
+    <p>A latch has to line up with a hole. When the house moves or the hinges sag, the latch bolt ends up hitting the strike plate above or below its opening, and the door either has to be lifted or slammed to catch. Nobody fixes this because everybody adapts to it. It takes fifteen minutes and one of three approaches.</p><h2 class="a11y-rank-h3">What you need</h2><ul><li>A screwdriver, a pencil and a chisel</li><li>Lipstick or a dark marker</li><li>Metal file, if the adjustment is small</li><li>Longer screws, and wood filler or dowel if you are moving the plate</li></ul><h2>Find out exactly where it is missing</h2><ol><li>Put a smear of lipstick or marker on the end of the latch bolt.</li><li>Close the door until the bolt touches the strike plate, then open it.</li><li>The mark shows exactly where the bolt lands relative to the hole. Usually it is a sixteenth to an eighth of an inch high or low.</li><li>Note which way it needs to move. High means the door has sagged and the bolt is landing above the opening, so the plate needs to go up, or the door needs to come up.</li></ol><h2>Fix the cause first if it is easy</h2><p>If the bolt is landing high, the door has probably dropped, and driving 3 inch screws into the top hinge is the better fix because it puts the door back where it belongs and also stops it rubbing at the corner. Try that before you start filing the strike plate, since it takes the same amount of time. That is covered in <a href="fix-sticking-door.html">the sticking door post</a>.</p><h2>Three ways to adjust the plate</h2><table><thead><tr><th scope="col">How far off</th><th scope="col">Method</th></tr></thead><tbody><tr><td>Up to 1/16 in</td><td>File the strike plate opening</td></tr><tr><td>1/16 to 1/8 in</td><td>File, or reposition the plate slightly</td></tr><tr><td>More than 1/8 in</td><td>Move the plate properly, fill and re-mortise</td></tr><tr><td>Bolt does not reach the plate at all</td><td>Weatherstripping too thick, or the door is not closing fully</td></tr></tbody></table><p><strong>Filing.</strong> Take the plate off, put it in a vise or hold it firmly on a block, and file the opening in the direction you need. A half-round or flat file, a few strokes at a time. Test frequently. Deburr the edge and the plate goes back with the hole slightly enlarged. This is by far the easiest fix and it handles most cases.</p><p><strong>Repositioning.</strong> For a bigger move, remove the plate and reposition it. The new screw holes will overlap the old ones, so the screws will want to drift back into the old holes. Fill the old holes with glued dowel or matchsticks, let it set, then drill fresh pilot holes and mount the plate where you want it. Skipping the filling step is why so many repositioned strike plates end up right back where they started.</p><p>You will also need to extend the mortise, the shallow recess the plate sits in, with a chisel. Score the outline with a utility knife first, then pare down to depth. The plate must sit flush or slightly below the jamb surface, never proud, because a proud plate stops the door closing.</p><p><strong>The latch hole behind it.</strong> Do not forget that the strike plate covers a pocket drilled into the jamb. Enlarging the plate opening does nothing if the bolt then hits wood behind it. Chisel or drill the pocket to match.</p><h2>The other reasons a door will not latch</h2><p>If the bolt lines up but the door will not close far enough, something is holding it open. New weatherstripping that is too thick, a build-up of paint on the stop, or a carpet the door is riding on. Look at the gap when the door is pushed to. If there is a quarter inch you cannot close by hand, the problem is not the strike.</p><p>If the latch retracts sluggishly or sticks out unevenly, the latch mechanism itself is worn or gummed up. A shot of dry lubricant into the latch, working the handle, fixes many of them. On the coast, latch mechanisms on exterior doors corrode, and a lock that has become stiff is usually corrosion rather than wear. Dry lubricant, not oil, because oil holds dust and salt.</p><p>Strike plates, chisels, files, hinges and lubricants are all on <a href="../merc.html#fixit">the Fix It wall</a>.</p>
   </div>
 </article>
+
 
 <section class="band band--bark band--dark band--tight">
   <div class="wrap--mid">
     <div class="split split--top">
       <div>
-        <p class="eyebrow">While you're here</p>
-        <h2 class="h2 mb0">Need any of this today?</h2>
+        <p class="eyebrow">From the shelf</p>
+        <h2 class="h2 mb0">What this takes</h2>
       </div>
       <div>
-        <p class="lede mb0">Check what is on the shelf before you drive over, or tell us what we
-          should be carrying.</p>
-        <div class="btnrow" style="margin-top:20px">
-          <a class="btn btn--amber" href="../merc.html#fixit">Shop now</a>
+        <p class="lede mb0">Counts come off the register. If it says two left, there are two left.</p>
+        <div class="pillrow"><a class="pill" href="../shop.html?q=structural+screw" style="text-decoration:none">Longer screws for the strike plate</a><a class="pill" href="../shop.html?q=screwdriver" style="text-decoration:none">Screwdriver sets, six piece</a></div>
+        <div class="btnrow" style="margin-top:18px">
           <button class="btn btn--ghost" data-tellus="true">Tell Carrie &amp; Eric</button>
         </div>
       </div>
@@ -159,18 +157,18 @@
   <div class="wrap">
     <div class="foot-top">
       <div>
-        <img src="../assets/img/logo-foot.webp?v=34aebc6d" alt="Twisted Roots Merc" width="440" height="371" loading="lazy" decoding="async">
+        <img src="../assets/img/logo-foot.webp?v=34aebc6d" srcset="../assets/img/logo-foot-190.webp 190w, ../assets/img/logo-foot-380.webp 380w, ../assets/img/logo-foot.webp 440w" sizes="190px" width="440" height="371" alt="Twisted Roots Merc" loading="lazy" decoding="async">
         <p class="small" style="opacity:.8">Mercantile · Bakery · Kitchen<br>101 &amp; 151 N Gaither St, Siletz, Oregon 97380<br>
           <a href="tel:+15415550134">(541) 555-0134</a></p>
         <button class="stormtoggle" data-stormtoggle aria-pressed="false"><i></i>Storm Mode Off</button>
       </div>
-      <div><h4>The Store</h4><ul>
+      <div><h3>The Store</h3><ul>
         <li><a href="../merc.html">The Merc</a></li><li><a href="../yard.html">The Yard</a></li>
         <li><a href="../storm.html">Storm Ready</a></li><li><a href="../hunt.html">Hunt &amp; Field</a></li><li><a href="../local.html">Local Goods</a></li></ul></div>
-      <div><h4>Food</h4><ul>
+      <div><h3>Food</h3><ul>
         <li><a href="../bakery.html">Bakery + Kitchen</a></li><li><a href="../kitchen.html">Recipes</a></li><li><a href="../bakery.html#breakfast">Breakfast</a></li>
         <li><a href="../bakery.html#lunch">Lunch</a></li><li><a href="../bakery.html#order">Order pickup</a></li></ul></div>
-      <div><h4>Twisted Roots</h4><ul>
+      <div><h3>Twisted Roots</h3><ul>
         <li><a href="../roots.html">Our Roots</a></li><li><a href="../journal.html">The Board</a></li><li><a href="../visit.html">Visit &amp; Hours</a></li>
         <li><a href="#" data-tellus="true">What should we carry?</a></li><li><a href="../hq.html">Owner login</a></li></ul></div>
     </div>
@@ -182,6 +180,7 @@
   </div>
 </footer>
 
+<p id="trLive" class="visually-hidden" role="status" aria-live="polite"></p>
 <script>
 addEventListener("load", function () {
   var s = ["../assets/js/catalog.js?v=cdc9c20e", "../assets/js/cart.js?v=024fe1e6", "../assets/js/site.js?v=3787c0d1", "../assets/js/motion.js?v=bf716f00", "../assets/js/roots.js?v=93423d8d"], i = 0;

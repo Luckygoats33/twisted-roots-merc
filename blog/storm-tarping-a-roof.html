@@ -18,19 +18,17 @@
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png?v=ce873322">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/site.css?v=db82a4af">
-<link rel="stylesheet" href="../assets/css/motion.css?v=e4213a7b">
-<link rel="stylesheet" href="../assets/css/roots.css?v=42e7b082">
-<link rel="stylesheet" href="../assets/css/mobile.css?v=1c92929c">
-<link rel="stylesheet" href="../assets/css/polish.css?v=39f8e298">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap"></noscript>
+<link rel="stylesheet" href="../assets/css/bundle.css?v=bfaf2686">
 <link rel="stylesheet" href="../assets/css/print.css?v=65e49f4e" media="print">
-<link rel="stylesheet" href="../assets/css/perf.css?v=8af74f1b">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Tarping a Roof Leak Before It Gets Dark", "description": "The tarp is the easy part; getting it to stay on in a coastal wind is the part that goes wrong.", "articleSection": "Storm Ready", "keywords": "roof, tarp, leak, repair, wind", "mainEntityOfPage": "https://twistedrootsmerc.com/blog/storm-tarping-a-roof.html", "author": {"@type": "Organization", "name": "Twisted Roots Merc"}, "publisher": {"@id": "https://twistedrootsmerc.com/#store"}, "isPartOf": {"@type": "Blog", "name": "Practical Notes", "url": "https://twistedrootsmerc.com/journal.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://twistedrootsmerc.com/"}, {"@type": "ListItem", "position": 2, "name": "Practical Notes", "item": "https://twistedrootsmerc.com/journal.html"}, {"@type": "ListItem", "position": 3, "name": "Tarping a Roof Leak Before It Gets Dark", "item": "https://twistedrootsmerc.com/blog/storm-tarping-a-roof.html"}]}</script>
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="stormbar">
   <div class="wrap"><b>Storm Mode</b> <span>Wind advisory on the coast. Storm supplies stocked and the yard is open.</span> <a href="../storm.html">See storm stock →</a></div>
@@ -45,7 +43,7 @@
       <span class="brand-txt"><b>Twisted Roots</b><span>Siletz, Oregon</span></span>
     </a>
     <button class="burger" data-burger aria-expanded="false" aria-controls="siteNav" aria-label="Menu"><span class="burger__box" aria-hidden="true"><i></i><i></i><i></i></span><span class="burger__txt">Menu</span></button>
-    <nav class="nav" id="siteNav">
+    <nav class="nav" id="siteNav" aria-label="Main">
       <div class="navitem" data-navitem>
         <button class="navitem__top" data-subtoggle aria-expanded="false" aria-controls="sub-shop">Shop<i class="navitem__car" aria-hidden="true"></i></button>
         <div class="subnav" id="sub-shop">
@@ -83,11 +81,11 @@
   </div>
 </header>
 
-<main>
+<main id="main" tabindex="-1">
 
 <section class="band band--cream band--tight" style="padding-top:clamp(40px,5vw,72px)">
   <div class="wrap--mid">
-    <nav class="serif-caps muted" style="margin-bottom:22px">
+    <nav class="serif-caps muted" style="margin-bottom:22px" aria-label="Breadcrumb">
       <a href="../index.html" style="text-decoration:none">Home</a> &nbsp;/&nbsp;
       <a href="../journal.html" style="text-decoration:none">Notes</a> &nbsp;/&nbsp;
       <a href="../journal.html#storm-ready" style="text-decoration:none">Storm Ready</a>
@@ -101,22 +99,22 @@
 
 <article class="band band--paper" style="padding-top:clamp(34px,4vw,56px)">
   <div class="wrap--narrow tr-prose">
-    <p>A tarp on a roof is not a repair. It is a way to stop the inside of your house getting ruined while you wait however many weeks it takes to get a roofer out here after a big blow. Done badly it lasts one night, comes loose at three in the morning and flogs itself to pieces. Done properly it lasts until spring.</p><h2>First, decide whether to go up at all</h2><p>Wet moss on a coastal roof is about as slippery as ice, and a mossy north-facing roof in January is genuinely dangerous. Do not go up in wind, do not go up in the dark, do not go up alone, and do not go up on a steep pitch or anything above one story unless you actually know what you are doing.</p><p>An alternative that costs you nothing in dignity: put buckets under the leak, poke a small hole in a bulging ceiling to let it drain in one controlled place rather than bringing the whole sheet of drywall down, move what matters out of the room, and deal with the roof in daylight. Water in a ceiling is a problem. A person off a roof is a different category of problem.</p><h2>What you need</h2><table><thead><tr><th>Item</th><th>Why</th></tr></thead><tbody><tr><td>Tarp, at least 4 ft larger than the damage on every side</td><td>It has to run past the ridge and past the eave</td></tr><tr><td>Two 8 ft 2x4s, or four for a big one</td><td>These are what actually hold it. Not the grommets</td></tr><tr><td>Roofing nails or screws with washers</td><td>Screws back out cleanly later</td></tr><tr><td>Rope or ratchet straps</td><td>Backup, and for tying off over the ridge</td></tr><tr><td>Utility knife, hammer or driver, work gloves</td><td>Obvious, always missing</td></tr></tbody></table><h2>The method that holds</h2><p>The trick is that you do not fasten through the tarp into the roof. You roll the edge of the tarp around a board and screw the board down. That spreads the load along the whole edge instead of tearing out at the grommets, which is how every failed tarp job fails.</p><ol><li>Get the tarp <strong>over the ridge</strong> if you possibly can, at least a couple of feet down the far side. Water runs downhill and any upper edge that stops short of the ridge is a funnel pointed into your attic.</li><li>Lay the tarp out, aligned, with the excess hanging past the eave at the bottom.</li><li>At the top edge, roll the tarp around a 2x4 two or three full turns, like winding a flag onto a pole.</li><li>Screw through the rolled bundle into the roof deck, into rafters if you can find them, every couple of feet. Yes, you are putting holes in the roof. They are above the tarp line, they are small, and they are not the problem you have today.</li><li>Do the same at the bottom edge with a second 2x4, and at the sides on a wide one. Every free edge gets a board.</li><li>Any loose edge left flapping will be gone by morning. Run a board, a strap, or at minimum a run of screws with washers along it.</li><li>Do not weight it with bricks or firewood. Wind lifts the tarp, the weight comes off, and now you have a projectile.</li></ol><h2>The details that decide whether it lasts</h2><ul><li><strong>Shingle-lap the seams.</strong> If you need two tarps, overlap them so the uphill one lies on top of the downhill one, minimum two feet.</li><li><strong>Sweep the roof first.</strong> Fir needles, cones and grit under a tarp abrade it through in a couple of weeks of flapping.</li><li><strong>Tension it.</strong> A tarp with slack in it flogs, and flogging is what destroys tarps and loosens fasteners. It should be drum-tight.</li><li><strong>Nothing sharp underneath.</strong> A lifted shingle edge or a nail head will wear a hole from below.</li><li><strong>Check it after every blow.</strong> Ten minutes with a screw gun beats a second interior soaking.</li></ul><h2>Then photograph it</h2><p>Before you tarp, after you tarp, wide shots and close ones, and the inside damage too. Insurers expect you to mitigate further damage and will generally reimburse reasonable materials, but only with a record. There is a whole piece on this in <a href="storm-insurance-photos.html">taking photos your insurer will accept</a>.</p><p>Tarps in 10x12 and 20x30, roofing nails, roof patch sealant, straps and the 2x4s are all here — tarps on the <a href="../storm.html">storm wall</a>, lumber out in <a href="../yard.html">the yard</a>. Ask and we will cut the boards to length for you before you go.</p>
+    <p>A tarp on a roof is not a repair. It is a way to stop the inside of your house getting ruined while you wait however many weeks it takes to get a roofer out here after a big blow. Done badly it lasts one night, comes loose at three in the morning and flogs itself to pieces. Done properly it lasts until spring.</p><h2>First, decide whether to go up at all</h2><p>Wet moss on a coastal roof is about as slippery as ice, and a mossy north-facing roof in January is genuinely dangerous. Do not go up in wind, do not go up in the dark, do not go up alone, and do not go up on a steep pitch or anything above one story unless you actually know what you are doing.</p><p>An alternative that costs you nothing in dignity: put buckets under the leak, poke a small hole in a bulging ceiling to let it drain in one controlled place rather than bringing the whole sheet of drywall down, move what matters out of the room, and deal with the roof in daylight. Water in a ceiling is a problem. A person off a roof is a different category of problem.</p><h2>What you need</h2><table><thead><tr><th scope="col">Item</th><th scope="col">Why</th></tr></thead><tbody><tr><td>Tarp, at least 4 ft larger than the damage on every side</td><td>It has to run past the ridge and past the eave</td></tr><tr><td>Two 8 ft 2x4s, or four for a big one</td><td>These are what actually hold it. Not the grommets</td></tr><tr><td>Roofing nails or screws with washers</td><td>Screws back out cleanly later</td></tr><tr><td>Rope or ratchet straps</td><td>Backup, and for tying off over the ridge</td></tr><tr><td>Utility knife, hammer or driver, work gloves</td><td>Obvious, always missing</td></tr></tbody></table><h2>The method that holds</h2><p>The trick is that you do not fasten through the tarp into the roof. You roll the edge of the tarp around a board and screw the board down. That spreads the load along the whole edge instead of tearing out at the grommets, which is how every failed tarp job fails.</p><ol><li>Get the tarp <strong>over the ridge</strong> if you possibly can, at least a couple of feet down the far side. Water runs downhill and any upper edge that stops short of the ridge is a funnel pointed into your attic.</li><li>Lay the tarp out, aligned, with the excess hanging past the eave at the bottom.</li><li>At the top edge, roll the tarp around a 2x4 two or three full turns, like winding a flag onto a pole.</li><li>Screw through the rolled bundle into the roof deck, into rafters if you can find them, every couple of feet. Yes, you are putting holes in the roof. They are above the tarp line, they are small, and they are not the problem you have today.</li><li>Do the same at the bottom edge with a second 2x4, and at the sides on a wide one. Every free edge gets a board.</li><li>Any loose edge left flapping will be gone by morning. Run a board, a strap, or at minimum a run of screws with washers along it.</li><li>Do not weight it with bricks or firewood. Wind lifts the tarp, the weight comes off, and now you have a projectile.</li></ol><h2>The details that decide whether it lasts</h2><ul><li><strong>Shingle-lap the seams.</strong> If you need two tarps, overlap them so the uphill one lies on top of the downhill one, minimum two feet.</li><li><strong>Sweep the roof first.</strong> Fir needles, cones and grit under a tarp abrade it through in a couple of weeks of flapping.</li><li><strong>Tension it.</strong> A tarp with slack in it flogs, and flogging is what destroys tarps and loosens fasteners. It should be drum-tight.</li><li><strong>Nothing sharp underneath.</strong> A lifted shingle edge or a nail head will wear a hole from below.</li><li><strong>Check it after every blow.</strong> Ten minutes with a screw gun beats a second interior soaking.</li></ul><h2>Then photograph it</h2><p>Before you tarp, after you tarp, wide shots and close ones, and the inside damage too. Insurers expect you to mitigate further damage and will generally reimburse reasonable materials, but only with a record. There is a whole piece on this in <a href="storm-insurance-photos.html">taking photos your insurer will accept</a>.</p><p>Tarps in 10x12 and 20x30, roofing nails, roof patch sealant, straps and the 2x4s are all here — tarps on the <a href="../storm.html">storm wall</a>, lumber out in <a href="../yard.html">the yard</a>. Ask and we will cut the boards to length for you before you go.</p>
   </div>
 </article>
+
 
 <section class="band band--bark band--dark band--tight">
   <div class="wrap--mid">
     <div class="split split--top">
       <div>
-        <p class="eyebrow">While you're here</p>
-        <h2 class="h2 mb0">Need any of this today?</h2>
+        <p class="eyebrow">From the shelf</p>
+        <h2 class="h2 mb0">What this takes</h2>
       </div>
       <div>
-        <p class="lede mb0">Check what is on the shelf before you drive over, or tell us what we
-          should be carrying.</p>
-        <div class="btnrow" style="margin-top:20px">
-          <a class="btn btn--amber" href="../storm.html">Shop now</a>
+        <p class="lede mb0">Counts come off the register. If it says two left, there are two left.</p>
+        <div class="pillrow"><a class="pill" href="../shop.html?q=tarp" style="text-decoration:none">Heavy duty tarps, both sizes</a><a class="pill" href="../shop.html?q=rope" style="text-decoration:none">Rope and paracord to hold it</a></div>
+        <div class="btnrow" style="margin-top:18px">
           <button class="btn btn--ghost" data-tellus="true">Tell Carrie &amp; Eric</button>
         </div>
       </div>
@@ -159,18 +157,18 @@
   <div class="wrap">
     <div class="foot-top">
       <div>
-        <img src="../assets/img/logo-foot.webp?v=34aebc6d" alt="Twisted Roots Merc" width="440" height="371" loading="lazy" decoding="async">
+        <img src="../assets/img/logo-foot.webp?v=34aebc6d" srcset="../assets/img/logo-foot-190.webp 190w, ../assets/img/logo-foot-380.webp 380w, ../assets/img/logo-foot.webp 440w" sizes="190px" width="440" height="371" alt="Twisted Roots Merc" loading="lazy" decoding="async">
         <p class="small" style="opacity:.8">Mercantile · Bakery · Kitchen<br>101 &amp; 151 N Gaither St, Siletz, Oregon 97380<br>
           <a href="tel:+15415550134">(541) 555-0134</a></p>
         <button class="stormtoggle" data-stormtoggle aria-pressed="false"><i></i>Storm Mode Off</button>
       </div>
-      <div><h4>The Store</h4><ul>
+      <div><h3>The Store</h3><ul>
         <li><a href="../merc.html">The Merc</a></li><li><a href="../yard.html">The Yard</a></li>
         <li><a href="../storm.html">Storm Ready</a></li><li><a href="../hunt.html">Hunt &amp; Field</a></li><li><a href="../local.html">Local Goods</a></li></ul></div>
-      <div><h4>Food</h4><ul>
+      <div><h3>Food</h3><ul>
         <li><a href="../bakery.html">Bakery + Kitchen</a></li><li><a href="../kitchen.html">Recipes</a></li><li><a href="../bakery.html#breakfast">Breakfast</a></li>
         <li><a href="../bakery.html#lunch">Lunch</a></li><li><a href="../bakery.html#order">Order pickup</a></li></ul></div>
-      <div><h4>Twisted Roots</h4><ul>
+      <div><h3>Twisted Roots</h3><ul>
         <li><a href="../roots.html">Our Roots</a></li><li><a href="../journal.html">The Board</a></li><li><a href="../visit.html">Visit &amp; Hours</a></li>
         <li><a href="#" data-tellus="true">What should we carry?</a></li><li><a href="../hq.html">Owner login</a></li></ul></div>
     </div>
@@ -182,6 +180,7 @@
   </div>
 </footer>
 
+<p id="trLive" class="visually-hidden" role="status" aria-live="polite"></p>
 <script>
 addEventListener("load", function () {
   var s = ["../assets/js/catalog.js?v=cdc9c20e", "../assets/js/cart.js?v=024fe1e6", "../assets/js/site.js?v=3787c0d1", "../assets/js/motion.js?v=bf716f00", "../assets/js/roots.js?v=93423d8d"], i = 0;

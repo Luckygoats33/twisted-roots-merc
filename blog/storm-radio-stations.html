@@ -18,19 +18,17 @@
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png?v=ce873322">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/site.css?v=db82a4af">
-<link rel="stylesheet" href="../assets/css/motion.css?v=e4213a7b">
-<link rel="stylesheet" href="../assets/css/roots.css?v=42e7b082">
-<link rel="stylesheet" href="../assets/css/mobile.css?v=1c92929c">
-<link rel="stylesheet" href="../assets/css/polish.css?v=39f8e298">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap"></noscript>
+<link rel="stylesheet" href="../assets/css/bundle.css?v=bfaf2686">
 <link rel="stylesheet" href="../assets/css/print.css?v=65e49f4e" media="print">
-<link rel="stylesheet" href="../assets/css/perf.css?v=8af74f1b">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Which Radio Stations Actually Matter Out Here", "description": "When the internet is out and the phone is rationed, an AM radio and a set of AA batteries is the whole news department.", "articleSection": "Storm Ready", "keywords": "radio, information, am, fm, emergency", "mainEntityOfPage": "https://twistedrootsmerc.com/blog/storm-radio-stations.html", "author": {"@type": "Organization", "name": "Twisted Roots Merc"}, "publisher": {"@id": "https://twistedrootsmerc.com/#store"}, "isPartOf": {"@type": "Blog", "name": "Practical Notes", "url": "https://twistedrootsmerc.com/journal.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://twistedrootsmerc.com/"}, {"@type": "ListItem", "position": 2, "name": "Practical Notes", "item": "https://twistedrootsmerc.com/journal.html"}, {"@type": "ListItem", "position": 3, "name": "Which Radio Stations Actually Matter Out Here", "item": "https://twistedrootsmerc.com/blog/storm-radio-stations.html"}]}</script>
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="stormbar">
   <div class="wrap"><b>Storm Mode</b> <span>Wind advisory on the coast. Storm supplies stocked and the yard is open.</span> <a href="../storm.html">See storm stock →</a></div>
@@ -45,7 +43,7 @@
       <span class="brand-txt"><b>Twisted Roots</b><span>Siletz, Oregon</span></span>
     </a>
     <button class="burger" data-burger aria-expanded="false" aria-controls="siteNav" aria-label="Menu"><span class="burger__box" aria-hidden="true"><i></i><i></i><i></i></span><span class="burger__txt">Menu</span></button>
-    <nav class="nav" id="siteNav">
+    <nav class="nav" id="siteNav" aria-label="Main">
       <div class="navitem" data-navitem>
         <button class="navitem__top" data-subtoggle aria-expanded="false" aria-controls="sub-shop">Shop<i class="navitem__car" aria-hidden="true"></i></button>
         <div class="subnav" id="sub-shop">
@@ -83,11 +81,11 @@
   </div>
 </header>
 
-<main>
+<main id="main" tabindex="-1">
 
 <section class="band band--cream band--tight" style="padding-top:clamp(40px,5vw,72px)">
   <div class="wrap--mid">
-    <nav class="serif-caps muted" style="margin-bottom:22px">
+    <nav class="serif-caps muted" style="margin-bottom:22px" aria-label="Breadcrumb">
       <a href="../index.html" style="text-decoration:none">Home</a> &nbsp;/&nbsp;
       <a href="../journal.html" style="text-decoration:none">Notes</a> &nbsp;/&nbsp;
       <a href="../journal.html#storm-ready" style="text-decoration:none">Storm Ready</a>
@@ -101,22 +99,22 @@
 
 <article class="band band--paper" style="padding-top:clamp(34px,4vw,56px)">
   <div class="wrap--narrow tr-prose">
-    <p>Everything you normally use to find out what is going on needs either the cell network or the internet, and in a real outage both of those degrade before the radio does. Broadcast radio is one-way, the transmitters have backup power, and a receiver runs for a week on a couple of batteries.</p><h2>The three bands and what each is for</h2><p><strong>NOAA weather band.</strong> Continuous forecasts, watches, warnings, tsunami alerts and civil emergency messages for this specific coastal zone. Not on an ordinary radio — it needs a weather band receiver, which is what makes the hand-crank emergency radios worth owning. Covered properly in <a href="storm-noaa-weather-radio.html">what a weather radio does</a>.</p><p><strong>AM.</strong> The one people forget. AM signals travel much further than FM, especially at night when they bounce off the ionosphere, and the big regional stations run high power with generator backup. When the local FM transmitter on a hill has been off for a day, AM out of Portland or further is still coming in clearly. AM is where you find out whether this is a Lincoln County problem or a statewide one.</p><p><strong>FM.</strong> The local stations, which is where the information you actually need lives: road closures, school closings, shelter and warming centre locations, and where to get water and ice. A regional AM station will not tell you which road out of Siletz is open. A local FM one might.</p><h2>Build the list before you need it</h2><p>The single most useful ten minutes of storm prep nobody does: sit down with a radio on a normal day, run the dial, and write down the frequencies that come in clearly at your house. Reception in these valleys is peculiar and specific — a station that is strong at the store may be nothing at all four miles up the river.</p><p>Write them on a card and tape it to the radio.</p><table><thead><tr><th>Write down</th><th>Why</th></tr></thead><tbody><tr><td>Best NOAA weather channel at your house</td><td>Reception varies by valley. Find the strong one now</td></tr><tr><td>Two or three local FM news or talk stations</td><td>Closures, shelters, local specifics</td></tr><tr><td>Two AM stations, one regional and one distant</td><td>Regional picture and a backup when local is down</td></tr><tr><td>The public radio frequency</td><td>Generally stays on air and covers the state</td></tr><tr><td>Any local low-power or tribal station</td><td>Often the most locally useful thing on the dial</td></tr></tbody></table><h2>The radio to own</h2><p>One hand-crank unit with AM, FM and the weather band, an alert tone, a light and a USB output. That single device covers every case, and the crank means it works whether or not you remembered batteries.</p><p>Back it up with something dumber. A cheap AM/FM pocket radio and a pack of AA batteries costs almost nothing and will play for weeks. The vehicle radio is the other one people forget — it is a good receiver on a good antenna and it works whenever the truck does. Ten minutes with the engine running gets you the news and charges a phone at the same time.</p><h2>How to listen without going mad</h2><p>Set a rhythm rather than leaving it on all day. Top of the hour, and again in the evening. Continuous storm coverage is mostly repetition, and listening to it for four days straight is genuinely bad for your mood and your batteries.</p><p>Write down what you hear — road closures and their times, restoration estimates, where the water is being handed out. In a house with no lights and no clock you will not remember by evening whether they said Thursday or Tuesday.</p><h2>What radio will not tell you</h2><p>It will not tell you whether your particular road is open, and it will not tell you when your particular line is coming back. That information comes from neighbors, from whoever just drove in from that direction, and from the counter at the store — which is why <a href="storm-checking-on-neighbors.html">the neighbor network</a> is not a sentimental idea, it is the only source of local detail there is.</p><p>Radios, batteries and 12-volt adapters are on the <a href="../storm.html">storm wall</a>. Ours have the weather band and the crank, and Eric will find the strongest local channel with you at the counter before you leave.</p>
+    <p>Everything you normally use to find out what is going on needs either the cell network or the internet, and in a real outage both of those degrade before the radio does. Broadcast radio is one-way, the transmitters have backup power, and a receiver runs for a week on a couple of batteries.</p><h2>The three bands and what each is for</h2><p><strong>NOAA weather band.</strong> Continuous forecasts, watches, warnings, tsunami alerts and civil emergency messages for this specific coastal zone. Not on an ordinary radio — it needs a weather band receiver, which is what makes the hand-crank emergency radios worth owning. Covered properly in <a href="storm-noaa-weather-radio.html">what a weather radio does</a>.</p><p><strong>AM.</strong> The one people forget. AM signals travel much further than FM, especially at night when they bounce off the ionosphere, and the big regional stations run high power with generator backup. When the local FM transmitter on a hill has been off for a day, AM out of Portland or further is still coming in clearly. AM is where you find out whether this is a Lincoln County problem or a statewide one.</p><p><strong>FM.</strong> The local stations, which is where the information you actually need lives: road closures, school closings, shelter and warming centre locations, and where to get water and ice. A regional AM station will not tell you which road out of Siletz is open. A local FM one might.</p><h2>Build the list before you need it</h2><p>The single most useful ten minutes of storm prep nobody does: sit down with a radio on a normal day, run the dial, and write down the frequencies that come in clearly at your house. Reception in these valleys is peculiar and specific — a station that is strong at the store may be nothing at all four miles up the river.</p><p>Write them on a card and tape it to the radio.</p><table><thead><tr><th scope="col">Write down</th><th scope="col">Why</th></tr></thead><tbody><tr><td>Best NOAA weather channel at your house</td><td>Reception varies by valley. Find the strong one now</td></tr><tr><td>Two or three local FM news or talk stations</td><td>Closures, shelters, local specifics</td></tr><tr><td>Two AM stations, one regional and one distant</td><td>Regional picture and a backup when local is down</td></tr><tr><td>The public radio frequency</td><td>Generally stays on air and covers the state</td></tr><tr><td>Any local low-power or tribal station</td><td>Often the most locally useful thing on the dial</td></tr></tbody></table><h2>The radio to own</h2><p>One hand-crank unit with AM, FM and the weather band, an alert tone, a light and a USB output. That single device covers every case, and the crank means it works whether or not you remembered batteries.</p><p>Back it up with something dumber. A cheap AM/FM pocket radio and a pack of AA batteries costs almost nothing and will play for weeks. The vehicle radio is the other one people forget — it is a good receiver on a good antenna and it works whenever the truck does. Ten minutes with the engine running gets you the news and charges a phone at the same time.</p><h2>How to listen without going mad</h2><p>Set a rhythm rather than leaving it on all day. Top of the hour, and again in the evening. Continuous storm coverage is mostly repetition, and listening to it for four days straight is genuinely bad for your mood and your batteries.</p><p>Write down what you hear — road closures and their times, restoration estimates, where the water is being handed out. In a house with no lights and no clock you will not remember by evening whether they said Thursday or Tuesday.</p><h2>What radio will not tell you</h2><p>It will not tell you whether your particular road is open, and it will not tell you when your particular line is coming back. That information comes from neighbors, from whoever just drove in from that direction, and from the counter at the store — which is why <a href="storm-checking-on-neighbors.html">the neighbor network</a> is not a sentimental idea, it is the only source of local detail there is.</p><p>Radios, batteries and 12-volt adapters are on the <a href="../storm.html">storm wall</a>. Ours have the weather band and the crank, and Eric will find the strongest local channel with you at the counter before you leave.</p>
   </div>
 </article>
+
 
 <section class="band band--bark band--dark band--tight">
   <div class="wrap--mid">
     <div class="split split--top">
       <div>
-        <p class="eyebrow">While you're here</p>
-        <h2 class="h2 mb0">Need any of this today?</h2>
+        <p class="eyebrow">From the shelf</p>
+        <h2 class="h2 mb0">What this takes</h2>
       </div>
       <div>
-        <p class="lede mb0">Check what is on the shelf before you drive over, or tell us what we
-          should be carrying.</p>
-        <div class="btnrow" style="margin-top:20px">
-          <a class="btn btn--amber" href="../storm.html">Shop now</a>
+        <p class="lede mb0">Counts come off the register. If it says two left, there are two left.</p>
+        <div class="pillrow"><a class="pill" href="../shop.html?q=emergency+radio" style="text-decoration:none">NOAA and crank radios</a><a class="pill" href="../shop.html?q=batteries" style="text-decoration:none">Batteries that fit them</a></div>
+        <div class="btnrow" style="margin-top:18px">
           <button class="btn btn--ghost" data-tellus="true">Tell Carrie &amp; Eric</button>
         </div>
       </div>
@@ -159,18 +157,18 @@
   <div class="wrap">
     <div class="foot-top">
       <div>
-        <img src="../assets/img/logo-foot.webp?v=34aebc6d" alt="Twisted Roots Merc" width="440" height="371" loading="lazy" decoding="async">
+        <img src="../assets/img/logo-foot.webp?v=34aebc6d" srcset="../assets/img/logo-foot-190.webp 190w, ../assets/img/logo-foot-380.webp 380w, ../assets/img/logo-foot.webp 440w" sizes="190px" width="440" height="371" alt="Twisted Roots Merc" loading="lazy" decoding="async">
         <p class="small" style="opacity:.8">Mercantile · Bakery · Kitchen<br>101 &amp; 151 N Gaither St, Siletz, Oregon 97380<br>
           <a href="tel:+15415550134">(541) 555-0134</a></p>
         <button class="stormtoggle" data-stormtoggle aria-pressed="false"><i></i>Storm Mode Off</button>
       </div>
-      <div><h4>The Store</h4><ul>
+      <div><h3>The Store</h3><ul>
         <li><a href="../merc.html">The Merc</a></li><li><a href="../yard.html">The Yard</a></li>
         <li><a href="../storm.html">Storm Ready</a></li><li><a href="../hunt.html">Hunt &amp; Field</a></li><li><a href="../local.html">Local Goods</a></li></ul></div>
-      <div><h4>Food</h4><ul>
+      <div><h3>Food</h3><ul>
         <li><a href="../bakery.html">Bakery + Kitchen</a></li><li><a href="../kitchen.html">Recipes</a></li><li><a href="../bakery.html#breakfast">Breakfast</a></li>
         <li><a href="../bakery.html#lunch">Lunch</a></li><li><a href="../bakery.html#order">Order pickup</a></li></ul></div>
-      <div><h4>Twisted Roots</h4><ul>
+      <div><h3>Twisted Roots</h3><ul>
         <li><a href="../roots.html">Our Roots</a></li><li><a href="../journal.html">The Board</a></li><li><a href="../visit.html">Visit &amp; Hours</a></li>
         <li><a href="#" data-tellus="true">What should we carry?</a></li><li><a href="../hq.html">Owner login</a></li></ul></div>
     </div>
@@ -182,6 +180,7 @@
   </div>
 </footer>
 
+<p id="trLive" class="visually-hidden" role="status" aria-live="polite"></p>
 <script>
 addEventListener("load", function () {
   var s = ["../assets/js/catalog.js?v=cdc9c20e", "../assets/js/cart.js?v=024fe1e6", "../assets/js/site.js?v=3787c0d1", "../assets/js/motion.js?v=bf716f00", "../assets/js/roots.js?v=93423d8d"], i = 0;

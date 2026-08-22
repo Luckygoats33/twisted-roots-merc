@@ -18,19 +18,17 @@
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png?v=ce873322">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/site.css?v=db82a4af">
-<link rel="stylesheet" href="../assets/css/motion.css?v=e4213a7b">
-<link rel="stylesheet" href="../assets/css/roots.css?v=42e7b082">
-<link rel="stylesheet" href="../assets/css/mobile.css?v=1c92929c">
-<link rel="stylesheet" href="../assets/css/polish.css?v=39f8e298">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap"></noscript>
+<link rel="stylesheet" href="../assets/css/bundle.css?v=bfaf2686">
 <link rel="stylesheet" href="../assets/css/print.css?v=65e49f4e" media="print">
-<link rel="stylesheet" href="../assets/css/perf.css?v=8af74f1b">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Patching Cracked Concrete So It Stays Patched", "description": "Most patches fail because nobody cleaned the crack or figured out why it cracked. Both take longer than the patching.", "articleSection": "The Yard", "keywords": "concrete, crack, repair, patching, sand mix", "mainEntityOfPage": "https://twistedrootsmerc.com/blog/yard-patching-cracked-concrete.html", "author": {"@type": "Organization", "name": "Twisted Roots Merc"}, "publisher": {"@id": "https://twistedrootsmerc.com/#store"}, "isPartOf": {"@type": "Blog", "name": "Practical Notes", "url": "https://twistedrootsmerc.com/journal.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://twistedrootsmerc.com/"}, {"@type": "ListItem", "position": 2, "name": "Practical Notes", "item": "https://twistedrootsmerc.com/journal.html"}, {"@type": "ListItem", "position": 3, "name": "Patching Cracked Concrete So It Stays Patched", "item": "https://twistedrootsmerc.com/blog/yard-patching-cracked-concrete.html"}]}</script>
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="stormbar">
   <div class="wrap"><b>Storm Mode</b> <span>Wind advisory on the coast. Storm supplies stocked and the yard is open.</span> <a href="../storm.html">See storm stock →</a></div>
@@ -45,7 +43,7 @@
       <span class="brand-txt"><b>Twisted Roots</b><span>Siletz, Oregon</span></span>
     </a>
     <button class="burger" data-burger aria-expanded="false" aria-controls="siteNav" aria-label="Menu"><span class="burger__box" aria-hidden="true"><i></i><i></i><i></i></span><span class="burger__txt">Menu</span></button>
-    <nav class="nav" id="siteNav">
+    <nav class="nav" id="siteNav" aria-label="Main">
       <div class="navitem" data-navitem>
         <button class="navitem__top" data-subtoggle aria-expanded="false" aria-controls="sub-shop">Shop<i class="navitem__car" aria-hidden="true"></i></button>
         <div class="subnav" id="sub-shop">
@@ -83,11 +81,11 @@
   </div>
 </header>
 
-<main>
+<main id="main" tabindex="-1">
 
 <section class="band band--cream band--tight" style="padding-top:clamp(40px,5vw,72px)">
   <div class="wrap--mid">
-    <nav class="serif-caps muted" style="margin-bottom:22px">
+    <nav class="serif-caps muted" style="margin-bottom:22px" aria-label="Breadcrumb">
       <a href="../index.html" style="text-decoration:none">Home</a> &nbsp;/&nbsp;
       <a href="../journal.html" style="text-decoration:none">Notes</a> &nbsp;/&nbsp;
       <a href="../journal.html#the-yard" style="text-decoration:none">The Yard</a>
@@ -101,22 +99,22 @@
 
 <article class="band band--paper" style="padding-top:clamp(34px,4vw,56px)">
   <div class="wrap--narrow tr-prose">
-    <p>Concrete cracks. All of it, everywhere, eventually. The question is never whether a slab has cracks, it is whether the crack is doing anything. Answer that before you buy a bag, because half the cracks people patch did not need patching and a quarter of them needed something bigger than a patch.</p><h2>Read the crack first</h2><table><thead><tr><th>What you see</th><th>What it usually is</th><th>What to do</th></tr></thead><tbody><tr><td>Hairline, wandering, both sides level</td><td>Shrinkage from curing</td><td>Nothing, or a flexible sealant to keep water out</td></tr><tr><td>Straight, at a control joint</td><td>Working as designed</td><td>Nothing. Keep the joint sealed</td></tr><tr><td>Wide, one side higher than the other</td><td>Settlement. The base moved</td><td>Fix the base or replace the section</td></tr><tr><td>Crumbly, flaking surface, no real crack</td><td>Spalling from a weak surface layer</td><td>Resurface with sand mix</td></tr><tr><td>Crack that grows season to season</td><td>Something is still moving</td><td>Find the cause before patching anything</td></tr></tbody></table><p>A crack with a lip you can catch a boot on is a settlement problem, and mortaring over it means you get the same crack again in the same place next winter. That is a base problem, and often a drainage problem, which usually means water is getting under the slab. Look at where the downspouts go before you look at the concrete.</p><h2>Preparing the crack, which is the whole job</h2><ol><li>Chase the crack out with a cold chisel or a grinder until you have sound concrete on both sides. Do not just widen the top.</li><li>Undercut the edges if you can, so the groove is wider at the bottom than the top. That gives the patch a mechanical key and it is the single biggest thing you can do for longevity.</li><li>Get all the dust and loose material out. Shop vac, then blow it, then vacuum again. Dust is a bond breaker.</li><li>Dampen the concrete so it does not steal water out of your patch, but leave no standing water.</li><li>Brush on a concrete bonding adhesive if the patch is thin or the surface is old. This is on the <a href="../merc.html#fixit">Fix It wall</a> and it costs less than doing the job twice.</li></ol><h2>Which bag</h2><p>For anything under about two inches thick, sand and topping mix. It has no coarse aggregate so it works into a narrow groove and feathers at the edge. For a hole deeper than two inches with a real footprint, concrete mix. For a crack that needs to move, a flexible urethane crack sealant, not cement at all.</p><p>That last one is not a compromise. A control joint or a slab edge that expands and contracts will crack any rigid patch you put in it. Sealant keeps water out and lets the joint work, which is the actual goal.</p><h2>Placing it</h2><p>Mix stiffer than you think, press it hard into the groove with a margin trowel, and work it against the sides rather than just filling the middle. Overfill slightly, then strike it flush and match the surrounding texture while it is still workable. A broom finish next to a smooth patch looks worse than the crack did.</p><p>Then cover it. A patch is a thin section with a lot of surface area, which means it dries fast and cracks. Damp burlap, a scrap of plastic, or in our weather just letting the rain do it, but keep it wet for two or three days.</p><h3>Resurfacing a whole spalled area</h3><p>If the surface is flaking over several square feet, patching individual spots is a losing game. Clean the whole area to sound concrete, pressure wash it, and skim the entire slab with sand mix or a proper resurfacer at about a quarter to half inch. One 60 lb bag of sand mix at half an inch covers roughly 12 square feet. It is more work up front and it lasts.</p><h2>When it is not a patch job</h2><p>Structural cracks in a foundation wall, cracks with active water coming through, cracks wider than about a quarter inch that keep growing, or a slab that has dropped an inch. Those are somebody's professional problem, and doing a good-looking patch over them just hides the evidence. Get a look from a foundation contractor and be glad it was a phone call.</p><p>Sand mix, concrete mix and bonding adhesive are all here. <a href="../yard.html">Check the shed count</a>, and read <a href="yard-concrete-vs-sand-mix-vs-mortar.html">the bag comparison</a> if you are unsure which one your repair wants.</p>
+    <p>Concrete cracks. All of it, everywhere, eventually. The question is never whether a slab has cracks, it is whether the crack is doing anything. Answer that before you buy a bag, because half the cracks people patch did not need patching and a quarter of them needed something bigger than a patch.</p><h2>Read the crack first</h2><table><thead><tr><th scope="col">What you see</th><th scope="col">What it usually is</th><th scope="col">What to do</th></tr></thead><tbody><tr><td>Hairline, wandering, both sides level</td><td>Shrinkage from curing</td><td>Nothing, or a flexible sealant to keep water out</td></tr><tr><td>Straight, at a control joint</td><td>Working as designed</td><td>Nothing. Keep the joint sealed</td></tr><tr><td>Wide, one side higher than the other</td><td>Settlement. The base moved</td><td>Fix the base or replace the section</td></tr><tr><td>Crumbly, flaking surface, no real crack</td><td>Spalling from a weak surface layer</td><td>Resurface with sand mix</td></tr><tr><td>Crack that grows season to season</td><td>Something is still moving</td><td>Find the cause before patching anything</td></tr></tbody></table><p>A crack with a lip you can catch a boot on is a settlement problem, and mortaring over it means you get the same crack again in the same place next winter. That is a base problem, and often a drainage problem, which usually means water is getting under the slab. Look at where the downspouts go before you look at the concrete.</p><h2>Preparing the crack, which is the whole job</h2><ol><li>Chase the crack out with a cold chisel or a grinder until you have sound concrete on both sides. Do not just widen the top.</li><li>Undercut the edges if you can, so the groove is wider at the bottom than the top. That gives the patch a mechanical key and it is the single biggest thing you can do for longevity.</li><li>Get all the dust and loose material out. Shop vac, then blow it, then vacuum again. Dust is a bond breaker.</li><li>Dampen the concrete so it does not steal water out of your patch, but leave no standing water.</li><li>Brush on a concrete bonding adhesive if the patch is thin or the surface is old. This is on the <a href="../merc.html#fixit">Fix It wall</a> and it costs less than doing the job twice.</li></ol><h2>Which bag</h2><p>For anything under about two inches thick, sand and topping mix. It has no coarse aggregate so it works into a narrow groove and feathers at the edge. For a hole deeper than two inches with a real footprint, concrete mix. For a crack that needs to move, a flexible urethane crack sealant, not cement at all.</p><p>That last one is not a compromise. A control joint or a slab edge that expands and contracts will crack any rigid patch you put in it. Sealant keeps water out and lets the joint work, which is the actual goal.</p><h2>Placing it</h2><p>Mix stiffer than you think, press it hard into the groove with a margin trowel, and work it against the sides rather than just filling the middle. Overfill slightly, then strike it flush and match the surrounding texture while it is still workable. A broom finish next to a smooth patch looks worse than the crack did.</p><p>Then cover it. A patch is a thin section with a lot of surface area, which means it dries fast and cracks. Damp burlap, a scrap of plastic, or in our weather just letting the rain do it, but keep it wet for two or three days.</p><h3>Resurfacing a whole spalled area</h3><p>If the surface is flaking over several square feet, patching individual spots is a losing game. Clean the whole area to sound concrete, pressure wash it, and skim the entire slab with sand mix or a proper resurfacer at about a quarter to half inch. One 60 lb bag of sand mix at half an inch covers roughly 12 square feet. It is more work up front and it lasts.</p><h2>When it is not a patch job</h2><p>Structural cracks in a foundation wall, cracks with active water coming through, cracks wider than about a quarter inch that keep growing, or a slab that has dropped an inch. Those are somebody's professional problem, and doing a good-looking patch over them just hides the evidence. Get a look from a foundation contractor and be glad it was a phone call.</p><p>Sand mix, concrete mix and bonding adhesive are all here. <a href="../yard.html">Check the shed count</a>, and read <a href="yard-concrete-vs-sand-mix-vs-mortar.html">the bag comparison</a> if you are unsure which one your repair wants.</p>
   </div>
 </article>
+
 
 <section class="band band--bark band--dark band--tight">
   <div class="wrap--mid">
     <div class="split split--top">
       <div>
-        <p class="eyebrow">While you're here</p>
-        <h2 class="h2 mb0">Need any of this today?</h2>
+        <p class="eyebrow">From the shelf</p>
+        <h2 class="h2 mb0">What this takes</h2>
       </div>
       <div>
-        <p class="lede mb0">Check what is on the shelf before you drive over, or tell us what we
-          should be carrying.</p>
-        <div class="btnrow" style="margin-top:20px">
-          <a class="btn btn--amber" href="../yard.html">Shop now</a>
+        <p class="lede mb0">Counts come off the register. If it says two left, there are two left.</p>
+        <div class="pillrow"><a class="pill" href="../shop.html?q=crack+filler" style="text-decoration:none">Concrete crack filler</a><a class="pill" href="../shop.html?q=masonry+sealant" style="text-decoration:none">Masonry sealant for the wider ones</a></div>
+        <div class="btnrow" style="margin-top:18px">
           <button class="btn btn--ghost" data-tellus="true">Tell Carrie &amp; Eric</button>
         </div>
       </div>
@@ -159,18 +157,18 @@
   <div class="wrap">
     <div class="foot-top">
       <div>
-        <img src="../assets/img/logo-foot.webp?v=34aebc6d" alt="Twisted Roots Merc" width="440" height="371" loading="lazy" decoding="async">
+        <img src="../assets/img/logo-foot.webp?v=34aebc6d" srcset="../assets/img/logo-foot-190.webp 190w, ../assets/img/logo-foot-380.webp 380w, ../assets/img/logo-foot.webp 440w" sizes="190px" width="440" height="371" alt="Twisted Roots Merc" loading="lazy" decoding="async">
         <p class="small" style="opacity:.8">Mercantile · Bakery · Kitchen<br>101 &amp; 151 N Gaither St, Siletz, Oregon 97380<br>
           <a href="tel:+15415550134">(541) 555-0134</a></p>
         <button class="stormtoggle" data-stormtoggle aria-pressed="false"><i></i>Storm Mode Off</button>
       </div>
-      <div><h4>The Store</h4><ul>
+      <div><h3>The Store</h3><ul>
         <li><a href="../merc.html">The Merc</a></li><li><a href="../yard.html">The Yard</a></li>
         <li><a href="../storm.html">Storm Ready</a></li><li><a href="../hunt.html">Hunt &amp; Field</a></li><li><a href="../local.html">Local Goods</a></li></ul></div>
-      <div><h4>Food</h4><ul>
+      <div><h3>Food</h3><ul>
         <li><a href="../bakery.html">Bakery + Kitchen</a></li><li><a href="../kitchen.html">Recipes</a></li><li><a href="../bakery.html#breakfast">Breakfast</a></li>
         <li><a href="../bakery.html#lunch">Lunch</a></li><li><a href="../bakery.html#order">Order pickup</a></li></ul></div>
-      <div><h4>Twisted Roots</h4><ul>
+      <div><h3>Twisted Roots</h3><ul>
         <li><a href="../roots.html">Our Roots</a></li><li><a href="../journal.html">The Board</a></li><li><a href="../visit.html">Visit &amp; Hours</a></li>
         <li><a href="#" data-tellus="true">What should we carry?</a></li><li><a href="../hq.html">Owner login</a></li></ul></div>
     </div>
@@ -182,6 +180,7 @@
   </div>
 </footer>
 
+<p id="trLive" class="visually-hidden" role="status" aria-live="polite"></p>
 <script>
 addEventListener("load", function () {
   var s = ["../assets/js/catalog.js?v=cdc9c20e", "../assets/js/cart.js?v=024fe1e6", "../assets/js/site.js?v=3787c0d1", "../assets/js/motion.js?v=bf716f00", "../assets/js/roots.js?v=93423d8d"], i = 0;

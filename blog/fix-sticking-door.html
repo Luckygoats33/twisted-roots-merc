@@ -18,19 +18,17 @@
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png?v=ce873322">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/site.css?v=db82a4af">
-<link rel="stylesheet" href="../assets/css/motion.css?v=e4213a7b">
-<link rel="stylesheet" href="../assets/css/roots.css?v=42e7b082">
-<link rel="stylesheet" href="../assets/css/mobile.css?v=1c92929c">
-<link rel="stylesheet" href="../assets/css/polish.css?v=39f8e298">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap"></noscript>
+<link rel="stylesheet" href="../assets/css/bundle.css?v=bfaf2686">
 <link rel="stylesheet" href="../assets/css/print.css?v=65e49f4e" media="print">
-<link rel="stylesheet" href="../assets/css/perf.css?v=8af74f1b">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "A Door That Sticks, Drags or Will Not Latch", "description": "Before you plane anything, tighten the top hinge screws. That fixes more doors around here than any other single step.", "articleSection": "Fix It", "keywords": "door, hinges, sticking, repair, adjustment", "mainEntityOfPage": "https://twistedrootsmerc.com/blog/fix-sticking-door.html", "author": {"@type": "Organization", "name": "Twisted Roots Merc"}, "publisher": {"@id": "https://twistedrootsmerc.com/#store"}, "isPartOf": {"@type": "Blog", "name": "Practical Notes", "url": "https://twistedrootsmerc.com/journal.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://twistedrootsmerc.com/"}, {"@type": "ListItem", "position": 2, "name": "Practical Notes", "item": "https://twistedrootsmerc.com/journal.html"}, {"@type": "ListItem", "position": 3, "name": "A Door That Sticks, Drags or Will Not Latch", "item": "https://twistedrootsmerc.com/blog/fix-sticking-door.html"}]}</script>
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="stormbar">
   <div class="wrap"><b>Storm Mode</b> <span>Wind advisory on the coast. Storm supplies stocked and the yard is open.</span> <a href="../storm.html">See storm stock →</a></div>
@@ -45,7 +43,7 @@
       <span class="brand-txt"><b>Twisted Roots</b><span>Siletz, Oregon</span></span>
     </a>
     <button class="burger" data-burger aria-expanded="false" aria-controls="siteNav" aria-label="Menu"><span class="burger__box" aria-hidden="true"><i></i><i></i><i></i></span><span class="burger__txt">Menu</span></button>
-    <nav class="nav" id="siteNav">
+    <nav class="nav" id="siteNav" aria-label="Main">
       <div class="navitem" data-navitem>
         <button class="navitem__top" data-subtoggle aria-expanded="false" aria-controls="sub-shop">Shop<i class="navitem__car" aria-hidden="true"></i></button>
         <div class="subnav" id="sub-shop">
@@ -83,11 +81,11 @@
   </div>
 </header>
 
-<main>
+<main id="main" tabindex="-1">
 
 <section class="band band--cream band--tight" style="padding-top:clamp(40px,5vw,72px)">
   <div class="wrap--mid">
-    <nav class="serif-caps muted" style="margin-bottom:22px">
+    <nav class="serif-caps muted" style="margin-bottom:22px" aria-label="Breadcrumb">
       <a href="../index.html" style="text-decoration:none">Home</a> &nbsp;/&nbsp;
       <a href="../journal.html" style="text-decoration:none">Notes</a> &nbsp;/&nbsp;
       <a href="../journal.html#fix-it" style="text-decoration:none">Fix It</a>
@@ -101,22 +99,22 @@
 
 <article class="band band--paper" style="padding-top:clamp(34px,4vw,56px)">
   <div class="wrap--narrow tr-prose">
-    <p>Doors in coastal houses move. Wood swells in a wet winter, the building settles on damp ground, and hinge screws work loose in framing that has been slightly humid for thirty years. The result is a door that rubs at the top corner, drags on the floor, or swings shut on its own. Almost none of that needs a plane, and reaching for one first is how a door ends up with a permanent gap.</p><h3>What you need</h3><ul><li>A screwdriver</li><li>3 inch screws, long enough to reach the framing</li><li>Wooden shims or thin cardboard</li><li>A pencil, and a block plane only as a last resort</li></ul><h2>Find where it is binding</h2><ol><li>Close the door slowly and watch. Listen for where it touches.</li><li>Run a strip of paper around the gap. Where it will not slide through, that is the contact point.</li><li>Look at the gap all the way round. A door should have a consistent gap, about the thickness of a nickel, on the top and both sides.</li><li>A gap wide at the top of the latch side and tight at the bottom means the door has dropped. That is hinges, not swelling.</li><li>A door that binds all the way down one side in winter and is fine in summer is swelling. That is a finish problem.</li></ol><h2>The top hinge, which is usually the answer</h2><p>The top hinge carries most of the door's weight in shear, and it is the one that pulls loose. The short screws that came with the hinge only bite into the jamb, which is thin trim material nailed to the framing. Over years the door sags and the top latch corner starts to rub.</p><p>The fix takes ten minutes. Open the door, support it, and remove one screw at a time from the jamb side of the top hinge. Replace each with a 3 inch screw that goes through the jamb and into the framing behind it. Drive it snug, not so hard that it pulls the jamb out of line. Do all of them on that hinge. Very often the door lifts back into place as you tighten.</p><p>If the screw holes are stripped and the screw spins, glue wooden matchsticks or a piece of dowel into the hole, let it dry, and drive into that.</p><h2>Swelling, and why it is a coating problem</h2><p>Wood swells because it is taking on moisture, and it takes on moisture through unsealed surfaces. On most doors that means the top edge and the bottom edge, which almost nobody paints. Take the door off, check both edges, and if they are bare, prime and paint them. That single step stops a lot of seasonal sticking permanently.</p><p>If the door is genuinely too tight and must be trimmed, mark the contact area with pencil, take the door off, and remove material with a block plane or a belt sander in small passes, checking constantly. Plane the hinge edge rather than the latch edge if you can, because the latch edge is bevelled slightly and a shaved latch edge starts to look wrong. Seal and paint any bare wood you expose, immediately, or you have just made a new water entry point.</p><h2>Other fixes, from least invasive up</h2><table><thead><tr><th>Symptom</th><th>Try first</th></tr></thead><tbody><tr><td>Rubs at top latch corner</td><td>Long screws in the top hinge</td></tr><tr><td>Rubs at bottom latch corner</td><td>Shim behind the bottom hinge, or tighten the top</td></tr><tr><td>Latch does not engage</td><td>Adjust the strike plate</td></tr><tr><td>Swings shut on its own</td><td>Hinge pin tap, or the jamb is out of plumb</td></tr><tr><td>Drags on the floor</td><td>Check for a raised threshold or new flooring</td></tr><tr><td>Binds only in winter</td><td>Seal the top and bottom edges</td></tr></tbody></table><p>Shimming a hinge moves the door in the opposite direction: a thin cardboard shim behind the whole hinge leaf pushes that edge of the door away from the jamb, and a shim behind only the outer half angles it. It sounds crude. It is standard practice and it works.</p><h2>When the door is not the problem</h2><p>If the gap at the top of the door is wedge-shaped and the trim above it has separated, the frame is out of square because the house has moved. That is common in older houses out here on saturated ground, particularly on the low side of a building. You can adjust the door to fit the new shape, and that is a reasonable answer. But if it keeps needing adjustment every year, and doors elsewhere in the house are doing it too, get somebody to look at the foundation and the crawlspace rather than at the doors.</p><p>Long screws, shims, hinges and planes are on <a href="../merc.html#fixit">the Fix It wall</a>. If it closes fine but will not catch, go to <a href="fix-strike-plate.html">the strike plate post</a>.</p>
+    <p>Doors in coastal houses move. Wood swells in a wet winter, the building settles on damp ground, and hinge screws work loose in framing that has been slightly humid for thirty years. The result is a door that rubs at the top corner, drags on the floor, or swings shut on its own. Almost none of that needs a plane, and reaching for one first is how a door ends up with a permanent gap.</p><h2 class="a11y-rank-h3">What you need</h2><ul><li>A screwdriver</li><li>3 inch screws, long enough to reach the framing</li><li>Wooden shims or thin cardboard</li><li>A pencil, and a block plane only as a last resort</li></ul><h2>Find where it is binding</h2><ol><li>Close the door slowly and watch. Listen for where it touches.</li><li>Run a strip of paper around the gap. Where it will not slide through, that is the contact point.</li><li>Look at the gap all the way round. A door should have a consistent gap, about the thickness of a nickel, on the top and both sides.</li><li>A gap wide at the top of the latch side and tight at the bottom means the door has dropped. That is hinges, not swelling.</li><li>A door that binds all the way down one side in winter and is fine in summer is swelling. That is a finish problem.</li></ol><h2>The top hinge, which is usually the answer</h2><p>The top hinge carries most of the door's weight in shear, and it is the one that pulls loose. The short screws that came with the hinge only bite into the jamb, which is thin trim material nailed to the framing. Over years the door sags and the top latch corner starts to rub.</p><p>The fix takes ten minutes. Open the door, support it, and remove one screw at a time from the jamb side of the top hinge. Replace each with a 3 inch screw that goes through the jamb and into the framing behind it. Drive it snug, not so hard that it pulls the jamb out of line. Do all of them on that hinge. Very often the door lifts back into place as you tighten.</p><p>If the screw holes are stripped and the screw spins, glue wooden matchsticks or a piece of dowel into the hole, let it dry, and drive into that.</p><h2>Swelling, and why it is a coating problem</h2><p>Wood swells because it is taking on moisture, and it takes on moisture through unsealed surfaces. On most doors that means the top edge and the bottom edge, which almost nobody paints. Take the door off, check both edges, and if they are bare, prime and paint them. That single step stops a lot of seasonal sticking permanently.</p><p>If the door is genuinely too tight and must be trimmed, mark the contact area with pencil, take the door off, and remove material with a block plane or a belt sander in small passes, checking constantly. Plane the hinge edge rather than the latch edge if you can, because the latch edge is bevelled slightly and a shaved latch edge starts to look wrong. Seal and paint any bare wood you expose, immediately, or you have just made a new water entry point.</p><h2>Other fixes, from least invasive up</h2><table><thead><tr><th scope="col">Symptom</th><th scope="col">Try first</th></tr></thead><tbody><tr><td>Rubs at top latch corner</td><td>Long screws in the top hinge</td></tr><tr><td>Rubs at bottom latch corner</td><td>Shim behind the bottom hinge, or tighten the top</td></tr><tr><td>Latch does not engage</td><td>Adjust the strike plate</td></tr><tr><td>Swings shut on its own</td><td>Hinge pin tap, or the jamb is out of plumb</td></tr><tr><td>Drags on the floor</td><td>Check for a raised threshold or new flooring</td></tr><tr><td>Binds only in winter</td><td>Seal the top and bottom edges</td></tr></tbody></table><p>Shimming a hinge moves the door in the opposite direction: a thin cardboard shim behind the whole hinge leaf pushes that edge of the door away from the jamb, and a shim behind only the outer half angles it. It sounds crude. It is standard practice and it works.</p><h2>When the door is not the problem</h2><p>If the gap at the top of the door is wedge-shaped and the trim above it has separated, the frame is out of square because the house has moved. That is common in older houses out here on saturated ground, particularly on the low side of a building. You can adjust the door to fit the new shape, and that is a reasonable answer. But if it keeps needing adjustment every year, and doors elsewhere in the house are doing it too, get somebody to look at the foundation and the crawlspace rather than at the doors.</p><p>Long screws, shims, hinges and planes are on <a href="../merc.html#fixit">the Fix It wall</a>. If it closes fine but will not catch, go to <a href="fix-strike-plate.html">the strike plate post</a>.</p>
   </div>
 </article>
+
 
 <section class="band band--bark band--dark band--tight">
   <div class="wrap--mid">
     <div class="split split--top">
       <div>
-        <p class="eyebrow">While you're here</p>
-        <h2 class="h2 mb0">Need any of this today?</h2>
+        <p class="eyebrow">From the shelf</p>
+        <h2 class="h2 mb0">What this takes</h2>
       </div>
       <div>
-        <p class="lede mb0">Check what is on the shelf before you drive over, or tell us what we
-          should be carrying.</p>
-        <div class="btnrow" style="margin-top:20px">
-          <a class="btn btn--amber" href="../merc.html#fixit">Shop now</a>
+        <p class="lede mb0">Counts come off the register. If it says two left, there are two left.</p>
+        <div class="pillrow"><a class="pill" href="../shop.html?q=structural+screw" style="text-decoration:none">Three inch screws that reach the framing</a><a class="pill" href="../shop.html?q=sandpaper" style="text-decoration:none">Sandpaper, if it needs taking down</a></div>
+        <div class="btnrow" style="margin-top:18px">
           <button class="btn btn--ghost" data-tellus="true">Tell Carrie &amp; Eric</button>
         </div>
       </div>
@@ -159,18 +157,18 @@
   <div class="wrap">
     <div class="foot-top">
       <div>
-        <img src="../assets/img/logo-foot.webp?v=34aebc6d" alt="Twisted Roots Merc" width="440" height="371" loading="lazy" decoding="async">
+        <img src="../assets/img/logo-foot.webp?v=34aebc6d" srcset="../assets/img/logo-foot-190.webp 190w, ../assets/img/logo-foot-380.webp 380w, ../assets/img/logo-foot.webp 440w" sizes="190px" width="440" height="371" alt="Twisted Roots Merc" loading="lazy" decoding="async">
         <p class="small" style="opacity:.8">Mercantile · Bakery · Kitchen<br>101 &amp; 151 N Gaither St, Siletz, Oregon 97380<br>
           <a href="tel:+15415550134">(541) 555-0134</a></p>
         <button class="stormtoggle" data-stormtoggle aria-pressed="false"><i></i>Storm Mode Off</button>
       </div>
-      <div><h4>The Store</h4><ul>
+      <div><h3>The Store</h3><ul>
         <li><a href="../merc.html">The Merc</a></li><li><a href="../yard.html">The Yard</a></li>
         <li><a href="../storm.html">Storm Ready</a></li><li><a href="../hunt.html">Hunt &amp; Field</a></li><li><a href="../local.html">Local Goods</a></li></ul></div>
-      <div><h4>Food</h4><ul>
+      <div><h3>Food</h3><ul>
         <li><a href="../bakery.html">Bakery + Kitchen</a></li><li><a href="../kitchen.html">Recipes</a></li><li><a href="../bakery.html#breakfast">Breakfast</a></li>
         <li><a href="../bakery.html#lunch">Lunch</a></li><li><a href="../bakery.html#order">Order pickup</a></li></ul></div>
-      <div><h4>Twisted Roots</h4><ul>
+      <div><h3>Twisted Roots</h3><ul>
         <li><a href="../roots.html">Our Roots</a></li><li><a href="../journal.html">The Board</a></li><li><a href="../visit.html">Visit &amp; Hours</a></li>
         <li><a href="#" data-tellus="true">What should we carry?</a></li><li><a href="../hq.html">Owner login</a></li></ul></div>
     </div>
@@ -182,6 +180,7 @@
   </div>
 </footer>
 
+<p id="trLive" class="visually-hidden" role="status" aria-live="polite"></p>
 <script>
 addEventListener("load", function () {
   var s = ["../assets/js/catalog.js?v=cdc9c20e", "../assets/js/cart.js?v=024fe1e6", "../assets/js/site.js?v=3787c0d1", "../assets/js/motion.js?v=bf716f00", "../assets/js/roots.js?v=93423d8d"], i = 0;

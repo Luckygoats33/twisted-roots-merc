@@ -18,19 +18,17 @@
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png?v=ce873322">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/site.css?v=db82a4af">
-<link rel="stylesheet" href="../assets/css/motion.css?v=e4213a7b">
-<link rel="stylesheet" href="../assets/css/roots.css?v=42e7b082">
-<link rel="stylesheet" href="../assets/css/mobile.css?v=1c92929c">
-<link rel="stylesheet" href="../assets/css/polish.css?v=39f8e298">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap"></noscript>
+<link rel="stylesheet" href="../assets/css/bundle.css?v=bfaf2686">
 <link rel="stylesheet" href="../assets/css/print.css?v=65e49f4e" media="print">
-<link rel="stylesheet" href="../assets/css/perf.css?v=8af74f1b">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Pets in an Outage and an Evacuation", "description": "The plan that fails is the one where you have three minutes, a scared cat, and no carrier you can find.", "articleSection": "Storm Ready", "keywords": "pets, dogs, cats, evacuation, kit", "mainEntityOfPage": "https://twistedrootsmerc.com/blog/storm-pets-in-an-emergency.html", "author": {"@type": "Organization", "name": "Twisted Roots Merc"}, "publisher": {"@id": "https://twistedrootsmerc.com/#store"}, "isPartOf": {"@type": "Blog", "name": "Practical Notes", "url": "https://twistedrootsmerc.com/journal.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://twistedrootsmerc.com/"}, {"@type": "ListItem", "position": 2, "name": "Practical Notes", "item": "https://twistedrootsmerc.com/journal.html"}, {"@type": "ListItem", "position": 3, "name": "Pets in an Outage and an Evacuation", "item": "https://twistedrootsmerc.com/blog/storm-pets-in-an-emergency.html"}]}</script>
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="stormbar">
   <div class="wrap"><b>Storm Mode</b> <span>Wind advisory on the coast. Storm supplies stocked and the yard is open.</span> <a href="../storm.html">See storm stock →</a></div>
@@ -45,7 +43,7 @@
       <span class="brand-txt"><b>Twisted Roots</b><span>Siletz, Oregon</span></span>
     </a>
     <button class="burger" data-burger aria-expanded="false" aria-controls="siteNav" aria-label="Menu"><span class="burger__box" aria-hidden="true"><i></i><i></i><i></i></span><span class="burger__txt">Menu</span></button>
-    <nav class="nav" id="siteNav">
+    <nav class="nav" id="siteNav" aria-label="Main">
       <div class="navitem" data-navitem>
         <button class="navitem__top" data-subtoggle aria-expanded="false" aria-controls="sub-shop">Shop<i class="navitem__car" aria-hidden="true"></i></button>
         <div class="subnav" id="sub-shop">
@@ -83,11 +81,11 @@
   </div>
 </header>
 
-<main>
+<main id="main" tabindex="-1">
 
 <section class="band band--cream band--tight" style="padding-top:clamp(40px,5vw,72px)">
   <div class="wrap--mid">
-    <nav class="serif-caps muted" style="margin-bottom:22px">
+    <nav class="serif-caps muted" style="margin-bottom:22px" aria-label="Breadcrumb">
       <a href="../index.html" style="text-decoration:none">Home</a> &nbsp;/&nbsp;
       <a href="../journal.html" style="text-decoration:none">Notes</a> &nbsp;/&nbsp;
       <a href="../journal.html#storm-ready" style="text-decoration:none">Storm Ready</a>
@@ -101,22 +99,22 @@
 
 <article class="band band--paper" style="padding-top:clamp(34px,4vw,56px)">
   <div class="wrap--narrow tr-prose">
-    <p>Two things go wrong with pets in an emergency. In an outage, they get forgotten in the logistics — nobody thinks about the fact that the dog food is nearly out and the store is closed. In an evacuation, the animal panics and hides, and you lose the twenty minutes you did not have.</p><h2>The pet kit</h2><p>Keep it with the household kit, not in a separate place you have to remember.</p><table><thead><tr><th>Item</th><th>Amount</th><th>Note</th></tr></thead><tbody><tr><td>Food</td><td>2 weeks</td><td>Rotate it. Canned keeps better than a torn bag of kibble</td></tr><tr><td>Water</td><td>1 gallon per day per large dog</td><td>Counts on top of the household number, not inside it</td></tr><tr><td>Bowls</td><td>Collapsible pair</td><td>Lives in the kit permanently</td></tr><tr><td>Medications</td><td>2 weeks, plus the prescription details</td><td>Photograph the label</td></tr><tr><td>Carrier or crate</td><td>One per animal, sized right</td><td>The item that actually decides whether you leave with them</td></tr><tr><td>Leash and a spare collar with tags</td><td>One set per animal</td><td>Keep a slip lead too. A panicked dog backs out of a collar</td></tr><tr><td>Litter, pan, bags</td><td>2 weeks</td><td>A disposable pan and a small bag of litter is enough</td></tr><tr><td>Vaccination records and a photo of you with the animal</td><td>Paper copy</td><td>Shelters ask for records. The photo proves ownership</td></tr><tr><td>Old towel and a familiar blanket</td><td>1</td><td>Smell settles animals more than anything else</td></tr><tr><td>Any comfort item and a couple of favourite treats</td><td>Small</td><td>For coaxing a cat out from under a bed</td></tr></tbody></table><h2>The carrier problem</h2><p>The most common reason people cannot evacuate with a cat is that the carrier lives in the attic and the cat associates it exclusively with the vet. The fix takes a month and costs nothing: leave the carrier out, permanently, in a room the cat uses, with a blanket in it, and feed treats in there. A carrier that is furniture is a carrier you can use in a hurry.</p><p>Same with dogs and crates. A crate-trained dog in a strange, loud, crowded place is calm. One that has never been in a crate is not.</p><h2>In an outage</h2><ul><li><strong>They get stressed by the dark and quiet too.</strong> No hum, no lights, a generator running outside, people moving around with headlamps. Expect odd behavior and be patient with it.</li><li><strong>Keep them inside</strong> during and after a windstorm. Downed wires, broken glass, nails in debris, and unfamiliar smells that make dogs wander.</li><li><strong>Leash for every outing</strong> for a few days afterward, even for a dog that never needs one. The landmarks and the scent map they navigate by have been rearranged.</li><li><strong>Do not let them drink standing water</strong> after a flood. It has been through everything on the ground uphill.</li><li><strong>Watch the woodstove and the candles.</strong> A cat and a candle is a house fire, and a dog's tail clears a coffee table.</li><li><strong>Warmth.</strong> Short-coated dogs, old animals and anything small get cold in an unheated house. A blanket in a small space, and let them sleep with you.</li></ul><h2>Evacuating</h2><ol><li>Bring them in <strong>as soon as you hear a watch</strong>, not when you decide to leave. Cats sense stress and disappear, and you cannot find a cat that does not want to be found.</li><li>Crate or leash before you open any exterior door.</li><li>Take the kit. It lives by the door for exactly this.</li><li>Never leave an animal tied outside or shut in a crate in a place that may flood.</li><li>If you truly cannot take them, leave them loose inside on an upper floor with food and water out and a note on the door saying what is in the house and how many.</li></ol><p>Know your options before you need them. Not every shelter takes animals, though the rules have improved a lot, and hotels inland vary. A short list of pet-friendly places and the number of a boarding kennel outside the area, on paper, is a twenty-minute job that pays for itself once.</p><h2>Identification</h2><p>A microchip with <strong>current contact information registered</strong> is the single best thing you can do. Chips are useless if the registry still has a phone number from two houses ago. Check yours. Add a physical tag as well, because a tag works for anyone who finds the animal and a chip needs a scanner.</p><p>Pet emergency kits, food, bowls and leashes are stocked on the <a href="../storm.html">storm wall</a> and in the everyday aisle. The <a href="storm-go-bag-vs-stay-home-kit.html">going-bag piece</a> covers the human half of the same decision.</p>
+    <p>Two things go wrong with pets in an emergency. In an outage, they get forgotten in the logistics — nobody thinks about the fact that the dog food is nearly out and the store is closed. In an evacuation, the animal panics and hides, and you lose the twenty minutes you did not have.</p><h2>The pet kit</h2><p>Keep it with the household kit, not in a separate place you have to remember.</p><table><thead><tr><th scope="col">Item</th><th scope="col">Amount</th><th scope="col">Note</th></tr></thead><tbody><tr><td>Food</td><td>2 weeks</td><td>Rotate it. Canned keeps better than a torn bag of kibble</td></tr><tr><td>Water</td><td>1 gallon per day per large dog</td><td>Counts on top of the household number, not inside it</td></tr><tr><td>Bowls</td><td>Collapsible pair</td><td>Lives in the kit permanently</td></tr><tr><td>Medications</td><td>2 weeks, plus the prescription details</td><td>Photograph the label</td></tr><tr><td>Carrier or crate</td><td>One per animal, sized right</td><td>The item that actually decides whether you leave with them</td></tr><tr><td>Leash and a spare collar with tags</td><td>One set per animal</td><td>Keep a slip lead too. A panicked dog backs out of a collar</td></tr><tr><td>Litter, pan, bags</td><td>2 weeks</td><td>A disposable pan and a small bag of litter is enough</td></tr><tr><td>Vaccination records and a photo of you with the animal</td><td>Paper copy</td><td>Shelters ask for records. The photo proves ownership</td></tr><tr><td>Old towel and a familiar blanket</td><td>1</td><td>Smell settles animals more than anything else</td></tr><tr><td>Any comfort item and a couple of favourite treats</td><td>Small</td><td>For coaxing a cat out from under a bed</td></tr></tbody></table><h2>The carrier problem</h2><p>The most common reason people cannot evacuate with a cat is that the carrier lives in the attic and the cat associates it exclusively with the vet. The fix takes a month and costs nothing: leave the carrier out, permanently, in a room the cat uses, with a blanket in it, and feed treats in there. A carrier that is furniture is a carrier you can use in a hurry.</p><p>Same with dogs and crates. A crate-trained dog in a strange, loud, crowded place is calm. One that has never been in a crate is not.</p><h2>In an outage</h2><ul><li><strong>They get stressed by the dark and quiet too.</strong> No hum, no lights, a generator running outside, people moving around with headlamps. Expect odd behavior and be patient with it.</li><li><strong>Keep them inside</strong> during and after a windstorm. Downed wires, broken glass, nails in debris, and unfamiliar smells that make dogs wander.</li><li><strong>Leash for every outing</strong> for a few days afterward, even for a dog that never needs one. The landmarks and the scent map they navigate by have been rearranged.</li><li><strong>Do not let them drink standing water</strong> after a flood. It has been through everything on the ground uphill.</li><li><strong>Watch the woodstove and the candles.</strong> A cat and a candle is a house fire, and a dog's tail clears a coffee table.</li><li><strong>Warmth.</strong> Short-coated dogs, old animals and anything small get cold in an unheated house. A blanket in a small space, and let them sleep with you.</li></ul><h2>Evacuating</h2><ol><li>Bring them in <strong>as soon as you hear a watch</strong>, not when you decide to leave. Cats sense stress and disappear, and you cannot find a cat that does not want to be found.</li><li>Crate or leash before you open any exterior door.</li><li>Take the kit. It lives by the door for exactly this.</li><li>Never leave an animal tied outside or shut in a crate in a place that may flood.</li><li>If you truly cannot take them, leave them loose inside on an upper floor with food and water out and a note on the door saying what is in the house and how many.</li></ol><p>Know your options before you need them. Not every shelter takes animals, though the rules have improved a lot, and hotels inland vary. A short list of pet-friendly places and the number of a boarding kennel outside the area, on paper, is a twenty-minute job that pays for itself once.</p><h2>Identification</h2><p>A microchip with <strong>current contact information registered</strong> is the single best thing you can do. Chips are useless if the registry still has a phone number from two houses ago. Check yours. Add a physical tag as well, because a tag works for anyone who finds the animal and a chip needs a scanner.</p><p>Pet emergency kits, food, bowls and leashes are stocked on the <a href="../storm.html">storm wall</a> and in the everyday aisle. The <a href="storm-go-bag-vs-stay-home-kit.html">going-bag piece</a> covers the human half of the same decision.</p>
   </div>
 </article>
+
 
 <section class="band band--bark band--dark band--tight">
   <div class="wrap--mid">
     <div class="split split--top">
       <div>
-        <p class="eyebrow">While you're here</p>
-        <h2 class="h2 mb0">Need any of this today?</h2>
+        <p class="eyebrow">From the shelf</p>
+        <h2 class="h2 mb0">What this takes</h2>
       </div>
       <div>
-        <p class="lede mb0">Check what is on the shelf before you drive over, or tell us what we
-          should be carrying.</p>
-        <div class="btnrow" style="margin-top:20px">
-          <a class="btn btn--amber" href="../storm.html">Shop now</a>
+        <p class="lede mb0">Counts come off the register. If it says two left, there are two left.</p>
+        <div class="pillrow"><a class="pill" href="../shop.html?q=pet+emergency" style="text-decoration:none">Pet emergency kits</a><a class="pill" href="../shop.html?q=pet+food" style="text-decoration:none">Pet food while you are in</a></div>
+        <div class="btnrow" style="margin-top:18px">
           <button class="btn btn--ghost" data-tellus="true">Tell Carrie &amp; Eric</button>
         </div>
       </div>
@@ -159,18 +157,18 @@
   <div class="wrap">
     <div class="foot-top">
       <div>
-        <img src="../assets/img/logo-foot.webp?v=34aebc6d" alt="Twisted Roots Merc" width="440" height="371" loading="lazy" decoding="async">
+        <img src="../assets/img/logo-foot.webp?v=34aebc6d" srcset="../assets/img/logo-foot-190.webp 190w, ../assets/img/logo-foot-380.webp 380w, ../assets/img/logo-foot.webp 440w" sizes="190px" width="440" height="371" alt="Twisted Roots Merc" loading="lazy" decoding="async">
         <p class="small" style="opacity:.8">Mercantile · Bakery · Kitchen<br>101 &amp; 151 N Gaither St, Siletz, Oregon 97380<br>
           <a href="tel:+15415550134">(541) 555-0134</a></p>
         <button class="stormtoggle" data-stormtoggle aria-pressed="false"><i></i>Storm Mode Off</button>
       </div>
-      <div><h4>The Store</h4><ul>
+      <div><h3>The Store</h3><ul>
         <li><a href="../merc.html">The Merc</a></li><li><a href="../yard.html">The Yard</a></li>
         <li><a href="../storm.html">Storm Ready</a></li><li><a href="../hunt.html">Hunt &amp; Field</a></li><li><a href="../local.html">Local Goods</a></li></ul></div>
-      <div><h4>Food</h4><ul>
+      <div><h3>Food</h3><ul>
         <li><a href="../bakery.html">Bakery + Kitchen</a></li><li><a href="../kitchen.html">Recipes</a></li><li><a href="../bakery.html#breakfast">Breakfast</a></li>
         <li><a href="../bakery.html#lunch">Lunch</a></li><li><a href="../bakery.html#order">Order pickup</a></li></ul></div>
-      <div><h4>Twisted Roots</h4><ul>
+      <div><h3>Twisted Roots</h3><ul>
         <li><a href="../roots.html">Our Roots</a></li><li><a href="../journal.html">The Board</a></li><li><a href="../visit.html">Visit &amp; Hours</a></li>
         <li><a href="#" data-tellus="true">What should we carry?</a></li><li><a href="../hq.html">Owner login</a></li></ul></div>
     </div>
@@ -182,6 +180,7 @@
   </div>
 </footer>
 
+<p id="trLive" class="visually-hidden" role="status" aria-live="polite"></p>
 <script>
 addEventListener("load", function () {
   var s = ["../assets/js/catalog.js?v=cdc9c20e", "../assets/js/cart.js?v=024fe1e6", "../assets/js/site.js?v=3787c0d1", "../assets/js/motion.js?v=bf716f00", "../assets/js/roots.js?v=93423d8d"], i = 0;

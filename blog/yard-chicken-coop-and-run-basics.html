@@ -18,19 +18,17 @@
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png?v=ce873322">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/site.css?v=db82a4af">
-<link rel="stylesheet" href="../assets/css/motion.css?v=e4213a7b">
-<link rel="stylesheet" href="../assets/css/roots.css?v=42e7b082">
-<link rel="stylesheet" href="../assets/css/mobile.css?v=1c92929c">
-<link rel="stylesheet" href="../assets/css/polish.css?v=39f8e298">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap"></noscript>
+<link rel="stylesheet" href="../assets/css/bundle.css?v=bfaf2686">
 <link rel="stylesheet" href="../assets/css/print.css?v=65e49f4e" media="print">
-<link rel="stylesheet" href="../assets/css/perf.css?v=8af74f1b">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Coop and Run Basics for a Small Flock", "description": "Square footage per bird, ventilation without draft, and the predator hardware that actually holds around here.", "articleSection": "The Yard", "keywords": "chickens, coop, run, predators, hardware cloth", "mainEntityOfPage": "https://twistedrootsmerc.com/blog/yard-chicken-coop-and-run-basics.html", "author": {"@type": "Organization", "name": "Twisted Roots Merc"}, "publisher": {"@id": "https://twistedrootsmerc.com/#store"}, "isPartOf": {"@type": "Blog", "name": "Practical Notes", "url": "https://twistedrootsmerc.com/journal.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://twistedrootsmerc.com/"}, {"@type": "ListItem", "position": 2, "name": "Practical Notes", "item": "https://twistedrootsmerc.com/journal.html"}, {"@type": "ListItem", "position": 3, "name": "Coop and Run Basics for a Small Flock", "item": "https://twistedrootsmerc.com/blog/yard-chicken-coop-and-run-basics.html"}]}</script>
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="stormbar">
   <div class="wrap"><b>Storm Mode</b> <span>Wind advisory on the coast. Storm supplies stocked and the yard is open.</span> <a href="../storm.html">See storm stock →</a></div>
@@ -45,7 +43,7 @@
       <span class="brand-txt"><b>Twisted Roots</b><span>Siletz, Oregon</span></span>
     </a>
     <button class="burger" data-burger aria-expanded="false" aria-controls="siteNav" aria-label="Menu"><span class="burger__box" aria-hidden="true"><i></i><i></i><i></i></span><span class="burger__txt">Menu</span></button>
-    <nav class="nav" id="siteNav">
+    <nav class="nav" id="siteNav" aria-label="Main">
       <div class="navitem" data-navitem>
         <button class="navitem__top" data-subtoggle aria-expanded="false" aria-controls="sub-shop">Shop<i class="navitem__car" aria-hidden="true"></i></button>
         <div class="subnav" id="sub-shop">
@@ -83,11 +81,11 @@
   </div>
 </header>
 
-<main>
+<main id="main" tabindex="-1">
 
 <section class="band band--cream band--tight" style="padding-top:clamp(40px,5vw,72px)">
   <div class="wrap--mid">
-    <nav class="serif-caps muted" style="margin-bottom:22px">
+    <nav class="serif-caps muted" style="margin-bottom:22px" aria-label="Breadcrumb">
       <a href="../index.html" style="text-decoration:none">Home</a> &nbsp;/&nbsp;
       <a href="../journal.html" style="text-decoration:none">Notes</a> &nbsp;/&nbsp;
       <a href="../journal.html#the-yard" style="text-decoration:none">The Yard</a>
@@ -101,22 +99,22 @@
 
 <article class="band band--paper" style="padding-top:clamp(34px,4vw,56px)">
   <div class="wrap--narrow tr-prose">
-    <p>Chickens are easy. Keeping chickens alive out here is a construction problem, because everything in the Coast Range eats them. Raccoon, coyote, bobcat, mink, weasel, hawk, owl, and the neighbor's dog. A coop that is fine in a suburb is an open buffet on the edge of the woods.</p><h2>Space, which is the one thing you cannot cheat</h2><table><thead><tr><th>Requirement</th><th>Per standard bird</th></tr></thead><tbody><tr><td>Coop floor space</td><td>4 sq ft</td></tr><tr><td>Run space</td><td>10 sq ft minimum, more is better</td></tr><tr><td>Roost bar length</td><td>10 in</td></tr><tr><td>Nest boxes</td><td>1 per 4 birds</td></tr><tr><td>Nest box size</td><td>12 x 12 x 12 in</td></tr><tr><td>Feeder space</td><td>4 in</td></tr><tr><td>Waterer space</td><td>1 in</td></tr></tbody></table><p>Six birds means a 24 square foot coop and 60 square feet of run at minimum. Crowded birds pick at each other and it gets ugly fast, and it happens sooner here because bad weather keeps them inside more days than you would expect.</p><h2>Predator hardware, ranked</h2><ul><li><strong>Hardware cloth, half inch, 19 gauge.</strong> The only mesh that works. Staple it and then screw a batten over the staples.</li><li><strong>Chicken wire.</strong> Keeps chickens in. Does not keep anything out. A raccoon opens it with its hands.</li><li><strong>An apron.</strong> Hardware cloth laid flat on the ground extending 18 to 24 inches out from the run walls, pinned down and covered with gravel or sod. Diggers follow the wall down and give up when they hit wire.</li><li><strong>A covered run.</strong> Wire or netting overhead. Hawks are patient and owls work the night shift.</li><li><strong>Two-step latches.</strong> Raccoons open hooks, slide bolts and simple turn latches. Use a latch that needs two motions, or a carabiner through the hasp.</li></ul><p>The apron is the one people skip and it is the one that stops the losses. Digging under is how most run breaches happen.</p><h2>Ventilation without draft</h2><p>Chickens tolerate cold well and humidity badly. A closed-up coop in our climate gets damp, and damp plus cold gives you frostbitten combs and respiratory problems. The rule is ventilation up high, above the roosting birds, and no drafts at roost level.</p><p>Practically: a gapped or vented soffit along the top of two walls, covered with hardware cloth, open year round. Solid walls at roost height. Roosts higher than the nest boxes, or the birds sleep in the boxes and you get filthy eggs.</p><h2>The coop itself</h2><p>An 4x6 coop for six birds is a weekend build and fits our 8 foot lumber comfortably. Same sequence as any small structure: floor, walls, roof. Read <a href="yard-framing-a-small-shed.html">the shed framing piece</a>, then add the chicken-specific parts.</p><ol><li>Raise the floor at least 12 inches off the ground on treated skids or blocks. Keeps it dry and removes the space rats want to live in.</li><li>Roof with a real overhang, at least 12 inches. It keeps rain off the vents and off the pop door.</li><li>Pop door on the sheltered side, with a slide that latches. Automatic door openers are worth it if you are ever not home at dusk.</li><li>A big cleanout door or a whole hinged wall. You will clean this thing dozens of times. Design for it now.</li><li>Roosts from 2x4 laid flat, wide face up. Birds cover their feet in cold weather, and a flat roost is warmer than a round dowel.</li><li>Nest boxes lower than the roosts, ideally accessible from outside.</li></ol><h2>Wet ground and the run</h2><p>A run in Siletz becomes a mud pit by December. Two fixes: cover part of it with a roof so the birds have dry ground, and build the floor up with several inches of coarse wood chips over gravel. Chips drain, compost slowly, and the birds turn them for you. Do not use sand here, it holds water.</p><p>Grade the run so water leaves it. If the run is the low spot, no amount of chips will help. See <a href="yard-landscape-gravel-and-drainage.html">the drainage piece</a>.</p><p>Hardware cloth, staples, latches, hinges and fasteners are on the <a href="../merc.html#fixit">Fix It wall</a>. Framing lumber, 4x4 posts, 1x6 boards and project panels are <a href="../yard.html">out back</a>. Feed is inside.</p>
+    <p>Chickens are easy. Keeping chickens alive out here is a construction problem, because everything in the Coast Range eats them. Raccoon, coyote, bobcat, mink, weasel, hawk, owl, and the neighbor's dog. A coop that is fine in a suburb is an open buffet on the edge of the woods.</p><h2>Space, which is the one thing you cannot cheat</h2><table><thead><tr><th scope="col">Requirement</th><th scope="col">Per standard bird</th></tr></thead><tbody><tr><td>Coop floor space</td><td>4 sq ft</td></tr><tr><td>Run space</td><td>10 sq ft minimum, more is better</td></tr><tr><td>Roost bar length</td><td>10 in</td></tr><tr><td>Nest boxes</td><td>1 per 4 birds</td></tr><tr><td>Nest box size</td><td>12 x 12 x 12 in</td></tr><tr><td>Feeder space</td><td>4 in</td></tr><tr><td>Waterer space</td><td>1 in</td></tr></tbody></table><p>Six birds means a 24 square foot coop and 60 square feet of run at minimum. Crowded birds pick at each other and it gets ugly fast, and it happens sooner here because bad weather keeps them inside more days than you would expect.</p><h2>Predator hardware, ranked</h2><ul><li><strong>Hardware cloth, half inch, 19 gauge.</strong> The only mesh that works. Staple it and then screw a batten over the staples.</li><li><strong>Chicken wire.</strong> Keeps chickens in. Does not keep anything out. A raccoon opens it with its hands.</li><li><strong>An apron.</strong> Hardware cloth laid flat on the ground extending 18 to 24 inches out from the run walls, pinned down and covered with gravel or sod. Diggers follow the wall down and give up when they hit wire.</li><li><strong>A covered run.</strong> Wire or netting overhead. Hawks are patient and owls work the night shift.</li><li><strong>Two-step latches.</strong> Raccoons open hooks, slide bolts and simple turn latches. Use a latch that needs two motions, or a carabiner through the hasp.</li></ul><p>The apron is the one people skip and it is the one that stops the losses. Digging under is how most run breaches happen.</p><h2>Ventilation without draft</h2><p>Chickens tolerate cold well and humidity badly. A closed-up coop in our climate gets damp, and damp plus cold gives you frostbitten combs and respiratory problems. The rule is ventilation up high, above the roosting birds, and no drafts at roost level.</p><p>Practically: a gapped or vented soffit along the top of two walls, covered with hardware cloth, open year round. Solid walls at roost height. Roosts higher than the nest boxes, or the birds sleep in the boxes and you get filthy eggs.</p><h2>The coop itself</h2><p>An 4x6 coop for six birds is a weekend build and fits our 8 foot lumber comfortably. Same sequence as any small structure: floor, walls, roof. Read <a href="yard-framing-a-small-shed.html">the shed framing piece</a>, then add the chicken-specific parts.</p><ol><li>Raise the floor at least 12 inches off the ground on treated skids or blocks. Keeps it dry and removes the space rats want to live in.</li><li>Roof with a real overhang, at least 12 inches. It keeps rain off the vents and off the pop door.</li><li>Pop door on the sheltered side, with a slide that latches. Automatic door openers are worth it if you are ever not home at dusk.</li><li>A big cleanout door or a whole hinged wall. You will clean this thing dozens of times. Design for it now.</li><li>Roosts from 2x4 laid flat, wide face up. Birds cover their feet in cold weather, and a flat roost is warmer than a round dowel.</li><li>Nest boxes lower than the roosts, ideally accessible from outside.</li></ol><h2>Wet ground and the run</h2><p>A run in Siletz becomes a mud pit by December. Two fixes: cover part of it with a roof so the birds have dry ground, and build the floor up with several inches of coarse wood chips over gravel. Chips drain, compost slowly, and the birds turn them for you. Do not use sand here, it holds water.</p><p>Grade the run so water leaves it. If the run is the low spot, no amount of chips will help. See <a href="yard-landscape-gravel-and-drainage.html">the drainage piece</a>.</p><p>Hardware cloth, staples, latches, hinges and fasteners are on the <a href="../merc.html#fixit">Fix It wall</a>. Framing lumber, 4x4 posts, 1x6 boards and project panels are <a href="../yard.html">out back</a>. Feed is inside.</p>
   </div>
 </article>
+
 
 <section class="band band--bark band--dark band--tight">
   <div class="wrap--mid">
     <div class="split split--top">
       <div>
-        <p class="eyebrow">While you're here</p>
-        <h2 class="h2 mb0">Need any of this today?</h2>
+        <p class="eyebrow">From the shelf</p>
+        <h2 class="h2 mb0">What this takes</h2>
       </div>
       <div>
-        <p class="lede mb0">Check what is on the shelf before you drive over, or tell us what we
-          should be carrying.</p>
-        <div class="btnrow" style="margin-top:20px">
-          <a class="btn btn--amber" href="../yard.html">Shop now</a>
+        <p class="lede mb0">Counts come off the register. If it says two left, there are two left.</p>
+        <div class="pillrow"><a class="pill" href="../shop.html?q=project+panel" style="text-decoration:none">Project panels and framing lumber</a><a class="pill" href="../yard.html" style="text-decoration:none">The yard, out back and under cover</a></div>
+        <div class="btnrow" style="margin-top:18px">
           <button class="btn btn--ghost" data-tellus="true">Tell Carrie &amp; Eric</button>
         </div>
       </div>
@@ -159,18 +157,18 @@
   <div class="wrap">
     <div class="foot-top">
       <div>
-        <img src="../assets/img/logo-foot.webp?v=34aebc6d" alt="Twisted Roots Merc" width="440" height="371" loading="lazy" decoding="async">
+        <img src="../assets/img/logo-foot.webp?v=34aebc6d" srcset="../assets/img/logo-foot-190.webp 190w, ../assets/img/logo-foot-380.webp 380w, ../assets/img/logo-foot.webp 440w" sizes="190px" width="440" height="371" alt="Twisted Roots Merc" loading="lazy" decoding="async">
         <p class="small" style="opacity:.8">Mercantile · Bakery · Kitchen<br>101 &amp; 151 N Gaither St, Siletz, Oregon 97380<br>
           <a href="tel:+15415550134">(541) 555-0134</a></p>
         <button class="stormtoggle" data-stormtoggle aria-pressed="false"><i></i>Storm Mode Off</button>
       </div>
-      <div><h4>The Store</h4><ul>
+      <div><h3>The Store</h3><ul>
         <li><a href="../merc.html">The Merc</a></li><li><a href="../yard.html">The Yard</a></li>
         <li><a href="../storm.html">Storm Ready</a></li><li><a href="../hunt.html">Hunt &amp; Field</a></li><li><a href="../local.html">Local Goods</a></li></ul></div>
-      <div><h4>Food</h4><ul>
+      <div><h3>Food</h3><ul>
         <li><a href="../bakery.html">Bakery + Kitchen</a></li><li><a href="../kitchen.html">Recipes</a></li><li><a href="../bakery.html#breakfast">Breakfast</a></li>
         <li><a href="../bakery.html#lunch">Lunch</a></li><li><a href="../bakery.html#order">Order pickup</a></li></ul></div>
-      <div><h4>Twisted Roots</h4><ul>
+      <div><h3>Twisted Roots</h3><ul>
         <li><a href="../roots.html">Our Roots</a></li><li><a href="../journal.html">The Board</a></li><li><a href="../visit.html">Visit &amp; Hours</a></li>
         <li><a href="#" data-tellus="true">What should we carry?</a></li><li><a href="../hq.html">Owner login</a></li></ul></div>
     </div>
@@ -182,6 +180,7 @@
   </div>
 </footer>
 
+<p id="trLive" class="visually-hidden" role="status" aria-live="polite"></p>
 <script>
 addEventListener("load", function () {
   var s = ["../assets/js/catalog.js?v=cdc9c20e", "../assets/js/cart.js?v=024fe1e6", "../assets/js/site.js?v=3787c0d1", "../assets/js/motion.js?v=bf716f00", "../assets/js/roots.js?v=93423d8d"], i = 0;

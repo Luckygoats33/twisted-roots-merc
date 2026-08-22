@@ -7,7 +7,9 @@
 <meta name="description" content="The neighborhood mercantile in Siletz, Oregon. Everyday essentials, hardware, lumber and concrete, storm supplies, local goods — plus fresh bakery, breakfast and lunch. Check what's in stock before you drive over.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap"></noscript>
 
 <link rel="canonical" href="https://twistedrootsmerc.com/">
 <meta property="og:site_name" content="Twisted Roots Merc">
@@ -27,13 +29,8 @@
 <link rel="icon" href="assets/img/favicon-32.png?v=ccb53bc6" sizes="32x32">
 <link rel="icon" href="assets/img/favicon-64.png?v=7316fae5" sizes="64x64">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png?v=ce873322">
-<link rel="stylesheet" href="assets/css/site.css?v=db82a4af">
-<link rel="stylesheet" href="assets/css/motion.css?v=e4213a7b">
-<link rel="stylesheet" href="assets/css/roots.css?v=42e7b082">
-<link rel="stylesheet" href="assets/css/mobile.css?v=1c92929c">
-<link rel="stylesheet" href="assets/css/polish.css?v=39f8e298">
+<link rel="stylesheet" href="assets/css/bundle.css?v=bfaf2686">
 <link rel="stylesheet" href="assets/css/print.css?v=65e49f4e" media="print">
-<link rel="stylesheet" href="assets/css/perf.css?v=8af74f1b">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -138,6 +135,7 @@
 </script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="stormbar">
   <div class="wrap"><b>Storm Mode</b> <span>Wind advisory on the coast. Storm supplies stocked and the yard is open — we'll stay open as long as we have power.</span> <a href="storm.html">See storm stock →</a></div>
@@ -152,7 +150,7 @@
       <span class="brand-txt"><b>Twisted Roots</b><span>Siletz, Oregon</span></span>
     </a>
     <button class="burger" data-burger aria-expanded="false" aria-controls="siteNav" aria-label="Menu"><span class="burger__box" aria-hidden="true"><i></i><i></i><i></i></span><span class="burger__txt">Menu</span></button>
-    <nav class="nav" id="siteNav">
+    <nav class="nav" id="siteNav" aria-label="Main">
       <div class="navitem" data-navitem>
         <button class="navitem__top" data-subtoggle aria-expanded="false" aria-controls="sub-shop">Shop<i class="navitem__car" aria-hidden="true"></i></button>
         <div class="subnav" id="sub-shop">
@@ -190,7 +188,7 @@
   </div>
 </header>
 
-<main>
+<main id="main" tabindex="-1">
 
 <!-- ============ HERO ============ -->
 <section class="hero">
@@ -199,10 +197,7 @@
          data-src="assets/video/river-hd.mp4"
          muted loop playsinline preload="none" disablepictureinpicture
          aria-label="The Siletz River running through the Oregon Coast Range"></video>
-  <img class="hero-img hero-still" src="assets/img/w-river.jpg?v=766d7d43"
-       srcset="assets/img/w-river-sm.jpg 760w, assets/img/w-river-md.jpg 1400w, assets/img/w-river.jpg 2560w"
-       sizes="100vw" width="2560" height="1086" fetchpriority="high"
-       alt="The Siletz River running through the Oregon Coast Range">
+  <img class="hero-img hero-still" src="assets/img/w-river.jpg?v=766d7d43" srcset="assets/img/w-river-600.webp 600w, assets/img/w-river-900.webp 900w, assets/img/w-river-1400.webp 1400w, assets/img/w-river-1920.webp 1920w, assets/img/w-river.webp 2560w" sizes="100vw" width="2560" height="1086" alt="The Siletz River running through the Oregon Coast Range" fetchpriority="high">
   <div class="rainlayer" aria-hidden="true"></div>
   <div class="crows" data-crows="5" aria-hidden="true"></div>
   <div class="hero-in">
@@ -228,7 +223,7 @@
   <div class="wrap">
     <div class="board rv">
       <div class="board-head">
-        <h3>Today at the Merc</h3>
+        <h2>Today at the Merc</h2>
         <span class="when" data-boardwhen></span>
       </div>
       <div class="board-grid" data-board></div>
@@ -278,7 +273,7 @@
       <a class="good" href="merc.html" style="display:flex;flex-direction:column">
         <div class="ph" style="aspect-ratio:16/11">
           <span class="num">One side</span>
-          <img src="assets/img/tr-interior-sm.jpg?v=809d4b9f" alt="The mercantile side, shelves of goods" loading="lazy">
+          <img src="assets/img/tr-interior-sm.jpg?v=809d4b9f" srcset="assets/img/tr-interior-sm-600.webp 600w, assets/img/tr-interior-sm.webp 900w" sizes="(max-width:1080px) calc(100vw - 32px), min(47vw, 760px)" width="900" height="502" alt="The mercantile side, shelves of goods" loading="lazy" decoding="async">
           <span class="lab"><h3>The Merc</h3><p>Everyday · Fix It · The Yard · Storm · Outdoors · Hunt · Local</p></span>
         </div>
         <div class="foot"><em>The stuff Siletz actually needs.</em><span>Check stock →</span></div>
@@ -287,7 +282,7 @@
       <a class="good" href="bakery.html" style="display:flex;flex-direction:column">
         <div class="ph" style="aspect-ratio:16/11">
           <span class="num">Other side</span>
-          <img src="assets/img/bakery-case.jpg?v=21975b61" alt="The bakery and kitchen side" loading="lazy">
+          <img src="assets/img/bakery-case.jpg?v=21975b61" srcset="assets/img/bakery-case-600.webp 600w, assets/img/bakery-case-900.webp 900w, assets/img/bakery-case.webp 1800w" sizes="(max-width:1080px) calc(100vw - 32px), min(47vw, 760px)" width="1800" height="2700" alt="The bakery and kitchen side" loading="lazy" decoding="async">
           <span class="lab"><h3>Bakery + Kitchen</h3><p>Breakfast · Lunch · Coffee · Fresh Baked</p></span>
         </div>
         <div class="foot"><em>Ovens on at four in the morning.</em><span>See the menu →</span></div>
@@ -306,55 +301,55 @@
 
     <div class="goods" data-rv-stagger="90">
       <a class="good rv" href="merc.html#everyday">
-        <div class="ph"><span class="num">No. 01</span><img src="assets/img/tr-interior-sm.jpg?v=809d4b9f" alt="Shelves of everyday goods inside the merc" loading="lazy">
+        <div class="ph"><span class="num">No. 01</span><img src="assets/img/tr-interior-sm.jpg?v=809d4b9f" srcset="assets/img/tr-interior-sm-600.webp 600w, assets/img/tr-interior-sm.webp 900w" sizes="(max-width:640px) calc(100vw - 32px), (max-width:900px) 46vw, 380px" width="900" height="502" alt="Shelves of everyday goods inside the merc" loading="lazy" decoding="async">
           <span class="lab"><h3>Everyday</h3><p>Household · Food · Pet · Personal</p></span></div>
         <div class="foot"><em>The stuff you run out of.</em><span>Shop →</span></div>
       </a>
 
       <a class="good rv" href="merc.html#fixit">
-        <div class="ph"><span class="num">No. 02</span><img src="assets/img/tools-wall.jpg?v=2426bb12" alt="Hand tools on a workshop wall" loading="lazy">
+        <div class="ph"><span class="num">No. 02</span><img src="assets/img/tools-wall.jpg?v=2426bb12" srcset="assets/img/tools-wall-600.webp 600w, assets/img/tools-wall-900.webp 900w, assets/img/tools-wall.webp 1600w" sizes="(max-width:640px) calc(100vw - 32px), (max-width:900px) 46vw, 380px" width="1600" height="1067" alt="Hand tools on a workshop wall" loading="lazy" decoding="async">
           <span class="lab"><h3>Fix It</h3><p>Hardware · Plumbing · Electrical</p></span></div>
         <div class="foot"><em>The $7 part that saves the drive.</em><span>Shop →</span></div>
       </a>
 
       <a class="good rv" href="yard.html">
-        <div class="ph"><span class="num">No. 03</span><img src="assets/img/tr-yard-sm.jpg?v=fd693292" alt="The covered lumber yard out back" loading="lazy">
+        <div class="ph"><span class="num">No. 03</span><img src="assets/img/tr-yard-sm.jpg?v=fd693292" srcset="assets/img/tr-yard-sm-600.webp 600w, assets/img/tr-yard-sm.webp 900w" sizes="(max-width:640px) calc(100vw - 32px), (max-width:900px) 46vw, 380px" width="900" height="502" alt="The covered lumber yard out back" loading="lazy" decoding="async">
           <span class="lab"><h3>The Yard</h3><p>Lumber · Concrete · Project Basics</p></span></div>
         <div class="foot"><em>Out back, under cover.</em><span>Check the racks →</span></div>
       </a>
 
       <a class="good rv" href="storm.html">
-        <div class="ph"><span class="num">No. 04</span><img src="assets/img/tr-storm-sm.jpg?v=9cf9b45f" alt="The storefront in a coastal storm" loading="lazy">
+        <div class="ph"><span class="num">No. 04</span><img src="assets/img/tr-storm-sm.jpg?v=9cf9b45f" srcset="assets/img/tr-storm-sm-600.webp 600w, assets/img/tr-storm-sm.webp 900w" sizes="(max-width:640px) calc(100vw - 32px), (max-width:900px) 46vw, 380px" width="900" height="502" alt="The storefront in a coastal storm" loading="lazy" decoding="async">
           <span class="lab"><h3>Storm Ready</h3><p>Power Out · Wind · Rain</p></span></div>
         <div class="foot"><em>Stocked before you need it.</em><span>See the wall →</span></div>
       </a>
 
       <a class="good rv" href="bakery.html">
-        <div class="ph"><span class="num">No. 05</span><img src="assets/img/bakery-case.jpg?v=21975b61" alt="Bakery case full of fresh pastries" loading="lazy">
+        <div class="ph"><span class="num">No. 05</span><img src="assets/img/bakery-case.jpg?v=21975b61" srcset="assets/img/bakery-case-600.webp 600w, assets/img/bakery-case-900.webp 900w, assets/img/bakery-case.webp 1800w" sizes="(max-width:640px) calc(100vw - 32px), (max-width:900px) 46vw, 380px" width="1800" height="2700" alt="Bakery case full of fresh pastries" loading="lazy" decoding="async">
           <span class="lab"><h3>Bakery + Kitchen</h3><p>Breakfast · Lunch · Coffee</p></span></div>
         <div class="foot"><em>Made here. Served here.</em><span>See the menu →</span></div>
       </a>
 
       <a class="good rv" href="merc.html#outdoors">
-        <div class="ph"><span class="num">No. 06</span><img src="assets/img/river.jpg?v=66a475cb" alt="The river through evergreen forest" loading="lazy">
+        <div class="ph"><span class="num">No. 06</span><img src="assets/img/river.jpg?v=66a475cb" srcset="assets/img/river-600.webp 600w, assets/img/river-900.webp 900w, assets/img/river.webp 1800w" sizes="(max-width:640px) calc(100vw - 32px), (max-width:900px) 46vw, 380px" width="1800" height="1011" alt="The river through evergreen forest" loading="lazy" decoding="async">
           <span class="lab"><h3>Outdoors</h3><p>Fishing · Camping · River · Work</p></span></div>
         <div class="foot"><em>What you forgot in the truck.</em><span>Shop →</span></div>
       </a>
 
       <a class="good rv" href="hunt.html">
-        <div class="ph"><span class="num">No. 07</span><img src="assets/img/hunt-field-sm.jpg?v=eb6e8d17" alt="Blaze orange vest, knife, ammunition and binoculars on a shop counter" loading="lazy" width="620" height="770">
+        <div class="ph"><span class="num">No. 07</span><img src="assets/img/hunt-field-sm.jpg?v=eb6e8d17" srcset="assets/img/hunt-field-sm-600.webp 600w, assets/img/hunt-field-sm.webp 620w" sizes="(max-width:640px) calc(100vw - 32px), (max-width:900px) 46vw, 380px" width="620" height="770" alt="Blaze orange vest, knife, ammunition and binoculars on a shop counter" loading="lazy" decoding="async">
           <span class="lab"><h3>Hunt &amp; Field</h3><p>Ammo · Knives · Blaze · Field Care</p></span></div>
         <div class="foot"><em>Season starts before daylight.</em><span>See the wall →</span></div>
       </a>
 
       <a class="good rv" href="local.html">
-        <div class="ph"><span class="num">No. 08</span><img src="assets/img/maker-pottery.jpg?v=f9953571" alt="Hand thrown mugs from a local maker" loading="lazy">
+        <div class="ph"><span class="num">No. 08</span><img src="assets/img/maker-pottery.jpg?v=f9953571" srcset="assets/img/maker-pottery-600.webp 600w, assets/img/maker-pottery-900.webp 900w, assets/img/maker-pottery.webp 1600w" sizes="(max-width:640px) calc(100vw - 32px), (max-width:900px) 46vw, 380px" width="1600" height="2000" alt="Hand thrown mugs from a local maker" loading="lazy" decoding="async">
           <span class="lab"><h3>Local</h3><p>Oregon Made · Gifts · Merch</p></span></div>
         <div class="foot"><em>Made near here.</em><span>Meet the makers →</span></div>
       </a>
 
       <a class="good rv" href="roots.html">
-        <div class="ph"><span class="num">No. 09</span><img src="assets/img/owners-porch.jpg?v=d1f55b3e" alt="Carrie and Eric on the porch" loading="lazy">
+        <div class="ph"><span class="num">No. 09</span><img src="assets/img/owners-porch.jpg?v=d1f55b3e" srcset="assets/img/owners-porch-600.webp 600w, assets/img/owners-porch-900.webp 900w, assets/img/owners-porch.webp 1600w" sizes="(max-width:640px) calc(100vw - 32px), (max-width:900px) 46vw, 380px" width="1600" height="1067" alt="Carrie and Eric on the porch" loading="lazy" decoding="async">
           <span class="lab"><h3>Our Roots</h3><p>Carrie &amp; Eric · Siletz</p></span></div>
         <div class="foot"><em>Why we opened the doors.</em><span>The story →</span></div>
       </a>
@@ -366,7 +361,7 @@
 <!-- ============ CINEMA: THE STORE ============ -->
 <section class="fullbleed">
   <div class="cinema cinema--left cinema--tall">
-    <img src="assets/img/w-storefront.jpg?v=6ed45d0a" data-parallax="0.14" alt="The Twisted Roots storefront on N Gaither Street" width="2560" height="1086" loading="lazy">
+    <img src="assets/img/w-storefront.jpg?v=6ed45d0a" srcset="assets/img/w-storefront-600.webp 600w, assets/img/w-storefront-900.webp 900w, assets/img/w-storefront-1400.webp 1400w, assets/img/w-storefront-1920.webp 1920w, assets/img/w-storefront.webp 2560w" sizes="100vw" width="2560" height="1086" alt="The Twisted Roots storefront on N Gaither Street" loading="lazy" decoding="async" data-parallax="0.14">
     <div class="cinema-in">
       <div class="wrap">
         <p class="eyebrow">101 &amp; 151 N Gaither St</p>
@@ -382,7 +377,7 @@
 <!-- ============ CINEMA: INSIDE ============ -->
 <section class="fullbleed">
   <div class="cinema cinema--left cinema--tall">
-    <img src="assets/img/w-interior.jpg?v=219b87fb" data-parallax="0.14" alt="Inside the mercantile — bakery case, canned goods and the hardware wall" width="2560" height="1086" loading="lazy">
+    <img src="assets/img/w-interior.jpg?v=219b87fb" srcset="assets/img/w-interior-600.webp 600w, assets/img/w-interior-900.webp 900w, assets/img/w-interior-1400.webp 1400w, assets/img/w-interior-1920.webp 1920w, assets/img/w-interior.webp 2560w" sizes="100vw" width="2560" height="1086" alt="Inside the mercantile — bakery case, canned goods and the hardware wall" loading="lazy" decoding="async" data-parallax="0.14">
     <div class="cinema-in">
       <div class="wrap">
         <p class="eyebrow">One door, two halves</p>
@@ -420,7 +415,7 @@
         </div>
       </div>
       <figure class="figframe rv" style="margin:0">
-        <img data-parallax="0.12" src="assets/img/cinnamon-roll.jpg?v=f5ee3779" alt="The Twisted Root cinnamon roll" loading="lazy">
+        <img src="assets/img/cinnamon-roll.jpg?v=f5ee3779" srcset="assets/img/cinnamon-roll-600.webp 600w, assets/img/cinnamon-roll-900.webp 900w, assets/img/cinnamon-roll.webp 1600w" sizes="(max-width:1080px) calc(100vw - 32px), min(47vw, 760px)" width="1600" height="2400" alt="The Twisted Root cinnamon roll" loading="lazy" decoding="async" data-parallax="0.12">
         <figcaption>The Twisted Root — our cinnamon roll, iced warm</figcaption>
       </figure>
     </div>
@@ -450,7 +445,7 @@
   <div class="wrap">
     <div class="split split--rev">
       <figure class="figframe rv" style="margin:0">
-        <img data-parallax="0.12" src="assets/img/lantern.jpg?v=ece12df6" alt="A lantern lit outside a tent at night" loading="lazy">
+        <img src="assets/img/lantern.jpg?v=ece12df6" srcset="assets/img/lantern-600.webp 600w, assets/img/lantern-900.webp 900w, assets/img/lantern.webp 1600w" sizes="(max-width:1080px) calc(100vw - 32px), min(47vw, 760px)" width="1600" height="2133" alt="A lantern lit outside a tent at night" loading="lazy" decoding="async" data-parallax="0.12">
         <figcaption>Storm wall, front left as you come in</figcaption>
       </figure>
       <div class="rv">
@@ -478,7 +473,7 @@
 <!-- ============ CINEMA: STORM ============ -->
 <section class="fullbleed">
   <div class="cinema cinema--right cinema--tall">
-    <img src="assets/img/w-storm.jpg?v=259f87c6" data-parallax="0.14" alt="Winter storm surf on the Oregon coast" width="2560" height="1086" loading="lazy">
+    <img src="assets/img/w-storm.jpg?v=259f87c6" srcset="assets/img/w-storm-600.webp 600w, assets/img/w-storm-900.webp 900w, assets/img/w-storm-1400.webp 1400w, assets/img/w-storm-1920.webp 1920w, assets/img/w-storm.webp 2560w" sizes="100vw" width="2560" height="1086" alt="Winter storm surf on the Oregon coast" loading="lazy" decoding="async" data-parallax="0.14">
     <div class="rainlayer" aria-hidden="true"></div>
     <div class="cinema-in">
       <div class="wrap">
@@ -535,7 +530,7 @@
         </div>
       </div>
       <figure class="figframe rv" style="margin:0">
-        <img data-parallax="0.12" src="assets/img/truck.jpg?v=bcdc817a" alt="A pickup truck parked on a rural Oregon road" loading="lazy">
+        <img src="assets/img/truck.jpg?v=bcdc817a" srcset="assets/img/truck-600.webp 600w, assets/img/truck-900.webp 900w, assets/img/truck.webp 1800w" sizes="(max-width:1080px) calc(100vw - 32px), min(47vw, 760px)" width="1800" height="1200" alt="A pickup truck parked on a rural Oregon road" loading="lazy" decoding="async" data-parallax="0.12">
         <figcaption>If it fits in the truck, we'll help you get it in there</figcaption>
       </figure>
     </div>
@@ -548,13 +543,13 @@
   <div class="wrap">
     <div class="foot-top">
       <div>
-        <img src="assets/img/logo-foot.webp?v=34aebc6d" alt="Twisted Roots Merc" width="440" height="371" loading="lazy" decoding="async">
+        <img src="assets/img/logo-foot.webp?v=34aebc6d" srcset="assets/img/logo-foot-190.webp 190w, assets/img/logo-foot-380.webp 380w, assets/img/logo-foot.webp 440w" sizes="190px" width="440" height="371" alt="Twisted Roots Merc" loading="lazy" decoding="async">
         <p class="small" style="opacity:.8">Mercantile · Bakery · Kitchen<br>101 &amp; 151 N Gaither St, Siletz, Oregon 97380<br>
           <a href="tel:+15415550134">(541) 555-0134</a></p>
         <button class="stormtoggle" data-stormtoggle aria-pressed="false"><i></i>Storm Mode Off</button>
       </div>
       <div>
-        <h4>The Store</h4>
+        <h3>The Store</h3>
         <ul>
           <li><a href="merc.html">The Merc</a></li>
           <li><a href="yard.html">The Yard</a></li>
@@ -563,7 +558,7 @@
         </ul>
       </div>
       <div>
-        <h4>Food</h4>
+        <h3>Food</h3>
         <ul>
           <li><a href="bakery.html">Bakery + Kitchen</a></li><li><a href="kitchen.html">Recipes</a></li>
           <li><a href="bakery.html#breakfast">Breakfast</a></li>
@@ -572,7 +567,7 @@
         </ul>
       </div>
       <div>
-        <h4>Twisted Roots</h4>
+        <h3>Twisted Roots</h3>
         <ul>
           <li><a href="roots.html">Our Roots</a></li><li><a href="journal.html">The Board</a></li>
           <li><a href="visit.html">Visit &amp; Hours</a></li>
@@ -612,5 +607,6 @@ addEventListener("load", function () {
   })();
 });
 </script>
+<p id="trLive" class="visually-hidden" role="status" aria-live="polite"></p>
 </body>
 </html>

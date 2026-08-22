@@ -18,19 +18,17 @@
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png?v=ce873322">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/site.css?v=db82a4af">
-<link rel="stylesheet" href="../assets/css/motion.css?v=e4213a7b">
-<link rel="stylesheet" href="../assets/css/roots.css?v=42e7b082">
-<link rel="stylesheet" href="../assets/css/mobile.css?v=1c92929c">
-<link rel="stylesheet" href="../assets/css/polish.css?v=39f8e298">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap"></noscript>
+<link rel="stylesheet" href="../assets/css/bundle.css?v=bfaf2686">
 <link rel="stylesheet" href="../assets/css/print.css?v=65e49f4e" media="print">
-<link rel="stylesheet" href="../assets/css/perf.css?v=8af74f1b">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "A Compost Bin Out of Pallets and Boards", "description": "Three bays, open front, air on all sides. The design keeps working when you stop paying attention to it, which you will.", "articleSection": "The Yard", "keywords": "compost, bin, pallets, garden, build", "mainEntityOfPage": "https://twistedrootsmerc.com/blog/yard-building-a-compost-bin.html", "author": {"@type": "Organization", "name": "Twisted Roots Merc"}, "publisher": {"@id": "https://twistedrootsmerc.com/#store"}, "isPartOf": {"@type": "Blog", "name": "Practical Notes", "url": "https://twistedrootsmerc.com/journal.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://twistedrootsmerc.com/"}, {"@type": "ListItem", "position": 2, "name": "Practical Notes", "item": "https://twistedrootsmerc.com/journal.html"}, {"@type": "ListItem", "position": 3, "name": "A Compost Bin Out of Pallets and Boards", "item": "https://twistedrootsmerc.com/blog/yard-building-a-compost-bin.html"}]}</script>
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="stormbar">
   <div class="wrap"><b>Storm Mode</b> <span>Wind advisory on the coast. Storm supplies stocked and the yard is open.</span> <a href="../storm.html">See storm stock →</a></div>
@@ -45,7 +43,7 @@
       <span class="brand-txt"><b>Twisted Roots</b><span>Siletz, Oregon</span></span>
     </a>
     <button class="burger" data-burger aria-expanded="false" aria-controls="siteNav" aria-label="Menu"><span class="burger__box" aria-hidden="true"><i></i><i></i><i></i></span><span class="burger__txt">Menu</span></button>
-    <nav class="nav" id="siteNav">
+    <nav class="nav" id="siteNav" aria-label="Main">
       <div class="navitem" data-navitem>
         <button class="navitem__top" data-subtoggle aria-expanded="false" aria-controls="sub-shop">Shop<i class="navitem__car" aria-hidden="true"></i></button>
         <div class="subnav" id="sub-shop">
@@ -83,11 +81,11 @@
   </div>
 </header>
 
-<main>
+<main id="main" tabindex="-1">
 
 <section class="band band--cream band--tight" style="padding-top:clamp(40px,5vw,72px)">
   <div class="wrap--mid">
-    <nav class="serif-caps muted" style="margin-bottom:22px">
+    <nav class="serif-caps muted" style="margin-bottom:22px" aria-label="Breadcrumb">
       <a href="../index.html" style="text-decoration:none">Home</a> &nbsp;/&nbsp;
       <a href="../journal.html" style="text-decoration:none">Notes</a> &nbsp;/&nbsp;
       <a href="../journal.html#the-yard" style="text-decoration:none">The Yard</a>
@@ -101,22 +99,22 @@
 
 <article class="band band--paper" style="padding-top:clamp(34px,4vw,56px)">
   <div class="wrap--narrow tr-prose">
-    <p>The compost bin you build should assume you will neglect it. Anything that requires weekly turning, careful layering and a thermometer works beautifully for two months and then becomes a pile of yard debris with a fence around it. Build the version that composts slowly and reliably without supervision.</p><h2>Size, which is not arbitrary</h2><p>A compost pile needs mass to hold heat. Under about 3 feet in each direction it loses heat faster than it makes it and just sits there. Over about 5 feet the middle goes anaerobic and starts to smell. A cubic yard, roughly 3 by 3 by 3, is the sweet spot and it is not a coincidence that most bin plans land there.</p><table><thead><tr><th>Bin</th><th>Capacity</th><th>Good for</th></tr></thead><tbody><tr><td>3 x 3 x 3 ft, single</td><td>1 cu yd</td><td>Kitchen scraps and a small yard</td></tr><tr><td>Two bays, 3 x 3 each</td><td>2 cu yd</td><td>One filling, one finishing</td></tr><tr><td>Three bays, 3 x 3 each</td><td>3 cu yd</td><td>Filling, cooking, finished. The classic</td></tr><tr><td>4 x 4 x 4 ft</td><td>2.4 cu yd</td><td>Big yard, lots of leaves</td></tr></tbody></table><h2>The pallet version</h2><p>Free and it works. Four pallets make one bin: three sides and a removable front, or three sides and no front at all.</p><ol><li>Stand three pallets on edge in a U. Pallets are usually 40 by 48 inches, which is close enough to the target size.</li><li>Drive a treated stake or a length of rebar at each corner, inside and out, to hold them upright.</li><li>Wire or screw the corners together. Fence staples and wire work fine.</li><li>For a front, slide 1x6 boards down between two stakes so you can lift them out as the pile grows.</li><li>Line the inside with hardware cloth if rodents are a problem, which they will be if you put kitchen scraps in it.</li></ol><p>Do not use pallets marked MB, which indicates methyl bromide fumigation. Look for HT, heat treated, stamped on the stringer. Most pallets you will find around here are HT and fine. Ask us before you take one from behind the store and we will tell you which ones are which.</p><h2>The built version</h2><p>If you want it to look intentional, build the same thing out of 2x4 corner posts and 1x6 boards with a 1 inch gap between each board. The gaps are the point. Air has to get into the sides of the pile or the middle goes sour.</p><table><thead><tr><th>Item</th><th>Quantity for a single 3x3 bin</th></tr></thead><tbody><tr><td>4x4x8 treated post, cut to 4 ft</td><td>1, gives two corners</td></tr><tr><td>2x4x8</td><td>2, for the other corners and rails</td></tr><tr><td>1x6x8 boards</td><td>9 to 10, gapped</td></tr><tr><td>Exterior screws, 2.5 in</td><td>About 80</td></tr></tbody></table><p>Set the posts on gravel rather than in concrete. A compost bin is not permanent and you will want to move it eventually. Ground contact rated posts, and expect the boards nearest the pile to give out in eight or ten years, because they spend their lives against wet organic matter, which is the definition of a rot environment.</p><h2>What goes in and what does not</h2><ul><li><strong>Yes:</strong> leaves, grass, vegetable scraps, coffee grounds, eggshells, straw, chicken bedding, spent garden plants.</li><li><strong>No:</strong> meat, dairy, grease, dog and cat waste, anything treated with a persistent herbicide.</li><li><strong>Careful:</strong> blackberry canes and morning glory. Both root from cuttings and a cool pile will not kill them. Dry them on a tarp first.</li><li><strong>Never:</strong> pressure treated sawdust. See <a href="yard-cutting-pressure-treated-and-sealing-ends.html">the treated lumber piece</a>.</li></ul><h2>The wet climate problem</h2><p>Everywhere else, people are told to keep the pile damp. Here, the problem is the opposite: from fall through spring the pile gets waterlogged, goes anaerobic and smells like a ditch. A simple lid or a scrap of roofing on top through the wet months fixes it. Keep the sides open, cover the top.</p><p>Also site it on soil, not on concrete, so worms and drainage both work, and put it somewhere you will walk past. A compost bin at the far corner of the property is a compost bin nobody uses.</p><p>1x6 boards, 2x4s, 4x4 posts, gravel and hardware cloth are <a href="../yard.html">in the Yard</a> or inside on the <a href="../merc.html#fixit">Fix It wall</a>.</p>
+    <p>The compost bin you build should assume you will neglect it. Anything that requires weekly turning, careful layering and a thermometer works beautifully for two months and then becomes a pile of yard debris with a fence around it. Build the version that composts slowly and reliably without supervision.</p><h2>Size, which is not arbitrary</h2><p>A compost pile needs mass to hold heat. Under about 3 feet in each direction it loses heat faster than it makes it and just sits there. Over about 5 feet the middle goes anaerobic and starts to smell. A cubic yard, roughly 3 by 3 by 3, is the sweet spot and it is not a coincidence that most bin plans land there.</p><table><thead><tr><th scope="col">Bin</th><th scope="col">Capacity</th><th scope="col">Good for</th></tr></thead><tbody><tr><td>3 x 3 x 3 ft, single</td><td>1 cu yd</td><td>Kitchen scraps and a small yard</td></tr><tr><td>Two bays, 3 x 3 each</td><td>2 cu yd</td><td>One filling, one finishing</td></tr><tr><td>Three bays, 3 x 3 each</td><td>3 cu yd</td><td>Filling, cooking, finished. The classic</td></tr><tr><td>4 x 4 x 4 ft</td><td>2.4 cu yd</td><td>Big yard, lots of leaves</td></tr></tbody></table><h2>The pallet version</h2><p>Free and it works. Four pallets make one bin: three sides and a removable front, or three sides and no front at all.</p><ol><li>Stand three pallets on edge in a U. Pallets are usually 40 by 48 inches, which is close enough to the target size.</li><li>Drive a treated stake or a length of rebar at each corner, inside and out, to hold them upright.</li><li>Wire or screw the corners together. Fence staples and wire work fine.</li><li>For a front, slide 1x6 boards down between two stakes so you can lift them out as the pile grows.</li><li>Line the inside with hardware cloth if rodents are a problem, which they will be if you put kitchen scraps in it.</li></ol><p>Do not use pallets marked MB, which indicates methyl bromide fumigation. Look for HT, heat treated, stamped on the stringer. Most pallets you will find around here are HT and fine. Ask us before you take one from behind the store and we will tell you which ones are which.</p><h2>The built version</h2><p>If you want it to look intentional, build the same thing out of 2x4 corner posts and 1x6 boards with a 1 inch gap between each board. The gaps are the point. Air has to get into the sides of the pile or the middle goes sour.</p><table><thead><tr><th scope="col">Item</th><th scope="col">Quantity for a single 3x3 bin</th></tr></thead><tbody><tr><td>4x4x8 treated post, cut to 4 ft</td><td>1, gives two corners</td></tr><tr><td>2x4x8</td><td>2, for the other corners and rails</td></tr><tr><td>1x6x8 boards</td><td>9 to 10, gapped</td></tr><tr><td>Exterior screws, 2.5 in</td><td>About 80</td></tr></tbody></table><p>Set the posts on gravel rather than in concrete. A compost bin is not permanent and you will want to move it eventually. Ground contact rated posts, and expect the boards nearest the pile to give out in eight or ten years, because they spend their lives against wet organic matter, which is the definition of a rot environment.</p><h2>What goes in and what does not</h2><ul><li><strong>Yes:</strong> leaves, grass, vegetable scraps, coffee grounds, eggshells, straw, chicken bedding, spent garden plants.</li><li><strong>No:</strong> meat, dairy, grease, dog and cat waste, anything treated with a persistent herbicide.</li><li><strong>Careful:</strong> blackberry canes and morning glory. Both root from cuttings and a cool pile will not kill them. Dry them on a tarp first.</li><li><strong>Never:</strong> pressure treated sawdust. See <a href="yard-cutting-pressure-treated-and-sealing-ends.html">the treated lumber piece</a>.</li></ul><h2>The wet climate problem</h2><p>Everywhere else, people are told to keep the pile damp. Here, the problem is the opposite: from fall through spring the pile gets waterlogged, goes anaerobic and smells like a ditch. A simple lid or a scrap of roofing on top through the wet months fixes it. Keep the sides open, cover the top.</p><p>Also site it on soil, not on concrete, so worms and drainage both work, and put it somewhere you will walk past. A compost bin at the far corner of the property is a compost bin nobody uses.</p><p>1x6 boards, 2x4s, 4x4 posts, gravel and hardware cloth are <a href="../yard.html">in the Yard</a> or inside on the <a href="../merc.html#fixit">Fix It wall</a>.</p>
   </div>
 </article>
+
 
 <section class="band band--bark band--dark band--tight">
   <div class="wrap--mid">
     <div class="split split--top">
       <div>
-        <p class="eyebrow">While you're here</p>
-        <h2 class="h2 mb0">Need any of this today?</h2>
+        <p class="eyebrow">From the shelf</p>
+        <h2 class="h2 mb0">What this takes</h2>
       </div>
       <div>
-        <p class="lede mb0">Check what is on the shelf before you drive over, or tell us what we
-          should be carrying.</p>
-        <div class="btnrow" style="margin-top:20px">
-          <a class="btn btn--amber" href="../yard.html">Shop now</a>
+        <p class="lede mb0">Counts come off the register. If it says two left, there are two left.</p>
+        <div class="pillrow"><a class="pill" href="../shop.html?q=1x6" style="text-decoration:none">1x6 fence boards</a><a class="pill" href="../shop.html?q=galvanized+nails" style="text-decoration:none">Galvanized nails by the pound</a></div>
+        <div class="btnrow" style="margin-top:18px">
           <button class="btn btn--ghost" data-tellus="true">Tell Carrie &amp; Eric</button>
         </div>
       </div>
@@ -159,18 +157,18 @@
   <div class="wrap">
     <div class="foot-top">
       <div>
-        <img src="../assets/img/logo-foot.webp?v=34aebc6d" alt="Twisted Roots Merc" width="440" height="371" loading="lazy" decoding="async">
+        <img src="../assets/img/logo-foot.webp?v=34aebc6d" srcset="../assets/img/logo-foot-190.webp 190w, ../assets/img/logo-foot-380.webp 380w, ../assets/img/logo-foot.webp 440w" sizes="190px" width="440" height="371" alt="Twisted Roots Merc" loading="lazy" decoding="async">
         <p class="small" style="opacity:.8">Mercantile · Bakery · Kitchen<br>101 &amp; 151 N Gaither St, Siletz, Oregon 97380<br>
           <a href="tel:+15415550134">(541) 555-0134</a></p>
         <button class="stormtoggle" data-stormtoggle aria-pressed="false"><i></i>Storm Mode Off</button>
       </div>
-      <div><h4>The Store</h4><ul>
+      <div><h3>The Store</h3><ul>
         <li><a href="../merc.html">The Merc</a></li><li><a href="../yard.html">The Yard</a></li>
         <li><a href="../storm.html">Storm Ready</a></li><li><a href="../hunt.html">Hunt &amp; Field</a></li><li><a href="../local.html">Local Goods</a></li></ul></div>
-      <div><h4>Food</h4><ul>
+      <div><h3>Food</h3><ul>
         <li><a href="../bakery.html">Bakery + Kitchen</a></li><li><a href="../kitchen.html">Recipes</a></li><li><a href="../bakery.html#breakfast">Breakfast</a></li>
         <li><a href="../bakery.html#lunch">Lunch</a></li><li><a href="../bakery.html#order">Order pickup</a></li></ul></div>
-      <div><h4>Twisted Roots</h4><ul>
+      <div><h3>Twisted Roots</h3><ul>
         <li><a href="../roots.html">Our Roots</a></li><li><a href="../journal.html">The Board</a></li><li><a href="../visit.html">Visit &amp; Hours</a></li>
         <li><a href="#" data-tellus="true">What should we carry?</a></li><li><a href="../hq.html">Owner login</a></li></ul></div>
     </div>
@@ -182,6 +180,7 @@
   </div>
 </footer>
 
+<p id="trLive" class="visually-hidden" role="status" aria-live="polite"></p>
 <script>
 addEventListener("load", function () {
   var s = ["../assets/js/catalog.js?v=cdc9c20e", "../assets/js/cart.js?v=024fe1e6", "../assets/js/site.js?v=3787c0d1", "../assets/js/motion.js?v=bf716f00", "../assets/js/roots.js?v=93423d8d"], i = 0;

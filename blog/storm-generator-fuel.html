@@ -18,19 +18,17 @@
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png?v=ce873322">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/site.css?v=db82a4af">
-<link rel="stylesheet" href="../assets/css/motion.css?v=e4213a7b">
-<link rel="stylesheet" href="../assets/css/roots.css?v=42e7b082">
-<link rel="stylesheet" href="../assets/css/mobile.css?v=1c92929c">
-<link rel="stylesheet" href="../assets/css/polish.css?v=39f8e298">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap"></noscript>
+<link rel="stylesheet" href="../assets/css/bundle.css?v=bfaf2686">
 <link rel="stylesheet" href="../assets/css/print.css?v=65e49f4e" media="print">
-<link rel="stylesheet" href="../assets/css/perf.css?v=8af74f1b">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Generator Fuel: Storing It, Stabilizing It, Not Running Out of It", "description": "The generator in your shed will probably not start, and the reason is almost always the gas that has been sitting in it.", "articleSection": "Storm Ready", "keywords": "generator, fuel, gas, maintenance, storage", "mainEntityOfPage": "https://twistedrootsmerc.com/blog/storm-generator-fuel.html", "author": {"@type": "Organization", "name": "Twisted Roots Merc"}, "publisher": {"@id": "https://twistedrootsmerc.com/#store"}, "isPartOf": {"@type": "Blog", "name": "Practical Notes", "url": "https://twistedrootsmerc.com/journal.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://twistedrootsmerc.com/"}, {"@type": "ListItem", "position": 2, "name": "Practical Notes", "item": "https://twistedrootsmerc.com/journal.html"}, {"@type": "ListItem", "position": 3, "name": "Generator Fuel: Storing It, Stabilizing It, Not Running Out of It", "item": "https://twistedrootsmerc.com/blog/storm-generator-fuel.html"}]}</script>
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="stormbar">
   <div class="wrap"><b>Storm Mode</b> <span>Wind advisory on the coast. Storm supplies stocked and the yard is open.</span> <a href="../storm.html">See storm stock →</a></div>
@@ -45,7 +43,7 @@
       <span class="brand-txt"><b>Twisted Roots</b><span>Siletz, Oregon</span></span>
     </a>
     <button class="burger" data-burger aria-expanded="false" aria-controls="siteNav" aria-label="Menu"><span class="burger__box" aria-hidden="true"><i></i><i></i><i></i></span><span class="burger__txt">Menu</span></button>
-    <nav class="nav" id="siteNav">
+    <nav class="nav" id="siteNav" aria-label="Main">
       <div class="navitem" data-navitem>
         <button class="navitem__top" data-subtoggle aria-expanded="false" aria-controls="sub-shop">Shop<i class="navitem__car" aria-hidden="true"></i></button>
         <div class="subnav" id="sub-shop">
@@ -83,11 +81,11 @@
   </div>
 </header>
 
-<main>
+<main id="main" tabindex="-1">
 
 <section class="band band--cream band--tight" style="padding-top:clamp(40px,5vw,72px)">
   <div class="wrap--mid">
-    <nav class="serif-caps muted" style="margin-bottom:22px">
+    <nav class="serif-caps muted" style="margin-bottom:22px" aria-label="Breadcrumb">
       <a href="../index.html" style="text-decoration:none">Home</a> &nbsp;/&nbsp;
       <a href="../journal.html" style="text-decoration:none">Notes</a> &nbsp;/&nbsp;
       <a href="../journal.html#storm-ready" style="text-decoration:none">Storm Ready</a>
@@ -101,22 +99,22 @@
 
 <article class="band band--paper" style="padding-top:clamp(34px,4vw,56px)">
   <div class="wrap--narrow tr-prose">
-    <p>Every year somebody rolls a generator out on the first big blow, pulls the cord forty times, swears at it, and drives to town. The engine is usually fine. The fuel is not.</p><h2>Why gas goes bad, and how fast</h2><p>Pump gasoline starts degrading in about thirty days. The light fractions that make it easy to start evaporate first, so what is left is harder to ignite. Then oxidation produces gums and varnish that glue up the tiny passages in a carburetor — the main jet on a small engine is a hole about the width of a pin, and it does not take much to block it.</p><p>Ethanol makes it worse in two ways. It absorbs water out of the air, and when it has absorbed enough it separates out into a layer of water-and-alcohol in the bottom of the tank, which is exactly where the fuel pickup sits. Ethanol-free gas, where you can get it, stores far better and is worth the extra money for anything that sits.</p><table><thead><tr><th>Fuel condition</th><th>Realistic shelf life</th></tr></thead><tbody><tr><td>Pump gas with ethanol, untreated, vented can</td><td>About 1 month</td></tr><tr><td>Pump gas with ethanol, untreated, sealed can</td><td>About 3 months</td></tr><tr><td>Pump gas with ethanol, stabilized</td><td>About 12 months</td></tr><tr><td>Ethanol-free gas, stabilized, sealed, cool</td><td>2 years, sometimes more</td></tr><tr><td>Diesel, treated with biocide</td><td>Around a year, longer if kept dry</td></tr><tr><td>Propane</td><td>Indefinite. This is propane's whole argument</td></tr></tbody></table><h2>Stabilizer, used properly</h2><p>Stabilizer only works on fuel that is still good. It is a preservative, not a cure — pouring it into a can of two-year-old varnish accomplishes nothing.</p><ol><li>Add the stabilizer to the empty can first, then fill with fresh gas at the pump. The splash of filling mixes it far better than pouring it on top and shaking.</li><li>Dose per the label. More is not better and can affect how the engine runs.</li><li>After you fill the generator's own tank, <strong>run the engine ten minutes</strong> so stabilized fuel actually reaches the carburetor. Stabilizer in the tank does nothing for the fuel bowl that is already sitting there.</li></ol><h2>How much to keep</h2><p>A typical portable generator running a fridge, a freezer, some lights and a laptop burns somewhere around half a gallon an hour at partial load. Run it eight hours a day and that is four gallons a day.</p><table><thead><tr><th>Outage length</th><th>Running 8 hrs/day</th><th>Running in 2-on/4-off shifts</th></tr></thead><tbody><tr><td>1 day</td><td>4 gallons</td><td>4 gallons</td></tr><tr><td>3 days</td><td>12 gallons</td><td>6 gallons</td></tr><tr><td>1 week</td><td>28 gallons</td><td>14 gallons</td></tr></tbody></table><p>Two or three five-gallon cans is a realistic household number. More than that stored at home starts being its own hazard. Store cans in a detached shed, not the garage, not near a water heater pilot, up off the floor and in the shade.</p><h2>The rotation that actually happens</h2><p>The theory is you rotate the cans through your truck every few months. In practice people forget. The version that works: pick a habit you already have — mowing season starting, hunting season starting, the first week the heat comes on — and tie fuel rotation to it. Pour the old cans into the truck, refill at the pump with stabilizer already in them, done.</p><h2>Off-season shutdown</h2><p>When storm season ends, do one of two things and not neither. Either fill the tank completely with stabilized fuel so there is no air space for condensation, or run the carburetor dry by shutting the fuel valve and letting the engine quit on its own. Half a tank of untreated gas sitting all summer is how you get here again next winter.</p><p>Stabilizer, five-gallon cans, funnels and two-cycle oil are all on the <a href="../storm.html">storm shelf</a>. So is <a href="storm-generator-safety.html">everything about running the thing without poisoning the house</a>, which matters more than the fuel does.</p>
+    <p>Every year somebody rolls a generator out on the first big blow, pulls the cord forty times, swears at it, and drives to town. The engine is usually fine. The fuel is not.</p><h2>Why gas goes bad, and how fast</h2><p>Pump gasoline starts degrading in about thirty days. The light fractions that make it easy to start evaporate first, so what is left is harder to ignite. Then oxidation produces gums and varnish that glue up the tiny passages in a carburetor — the main jet on a small engine is a hole about the width of a pin, and it does not take much to block it.</p><p>Ethanol makes it worse in two ways. It absorbs water out of the air, and when it has absorbed enough it separates out into a layer of water-and-alcohol in the bottom of the tank, which is exactly where the fuel pickup sits. Ethanol-free gas, where you can get it, stores far better and is worth the extra money for anything that sits.</p><table><thead><tr><th scope="col">Fuel condition</th><th scope="col">Realistic shelf life</th></tr></thead><tbody><tr><td>Pump gas with ethanol, untreated, vented can</td><td>About 1 month</td></tr><tr><td>Pump gas with ethanol, untreated, sealed can</td><td>About 3 months</td></tr><tr><td>Pump gas with ethanol, stabilized</td><td>About 12 months</td></tr><tr><td>Ethanol-free gas, stabilized, sealed, cool</td><td>2 years, sometimes more</td></tr><tr><td>Diesel, treated with biocide</td><td>Around a year, longer if kept dry</td></tr><tr><td>Propane</td><td>Indefinite. This is propane's whole argument</td></tr></tbody></table><h2>Stabilizer, used properly</h2><p>Stabilizer only works on fuel that is still good. It is a preservative, not a cure — pouring it into a can of two-year-old varnish accomplishes nothing.</p><ol><li>Add the stabilizer to the empty can first, then fill with fresh gas at the pump. The splash of filling mixes it far better than pouring it on top and shaking.</li><li>Dose per the label. More is not better and can affect how the engine runs.</li><li>After you fill the generator's own tank, <strong>run the engine ten minutes</strong> so stabilized fuel actually reaches the carburetor. Stabilizer in the tank does nothing for the fuel bowl that is already sitting there.</li></ol><h2>How much to keep</h2><p>A typical portable generator running a fridge, a freezer, some lights and a laptop burns somewhere around half a gallon an hour at partial load. Run it eight hours a day and that is four gallons a day.</p><table><thead><tr><th scope="col">Outage length</th><th scope="col">Running 8 hrs/day</th><th scope="col">Running in 2-on/4-off shifts</th></tr></thead><tbody><tr><td>1 day</td><td>4 gallons</td><td>4 gallons</td></tr><tr><td>3 days</td><td>12 gallons</td><td>6 gallons</td></tr><tr><td>1 week</td><td>28 gallons</td><td>14 gallons</td></tr></tbody></table><p>Two or three five-gallon cans is a realistic household number. More than that stored at home starts being its own hazard. Store cans in a detached shed, not the garage, not near a water heater pilot, up off the floor and in the shade.</p><h2>The rotation that actually happens</h2><p>The theory is you rotate the cans through your truck every few months. In practice people forget. The version that works: pick a habit you already have — mowing season starting, hunting season starting, the first week the heat comes on — and tie fuel rotation to it. Pour the old cans into the truck, refill at the pump with stabilizer already in them, done.</p><h2>Off-season shutdown</h2><p>When storm season ends, do one of two things and not neither. Either fill the tank completely with stabilized fuel so there is no air space for condensation, or run the carburetor dry by shutting the fuel valve and letting the engine quit on its own. Half a tank of untreated gas sitting all summer is how you get here again next winter.</p><p>Stabilizer, five-gallon cans, funnels and two-cycle oil are all on the <a href="../storm.html">storm shelf</a>. So is <a href="storm-generator-safety.html">everything about running the thing without poisoning the house</a>, which matters more than the fuel does.</p>
   </div>
 </article>
+
 
 <section class="band band--bark band--dark band--tight">
   <div class="wrap--mid">
     <div class="split split--top">
       <div>
-        <p class="eyebrow">While you're here</p>
-        <h2 class="h2 mb0">Need any of this today?</h2>
+        <p class="eyebrow">From the shelf</p>
+        <h2 class="h2 mb0">What this takes</h2>
       </div>
       <div>
-        <p class="lede mb0">Check what is on the shelf before you drive over, or tell us what we
-          should be carrying.</p>
-        <div class="btnrow" style="margin-top:20px">
-          <a class="btn btn--amber" href="../storm.html">Shop now</a>
+        <p class="lede mb0">Counts come off the register. If it says two left, there are two left.</p>
+        <div class="pillrow"><a class="pill" href="../shop.html?q=gas+can" style="text-decoration:none">Five gallon gas cans</a><a class="pill" href="../shop.html?q=fuel+stabilizer" style="text-decoration:none">Fuel stabilizer, so it is still good</a></div>
+        <div class="btnrow" style="margin-top:18px">
           <button class="btn btn--ghost" data-tellus="true">Tell Carrie &amp; Eric</button>
         </div>
       </div>
@@ -159,18 +157,18 @@
   <div class="wrap">
     <div class="foot-top">
       <div>
-        <img src="../assets/img/logo-foot.webp?v=34aebc6d" alt="Twisted Roots Merc" width="440" height="371" loading="lazy" decoding="async">
+        <img src="../assets/img/logo-foot.webp?v=34aebc6d" srcset="../assets/img/logo-foot-190.webp 190w, ../assets/img/logo-foot-380.webp 380w, ../assets/img/logo-foot.webp 440w" sizes="190px" width="440" height="371" alt="Twisted Roots Merc" loading="lazy" decoding="async">
         <p class="small" style="opacity:.8">Mercantile · Bakery · Kitchen<br>101 &amp; 151 N Gaither St, Siletz, Oregon 97380<br>
           <a href="tel:+15415550134">(541) 555-0134</a></p>
         <button class="stormtoggle" data-stormtoggle aria-pressed="false"><i></i>Storm Mode Off</button>
       </div>
-      <div><h4>The Store</h4><ul>
+      <div><h3>The Store</h3><ul>
         <li><a href="../merc.html">The Merc</a></li><li><a href="../yard.html">The Yard</a></li>
         <li><a href="../storm.html">Storm Ready</a></li><li><a href="../hunt.html">Hunt &amp; Field</a></li><li><a href="../local.html">Local Goods</a></li></ul></div>
-      <div><h4>Food</h4><ul>
+      <div><h3>Food</h3><ul>
         <li><a href="../bakery.html">Bakery + Kitchen</a></li><li><a href="../kitchen.html">Recipes</a></li><li><a href="../bakery.html#breakfast">Breakfast</a></li>
         <li><a href="../bakery.html#lunch">Lunch</a></li><li><a href="../bakery.html#order">Order pickup</a></li></ul></div>
-      <div><h4>Twisted Roots</h4><ul>
+      <div><h3>Twisted Roots</h3><ul>
         <li><a href="../roots.html">Our Roots</a></li><li><a href="../journal.html">The Board</a></li><li><a href="../visit.html">Visit &amp; Hours</a></li>
         <li><a href="#" data-tellus="true">What should we carry?</a></li><li><a href="../hq.html">Owner login</a></li></ul></div>
     </div>
@@ -182,6 +180,7 @@
   </div>
 </footer>
 
+<p id="trLive" class="visually-hidden" role="status" aria-live="polite"></p>
 <script>
 addEventListener("load", function () {
   var s = ["../assets/js/catalog.js?v=cdc9c20e", "../assets/js/cart.js?v=024fe1e6", "../assets/js/site.js?v=3787c0d1", "../assets/js/motion.js?v=bf716f00", "../assets/js/roots.js?v=93423d8d"], i = 0;

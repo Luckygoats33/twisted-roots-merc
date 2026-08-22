@@ -154,11 +154,20 @@ def slugify(s):
     return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")
 
 
+# The Google Fonts sheet is loaded WITHOUT blocking render: preload primes the
+# connection + cache at high priority, media="print" keeps the <link> off the
+# critical path, and onload flips it to media="all" once it has arrived. This is
+# only safe because perf.css (inside bundle.css) declares metric-matched
+# size-adjust fallbacks for Bitter / Public Sans / Rye, so the late swap costs no
+# layout shift. See PERF-AUDIT.md 3.9, 6.1 and patch #13.
+_GF = ("https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900"
+       "&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap")
 HEAD_FONTS = (
     '<link rel="preconnect" href="https://fonts.googleapis.com">\n'
     '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
-    '<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900'
-    '&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" rel="stylesheet">'
+    '<link rel="preload" as="style" href="%s">\n'
+    '<link rel="stylesheet" href="%s" media="print" onload="this.media=\'all\';this.onload=null">\n'
+    '<noscript><link rel="stylesheet" href="%s"></noscript>' % (_GF, _GF, _GF)
 )
 
 
@@ -208,8 +217,8 @@ def shell(depth=1):
     """Header and footer straight out of merc.html, so the chrome can
     never drift away from the rest of the site."""
     src = open(os.path.join(ROOT, "merc.html"), encoding="utf-8").read()
-    head = re.search(r"<body>(.*?)<main>", src, re.S).group(1)
-    foot = re.search(r"</main>(.*?)</body>", src, re.S).group(1)
+    head = re.search(r"<body[^>]*>(.*?)<main\b[^>]*>", src, re.S).group(1)
+    foot = re.search(r"</main\s*>(.*?)</body>", src, re.S).group(1)
     # merc.html now loads its scripts from an inline window.load chain
     # rather than plain <script src> tags, so read the list out of that
     # and take the whole block with it. Miss this and every generated
@@ -233,6 +242,18 @@ def shell(depth=1):
         for pat in pats:
             head = head.replace(pat, pat.replace('="', '="' + up, 1))
             foot = foot.replace(pat, pat.replace('="', '="' + up, 1))
+        # srcset carries several URLs in one attribute value, so the
+        # simple 'src="assets/' prefix pass above only ever fixes the
+        # first candidate. Prefix every bare assets/ URL inside a srcset
+        # or the responsive variants 404 on every generated page.
+        def _srcset_up(s):
+            return re.sub(
+                r'(srcset=")([^"]*)(")',
+                lambda m: m.group(1) + re.sub(r'(^|,\s*)assets/',
+                                              lambda v: v.group(1) + up + 'assets/',
+                                              m.group(2)) + m.group(3), s)
+        head = _srcset_up(head)
+        foot = _srcset_up(foot)
         head = head.replace('aria-current="page"', '')
         scripts = [up + s if s.startswith("assets/") else s for s in scripts]
     return head, foot, scripts
@@ -261,23 +282,170 @@ def page(title, desc, canonical, body, depth=1, extra_head=""):
 <link rel="icon" href="%sassets/img/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="%sassets/img/apple-touch-icon.png">
 %s
-<link rel="stylesheet" href="%sassets/css/site.css">
-<link rel="stylesheet" href="%sassets/css/motion.css">
-<link rel="stylesheet" href="%sassets/css/roots.css">
-<link rel="stylesheet" href="%sassets/css/mobile.css">
-<link rel="stylesheet" href="%sassets/css/polish.css">
+<link rel="stylesheet" href="%sassets/css/bundle.css">
 <link rel="stylesheet" href="%sassets/css/print.css" media="print">
-<link rel="stylesheet" href="%sassets/css/perf.css">
 %s</head>
 <body>
-%s<main>
+%s<main id="main" tabindex="-1">
 %s
 </main>%s%s
 </body>
 </html>
 """ % (html.escape(title), html.escape(desc), canonical,
        html.escape(title), html.escape(desc), canonical, SITE, up, up,
-       HEAD_FONTS, up, up, up, up, up, up, up, extra_head, head, body, foot, tags)
+       HEAD_FONTS, up, up, extra_head, head, body, foot, tags)
+
+
+# ---------------------------------------------------------------------
+# "FROM THE SHELF" — the contextual link module.
+#
+# The band at the foot of every recipe used to be byte-identical on all
+# 161 of them: the same two buttons, "Shop the shelf" and "The bakery",
+# in the same place, with the same words. That establishes structure and
+# nothing else, because a link that reads the same on every page tells a
+# search engine nothing about any one of them. This gives each recipe 2-3
+# links chosen for what it is actually about.
+#
+# The map lives in blog/data/_links.json and is shared with build_blog.py,
+# so the two builders cannot drift into contradicting each other. Recipes
+# are category-driven rather than per-page: the defaults rotate through a
+# handful of variants so 23 siblings never carry identical anchor text,
+# and a recipe can override them where the gear genuinely is the barrier.
+#
+# shop.js reads ?q= off the query string (assets/js/shop.js, readURL), so
+# a link can land on a pre-filtered shelf. That is only worth anything if
+# the search returns something, so every ?q= is run through the same
+# name-and-tag matching shop.js uses and dropped if it comes back empty.
+# A link to an empty search result is worse than no link at all.
+# ---------------------------------------------------------------------
+
+LINKS_FILE = os.path.join(ROOT, "blog", "data", "_links.json")
+
+# Links per page. Two or three is a recommendation; ten is a directory
+# and dilutes every link in it. build_blog.py enforces the same number.
+SHELF_CAP = 3
+
+LAZY_ANCHOR = re.compile(r"^(shop|shop now|click here|here|read more|more|link|buy)$", re.I)
+
+
+def norm_q(s):
+    """The normalisation shop.js applies to a query and to a product name
+    (assets/js/shop.js, norm) so the check below agrees with the page."""
+    return re.sub(r"\s+", " ", re.sub(r"[^a-z0-9 ]", " ", str(s).lower())).strip()
+
+
+def shelf_terms():
+    """Every product's name and tags out of assets/js/catalog.js, one
+    normalised blob per item. Returns [] if the catalog cannot be read, in
+    which case the query check is skipped rather than blocking a build on
+    a JavaScript parse."""
+    try:
+        src = open(os.path.join(ROOT, "assets", "js", "catalog.js"), encoding="utf-8").read()
+    except OSError:
+        return []
+    out = []
+    for line in src.splitlines():
+        m = re.search(r'\bn:\s*"([^"]+)"', line)
+        if not m:
+            continue
+        tags = re.search(r'\bt:\s*\[([^\]]*)\]', line)
+        words = [m.group(1)] + (re.findall(r'"([^"]+)"', tags.group(1)) if tags else [])
+        out.append(norm_q(" ".join(words)))
+    return out
+
+
+def query_hits(q, terms):
+    """Would shop.js show anything for this ?q= — same rules: the whole
+    phrase inside a name or tag, or any word of two characters or more."""
+    q = norm_q(q)
+    if not q:
+        return False
+    words = [w for w in q.split(" ") if len(w) >= 2]
+    for blob in terms:
+        if q in blob or any(w in blob for w in words):
+            return True
+    return False
+
+
+def load_links():
+    """The topic -> shelf map, shared with build_blog.py. A missing file is
+    not fatal; the module is simply left off."""
+    if not os.path.exists(LINKS_FILE):
+        return {}
+    return json.load(open(LINKS_FILE, encoding="utf-8"))
+
+
+def check_links(links, who, self_path, terms, problems):
+    """Reject anything that would ship a bad link: too many, a duplicate
+    target, a page linking to itself, an anchor that says nothing, a file
+    that is not on disk, a fragment no page defines, or a search that
+    returns no products."""
+    if not (1 <= len(links) <= SHELF_CAP):
+        problems.append("%s: %d shelf links (cap is %d)" % (who, len(links), SHELF_CAP))
+        return False
+    seen = set()
+    for l in links:
+        text, url = l.get("text", ""), l.get("url", "")
+        if not text or not url:
+            problems.append("%s: shelf link missing text or url" % who); return False
+        if LAZY_ANCHOR.match(text.strip()):
+            problems.append("%s: anchor text %r says nothing" % (who, text)); return False
+        if url in seen:
+            problems.append("%s: links to %s twice" % (who, url)); return False
+        seen.add(url)
+        path = url.split("?")[0].split("#")[0]
+        if path == self_path:
+            problems.append("%s: links to itself" % who); return False
+        if not os.path.exists(os.path.join(ROOT, path.replace("/", os.sep))):
+            problems.append("%s: %s is not on disk" % (who, path)); return False
+        frag = url.split("#")[1] if "#" in url else ""
+        if frag:
+            target = open(os.path.join(ROOT, path.replace("/", os.sep)), encoding="utf-8").read()
+            if ('id="%s"' % frag) not in target:
+                problems.append("%s: %s has no #%s" % (who, path, frag)); return False
+        q = re.search(r"[?&]q=([^&]+)", url)
+        if q and terms and not query_hits(q.group(1).replace("+", " "), terms):
+            problems.append("%s: ?q=%s matches no product" % (who, q.group(1))); return False
+    return True
+
+
+def shelf_block(links, heading, note, depth=1):
+    """Reuses the classes the recipe pages already carry: the same
+    band--bark/band--dark treatment the old two-button call-to-action used,
+    and .pill, which site.css already defines against --line-2 -- a
+    variable .band--dark overrides for light-on-dark. No new CSS."""
+    up = "../" * depth
+    pills = "".join(
+        '<a class="pill" href="%s%s" style="text-decoration:none">%s</a>'
+        % (up, l["url"], html.escape(l["text"])) for l in links)
+    return """
+<section class="band band--bark band--dark band--tight">
+  <div class="wrap--mid">
+    <div class="split split--top">
+      <div>
+        <p class="eyebrow">From the shelf</p>
+        <h2 class="h2 mb0">%s</h2>
+      </div>
+      <div>
+        <p class="lede mb0">%s</p>
+        <div class="pillrow">%s</div>
+      </div>
+    </div>
+  </div>
+</section>""" % (html.escape(heading), html.escape(note), pills)
+
+
+def shelf_for(r, links, order):
+    """A recipe's links: its own override if it has one, otherwise the
+    category default, rotated by the recipe's position inside its category
+    so 23 siblings do not all ship the same anchor text."""
+    own = links.get("recipes", {}).get(r["slug"])
+    if own:
+        return own[:SHELF_CAP]
+    rot = links.get("recipeDefaults", {}).get(r["category"]) or []
+    if not rot:
+        return []
+    return rot[order % len(rot)][:SHELF_CAP]
 
 
 def related(rec, all_r, n=3):
@@ -304,7 +472,7 @@ def iso_dur(s):
     return "PT" + (h.group(1) + "H" if h else "") + (m.group(1) + "M" if m else "")
 
 
-def build_recipe(r, all_r):
+def build_recipe(r, all_r, links, terms, problems, order):
     canonical = "%srecipes/%s.html" % (SITE, r["slug"])
     ing_flat = [i for g in r["ingredients"] for i in g["items"]]
 
@@ -356,6 +524,15 @@ def build_recipe(r, all_r):
                  "".join("<li>%s</li>" % n for n in r["notes"]) + "</ul>")
     storage = ('<h2 class="h3">Keeping it</h2><p>%s</p>' % r["storage"]) if r.get("storage") else ""
 
+    shelf = shelf_for(r, links, order)
+    if shelf and not check_links(shelf, "recipes/" + r["slug"],
+                                 "recipes/%s.html" % r["slug"], terms, problems):
+        shelf = []
+    shelf_html = shelf_block(
+        shelf, "Where to get it",
+        "Counts come off the register, so what it says here is what is on the shelf."
+    ) if shelf else ""
+
     rel = related(r, all_r)
     rel_html = ""
     if rel:
@@ -375,7 +552,7 @@ def build_recipe(r, all_r):
     body = """
 <section class="band band--cream band--tight" style="padding-top:clamp(40px,5vw,72px)">
   <div class="wrap--mid">
-    <nav class="serif-caps muted" style="margin-bottom:22px">
+    <nav class="serif-caps muted" style="margin-bottom:22px" aria-label="Breadcrumb">
       <a href="../index.html" style="text-decoration:none">Home</a> &nbsp;/&nbsp;
       <a href="../kitchen.html" style="text-decoration:none">The Kitchen</a> &nbsp;/&nbsp;
       <a href="../kitchen.html#%s" style="text-decoration:none">%s</a>
@@ -409,26 +586,12 @@ def build_recipe(r, all_r):
   </div>
 </article>
 
-<section class="band band--bark band--dark band--tight">
-  <div class="wrap--mid">
-    <div class="split split--top">
-      <div><p class="eyebrow">From the shelf</p><h2 class="h2 mb0">Need any of it?</h2></div>
-      <div>
-        <p class="lede mb0">Flour, butter, eggs and the rest are on the shelf here. Check what is in
-          stock before you drive over.</p>
-        <div class="btnrow" style="margin-top:20px">
-          <a class="btn btn--amber" href="../shop.html">Shop the shelf</a>
-          <a class="btn btn--ghost" href="../bakery.html">The bakery</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+%s
 %s
 """ % (slugify(r["category"]), html.escape(r["category"]), html.escape(r["category"]),
        html.escape(r["title"]), html.escape(r["dek"]),
        html.escape(r["yield"]), html.escape(r["activeTime"]), html.escape(r["totalTime"]),
-       r["intro"], ings, steps, notes, storage, rel_html)
+       r["intro"], ings, steps, notes, storage, shelf_html, rel_html)
 
     return page(seo_title(r["title"], " | Twisted Roots Kitchen"), r["dek"][:154],
                 canonical, body, depth=1, extra_head=extra)
@@ -471,7 +634,7 @@ def build_index(recs):
 
     body = """
 <section class="hero" style="min-height:60svh">
-  <img class="hero-img" data-parallax="0.2" src="assets/img/bakery-case.jpg" alt="The bakery case" width="1800" height="1200">
+  <img class="hero-img" src="assets/img/bakery-case.jpg" srcset="assets/img/bakery-case-600.webp 600w, assets/img/bakery-case-900.webp 900w, assets/img/bakery-case-1400.webp 1400w, assets/img/bakery-case.webp 1800w" sizes="100vw" width="1800" height="2700" alt="The bakery case" fetchpriority="high" data-parallax="0.2">
   <div class="rainlayer" aria-hidden="true"></div>
   <div class="crows" data-crows="3" aria-hidden="true"></div>
   <div class="hero-in">
@@ -561,8 +724,21 @@ def main():
         print("\nNo valid recipes yet — nothing built.")
         return
 
+    before = len(problems)
+    links, terms = load_links(), shelf_terms()
+    order, nth = {}, {}
     for r in recs:
-        open(os.path.join(OUT, r["slug"] + ".html"), "w", encoding="utf-8").write(build_recipe(r, recs))
+        c = r["category"]
+        order[r["slug"]] = nth.get(c, 0)
+        nth[c] = nth.get(c, 0) + 1
+    for r in recs:
+        open(os.path.join(OUT, r["slug"] + ".html"), "w", encoding="utf-8").write(
+            build_recipe(r, recs, links, terms, problems, order[r["slug"]]))
+    if len(problems) > before:
+        print("\n!! %d shelf-link problems — module dropped from those recipes:"
+              % (len(problems) - before))
+        for x in problems[before:][:40]:
+            print("   -", x)
     open(os.path.join(ROOT, "kitchen.html"), "w", encoding="utf-8").write(build_index(recs))
 
     css_path = os.path.join(ROOT, "assets", "css", "site.css")
@@ -581,11 +757,34 @@ def main():
     by = {}
     for r in recs:
         by[r["category"]] = by.get(r["category"], 0) + 1
+    over = sum(1 for r in recs if links.get("recipes", {}).get(r["slug"]))
     print("\nBuilt %d recipes" % len(recs))
+    print("From the shelf: %d/%d recipes (%d with their own links, %d on the "
+          "rotating category default), max %d links each"
+          % (len(recs), len(recs), over, len(recs) - over, SHELF_CAP))
     for c, n in sorted(by.items(), key=lambda x: -x[1]):
         print("   %4d  %s" % (n, c))
     print("kitchen.html + recipes/*.html + sitemap updated")
+    _wire_responsive_images()
 
+
+
+def _wire_responsive_images():
+    """Re-run the responsive-image pass over everything this build wrote.
+
+    Generated pages lift their chrome out of merc.html and their <main>
+    out of the content source, so any <img> they emit arrives without
+    srcset/sizes and, on blog/ and recipes/, with root-relative URLs.
+    build_images.rewrite() re-derives srcset, sizes, width, height,
+    loading and decoding from the real files on disk and is idempotent,
+    so calling it here means a build can never silently undo the work.
+    """
+    try:
+        import build_images
+    except ImportError:
+        print("  !! build_images.py not importable - responsive images NOT wired")
+        return
+    build_images.rewrite()
 
 if __name__ == "__main__":
     main()

@@ -18,19 +18,17 @@
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png?v=ce873322">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/site.css?v=db82a4af">
-<link rel="stylesheet" href="../assets/css/motion.css?v=e4213a7b">
-<link rel="stylesheet" href="../assets/css/roots.css?v=42e7b082">
-<link rel="stylesheet" href="../assets/css/mobile.css?v=1c92929c">
-<link rel="stylesheet" href="../assets/css/polish.css?v=39f8e298">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap"></noscript>
+<link rel="stylesheet" href="../assets/css/bundle.css?v=bfaf2686">
 <link rel="stylesheet" href="../assets/css/print.css?v=65e49f4e" media="print">
-<link rel="stylesheet" href="../assets/css/perf.css?v=8af74f1b">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Weatherstripping a Door That Whistles", "description": "Find the gap with a dollar bill, buy the right profile for it, and clean the frame before anything with adhesive touches it.", "articleSection": "Fix It", "keywords": "weatherstripping, door, draft, seal, energy", "mainEntityOfPage": "https://twistedrootsmerc.com/blog/fix-weatherstrip-a-door.html", "author": {"@type": "Organization", "name": "Twisted Roots Merc"}, "publisher": {"@id": "https://twistedrootsmerc.com/#store"}, "isPartOf": {"@type": "Blog", "name": "Practical Notes", "url": "https://twistedrootsmerc.com/journal.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://twistedrootsmerc.com/"}, {"@type": "ListItem", "position": 2, "name": "Practical Notes", "item": "https://twistedrootsmerc.com/journal.html"}, {"@type": "ListItem", "position": 3, "name": "Weatherstripping a Door That Whistles", "item": "https://twistedrootsmerc.com/blog/fix-weatherstrip-a-door.html"}]}</script>
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="stormbar">
   <div class="wrap"><b>Storm Mode</b> <span>Wind advisory on the coast. Storm supplies stocked and the yard is open.</span> <a href="../storm.html">See storm stock →</a></div>
@@ -45,7 +43,7 @@
       <span class="brand-txt"><b>Twisted Roots</b><span>Siletz, Oregon</span></span>
     </a>
     <button class="burger" data-burger aria-expanded="false" aria-controls="siteNav" aria-label="Menu"><span class="burger__box" aria-hidden="true"><i></i><i></i><i></i></span><span class="burger__txt">Menu</span></button>
-    <nav class="nav" id="siteNav">
+    <nav class="nav" id="siteNav" aria-label="Main">
       <div class="navitem" data-navitem>
         <button class="navitem__top" data-subtoggle aria-expanded="false" aria-controls="sub-shop">Shop<i class="navitem__car" aria-hidden="true"></i></button>
         <div class="subnav" id="sub-shop">
@@ -83,11 +81,11 @@
   </div>
 </header>
 
-<main>
+<main id="main" tabindex="-1">
 
 <section class="band band--cream band--tight" style="padding-top:clamp(40px,5vw,72px)">
   <div class="wrap--mid">
-    <nav class="serif-caps muted" style="margin-bottom:22px">
+    <nav class="serif-caps muted" style="margin-bottom:22px" aria-label="Breadcrumb">
       <a href="../index.html" style="text-decoration:none">Home</a> &nbsp;/&nbsp;
       <a href="../journal.html" style="text-decoration:none">Notes</a> &nbsp;/&nbsp;
       <a href="../journal.html#fix-it" style="text-decoration:none">Fix It</a>
@@ -101,22 +99,22 @@
 
 <article class="band band--paper" style="padding-top:clamp(34px,4vw,56px)">
   <div class="wrap--narrow tr-prose">
-    <p>An exterior door with a bad seal loses heat continuously, lets wind-driven rain get into the jamb, and makes a noise on a south-westerly that will keep you awake. Weatherstripping is one of the cheapest improvements in a house, and it fails almost entirely for one reason: people stick foam tape to a dirty or damp frame in cold weather and it falls off by spring.</p><h3>What you need</h3><ul><li>Weatherstripping in a profile that matches your gap</li><li>A dollar bill or a strip of paper</li><li>Denatured alcohol and a rag</li><li>Scissors or snips, a tape measure</li><li>Small nails or screws if you are using the rigid kind</li></ul><h2>Find the gap before you buy anything</h2><ol><li>Close the door on a dollar bill and pull. If it slides out with no drag, that spot is not sealing. Do it every foot around the whole perimeter and mark the loose spots.</li><li>On a windy day, run the back of your hand slowly around the frame. You will feel it.</li><li>At night, have somebody outside shine a flashlight around the closed door while you watch from inside.</li><li>Note whether the gap is even. A gap only at the top or only on the latch side usually means the door is out of adjustment, and no weatherstrip will fix a door that is not closing square. That is <a href="fix-sticking-door.html">a different repair</a>, and it comes first.</li></ol><h2>The types</h2><table><thead><tr><th>Type</th><th>Fits gaps</th><th>Life</th><th>Notes</th></tr></thead><tbody><tr><td>Adhesive foam tape</td><td>Uneven, up to 3/8 in</td><td>1 to 3 years</td><td>Cheap, easy, does not last outdoors here</td></tr><tr><td>Adhesive EPDM rubber, D or V profile</td><td>Even, 1/8 to 5/16 in</td><td>5 to 10 years</td><td>The good adhesive option</td></tr><tr><td>V-strip, vinyl or metal</td><td>Small, even</td><td>Long</td><td>Tension seal, goes on the stop face</td></tr><tr><td>Kerf-in bulb seal</td><td>Modern doors with a slot</td><td>Long</td><td>Slides in, no adhesive, just pull the old one</td></tr><tr><td>Nail-on wood or aluminum with a bulb</td><td>Wide or irregular</td><td>Longest</td><td>Best for an old door in a moving frame</td></tr></tbody></table><p>If your jamb has a groove with a flexible strip already in it, you have a kerf-in seal and replacement is trivial: pull the old one out, take it in to match, push the new one in. Do not glue foam over the top of a worn kerf seal.</p><h2>Installing it so it stays</h2><p>Clean the surface with denatured alcohol and let it dry. Not soapy water, which leaves a film. Then check the temperature. Most adhesives will not bond below about 50 degrees, and on a damp coastal morning the frame carries a film of moisture even when it looks dry. Warm the jamb with a hair dryer if you have to, and do this job on a dry afternoon.</p><ol><li>Measure each run and cut, rather than trying to bend one length around a corner.</li><li>Peel a few inches of backing at a time and press as you go. Do not pull the whole backing off first.</li><li>Press firmly along the entire length once it is placed. Adhesive strips bond under pressure.</li><li>Do the hinge side, the latch side, then the header.</li><li>Close the door. It should take slightly more effort than before but it should latch without a shove. If it will not latch, your strip is too thick or the strike plate needs moving.</li></ol><h2>What to expect</h2><p>Adhesive foam is a season or two out here. Salt air, constant damp and big temperature swings between a heated house and a wet exterior are exactly what kills adhesive. If the door is one you use every day, spend the extra and put on nail-on or kerf-in seal once instead of foam tape four times.</p><p>The bottom of the door is a separate product and a separate job, which is a door sweep, covered in <a href="fix-door-sweeps.html">the sweep post</a>.</p><p>Weatherstripping, sweeps, adhesive cleaner and the fasteners for it are on <a href="../merc.html#fixit">the Fix It wall</a>.</p>
+    <p>An exterior door with a bad seal loses heat continuously, lets wind-driven rain get into the jamb, and makes a noise on a south-westerly that will keep you awake. Weatherstripping is one of the cheapest improvements in a house, and it fails almost entirely for one reason: people stick foam tape to a dirty or damp frame in cold weather and it falls off by spring.</p><h2 class="a11y-rank-h3">What you need</h2><ul><li>Weatherstripping in a profile that matches your gap</li><li>A dollar bill or a strip of paper</li><li>Denatured alcohol and a rag</li><li>Scissors or snips, a tape measure</li><li>Small nails or screws if you are using the rigid kind</li></ul><h2>Find the gap before you buy anything</h2><ol><li>Close the door on a dollar bill and pull. If it slides out with no drag, that spot is not sealing. Do it every foot around the whole perimeter and mark the loose spots.</li><li>On a windy day, run the back of your hand slowly around the frame. You will feel it.</li><li>At night, have somebody outside shine a flashlight around the closed door while you watch from inside.</li><li>Note whether the gap is even. A gap only at the top or only on the latch side usually means the door is out of adjustment, and no weatherstrip will fix a door that is not closing square. That is <a href="fix-sticking-door.html">a different repair</a>, and it comes first.</li></ol><h2>The types</h2><table><thead><tr><th scope="col">Type</th><th scope="col">Fits gaps</th><th scope="col">Life</th><th scope="col">Notes</th></tr></thead><tbody><tr><td>Adhesive foam tape</td><td>Uneven, up to 3/8 in</td><td>1 to 3 years</td><td>Cheap, easy, does not last outdoors here</td></tr><tr><td>Adhesive EPDM rubber, D or V profile</td><td>Even, 1/8 to 5/16 in</td><td>5 to 10 years</td><td>The good adhesive option</td></tr><tr><td>V-strip, vinyl or metal</td><td>Small, even</td><td>Long</td><td>Tension seal, goes on the stop face</td></tr><tr><td>Kerf-in bulb seal</td><td>Modern doors with a slot</td><td>Long</td><td>Slides in, no adhesive, just pull the old one</td></tr><tr><td>Nail-on wood or aluminum with a bulb</td><td>Wide or irregular</td><td>Longest</td><td>Best for an old door in a moving frame</td></tr></tbody></table><p>If your jamb has a groove with a flexible strip already in it, you have a kerf-in seal and replacement is trivial: pull the old one out, take it in to match, push the new one in. Do not glue foam over the top of a worn kerf seal.</p><h2>Installing it so it stays</h2><p>Clean the surface with denatured alcohol and let it dry. Not soapy water, which leaves a film. Then check the temperature. Most adhesives will not bond below about 50 degrees, and on a damp coastal morning the frame carries a film of moisture even when it looks dry. Warm the jamb with a hair dryer if you have to, and do this job on a dry afternoon.</p><ol><li>Measure each run and cut, rather than trying to bend one length around a corner.</li><li>Peel a few inches of backing at a time and press as you go. Do not pull the whole backing off first.</li><li>Press firmly along the entire length once it is placed. Adhesive strips bond under pressure.</li><li>Do the hinge side, the latch side, then the header.</li><li>Close the door. It should take slightly more effort than before but it should latch without a shove. If it will not latch, your strip is too thick or the strike plate needs moving.</li></ol><h2>What to expect</h2><p>Adhesive foam is a season or two out here. Salt air, constant damp and big temperature swings between a heated house and a wet exterior are exactly what kills adhesive. If the door is one you use every day, spend the extra and put on nail-on or kerf-in seal once instead of foam tape four times.</p><p>The bottom of the door is a separate product and a separate job, which is a door sweep, covered in <a href="fix-door-sweeps.html">the sweep post</a>.</p><p>Weatherstripping, sweeps, adhesive cleaner and the fasteners for it are on <a href="../merc.html#fixit">the Fix It wall</a>.</p>
   </div>
 </article>
+
 
 <section class="band band--bark band--dark band--tight">
   <div class="wrap--mid">
     <div class="split split--top">
       <div>
-        <p class="eyebrow">While you're here</p>
-        <h2 class="h2 mb0">Need any of this today?</h2>
+        <p class="eyebrow">From the shelf</p>
+        <h2 class="h2 mb0">What this takes</h2>
       </div>
       <div>
-        <p class="lede mb0">Check what is on the shelf before you drive over, or tell us what we
-          should be carrying.</p>
-        <div class="btnrow" style="margin-top:20px">
-          <a class="btn btn--amber" href="../merc.html#fixit">Shop now</a>
+        <p class="lede mb0">Counts come off the register. If it says two left, there are two left.</p>
+        <div class="pillrow"><a class="pill" href="../shop.html?q=weatherstrip" style="text-decoration:none">Weatherstripping, seventeen feet to the roll</a><a class="pill" href="../shop.html?q=door+sweep" style="text-decoration:none">Door sweeps for the gap underneath</a></div>
+        <div class="btnrow" style="margin-top:18px">
           <button class="btn btn--ghost" data-tellus="true">Tell Carrie &amp; Eric</button>
         </div>
       </div>
@@ -159,18 +157,18 @@
   <div class="wrap">
     <div class="foot-top">
       <div>
-        <img src="../assets/img/logo-foot.webp?v=34aebc6d" alt="Twisted Roots Merc" width="440" height="371" loading="lazy" decoding="async">
+        <img src="../assets/img/logo-foot.webp?v=34aebc6d" srcset="../assets/img/logo-foot-190.webp 190w, ../assets/img/logo-foot-380.webp 380w, ../assets/img/logo-foot.webp 440w" sizes="190px" width="440" height="371" alt="Twisted Roots Merc" loading="lazy" decoding="async">
         <p class="small" style="opacity:.8">Mercantile · Bakery · Kitchen<br>101 &amp; 151 N Gaither St, Siletz, Oregon 97380<br>
           <a href="tel:+15415550134">(541) 555-0134</a></p>
         <button class="stormtoggle" data-stormtoggle aria-pressed="false"><i></i>Storm Mode Off</button>
       </div>
-      <div><h4>The Store</h4><ul>
+      <div><h3>The Store</h3><ul>
         <li><a href="../merc.html">The Merc</a></li><li><a href="../yard.html">The Yard</a></li>
         <li><a href="../storm.html">Storm Ready</a></li><li><a href="../hunt.html">Hunt &amp; Field</a></li><li><a href="../local.html">Local Goods</a></li></ul></div>
-      <div><h4>Food</h4><ul>
+      <div><h3>Food</h3><ul>
         <li><a href="../bakery.html">Bakery + Kitchen</a></li><li><a href="../kitchen.html">Recipes</a></li><li><a href="../bakery.html#breakfast">Breakfast</a></li>
         <li><a href="../bakery.html#lunch">Lunch</a></li><li><a href="../bakery.html#order">Order pickup</a></li></ul></div>
-      <div><h4>Twisted Roots</h4><ul>
+      <div><h3>Twisted Roots</h3><ul>
         <li><a href="../roots.html">Our Roots</a></li><li><a href="../journal.html">The Board</a></li><li><a href="../visit.html">Visit &amp; Hours</a></li>
         <li><a href="#" data-tellus="true">What should we carry?</a></li><li><a href="../hq.html">Owner login</a></li></ul></div>
     </div>
@@ -182,6 +180,7 @@
   </div>
 </footer>
 
+<p id="trLive" class="visually-hidden" role="status" aria-live="polite"></p>
 <script>
 addEventListener("load", function () {
   var s = ["../assets/js/catalog.js?v=cdc9c20e", "../assets/js/cart.js?v=024fe1e6", "../assets/js/site.js?v=3787c0d1", "../assets/js/motion.js?v=bf716f00", "../assets/js/roots.js?v=93423d8d"], i = 0;

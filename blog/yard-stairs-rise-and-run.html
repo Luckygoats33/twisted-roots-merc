@@ -18,19 +18,17 @@
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png?v=ce873322">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/site.css?v=db82a4af">
-<link rel="stylesheet" href="../assets/css/motion.css?v=e4213a7b">
-<link rel="stylesheet" href="../assets/css/roots.css?v=42e7b082">
-<link rel="stylesheet" href="../assets/css/mobile.css?v=1c92929c">
-<link rel="stylesheet" href="../assets/css/polish.css?v=39f8e298">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap"></noscript>
+<link rel="stylesheet" href="../assets/css/bundle.css?v=bfaf2686">
 <link rel="stylesheet" href="../assets/css/print.css?v=65e49f4e" media="print">
-<link rel="stylesheet" href="../assets/css/perf.css?v=8af74f1b">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Stairs, Rise and Run, Explained Plainly", "description": "Total rise divided by the number of steps. Everything else about building stairs follows from getting that one division right.", "articleSection": "The Yard", "keywords": "stairs, rise and run, stringers, deck, layout", "mainEntityOfPage": "https://twistedrootsmerc.com/blog/yard-stairs-rise-and-run.html", "author": {"@type": "Organization", "name": "Twisted Roots Merc"}, "publisher": {"@id": "https://twistedrootsmerc.com/#store"}, "isPartOf": {"@type": "Blog", "name": "Practical Notes", "url": "https://twistedrootsmerc.com/journal.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://twistedrootsmerc.com/"}, {"@type": "ListItem", "position": 2, "name": "Practical Notes", "item": "https://twistedrootsmerc.com/journal.html"}, {"@type": "ListItem", "position": 3, "name": "Stairs, Rise and Run, Explained Plainly", "item": "https://twistedrootsmerc.com/blog/yard-stairs-rise-and-run.html"}]}</script>
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="stormbar">
   <div class="wrap"><b>Storm Mode</b> <span>Wind advisory on the coast. Storm supplies stocked and the yard is open.</span> <a href="../storm.html">See storm stock →</a></div>
@@ -45,7 +43,7 @@
       <span class="brand-txt"><b>Twisted Roots</b><span>Siletz, Oregon</span></span>
     </a>
     <button class="burger" data-burger aria-expanded="false" aria-controls="siteNav" aria-label="Menu"><span class="burger__box" aria-hidden="true"><i></i><i></i><i></i></span><span class="burger__txt">Menu</span></button>
-    <nav class="nav" id="siteNav">
+    <nav class="nav" id="siteNav" aria-label="Main">
       <div class="navitem" data-navitem>
         <button class="navitem__top" data-subtoggle aria-expanded="false" aria-controls="sub-shop">Shop<i class="navitem__car" aria-hidden="true"></i></button>
         <div class="subnav" id="sub-shop">
@@ -83,11 +81,11 @@
   </div>
 </header>
 
-<main>
+<main id="main" tabindex="-1">
 
 <section class="band band--cream band--tight" style="padding-top:clamp(40px,5vw,72px)">
   <div class="wrap--mid">
-    <nav class="serif-caps muted" style="margin-bottom:22px">
+    <nav class="serif-caps muted" style="margin-bottom:22px" aria-label="Breadcrumb">
       <a href="../index.html" style="text-decoration:none">Home</a> &nbsp;/&nbsp;
       <a href="../journal.html" style="text-decoration:none">Notes</a> &nbsp;/&nbsp;
       <a href="../journal.html#the-yard" style="text-decoration:none">The Yard</a>
@@ -101,22 +99,22 @@
 
 <article class="band band--paper" style="padding-top:clamp(34px,4vw,56px)">
   <div class="wrap--narrow tr-prose">
-    <p>Stairs intimidate people more than they should. The layout is one division problem and a bit of arithmetic. The reason it feels hard is that every step has to be identical, and the penalty for getting it wrong is a step people trip on for the next twenty years.</p><h2>The two words</h2><p>Rise is how far up you go per step. Run is how far forward you go per step. Total rise is the vertical distance from where you start to where you finish. Total run is the horizontal distance the stairs will occupy.</p><table><thead><tr><th>Dimension</th><th>Typical residential limit</th></tr></thead><tbody><tr><td>Maximum rise per step</td><td>7.75 in</td></tr><tr><td>Minimum run per step, tread depth</td><td>10 in</td></tr><tr><td>Variation allowed between steps</td><td>3/8 in across the whole flight</td></tr><tr><td>Minimum stair width</td><td>36 in</td></tr><tr><td>Headroom</td><td>6 ft 8 in</td></tr><tr><td>Handrail required at</td><td>4 or more risers</td></tr><tr><td>Handrail height above nosing</td><td>34 to 38 in</td></tr></tbody></table><p>That 3/8 inch variation limit is the strict one and it is strict for a good reason. People climb stairs by feel. One step a half inch taller than the rest is a trip hazard forever.</p><h2>The arithmetic, worked out</h2><ol><li>Measure the total rise. From the finished ground or landing surface up to the finished deck surface. Use a straight board out from the deck and a level, and measure down. Say it comes to 44 inches.</li><li>Divide by 7 to get a starting guess at the number of risers. 44 divided by 7 is 6.3. Round to 6 or 7.</li><li>Divide the total rise by that whole number. 44 divided by 7 equals 6.29 inches per rise. 44 divided by 6 equals 7.33 inches per rise. Both are legal. Seven risers at 6.29 is a gentle stair, six at 7.33 is steeper and shorter.</li><li>Pick your tread run. Say 11 inches.</li><li>Count treads. There is always one fewer tread than riser, because the deck surface is the top riser's landing. Six risers means five treads.</li><li>Total run equals treads times run. Five treads at 11 inches is 55 inches of horizontal space needed.</li></ol><table><thead><tr><th>Total rise</th><th>Risers</th><th>Rise each</th><th>Treads</th><th>Total run at 11 in</th></tr></thead><tbody><tr><td>22 in</td><td>3</td><td>7.33 in</td><td>2</td><td>22 in</td></tr><tr><td>30 in</td><td>4</td><td>7.50 in</td><td>3</td><td>33 in</td></tr><tr><td>38 in</td><td>5</td><td>7.60 in</td><td>4</td><td>44 in</td></tr><tr><td>44 in</td><td>6</td><td>7.33 in</td><td>5</td><td>55 in</td></tr><tr><td>52 in</td><td>7</td><td>7.43 in</td><td>6</td><td>66 in</td></tr><tr><td>60 in</td><td>8</td><td>7.50 in</td><td>7</td><td>77 in</td></tr></tbody></table><h2>The bottom step trap</h2><p>When you cut a stringer, the bottom riser comes out taller than the rest by exactly the thickness of the tread material, because the tread adds height to every step except the bottom one. You fix this by cutting the bottom of the stringer down by one tread thickness. If your treads are 1.5 inch 2x material, cut 1.5 inches off the bottom of the stringer. This is called dropping the stringer and forgetting it is the classic first-stair mistake.</p><h2>Building it</h2><ul><li>Lay out stringers with a framing square and stair gauges clamped at your rise and run. Mark all the steps off one continuous layout, do not measure each one separately, or the errors accumulate.</li><li>Cut one stringer, test fit it, then use it as a template for the rest.</li><li>Stringers every 16 inches for 2x treads. Three stringers on a 36 inch stair.</li><li>The bottom of the stringers should land on concrete or a treated pad, not bare dirt. A stringer end in soil rots first, always.</li><li>Attach the top with a hanger or a ledger, not toenails.</li><li>Handrail on any flight of four or more risers, graspable, continuous, returned to the post at the ends so a sleeve does not catch.</li></ul><p>Stringer stock has to be 2x12 for anything but the shortest stair, and we do not carry it. That is a Siletz River Lumber item. What we do carry is 2x6 for treads, 1x6 for risers, exterior screws and everything for a two or three step stair off a shed. <a href="../yard.html">Check the racks.</a> And read <a href="yard-building-a-small-landing.html">the landing piece</a> if the stair lands on dirt.</p>
+    <p>Stairs intimidate people more than they should. The layout is one division problem and a bit of arithmetic. The reason it feels hard is that every step has to be identical, and the penalty for getting it wrong is a step people trip on for the next twenty years.</p><h2>The two words</h2><p>Rise is how far up you go per step. Run is how far forward you go per step. Total rise is the vertical distance from where you start to where you finish. Total run is the horizontal distance the stairs will occupy.</p><table><thead><tr><th scope="col">Dimension</th><th scope="col">Typical residential limit</th></tr></thead><tbody><tr><td>Maximum rise per step</td><td>7.75 in</td></tr><tr><td>Minimum run per step, tread depth</td><td>10 in</td></tr><tr><td>Variation allowed between steps</td><td>3/8 in across the whole flight</td></tr><tr><td>Minimum stair width</td><td>36 in</td></tr><tr><td>Headroom</td><td>6 ft 8 in</td></tr><tr><td>Handrail required at</td><td>4 or more risers</td></tr><tr><td>Handrail height above nosing</td><td>34 to 38 in</td></tr></tbody></table><p>That 3/8 inch variation limit is the strict one and it is strict for a good reason. People climb stairs by feel. One step a half inch taller than the rest is a trip hazard forever.</p><h2>The arithmetic, worked out</h2><ol><li>Measure the total rise. From the finished ground or landing surface up to the finished deck surface. Use a straight board out from the deck and a level, and measure down. Say it comes to 44 inches.</li><li>Divide by 7 to get a starting guess at the number of risers. 44 divided by 7 is 6.3. Round to 6 or 7.</li><li>Divide the total rise by that whole number. 44 divided by 7 equals 6.29 inches per rise. 44 divided by 6 equals 7.33 inches per rise. Both are legal. Seven risers at 6.29 is a gentle stair, six at 7.33 is steeper and shorter.</li><li>Pick your tread run. Say 11 inches.</li><li>Count treads. There is always one fewer tread than riser, because the deck surface is the top riser's landing. Six risers means five treads.</li><li>Total run equals treads times run. Five treads at 11 inches is 55 inches of horizontal space needed.</li></ol><table><thead><tr><th scope="col">Total rise</th><th scope="col">Risers</th><th scope="col">Rise each</th><th scope="col">Treads</th><th scope="col">Total run at 11 in</th></tr></thead><tbody><tr><td>22 in</td><td>3</td><td>7.33 in</td><td>2</td><td>22 in</td></tr><tr><td>30 in</td><td>4</td><td>7.50 in</td><td>3</td><td>33 in</td></tr><tr><td>38 in</td><td>5</td><td>7.60 in</td><td>4</td><td>44 in</td></tr><tr><td>44 in</td><td>6</td><td>7.33 in</td><td>5</td><td>55 in</td></tr><tr><td>52 in</td><td>7</td><td>7.43 in</td><td>6</td><td>66 in</td></tr><tr><td>60 in</td><td>8</td><td>7.50 in</td><td>7</td><td>77 in</td></tr></tbody></table><h2>The bottom step trap</h2><p>When you cut a stringer, the bottom riser comes out taller than the rest by exactly the thickness of the tread material, because the tread adds height to every step except the bottom one. You fix this by cutting the bottom of the stringer down by one tread thickness. If your treads are 1.5 inch 2x material, cut 1.5 inches off the bottom of the stringer. This is called dropping the stringer and forgetting it is the classic first-stair mistake.</p><h2>Building it</h2><ul><li>Lay out stringers with a framing square and stair gauges clamped at your rise and run. Mark all the steps off one continuous layout, do not measure each one separately, or the errors accumulate.</li><li>Cut one stringer, test fit it, then use it as a template for the rest.</li><li>Stringers every 16 inches for 2x treads. Three stringers on a 36 inch stair.</li><li>The bottom of the stringers should land on concrete or a treated pad, not bare dirt. A stringer end in soil rots first, always.</li><li>Attach the top with a hanger or a ledger, not toenails.</li><li>Handrail on any flight of four or more risers, graspable, continuous, returned to the post at the ends so a sleeve does not catch.</li></ul><p>Stringer stock has to be 2x12 for anything but the shortest stair, and we do not carry it. That is a Siletz River Lumber item. What we do carry is 2x6 for treads, 1x6 for risers, exterior screws and everything for a two or three step stair off a shed. <a href="../yard.html">Check the racks.</a> And read <a href="yard-building-a-small-landing.html">the landing piece</a> if the stair lands on dirt.</p>
   </div>
 </article>
+
 
 <section class="band band--bark band--dark band--tight">
   <div class="wrap--mid">
     <div class="split split--top">
       <div>
-        <p class="eyebrow">While you're here</p>
-        <h2 class="h2 mb0">Need any of this today?</h2>
+        <p class="eyebrow">From the shelf</p>
+        <h2 class="h2 mb0">What this takes</h2>
       </div>
       <div>
-        <p class="lede mb0">Check what is on the shelf before you drive over, or tell us what we
-          should be carrying.</p>
-        <div class="btnrow" style="margin-top:20px">
-          <a class="btn btn--amber" href="../yard.html">Shop now</a>
+        <p class="lede mb0">Counts come off the register. If it says two left, there are two left.</p>
+        <div class="pillrow"><a class="pill" href="../shop.html?q=2x6" style="text-decoration:none">Framing lumber for stringers</a><a class="pill" href="../yard.html#stock" style="text-decoration:none">What is on the racks out back</a></div>
+        <div class="btnrow" style="margin-top:18px">
           <button class="btn btn--ghost" data-tellus="true">Tell Carrie &amp; Eric</button>
         </div>
       </div>
@@ -159,18 +157,18 @@
   <div class="wrap">
     <div class="foot-top">
       <div>
-        <img src="../assets/img/logo-foot.webp?v=34aebc6d" alt="Twisted Roots Merc" width="440" height="371" loading="lazy" decoding="async">
+        <img src="../assets/img/logo-foot.webp?v=34aebc6d" srcset="../assets/img/logo-foot-190.webp 190w, ../assets/img/logo-foot-380.webp 380w, ../assets/img/logo-foot.webp 440w" sizes="190px" width="440" height="371" alt="Twisted Roots Merc" loading="lazy" decoding="async">
         <p class="small" style="opacity:.8">Mercantile · Bakery · Kitchen<br>101 &amp; 151 N Gaither St, Siletz, Oregon 97380<br>
           <a href="tel:+15415550134">(541) 555-0134</a></p>
         <button class="stormtoggle" data-stormtoggle aria-pressed="false"><i></i>Storm Mode Off</button>
       </div>
-      <div><h4>The Store</h4><ul>
+      <div><h3>The Store</h3><ul>
         <li><a href="../merc.html">The Merc</a></li><li><a href="../yard.html">The Yard</a></li>
         <li><a href="../storm.html">Storm Ready</a></li><li><a href="../hunt.html">Hunt &amp; Field</a></li><li><a href="../local.html">Local Goods</a></li></ul></div>
-      <div><h4>Food</h4><ul>
+      <div><h3>Food</h3><ul>
         <li><a href="../bakery.html">Bakery + Kitchen</a></li><li><a href="../kitchen.html">Recipes</a></li><li><a href="../bakery.html#breakfast">Breakfast</a></li>
         <li><a href="../bakery.html#lunch">Lunch</a></li><li><a href="../bakery.html#order">Order pickup</a></li></ul></div>
-      <div><h4>Twisted Roots</h4><ul>
+      <div><h3>Twisted Roots</h3><ul>
         <li><a href="../roots.html">Our Roots</a></li><li><a href="../journal.html">The Board</a></li><li><a href="../visit.html">Visit &amp; Hours</a></li>
         <li><a href="#" data-tellus="true">What should we carry?</a></li><li><a href="../hq.html">Owner login</a></li></ul></div>
     </div>
@@ -182,6 +180,7 @@
   </div>
 </footer>
 
+<p id="trLive" class="visually-hidden" role="status" aria-live="polite"></p>
 <script>
 addEventListener("load", function () {
   var s = ["../assets/js/catalog.js?v=cdc9c20e", "../assets/js/cart.js?v=024fe1e6", "../assets/js/site.js?v=3787c0d1", "../assets/js/motion.js?v=bf716f00", "../assets/js/roots.js?v=93423d8d"], i = 0;
