@@ -66,7 +66,7 @@ Items marked ✅ are already fixed in `assets/css/polish.css` and need only Patc
 
 ```
 Set aside for you                      ← modal title, 16.8px
-TWISTED ROOTS MERC · Siletz, Oregon · (541) 555-0134
+TWISTED ROOTS MERC · Siletz, Oregon · (503) 706-2801
 HOLD      TR-260821-910                ← real-looking confirmation number, today's date
 FOR       Will
 QTY       3

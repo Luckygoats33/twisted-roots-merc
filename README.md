@@ -181,7 +181,7 @@ The logo is `assets/img/logo-carved.png`; `logo-trans.png` and
 
 ## Before this goes live
 
-- [ ] Replace the placeholder phone number `(541) 555-0134` everywhere
+- [ ] Replace the placeholder phone number `(503) 706-2801` everywhere
 - [ ] Replace generated storefront art with real photos of the finished building
 - [ ] Real photos of Carrie and Eric on `roots.html`
 - [ ] Confirm final hours in `assets/js/site.js` → `STORE.hours` **and** `visit.html`

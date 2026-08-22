@@ -70,7 +70,7 @@ body::before{
 }
 
 body::after{
-  content:"(541) 555-0134  ·  twistedrootsmerc.com  ·  Good food. Good goods. Deep roots.";
+  content:"(503) 706-2801  ·  twistedrootsmerc.com  ·  Good food. Good goods. Deep roots.";
   position:fixed;
   bottom:-13mm; left:0; right:0;
   display:block;
@@ -978,7 +978,7 @@ body:has(#status):has(#kit) #status [data-meters]{
 }
 body:has(#status):has(#kit) #status [data-meters] > *{ display:none !important; }
 body:has(#status):has(#kit) #status [data-meters]::after{
-  content:"Live counts are on the website: twistedrootsmerc.com/storm.html — or call the store, (541) 555-0134. This sheet is the list. Tick what you already have at home; buy the rest.";
+  content:"Live counts are on the website: twistedrootsmerc.com/storm.html — or call the store, (503) 706-2801. This sheet is the list. Tick what you already have at home; buy the rest.";
   display:block;
   font-size:9pt;
   line-height:1.4;

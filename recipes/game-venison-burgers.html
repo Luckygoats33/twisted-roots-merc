@@ -21,8 +21,8 @@
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap" media="print" onload="this.media='all';this.onload=null">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800;900&family=Public+Sans:wght@300;400;500;600;800&family=Rye&display=swap"></noscript>
-<link rel="stylesheet" href="../assets/css/bundle.css?v=997c1f69">
-<link rel="stylesheet" href="../assets/css/print.css?v=65e49f4e" media="print">
+<link rel="stylesheet" href="../assets/css/bundle.css?v=19ce18a3">
+<link rel="stylesheet" href="../assets/css/print.css?v=ffbcf0c8" media="print">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Recipe", "name": "Venison Burgers, With the Fat Put Back", "description": "A wild animal has no fat worth eating, so you supply it or you eat a hockey puck.", "recipeCategory": "Game & The Freezer", "recipeCuisine": "American", "keywords": "venison, burger, ground meat, grind", "recipeYield": "6 burgers", "image": "https://twistedrootsmerc.com/assets/img/hunt-field.jpg", "recipeIngredient": ["2 lb (900 g) venison, trimmed of all fat and silverskin, in cubes", "8 oz (225 g) beef fat trim or pork back fat, in cubes", "2 tsp fine sea salt", "1 tsp coarsely ground black pepper", "1 tsp onion powder", "1/2 tsp garlic powder", "2 tbsp beef tallow or neutral oil", "6 slices sharp cheddar or Swiss", "6 burger buns, split", "3 tbsp butter for the buns", "1 large onion, sliced thin", "6 leaves crisp lettuce", "2 tomatoes, sliced", "6 tbsp mayonnaise, full fat", "3 tbsp yellow mustard"], "recipeInstructions": [{"@type": "HowToStep", "text": "Put the meat, the fat, the grinder parts and a bowl in the freezer for 30 minutes. Everything should be firm and near freezing but not solid. Warm fat smears instead of cutting, and smeared fat renders straight out in the pan and leaves you back where you started."}, {"@type": "HowToStep", "text": "Grind the venison and fat together once through a coarse plate, mixed roughly so the ratio stays even. Twenty percent fat by weight is the target, which is where the eight ounces to two pounds comes from."}, {"@type": "HowToStep", "text": "Season the ground meat with salt, pepper and the powders and mix with two forks, lightly and briefly. Working ground meat hard develops the proteins into a springy, sausage-like texture that eats wrong in a burger."}, {"@type": "HowToStep", "text": "Form six loose patties slightly wider than the buns and press a shallow dimple into the centre of each with your thumb. Patties swell in the middle as they cook; the dimple is what stops them turning into domes."}, {"@type": "HowToStep", "text": "Chill the patties 20 minutes. Cold patties hold their shape and let you build a crust before the middle catches up."}, {"@type": "HowToStep", "text": "Heat a cast iron skillet or a griddle over medium-high with the tallow until it shimmers and a drop of water skitters. Butter and toast the buns first, until the cut faces are golden, and set them aside."}, {"@type": "HowToStep", "text": "Cook the patties without moving them until the underside has a solid brown crust and the edges look cooked a third of the way up, then flip once. Add cheese after the flip and cover the pan for a minute so it melts."}, {"@type": "HowToStep", "text": "Cook ground venison to an internal temperature of 160\u00b0F (71\u00b0C), checked with a probe pushed in from the side of the patty. This is not the place for medium rare. Grinding spreads whatever was on the outside of the meat all through the batch, which is the whole reason ground meat has a higher target than a steak does."}, {"@type": "HowToStep", "text": "Rest the patties two minutes on a warm plate while you dress the buns. Building straight out of the pan means the juice runs into the bottom bun and it collapses."}, {"@type": "HowToStep", "text": "What goes wrong: overworking the mix and pressing the patties in the pan. Pressing squeezes out the fat you deliberately added, which is an expensive way to make a dry burger."}], "author": {"@type": "Organization", "name": "Twisted Roots Merc"}, "publisher": {"@id": "https://twistedrootsmerc.com/#store"}, "mainEntityOfPage": "https://twistedrootsmerc.com/recipes/game-venison-burgers.html", "prepTime": "PT30M", "totalTime": "PT1H"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://twistedrootsmerc.com/"}, {"@type": "ListItem", "position": 2, "name": "The Kitchen", "item": "https://twistedrootsmerc.com/kitchen.html"}, {"@type": "ListItem", "position": 3, "name": "Venison Burgers, With the Fat Put Back", "item": "https://twistedrootsmerc.com/recipes/game-venison-burgers.html"}]}</script>
 </head>
@@ -45,7 +45,7 @@
     <button class="burger" data-burger aria-expanded="false" aria-controls="siteNav" aria-label="Menu"><span class="burger__box" aria-hidden="true"><i></i><i></i><i></i></span><span class="burger__txt">Menu</span></button>
     <nav class="nav" id="siteNav" aria-label="Main">
       <div class="navitem" data-navitem>
-        <button class="navitem__top" data-subtoggle aria-expanded="false" aria-controls="sub-shop">Shop<i class="navitem__car" aria-hidden="true"></i></button>
+        <a class="navitem__top" href="../shop.html">Shop</a><button class="navitem__car" data-subtoggle aria-expanded="false" aria-controls="sub-shop" aria-label="Open the Shop menu"><i aria-hidden="true"></i></button>
         <div class="subnav" id="sub-shop">
           <a href="../shop.html">Shop everything</a>
           <a href="../merc.html" >The Merc</a>
@@ -55,14 +55,14 @@
         </div>
       </div>
       <div class="navitem" data-navitem>
-        <button class="navitem__top" data-subtoggle aria-expanded="false" aria-controls="sub-kitchen">Kitchen<i class="navitem__car" aria-hidden="true"></i></button>
+        <a class="navitem__top" href="../kitchen.html">Kitchen</a><button class="navitem__car" data-subtoggle aria-expanded="false" aria-controls="sub-kitchen" aria-label="Open the Kitchen menu"><i aria-hidden="true"></i></button>
         <div class="subnav" id="sub-kitchen">
           <a href="../bakery.html">The Bakery</a>
           <a href="../kitchen.html">Recipes</a>
         </div>
       </div>
       <div class="navitem" data-navitem>
-        <button class="navitem__top" data-subtoggle aria-expanded="false" aria-controls="sub-local">Local<i class="navitem__car" aria-hidden="true"></i></button>
+        <a class="navitem__top" href="../local.html">Local</a><button class="navitem__car" data-subtoggle aria-expanded="false" aria-controls="sub-local" aria-label="Open the Local menu"><i aria-hidden="true"></i></button>
         <div class="subnav" id="sub-local">
           <a href="../local.html">Local Goods</a>
           <a href="../board.html">The Board</a>
@@ -148,9 +148,15 @@
   <div class="wrap">
     <div class="foot-top">
       <div>
-        <img src="../assets/img/logo-foot.webp?v=34aebc6d" srcset="../assets/img/logo-foot-190.webp 190w, ../assets/img/logo-foot-380.webp 380w, ../assets/img/logo-foot.webp 440w" sizes="190px" width="440" height="371" alt="Twisted Roots Merc" loading="lazy" decoding="async">
+        <img src="../assets/img/logo-head.webp?v=c37b86b5" width="220" height="190" alt="Twisted Roots Merc" loading="lazy" decoding="async">
         <p class="small" style="opacity:.8">Mercantile · Bakery · Kitchen<br>101 &amp; 151 N Gaither St, Siletz, Oregon 97380<br>
-          <a href="tel:+15415550134">(541) 555-0134</a></p>
+          <a href="tel:+15037062801">(503) 706-2801</a></p>
+        <ul class="foot-social" aria-label="Twisted Roots Merc on social">
+          <li><a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5H16.7V3.6c-.29-.04-1.3-.12-2.47-.12-2.44 0-4.11 1.49-4.11 4.23V9.9H7.4V13h2.72v8h3.38z"/></svg></a></li>
+          <li><a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg></a></li>
+          <li><a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M22.2 7.5a2.7 2.7 0 0 0-1.9-1.9C18.6 5.1 12 5.1 12 5.1s-6.6 0-8.3.5A2.7 2.7 0 0 0 1.8 7.5C1.3 9.2 1.3 12 1.3 12s0 2.8.5 4.5a2.7 2.7 0 0 0 1.9 1.9c1.7.5 8.3.5 8.3.5s6.6 0 8.3-.5a2.7 2.7 0 0 0 1.9-1.9c.5-1.7.5-4.5.5-4.5s0-2.8-.5-4.5zM9.9 15.2V8.8l5.6 3.2-5.6 3.2z"/></svg></a></li>
+          <li><a href="#" aria-label="Find us on the map"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></a></li>
+        </ul>
         <button class="stormtoggle" data-stormtoggle aria-pressed="false"><i></i>Storm Mode Off</button>
       </div>
       <div><h3>The Store</h3><ul>
@@ -161,7 +167,7 @@
         <li><a href="../bakery.html#lunch">Lunch</a></li><li><a href="../bakery.html#order">Order pickup</a></li></ul></div>
       <div><h3>Twisted Roots</h3><ul>
         <li><a href="../roots.html">Our Roots</a></li><li><a href="../journal.html">The Board</a></li><li><a href="../visit.html">Visit &amp; Hours</a></li>
-        <li><a href="#" data-tellus="true">What should we carry?</a></li><li><a href="../hq.html">Owner login</a></li></ul></div>
+        <li><a href="#" data-tellus="true">What should we carry?</a></li></ul></div>
     </div>
     <p class="foot-motto">Good food. Good goods. Deep roots.</p>
     <div class="foot-legal">
@@ -174,7 +180,7 @@
 <p id="trLive" class="visually-hidden" role="status" aria-live="polite"></p>
 <script>
 addEventListener("load", function () {
-  var s = ["../assets/js/catalog.js?v=cdc9c20e", "../assets/js/cart.js?v=024fe1e6", "../assets/js/site.js?v=3787c0d1", "../assets/js/motion.js?v=bf716f00", "../assets/js/roots.js?v=93423d8d"], i = 0;
+  var s = ["../assets/js/catalog.js?v=cdc9c20e", "../assets/js/cart.js?v=024fe1e6", "../assets/js/site.js?v=c4718c19", "../assets/js/motion.js?v=bf716f00", "../assets/js/roots.js?v=93423d8d"], i = 0;
   (function next(){
     if (i >= s.length) return;
     var e = document.createElement("script");

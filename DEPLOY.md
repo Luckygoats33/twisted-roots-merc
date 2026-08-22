@@ -624,7 +624,7 @@ agent, so it is described, not written, here. It should carry:
   is very often looking for a product, and the search is the best thing on
   this site.
 - The address and phone, once the real phone number replaces
-  `(541) 555-0134`.
+  `(503) 706-2801`.
 - **No** storm banner logic that could fire misleadingly, and no dead-end
   "contact us" form.
 
@@ -637,8 +637,8 @@ no-cache rule.
 
 **Content and correctness — these are launch blockers**
 
-- [ ] **Replace the placeholder phone number `(541) 555-0134`.** It appears in
-      the page HTML and in `assets/js/site.js` (`phoneHref: "tel:+15415550134"`).
+- [ ] **Replace the placeholder phone number `(503) 706-2801`.** It appears in
+      the page HTML and in `assets/js/site.js` (`phoneHref: "tel:+15037062801"`).
       A live storefront publishing a fake phone number is the worst single bug
       on this list.
 - [ ] **Decide what the forms do.** The pickup/hold, order and contact forms

@@ -10,8 +10,8 @@ const TR = (() => {
   const STORE = {
     name: "Twisted Roots Merc",
     address: "101 & 151 N Gaither St, Siletz, Oregon 97380",
-    phone: "(541) 555-0134",
-    phoneHref: "tel:+15415550134",
+    phone: "(503) 706-2801",
+    phoneHref: "tel:+15037062801",
     /* 0=Sun … 6=Sat — [openMinutes, closeMinutes] or null */
     hours: {
       0: [7 * 60, 16 * 60],
@@ -419,7 +419,7 @@ const TR = (() => {
       <div style="background:var(--sand); padding:14px 16px; margin:18px 0; font-family:var(--f-display); font-weight:700">${titleLines}</div>
       <form data-holdform data-ref="${esc(ref)}">
         <div class="field"><label for="hn">Your name</label><input id="hn" name="name" required autocomplete="name" placeholder="First name is fine"></div>
-        <div class="field"><label for="hp">Phone</label><input id="hp" name="phone" required type="tel" autocomplete="tel" placeholder="(541) 555-0134"></div>
+        <div class="field"><label for="hp">Phone</label><input id="hp" name="phone" required type="tel" autocomplete="tel" placeholder="(503) 706-2801"></div>
         <div class="field"><label for="hq">How many?</label><input id="hq" name="qty" type="number" min="1" value="1"></div>
         <button class="btn btn--wide btn--amber" type="submit">Hold it for me</button>
       </form>`;
@@ -489,7 +489,7 @@ const TR = (() => {
         '<div class="field"><label for="onm">Your name</label>' +
           '<input id="onm" name="name" required autocomplete="name" placeholder="First name is fine"></div>' +
         '<div class="field"><label for="oph">Phone</label>' +
-          '<input id="oph" name="phone" required type="tel" autocomplete="tel" placeholder="(541) 555-0134"></div>' +
+          '<input id="oph" name="phone" required type="tel" autocomplete="tel" placeholder="(503) 706-2801"></div>' +
         '<div class="field"><label for="oit">What are we making?</label>' +
           '<textarea id="oit" name="items" required placeholder="2 Siletz sandwiches, 1 biscuits &amp; gravy, 2 drip coffees"></textarea></div>' +
         '<div class="field"><label for="otm">Pickup</label><select id="otm" name="when">' +
@@ -514,7 +514,7 @@ const TR = (() => {
         '</b> <span class="muted">· held until close today</span></div>' +
       '<form data-basketform>' +
         '<div class="field"><label for="bn">Your name</label><input id="bn" name="name" required autocomplete="name" placeholder="First name is fine"></div>' +
-        '<div class="field"><label for="bp">Phone</label><input id="bp" name="phone" required type="tel" autocomplete="tel" placeholder="(541) 555-0134"></div>' +
+        '<div class="field"><label for="bp">Phone</label><input id="bp" name="phone" required type="tel" autocomplete="tel" placeholder="(503) 706-2801"></div>' +
         '<button class="btn btn--wide btn--amber" type="submit">Reserve it</button>' +
       '</form>');
     var f = $("[data-basketform]");
