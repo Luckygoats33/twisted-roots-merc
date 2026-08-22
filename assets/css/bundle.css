@@ -470,9 +470,9 @@ to{transform:translate3d(calc(126vw + var(--cr-drift,0px)), var(--cr-rise,0px), 
 }
 .brand .hangsign__beam{width:calc(100% - 26px) !important;left:13px !important;right:auto !important;height:7px !important}
 .brand .rt-seed{display:none !important}
-.perchcrow{position:fixed;z-index:201;pointer-events:none;opacity:0;filter:drop-shadow(0 3px 6px rgba(32,24,15,.32));will-change:transform,opacity}
+.perchcrow{position:fixed;z-index:201;pointer-events:none;opacity:0;will-change:transform,opacity}
 .perchcrow__fly,.perchcrow__sit{position:absolute;display:none;background-repeat:no-repeat;background-position:0 0}
-.perchcrow__sit{left:0;top:0;width:100%;height:100%;background-image:url("../img/crow-perch.png")}
+.perchcrow__sit{left:0;top:0;width:100%;height:100%;background-image:url("../img/crow-perch.png");filter:drop-shadow(0 3px 6px rgba(32,24,15,.32))}
 .perchcrow__fly{background-image:url("../img/crow-sprite.png");transform-origin:50% 50%}
 @media (prefers-reduced-motion:reduce){
 .perchcrow{display:none}

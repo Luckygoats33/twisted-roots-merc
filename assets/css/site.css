@@ -844,7 +844,6 @@ img.hero-still{ z-index:0 }
      widens the document, which twitched the centred logo on a phone. */
   position:fixed; z-index:201; pointer-events:none;
   opacity:0;
-  filter:drop-shadow(0 3px 6px rgba(32,24,15,.32));
   will-change:transform, opacity;
 }
 /* Two sheets, one bird. crows.js swaps between them: the flying
@@ -863,6 +862,12 @@ img.hero-still{ z-index:0 }
 .perchcrow__sit{
   left:0; top:0; width:100%; height:100%;
   background-image:url("../img/crow-perch.png");
+  /* The shadow belongs to the bird STANDING on the sign, not to the
+     one in the air — and it was on the container, so during the
+     cross-fade it was cast from two overlapping half-transparent
+     sprites at once, which is what made the take-off look like the
+     bird had a smudge behind it. */
+  filter:drop-shadow(0 3px 6px rgba(32,24,15,.32));
 }
 .perchcrow__fly{
   background-image:url("../img/crow-sprite.png");

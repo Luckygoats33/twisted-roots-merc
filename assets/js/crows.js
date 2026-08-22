@@ -188,7 +188,11 @@
   var SHEET   = 34;
   var LAND    = [2, 11];        /* measured, see above */
   var SIT     = [12, 31];
-  var TAKEOFF = [32, 33];
+  /* Frame 33 is the bird already half out of the cell — cross-fading
+     OUT of a cropped bird is what made the take-off twitch and the
+     sprite's edges look wrong. Hold frame 32, the full wings-spread
+     push-off, and hand over from that instead. */
+  var TAKEOFF = [32, 32];
 
   var FLY_FRAMES = 25;
   var FLAP_MS = 400;            /* same working beat as the flock */
@@ -302,17 +306,28 @@
          has to match frame 33 — which is why the take-off still
          jumped after the landing was fixed. Both measured off the
          sheet the same way. */
-      var P_IN  = { span: 0.516, cx: 0.112, cy: 0.340 };   /* frame 02 */
-      var P_OUT = { span: 0.553, cx: 0.780, cy: 0.050 };   /* frame 33 */
+      var P_IN  = { span: 0.516, cx: 0.112, cy: 0.340 };   /* perch f02 */
+      var P_OUT = { span: 0.684, cx: 0.597, cy: 0.200 };   /* perch f32 */
 
-      function flyGeom(m) {
-        var w = Math.round(g.w * m.span / FLY_SPAN);
+      /* On the way OUT the handover is pinned to one specific flying
+         frame instead of whatever the free-running flap clock happens
+         to be showing. Frame 11 is the closest match to perch f32's
+         silhouette — aspect 1.156 against 1.354, the nearest of the
+         25 — so the two poses very nearly coincide and the fade has
+         almost nothing to hide. Its own metrics are used for the
+         match rather than the sheet average. */
+      var OUT_FRAME = 11;
+      var FLY_OUT = { span: 0.969, cx: 0.459, cy: 0.434 };
+
+      function flyGeom(m, fm) {
+        fm = fm || { span: FLY_SPAN, cx: FLY_CX, cy: FLY_CY };
+        var w = Math.round(g.w * m.span / fm.span);
         var h2 = Math.round(w * 80 / 104);
         return { w: w, h: h2,
-                 left: Math.round(g.w * m.cx - w * FLY_CX),
-                 top:  Math.round(g.h * m.cy - h2 * FLY_CY) };
+                 left: Math.round(g.w * m.cx - w * fm.cx),
+                 top:  Math.round(g.h * m.cy - h2 * fm.cy) };
       }
-      var GIN = flyGeom(P_IN), GOUT = flyGeom(P_OUT);
+      var GIN = flyGeom(P_IN), GOUT = flyGeom(P_OUT, FLY_OUT);
       var fw = GIN.w, fh = GIN.h, applied = null;
 
       function useGeom(gm) {
@@ -455,13 +470,23 @@
             var into = Math.min(1, (t - OUT) / 1000);
             beat = 330 + (FLAP_MS - 330) * into;
           }
-          var fIdx = Math.floor(t / beat * FLY_FRAMES) % FLY_FRAMES;
+          /* leaving, the loop starts on the frame the handover was
+             matched to, so the first flying pose is the one that
+             lines up with the perched sprite */
+          var fIdx = t < IN
+            ? Math.floor(t / beat * FLY_FRAMES) % FLY_FRAMES
+            : (OUT_FRAME + Math.floor((t - OUT) / beat * FLY_FRAMES)) % FLY_FRAMES;
           fly.style.backgroundPositionX = (-fIdx * fw) + "px";
         }
         if (sitA > 0) {
-          /* during the fade-in the perch sheet holds its first frame,
-             so the two birds are in the same place at the same size */
-          var sIdx = phase === "sit" ? idx : LAND[0];
+          /* Holding the right frame while the sheets cross-fade.
+             Arriving, the perch sheet holds its FIRST frame so the two
+             birds are in the same place at the same size. Leaving, it
+             has to hold its LAST — this said LAND[0] either way, so on
+             the way out the bird snapped back into its landing pose for
+             the 200ms of the fade before vanishing. That was the
+             take-off twitch. */
+          var sIdx = phase === "sit" ? idx : (t < IN ? LAND[0] : TAKEOFF[1]);
           sit.style.backgroundPositionX = (-sIdx * g.w) + "px";
         }
 
