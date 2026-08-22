@@ -206,16 +206,21 @@
     return range[0] + Math.min(n - 1, Math.floor(Math.max(0, p) * n));
   }
 
-  /* Land it on the sign's SHOULDER — the flatter stretch of the
-     carved top edge, right of the peak with the firs on it. The
-     beam rides above the top of the screen, so nothing can stand
-     on it; the shoulder is the highest thing actually visible. */
+  /* Land it on the crossbar of the T in "Twisted".
+     MEASURED off logo-head.png rather than guessed: scanning the
+     carved (dark, opaque) pixels row by row, the crossbar reaches
+     its full width at y = 0.237 of the plate height and runs from
+     x = 0.218 to x = 0.595, so its middle is x = 0.407.
+
+     It used to sit at 0.62/0.16, which is the bare wooden shoulder
+     above the lettering — a bird standing on nothing in particular.
+     The top of a letter is something to stand on. */
   function place(el, plate, h) {
     var r = plate.getBoundingClientRect();
-    var SHOULDER_X = 0.62, SHOULDER_Y = 0.16;
+    var PERCH_X = 0.40, PERCH_Y = 0.237;
 
-    var landX = r.left + r.width * SHOULDER_X;
-    var landY = r.top + r.height * SHOULDER_Y;
+    var landX = r.left + r.width * PERCH_X;
+    var landY = r.top + r.height * PERCH_Y;
 
     /* A bird needs room above whatever it stands on. Size it to
        the headroom that actually exists rather than assuming. */
@@ -225,8 +230,16 @@
     var w = Math.round(h * RATIO);
     el.style.width  = w + "px";
     el.style.height = Math.round(h) + "px";
+    /* The element is position:fixed, so no window.scrollY term. Two
+       reasons it has to be fixed. The header is sticky on desktop and
+       fixed on mobile, so the sign never leaves the top of the
+       viewport and an absolutely-positioned bird would slide off it
+       the moment the page moved. And an absolute element translated
+       hundreds of pixels sideways enlarges the document's scrollable
+       area — on a phone that briefly widened the page and shoved the
+       centred logo to the right and back as the crow set off. */
     el.style.left = Math.round(landX - w * 0.5) + "px";
-    el.style.top  = Math.round(landY + window.scrollY - h * FEET) + "px";
+    el.style.top  = Math.round(landY - h * FEET) + "px";
     return { w: w, h: h, x: landX, y: landY };
   }
 
@@ -296,7 +309,10 @@
       var hero = document.querySelector(".hero");
       var hr = hero ? hero.getBoundingClientRect()
                     : { top: 0, height: window.innerHeight };
-      var startX = g.x + Math.max(260, window.innerWidth * 0.36);
+      /* and never start it off the right-hand edge, for the same
+         reason — belt and braces now that it is fixed */
+      var startX = Math.min(g.x + Math.max(260, window.innerWidth * 0.36),
+                            window.innerWidth - fw - 8);
       var startY = hr.top + hr.height * 0.24;
       var endX   = g.x - g.w * 0.33;
       var endY   = g.y - g.h * 0.09;
@@ -330,7 +346,8 @@
         } else {
           phase = "fly";
           var d = (t - (TOTAL - MS.depart)) / MS.depart;
-          dx = d * window.innerWidth * 0.55;
+          dx = d * Math.min(window.innerWidth * 0.55,
+                            window.innerWidth - (g.x + g.w));
           dy = -d * g.h * 3.4 - Math.sin(Math.PI * d * 0.5) * g.h * 0.6;
           idx = TAKEOFF[1];
         }

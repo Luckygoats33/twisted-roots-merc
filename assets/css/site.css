@@ -839,7 +839,10 @@ img.hero-still{ z-index:0 }
    no taps and never blocks the nav.
    ========================================================== */
 .perchcrow{
-  position:absolute; z-index:201; pointer-events:none;
+  /* fixed, not absolute — see place() in crows.js. The sign is in a
+     sticky/fixed header, and an absolute element translated sideways
+     widens the document, which twitched the centred logo on a phone. */
+  position:fixed; z-index:201; pointer-events:none;
   opacity:0;
   filter:drop-shadow(0 3px 6px rgba(32,24,15,.32));
   will-change:transform, opacity;

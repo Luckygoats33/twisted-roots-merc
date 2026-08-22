@@ -749,7 +749,17 @@ body{ background:var(--paper) }
   .brand{
     order:2;
     position:absolute; left:50%; top:0;
-    transform:translateX(-50%);
+    /* translateZ(0) is not cargo cult here. The sign is centred with
+       translateX(-50%), which lands on a half pixel whenever the sign
+       is an odd width — and an un-promoted element re-rounds that half
+       pixel the moment a neighbouring compositing layer appears or
+       disappears. The crow that flies to the sign is exactly such a
+       layer, which is what made the logo twitch sideways and back as
+       the bird set off. Promoting the brand once, permanently, means
+       it is rounded once and never again. */
+    transform:translateX(-50%) translateZ(0);
+    will-change:transform;
+    backface-visibility:hidden;
     display:block; text-align:center;
     z-index:6;
   }

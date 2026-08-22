@@ -5,7 +5,7 @@
    non-blocking).  shop.css is NOT bundled (one page links it).
    perf.css must stay last.  Edit the sources, then run:
      python build_css.py && python rehash.py
-   1021 rules, 112 at-rule blocks, 3039 declarations. */
+   1021 rules, 112 at-rule blocks, 3041 declarations. */
 :root{--ink:#20180F;--ink-2:#3A2C1E;--bark:#2A1F14;--cream:#F4EDE1;--paper:#FBF7EF;--sand:#EAE0CE;--wood:#C39A68;--wood-lt:#E4CBA4;--wood-dk:#8A6238;--rust:#8E4826;--rust-lt:#B9663C;--teal:#215C6B;--teal-lt:#3D95A8;--pine:#254E3D;--amber:#D99A34;--amber-hi:#F2B953;--red:#A8321F;--ok:#2F7D4F;--line:rgba(32,24,15,.16);--line-2:rgba(32,24,15,.28);--f-display:"Bitter",Georgia,"Times New Roman",serif;--f-sign:"Rye",Georgia,serif;--f-body:"Public Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;--wrap:1560px;--r:2px;--head-h:86px}
 [data-storm="on"]{--amber:#E9AE45;--line:rgba(33,92,107,.22)}
 *,*::before,*::after{box-sizing:border-box}
@@ -470,7 +470,7 @@ to{transform:translate3d(calc(126vw + var(--cr-drift,0px)), var(--cr-rise,0px), 
 }
 .brand .hangsign__beam{width:calc(100% - 26px) !important;left:13px !important;right:auto !important;height:7px !important}
 .brand .rt-seed{display:none !important}
-.perchcrow{position:absolute;z-index:201;pointer-events:none;opacity:0;filter:drop-shadow(0 3px 6px rgba(32,24,15,.32));will-change:transform,opacity}
+.perchcrow{position:fixed;z-index:201;pointer-events:none;opacity:0;filter:drop-shadow(0 3px 6px rgba(32,24,15,.32));will-change:transform,opacity}
 .perchcrow__fly,.perchcrow__sit{position:absolute;display:none;background-repeat:no-repeat;background-position:0 0}
 .perchcrow__sit{left:0;top:0;width:100%;height:100%;background-image:url("../img/crow-perch.png")}
 .perchcrow__fly{background-image:url("../img/crow-sprite.png");transform-origin:50% 50%}
@@ -1154,7 +1154,7 @@ html{scroll-padding-top:calc(var(--head-h) + var(--stormbar-h, 0px) + 16px)}
 .burger.is-open .burger__box i:nth-child(2){opacity:0}
 .burger.is-open .burger__box i:nth-child(3){transform:translateY(-6.75px) rotate(-45deg)}
 .head-in{position:relative;gap:12px}
-.brand{order:2;position:absolute;left:50%;top:0;transform:translateX(-50%);display:block;text-align:center;z-index:6}
+.brand{order:2;position:absolute;left:50%;top:0;transform:translateX(-50%) translateZ(0);will-change:transform;backface-visibility:hidden;display:block;text-align:center;z-index:6}
 .brand-txt{display:none}
 .brand .hangsign{--tr-sign-h:78px;margin:0;display:block}
 .brand .hangsign__plate{height:var(--tr-sign-h) !important;filter:drop-shadow(0 6px 14px rgba(32,24,15,.45))}
