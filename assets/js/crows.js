@@ -195,8 +195,13 @@
   var FEET  = 0.74;             /* where the feet sit in the perch cell */
   var RATIO = 190 / 147;        /* perch cell aspect */
 
-  var MS = { approach: 2400, land: 560, sit: 5000, takeoff: 260, depart: 1700 };
+  var MS = { approach: 2400, land: 560, sit: 5000, takeoff: 260, depart: 2600 };
   var BLEND = 200;              /* cross-fade at each sheet swap */
+  /* The flock cruises at 3.2 body lengths a second (see the flock
+     block above). A bird leaving a perch is a little brisker than
+     cruising, but only a little — anything more reads as a
+     catapult, which is exactly what the old number did. */
+  var OUT_BODY_PER_SEC = 4.4;
   var TOTAL = MS.approach + MS.land + MS.sit + MS.takeoff + MS.depart;
 
   function ease(t) { return 1 - Math.pow(1 - t, 3); }        /* easeOutCubic */
@@ -362,11 +367,33 @@
           phase = "sit"; dx = 0; dy = 0;
           idx = band(TAKEOFF, (t - MS.approach - MS.land - MS.sit) / MS.takeoff);
         } else {
+          /* LEAVING.
+             This used to be a straight linear ramp across 55% of the
+             window in 1.7s — about 450 px/s for a bird drawn 34px
+             wide, which is four times the speed the flock flies at
+             and is why it shot off the sign.
+
+             Two things wrong with a linear ramp anyway: it starts at
+             full speed, so the bird goes from perfectly still to
+             cruising between one frame and the next, and the speed
+             itself was a made-up fraction of the viewport rather
+             than anything to do with the bird.
+
+             So it uses the same measure as the flock — body lengths
+             per second, off the rendered cell width — and integrates
+             a velocity that ramps up from rest over the first 40% of
+             the phase. A shade brisker than cruise, because a bird
+             leaving a perch is going somewhere. */
           phase = "fly";
           var d = (t - (TOTAL - MS.depart)) / MS.depart;
-          dx = d * Math.min(window.innerWidth * 0.55,
-                            window.innerWidth - (g.x + g.w));
-          dy = -d * g.h * 3.4 - Math.sin(Math.PI * d * 0.5) * g.h * 0.6;
+          var A = 0.40;                          /* the push-off */
+          var far = d < A ? (d * d) / (2 * A) : d - A / 2;
+          far /= (1 - A / 2);                    /* normalise to 0..1 */
+
+          var v = OUT_BODY_PER_SEC * fw;         /* px per second */
+          var reachPx = v * (MS.depart / 1000) * (1 - A / 2);
+          dx =  far * reachPx * 0.86;
+          dy = -far * reachPx * 0.52;            /* climbing away */
           idx = TAKEOFF[1];
         }
 
@@ -397,7 +424,14 @@
         if (flyA > 0) {
           useGeom(t < IN ? GIN : GOUT);
           fly.style.transform = mirror || t < IN ? "scaleX(-1)" : "none";
-          var fIdx = Math.floor(t / FLAP_MS * FLY_FRAMES) % FLY_FRAMES;
+          /* A bird climbing off a perch beats harder than one already
+             up and cruising, and settles back over the first second. */
+          var beat = FLAP_MS;
+          if (t >= OUT) {
+            var into = Math.min(1, (t - OUT) / 1000);
+            beat = 250 + (FLAP_MS - 250) * into;
+          }
+          var fIdx = Math.floor(t / beat * FLY_FRAMES) % FLY_FRAMES;
           fly.style.backgroundPositionX = (-fIdx * fw) + "px";
         }
         if (sitA > 0) {
